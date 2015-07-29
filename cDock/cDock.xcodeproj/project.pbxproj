@@ -1,0 +1,663 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79D28C961B66BCB10036D668 /* cDockIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843581B641CEC00F87E50 /* cDockIndicator.m */; };
+		79D28C971B66BCB30036D668 /* cDockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843591B641CEC00F87E50 /* cDockLabel.m */; };
+		79D28C981B66BCB40036D668 /* cDockTile.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8435A1B641CEC00F87E50 /* cDockTile.m */; };
+		79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843531B641CD100F87E50 /* Preferences.m */; };
+		79D28C9B1B66BCCB0036D668 /* Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843551B641CE100F87E50 /* Initialize.m */; };
+		FB13CA061B6746DE006F3D89 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB13CA051B6746DE006F3D89 /* fishhook.c */; };
+		FB19A8211B64447B00F3FB04 /* Opee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB19A81D1B64428200F3FB04 /* Opee.framework */; };
+		FB5E0BE11B673DF200AC2E6D /* cDockFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cDockFloor.m */; };
+		FBDE03671B5ED1EE00C1C5DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE03661B5ED1EE00C1C5DB /* main.m */; };
+		FBDE03761B5ED21900C1C5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03741B5ED21900C1C5DB /* Main.storyboard */; };
+		FBDE03771B5ED21900C1C5DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03751B5ED21900C1C5DB /* Images.xcassets */; };
+		FBDE03841B5EDB4F00C1C5DB /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03831B5EDB4F00C1C5DB /* Credits.html */; };
+		FBDE038D1B5EE13500C1C5DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE038C1B5EE13500C1C5DB /* AppDelegate.m */; };
+		FBDE03901B5EE13500C1C5DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE038F1B5EE13500C1C5DB /* main.m */; };
+		FBDE03921B5EE13500C1C5DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03911B5EE13500C1C5DB /* Assets.xcassets */; };
+		FBDE03951B5EE13500C1C5DB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03931B5EE13500C1C5DB /* MainMenu.xib */; };
+		FBDE03A21B5EF17000C1C5DB /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03A01B5EF17000C1C5DB /* icon.png */; };
+		FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843601B641D4A00F87E50 /* AppDelegate.m */; };
+		FBE843641B641D5800F87E50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843631B641D5800F87E50 /* ViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FB13CA041B6746DE006F3D89 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		FB13CA051B6746DE006F3D89 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		FB19A81D1B64428200F3FB04 /* Opee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Opee.framework; path = cDock/Frameworks/Opee.framework; sourceTree = "<group>"; };
+		FB5E0BE01B673DF200AC2E6D /* cDockFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockFloor.m; path = cDock/cDockFloor.m; sourceTree = SOURCE_ROOT; };
+		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBCEED7E1B68AD530056710B /* DOCKFloorLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKFloorLayer.h; sourceTree = "<group>"; };
+		FBCEED7F1B68AD530056710B /* DOCKIndicatorLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKIndicatorLayer.h; sourceTree = "<group>"; };
+		FBCEED801B68AD530056710B /* DOCKLabelLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKLabelLayer.h; sourceTree = "<group>"; };
+		FBCEED811B68AD530056710B /* DOCKSeparatorTile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKSeparatorTile.h; sourceTree = "<group>"; };
+		FBCEED821B68AD530056710B /* DOCKTileLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKTileLayer.h; sourceTree = "<group>"; };
+		FBCEED831B68AD530056710B /* DOCKTrashTile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKTrashTile.h; sourceTree = "<group>"; };
+		FBCEED841B68AD530056710B /* ECMaterialLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECMaterialLayer.h; sourceTree = "<group>"; };
+		FBCEED851B68AD530056710B /* ECStatusLabelDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECStatusLabelDescription.h; sourceTree = "<group>"; };
+		FBCEED861B68AD530056710B /* Tile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
+		FBDE03601B5ED1EE00C1C5DB /* cDock-GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBDE03661B5ED1EE00C1C5DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FBDE03701B5ED1EE00C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBDE03741B5ED21900C1C5DB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FBDE03751B5ED21900C1C5DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FBDE03831B5EDB4F00C1C5DB /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		FBDE03891B5EE13500C1C5DB /* cDock-Menubar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-Menubar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBDE038B1B5EE13500C1C5DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FBDE038C1B5EE13500C1C5DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FBDE038F1B5EE13500C1C5DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FBDE03911B5EE13500C1C5DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBDE03941B5EE13500C1C5DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FBDE03961B5EE13500C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBDE03A01B5EF17000C1C5DB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		FBE843521B641CD100F87E50 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = cDock/Preferences/Preferences.h; sourceTree = SOURCE_ROOT; };
+		FBE843531B641CD100F87E50 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = cDock/Preferences/Preferences.m; sourceTree = SOURCE_ROOT; };
+		FBE843551B641CE100F87E50 /* Initialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Initialize.m; path = cDock/Initialize.m; sourceTree = SOURCE_ROOT; };
+		FBE843581B641CEC00F87E50 /* cDockIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockIndicator.m; path = cDock/cDockIndicator.m; sourceTree = SOURCE_ROOT; };
+		FBE843591B641CEC00F87E50 /* cDockLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockLabel.m; path = cDock/cDockLabel.m; sourceTree = SOURCE_ROOT; };
+		FBE8435A1B641CEC00F87E50 /* cDockTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockTile.m; path = cDock/cDockTile.m; sourceTree = SOURCE_ROOT; };
+		FBE8435F1B641D4A00F87E50 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "cDock-GUI/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
+		FBE843601B641D4A00F87E50 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "cDock-GUI/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
+		FBE843621B641D5800F87E50 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = "cDock-GUI/ViewController.h"; sourceTree = SOURCE_ROOT; };
+		FBE843631B641D5800F87E50 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = "cDock-GUI/ViewController.m"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBC4F4EA1B5ED0EC0078D4E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB19A8211B64447B00F3FB04 /* Opee.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDE035D1B5ED1EE00C1C5DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDE03861B5EE13500C1C5DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB13CA031B6746D1006F3D89 /* Fishhook */ = {
+			isa = PBXGroup;
+			children = (
+				FB13CA041B6746DE006F3D89 /* fishhook.h */,
+				FB13CA051B6746DE006F3D89 /* fishhook.c */,
+			);
+			name = Fishhook;
+			sourceTree = "<group>";
+		};
+		FBC4F4E41B5ED0EC0078D4E4 = {
+			isa = PBXGroup;
+			children = (
+				FB19A81D1B64428200F3FB04 /* Opee.framework */,
+				FBC4F4EF1B5ED0EC0078D4E4 /* cDock */,
+				FBDE03611B5ED1EE00C1C5DB /* cDock-GUI */,
+				FBDE038A1B5EE13500C1C5DB /* cDock-Menubar */,
+				FBC4F4EE1B5ED0EC0078D4E4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBC4F4EE1B5ED0EC0078D4E4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */,
+				FBDE03601B5ED1EE00C1C5DB /* cDock-GUI.app */,
+				FBDE03891B5EE13500C1C5DB /* cDock-Menubar.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBC4F4EF1B5ED0EC0078D4E4 /* cDock */ = {
+			isa = PBXGroup;
+			children = (
+				FBCEED871B68AD580056710B /* Apple */,
+				FB13CA031B6746D1006F3D89 /* Fishhook */,
+				FBD71EAD1B5F201900C50402 /* Preferences */,
+				FBD71EAF1B5F201900C50402 /* Initialize */,
+				FBD71EB11B5F201900C50402 /* Theming */,
+				FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */,
+			);
+			path = cDock;
+			sourceTree = "<group>";
+		};
+		FBCEED871B68AD580056710B /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				FBCEED7E1B68AD530056710B /* DOCKFloorLayer.h */,
+				FBCEED7F1B68AD530056710B /* DOCKIndicatorLayer.h */,
+				FBCEED801B68AD530056710B /* DOCKLabelLayer.h */,
+				FBCEED811B68AD530056710B /* DOCKSeparatorTile.h */,
+				FBCEED821B68AD530056710B /* DOCKTileLayer.h */,
+				FBCEED831B68AD530056710B /* DOCKTrashTile.h */,
+				FBCEED841B68AD530056710B /* ECMaterialLayer.h */,
+				FBCEED851B68AD530056710B /* ECStatusLabelDescription.h */,
+				FBCEED861B68AD530056710B /* Tile.h */,
+			);
+			name = Apple;
+			sourceTree = "<group>";
+		};
+		FBD71EAD1B5F201900C50402 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				FBE843521B641CD100F87E50 /* Preferences.h */,
+				FBE843531B641CD100F87E50 /* Preferences.m */,
+			);
+			name = Preferences;
+			path = "../../../untitled folder/Modck-master/Modck";
+			sourceTree = "<group>";
+		};
+		FBD71EAF1B5F201900C50402 /* Initialize */ = {
+			isa = PBXGroup;
+			children = (
+				FBE843551B641CE100F87E50 /* Initialize.m */,
+			);
+			name = Initialize;
+			path = "../../../untitled folder/Modck-master/Modck";
+			sourceTree = "<group>";
+		};
+		FBD71EB11B5F201900C50402 /* Theming */ = {
+			isa = PBXGroup;
+			children = (
+				FB5E0BE01B673DF200AC2E6D /* cDockFloor.m */,
+				FBE843581B641CEC00F87E50 /* cDockIndicator.m */,
+				FBE843591B641CEC00F87E50 /* cDockLabel.m */,
+				FBE8435A1B641CEC00F87E50 /* cDockTile.m */,
+			);
+			name = Theming;
+			path = "../../../untitled folder/Modck-master/Modck";
+			sourceTree = "<group>";
+		};
+		FBDE03611B5ED1EE00C1C5DB /* cDock-GUI */ = {
+			isa = PBXGroup;
+			children = (
+				FBDE03651B5ED1EE00C1C5DB /* Supporting Files */,
+				FBDE037E1B5ED25700C1C5DB /* Delegates */,
+				FBDE037A1B5ED24600C1C5DB /* View controllers */,
+				FBDE03741B5ED21900C1C5DB /* Main.storyboard */,
+				FBDE03751B5ED21900C1C5DB /* Images.xcassets */,
+			);
+			path = "cDock-GUI";
+			sourceTree = "<group>";
+		};
+		FBDE03651B5ED1EE00C1C5DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBDE03831B5EDB4F00C1C5DB /* Credits.html */,
+				FBDE03701B5ED1EE00C1C5DB /* Info.plist */,
+				FBDE03661B5ED1EE00C1C5DB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBDE037A1B5ED24600C1C5DB /* View controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FBE843621B641D5800F87E50 /* ViewController.h */,
+				FBE843631B641D5800F87E50 /* ViewController.m */,
+			);
+			name = "View controllers";
+			path = "../../../untitled folder/Modck-master/ModckPreferences";
+			sourceTree = "<group>";
+		};
+		FBDE037E1B5ED25700C1C5DB /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				FBE8435F1B641D4A00F87E50 /* AppDelegate.h */,
+				FBE843601B641D4A00F87E50 /* AppDelegate.m */,
+			);
+			name = Delegates;
+			path = "../../../untitled folder/Modck-master/ModckPreferences";
+			sourceTree = "<group>";
+		};
+		FBDE038A1B5EE13500C1C5DB /* cDock-Menubar */ = {
+			isa = PBXGroup;
+			children = (
+				FBDE038E1B5EE13500C1C5DB /* Supporting Files */,
+				FBDE039A1B5EE14300C1C5DB /* Delegates */,
+				FBDE03911B5EE13500C1C5DB /* Assets.xcassets */,
+				FBDE03931B5EE13500C1C5DB /* MainMenu.xib */,
+			);
+			path = "cDock-Menubar";
+			sourceTree = "<group>";
+		};
+		FBDE038E1B5EE13500C1C5DB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBDE03A01B5EF17000C1C5DB /* icon.png */,
+				FBDE03961B5EE13500C1C5DB /* Info.plist */,
+				FBDE038F1B5EE13500C1C5DB /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBDE039A1B5EE14300C1C5DB /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				FBDE038B1B5EE13500C1C5DB /* AppDelegate.h */,
+				FBDE038C1B5EE13500C1C5DB /* AppDelegate.m */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBC4F4EC1B5ED0EC0078D4E4 /* cDock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBC4F4F31B5ED0EC0078D4E4 /* Build configuration list for PBXNativeTarget "cDock" */;
+			buildPhases = (
+				FBC4F4E91B5ED0EC0078D4E4 /* Sources */,
+				FBC4F4EA1B5ED0EC0078D4E4 /* Frameworks */,
+				FBC4F4EB1B5ED0EC0078D4E4 /* Resources */,
+				FBCB4FD81B5F2973007476C4 /* Move Bundle */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cDock;
+			productName = cDock;
+			productReference = FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		FBDE035F1B5ED1EE00C1C5DB /* cDock-GUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBDE03711B5ED1EE00C1C5DB /* Build configuration list for PBXNativeTarget "cDock-GUI" */;
+			buildPhases = (
+				FBDE035C1B5ED1EE00C1C5DB /* Sources */,
+				FBDE035D1B5ED1EE00C1C5DB /* Frameworks */,
+				FBDE035E1B5ED1EE00C1C5DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cDock-GUI";
+			productName = "cDock-GUI";
+			productReference = FBDE03601B5ED1EE00C1C5DB /* cDock-GUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBDE03881B5EE13500C1C5DB /* cDock-Menubar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBDE03991B5EE13500C1C5DB /* Build configuration list for PBXNativeTarget "cDock-Menubar" */;
+			buildPhases = (
+				FBDE03851B5EE13500C1C5DB /* Sources */,
+				FBDE03861B5EE13500C1C5DB /* Frameworks */,
+				FBDE03871B5EE13500C1C5DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cDock-Menubar";
+			productName = "cDock-Menubar";
+			productReference = FBDE03891B5EE13500C1C5DB /* cDock-Menubar.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBC4F4E51B5ED0EC0078D4E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Wolfgang Baird";
+				TargetAttributes = {
+					FBC4F4EC1B5ED0EC0078D4E4 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					FBDE035F1B5ED1EE00C1C5DB = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					FBDE03881B5EE13500C1C5DB = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = FBC4F4E81B5ED0EC0078D4E4 /* Build configuration list for PBXProject "cDock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FBC4F4E41B5ED0EC0078D4E4;
+			productRefGroup = FBC4F4EE1B5ED0EC0078D4E4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBC4F4EC1B5ED0EC0078D4E4 /* cDock */,
+				FBDE035F1B5ED1EE00C1C5DB /* cDock-GUI */,
+				FBDE03881B5EE13500C1C5DB /* cDock-Menubar */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBC4F4EB1B5ED0EC0078D4E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDE035E1B5ED1EE00C1C5DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBDE03761B5ED21900C1C5DB /* Main.storyboard in Resources */,
+				FBDE03841B5EDB4F00C1C5DB /* Credits.html in Resources */,
+				FBDE03771B5ED21900C1C5DB /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDE03871B5EE13500C1C5DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBDE03A21B5EF17000C1C5DB /* icon.png in Resources */,
+				FBDE03921B5EE13500C1C5DB /* Assets.xcassets in Resources */,
+				FBDE03951B5EE13500C1C5DB /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FBCB4FD81B5F2973007476C4 /* Move Bundle */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Move Bundle";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Users/w0lf/GitHub/cDock/app/bundles\nkillall -KILL Dock\nsleep 1\nosascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBC4F4E91B5ED0EC0078D4E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79D28C9B1B66BCCB0036D668 /* Initialize.m in Sources */,
+				FB13CA061B6746DE006F3D89 /* fishhook.c in Sources */,
+				79D28C961B66BCB10036D668 /* cDockIndicator.m in Sources */,
+				79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */,
+				FB5E0BE11B673DF200AC2E6D /* cDockFloor.m in Sources */,
+				79D28C981B66BCB40036D668 /* cDockTile.m in Sources */,
+				79D28C971B66BCB30036D668 /* cDockLabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDE035C1B5ED1EE00C1C5DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */,
+				FBDE03671B5ED1EE00C1C5DB /* main.m in Sources */,
+				FBE843641B641D5800F87E50 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBDE03851B5EE13500C1C5DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBDE03901B5EE13500C1C5DB /* main.m in Sources */,
+				FBDE038D1B5EE13500C1C5DB /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FBDE03931B5EE13500C1C5DB /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBDE03941B5EE13500C1C5DB /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBC4F4F11B5ED0EC0078D4E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FBC4F4F21B5ED0EC0078D4E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FBC4F4F41B5ED0EC0078D4E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				INFOPLIST_FILE = cDock/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Application Support/SIMBL/Plugins";
+				LIBRARY_SEARCH_PATHS = "";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = org.w0lf.cDock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		FBC4F4F51B5ED0EC0078D4E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				INFOPLIST_FILE = cDock/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Application Support/SIMBL/Plugins";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = org.w0lf.cDock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		FBDE03721B5ED1EE00C1C5DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "cDock-GUI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-GUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FBDE03731B5ED1EE00C1C5DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "cDock-GUI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-GUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FBDE03971B5EE13500C1C5DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "cDock-Menubar/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Menubar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FBDE03981B5EE13500C1C5DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "cDock-Menubar/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Menubar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBC4F4E81B5ED0EC0078D4E4 /* Build configuration list for PBXProject "cDock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC4F4F11B5ED0EC0078D4E4 /* Debug */,
+				FBC4F4F21B5ED0EC0078D4E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBC4F4F31B5ED0EC0078D4E4 /* Build configuration list for PBXNativeTarget "cDock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBC4F4F41B5ED0EC0078D4E4 /* Debug */,
+				FBC4F4F51B5ED0EC0078D4E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBDE03711B5ED1EE00C1C5DB /* Build configuration list for PBXNativeTarget "cDock-GUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBDE03721B5ED1EE00C1C5DB /* Debug */,
+				FBDE03731B5ED1EE00C1C5DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBDE03991B5EE13500C1C5DB /* Build configuration list for PBXNativeTarget "cDock-Menubar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBDE03971B5EE13500C1C5DB /* Debug */,
+				FBDE03981B5EE13500C1C5DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBC4F4E51B5ED0EC0078D4E4 /* Project object */;
+}
