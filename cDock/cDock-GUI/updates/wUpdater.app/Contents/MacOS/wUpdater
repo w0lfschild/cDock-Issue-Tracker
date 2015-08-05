@@ -1,0 +1,448 @@
+#!/bin/bash
+
+# # # # # # # # # # # # # # # # # # # #
+#
+# Maintained By	: Wolfgang Baird
+# Version		: 3.5
+# Updated		: Jul / 01 / 2015
+#
+# # # # # # # # # # # # # # # # # # # #
+
+vercomp() {
+    if [[ $1 == $2 ]]
+    then
+        return 0
+    fi
+    local IFS=.
+    local i ver1=($1) ver2=($2)
+    # fill empty fields in ver1 with zeros
+    for ((i=${#ver1[@]}; i<${#ver2[@]}; i++))
+    do
+        ver1[i]=0
+    done
+    for ((i=0; i<${#ver1[@]}; i++))
+    do
+        if [[ -z ${ver2[i]} ]]
+        then
+            # fill empty fields in ver2 with zeros
+            ver2[i]=0
+        fi
+        if ((10#${ver1[i]} > 10#${ver2[i]}))
+        then
+            return 1
+        fi
+        if ((10#${ver1[i]} < 10#${ver2[i]}))
+        then
+            return 2
+        fi
+    done
+    return 0
+}
+
+verres() {
+	vercomp "$1" "$2"
+	case $? in
+		0) output='=';;
+        1) output='>';;
+        2) output='<';;
+	esac
+	echo $output
+}
+
+pashua_run() {
+
+	# Write config file
+	pashua_configfile=`/usr/bin/mktemp /tmp/pashua_XXXXXXXXX`
+	echo "$1" > $pashua_configfile
+
+	# Find Pashua binary. We do search both . and dirname "$0"
+	# , as in a doubleclickable application, cwd is /
+	bundlepath="Pashua.app/Contents/MacOS/Pashua"
+	if [ "$3" = "" ]
+	then
+		mypath=$(dirname "$0")
+		for searchpath in "$tdir" "$mypath/Pashua" "$mypath/$bundlepath" "./$bundlepath" \
+						  "/Applications/$bundlepath" "$HOME/Applications/$bundlepath"
+		do
+			if [ -f "$searchpath" -a -x "$searchpath" ]
+			then
+				pashuapath=$searchpath
+				break
+			fi
+		done
+	else
+		# Directory given as argument
+		pashuapath="$3/$bundlepath"
+	fi
+
+	if [ ! "$pashuapath" ]
+	then
+		echo "Error: Pashua could not be found"
+		exit 1
+	fi
+
+	# Manage encoding
+	if [ "$2" = "" ]
+	then
+		encoding=""
+	else
+		encoding="-e $2"
+	fi
+
+	# Get result
+	result=$("$pashuapath" $encoding $pashua_configfile | perl -pe 's/ /;;;/g;')
+
+	# Remove config file
+	rm $pashua_configfile
+
+	# Parse result
+	for line in $result
+	do
+		key=$(echo $line | sed 's/^\([^=]*\)=.*$/\1/')
+		value=$(echo $line | sed 's/^[^=]*=\(.*\)$/\1/' | sed 's/;;;/ /g')
+		varname=$key
+		varvalue="$value"
+		eval $varname='$varvalue'
+	done
+
+}
+
+install_app() {
+
+	#	result_value=0
+	# 	number=$(ps -acx | grep "${applicationName}" | wc -l)
+	# 	if [ $number -gt 0 ]; then
+	# 		result_value=$("${cocoaDirectory}" msgbox --no-newline \
+	# 		--float \
+	# 		--title "${applicationName}" \
+	# 		--text "You must quit ${applicationName} in order to install updates." \
+	# 		--informative-text "Would you like to close and install now?" \
+	# 		--button1 "Quit ${applicationName}" \
+	# 		--button2 "Cancel") &
+	# 		if [[ $result_value -eq 1 ]]; then
+	# 			echo ""
+	# 			echo "Force closing and installing..."
+	# 			killall -KILL "${applicationName}"
+	# 			STEPONE=false
+	# 		else
+	# 			echo ""
+	# 			echo "Waiting for app to close..."
+	# 		fi
+	# 	fi
+
+	echo -n ""
+	"$resourceDirectory"/trash "$oldDirectory"
+	sleep 1
+	# mv "$replacementApp" $(dirname "$oldDirectory")
+	_oldDIR=$(dirname "$oldDirectory")
+	/usr/bin/osascript -e "tell application \"Finder\" to move POSIX file \"$replacementApp\" to POSIX file \"$_oldDIR\" with replacing"
+	echo ""
+	echo "Process complete"
+	sleep 1
+	open -a "$oldDirectory"
+}
+
+ping_test() {
+	# Ping www.google.com to check internet connection
+	myurl=www.google.com
+	results=$(ping -c 1 -t 5 "$myurl" 2>/dev/null || echo "Unable to connect to internet")
+	if [[ $results = *"Unable to"* ]]; then
+		echo ""
+		kill $KILLME
+		echo -e "$results"
+	else
+		echo "ping success"
+		ping_success &
+		sleep 1
+		kill $KILLME
+	fi
+}
+
+ping_success() {
+	# Get latest version
+	latestVersion=$(curl -\# -L "$versionURL")
+	max_version=$(verres ${currentVersion} ${latestVersion})
+
+	echo ""
+	echo "Local version: ${currentVersion}"
+	echo "Latest version: ${latestVersion}"
+
+	if [[ $max_version = "<" ]]; then
+		echo ""
+		echo "An update to version ${latestVersion} is available"
+		if [[ $autoInstall -eq 1 ]]; then
+			update_confimed
+		else
+			update_prompt "$currentVersion" "$latestVersion"
+		fi
+	else
+		echo ""
+		echo "No new updates available"
+	fi
+}
+
+update_prompt() {
+	# Get change log and prompt for user response
+	curl -\# -L -o /tmp/wUpdater_log.txt "$logURL" 2> /dev/null
+
+	if [[ -e $tdir ]]; then
+		#update_info=$(cat /tmp/wUpdater_log.txt)
+		update_info=$(sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/[return]/g' /tmp/wUpdater_log.txt)
+
+		conf="
+			*.transparency=1
+			*.title = Updates availible
+			*.floating = 1
+
+			# Update text
+			tb.type = textbox
+			tb.default = $update_info
+			tb.height = 250
+			tb.width = 450
+			tb.disabled = 1
+			tb.rely = -18
+
+			# Auto install
+			checkers.type = checkbox
+			checkers.label = Automatically download and install updates
+			checkers.default = 0
+			checkers.rely = -10
+
+			# Add a cancel button with default label
+			cb.type=cancelbutton
+			cb.label=Cancel
+
+			db.type = defaultbutton
+			db.label = Download and Install
+
+			b.type = button
+			b.label = Don't ask again
+		"
+
+		pashua_run "$conf" 'utf8'
+
+		defaults write "${prefbundle}" autoInstall $checkers
+
+		if [[ $db -eq 1 ]]; then
+			echo ""
+			echo "Update Confirmed..."
+			update_confimed
+		fi
+
+		if [[ $b -eq 1 ]]; then
+			echo ""
+			echo "Disabling update checking..."
+			defaults write "${prefbundle}" autoCheck 0
+		fi
+
+		if [[ $cb -eq 1 ]]; then
+			echo ""
+			echo "Canceled"
+		fi
+	else
+		result_value=$("${cocoaDirectory}" textbox --no-newline \
+		--float \
+		--title "${applicationName}" \
+		--text-from-file "/tmp/wUpdater_log.txt" \
+		--button1 "Download and Install" \
+		--button2 "Don't ask again" \
+		--button3 "Cancel")
+
+		if [ "$result_value" == "1" ]; then
+			echo ""
+			echo "Update Confirmed..."
+			update_confimed
+		elif [ "$result_value" == "2" ]; then
+			echo ""
+			echo "Disabling update checking..."
+			defaults write "${prefbundle}" autoCheck 0
+		else
+			echo ""
+			echo "Canceled"
+		fi
+	fi
+}
+
+update_confimed() {
+	echo "Downloading update..."
+	if [ -e /tmp/"$applicationName".zip ]; then rm /tmp/"$applicationName".zip; fi
+	download_wprogress
+
+	echo "Extracting update..."
+	if [ -e /tmp/"$applicationName".app ]; then rm -r /tmp/"$applicationName".app; fi
+	unzip /tmp/"$applicationName".zip -d /tmp > /dev/null
+
+	echo "Cleaning up..."
+	if [ -e /tmp/"$applicationName".zip ]; then rm /tmp/"$applicationName".zip; fi
+	if [ -e /tmp/__MACOSX ]; then rm -r /tmp/__MACOSX; fi
+
+	echo "Launching installer..."
+	exec /tmp/"$applicationName".app/Contents/Resources/updates/wUpdater.app/Contents/MacOS/wUpdater "i" "$oldDirectory" &
+}
+
+download_wprogress() {
+	curl -\# -L -o /tmp/"$applicationName".zip "$downloadURL" 2> /tmp/updateTracker &
+	pids="$pids $!"
+	# echo $pids
+	wait_for_process $pids
+	exec 7>&-
+	rm -f /tmp/upipe
+}
+
+wait_for_process() {
+	rm -f /tmp/upipe
+	mkfifo /tmp/upipe
+	"${cocoaDirectory}" progressbar --title "Downloading Update..." --text "Please wait..." < /tmp/upipe &
+	exec 7<> /tmp/upipe
+	echo -n . >&7
+
+	dlp="Downloading"
+	num=0
+
+    local errors=0
+    while :; do
+        debug "Processes remaining: $*"
+        for pid in "$@"; do
+            shift
+            if kill -0 "$pid" 2>/dev/null; then
+                debug "$pid is still alive."
+                set -- "$@" "$pid"
+                if [[ $num = 0 ]]; then
+                	dlp="Downloading.  "
+                	num=1
+                elif	[[ $num = 1 ]]; then
+                	dlp="Downloading.. "
+                	num=2
+                else
+                	dlp="Downloading..."
+                	num=0
+                fi
+                output=$(tail -n 1 /tmp/updateTracker)
+                output=${output##* }
+                echo "${output} ${dlp} ${output}" >&7
+
+            elif wait "$pid"; then
+            	debug "$pid exited with zero exit status."
+                echo "100 Download Complete" >&7
+                sleep 1
+            else
+                debug "$pid exited with non-zero exit status."
+                ((++errors))
+            fi
+        done
+        (("$#" > 0)) || break
+        sleep ${WAITALL_DELAY:-.1}
+    done
+    ((errors == 0))
+
+    exec 7>&-
+	rm -f /tmp/upipe
+	rm -f /tmp/updateTracker
+}
+
+debug() {
+	echo "DEBUG: $*" >/dev/null
+}
+
+# Directory stuff
+scriptDirectory=$(cd "${0%/*}" && echo $PWD)
+resourceDirectory=$(dirname "$scriptDirectory")/resource
+cocoaDirectory="$resourceDirectory"/cocoaDialog.app/Contents/MacOS/cocoaDialog
+
+tdir="$scriptDirectory"
+for i in {1..4}; do
+	tdir=$(dirname "$tdir")
+done
+tdir="$tdir"/Pashua.app/Contents/MacOS/Pashua
+
+# Help
+if [[ "$#" = 0 ]]; then
+	echo "Usage:"
+	echo ""
+	echo "\$1 - Check or Install update -- c/i"
+	echo "\$2 - path of app"
+	echo "\$3 - app bundle ID"
+	echo "\$4 - local version"
+	echo "\$5 - URL to download current version"
+    echo "\$6 - URL to view changelog"
+    echo "\$7 - URL to download current version"
+    echo "\$8 - Update without prompt -- 0/1"
+	echo ""
+	echo "END"
+fi
+
+# Necessary information
+# 1 - Check/Install
+# 2 - Directory of local application to be updated
+# 3 - Bundle identifier of application
+opperation="$1"
+oldDirectory="$2"
+prefbundle="$3"
+applicationName=${oldDirectory##*/}
+applicationName=${applicationName%.app}
+
+exec &>~/Library/Application\ Support/wUpdater/logs/"${applicationName}"_base.log
+for item in "$@"; do
+  echo "$item"
+done
+
+# redirect output
+mkdir -pv ~/Library/Application\ Support/wUpdater/logs
+
+if [[ $opperation = i ]]; then
+	exec &>~/Library/Application\ Support/wUpdater/logs/"${applicationName}"_install.log
+
+	for item in "$@"; do
+		echo "$item"
+	done
+
+	if [[ -e "$oldDirectory" ]]; then
+		# Find package
+		# /Some.app/Content/Resources/updates/w_updater.app/Content/Resources/script
+		replacementApp=$(dirname "$scriptDirectory")
+		for i in {1..5}; do
+			replacementApp=$(dirname "$replacementApp")
+		done
+		echo "new app -- $replacementApp"
+		echo "old app -- $oldDirectory"
+		echo "Closing and Installing app"
+		killall "${applicationName}"
+		killall "CocoaDialog"
+		killall "cocoaDialog"
+		killall "Pashua"
+		sleep 1
+		install_app
+	else
+		echo "No such application \"$2\" exists"
+	fi
+else
+	exec &>~/Library/Application\ Support/wUpdater/logs/"${applicationName}"_update.log
+
+	for item in "$@"; do
+		echo "$item"
+	done
+
+	# Necessary information
+	# 4 - Local version of application to be updated
+	# 5 - URL to view current version
+  # 6 - URL to view changelog
+	# 7 - URL to download current version
+	# 8 - Install without prompt
+	currentVersion="$4"
+	versionURL="$5"
+	logURL="$6"
+	downloadURL="$7"
+	autoInstall="$8"
+
+	number=0
+	echo -n "Checking for updates"
+	while [ 1 ]; do
+		echo -n "."
+		sleep .4
+	done &
+	KILLME=$!
+	ping_test
+	wait
+fi
+
+# END

@@ -1,6 +1,0 @@
-framework module Opee {
-  umbrella header "Opee.h"
-
-  export *
-  module * { export * }
-}

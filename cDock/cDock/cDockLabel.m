@@ -3,7 +3,8 @@
 //
 
 #import "Preferences.h"
-#import "Opee/Opee.h"
+#import "ZKSwizzle.h"
+@import AppKit;
 
 extern long osx_minor;
 
@@ -76,10 +77,10 @@ ZKSwizzleInterface(_CDECMaterialLayer, ECMaterialLayer, CALayer);
         return;
     
     NSUInteger _material = ZKHookIvar(self, NSUInteger, "_material");
-    //    NSLog(@"%lu", (unsigned long)_material);
+//    NSLog(@"%lu", (unsigned long)_material);
     
-    // Not sure where 5 came from, it was used in modck so I'll leave it there in case
-    if (_material == 1 || _material == 5) {
+    // Note : This also colors the mission control backdrop in dark mode :|
+    if (_material != 0) {
         ZKOrig(void, arg1);
         if ([[[Preferences sharedInstance] objectForKey:@"cd_labelBG"] boolValue]) {
             float red = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGR"] floatValue];
@@ -91,14 +92,6 @@ ZKSwizzleInterface(_CDECMaterialLayer, ECMaterialLayer, CALayer);
             CALayer *tintLayer = ZKHookIvar(self, CALayer *, "_backdropLayer");
             [tintLayer setBackgroundColor:[goodColor CGColor]];
             [tintLayer setOpacity:( alpha / 100.0 )];
-        }
-    }
-    
-    // Not sure if necessary
-    if (_material == 0) {
-        if (![[[Preferences sharedInstance] objectForKey:@"cd_showFrost"] boolValue]) {
-            CALayer *tintLayer = ZKHookIvar(self, CALayer *, "_backdropLayer");
-            tintLayer.hidden = YES;
         }
     }
 }

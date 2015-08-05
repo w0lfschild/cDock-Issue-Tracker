@@ -8,7 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+
 @interface ViewController : NSViewController
+
 @property (weak) IBOutlet NSButton *fullWidthDock;
 @property (weak) IBOutlet NSButton *hideLabels;
 
@@ -25,6 +27,8 @@
 @property (weak) IBOutlet NSTextField *labelBGB;
 @property (weak) IBOutlet NSTextField *labelBGA;
 @property (weak) IBOutlet NSColorWell *labelWELL;
+
+@property (weak) IBOutlet NSColorWell *shadowWELL;
 
 @property (weak) IBOutlet NSButton *darken_OMO;
 @property (weak) IBOutlet NSButton *stay_FROSTY;

@@ -23,6 +23,8 @@ NSMenu *theMenu;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     
+    self.aboutWindowController = [[PFAboutWindowController alloc] init];
+    
     theMenu = [[NSMenu alloc] initWithTitle:@""];
     [theMenu setAutoenablesItems:NO];
     
@@ -32,7 +34,8 @@ NSMenu *theMenu;
     [theMenu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     [theMenu addItemWithTitle:@"Open cDock" action:@selector(open_cdock:) keyEquivalent:@""];
     [theMenu addItem:[NSMenuItem separatorItem]]; // A thin grey line
-    [theMenu addItemWithTitle:@"About" action:@selector(bringToFront:) keyEquivalent:@""];
+    [theMenu addItemWithTitle:@"About" action:@selector(showAboutWindow:) keyEquivalent:@""];
+    [theMenu addItemWithTitle:@"Donate" action:@selector(donate:) keyEquivalent:@""];
     [theMenu addItemWithTitle:@"Visit Website" action:@selector(visit_website:) keyEquivalent:@""];
 //    [theMenu addItemWithTitle:@"Check for updates..." action:nil keyEquivalent:@""];
     [theMenu addItem:[NSMenuItem separatorItem]]; // A thin grey line
@@ -58,8 +61,22 @@ NSMenu *theMenu;
     [statusItem setMenu:theMenu];
 }
 
-- (IBAction)check_for_updates:(id)sender {
-    system("echo hello");
+- (IBAction)showAboutWindow:(id)sender {
+    [self.aboutWindowController setAppURL:[[NSURL alloc] initWithString:@"https://github.com/w0lfschild/cDock"]];
+    [self.aboutWindowController setAppName:@"cDock"];
+    [self.aboutWindowController setAppCopyright:[[NSAttributedString alloc] initWithString:@"Copyright (c) 2015 Wolfgang Baird"
+                                                                                attributes:@{
+                                                                                             NSForegroundColorAttributeName : [NSColor tertiaryLabelColor],
+                                                                                             NSFontAttributeName  : [NSFont fontWithName:@"HelveticaNeue" size:11]}]];
+    [self.aboutWindowController setAppVersion:@"Version 9.2 (Build 1)"];
+    [self.aboutWindowController setWindowShouldHaveShadow:YES];
+    [self.aboutWindowController showCredits:nil];
+    [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
+    [self.aboutWindowController showWindow:nil];
+}
+
+- (IBAction)donate:(id)sender {
+    system("open http://goo.gl/vF92sf");
 }
 
 - (IBAction)open_cdock:(id)sender {
@@ -79,7 +96,7 @@ NSMenu *theMenu;
 }
 
 - (IBAction)visit_website:(id)sender {
-    system("open http://w0lfschild.github.io/pages/cdock.html");
+    system("open http://w0lfschild.github.io/cdock.html");
 }
 
 -(IBAction)bringToFront:(id)sender{

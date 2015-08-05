@@ -7,8 +7,19 @@
 //
 
 #import "ViewController.h"
-#define prefPath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/modck/modck.plist"]
-#define prefDock [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/com.apple.dock.plist"]
+
+# define thmePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/org.w0lf.cDock.plist"]
+# define thmeName [[NSMutableDictionary dictionaryWithContentsOfFile:thmePath] objectForKey:@"cd_theme"]
+# define pref____ [[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"] stringByAppendingPathComponent:thmeName]
+
+# define prefDock [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/com.apple.dock.plist"]
+# define prefPath [[pref____ stringByAppendingPathComponent:thmeName ] stringByAppendingString:@".plist"]
+
+void isValidInt(NSTextField *item) {
+    if ((![item integerValue] && [item integerValue] != 0) || [[item stringValue] length] > 3)
+        [item setIntegerValue:255];
+}
+
 
 @implementation ViewController
 
@@ -120,7 +131,7 @@
 	[_dockBGB setFloatValue:[[pref objectForKey:@"cd_dockBGB"] floatValue]];
     [_dockBGA setFloatValue:[[pref objectForKey:@"cd_dockBGA"] floatValue]];
     
-    [_dockWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_dockBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_dockBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_dockBGB"] floatValue]/255.0 alpha:100.0/100.0]];
+    [_dockWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_dockBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_dockBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_dockBGB"] floatValue]/255.0 alpha:1]];
     
     [_labelBG setState:[[pref objectForKey:@"cd_labelBG"] integerValue]];
     [_labelBGR setFloatValue:[[pref objectForKey:@"cd_labelBGR"] floatValue]];
@@ -128,7 +139,7 @@
 	[_labelBGB setFloatValue:[[pref objectForKey:@"cd_labelBGB"] floatValue]];
     [_labelBGA setFloatValue:[[pref objectForKey:@"cd_labelBGA"] floatValue]];
     
-    [_labelWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_labelBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_labelBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_labelBGB"] floatValue]/255.0 alpha:100.0/100.0]];
+    [_labelWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_labelBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_labelBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_labelBGB"] floatValue]/255.0 alpha:1]];
 	
 	if ([_changeDockBG state] == NSOnState) {
 		[_dockBGR setHidden:false];
@@ -165,6 +176,13 @@
     //    [_labelBGA setHidden:false];
 }
 
+- (IBAction)changeSHADOWColor:(id)sender {
+//    [_labelBGR setIntegerValue:_labelWELL.color.redComponent * 255 ];
+//    [_labelBGG setIntegerValue:_labelWELL.color.greenComponent * 255 ];
+//    [_labelBGB setIntegerValue:_labelWELL.color.blueComponent * 255 ];
+    //    [_labelBGA setHidden:false];
+}
+
 - (IBAction)changeLabelBG:(id)sender {
 	if ([sender state] == NSOnState) {
 		[_labelBGR setHidden:false];
@@ -194,7 +212,7 @@
 		[_dockBGB setHidden:true];
         [_dockBGA setHidden:true];
         [_dockWELL setHidden:true];
-	}
+    }
 }
 
 - (IBAction)applyPressed:(id)sender {
@@ -219,8 +237,10 @@
     [pref setObject:[NSNumber numberWithBool:[_dock_SEP state]] forKey:@"cd_showSeparator"];
     [pref setObject:[NSNumber numberWithBool:[_GLASSED state]] forKey:@"cd_showGlass"];
     
-	if ((![_dockBGR integerValue] && [_dockBGR integerValue] != 0) || [[_dockBGR stringValue] length] > 3)
-		[_dockBGR setIntegerValue:255];
+    isValidInt(_dockBGR);
+    
+//	if ((![_dockBGR integerValue] && [_dockBGR integerValue] != 0) || [[_dockBGR stringValue] length] > 3)
+//		[_dockBGR setIntegerValue:255];
 	
 	if ((![_dockBGG integerValue] && [_dockBGG integerValue] != 0) || [[_dockBGG stringValue] length] > 3)
 		[_dockBGG setIntegerValue:255];

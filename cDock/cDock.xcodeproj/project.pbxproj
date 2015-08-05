@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79A33DAD1B6C062A007299FC /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A33DAC1B6C062A007299FC /* ZKSwizzle.m */; };
 		79D28C961B66BCB10036D668 /* cDockIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843581B641CEC00F87E50 /* cDockIndicator.m */; };
 		79D28C971B66BCB30036D668 /* cDockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843591B641CEC00F87E50 /* cDockLabel.m */; };
 		79D28C981B66BCB40036D668 /* cDockTile.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8435A1B641CEC00F87E50 /* cDockTile.m */; };
 		79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843531B641CD100F87E50 /* Preferences.m */; };
-		79D28C9B1B66BCCB0036D668 /* Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843551B641CE100F87E50 /* Initialize.m */; };
 		FB13CA061B6746DE006F3D89 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB13CA051B6746DE006F3D89 /* fishhook.c */; };
-		FB19A8211B64447B00F3FB04 /* Opee.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB19A81D1B64428200F3FB04 /* Opee.framework */; };
+		FB3EDF741B7088B000E96DC9 /* updates in Resources */ = {isa = PBXBuildFile; fileRef = FB3EDF731B7088B000E96DC9 /* updates */; };
 		FB5E0BE11B673DF200AC2E6D /* cDockFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cDockFloor.m */; };
+		FB7ABC5C1B6AE234001D7E5A /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC5A1B6AE234001D7E5A /* PFAboutWindow.xib */; };
+		FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */; };
+		FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */; };
+		FB7ABC661B6AEAA5001D7E5A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */; };
+		FBBC5AED1B6DE869007FB947 /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBBC5AE91B6DE869007FB947 /* PFAboutWindow.xib */; };
+		FBBC5AEE1B6DE869007FB947 /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBC5AEA1B6DE869007FB947 /* PFAboutWindowController.m */; };
+		FBBC5AEF1B6DE869007FB947 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBBC5AEB1B6DE869007FB947 /* Credits.rtf */; };
+		FBBC5AF01B6DE869007FB947 /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBBC5AEC1B6DE869007FB947 /* EULA.rtf */; };
 		FBDE03671B5ED1EE00C1C5DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE03661B5ED1EE00C1C5DB /* main.m */; };
 		FBDE03761B5ED21900C1C5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03741B5ED21900C1C5DB /* Main.storyboard */; };
 		FBDE03771B5ED21900C1C5DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03751B5ED21900C1C5DB /* Images.xcassets */; };
-		FBDE03841B5EDB4F00C1C5DB /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03831B5EDB4F00C1C5DB /* Credits.html */; };
 		FBDE038D1B5EE13500C1C5DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE038C1B5EE13500C1C5DB /* AppDelegate.m */; };
 		FBDE03901B5EE13500C1C5DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE038F1B5EE13500C1C5DB /* main.m */; };
 		FBDE03921B5EE13500C1C5DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03911B5EE13500C1C5DB /* Assets.xcassets */; };
@@ -29,10 +36,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79A33DAB1B6C062A007299FC /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSwizzle.h; sourceTree = "<group>"; };
+		79A33DAC1B6C062A007299FC /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSwizzle.m; sourceTree = "<group>"; };
 		FB13CA041B6746DE006F3D89 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
 		FB13CA051B6746DE006F3D89 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
-		FB19A81D1B64428200F3FB04 /* Opee.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Opee.framework; path = cDock/Frameworks/Opee.framework; sourceTree = "<group>"; };
+		FB3EDF731B7088B000E96DC9 /* updates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = updates; sourceTree = "<group>"; };
 		FB5E0BE01B673DF200AC2E6D /* cDockFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockFloor.m; path = cDock/cDockFloor.m; sourceTree = SOURCE_ROOT; };
+		FB7ABC591B6AE234001D7E5A /* PFAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAboutWindowController.h; path = PFAboutWindow/PFAboutWindowController.h; sourceTree = "<group>"; };
+		FB7ABC5A1B6AE234001D7E5A /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFAboutWindow.xib; path = PFAboutWindow/PFAboutWindow.xib; sourceTree = "<group>"; };
+		FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAboutWindowController.m; path = PFAboutWindow/PFAboutWindowController.m; sourceTree = "<group>"; };
+		FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
+		FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = PFAboutWindow/Credits.rtf; sourceTree = "<group>"; };
+		FBBC5AE81B6DE869007FB947 /* PFAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAboutWindowController.h; path = PFAboutWindow/PFAboutWindowController.h; sourceTree = "<group>"; };
+		FBBC5AE91B6DE869007FB947 /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFAboutWindow.xib; path = PFAboutWindow/PFAboutWindow.xib; sourceTree = "<group>"; };
+		FBBC5AEA1B6DE869007FB947 /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAboutWindowController.m; path = PFAboutWindow/PFAboutWindowController.m; sourceTree = "<group>"; };
+		FBBC5AEB1B6DE869007FB947 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = PFAboutWindow/Credits.rtf; sourceTree = "<group>"; };
+		FBBC5AEC1B6DE869007FB947 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBCEED7E1B68AD530056710B /* DOCKFloorLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKFloorLayer.h; sourceTree = "<group>"; };
@@ -49,7 +68,6 @@
 		FBDE03701B5ED1EE00C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBDE03741B5ED21900C1C5DB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		FBDE03751B5ED21900C1C5DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		FBDE03831B5EDB4F00C1C5DB /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		FBDE03891B5EE13500C1C5DB /* cDock-Menubar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-Menubar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDE038B1B5EE13500C1C5DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBDE038C1B5EE13500C1C5DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,7 +78,6 @@
 		FBDE03A01B5EF17000C1C5DB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		FBE843521B641CD100F87E50 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = cDock/Preferences/Preferences.h; sourceTree = SOURCE_ROOT; };
 		FBE843531B641CD100F87E50 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = cDock/Preferences/Preferences.m; sourceTree = SOURCE_ROOT; };
-		FBE843551B641CE100F87E50 /* Initialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Initialize.m; path = cDock/Initialize.m; sourceTree = SOURCE_ROOT; };
 		FBE843581B641CEC00F87E50 /* cDockIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockIndicator.m; path = cDock/cDockIndicator.m; sourceTree = SOURCE_ROOT; };
 		FBE843591B641CEC00F87E50 /* cDockLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockLabel.m; path = cDock/cDockLabel.m; sourceTree = SOURCE_ROOT; };
 		FBE8435A1B641CEC00F87E50 /* cDockTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockTile.m; path = cDock/cDockTile.m; sourceTree = SOURCE_ROOT; };
@@ -75,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB19A8211B64447B00F3FB04 /* Opee.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79A33DAE1B6C0630007299FC /* ZKSwizzle */ = {
+			isa = PBXGroup;
+			children = (
+				79A33DAB1B6C062A007299FC /* ZKSwizzle.h */,
+				79A33DAC1B6C062A007299FC /* ZKSwizzle.m */,
+			);
+			name = ZKSwizzle;
+			sourceTree = "<group>";
+		};
 		FB13CA031B6746D1006F3D89 /* Fishhook */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +130,33 @@
 			name = Fishhook;
 			sourceTree = "<group>";
 		};
+		FB7ABC5E1B6AE239001D7E5A /* PFAbout */ = {
+			isa = PBXGroup;
+			children = (
+				FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */,
+				FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */,
+				FB7ABC591B6AE234001D7E5A /* PFAboutWindowController.h */,
+				FB7ABC5A1B6AE234001D7E5A /* PFAboutWindow.xib */,
+				FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */,
+			);
+			name = PFAbout;
+			sourceTree = "<group>";
+		};
+		FBBC5AF11B6DE86D007FB947 /* PFAbout */ = {
+			isa = PBXGroup;
+			children = (
+				FBBC5AE81B6DE869007FB947 /* PFAboutWindowController.h */,
+				FBBC5AE91B6DE869007FB947 /* PFAboutWindow.xib */,
+				FBBC5AEA1B6DE869007FB947 /* PFAboutWindowController.m */,
+				FBBC5AEB1B6DE869007FB947 /* Credits.rtf */,
+				FBBC5AEC1B6DE869007FB947 /* EULA.rtf */,
+			);
+			name = PFAbout;
+			sourceTree = "<group>";
+		};
 		FBC4F4E41B5ED0EC0078D4E4 = {
 			isa = PBXGroup;
 			children = (
-				FB19A81D1B64428200F3FB04 /* Opee.framework */,
 				FBC4F4EF1B5ED0EC0078D4E4 /* cDock */,
 				FBDE03611B5ED1EE00C1C5DB /* cDock-GUI */,
 				FBDE038A1B5EE13500C1C5DB /* cDock-Menubar */,
@@ -129,10 +177,10 @@
 		FBC4F4EF1B5ED0EC0078D4E4 /* cDock */ = {
 			isa = PBXGroup;
 			children = (
+				79A33DAE1B6C0630007299FC /* ZKSwizzle */,
 				FBCEED871B68AD580056710B /* Apple */,
 				FB13CA031B6746D1006F3D89 /* Fishhook */,
 				FBD71EAD1B5F201900C50402 /* Preferences */,
-				FBD71EAF1B5F201900C50402 /* Initialize */,
 				FBD71EB11B5F201900C50402 /* Theming */,
 				FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */,
 			);
@@ -165,15 +213,6 @@
 			path = "../../../untitled folder/Modck-master/Modck";
 			sourceTree = "<group>";
 		};
-		FBD71EAF1B5F201900C50402 /* Initialize */ = {
-			isa = PBXGroup;
-			children = (
-				FBE843551B641CE100F87E50 /* Initialize.m */,
-			);
-			name = Initialize;
-			path = "../../../untitled folder/Modck-master/Modck";
-			sourceTree = "<group>";
-		};
 		FBD71EB11B5F201900C50402 /* Theming */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +228,8 @@
 		FBDE03611B5ED1EE00C1C5DB /* cDock-GUI */ = {
 			isa = PBXGroup;
 			children = (
+				FB3EDF731B7088B000E96DC9 /* updates */,
+				FB7ABC5E1B6AE239001D7E5A /* PFAbout */,
 				FBDE03651B5ED1EE00C1C5DB /* Supporting Files */,
 				FBDE037E1B5ED25700C1C5DB /* Delegates */,
 				FBDE037A1B5ED24600C1C5DB /* View controllers */,
@@ -201,7 +242,6 @@
 		FBDE03651B5ED1EE00C1C5DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FBDE03831B5EDB4F00C1C5DB /* Credits.html */,
 				FBDE03701B5ED1EE00C1C5DB /* Info.plist */,
 				FBDE03661B5ED1EE00C1C5DB /* main.m */,
 			);
@@ -231,6 +271,7 @@
 		FBDE038A1B5EE13500C1C5DB /* cDock-Menubar */ = {
 			isa = PBXGroup;
 			children = (
+				FBBC5AF11B6DE86D007FB947 /* PFAbout */,
 				FBDE038E1B5EE13500C1C5DB /* Supporting Files */,
 				FBDE039A1B5EE14300C1C5DB /* Delegates */,
 				FBDE03911B5EE13500C1C5DB /* Assets.xcassets */,
@@ -365,9 +406,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB7ABC661B6AEAA5001D7E5A /* Credits.rtf in Resources */,
 				FBDE03761B5ED21900C1C5DB /* Main.storyboard in Resources */,
-				FBDE03841B5EDB4F00C1C5DB /* Credits.html in Resources */,
 				FBDE03771B5ED21900C1C5DB /* Images.xcassets in Resources */,
+				FB3EDF741B7088B000E96DC9 /* updates in Resources */,
+				FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */,
+				FB7ABC5C1B6AE234001D7E5A /* PFAboutWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,9 +419,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBC5AEF1B6DE869007FB947 /* Credits.rtf in Resources */,
 				FBDE03A21B5EF17000C1C5DB /* icon.png in Resources */,
 				FBDE03921B5EE13500C1C5DB /* Assets.xcassets in Resources */,
 				FBDE03951B5EE13500C1C5DB /* MainMenu.xib in Resources */,
+				FBBC5AED1B6DE869007FB947 /* PFAboutWindow.xib in Resources */,
+				FBBC5AF01B6DE869007FB947 /* EULA.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,7 +443,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Users/w0lf/GitHub/cDock/app/bundles\nkillall -KILL Dock\nsleep 1\nosascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\n";
+			shellScript = "# xcode-build-bump.sh\n# @desc Auto-increment the build number every time the project is run.\n# @usage\n# 1. Select: your Target in Xcode\n# 2. Select: Build Phases Tab\n# 3. Select: Add Build Phase -> Add Run Script\n# 4. Paste code below in to new \"Run Script\" section\n# 5. Drag the \"Run Script\" below \"Link Binaries With Libraries\"\n# 6. Insure that your starting build number is set to a whole integer and not a float (e.g. 1, not 1.0)\n\nVERSIONNUM=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nNEWSUBVERSION=`echo $VERSIONNUM | awk -F \".\" '{print $3}'`\nNEWSUBVERSION=$(($NEWSUBVERSION + 1))\nNEWVERSIONSTRING=`echo $VERSIONNUM | awk -F \".\" '{print $1 \".\" $2 \".'$NEWSUBVERSION'\" }'`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleShortVersionString $NEWVERSIONSTRING\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $NEWVERSIONSTRING\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"$HOME\"/GitHub/cDock/app/bundles\nkillall -KILL Dock\nsleep 1\nosascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -405,9 +452,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79D28C9B1B66BCCB0036D668 /* Initialize.m in Sources */,
 				FB13CA061B6746DE006F3D89 /* fishhook.c in Sources */,
 				79D28C961B66BCB10036D668 /* cDockIndicator.m in Sources */,
+				79A33DAD1B6C062A007299FC /* ZKSwizzle.m in Sources */,
 				79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */,
 				FB5E0BE11B673DF200AC2E6D /* cDockFloor.m in Sources */,
 				79D28C981B66BCB40036D668 /* cDockTile.m in Sources */,
@@ -420,6 +467,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */,
+				FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */,
 				FBDE03671B5ED1EE00C1C5DB /* main.m in Sources */,
 				FBE843641B641D5800F87E50 /* ViewController.m in Sources */,
 			);
@@ -431,6 +479,7 @@
 			files = (
 				FBDE03901B5EE13500C1C5DB /* main.m in Sources */,
 				FBDE038D1B5EE13500C1C5DB /* AppDelegate.m in Sources */,
+				FBBC5AEE1B6DE869007FB947 /* PFAboutWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

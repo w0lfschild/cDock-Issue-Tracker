@@ -3,8 +3,8 @@
 //
 
 #import "Preferences.h"
-#import "Opee/Opee.h"
-#import <Quartz/Quartz.h>
+#import "ZKSwizzle.h"
+@import AppKit;
 
 # define thmePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/org.w0lf.cDock.plist"]
 # define thmeName [[NSMutableDictionary dictionaryWithContentsOfFile:thmePath] objectForKey:@"cd_theme"]
@@ -22,9 +22,26 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     
-    //    NSLog(@"%f", arg1);
+//    NSLog(@"%f", arg1);
     
+//    NSLog(@"%@", self.debugDescription);
+    
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_colorIndicator"] boolValue]) {
+        self.compositingFilter = nil; // @"plusD";
+        float red = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGR"] floatValue];
+        float green = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGG"] floatValue];
+        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGB"] floatValue];
+        NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+        [self setBackgroundColor:[goodColor CGColor]];
+    }
+    
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_sizeIndicator"] boolValue]) {
+        [ self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y, 8, 2) ];
+    }
+
     if ([[[Preferences sharedInstance] objectForKey:@"cd_customIndicator"] boolValue]) {
+        self.compositingFilter = nil; // Prevent Dark/Light mode alteration
+        
         self.backgroundColor = NSColor.clearColor.CGColor;
         self.cornerRadius = 0.0;
         
@@ -53,12 +70,7 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
         
         self.contents = (__bridge id)image;
         self.contentsGravity = kCAGravityBottom;
-        if (orient != 0 && osx_minor == 9) {
-            self.frame = CGRectMake(self.frame.origin.x, 0, imageSize.width / self.contentsScale, imageSize.height / self.contentsScale);
-        }
-        if (osx_minor > 10) {
-            self.frame = CGRectMake(self.frame.origin.x, 0, imageSize.width / self.contentsScale, imageSize.height / self.contentsScale);
-        }
+        self.frame = CGRectMake(self.frame.origin.x, 0, imageSize.width / self.contentsScale, imageSize.height / self.contentsScale);
     }
 }
 @end

@@ -3,7 +3,8 @@
 //
 
 #import "Preferences.h"
-#import "Opee/Opee.h"
+#import "ZKSwizzle.h"
+@import AppKit;
 
 extern NSInteger orient;
 
@@ -77,7 +78,7 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
         CGRect frm = _iconLayer.frame ;
         if (orient == 0) {
             frm.origin.y -= frm.size.height;
-            _reflectionLayer.transform = CATransform3DMakeRotation(M_PI, 0, 0, 1);
+            _reflectionLayer.transform = CATransform3DMakeRotation(M_PI, 1, 0, 0);
         } else if (orient == 1) {
             frm.origin.x -= frm.size.width;
             _reflectionLayer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
