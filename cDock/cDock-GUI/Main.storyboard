@@ -75,11 +75,11 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="650"/>
+                        <rect key="frame" x="0.0" y="0.0" width="525" height="504"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rCv-KF-q0s">
-                                <rect key="frame" x="307" y="580" width="186" height="59"/>
+                                <rect key="frame" x="169" y="435" width="186" height="59"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="cDock 2" id="J7h-kh-BFd">
                                     <font key="font" size="50" name="HelveticaNeue-UltraLight"/>
@@ -88,73 +88,22 @@
                                 </textFieldCell>
                             </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ml0-ZT-wp5">
-                                <rect key="frame" x="18" y="339" width="149" height="20"/>
+                                <rect key="frame" x="18" y="250" width="190" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Fullscreen width Dock" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wVK-RE-d2w">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2nq-rE-KGJ">
-                                <rect key="frame" x="18" y="554" width="247" height="20"/>
-                                <animations/>
-                                <buttonCell key="cell" type="check" title="Color Dock background" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="NdB-kB-e2f">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="changeDockBG:" target="XfG-lQ-9wD" id="OYv-tk-LHg"/>
-                                </connections>
-                            </button>
                             <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-cd-3Zx">
-                                <rect key="frame" x="0.0" y="578" width="800" height="5"/>
+                                <rect key="frame" x="0.0" y="432" width="800" height="5"/>
                                 <animations/>
                                 <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                 <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <font key="titleFont" metaFont="system"/>
                             </box>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rxb-7L-vvp">
-                                <rect key="frame" x="20" y="526" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="R" drawsBackground="YES" id="zZz-4U-2uM">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="6QD-ex-EfD"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIY-mI-tIA">
-                                <rect key="frame" x="72" y="526" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="G" drawsBackground="YES" id="hQc-Og-adn">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="t3k-0I-jU1"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJy-2I-i6h">
-                                <rect key="frame" x="124" y="526" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="B" drawsBackground="YES" id="ZuO-i4-W8V">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="CPN-Aq-91K"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f8c-2Q-TcO" userLabel="Dock BGA">
-                                <rect key="frame" x="173" y="526" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="A" drawsBackground="YES" id="mSe-L9-Zqy">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="vGK-Ny-kEl"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNE-TA-mWw">
-                                <rect key="frame" x="18" y="500" width="247" height="20"/>
+                                <rect key="frame" x="18" y="378" width="180" height="20"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Color icon label background" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gPe-e4-Bkr">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -164,88 +113,40 @@
                                     <action selector="changeLabelBG:" target="XfG-lQ-9wD" id="ul7-ES-0er"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5jL-Dy-3Ho">
-                                <rect key="frame" x="20" y="474" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="R" drawsBackground="YES" id="Qoj-wF-1xm">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="uv2-i1-MkH"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zm6-d5-p9s">
-                                <rect key="frame" x="72" y="474" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="G" drawsBackground="YES" id="5I8-mX-qtI">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="3Ir-Bh-yXl"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WAa-f3-b0x">
-                                <rect key="frame" x="124" y="474" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="B" drawsBackground="YES" id="zNq-wu-mae">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="pfh-8b-pDN"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vzL-0h-xp2" userLabel="Label BGA">
-                                <rect key="frame" x="173" y="474" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="A" drawsBackground="YES" id="cdx-87-Ef8">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Ncc-Nc-Ve4"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pb1-5U-HIO" userLabel="Dock SOAA">
-                                <rect key="frame" x="619" y="529" width="158" height="18"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pb1-5U-HIO" userLabel="dock_activeApps">
+                                <rect key="frame" x="307" y="408" width="158" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Show only active apps" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="G72-4N-8nx">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNZ-rL-wuz" userLabel="Dock SOAA">
-                                <rect key="frame" x="619" y="509" width="158" height="18"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNZ-rL-wuz" userLabel="dock_dimHidden">
+                                <rect key="frame" x="307" y="388" width="158" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Dim hidden Items" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ECR-NM-8pe">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8o9-VP-E9d">
-                                <rect key="frame" x="18" y="381" width="123" height="18"/>
-                                <animations/>
-                                <buttonCell key="cell" type="check" title="Hide icon labels" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wAF-Rd-3wM">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                                </buttonCell>
-                            </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bxt-rb-lwP">
-                                <rect key="frame" x="18" y="361" width="198" height="18"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bxt-rb-lwP" userLabel="cd_darkenMouseOver">
+                                <rect key="frame" x="18" y="270" width="190" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Darken icons on mouse-over" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="py5-2N-SN2">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYB-1Q-wej">
-                                <rect key="frame" x="18" y="319" width="198" height="18"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYB-1Q-wej" userLabel="cd_showFrost">
+                                <rect key="frame" x="18" y="230" width="190" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Show Frost layer" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="z0U-7e-fKA">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QmW-3m-xH8">
-                                <rect key="frame" x="18" y="299" width="198" height="18"/>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QmW-3m-xH8" userLabel="cd_showGlass">
+                                <rect key="frame" x="18" y="210" width="190" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Show Glass layer" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="xIa-c3-rt5">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -253,23 +154,15 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="foH-9N-xmL">
-                                <rect key="frame" x="18" y="279" width="198" height="18"/>
+                                <rect key="frame" x="18" y="190" width="190" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Show Seperator layer" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="D5B-NS-9gt">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                 </buttonCell>
                             </button>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BW7-oY-nIK">
-                                <rect key="frame" x="18" y="259" width="198" height="18"/>
-                                <animations/>
-                                <buttonCell key="cell" type="check" title="Show icon reflections" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="owa-kd-nd8">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                                </buttonCell>
-                            </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7T-E1-Yne" userLabel="Dock SOAA">
-                                <rect key="frame" x="619" y="489" width="158" height="18"/>
+                                <rect key="frame" x="307" y="368" width="158" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Lock Dock contents" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="VM9-MM-qDO">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -277,7 +170,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4O-0j-fh5" userLabel="Dock SOAA">
-                                <rect key="frame" x="619" y="469" width="158" height="18"/>
+                                <rect key="frame" x="307" y="348" width="158" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Fan mouse-over highlight" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="s5H-Dy-Mp5">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -285,7 +178,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xcu-gt-S10" userLabel="Dock SOAA">
-                                <rect key="frame" x="619" y="449" width="158" height="18"/>
+                                <rect key="frame" x="307" y="328" width="158" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Show recents folder" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ozl-Ev-ycp">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -293,7 +186,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNa-ps-RDm" userLabel="Dock SOAA">
-                                <rect key="frame" x="619" y="429" width="158" height="18"/>
+                                <rect key="frame" x="307" y="308" width="158" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Custom Dock menus" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="FgO-gO-li4">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -301,7 +194,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GS-bb-wAt" userLabel="Dock SOAA">
-                                <rect key="frame" x="619" y="409" width="158" height="18"/>
+                                <rect key="frame" x="307" y="288" width="158" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="No app bounce" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="xin-R0-NcZ">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -309,7 +202,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Krq-Pz-1vC" userLabel="Dock SOAA">
-                                <rect key="frame" x="619" y="389" width="158" height="18"/>
+                                <rect key="frame" x="307" y="268" width="158" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Single app mode" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="vzm-mg-l8J">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -317,80 +210,71 @@
                                 </buttonCell>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OA1-Ls-Fy9">
-                                <rect key="frame" x="494" y="260" width="125" height="20"/>
+                                <rect key="frame" x="269" y="139" width="125" height="20"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Document Spacers" id="nNb-ai-pXp">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Document Spacers" id="nNb-ai-pXp">
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hod-HZ-XgX">
-                                <rect key="frame" x="18" y="619" width="55" height="20"/>
+                                <rect key="frame" x="269" y="109" width="55" height="20"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Theme:" id="p8D-FN-DX4">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Theme" id="p8D-FN-DX4">
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2dt-AO-PQg">
-                                <rect key="frame" x="513" y="360" width="106" height="20"/>
+                                <rect key="frame" x="269" y="239" width="106" height="20"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Autohide Speed" id="Roa-In-GpF">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Autohide Speed" id="Roa-In-GpF">
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zS7-uL-0au">
-                                <rect key="frame" x="513" y="310" width="106" height="17"/>
+                                <rect key="frame" x="269" y="189" width="106" height="17"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Icon Size" id="lzA-Ws-KKG">
-                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nu0-Et-0fj">
-                                <rect key="frame" x="307" y="552" width="91" height="20"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Indicator color:" id="jUn-1x-czB">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Icon Size" id="lzA-Ws-KKG">
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAN-c3-V9A">
-                                <rect key="frame" x="494" y="282" width="125" height="20"/>
+                                <rect key="frame" x="269" y="161" width="125" height="20"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Application Spacers" id="QjK-FO-w0Y">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Application Spacers" id="QjK-FO-w0Y">
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBR-M4-MzF">
-                                <rect key="frame" x="619" y="358" width="163" height="21"/>
+                                <rect key="frame" x="394" y="237" width="99" height="21"/>
                                 <animations/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" sliderType="linear" id="oxC-dI-WDc"/>
                             </slider>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TN4-V0-fCj">
-                                <rect key="frame" x="619" y="333" width="163" height="21"/>
+                                <rect key="frame" x="394" y="212" width="99" height="21"/>
                                 <animations/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="kIU-Rn-0po"/>
                             </slider>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTw-xq-gFo">
-                                <rect key="frame" x="513" y="338" width="106" height="17"/>
+                                <rect key="frame" x="269" y="217" width="106" height="17"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Magnification" id="xCF-wu-j65">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Magnification" id="xCF-wu-j65">
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N8w-BA-Y8d">
-                                <rect key="frame" x="222" y="526" width="41" height="22"/>
+                                <rect key="frame" x="213" y="404" width="50" height="22"/>
                                 <animations/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -398,81 +282,20 @@
                                 </connections>
                             </colorWell>
                             <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u4v-pW-qto">
-                                <rect key="frame" x="222" y="473" width="41" height="23"/>
+                                <rect key="frame" x="213" y="374" width="50" height="22"/>
                                 <animations/>
                                 <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="changeLABELColor:" target="XfG-lQ-9wD" id="oFz-oK-C8d"/>
                                 </connections>
                             </colorWell>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fyH-w5-CcU">
-                                <rect key="frame" x="18" y="447" width="247" height="20"/>
-                                <animations/>
-                                <buttonCell key="cell" type="check" title="Color icon shadows" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="OGq-Nx-uBI">
-                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                                </buttonCell>
-                            </button>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nw3-eN-RLz">
-                                <rect key="frame" x="20" y="421" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="R" drawsBackground="YES" id="9Y7-RC-ZrK">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="NGu-Bk-amh"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dT-B9-ziL">
-                                <rect key="frame" x="72" y="421" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="G" drawsBackground="YES" id="vHY-er-j13">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="47z-tc-KyG"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LWk-fG-ngT">
-                                <rect key="frame" x="124" y="421" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="B" drawsBackground="YES" id="JkX-9a-jnB">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="uxW-PR-3Fh"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rXq-Vb-GR2" userLabel="Label BGA">
-                                <rect key="frame" x="173" y="421" width="41" height="22"/>
-                                <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="A" drawsBackground="YES" id="ltv-gH-hB0">
-                                    <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="vCZ-hq-X2L"/>
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAi-LY-1fS" userLabel="Shadow WELL">
-                                <rect key="frame" x="222" y="420" width="41" height="23"/>
-                                <animations/>
-                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </colorWell>
                             <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ESd-0z-DOU">
-                                <rect key="frame" x="619" y="305" width="163" height="21"/>
+                                <rect key="frame" x="394" y="184" width="99" height="21"/>
                                 <animations/>
                                 <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="hYE-jL-hm9"/>
                             </slider>
-                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JtW-vS-oBX">
-                                <rect key="frame" x="399" y="549" width="69" height="25"/>
-                                <animations/>
-                                <buttonCell key="cell" type="check" title="Light" bezelStyle="regularSquare" imagePosition="left" alignment="left" allowsMixedState="YES" inset="2" id="12c-L8-YPA">
-                                    <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
-                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                                </buttonCell>
-                            </button>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pRQ-UG-APz">
-                                <rect key="frame" x="619" y="277" width="94" height="26"/>
+                                <rect key="frame" x="400" y="156" width="94" height="26"/>
                                 <animations/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="dEd-RK-sDB" id="IJj-77-rm7">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -486,8 +309,26 @@
                                     </menu>
                                 </popUpButtonCell>
                             </popUpButton>
+                            <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q3b-M5-BDD">
+                                <rect key="frame" x="139" y="77" width="94" height="26"/>
+                                <animations/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Zzw-EM-Dla">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="Mmf-WC-ERj">
+                                        <items>
+                                            <menuItem title="System" id="f4P-qM-hTm"/>
+                                            <menuItem title="System Inverse" id="7hE-cs-V35">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                            <menuItem title="Dark" id="RVi-rF-QRO"/>
+                                            <menuItem title="Light" id="v5V-dh-rS7"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-Mc-JNf">
-                                <rect key="frame" x="70" y="616" width="117" height="26"/>
+                                <rect key="frame" x="377" y="105" width="117" height="26"/>
                                 <animations/>
                                 <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="9rv-ad-mpz" id="Nlc-IN-DDw">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -502,7 +343,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rFY-K4-GLR">
-                                <rect key="frame" x="619" y="253" width="94" height="26"/>
+                                <rect key="frame" x="400" y="132" width="94" height="26"/>
                                 <animations/>
                                 <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="OY5-GY-dcP" id="dDB-C7-lH4">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
@@ -517,7 +358,7 @@
                                 </popUpButtonCell>
                             </popUpButton>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3E2-xB-rLK">
-                                <rect key="frame" x="14" y="585" width="92" height="32"/>
+                                <rect key="frame" x="265" y="74" width="100" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="Import" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Nk1-Dd-W3I">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -525,7 +366,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V0J-gF-kyt">
-                                <rect key="frame" x="98" y="585" width="92" height="32"/>
+                                <rect key="frame" x="395" y="74" width="102" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="View" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ZHt-rA-rZD">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -533,7 +374,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-pU-Scb">
-                                <rect key="frame" x="757" y="615" width="25" height="25"/>
+                                <rect key="frame" x="462" y="470" width="25" height="25"/>
                                 <animations/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iXE-RC-pVL">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -541,7 +382,7 @@
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QzQ-aH-LOk">
-                                <rect key="frame" x="319" y="13" width="162" height="32"/>
+                                <rect key="frame" x="181" y="13" width="162" height="32"/>
                                 <animations/>
                                 <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Blow" inset="2" id="tc2-8U-rFC">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -551,8 +392,62 @@
                                     <action selector="applyPressed:" target="XfG-lQ-9wD" id="vN5-Hj-0VN"/>
                                 </connections>
                             </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8o9-VP-E9d">
+                                <rect key="frame" x="18" y="290" width="190" height="18"/>
+                                <animations/>
+                                <buttonCell key="cell" type="check" title="Hide icon labels" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="wAF-Rd-3wM">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                </buttonCell>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fyH-w5-CcU">
+                                <rect key="frame" x="18" y="348" width="180" height="20"/>
+                                <animations/>
+                                <buttonCell key="cell" type="check" title="Color icon shadows" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="OGq-Nx-uBI">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeShadowBG:" target="XfG-lQ-9wD" id="2bY-km-MtB"/>
+                                </connections>
+                            </button>
+                            <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAi-LY-1fS" userLabel="Shadow WELL">
+                                <rect key="frame" x="213" y="344" width="50" height="22"/>
+                                <animations/>
+                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </colorWell>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Guw-gp-Mel">
+                                <rect key="frame" x="18" y="318" width="180" height="20"/>
+                                <animations/>
+                                <buttonCell key="cell" type="check" title="Color indicator lights" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9jI-aZ-csR">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeIndicatorBG:" target="XfG-lQ-9wD" id="RdV-lZ-qD9"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2nq-rE-KGJ">
+                                <rect key="frame" x="18" y="408" width="180" height="20"/>
+                                <animations/>
+                                <buttonCell key="cell" type="check" title="Color Dock background" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="NdB-kB-e2f">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="changeDockBG:" target="XfG-lQ-9wD" id="OYv-tk-LHg"/>
+                                </connections>
+                            </button>
+                            <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BW7-oY-nIK">
+                                <rect key="frame" x="18" y="170" width="190" height="18"/>
+                                <animations/>
+                                <buttonCell key="cell" type="check" title="Show icon reflections" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="owa-kd-nd8">
+                                    <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                </buttonCell>
+                            </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ogZ-qW-bny">
-                                <rect key="frame" x="18" y="239" width="207" height="18"/>
+                                <rect key="frame" x="18" y="150" width="207" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Use custom application Indicators" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="T8e-TA-XR3">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -560,7 +455,7 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtM-j0-uf2">
-                                <rect key="frame" x="18" y="219" width="198" height="18"/>
+                                <rect key="frame" x="18" y="130" width="198" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Use custom Seperator image" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EKa-M9-8kR">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -568,25 +463,36 @@
                                 </buttonCell>
                             </button>
                             <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bnM-Z5-6ed">
-                                <rect key="frame" x="18" y="199" width="207" height="18"/>
+                                <rect key="frame" x="18" y="110" width="207" height="18"/>
                                 <animations/>
                                 <buttonCell key="cell" type="check" title="Use image for Dock background" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="JAV-NC-SC7">
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                 </buttonCell>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nu0-Et-0fj">
+                                <rect key="frame" x="18" y="81" width="124" height="20"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dock system style" id="jUn-1x-czB">
+                                    <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXm-B8-DyI" userLabel="IndicatorWELL">
+                                <rect key="frame" x="213" y="314" width="50" height="22"/>
+                                <animations/>
+                                <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </colorWell>
                         </subviews>
                         <animations/>
                     </view>
                     <connections>
                         <outlet property="DOCKSOAA" destination="pb1-5U-HIO" id="FdY-ae-ckB"/>
                         <outlet property="GLASSED" destination="QmW-3m-xH8" id="5Lw-ws-EPd"/>
-                        <outlet property="changeDockBG" destination="2nq-rE-KGJ" id="nX1-7b-dwM"/>
                         <outlet property="darken_OMO" destination="Bxt-rb-lwP" id="wyc-p7-nAI"/>
-                        <outlet property="dockBGA" destination="f8c-2Q-TcO" id="cBe-ir-W2F"/>
-                        <outlet property="dockBGB" destination="WJy-2I-i6h" id="zEb-0Z-nXV"/>
-                        <outlet property="dockBGG" destination="SIY-mI-tIA" id="bb9-WW-WCx"/>
-                        <outlet property="dockBGR" destination="Rxb-7L-vvp" id="dpQ-rJ-4x5"/>
+                        <outlet property="dockBG" destination="2nq-rE-KGJ" id="hXL-t1-DI7"/>
+                        <outlet property="dockIconReflections" destination="BW7-oY-nIK" id="ClE-GJ-85f"/>
                         <outlet property="dockWELL" destination="N8w-BA-Y8d" id="Liv-FY-lRL"/>
                         <outlet property="dock_DHI" destination="rNZ-rL-wuz" id="Bkb-eo-fgn"/>
                         <outlet property="dock_LDC" destination="x7T-E1-Yne" id="7QD-Sk-I3U"/>
@@ -598,19 +504,18 @@
                         <outlet property="dock_SOAA" destination="pb1-5U-HIO" id="a5g-6X-Cuh"/>
                         <outlet property="fullWidthDock" destination="ml0-ZT-wp5" id="EJ2-zG-gp7"/>
                         <outlet property="hideLabels" destination="8o9-VP-E9d" id="5V9-QS-KyN"/>
+                        <outlet property="indicatorBG" destination="Guw-gp-Mel" id="i1u-Me-BTf"/>
+                        <outlet property="indicatorWELL" destination="pXm-B8-DyI" id="OcN-ai-llL"/>
                         <outlet property="labelBG" destination="qNE-TA-mWw" id="i5o-f5-nIl"/>
-                        <outlet property="labelBGA" destination="vzL-0h-xp2" id="JMh-42-DeP"/>
-                        <outlet property="labelBGB" destination="WAa-f3-b0x" id="ezU-7M-d5x"/>
-                        <outlet property="labelBGG" destination="Zm6-d5-p9s" id="n7h-PL-z2n"/>
-                        <outlet property="labelBGR" destination="5jL-Dy-3Ho" id="bS8-tC-Xvv"/>
                         <outlet property="labelWELL" destination="u4v-pW-qto" id="ESF-J8-lIs"/>
+                        <outlet property="shadowBG" destination="fyH-w5-CcU" id="93X-W0-haV"/>
                         <outlet property="shadowWELL" destination="KAi-LY-1fS" id="wMf-xS-wvp"/>
                         <outlet property="stay_FROSTY" destination="tYB-1Q-wej" id="3Uj-id-Cu6"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="152" y="993"/>
+            <point key="canvasLocation" x="14.5" y="920"/>
         </scene>
     </scenes>
     <resources>

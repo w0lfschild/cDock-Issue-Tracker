@@ -15,11 +15,12 @@
 # define prefDock [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/com.apple.dock.plist"]
 # define prefPath [[pref____ stringByAppendingPathComponent:thmeName ] stringByAppendingString:@".plist"]
 
-void isValidInt(NSTextField *item) {
-    if ((![item integerValue] && [item integerValue] != 0) || [[item stringValue] length] > 3)
-        [item setIntegerValue:255];
+void apply_WELL(NSMutableDictionary *prefs, NSString *well, NSColorWell *item) {
+    [prefs setObject:[NSNumber numberWithFloat:item.color.redComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGR", well]];
+    [prefs setObject:[NSNumber numberWithFloat:item.color.greenComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGG", well]];
+    [prefs setObject:[NSNumber numberWithFloat:item.color.blueComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGB", well]];
+    [prefs setObject:[NSNumber numberWithFloat:item.color.alphaComponent * 100] forKey:[NSString stringWithFormat:@"cd_%@BGA", well]];
 }
-
 
 @implementation ViewController
 
@@ -33,6 +34,8 @@ void isValidInt(NSTextField *item) {
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    [[NSColorPanel sharedColorPanel] setShowsAlpha:YES];
     
     // cDock Preferences
 	if (![[NSFileManager defaultManager] fileExistsAtPath:prefPath]) {
@@ -54,6 +57,12 @@ void isValidInt(NSTextField *item) {
         [pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_iconShadowBGG"];
         [pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_iconShadowBGB"];
         [pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_iconShadowBGA"];
+        
+        [pref setObject:[NSNumber numberWithBool:false] forKey:@"cd_colorIndicator"];
+        [pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_indicatorBGR"];
+        [pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_indicatorBGG"];
+        [pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_indicatorBGB"];
+        [pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_indicatorBGA"];
         
         [pref setObject:[NSNumber numberWithBool:false] forKey:@"cd_dockBG"];
 		[pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_dockBGR"];
@@ -97,14 +106,9 @@ void isValidInt(NSTextField *item) {
     [_dock_SOAA setState:[[prefd objectForKey:@"static-only"] integerValue]];
     [_dock_DHI setState:[[prefd objectForKey:@"showhidden"] integerValue]];
     [_dock_LDC setState:[[prefd objectForKey:@"contents-immutable"] integerValue]];
-//    [_dock_MML setState:[[prefd objectForKey:@"static-only"] integerValue]];
-//    [_dock_MES setState:[[prefd objectForKey:@"static-only"] integerValue]];
     [_dock_MOH setState:[[prefd objectForKey:@"mouse-over-hilite-stack"] integerValue]];
     [_dock_SAM setState:[[prefd objectForKey:@"single-app"] integerValue]];
     [_dock_NB setState:[[prefd objectForKey:@"no-bouncing"] integerValue]];
-//    [_dock_DHI setState:[[prefd objectForKey:@"autohide-delay"] integerValue]];
-//    [_dock_DHI setState:[[prefd objectForKey:@"autohide-time-modifier"] integerValue]];
-//    [_dock_DHI setState:[[prefd objectForKey:@"autohide"] integerValue]];
     
     NSDictionary *parentDictionary = [plist1 objectForKey:@"persistent-others"];
     NSString *string = [NSString stringWithFormat:@"%@", parentDictionary];
@@ -117,7 +121,8 @@ void isValidInt(NSTextField *item) {
 	NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:prefPath];
 	pref = [plist mutableCopy];
 	
-    [_darken_OMO setState:[[pref objectForKey:@"cd_darken_OMO"] integerValue]];
+    [_dockIconReflections setState:[[pref objectForKey:@"cd_iconReflection"] integerValue]];
+    [_darken_OMO setState:[[pref objectForKey:@"cd_darkenMouseOver"] integerValue]];
     [_stay_FROSTY setState:[[pref objectForKey:@"cd_showFrost"] integerValue]];
     [_GLASSED setState:[[pref objectForKey:@"cd_showGlass"] integerValue]];
     [_dock_SEP setState:[[pref objectForKey:@"cd_showSeparator"] integerValue]];
@@ -125,92 +130,60 @@ void isValidInt(NSTextField *item) {
 	[_fullWidthDock setState:[[pref objectForKey:@"cd_fullWidth"] integerValue]];
 	[_hideLabels setState:[[pref objectForKey:@"cd_hideLabels"] integerValue]];
     
-	[_changeDockBG setState:[[pref objectForKey:@"cd_dockBG"] integerValue]];
-	[_dockBGR setFloatValue:[[pref objectForKey:@"cd_dockBGR"] floatValue]];
-	[_dockBGG setFloatValue:[[pref objectForKey:@"cd_dockBGG"] floatValue]];
-	[_dockBGB setFloatValue:[[pref objectForKey:@"cd_dockBGB"] floatValue]];
-    [_dockBGA setFloatValue:[[pref objectForKey:@"cd_dockBGA"] floatValue]];
+    [_shadowBG setState:[[pref objectForKey:@"cd_iconShadow"] integerValue]];
+    [_shadowWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_shadowBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_shadowBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_shadowBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_shadowBGA"] floatValue]/100.0]];
     
-    [_dockWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_dockBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_dockBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_dockBGB"] floatValue]/255.0 alpha:1]];
+    [_indicatorBG setState:[[pref objectForKey:@"cd_colorIndicator"] integerValue]];
+    [_indicatorWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_indicatorBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_indicatorBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_indicatorBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_indicatorBGA"] floatValue]/100.0]];
+    
+	[_dockBG setState:[[pref objectForKey:@"cd_dockBG"] integerValue]];
+    [_dockWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_dockBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_dockBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_dockBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_dockBGA"] floatValue]/100.0]];
     
     [_labelBG setState:[[pref objectForKey:@"cd_labelBG"] integerValue]];
-    [_labelBGR setFloatValue:[[pref objectForKey:@"cd_labelBGR"] floatValue]];
-	[_labelBGG setFloatValue:[[pref objectForKey:@"cd_labelBGG"] floatValue]];
-	[_labelBGB setFloatValue:[[pref objectForKey:@"cd_labelBGB"] floatValue]];
-    [_labelBGA setFloatValue:[[pref objectForKey:@"cd_labelBGA"] floatValue]];
-    
-    [_labelWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_labelBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_labelBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_labelBGB"] floatValue]/255.0 alpha:1]];
+    [_labelWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_labelBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_labelBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_labelBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_labelBGA"] floatValue]/100.0]];
 	
-	if ([_changeDockBG state] == NSOnState) {
-		[_dockBGR setHidden:false];
-		[_dockBGG setHidden:false];
-		[_dockBGB setHidden:false];
-        [_dockBGA setHidden:false];
+	if ([_dockBG state] == NSOnState)
         [_dockWELL setHidden:false];
-	}
-	
-	if ([_labelBG state] == NSOnState) {
-		[_labelBGR setHidden:false];
-		[_labelBGG setHidden:false];
-		[_labelBGB setHidden:false];
-        [_labelBGA setHidden:false];
+	if ([_labelBG state] == NSOnState)
         [_labelWELL setHidden:false];
-	}
+    if ([_indicatorBG state] == NSOnState)
+        [_indicatorWELL setHidden:false];
+    if ([_shadowBG state] == NSOnState)
+        [_shadowWELL setHidden:false];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
 	[super setRepresentedObject:representedObject];
 }
 
-- (IBAction)changeDOCKColor:(id)sender {
-    [_dockBGR setIntegerValue:_dockWELL.color.redComponent * 255 ];
-    [_dockBGG setIntegerValue:_dockWELL.color.greenComponent * 255 ];
-    [_dockBGB setIntegerValue:_dockWELL.color.blueComponent * 255 ];
-//    [_dockBGA setHidden:false];
+- (IBAction)changeIndicatorBG:(id)sender {
+    if ([sender state] == NSOnState) {
+        [_indicatorWELL setHidden:false];
+    } else if ([sender state] == NSOffState) {
+        [_indicatorWELL setHidden:true];
+    }
 }
 
-- (IBAction)changeLABELColor:(id)sender {
-    [_labelBGR setIntegerValue:_labelWELL.color.redComponent * 255 ];
-    [_labelBGG setIntegerValue:_labelWELL.color.greenComponent * 255 ];
-    [_labelBGB setIntegerValue:_labelWELL.color.blueComponent * 255 ];
-    //    [_labelBGA setHidden:false];
-}
-
-- (IBAction)changeSHADOWColor:(id)sender {
-//    [_labelBGR setIntegerValue:_labelWELL.color.redComponent * 255 ];
-//    [_labelBGG setIntegerValue:_labelWELL.color.greenComponent * 255 ];
-//    [_labelBGB setIntegerValue:_labelWELL.color.blueComponent * 255 ];
-    //    [_labelBGA setHidden:false];
+- (IBAction)changeShadowBG:(id)sender {
+    if ([sender state] == NSOnState) {
+        [_shadowWELL setHidden:false];
+    } else if ([sender state] == NSOffState) {
+        [_shadowWELL setHidden:true];
+    }
 }
 
 - (IBAction)changeLabelBG:(id)sender {
 	if ([sender state] == NSOnState) {
-		[_labelBGR setHidden:false];
-		[_labelBGG setHidden:false];
-		[_labelBGB setHidden:false];
-        [_labelBGA setHidden:false];
         [_labelWELL setHidden:false];
 	} else if ([sender state] == NSOffState) {
-		[_labelBGR setHidden:true];
-		[_labelBGG setHidden:true];
-		[_labelBGB setHidden:true];
-        [_labelBGA setHidden:true];
         [_labelWELL setHidden:true];
 	}
 }
 
 - (IBAction)changeDockBG:(id)sender {
 	if ([sender state] == NSOnState) {
-		[_dockBGR setHidden:false];
-		[_dockBGG setHidden:false];
-		[_dockBGB setHidden:false];
-        [_dockBGA setHidden:false];
         [_dockWELL setHidden:false];
 	} else if ([sender state] == NSOffState) {
-		[_dockBGR setHidden:true];
-		[_dockBGG setHidden:true];
-		[_dockBGB setHidden:true];
-        [_dockBGA setHidden:true];
         [_dockWELL setHidden:true];
     }
 }
@@ -230,49 +203,24 @@ void isValidInt(NSTextField *item) {
 
 	[pref setObject:[NSNumber numberWithBool:[_fullWidthDock state]] forKey:@"cd_fullWidth"];
 	[pref setObject:[NSNumber numberWithBool:[_hideLabels state]] forKey:@"cd_hideLabels"];
-	[pref setObject:[NSNumber numberWithBool:[_changeDockBG state]] forKey:@"cd_dockBG"];
+    
+	[pref setObject:[NSNumber numberWithBool:[_dockBG state]] forKey:@"cd_dockBG"];
 	[pref setObject:[NSNumber numberWithBool:[_labelBG state]] forKey:@"cd_labelBG"];
-    [pref setObject:[NSNumber numberWithBool:[_darken_OMO state]] forKey:@"cd_darken_OMO"];
+    [pref setObject:[NSNumber numberWithBool:[_indicatorBG state]] forKey:@"cd_colorIndicator"];
+    [pref setObject:[NSNumber numberWithBool:[_shadowBG state]] forKey:@"cd_iconShadow"];
+    
+    [pref setObject:[NSNumber numberWithBool:[_dockIconReflections state]] forKey:@"cd_iconReflection"];
+    [pref setObject:[NSNumber numberWithBool:[_darken_OMO state]] forKey:@"cd_darkenMouseOver"];
+    
     [pref setObject:[NSNumber numberWithBool:[_stay_FROSTY state]] forKey:@"cd_showFrost"];
     [pref setObject:[NSNumber numberWithBool:[_dock_SEP state]] forKey:@"cd_showSeparator"];
     [pref setObject:[NSNumber numberWithBool:[_GLASSED state]] forKey:@"cd_showGlass"];
     
-    isValidInt(_dockBGR);
+    apply_WELL(pref, @"dock", _dockWELL);
+    apply_WELL(pref, @"label", _labelWELL);
+    apply_WELL(pref, @"indicator", _indicatorWELL);
+    apply_WELL(pref, @"shadow", _shadowWELL);
     
-//	if ((![_dockBGR integerValue] && [_dockBGR integerValue] != 0) || [[_dockBGR stringValue] length] > 3)
-//		[_dockBGR setIntegerValue:255];
-	
-	if ((![_dockBGG integerValue] && [_dockBGG integerValue] != 0) || [[_dockBGG stringValue] length] > 3)
-		[_dockBGG setIntegerValue:255];
-	
-	if ((![_dockBGB integerValue] && [_dockBGB integerValue] != 0) || [[_dockBGB stringValue] length] > 3)
-		[_dockBGB setIntegerValue:255];
-    
-    if ((![_dockBGA integerValue] && [_dockBGA integerValue] != 0) || [[_dockBGA stringValue] length] > 3)
-        [_dockBGB setIntegerValue:100];
-	
-	if ((![_labelBGR integerValue] && [_labelBGR integerValue] != 0) || [[_labelBGR stringValue] length] > 3)
-		[_labelBGR setIntegerValue:255];
-	
-	if ((![_labelBGG integerValue] && [_labelBGG integerValue] != 0) || [[_labelBGG stringValue] length] > 3)
-		[_labelBGG setIntegerValue:255];
-	
-	if ((![_labelBGB integerValue] && [_labelBGB integerValue] != 0) || [[_labelBGB stringValue] length] > 3)
-		[_labelBGB setIntegerValue:255];
-    
-    if ((![_labelBGA integerValue] && [_labelBGA integerValue] != 0) || [[_labelBGA stringValue] length] > 3)
-        [_labelBGA setIntegerValue:100];
-	
-	[pref setObject:[NSNumber numberWithFloat:[_dockBGR floatValue]] forKey:@"cd_dockBGR"];
-	[pref setObject:[NSNumber numberWithFloat:[_dockBGG floatValue]] forKey:@"cd_dockBGG"];
-	[pref setObject:[NSNumber numberWithFloat:[_dockBGB floatValue]] forKey:@"cd_dockBGB"];
-    [pref setObject:[NSNumber numberWithFloat:[_dockBGA floatValue]] forKey:@"cd_dockBGA"];
-	
-	[pref setObject:[NSNumber numberWithFloat:[_labelBGR floatValue]] forKey:@"cd_labelBGR"];
-	[pref setObject:[NSNumber numberWithFloat:[_labelBGG floatValue]] forKey:@"cd_labelBGG"];
-	[pref setObject:[NSNumber numberWithFloat:[_labelBGB floatValue]] forKey:@"cd_labelBGB"];
-    [pref setObject:[NSNumber numberWithFloat:[_labelBGA floatValue]] forKey:@"cd_labelBGA"];
-	
 	NSMutableDictionary *tmpPlist = pref;
 	[tmpPlist writeToFile:prefPath atomically:YES];
 	system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
