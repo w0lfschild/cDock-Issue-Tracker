@@ -9,6 +9,7 @@
 # define prefFile [[prefPath stringByAppendingPathComponent:thmeName ] stringByAppendingString:@".plist"]
 
 @implementation Preferences
+
 + (instancetype)sharedInstance {    
 	static Preferences *sharedInstance = nil;
 	static dispatch_once_t onceToken;

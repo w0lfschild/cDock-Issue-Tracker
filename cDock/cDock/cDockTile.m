@@ -8,16 +8,43 @@
 
 extern NSInteger orient;
 
+struct FloatRect {
+    float left;
+    float top;
+    float right;
+    float bottom;
+};
+
 @interface Tile : NSObject
+{
+    CGRect fGlobalBounds;
+}
 - (void)setSelected:(BOOL)arg1;
 - (void)setLabel:(id)arg1 stripAppSuffix:(_Bool)arg2;
+//- (void)setGlobalFrame:(struct FloatRect)arg1;
 @end
 
 ZKSwizzleInterface(_CDTile, Tile, NSObject);
 @implementation _CDTile
+
+//- (void)updateRect {
+//    ZKOrig(void);
+//
+//    CGRect frame; // = (CGRect *)[self valueForKey:@"fGlobalBounds"];
+//    object_getInstanceVariable(self, "fGlobalBounds", (void **)&frame);
+//    
+//    struct FloatRect arg1;
+//    
+//    arg1.left = frame.origin.x;
+//    arg1.top = [[NSScreen mainScreen] frame].size.height - 50;
+//    arg1.right = frame.origin.x + 50;
+//    arg1.bottom = [[NSScreen mainScreen] frame].size.height;
+//    
+//    [(Tile*)self setGlobalFrame:arg1];
+//
+//}
+
 - (void)labelAttached {
-    ZKOrig(void);
-    
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     
@@ -69,12 +96,28 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
         self.shadowOffset = mySize;
     }
     
+    // Icon reflections
     if ([[[Preferences sharedInstance] objectForKey:@"cd_iconReflection"] boolValue]) {
         CALayer *_iconLayer = ZKHookIvar(self, CALayer *, "_imageLayer");
-        NSData *buffer = [NSKeyedArchiver archivedDataWithRootObject: _iconLayer];
-        CALayer *_reflectionLayer = [NSKeyedUnarchiver unarchiveObjectWithData: buffer];
-        [ _reflectionLayer setName:(@"_reflectionLayer")];
+        CALayer *_reflectionLayer = nil;
         
+        // Check if our custom layer exists, if it does then reference it
+        for (CALayer *item in (NSMutableArray *)self.sublayers)
+            if ([item.name  isEqual:@"_reflectionLayer"]) {
+                _reflectionLayer = item;
+                break;
+            }
+        
+        // This way we only add the flipped tile once
+        if (_reflectionLayer == nil)
+        {
+            NSData *buffer = [NSKeyedArchiver archivedDataWithRootObject: _iconLayer];
+            _reflectionLayer = [NSKeyedUnarchiver unarchiveObjectWithData: buffer];
+            [ _reflectionLayer setName:(@"_reflectionLayer")];
+            [ self addSublayer:_reflectionLayer ];
+        }
+        
+        // Transform reflecition layer using CATransform3DMakeRotation
         CGRect frm = _iconLayer.frame ;
         if (orient == 0) {
             frm.origin.y -= frm.size.height;
@@ -88,15 +131,6 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
         }
         [ _reflectionLayer setFrame:(frm) ];
         _reflectionLayer.opacity = 0.25;
-        
-        NSMutableArray *mutableArray = (NSMutableArray *)self.sublayers;
-        for (CALayer *item in mutableArray)
-            if ([item.name  isEqual:@"_reflectionLayer"]) {
-                [item removeFromSuperlayer];
-                break;
-            }
-        [ self addSublayer:_reflectionLayer ];
-        //    NSLog(@"%@", mutableArray);
     }
 }
 @end

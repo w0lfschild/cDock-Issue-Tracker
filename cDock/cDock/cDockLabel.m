@@ -26,6 +26,19 @@ ZKSwizzleInterface(__CDLabel, DOCKLabelLayer, CALayer);
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     
+//    if ([[[Preferences sharedInstance] objectForKey:@"cd_labelBG"] boolValue]) {
+//        float red = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGR"] floatValue];
+//        float green = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGG"] floatValue];
+//        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGB"] floatValue];
+//        float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGA"] floatValue];
+//        
+//        NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255 blue:blue/255.0 alpha:1.0];
+//        ECMaterialLayer *tintLayer = ZKHookIvar(self, ECMaterialLayer *, "_backdrop");
+//        CALayer *test = [tintLayer.sublayers objectAtIndex:0];
+//        [test setBackgroundColor:[goodColor CGColor]];
+//        [test setOpacity:( alpha / 100.0 )];
+//    }
+    
     if (osx_minor == 9) {
         float red = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGR"] floatValue];
         float green = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGG"] floatValue];
@@ -75,19 +88,17 @@ ZKSwizzleInterface(_CDECMaterialLayer, ECMaterialLayer, CALayer);
     
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
-    
-    NSUInteger _material = ZKHookIvar(self, NSUInteger, "_material");
+
 //    NSLog(@"%lu", (unsigned long)_material);
     
-    // Note : This also colors the mission control backdrop in dark mode :|
-    if (_material != 0) {
-        ZKOrig(void, arg1);
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_labelBG"] boolValue]) {
+    // Note : This also colors a bunch of stuff we may or may not want like the mission control backdrop in dark mode :|
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_labelBG"] boolValue]) {
+        NSUInteger _material = ZKHookIvar(self, NSUInteger, "_material");
+        if (_material != 0) {
             float red = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGR"] floatValue];
             float green = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGG"] floatValue];
             float blue = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGB"] floatValue];
             float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGA"] floatValue];
-            
             NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255 blue:blue/255.0 alpha:1.0];
             CALayer *tintLayer = ZKHookIvar(self, CALayer *, "_backdropLayer");
             [tintLayer setBackgroundColor:[goodColor CGColor]];

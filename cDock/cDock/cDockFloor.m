@@ -17,6 +17,14 @@
 NSInteger orient = 0;
 long osx_minor = 0;
 
+@interface Tile : NSObject
+- (void)setSelected:(BOOL)arg1;
+- (void)setLabel:(id)arg1 stripAppSuffix:(_Bool)arg2;
+@end
+
+@interface _CDDOCKFloorLayer : CALayer
+@end
+
 void _setupPrefs() {
     if (![[NSFileManager defaultManager] fileExistsAtPath:thmePath]) {
         NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
@@ -34,7 +42,7 @@ void _setupPrefs() {
             system("defaults write com.apple.dock hide-mirror -bool TRUE");
             plist = [NSMutableDictionary dictionaryWithContentsOfFile:dockPath];
             if ([[ plist objectForKey:@"hide-mirror"] boolValue] == true) {
-                system("killall -KILL Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
+                system("killall -KILL Dock; sleep 1; osascript -e \"tell application \"Dock\" to inject SIMBL into Snow Leopard\"");
             }
         }
     }
@@ -48,6 +56,8 @@ void _setupPrefs() {
                                                             error:&error];
         }
         NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
+        
+        // There are so many of these I need to add here....
         
         // Stuff
         [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_fullWidth"];
@@ -63,12 +73,6 @@ void _setupPrefs() {
         [newDict setObject:[NSNumber numberWithBool:true] forKey:@"cd_showFrost"];
         [newDict setObject:[NSNumber numberWithBool:true] forKey:@"cd_showGlass"];
         [newDict setObject:[NSNumber numberWithBool:true] forKey:@"cd_showSeparator"];
-        
-        //        Dock background frame adjustments x pos, y pos, width, height
-        //        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_increaseX"];
-        //        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_increaseY"];
-        //        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_increaseW"];
-        //        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_increaseH"];
         
         // Icon shadows
         [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_iconShadow"];
@@ -113,6 +117,7 @@ void _loadShadows(CALayer* layer) {
     });
 }
 
+// OS X 10.9 Mavericks implementation
 void _TenNine(CALayer* layer) {
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
@@ -130,112 +135,192 @@ void _TenNine(CALayer* layer) {
         [tileLayers makeObjectsPerformSelector:aSel];
     }
     
+    // Hook some layers
     CALayer *_separatorLayer = ZKHookIvar(layer, CALayer *, "_separatorLayer");
     CALayer *_glass = ZKHookIvar(layer, CALayer *, "_glassLayer");
+    
+    // Just because
     CALayer *_superLayer = layer;
-    CALayer *_rl = [[CALayer alloc] init];
     
-    [ _rl setName:(@"_rl")];
+    // Custom layers
+    CALayer *_backgroundLayer = nil;
+    CALayer *_borderLayer = nil;
     
-    if (![[[Preferences sharedInstance] objectForKey:@"cd_showGlass"] boolValue])
-        _glass.contents = nil;
+    // Look for custom layers
+    for (CALayer *item in (NSMutableArray *)_superLayer.sublayers)
+    {
+        if ([item.name isEqual:@"_backgroundLayer"])
+            _backgroundLayer = item;
+        if ([item.name isEqual:@"_borderLayer"])
+            _borderLayer = item;
+    }
     
+    // initialize border layer
+    if (_borderLayer == nil)
+    {
+        _borderLayer = [[CALayer alloc] init];
+        [ _borderLayer setName:(@"_borderLayer")];
+        [ _superLayer addSublayer:_borderLayer ];
+    }
+    
+    // initialize background layer
+    if (_backgroundLayer == nil)
+    {
+        _backgroundLayer = [[CALayer alloc] init];
+        [ _backgroundLayer setName:(@"_backgroundLayer")];
+        [ _superLayer addSublayer:_backgroundLayer ];
+    }
+    
+    float brdSize = [[[Preferences sharedInstance] objectForKey:@"cd_borderSize"] floatValue];
+    float cornerSize = [[[Preferences sharedInstance] objectForKey:@"cd_cornerRadius"] floatValue];
     float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGA"] floatValue];
     CGRect rect = _superLayer.bounds;
     
+    // Picture background
     if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue]) {
+        NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *picFile = nil;
-        if (orient == 0) {
+        
+        // Check orientation
+        if (orient == 0)
+        {
             picFile = [NSString stringWithFormat:@"%@/background.png", prefPath];
-        } else {
+        }
+        else
+        {
             picFile = [NSString stringWithFormat:@"%@/background1.png", prefPath];
         }
         
-        // We should only do this if file exists !
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
-            [ _rl setBackgroundColor:[[NSColor colorWithPatternImage:[[[NSImage alloc] initWithContentsOfFile:picFile] autorelease]] CGColor] ];
-        } else {
-            _rl.contents = [[[NSImage alloc] initWithContentsOfFile:picFile] autorelease];
+        // If custom background exists apply
+        if ([fileManager fileExistsAtPath:picFile])
+        {
+            // we should initialize this image somewhere else and only 1 time
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
+                [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[[NSImage alloc] initWithContentsOfFile:picFile] autorelease]] CGColor] ];
+            } else {
+                _backgroundLayer.contents = [[[NSImage alloc] initWithContentsOfFile:picFile] autorelease];
+            }
+            [ _superLayer setSublayers:[NSArray arrayWithObjects: _backgroundLayer, _separatorLayer, nil] ];
         }
-        [ _superLayer setSublayers:[NSArray arrayWithObjects:_separatorLayer, nil] ];
     }
     
+    // Color background
     if ([[[Preferences sharedInstance] objectForKey:@"cd_dockBG"] boolValue]) {
         float red = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGR"] floatValue];
         float green = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGG"] floatValue];
         float blue = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGB"] floatValue];
         NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
-        [_rl setBackgroundColor:[goodColor CGColor]];
+        [_backgroundLayer setBackgroundColor:[goodColor CGColor]];
     }
     
+    // Full width dock
     if ([[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue]) {
+        // Best to avoid += or -= used to keep incrementally grow forever
         if (orient == 0) {
             rect.size.width = [[NSScreen mainScreen] frame].size.width * 2;
-            rect.origin.x -= [[NSScreen mainScreen] frame].size.width;
+            rect.origin.x = -([[NSScreen mainScreen] frame].size.width / 2);
         } else {
             rect.size.height = [[NSScreen mainScreen] frame].size.height * 2;
-            rect.origin.y -= [[NSScreen mainScreen] frame].size.height;
+            rect.origin.y = -([[NSScreen mainScreen] frame].size.height);
         }
     }
     
     // Resize
-    if (orient == 0)
+    if (orient == 0) {
         rect.size.height = rect.size.height * 1.65;
-    float cornerSize = [[[Preferences sharedInstance] objectForKey:@"cd_cornerRadius"] floatValue];
+        if (rect.size.height < 40)
+            rect.size.height = rect.size.height * .9;
+    }
+    
+    // Border layer
+    if (brdSize > 0) {
+        CGRect newFrame = _backgroundLayer.frame;
+        newFrame.origin.x -= brdSize;
+        newFrame.size.width += brdSize * 2;
+        newFrame.origin.y -= brdSize;
+        newFrame.size.height += brdSize * 2;
+        float red = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGR"] floatValue];
+        float green = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGG"] floatValue];
+        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGB"] floatValue];
+        [ _borderLayer setFrame:newFrame];
+        [ _borderLayer setBackgroundColor:[[NSColor clearColor] CGColor]];
+        [ _borderLayer setBorderColor:[[NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0] CGColor]];
+        [ _borderLayer setOpacity:[[[Preferences sharedInstance] objectForKey:@"cd_borderBGA"] floatValue]];
+        [ _borderLayer setBorderWidth:brdSize];
+        [ _borderLayer setHidden:false];
+    }
+
+    // rounded corners
     if (cornerSize > (float)0) {
-        [ _rl setCornerRadius:cornerSize ];
+        // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
+        if (brdSize > 0) {
+            if (brdSize < 2) brdSize = 2;
+            [ _backgroundLayer setCornerRadius:cornerSize / brdSize ];
+        } else {
+            [ _backgroundLayer setCornerRadius:cornerSize ];
+        }
+        
+        [ _borderLayer setCornerRadius:cornerSize ];
+        
         if (orient == 0) {
             rect.size.height += cornerSize;
             rect.origin.y -= cornerSize;
         } else {
             rect.size.width += cornerSize;
-            if (orient == 1)
-                rect.origin.x -= cornerSize;
+        }
+        if (orient == 1) {
+            rect.origin.x -= cornerSize;
         }
     }
-    [ _rl setFrame:rect ];
-    [ _rl setOpacity:(alpha / 100.0)];
     
+    [ _backgroundLayer setFrame:rect ];
+    [ _backgroundLayer setOpacity:(alpha / 100.0)];
+    
+    // Custom separtor this does not work well
     if ([[[Preferences sharedInstance] objectForKey:@"cd_dockSeparator"] boolValue]) {
-        rect = _separatorLayer.frame;
-        rect.origin.y *= -0.1;
-        rect.size.height = [_superLayer frame].size.height * 0.8 - cornerSize;
-        rect.size.width = [_superLayer frame].size.width / 100;
-        rect.size.height *= 2;
-        _separatorLayer.frame = rect;
+        NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *picFile = [NSString stringWithFormat:@"%@/separator.png", prefPath];
-        _separatorLayer.opacity = 1;
-        _separatorLayer.contents = [[[NSImage alloc] initWithContentsOfFile:picFile] autorelease];
-        //        _separatorLayer.backgroundColor = [[NSColor colorWithRed:255 green:0 blue:0 alpha:1] CGColor];
-        //        _separatorLayer.minificationFilter = nil;
-        //        NSLog(@"%@", _separatorLayer.debugDescription);
-    }
-    
-    NSMutableArray *mutableArray = (NSMutableArray *)layer.sublayers;
-    for (CALayer *item in mutableArray) {
-        if ([item.name  isEqual:@"_rl"]) {
-            [item removeFromSuperlayer];
-            break;
+        if ([fileManager fileExistsAtPath:picFile])
+        {
+            rect = _separatorLayer.frame;
+            rect.origin.y *= -0.1;
+            rect.size.height = [_superLayer frame].size.height * 0.8 - cornerSize;
+            rect.size.width = [_superLayer frame].size.width / 100;
+            rect.size.height *= 2;
+            _separatorLayer.frame = rect;
+            NSString *picFile = [NSString stringWithFormat:@"%@/separator.png", prefPath];
+            _separatorLayer.opacity = 1;
+            _separatorLayer.contents = [[[NSImage alloc] initWithContentsOfFile:picFile] autorelease];
+//            _separatorLayer.backgroundColor = [[NSColor colorWithRed:255 green:0 blue:0 alpha:1] CGColor];
+//            _separatorLayer.minificationFilter = nil;
+//            NSLog(@"%@", _separatorLayer.debugDescription);
         }
     }
-    [ _superLayer addSublayer:_rl ];
     
+    // Hide layers
+    if (![[[Preferences sharedInstance] objectForKey:@"cd_showGlass"] boolValue])
+        _glass.hidden = true;
     if (![[[Preferences sharedInstance] objectForKey:@"cd_showSeparator"] boolValue])
-        _separatorLayer.hidden = YES;
+        _separatorLayer.hidden = true;
     if ([[[Preferences sharedInstance] objectForKey:@"cd_isTransparent"] boolValue])
         [ _superLayer setSublayers:[NSArray arrayWithObjects:_separatorLayer, nil] ];
 }
 
-@interface initialize : NSObject
+@interface initialize : CALayer
 @end
 @implementation initialize
 
 + (void)load {
+    
+    // Create prefs if they don't exist
     _setupPrefs();
     
+    // Read system version
     osx_minor = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
+    
+    // Swizzle based on OSX version
     if (osx_minor == 11)
-        ZKSwizzle(_CDDOCKFloorLayer, _TtC4Dock10FloorLayer);
+        ZKSwizzle(_CDDOCKFloorLayer, Dock.FloorLayer);
     if (osx_minor == 10)
         ZKSwizzle(_CDDOCKFloorLayer, DOCKFloorLayer);
     if (osx_minor == 9) {
@@ -243,8 +328,8 @@ void _TenNine(CALayer* layer) {
         ZKSwizzle(_CDMAVSide, DOCKSideGlassFloorLayer);
     }
     
-    // Something tells me I could do this without fishhook if I already have opee/zkwizzle
-    // Then again I don't really know what's going on here
+    // Something tells me I could do this without fishhook if I already have ZKSwizzle
+    // But I don't really know what's going on here
     if (osx_minor > 9) {
         orig_CFPreferencesCopyAppValue = dlsym(RTLD_DEFAULT, "CFPreferencesCopyAppValue");
         rebind_symbols((struct rebinding[1]){{"CFPreferencesCopyAppValue", hax_CFPreferencesCopyAppValue}}, 1);
@@ -259,12 +344,18 @@ void _TenNine(CALayer* layer) {
 // Force dock into dark or light mode
 static id (*orig_CFPreferencesCopyAppValue)(CFStringRef key, CFStringRef applicationID);
 id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
+//    NSLog(@"Key: %@, Original Value: %@", key, orig_CFPreferencesCopyAppValue(key, applicationID));
     if ([(__bridge NSString *)key isEqualToString:@"AppleInterfaceTheme"] || [(__bridge NSString *)key isEqualToString:@"AppleInterfaceStyle"]) {
-//        NSLog(@"Test");
         if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 1) {
             return @"Light";
         } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 2) {
             return @"Dark";
+        } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 3) {
+            if ([orig_CFPreferencesCopyAppValue(key, applicationID)  isEqual: @"Dark"]) {
+                return @"Light";
+            } else {
+                return @"Dark";
+            }
         } else {
             return orig_CFPreferencesCopyAppValue(key, applicationID);
         }
@@ -292,127 +383,191 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
 }
 @end
 
-@interface _CDDOCKFloorLayer : CALayer
-@end
+// OS X 10.10 Yosemite and 10.11 El Capitan implementation
 @implementation _CDDOCKFloorLayer
 - (void)layoutSublayers {
     ZKOrig(void);
     
-    // Do nothing
+    // Do nothing if not enabled
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     
     // Fix for icon shadows / reflection layer not intializing on their own...
     _loadShadows(self);
 
-    // Get dock orientation
+    // Update dock orientation
     if (osx_minor == 11) {
-        object_getInstanceVariable(self, "orientation", (void **)&orient);
+        orient = ZKHookIvar(self, NSInteger, "orientation");
     } else {
         object_getInstanceVariable(self, "_orientation", (void **)&orient);
     }
-    
-//    NSLog(@"Dock orientation : %li", (long)orient);
 
+    // Hook some layers
     CALayer *_materialLayer = ZKHookIvar(self, CALayer *, "_materialLayer");
     CALayer *_glassLayer = ZKHookIvar(self, CALayer *, "_glassLayer");
     CALayer *_separatorLayer = ZKHookIvar(self, CALayer *, "_separatorLayer");
+    
+    // Just for kicks
     CALayer *_superLayer = self;
     
-    // Duplicate the frost layer, I'll use this as our base background layer
-    NSData *buffer = [NSKeyedArchiver archivedDataWithRootObject: _materialLayer];
-    CALayer *_frostDupe = [NSKeyedUnarchiver unarchiveObjectWithData: buffer];
-    [ _frostDupe setName:(@"_frostDupe")];
-
-    // Probably could be done better remove old copy then add new one
-    NSMutableArray *mutableArray = (NSMutableArray *)_superLayer.sublayers;
-    for (CALayer *item in mutableArray)
-        if ([item.name isEqual:@"_frostDupe"]) {
-            [item removeFromSuperlayer];
-            break;
-        }
-    [ _superLayer addSublayer:_frostDupe ];
+    // Custom layers
+    CALayer *_borderLayer = nil;
+    CALayer *_backgroundLayer = nil;
     
+    // Look for custom layers
+    for (CALayer *item in (NSMutableArray *)_superLayer.sublayers)
+    {
+        if ([item.name isEqual:@"_borderLayer"])
+            _borderLayer = item;
+        if ([item.name isEqual:@"_backgroundLayer"])
+            _backgroundLayer = item;
+    }
+    
+    // initialize border layer
+    if (_borderLayer == nil)
+    {
+        _borderLayer = [[CALayer alloc] init];
+        [ _borderLayer setName:(@"_borderLayer")];
+        [ _superLayer addSublayer:_borderLayer ];
+    }
+    
+    // initialize background layer
+    if (_backgroundLayer == nil)
+    {
+        _backgroundLayer = [[CALayer alloc] init];
+        [ _backgroundLayer setHidden:false ];
+        [ _backgroundLayer setName:(@"_backgroundLayer")];
+        [ _superLayer addSublayer:_backgroundLayer ];
+    }
+    
+    // Read corner radius
+    float cornerSize = [[[Preferences sharedInstance] objectForKey:@"cd_cornerRadius"] floatValue];
+    
+    // Lets make the frost layer rectangular by default
     _materialLayer.cornerRadius = 0;
     _materialLayer.borderWidth = 0;
 
-    // Picture background set self background to picture
+    // Picture background
     if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue]) {
+        NSFileManager *fileManager = [NSFileManager defaultManager];
         NSString *picFile = nil;
-        if (orient == 0) {
+        
+        // Check orientation
+        if (orient == 0)
+        {
             picFile = [NSString stringWithFormat:@"%@/background.png", prefPath];
-        } else {
+        }
+        else
+        {
             picFile = [NSString stringWithFormat:@"%@/background1.png", prefPath];
         }
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
-            [ _materialLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[[NSImage alloc] initWithContentsOfFile:picFile] autorelease]] CGColor] ];
-        } else {
-            _materialLayer.contents = [[[NSImage alloc] initWithContentsOfFile:picFile] autorelease];
+        
+        // If custom background exists apply
+        if ([fileManager fileExistsAtPath:picFile])
+        {
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue])
+            {
+                [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[[NSImage alloc] initWithContentsOfFile:picFile] autorelease]] CGColor] ];
+            }
+            else
+            {
+                _backgroundLayer.contents = [[[NSImage alloc] initWithContentsOfFile:picFile] autorelease];
+            }
+            
+            // Set self sublayers to _backgroundLayer and _serparatorLayer
+            // Make sure _sepraratorLayer is on top
+            [ _superLayer setSublayers:[NSArray arrayWithObjects:_backgroundLayer, _separatorLayer, nil] ];
         }
-        [ _materialLayer setSublayers:[NSArray arrayWithObjects:_separatorLayer, nil] ];
     }
 
-    // Color background
+    // Color background layer
     if ([[[Preferences sharedInstance] objectForKey:@"cd_dockBG"] boolValue]) {
         float red = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGR"] floatValue];
         float green = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGG"] floatValue];
         float blue = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGB"] floatValue];
         float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGA"] floatValue];
         NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
-        [_frostDupe setBackgroundColor:[goodColor CGColor]];
-        [_frostDupe setOpacity:(alpha / 100.0)];
+        [_backgroundLayer setBackgroundColor:[goodColor CGColor]];
+        [_backgroundLayer setOpacity:(alpha / 100.0)];
     }
 
-    // Full width
+    // Full width dock
     if ([[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue]) {
         CGRect rect = _superLayer.bounds;
+        
+        // Best to avoid += or -= used to keep incrementally grow forever
         if (orient == 0) {
             rect.size.width = [[NSScreen mainScreen] frame].size.width * 2;
-            rect.origin.x -= [[NSScreen mainScreen] frame].size.width / 2;
+            rect.origin.x = -([[NSScreen mainScreen] frame].size.width / 2);
         } else {
             rect.size.height = [[NSScreen mainScreen] frame].size.height * 2;
-            rect.origin.y -= [[NSScreen mainScreen] frame].size.height;
+            rect.origin.y = -([[NSScreen mainScreen] frame].size.height);
         }
-        [ _materialLayer setFrame:rect ];
-    } else {
-        // If not full width round corners
+        
+        [ _materialLayer setFrame: rect ];
+//        [ _superLayer setFrame: rect ];
+    }
+    
+    // Border layer
+    float brdSize = [[[Preferences sharedInstance] objectForKey:@"cd_borderSize"] floatValue];
+    if (brdSize > 0) {
+        CGRect newFrame = _backgroundLayer.frame;
+        newFrame.origin.x -= brdSize;
+        newFrame.size.width += brdSize * 2;
+        newFrame.origin.y -= brdSize;
+        newFrame.size.height += brdSize * 2;
+        float red = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGR"] floatValue];
+        float green = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGG"] floatValue];
+        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGB"] floatValue];
+        [ _borderLayer setFrame:newFrame];
+        [ _borderLayer setBackgroundColor:[[NSColor clearColor] CGColor]];
+        [ _borderLayer setBorderColor:[[NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0] CGColor]];
+        [ _borderLayer setOpacity:([[[Preferences sharedInstance] objectForKey:@"cd_borderBGA"] floatValue] / 100.0)];
+        [ _borderLayer setBorderWidth:brdSize];
+        [ _borderLayer setHidden:false];
+    }
+    
+    // rounded corners
+    if (cornerSize > (float)0) {
         CGRect rect = _superLayer.bounds;
-        float cornerSize = [[[Preferences sharedInstance] objectForKey:@"cd_cornerRadius"] floatValue];
-        if (cornerSize > (float)0) {
-            [ _frostDupe setCornerRadius:cornerSize ];
+        
+        // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
+        if (brdSize > 0) {
+            if (brdSize < 2) brdSize = 2;
+            [ _backgroundLayer setCornerRadius:cornerSize / brdSize ];
+            [ _materialLayer setCornerRadius:cornerSize / brdSize ];
+        } else {
+            [ _backgroundLayer setCornerRadius:cornerSize ];
             [ _materialLayer setCornerRadius:cornerSize ];
-            _glassLayer.hidden = YES;
-            if (orient == 0) {
-                rect.size.height += cornerSize;
-                rect.origin.y -= cornerSize;
-            } else {
-                rect.size.width += cornerSize;
-            }
-            if (orient == 1) {
-                rect.origin.x -= cornerSize;
-            }
         }
+        
+        [ _borderLayer setCornerRadius:cornerSize ];
+        
+        // Couldn't figure out how to adjust this layers corners so lets hide it
+        _glassLayer.hidden = YES;
+        
+        if (orient == 0) {
+            rect.size.height += cornerSize;
+            rect.origin.y -= cornerSize;
+        } else {
+            rect.size.width += cornerSize;
+        }
+        if (orient == 1) {
+            rect.origin.x -= cornerSize;
+        }
+        
         [ _materialLayer setFrame:rect ];
     }
-
-    // Why does this work? if I color the original frost layer I lose the frost
-    // same with the background layer, so I create this dupe layer
-    // but if I don't move it out of the frame I only see the uncolored frost
-    // very magical, there must be a better way...
-    CGRect rect = _materialLayer.bounds;
-    rect.origin.y += rect.size.height;
-    [_frostDupe setBounds:rect];
-    _frostDupe.hidden = NO;
+    
+    // background layer should have same frame as frost layer
+    [ _backgroundLayer setFrame: _materialLayer.frame];
     
     // Pinning except the actual clickable tile areas don't move, not sure how to do that...
-//    static dispatch_once_t once;
-//    dispatch_once(&once, ^ {
 //        CGRect r1 = _superLayer.bounds;
-//        CGRect rect = _superLayer.superlayer.frame;
-//        NSLog(@"%f", r1.size.width);
-//        rect.origin.x -= ([[NSScreen mainScreen] frame].size.width - r1.size.width) / 2;
+//        rect = _superLayer.superlayer.frame;
+//        rect.origin.x = -([[NSScreen mainScreen] frame].size.width - r1.size.width) / 2;
 //        _superLayer.superlayer.frame = rect;
-//    });
+//        NSLog(@"%@",  _superLayer.superlayer.debugDescription);
 
     // Hide layers if we want to
     if (![[[Preferences sharedInstance] objectForKey:@"cd_showFrost"] boolValue])
