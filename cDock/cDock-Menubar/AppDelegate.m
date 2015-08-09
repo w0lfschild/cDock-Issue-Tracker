@@ -68,7 +68,7 @@ NSMenu *theMenu;
                                                                                 attributes:@{
                                                                                              NSForegroundColorAttributeName : [NSColor tertiaryLabelColor],
                                                                                              NSFontAttributeName  : [NSFont fontWithName:@"HelveticaNeue" size:11]}]];
-    [self.aboutWindowController setAppVersion:@"Version 9.2 (Build 1)"];
+    [self.aboutWindowController setAppVersion:@"Version 9.4.1"];
     [self.aboutWindowController setWindowShouldHaveShadow:YES];
     [self.aboutWindowController showCredits:nil];
     [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
