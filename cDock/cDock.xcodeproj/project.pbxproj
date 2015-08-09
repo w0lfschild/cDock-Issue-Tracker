@@ -54,15 +54,6 @@
 		FBBC5AEC1B6DE869007FB947 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBCEED7E1B68AD530056710B /* DOCKFloorLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKFloorLayer.h; sourceTree = "<group>"; };
-		FBCEED7F1B68AD530056710B /* DOCKIndicatorLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKIndicatorLayer.h; sourceTree = "<group>"; };
-		FBCEED801B68AD530056710B /* DOCKLabelLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKLabelLayer.h; sourceTree = "<group>"; };
-		FBCEED811B68AD530056710B /* DOCKSeparatorTile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKSeparatorTile.h; sourceTree = "<group>"; };
-		FBCEED821B68AD530056710B /* DOCKTileLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKTileLayer.h; sourceTree = "<group>"; };
-		FBCEED831B68AD530056710B /* DOCKTrashTile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DOCKTrashTile.h; sourceTree = "<group>"; };
-		FBCEED841B68AD530056710B /* ECMaterialLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECMaterialLayer.h; sourceTree = "<group>"; };
-		FBCEED851B68AD530056710B /* ECStatusLabelDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECStatusLabelDescription.h; sourceTree = "<group>"; };
-		FBCEED861B68AD530056710B /* Tile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tile.h; sourceTree = "<group>"; };
 		FBDE03601B5ED1EE00C1C5DB /* cDock-GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDE03661B5ED1EE00C1C5DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBDE03701B5ED1EE00C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -178,29 +169,12 @@
 			isa = PBXGroup;
 			children = (
 				79A33DAE1B6C0630007299FC /* ZKSwizzle */,
-				FBCEED871B68AD580056710B /* Apple */,
 				FB13CA031B6746D1006F3D89 /* Fishhook */,
 				FBD71EAD1B5F201900C50402 /* Preferences */,
 				FBD71EB11B5F201900C50402 /* Theming */,
 				FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */,
 			);
 			path = cDock;
-			sourceTree = "<group>";
-		};
-		FBCEED871B68AD580056710B /* Apple */ = {
-			isa = PBXGroup;
-			children = (
-				FBCEED7E1B68AD530056710B /* DOCKFloorLayer.h */,
-				FBCEED7F1B68AD530056710B /* DOCKIndicatorLayer.h */,
-				FBCEED801B68AD530056710B /* DOCKLabelLayer.h */,
-				FBCEED811B68AD530056710B /* DOCKSeparatorTile.h */,
-				FBCEED821B68AD530056710B /* DOCKTileLayer.h */,
-				FBCEED831B68AD530056710B /* DOCKTrashTile.h */,
-				FBCEED841B68AD530056710B /* ECMaterialLayer.h */,
-				FBCEED851B68AD530056710B /* ECStatusLabelDescription.h */,
-				FBCEED861B68AD530056710B /* Tile.h */,
-			);
-			name = Apple;
 			sourceTree = "<group>";
 		};
 		FBD71EAD1B5F201900C50402 /* Preferences */ = {
