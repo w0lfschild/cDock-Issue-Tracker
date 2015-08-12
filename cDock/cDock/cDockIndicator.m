@@ -38,15 +38,20 @@ void load()
 
 ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
 @implementation _CDIndicatorLayer
+//- (void)dockBackgroundChanged {
+//    ZKOrig(void);
+//}
+
 - (void)updateIndicatorForSize:(float)arg1 {
     ZKOrig(void, arg1);
     
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     
+//    CALayer *test = self.superlayer;
+//    NSLog(@"%@", test.debugDescription);
 //    NSLog(@"%f", arg1);
 //    NSLog(@"%@", self.debugDescription);
-    
     
     // Note to self this should be precentage based not solid numbers
     if (osx_minor > 9) {

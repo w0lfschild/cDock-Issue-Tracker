@@ -5,6 +5,7 @@
 #import "Preferences.h"
 #import "ZKSwizzle.h"
 @import AppKit;
+@import Quartz;
 
 extern NSInteger orient;
 
@@ -17,7 +18,7 @@ struct FloatRect {
 
 @interface Tile : NSObject
 {
-    CGRect fGlobalBounds;
+    struct CGRect fGlobalBounds;
 }
 - (void)setSelected:(BOOL)arg1;
 - (void)setLabel:(id)arg1 stripAppSuffix:(_Bool)arg2;
@@ -29,10 +30,9 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
 
 //- (void)updateRect {
 //    ZKOrig(void);
+//    CGRect frame = ZKHookIvar(self, CGRect, "fGlobalBounds");
+//    object_setInstanceVariable(self, "fGlobalBounds", (void **)&frame);
 //
-//    CGRect frame; // = (CGRect *)[self valueForKey:@"fGlobalBounds"];
-//    object_getInstanceVariable(self, "fGlobalBounds", (void **)&frame);
-//    
 //    struct FloatRect arg1;
 //    
 //    arg1.left = frame.origin.x;
