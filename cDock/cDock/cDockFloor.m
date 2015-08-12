@@ -16,16 +16,25 @@
 
 NSInteger orient = 0;
 long osx_minor = 0;
+struct CGColor *background_color;
+struct CGColor *background_color1;
+CGImageRef background;
+CGImageRef background1;
 
 @interface Tile : NSObject
 - (void)setSelected:(BOOL)arg1;
 - (void)setLabel:(id)arg1 stripAppSuffix:(_Bool)arg2;
 @end
 
+@interface _CDMAVSide : CALayer
+@end
+@interface _CDMAVFloor : CALayer
+@end
 @interface _CDDOCKFloorLayer : CALayer
 @end
 
-void _setupPrefs() {
+void _setupPrefs()
+{
     if (![[NSFileManager defaultManager] fileExistsAtPath:thmePath]) {
         NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
         
@@ -100,29 +109,92 @@ void _setupPrefs() {
     }
 }
 
-// Fix for icon shadows / reflection layer not intializing on their own...
-void _loadShadows(CALayer* layer) {
+void _loadImages()
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
     static dispatch_once_t once;
     dispatch_once(&once, ^ {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        NSString *picFile;
+        
+        picFile = [NSString stringWithFormat:@"%@/background.png", prefPath];
+        if ([fileManager fileExistsAtPath:picFile])
+            background = CGImageCreateWithPNGDataProvider(CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:picFile]), NULL, true, kCGRenderingIntentDefault);
+        else
+            background = nil;
+        
+        picFile = [NSString stringWithFormat:@"%@/background1.png", prefPath];
+        if ([fileManager fileExistsAtPath:picFile])
+            background1 = CGImageCreateWithPNGDataProvider(CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:picFile]), NULL, true, kCGRenderingIntentDefault);
+        else
+            background1 = nil;
+        
+        
+        if (background)
+            background_color = [[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background size:NSZeroSize]] CGColor];
+        else
+            background_color = [[NSColor clearColor] CGColor];
+        
+        if (background1)
+            background_color1 = [[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background1 size:NSZeroSize]] CGColor];
+        else
+            background_color1 = [[NSColor clearColor] CGColor];
+    });
+}
+
+void _forceRefresh()
+{
+    Class cls = NSClassFromString(@"DOCKPreferences");
+    id dockPref = nil;
+    SEL aSel = NSSelectorFromString(@"preferences");
+    if ([cls respondsToSelector:aSel]) {
+        dockPref = [cls performSelector:aSel];
+    }
+    if (dockPref) {
+        NSString *key = @"showProcessIndicatorsPref";
+        id val = [dockPref valueForKey:key];
+        if (val) {
+            [dockPref setValue:[NSNumber numberWithBool:![val boolValue]] forKey:key];
+            [dockPref setValue:val forKey:key];
+        }
+    }
+}
+
+// Fix for icon shadows / reflection layer not intializing on their own...
+void _loadShadows(CALayer* layer)
+{
+    static dispatch_once_t once;
+    dispatch_once(&once, ^ {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         SEL aSel = @selector(layoutSublayers);
         NSArray *tileLayers = layer.superlayer.sublayers;
         for (CALayer *item in tileLayers)
+        {
             if (item.class == NSClassFromString(@"DOCKTileLayer")) {
                 if ([item respondsToSelector:aSel])
                     [item performSelector:aSel];
             }
+//            if (item.class == NSClassFromString(@"DOCKIndicatorLayer")) {
+//                if ([item respondsToSelector:@selector(updateIndicatorForSize:)])
+//                    [item performSelector:@selector(updateIndicatorForSize:) withObject:[ NSNumber numberWithFloat:0.0 ]];
+//            }
+        }
+            
+        // Gotta refresh again here to get indicators to theme
+        _forceRefresh();
+            
         NSLog(@"Shadows and reflections initialized...");
         });
     });
 }
 
 // OS X 10.9 Mavericks implementation
-void _TenNine(CALayer* layer) {
+void _TenNine(CALayer* layer)
+{
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     
     _loadShadows(layer);
+    _loadImages();
     
     object_getInstanceVariable(layer, "_orientation", (void **)&orient);
     
@@ -133,6 +205,11 @@ void _TenNine(CALayer* layer) {
             return [evaluatedObject respondsToSelector:aSel];
         }]];
         [tileLayers makeObjectsPerformSelector:aSel];
+        
+        // Flickers
+//        aSel = NSSelectorFromString(@"turnMirrorOff");
+//        if ([layer respondsToSelector:aSel])
+//            [layer performSelector:aSel];
     }
     
     // Hook some layers
@@ -178,30 +255,24 @@ void _TenNine(CALayer* layer) {
     
     // Picture background
     if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue]) {
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSString *picFile = nil;
-        
         // Check orientation
         if (orient == 0)
         {
-            picFile = [NSString stringWithFormat:@"%@/background.png", prefPath];
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
+                [ _backgroundLayer setBackgroundColor:background_color ];
+            } else {
+                _backgroundLayer.contents = (__bridge id)background;
+            }
         }
         else
         {
-            picFile = [NSString stringWithFormat:@"%@/background1.png", prefPath];
-        }
-        
-        // If custom background exists apply
-        if ([fileManager fileExistsAtPath:picFile])
-        {
-            // we should initialize this image somewhere else and only 1 time
             if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
-                [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[[NSImage alloc] initWithContentsOfFile:picFile] autorelease]] CGColor] ];
+                [ _backgroundLayer setBackgroundColor:background_color1 ];
             } else {
-                _backgroundLayer.contents = [[[NSImage alloc] initWithContentsOfFile:picFile] autorelease];
+                _backgroundLayer.contents = (__bridge id)background1;
             }
-            [ _superLayer setSublayers:[NSArray arrayWithObjects: _backgroundLayer, _separatorLayer, nil] ];
         }
+        [ _superLayer setSublayers:[NSArray arrayWithObjects: _backgroundLayer, _separatorLayer, nil] ];
     }
     
     // Color background
@@ -306,27 +377,30 @@ void _TenNine(CALayer* layer) {
         [ _superLayer setSublayers:[NSArray arrayWithObjects:_separatorLayer, nil] ];
 }
 
-@interface initialize : CALayer
+@interface initialize : NSObject
 @end
 @implementation initialize
 
 + (void)load {
+    // Read system version
+    osx_minor = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
     
     // Create prefs if they don't exist
     _setupPrefs();
-    
-    // Read system version
-    osx_minor = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
     
     // Swizzle based on OSX version
     if (osx_minor == 11)
         ZKSwizzle(_CDDOCKFloorLayer, Dock.FloorLayer);
     if (osx_minor == 10)
         ZKSwizzle(_CDDOCKFloorLayer, DOCKFloorLayer);
-    if (osx_minor == 9) {
+    if (osx_minor == 9)
+    {
         ZKSwizzle(_CDMAVFloor, DOCKGlassFloorLayer);
         ZKSwizzle(_CDMAVSide, DOCKSideGlassFloorLayer);
     }
+    
+    // Force dock to refresh
+    _forceRefresh();
     
     // Something tells me I could do this without fishhook if I already have ZKSwizzle
     // But I don't really know what's going on here
@@ -365,8 +439,6 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
 }
 @end
 
-@interface _CDMAVSide : CALayer
-@end
 @implementation _CDMAVSide
 - (void)layoutSublayers {
     ZKOrig(void);
@@ -374,8 +446,6 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
 }
 @end
 
-@interface _CDMAVFloor : CALayer
-@end
 @implementation _CDMAVFloor
 - (void)layoutSublayers {
     ZKOrig(void);
@@ -394,10 +464,11 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
     
     // Fix for icon shadows / reflection layer not intializing on their own...
     _loadShadows(self);
+    _loadImages();
 
     // Update dock orientation
     if (osx_minor == 11) {
-        orient = ZKHookIvar(self, NSInteger, "orientation");
+        object_getInstanceVariable(self, "orientation", (void **)&orient);
     } else {
         object_getInstanceVariable(self, "_orientation", (void **)&orient);
     }
@@ -449,34 +520,33 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
 
     // Picture background
     if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue]) {
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        NSString *picFile = nil;
-        
-        // Check orientation
         if (orient == 0)
         {
-            picFile = [NSString stringWithFormat:@"%@/background.png", prefPath];
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
+                [ _backgroundLayer setBackgroundColor:background_color ];
+            } else {
+                [ _backgroundLayer setContents:(__bridge id)background ];
+            }
         }
         else
         {
-            picFile = [NSString stringWithFormat:@"%@/background1.png", prefPath];
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
+                [ _backgroundLayer setBackgroundColor:background_color1 ];
+            } else {
+                [ _backgroundLayer setContents:(__bridge id)background1 ];
+            }
         }
+        // Set self sublayers to _backgroundLayer and _serparatorLayer
+        // Make sure _sepraratorLayer is on top
+        [ _superLayer setSublayers:[NSArray arrayWithObjects:_backgroundLayer, _separatorLayer, nil] ];
+        [ _materialLayer setFrame: _superLayer.bounds ];
         
-        // If custom background exists apply
-        if ([fileManager fileExistsAtPath:picFile])
+        if ([[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue] && orient == 0)
         {
-            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue])
-            {
-                [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[[NSImage alloc] initWithContentsOfFile:picFile] autorelease]] CGColor] ];
-            }
-            else
-            {
-                _backgroundLayer.contents = [[[NSImage alloc] initWithContentsOfFile:picFile] autorelease];
-            }
-            
-            // Set self sublayers to _backgroundLayer and _serparatorLayer
-            // Make sure _sepraratorLayer is on top
-            [ _superLayer setSublayers:[NSArray arrayWithObjects:_backgroundLayer, _separatorLayer, nil] ];
+            CGRect rect = _superLayer.bounds;
+            rect.size.width = rect.size.width * 1.025;
+            rect.origin.x -= (rect.size.width * 0.025) / 2;
+            [ _materialLayer setFrame: rect ];
         }
     }
 
@@ -528,7 +598,7 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
     }
     
     // rounded corners
-    if (cornerSize > (float)0) {
+    if (cornerSize > 0) {
         CGRect rect = _superLayer.bounds;
         
         // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
@@ -564,10 +634,10 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
     
     // Pinning except the actual clickable tile areas don't move, not sure how to do that...
 //        CGRect r1 = _superLayer.bounds;
-//        rect = _superLayer.superlayer.frame;
+//        CGRect rect = _superLayer.superlayer.frame;
 //        rect.origin.x = -([[NSScreen mainScreen] frame].size.width - r1.size.width) / 2;
 //        _superLayer.superlayer.frame = rect;
-//        NSLog(@"%@",  _superLayer.superlayer.debugDescription);
+//    NSLog(@"%@",  self.superlayer.debugDescription);
 
     // Hide layers if we want to
     if (![[[Preferences sharedInstance] objectForKey:@"cd_showFrost"] boolValue])
