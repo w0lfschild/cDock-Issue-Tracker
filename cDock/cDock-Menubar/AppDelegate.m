@@ -19,9 +19,12 @@
 
 NSStatusItem *statusItem;
 NSMenu *theMenu;
+long osx_minor = 0;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
+    
+    osx_minor = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
     
     self.aboutWindowController = [[PFAboutWindowController alloc] init];
     
@@ -34,7 +37,8 @@ NSMenu *theMenu;
     [theMenu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     [theMenu addItemWithTitle:@"Open cDock" action:@selector(open_cdock:) keyEquivalent:@""];
     [theMenu addItem:[NSMenuItem separatorItem]]; // A thin grey line
-    [theMenu addItemWithTitle:@"About" action:@selector(showAboutWindow:) keyEquivalent:@""];
+//    [theMenu addItemWithTitle:@"About" action:@selector(orderFrontStandardAboutPanel:) keyEquivalent:@""];
+    [theMenu addItemWithTitle:@"About" action:@selector(aboutWindow:) keyEquivalent:@""];
     [theMenu addItemWithTitle:@"Donate" action:@selector(donate:) keyEquivalent:@""];
     [theMenu addItemWithTitle:@"Visit Website" action:@selector(visit_website:) keyEquivalent:@""];
 //    [theMenu addItemWithTitle:@"Check for updates..." action:nil keyEquivalent:@""];
@@ -61,14 +65,27 @@ NSMenu *theMenu;
     [statusItem setMenu:theMenu];
 }
 
-- (IBAction)showAboutWindow:(id)sender {
+- (IBAction)aboutWindow:(id)sender
+{
+    if (osx_minor == 9)
+    {
+        [ [NSApplication sharedApplication] performSelector:@selector(orderFrontStandardAboutPanel:) ];
+    }
+    else
+    {
+        [ self showAboutWindow ];
+    }
+}
+
+- (void)showAboutWindow
+{
     [self.aboutWindowController setAppURL:[[NSURL alloc] initWithString:@"https://github.com/w0lfschild/cDock"]];
     [self.aboutWindowController setAppName:@"cDock"];
     [self.aboutWindowController setAppCopyright:[[NSAttributedString alloc] initWithString:@"Copyright (c) 2015 Wolfgang Baird"
                                                                                 attributes:@{
                                                                                              NSForegroundColorAttributeName : [NSColor tertiaryLabelColor],
                                                                                              NSFontAttributeName  : [NSFont fontWithName:@"HelveticaNeue" size:11]}]];
-    [self.aboutWindowController setAppVersion:@"Version 9.4.1"];
+    [self.aboutWindowController setAppVersion:@"Version 9.5"];
     [self.aboutWindowController setWindowShouldHaveShadow:YES];
     [self.aboutWindowController showCredits:nil];
     [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
