@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+@import AppKit;
 
 # define thmePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/org.w0lf.cDock.plist"]
 # define thmeName [[NSMutableDictionary dictionaryWithContentsOfFile:thmePath] objectForKey:@"cd_theme"]
@@ -206,6 +207,7 @@ void apply_WELL(NSMutableDictionary *prefs, NSString *well, NSColorWell *item) {
     
 	[pref setObject:[NSNumber numberWithBool:[_dockBG state]] forKey:@"cd_dockBG"];
 	[pref setObject:[NSNumber numberWithBool:[_labelBG state]] forKey:@"cd_labelBG"];
+    
     [pref setObject:[NSNumber numberWithBool:[_indicatorBG state]] forKey:@"cd_colorIndicator"];
     [pref setObject:[NSNumber numberWithBool:[_shadowBG state]] forKey:@"cd_iconShadow"];
     
@@ -219,11 +221,25 @@ void apply_WELL(NSMutableDictionary *prefs, NSString *well, NSColorWell *item) {
     apply_WELL(pref, @"dock", _dockWELL);
     apply_WELL(pref, @"label", _labelWELL);
     apply_WELL(pref, @"indicator", _indicatorWELL);
-    apply_WELL(pref, @"shadow", _shadowWELL);
+    apply_WELL(pref, @"iconShadow", _shadowWELL);
     
 	NSMutableDictionary *tmpPlist = pref;
 	[tmpPlist writeToFile:prefPath atomically:YES];
-	system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
+    
+    CFNotificationCenterRef center = CFNotificationCenterGetDistributedCenter(); //CFNotificationCenterGetLocalCenter();
+    
+    // post a notification
+    CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+    CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+    CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                  &keyCallbacks, &valueCallbacks);
+    CFDictionaryAddValue(dictionary, CFSTR("TestKey"), CFSTR("Reload"));
+    
+    //    CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
+    CFNotificationCenterPostNotification(center, CFSTR("MyNotification"), NULL, dictionary, TRUE);
+    CFRelease(dictionary);
+    
+    //system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
 }
 
 @end
