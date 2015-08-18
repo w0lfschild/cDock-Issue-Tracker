@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79A33DAD1B6C062A007299FC /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 79A33DAC1B6C062A007299FC /* ZKSwizzle.m */; };
-		79D28C961B66BCB10036D668 /* cDockIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843581B641CEC00F87E50 /* cDockIndicator.m */; };
-		79D28C971B66BCB30036D668 /* cDockLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843591B641CEC00F87E50 /* cDockLabel.m */; };
-		79D28C981B66BCB40036D668 /* cDockTile.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8435A1B641CEC00F87E50 /* cDockTile.m */; };
+		79D28C961B66BCB10036D668 /* cd_DOCKIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */; };
+		79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */; };
+		79D28C981B66BCB40036D668 /* cd_DOCKTile.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */; };
 		79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843531B641CD100F87E50 /* Preferences.m */; };
-		FB13CA061B6746DE006F3D89 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB13CA051B6746DE006F3D89 /* fishhook.c */; };
+		FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */; };
+		FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13C1B81B5BC00F16D5E /* fishhook.c */; };
+		FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */; };
 		FB3EDF741B7088B000E96DC9 /* updates in Resources */ = {isa = PBXBuildFile; fileRef = FB3EDF731B7088B000E96DC9 /* updates */; };
-		FB5E0BE11B673DF200AC2E6D /* cDockFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cDockFloor.m */; };
+		FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor.m */; };
 		FB7ABC5C1B6AE234001D7E5A /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC5A1B6AE234001D7E5A /* PFAboutWindow.xib */; };
 		FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */; };
 		FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */; };
@@ -36,12 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		79A33DAB1B6C062A007299FC /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSwizzle.h; sourceTree = "<group>"; };
-		79A33DAC1B6C062A007299FC /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSwizzle.m; sourceTree = "<group>"; };
-		FB13CA041B6746DE006F3D89 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
-		FB13CA051B6746DE006F3D89 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_Initialize.m; path = cDock/cd_Initialize.m; sourceTree = SOURCE_ROOT; };
+		FB0CF13C1B81B5BC00F16D5E /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fishhook.c; path = Fishhook/fishhook.c; sourceTree = "<group>"; };
+		FB0CF13D1B81B5BC00F16D5E /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = Fishhook/fishhook.h; sourceTree = "<group>"; };
+		FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = ZKSwizzle/ZKSwizzle.h; sourceTree = "<group>"; };
+		FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = ZKSwizzle/ZKSwizzle.m; sourceTree = "<group>"; };
 		FB3EDF731B7088B000E96DC9 /* updates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = updates; sourceTree = "<group>"; };
-		FB5E0BE01B673DF200AC2E6D /* cDockFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockFloor.m; path = cDock/cDockFloor.m; sourceTree = SOURCE_ROOT; };
+		FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor.m; path = cDock/cd_DOCKFloor.m; sourceTree = SOURCE_ROOT; };
 		FB7ABC591B6AE234001D7E5A /* PFAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAboutWindowController.h; path = PFAboutWindow/PFAboutWindowController.h; sourceTree = "<group>"; };
 		FB7ABC5A1B6AE234001D7E5A /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFAboutWindow.xib; path = PFAboutWindow/PFAboutWindow.xib; sourceTree = "<group>"; };
 		FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAboutWindowController.m; path = PFAboutWindow/PFAboutWindowController.m; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		FBBC5AE91B6DE869007FB947 /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFAboutWindow.xib; path = PFAboutWindow/PFAboutWindow.xib; sourceTree = "<group>"; };
 		FBBC5AEA1B6DE869007FB947 /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAboutWindowController.m; path = PFAboutWindow/PFAboutWindowController.m; sourceTree = "<group>"; };
 		FBBC5AEB1B6DE869007FB947 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = PFAboutWindow/Credits.rtf; sourceTree = "<group>"; };
-		FBBC5AEC1B6DE869007FB947 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
+		FBBC5AEC1B6DE869007FB947 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBDE03601B5ED1EE00C1C5DB /* cDock-GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,9 +71,9 @@
 		FBDE03A01B5EF17000C1C5DB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		FBE843521B641CD100F87E50 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = cDock/Preferences/Preferences.h; sourceTree = SOURCE_ROOT; };
 		FBE843531B641CD100F87E50 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = cDock/Preferences/Preferences.m; sourceTree = SOURCE_ROOT; };
-		FBE843581B641CEC00F87E50 /* cDockIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockIndicator.m; path = cDock/cDockIndicator.m; sourceTree = SOURCE_ROOT; };
-		FBE843591B641CEC00F87E50 /* cDockLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockLabel.m; path = cDock/cDockLabel.m; sourceTree = SOURCE_ROOT; };
-		FBE8435A1B641CEC00F87E50 /* cDockTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockTile.m; path = cDock/cDockTile.m; sourceTree = SOURCE_ROOT; };
+		FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKIndicator.m; path = cDock/cd_DOCKIndicator.m; sourceTree = SOURCE_ROOT; };
+		FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKLabel.m; path = cDock/cd_DOCKLabel.m; sourceTree = SOURCE_ROOT; };
+		FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKTile.m; path = cDock/cd_DOCKTile.m; sourceTree = SOURCE_ROOT; };
 		FBE8435F1B641D4A00F87E50 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "cDock-GUI/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		FBE843601B641D4A00F87E50 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "cDock-GUI/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		FBE843621B641D5800F87E50 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = "cDock-GUI/ViewController.h"; sourceTree = SOURCE_ROOT; };
@@ -106,8 +108,8 @@
 		79A33DAE1B6C0630007299FC /* ZKSwizzle */ = {
 			isa = PBXGroup;
 			children = (
-				79A33DAB1B6C062A007299FC /* ZKSwizzle.h */,
-				79A33DAC1B6C062A007299FC /* ZKSwizzle.m */,
+				FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */,
+				FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */,
 			);
 			name = ZKSwizzle;
 			sourceTree = "<group>";
@@ -115,8 +117,8 @@
 		FB13CA031B6746D1006F3D89 /* Fishhook */ = {
 			isa = PBXGroup;
 			children = (
-				FB13CA041B6746DE006F3D89 /* fishhook.h */,
-				FB13CA051B6746DE006F3D89 /* fishhook.c */,
+				FB0CF13C1B81B5BC00F16D5E /* fishhook.c */,
+				FB0CF13D1B81B5BC00F16D5E /* fishhook.h */,
 			);
 			name = Fishhook;
 			sourceTree = "<group>";
@@ -190,10 +192,11 @@
 		FBD71EB11B5F201900C50402 /* Theming */ = {
 			isa = PBXGroup;
 			children = (
-				FB5E0BE01B673DF200AC2E6D /* cDockFloor.m */,
-				FBE843581B641CEC00F87E50 /* cDockIndicator.m */,
-				FBE843591B641CEC00F87E50 /* cDockLabel.m */,
-				FBE8435A1B641CEC00F87E50 /* cDockTile.m */,
+				FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */,
+				FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor.m */,
+				FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */,
+				FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */,
+				FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */,
 			);
 			name = Theming;
 			path = "../../../untitled folder/Modck-master/Modck";
@@ -426,13 +429,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB13CA061B6746DE006F3D89 /* fishhook.c in Sources */,
-				79D28C961B66BCB10036D668 /* cDockIndicator.m in Sources */,
-				79A33DAD1B6C062A007299FC /* ZKSwizzle.m in Sources */,
+				FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */,
+				79D28C961B66BCB10036D668 /* cd_DOCKIndicator.m in Sources */,
+				FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */,
+				FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */,
 				79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */,
-				FB5E0BE11B673DF200AC2E6D /* cDockFloor.m in Sources */,
-				79D28C981B66BCB40036D668 /* cDockTile.m in Sources */,
-				79D28C971B66BCB30036D668 /* cDockLabel.m in Sources */,
+				FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor.m in Sources */,
+				79D28C981B66BCB40036D668 /* cd_DOCKTile.m in Sources */,
+				79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
