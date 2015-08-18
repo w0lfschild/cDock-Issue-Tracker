@@ -8,28 +8,33 @@
 # define prefPath [[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"] stringByAppendingPathComponent:thmeName]
 # define prefFile [[prefPath stringByAppendingPathComponent:thmeName ] stringByAppendingString:@".plist"]
 
+bool dispatch_prefFile = true;
+bool dispatch_dockFile = true;
+
 @implementation Preferences
 
 + (instancetype)sharedInstance {    
 	static Preferences *sharedInstance = nil;
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
+    if (dispatch_prefFile)
+    {
 		sharedInstance = [[self.class alloc] init];
 		NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:prefFile];
 		sharedInstance->_prefs = [plist mutableCopy];
-	});
+        dispatch_prefFile = false;
+    }
 	
 	return sharedInstance;
 }
 
 + (instancetype)sharedInstance2 {
     static Preferences *sharedInstance2 = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+    if (dispatch_dockFile)
+    {
         sharedInstance2 = [[self.class alloc] init];
         NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:thmePath];
         sharedInstance2->_prefs = [plist mutableCopy];
-    });
+        dispatch_dockFile = false;
+    }
     
     return sharedInstance2;
 }
