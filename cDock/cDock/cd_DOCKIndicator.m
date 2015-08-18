@@ -65,6 +65,8 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
             NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
             [self setBackgroundColor:[goodColor CGColor]];
             [self setOpacity:(alpha / 100.0)];
+            
+//            NSLog(@"%f %f %f %f", red, green, blue, alpha);
         }
         
         // Size indicator
@@ -110,6 +112,8 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
         self.contents = (__bridge id)image;
         self.contentsGravity = kCAGravityBottom;
         self.frame = CGRectMake(self.frame.origin.x, 0, (CGFloat)CGImageGetWidth(image) / self.contentsScale, (CGFloat)CGImageGetHeight(image) / self.contentsScale);
+    } else {
+        self.contents = nil;
     }
 }
 @end

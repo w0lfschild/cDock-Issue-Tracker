@@ -76,8 +76,15 @@ ZKSwizzleInterface(__CDLabel, DOCKLabelLayer, CALayer);
         }
     }
     
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_hideLabels"] boolValue])
-        self.sublayers = nil;
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_hideLabels"] boolValue]) {
+        for (CALayer *layer in self.sublayers) {
+            layer.hidden = YES;
+        }
+    } else {
+        for (CALayer *layer in self.sublayers) {
+            layer.hidden = NO;
+        }
+    }
 }
 @end
 

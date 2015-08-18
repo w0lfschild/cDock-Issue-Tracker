@@ -5,45 +5,16 @@
 #import "Preferences.h"
 #import "ZKSwizzle.h"
 @import AppKit;
-@import Quartz;
 
 extern NSInteger orient;
 
-struct FloatRect {
-    float left;
-    float top;
-    float right;
-    float bottom;
-};
-
 @interface Tile : NSObject
-{
-    struct CGRect fGlobalBounds;
-}
 - (void)setSelected:(BOOL)arg1;
 - (void)setLabel:(id)arg1 stripAppSuffix:(_Bool)arg2;
-//- (void)setGlobalFrame:(struct FloatRect)arg1;
 @end
 
 ZKSwizzleInterface(_CDTile, Tile, NSObject);
 @implementation _CDTile
-
-//- (void)updateRect {
-//    ZKOrig(void);
-//    CGRect frame = ZKHookIvar(self, CGRect, "fGlobalBounds");
-//    object_setInstanceVariable(self, "fGlobalBounds", (void **)&frame);
-//
-//    struct FloatRect arg1;
-//    
-//    arg1.left = frame.origin.x;
-//    arg1.top = [[NSScreen mainScreen] frame].size.height - 50;
-//    arg1.right = frame.origin.x + 50;
-//    arg1.bottom = [[NSScreen mainScreen] frame].size.height;
-//    
-//    [(Tile*)self setGlobalFrame:arg1];
-//
-//}
-
 - (void)labelAttached {
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
@@ -71,6 +42,11 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
 
 ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
 @implementation _CDTileLayer
+
+- (void)createShadowAndReflectionLayers {
+    // DO NOTHING
+}
+
 - (void)layoutSublayers {
     ZKOrig(void);
     
@@ -94,6 +70,8 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
         self.shadowColor = CGColorCreateGenericRGB(red/255.0, green/255.0, blue/255.0, 1.0);
         self.shadowRadius = size;
         self.shadowOffset = mySize;
+    } else {
+        self.shadowOpacity = 0;
     }
     
     // Icon reflections
@@ -117,6 +95,8 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
             [ self addSublayer:_reflectionLayer ];
         }
         
+        _reflectionLayer.hidden = NO;
+        
         // Transform reflecition layer using CATransform3DMakeRotation
         CGRect frm = _iconLayer.frame ;
         if (orient == 0) {
@@ -131,6 +111,17 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
         }
         [ _reflectionLayer setFrame:(frm) ];
         _reflectionLayer.opacity = 0.25;
+    } else {
+        CALayer *_reflectionLayer = nil;
+        
+        // Check if our custom layer exists, if it does then reference it
+        for (CALayer *item in (NSMutableArray *)self.sublayers)
+            if ([item.name  isEqual:@"_reflectionLayer"]) {
+                _reflectionLayer = item;
+                break;
+            }
+        
+        _reflectionLayer.hidden = YES;
     }
 }
 @end

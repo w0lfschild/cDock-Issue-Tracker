@@ -3,9 +3,7 @@
 //
 
 #import "Preferences.h"
-#import "fishhook.h"
 #import "ZKSwizzle.h"
-#import <dlfcn.h>
 @import AppKit;
 
 # define dockPath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/com.apple.dock.plist"]
@@ -16,15 +14,9 @@
 
 NSInteger orient = 0;
 long osx_minor = 0;
-struct CGColor *background_color;
-struct CGColor *background_color1;
 CGImageRef background;
 CGImageRef background1;
-
-@interface Tile : NSObject
-- (void)setSelected:(BOOL)arg1;
-- (void)setLabel:(id)arg1 stripAppSuffix:(_Bool)arg2;
-@end
+BOOL loadShadows = true;
 
 @interface _CDMAVSide : CALayer
 @end
@@ -32,82 +24,6 @@ CGImageRef background1;
 @end
 @interface _CDDOCKFloorLayer : CALayer
 @end
-
-void _setupPrefs()
-{
-    if (![[NSFileManager defaultManager] fileExistsAtPath:thmePath]) {
-        NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
-        
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_enabled"];
-        [newDict setObject:@"default" forKey:@"cd_theme"];
-        
-        [newDict writeToFile:thmePath atomically:NO];
-    }
-    
-    // Make sure hide-mirror = true for 10.9 but just do it on all versions anyways
-    if ([[NSFileManager defaultManager] fileExistsAtPath:dockPath]) {
-        NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:dockPath];
-        if ([[ plist objectForKey:@"hide-mirror"] boolValue] == false) {
-            system("defaults write com.apple.dock hide-mirror -bool TRUE");
-            plist = [NSMutableDictionary dictionaryWithContentsOfFile:dockPath];
-            if ([[ plist objectForKey:@"hide-mirror"] boolValue] == true) {
-                system("killall -KILL Dock; sleep 1; osascript -e \"tell application \"Dock\" to inject SIMBL into Snow Leopard\"");
-            }
-        }
-    }
-    
-    if (![[NSFileManager defaultManager] fileExistsAtPath:prefFile]) {
-        if (![[NSFileManager defaultManager] fileExistsAtPath:prefPath]) {
-            NSError * error = nil;
-            [[NSFileManager defaultManager] createDirectoryAtPath: prefPath
-                                      withIntermediateDirectories:YES
-                                                       attributes:nil
-                                                            error:&error];
-        }
-        NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
-        
-        // There are so many of these I need to add here....
-        
-        // Stuff
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_fullWidth"];
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_hideLabels"];
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_darkenMouseOver"];
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_customIndicator"];
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_iconReflection"];
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_isTransparent"];
-        [newDict setObject:[NSNumber numberWithInt:0] forKey:@"cd_darkMode"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_cornerRadius"];
-        
-        // Default layers
-        [newDict setObject:[NSNumber numberWithBool:true] forKey:@"cd_showFrost"];
-        [newDict setObject:[NSNumber numberWithBool:true] forKey:@"cd_showGlass"];
-        [newDict setObject:[NSNumber numberWithBool:true] forKey:@"cd_showSeparator"];
-        
-        // Icon shadows
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_iconShadow"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_iconShadowBGR"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_iconShadowBGG"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_iconShadowBGB"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_iconShadowBGA"];  // Alpha
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_iconShadowBGS"];  // Size
-        
-        // Dock background coloring
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_dockBG"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_dockBGR"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_dockBGG"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_dockBGB"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_dockBGA"];
-        
-        // Label background coloring
-        [newDict setObject:[NSNumber numberWithBool:false] forKey:@"cd_labelBG"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_labelBGR"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_labelBGG"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_labelBGB"];
-        [newDict setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_labelBGA"];
-        
-        [newDict writeToFile:prefFile atomically:NO];
-    }
-}
 
 void _loadImages()
 {
@@ -127,22 +43,17 @@ void _loadImages()
             background1 = CGImageCreateWithPNGDataProvider(CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:picFile]), NULL, true, kCGRenderingIntentDefault);
         else
             background1 = nil;
-        
-        
-        if (background)
-            background_color = [[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background size:NSZeroSize]] CGColor];
-        else
-            background_color = [[NSColor clearColor] CGColor];
-        
-        if (background1)
-            background_color1 = [[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background1 size:NSZeroSize]] CGColor];
-        else
-            background_color1 = [[NSColor clearColor] CGColor];
     });
 }
 
 void _forceRefresh()
 {
+    if (osx_minor > 9) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
+        });
+    }
+    
     Class cls = NSClassFromString(@"DOCKPreferences");
     id dockPref = nil;
     SEL aSel = NSSelectorFromString(@"preferences");
@@ -162,29 +73,30 @@ void _forceRefresh()
 // Fix for icon shadows / reflection layer not intializing on their own...
 void _loadShadows(CALayer* layer)
 {
-    static dispatch_once_t once;
-    dispatch_once(&once, ^ {
+    if (loadShadows) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-        SEL aSel = @selector(layoutSublayers);
-        NSArray *tileLayers = layer.superlayer.sublayers;
-        for (CALayer *item in tileLayers)
-        {
-            if (item.class == NSClassFromString(@"DOCKTileLayer")) {
-                if ([item respondsToSelector:aSel])
-                    [item performSelector:aSel];
+        
+            SEL aSel = @selector(layoutSublayers);
+            NSArray *tileLayers = layer.superlayer.sublayers;
+            for (CALayer *item in tileLayers)
+            {
+                if (item.class == NSClassFromString(@"DOCKTileLayer")) {
+                    if ([item respondsToSelector:aSel])
+                        [item performSelector:aSel];
+                }
             }
-//            if (item.class == NSClassFromString(@"DOCKIndicatorLayer")) {
-//                if ([item respondsToSelector:@selector(updateIndicatorForSize:)])
-//                    [item performSelector:@selector(updateIndicatorForSize:) withObject:[ NSNumber numberWithFloat:0.0 ]];
-//            }
-        }
+                
+            // Gotta refresh again here to get custom indicators to theme?
+            // Can cause crash if not delayed...
+//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+//                _forceRefresh();
+//            });
             
-        // Gotta refresh again here to get indicators to theme
-        _forceRefresh();
+            NSLog(@"Shadows and reflections initialized...");
+            loadShadows = false;
             
-        NSLog(@"Shadows and reflections initialized...");
         });
-    });
+    }
 }
 
 // OS X 10.9 Mavericks implementation
@@ -205,6 +117,17 @@ void _TenNine(CALayer* layer)
             return [evaluatedObject respondsToSelector:aSel];
         }]];
         [tileLayers makeObjectsPerformSelector:aSel];
+        
+        BOOL flag;
+        if (object_getInstanceVariable(layer, "_dontEverShowMirror", (void **)&flag)) {
+            if (!flag) {
+                object_setInstanceVariable(layer, "_dontEverShowMirror", (void *)YES);
+                SEL aSel = NSSelectorFromString(@"turnMirrorOff");
+                if ([layer respondsToSelector:aSel]) {
+                    [layer performSelector:aSel];
+                }
+            }
+        }
         
         // Flickers
 //        aSel = NSSelectorFromString(@"turnMirrorOff");
@@ -259,7 +182,10 @@ void _TenNine(CALayer* layer)
         if (orient == 0)
         {
             if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
-                [ _backgroundLayer setBackgroundColor:background_color ];
+                if (background)
+                    [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background size:NSZeroSize]] CGColor] ];
+                else
+                    [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
             } else {
                 _backgroundLayer.contents = (__bridge id)background;
             }
@@ -267,7 +193,10 @@ void _TenNine(CALayer* layer)
         else
         {
             if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
-                [ _backgroundLayer setBackgroundColor:background_color1 ];
+                if (background1)
+                    [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background1 size:NSZeroSize]] CGColor] ];
+                else
+                    [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
             } else {
                 _backgroundLayer.contents = (__bridge id)background1;
             }
@@ -316,7 +245,7 @@ void _TenNine(CALayer* layer)
         [ _borderLayer setFrame:newFrame];
         [ _borderLayer setBackgroundColor:[[NSColor clearColor] CGColor]];
         [ _borderLayer setBorderColor:[[NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0] CGColor]];
-        [ _borderLayer setOpacity:[[[Preferences sharedInstance] objectForKey:@"cd_borderBGA"] floatValue]];
+        [ _borderLayer setOpacity:[[[Preferences sharedInstance] objectForKey:@"cd_borderBGA"] floatValue] / 100 ];
         [ _borderLayer setBorderWidth:brdSize];
         [ _borderLayer setHidden:false];
     }
@@ -377,69 +306,7 @@ void _TenNine(CALayer* layer)
         [ _superLayer setSublayers:[NSArray arrayWithObjects:_separatorLayer, nil] ];
 }
 
-@interface initialize : NSObject
-@end
-@implementation initialize
-
-+ (void)load {
-    // Read system version
-    osx_minor = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
-    
-    // Create prefs if they don't exist
-    _setupPrefs();
-    
-    // Swizzle based on OSX version
-    if (osx_minor == 11)
-        ZKSwizzle(_CDDOCKFloorLayer, Dock.FloorLayer);
-    if (osx_minor == 10)
-        ZKSwizzle(_CDDOCKFloorLayer, DOCKFloorLayer);
-    if (osx_minor == 9)
-    {
-        ZKSwizzle(_CDMAVFloor, DOCKGlassFloorLayer);
-        ZKSwizzle(_CDMAVSide, DOCKSideGlassFloorLayer);
-    }
-    
-    // Force dock to refresh
-    _forceRefresh();
-    
-    // Something tells me I could do this without fishhook if I already have ZKSwizzle
-    // But I don't really know what's going on here
-    if (osx_minor > 9) {
-        orig_CFPreferencesCopyAppValue = dlsym(RTLD_DEFAULT, "CFPreferencesCopyAppValue");
-        rebind_symbols((struct rebinding[1]){{"CFPreferencesCopyAppValue", hax_CFPreferencesCopyAppValue}}, 1);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
-        });
-    }
-    
-    NSLog(@"OS X 10.%li, cDock loaded...", osx_minor);
-}
-
-// Force dock into dark or light mode
-static id (*orig_CFPreferencesCopyAppValue)(CFStringRef key, CFStringRef applicationID);
-id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
-//    NSLog(@"Key: %@, Original Value: %@", key, orig_CFPreferencesCopyAppValue(key, applicationID));
-    if ([(__bridge NSString *)key isEqualToString:@"AppleInterfaceTheme"] || [(__bridge NSString *)key isEqualToString:@"AppleInterfaceStyle"]) {
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 1) {
-            return @"Light";
-        } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 2) {
-            return @"Dark";
-        } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 3) {
-            if ([orig_CFPreferencesCopyAppValue(key, applicationID)  isEqual: @"Dark"]) {
-                return @"Light";
-            } else {
-                return @"Dark";
-            }
-        } else {
-            return orig_CFPreferencesCopyAppValue(key, applicationID);
-        }
-    } else {
-        return orig_CFPreferencesCopyAppValue(key, applicationID);
-    }
-}
-@end
-
-@implementation _CDMAVSide
+@implementation _CDMAVSide : CALayer
 - (void)layoutSublayers {
     ZKOrig(void);
     _TenNine(self);
@@ -511,6 +378,13 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
         [ _superLayer addSublayer:_backgroundLayer ];
     }
     
+    _materialLayer.hidden = NO;
+    _glassLayer.hidden = NO;
+    _separatorLayer.hidden = NO;
+    
+    _borderLayer.hidden = NO;
+    _backgroundLayer.hidden = NO;
+    
     // Read corner radius
     float cornerSize = [[[Preferences sharedInstance] objectForKey:@"cd_cornerRadius"] floatValue];
     
@@ -523,7 +397,10 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
         if (orient == 0)
         {
             if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
-                [ _backgroundLayer setBackgroundColor:background_color ];
+                if (background)
+                    [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background size:NSZeroSize]] CGColor] ];
+                else
+                    [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
             } else {
                 [ _backgroundLayer setContents:(__bridge id)background ];
             }
@@ -531,7 +408,10 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
         else
         {
             if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
-                [ _backgroundLayer setBackgroundColor:background_color1 ];
+                if (background1)
+                    [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background1 size:NSZeroSize]] CGColor] ];
+                else
+                    [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
             } else {
                 [ _backgroundLayer setContents:(__bridge id)background1 ];
             }
@@ -559,7 +439,34 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
         NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
         [_backgroundLayer setBackgroundColor:[goodColor CGColor]];
         [_backgroundLayer setOpacity:(alpha / 100.0)];
+    } else {
+        _backgroundLayer.hidden = YES;
     }
+    
+    // Separator
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue]) {
+        if (orient == 0) {
+            // Kinda cool rotating...
+//            CATransform3D current = _separatorLayer.transform;
+//            _separatorLayer.transform = CATransform3DRotate(current, 10/(180 * M_PI), 0, 0, 1.0);
+            
+            // Tilt the 3D separator 15 degrees
+            [_separatorLayer setTransform:CATransform3DMakeRotation((15 * M_PI / 180), -1.0, 0.0, 1.0)];
+            
+            // Adjust height to fit 3D size
+            CGRect rect = _separatorLayer.frame;
+            rect.origin.x += (_backgroundLayer.frame.size.width / 100) * 0.2;
+//            rect.size.width = 1; //(_backgroundLayer.frame.size.width / 100) * 0.1;
+            rect.size.height = _backgroundLayer.frame.size.height * .4;
+            [_separatorLayer setFrame:rect];
+            
+            // Make sure we're in the front
+            _separatorLayer.zPosition = 999;
+        } else {
+            _separatorLayer.transform = CATransform3DIdentity;
+        }
+    }
+
 
     // Full width dock
     if ([[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue]) {
@@ -576,6 +483,8 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
         
         [ _materialLayer setFrame: rect ];
 //        [ _superLayer setFrame: rect ];
+    } else {
+        [ _materialLayer setFrame:_superLayer.bounds ];
     }
     
     // Border layer
@@ -595,6 +504,8 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
         [ _borderLayer setOpacity:([[[Preferences sharedInstance] objectForKey:@"cd_borderBGA"] floatValue] / 100.0)];
         [ _borderLayer setBorderWidth:brdSize];
         [ _borderLayer setHidden:false];
+    } else {
+        _borderLayer.hidden = YES;
     }
     
     // rounded corners
@@ -632,6 +543,9 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
     // background layer should have same frame as frost layer
     [ _backgroundLayer setFrame: _materialLayer.frame];
     
+    [ _separatorLayer removeFromSuperlayer ];
+    [ _superLayer addSublayer:_separatorLayer ];
+    
     // Pinning except the actual clickable tile areas don't move, not sure how to do that...
 //        CGRect r1 = _superLayer.bounds;
 //        CGRect rect = _superLayer.superlayer.frame;
@@ -642,7 +556,7 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID) {
     // Hide layers if we want to
     if (![[[Preferences sharedInstance] objectForKey:@"cd_showFrost"] boolValue])
         _materialLayer.hidden = YES;
-
+    
     if (![[[Preferences sharedInstance] objectForKey:@"cd_showGlass"] boolValue]) {
         _glassLayer.hidden = YES;
     } else {
