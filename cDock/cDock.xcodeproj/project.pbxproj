@@ -56,7 +56,7 @@
 		FBBC5AEC1B6DE869007FB947 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBDE03601B5ED1EE00C1C5DB /* cDock-GUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-GUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDE03661B5ED1EE00C1C5DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBDE03701B5ED1EE00C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBDE03741B5ED21900C1C5DB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */,
-				FBDE03601B5ED1EE00C1C5DB /* cDock-GUI.app */,
+				FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */,
 				FBDE03891B5EE13500C1C5DB /* cDock-Menubar.app */,
 			);
 			name = Products;
@@ -297,9 +297,9 @@
 			productReference = FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		FBDE035F1B5ED1EE00C1C5DB /* cDock-GUI */ = {
+		FBDE035F1B5ED1EE00C1C5DB /* cDock 2 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBDE03711B5ED1EE00C1C5DB /* Build configuration list for PBXNativeTarget "cDock-GUI" */;
+			buildConfigurationList = FBDE03711B5ED1EE00C1C5DB /* Build configuration list for PBXNativeTarget "cDock 2" */;
 			buildPhases = (
 				FBDE035C1B5ED1EE00C1C5DB /* Sources */,
 				FBDE035D1B5ED1EE00C1C5DB /* Frameworks */,
@@ -309,9 +309,9 @@
 			);
 			dependencies = (
 			);
-			name = "cDock-GUI";
+			name = "cDock 2";
 			productName = "cDock-GUI";
-			productReference = FBDE03601B5ED1EE00C1C5DB /* cDock-GUI.app */;
+			productReference = FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FBDE03881B5EE13500C1C5DB /* cDock-Menubar */ = {
@@ -365,7 +365,7 @@
 			projectRoot = "";
 			targets = (
 				FBC4F4EC1B5ED0EC0078D4E4 /* cDock */,
-				FBDE035F1B5ED1EE00C1C5DB /* cDock-GUI */,
+				FBDE035F1B5ED1EE00C1C5DB /* cDock 2 */,
 				FBDE03881B5EE13500C1C5DB /* cDock-Menubar */,
 			);
 		};
@@ -666,7 +666,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FBDE03711B5ED1EE00C1C5DB /* Build configuration list for PBXNativeTarget "cDock-GUI" */ = {
+		FBDE03711B5ED1EE00C1C5DB /* Build configuration list for PBXNativeTarget "cDock 2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBDE03721B5ED1EE00C1C5DB /* Debug */,

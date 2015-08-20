@@ -74,6 +74,7 @@ void _forceRefresh()
 void _loadShadows(CALayer* layer)
 {
     if (loadShadows) {
+        loadShadows = false;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         
             SEL aSel = @selector(layoutSublayers);
@@ -92,9 +93,7 @@ void _loadShadows(CALayer* layer)
 //                _forceRefresh();
 //            });
             
-            NSLog(@"Shadows and reflections initialized...");
-            loadShadows = false;
-            
+//            NSLog(@"Shadows and reflections initialized...");
         });
     }
 }
@@ -330,7 +329,9 @@ void _TenNine(CALayer* layer)
         return;
     
     // Fix for icon shadows / reflection layer not intializing on their own...
+//    if ([[[Preferences sharedInstance] objectForKey:@"cd_iconShadow"] boolValue] || [[[Preferences sharedInstance] objectForKey:@"cd_iconReflection"] boolValue])
     _loadShadows(self);
+    
     _loadImages();
 
     // Update dock orientation
@@ -392,82 +393,6 @@ void _TenNine(CALayer* layer)
     _materialLayer.cornerRadius = 0;
     _materialLayer.borderWidth = 0;
 
-    // Picture background
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue]) {
-        if (orient == 0)
-        {
-            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
-                if (background)
-                    [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background size:NSZeroSize]] CGColor] ];
-                else
-                    [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
-            } else {
-                [ _backgroundLayer setContents:(__bridge id)background ];
-            }
-        }
-        else
-        {
-            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
-                if (background1)
-                    [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background1 size:NSZeroSize]] CGColor] ];
-                else
-                    [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
-            } else {
-                [ _backgroundLayer setContents:(__bridge id)background1 ];
-            }
-        }
-        // Set self sublayers to _backgroundLayer and _serparatorLayer
-        // Make sure _sepraratorLayer is on top
-        [ _superLayer setSublayers:[NSArray arrayWithObjects:_backgroundLayer, _separatorLayer, nil] ];
-        [ _materialLayer setFrame: _superLayer.bounds ];
-        
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue] && orient == 0)
-        {
-            CGRect rect = _superLayer.bounds;
-            rect.size.width = rect.size.width * 1.025;
-            rect.origin.x -= (rect.size.width * 0.025) / 2;
-            [ _materialLayer setFrame: rect ];
-        }
-    }
-
-    // Color background layer
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_dockBG"] boolValue]) {
-        float red = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGR"] floatValue];
-        float green = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGG"] floatValue];
-        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGB"] floatValue];
-        float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGA"] floatValue];
-        NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
-        [_backgroundLayer setBackgroundColor:[goodColor CGColor]];
-        [_backgroundLayer setOpacity:(alpha / 100.0)];
-    } else {
-        _backgroundLayer.hidden = YES;
-    }
-    
-    // Separator
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue]) {
-        if (orient == 0) {
-            // Kinda cool rotating...
-//            CATransform3D current = _separatorLayer.transform;
-//            _separatorLayer.transform = CATransform3DRotate(current, 10/(180 * M_PI), 0, 0, 1.0);
-            
-            // Tilt the 3D separator 15 degrees
-            [_separatorLayer setTransform:CATransform3DMakeRotation((15 * M_PI / 180), -1.0, 0.0, 1.0)];
-            
-            // Adjust height to fit 3D size
-            CGRect rect = _separatorLayer.frame;
-            rect.origin.x += (_backgroundLayer.frame.size.width / 100) * 0.2;
-//            rect.size.width = 1; //(_backgroundLayer.frame.size.width / 100) * 0.1;
-            rect.size.height = _backgroundLayer.frame.size.height * .4;
-            [_separatorLayer setFrame:rect];
-            
-            // Make sure we're in the front
-            _separatorLayer.zPosition = 999;
-        } else {
-            _separatorLayer.transform = CATransform3DIdentity;
-        }
-    }
-
-
     // Full width dock
     if ([[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue]) {
         CGRect rect = _superLayer.bounds;
@@ -482,46 +407,113 @@ void _TenNine(CALayer* layer)
         }
         
         [ _materialLayer setFrame: rect ];
-//        [ _superLayer setFrame: rect ];
     } else {
         [ _materialLayer setFrame:_superLayer.bounds ];
     }
     
-    // Border layer
-    float brdSize = [[[Preferences sharedInstance] objectForKey:@"cd_borderSize"] floatValue];
-    if (brdSize > 0) {
-        CGRect newFrame = _backgroundLayer.frame;
-        newFrame.origin.x -= brdSize;
-        newFrame.size.width += brdSize * 2;
-        newFrame.origin.y -= brdSize;
-        newFrame.size.height += brdSize * 2;
-        float red = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGR"] floatValue];
-        float green = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGG"] floatValue];
-        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGB"] floatValue];
-        [ _borderLayer setFrame:newFrame];
-        [ _borderLayer setBackgroundColor:[[NSColor clearColor] CGColor]];
-        [ _borderLayer setBorderColor:[[NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0] CGColor]];
-        [ _borderLayer setOpacity:([[[Preferences sharedInstance] objectForKey:@"cd_borderBGA"] floatValue] / 100.0)];
-        [ _borderLayer setBorderWidth:brdSize];
-        [ _borderLayer setHidden:false];
+    // Picture background
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue]) {
+        if (orient == 0)
+        {
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
+                if (background)
+                    [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background size:NSZeroSize]] CGColor] ];
+                else
+                    [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
+            } else {
+                [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
+                [ _backgroundLayer setContents:(__bridge id)background ];
+            }
+        }
+        else
+        {
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
+                if (background1)
+                    [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background1 size:NSZeroSize]] CGColor] ];
+                else
+                    [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
+            } else {
+                [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
+                [ _backgroundLayer setContents:(__bridge id)background1 ];
+            }
+        }
+        // Set self sublayers to _backgroundLayer and _serparatorLayer
+        // Make sure _sepraratorLayer is on top
+//        [ _superLayer setSublayers:[NSArray arrayWithObjects:_backgroundLayer, _separatorLayer, nil] ];
+        if (![[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue])
+            [ _materialLayer setFrame: _superLayer.bounds ];
+        
+        if ([[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue] && orient == 0)
+        {
+            CGRect rect = _superLayer.bounds;
+            rect.size.width = rect.size.width * 1.025;
+            rect.origin.x -= (rect.size.width * 0.025) / 2;
+            [ _materialLayer setFrame: rect ];
+        }
+        
+        float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGA"] floatValue];
+        [_backgroundLayer setOpacity:(alpha / 100.0)];
     } else {
-        _borderLayer.hidden = YES;
+        [ _backgroundLayer setContents:nil ];
+    }
+
+    // Color background layer
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_dockBG"] boolValue]) {
+        float red = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGR"] floatValue];
+        float green = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGG"] floatValue];
+        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGB"] floatValue];
+        float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGA"] floatValue];
+        NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+        [_backgroundLayer setBackgroundColor:[goodColor CGColor]];
+        [_backgroundLayer setOpacity:(alpha / 100.0)];
+    }
+
+    if (![[[Preferences sharedInstance] objectForKey:@"cd_dockBG"] boolValue] && ![[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue])
+        _backgroundLayer.hidden = YES;
+    
+    // Separator
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue]) {
+        if (orient == 0) {
+            // Kinda cool rotating...
+//            CATransform3D current = _separatorLayer.transform;
+//            _separatorLayer.transform = CATransform3DRotate(current, 10/(180 * M_PI), 0, 0, 1.0);
+            
+            // Tilt the 3D separator 15 degrees
+            [_separatorLayer setTransform:CATransform3DMakeRotation((15 * M_PI / 180), -1.0, 0.0, 1.0)];
+            
+            // Adjust height to fit 3D size
+            CGRect rect = _separatorLayer.frame;
+            rect.origin.x += (_backgroundLayer.frame.size.width / 100) * 0.2;
+            rect.size.width = 1; //(_backgroundLayer.frame.size.width / 100) * 0.1;
+            rect.size.height = _backgroundLayer.frame.size.height * .4;
+            [_separatorLayer setFrame:rect];
+            
+            // Make sure we're in the front
+            _separatorLayer.zPosition = 999;
+        } else {
+            _separatorLayer.transform = CATransform3DIdentity;
+        }
+    } else {
+        _separatorLayer.transform = CATransform3DIdentity;
     }
     
+    float brdSize = [[[Preferences sharedInstance] objectForKey:@"cd_borderSize"] floatValue];
+    
     // rounded corners
-    if (cornerSize > 0) {
+    if (cornerSize >= 0) {
         CGRect rect = _superLayer.bounds;
         
         // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
         if (brdSize > 0) {
-            if (brdSize < 2) brdSize = 2;
             [ _backgroundLayer setCornerRadius:cornerSize / brdSize ];
             [ _materialLayer setCornerRadius:cornerSize / brdSize ];
+            [ _borderLayer setCornerRadius:cornerSize / brdSize ];
         } else {
-            [ _backgroundLayer setCornerRadius:cornerSize ];
             [ _materialLayer setCornerRadius:cornerSize ];
+            [ _backgroundLayer setCornerRadius:cornerSize ];
+            [ _borderLayer setCornerRadius:cornerSize ];
         }
-        
+    
         [ _borderLayer setCornerRadius:cornerSize ];
         
         // Couldn't figure out how to adjust this layers corners so lets hide it
@@ -538,6 +530,27 @@ void _TenNine(CALayer* layer)
         }
         
         [ _materialLayer setFrame:rect ];
+    }
+    
+    // Border layer
+    brdSize = [[[Preferences sharedInstance] objectForKey:@"cd_borderSize"] floatValue];
+    if (brdSize > 0) {
+        CGRect newFrame = _materialLayer.frame;
+        newFrame.origin.x -= brdSize;
+        newFrame.size.width += brdSize * 2;
+        newFrame.origin.y -= brdSize;
+        newFrame.size.height += brdSize * 2;
+        float red = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGR"] floatValue];
+        float green = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGG"] floatValue];
+        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGB"] floatValue];
+        [ _borderLayer setFrame:newFrame];
+        [ _borderLayer setBackgroundColor:[[NSColor clearColor] CGColor]];
+        [ _borderLayer setBorderColor:[[NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0] CGColor]];
+        [ _borderLayer setOpacity:([[[Preferences sharedInstance] objectForKey:@"cd_borderBGA"] floatValue] / 100.0)];
+        [ _borderLayer setBorderWidth:brdSize];
+        [ _borderLayer setHidden:false];
+    } else {
+        _borderLayer.hidden = YES;
     }
     
     // background layer should have same frame as frost layer

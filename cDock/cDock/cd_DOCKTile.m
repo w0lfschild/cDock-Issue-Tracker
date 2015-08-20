@@ -44,6 +44,7 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
 @implementation _CDTileLayer
 
 - (void)createShadowAndReflectionLayers {
+    return;
     // DO NOTHING
 }
 

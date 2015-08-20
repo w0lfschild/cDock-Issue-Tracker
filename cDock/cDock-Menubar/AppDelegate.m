@@ -31,6 +31,8 @@ long osx_minor = 0;
     theMenu = [[NSMenu alloc] initWithTitle:@""];
     [theMenu setAutoenablesItems:NO];
     
+    [theMenu addItemWithTitle:@"Refresh Dock" action:@selector(refresh_dock:) keyEquivalent:@""];
+    [theMenu addItem:[NSMenuItem separatorItem]]; // A thin grey line
     [theMenu addItemWithTitle:@"Restart Dock" action:@selector(restart_dock:) keyEquivalent:@""];
     [theMenu addItemWithTitle:@"Restart Finder" action:@selector(restart_finder:) keyEquivalent:@""];
     [theMenu addItemWithTitle:@"Restart Agent" action:@selector(restart_agent:) keyEquivalent:@""];
@@ -90,6 +92,21 @@ long osx_minor = 0;
     [self.aboutWindowController showCredits:nil];
     [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
     [self.aboutWindowController showWindow:nil];
+}
+
+- (IBAction)refresh_dock:(id)sender {
+    CFNotificationCenterRef center = CFNotificationCenterGetDistributedCenter(); //CFNotificationCenterGetLocalCenter();
+    
+    // post a notification
+    CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+    CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+    CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                  &keyCallbacks, &valueCallbacks);
+    CFDictionaryAddValue(dictionary, CFSTR("TestKey"), CFSTR("Reload"));
+    
+    //    CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
+    CFNotificationCenterPostNotification(center, CFSTR("MyNotification"), NULL, dictionary, TRUE);
+    CFRelease(dictionary);
 }
 
 - (IBAction)donate:(id)sender {

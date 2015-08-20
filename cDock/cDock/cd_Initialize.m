@@ -27,6 +27,7 @@ void notificationCallback (CFNotificationCenterRef center,
                            const void * object,
                            CFDictionaryRef userInfo) {
 //    CFShow(CFSTR("Received notification (dictionary):"));
+    NSLog(@"Got notification"); 
     
     NSString *res = [ (id)userInfo objectForKey:@"TestKey"];
 //    NSLog(@"%@", res);
@@ -37,7 +38,7 @@ void notificationCallback (CFNotificationCenterRef center,
         loadShadows = true;
         _forceRefresh();
 //        NSLog(@"%@", res);
-        NSLog(@"cDock Reloaded");
+//        NSLog(@"cDock Reloaded");
     }
 }
 

@@ -14,19 +14,19 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBDE03231B5ED1B100C1C5DB"
-               BuildableName = "cDock-GUI.app"
-               BlueprintName = "cDock-GUI"
+               BlueprintIdentifier = "FBDE035F1B5ED1EE00C1C5DB"
+               BuildableName = "cDock 2.app"
+               BlueprintName = "cDock 2"
                ReferencedContainer = "container:cDock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
@@ -52,9 +52,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBDE03231B5ED1B100C1C5DB"
-            BuildableName = "cDock-GUI.app"
-            BlueprintName = "cDock-GUI"
+            BlueprintIdentifier = "FBDE035F1B5ED1EE00C1C5DB"
+            BuildableName = "cDock 2.app"
+            BlueprintName = "cDock 2"
             ReferencedContainer = "container:cDock.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,11 +62,11 @@
       </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
@@ -75,9 +75,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBDE03231B5ED1B100C1C5DB"
-            BuildableName = "cDock-GUI.app"
-            BlueprintName = "cDock-GUI"
+            BlueprintIdentifier = "FBDE035F1B5ED1EE00C1C5DB"
+            BuildableName = "cDock 2.app"
+            BlueprintName = "cDock 2"
             ReferencedContainer = "container:cDock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,18 +85,18 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBDE03231B5ED1B100C1C5DB"
-            BuildableName = "cDock-GUI.app"
-            BlueprintName = "cDock-GUI"
+            BlueprintIdentifier = "FBDE035F1B5ED1EE00C1C5DB"
+            BuildableName = "cDock 2.app"
+            BlueprintName = "cDock 2"
             ReferencedContainer = "container:cDock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
