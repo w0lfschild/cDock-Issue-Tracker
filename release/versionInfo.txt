@@ -1,161 +1,40 @@
 ------------------------------------------------
 
-Version		: 9.6
-Build date	: Aug / XX / 2015
-Notes		:
-
-- cDock require administrator credentials to install SIMBL
-- SIMBL install is done by 'cDock-Helper'
-- OS X 10.11 
-	- requires rootless be disabled for initial install
-	- rootless may be enabled after SIMBL has been installed
-	- does not support Colorfulsidebar
+Version		: 0.9
+Build date	: 00 / 00 / 2015
 
 ------------------------------------------------
 
-- OS X 10.10 and above
-	- 3D docks now include separator
+GUI rewritten in Objective C
 
-------------------------------------------------
+- Fix
 
-Version		: 9.5
-Build date	: Aug / 12 / 2015
-
-------------------------------------------------
-
-- OS X 10.9 and above
-	- fix cDock not applying until something caused the dock to redraw if injected after dock loaded
-	- fix heavy CPU usage with picture backgrounds
-	- fix picture backgrounds drawing too low
-	- fix separator layer drawing behind background layer
-	- fix Colorfulsidebar setting always showing as disabled
-	- adjusted menu application icon
-	- other bug fixes and improvements
-
-- OS X 10.10 and above
-	- new option `cd_is3D` will extend the dock width 2.5%
-
-- Known issues
-	- High CPU usage when triggering Dock refresh with custom indicator (10.9)
-
-------------------------------------------------
-
-Version		: 9.4
-Build date	: Aug / 06 / 2015
-
-------------------------------------------------
-
-- New theme
-	- Lion
-
-- OS X 10.9
-	- Fix picture themes not showing
-	- Fix custom indicators drawing behind icons
-	- Theme options
-		- Custom separator
-
-- OS X 10.9 and above
-	- Fix heavy CPU usage when resizing with icon Reflections enabled
-	- Fix heavy CPU usage when moving mouse over dock with Custom indicator enabled
-	- Fix medium CPU usage when moving mouse over or resizing dock
-	- Fix dock infinitely stretching with full width option
-	- Theme options
-		- Rounded corners
-		- Border layers are back
-
-- OS X 10.10 and above
-	- Fix Separator layer flashing when resizing full screen dock
-	- Fix blur (frost) layer flickering when moving mouse over dock
-	- Prevent custom indicators from being effected by Dark/Light mode
-	- Theme options
-		- Force inverse Dark/Light mode
-		- Resize default indicator
-		- Color default indicator
-
-- Translations
-	- Fix issue with magnification setting
-
-- Source code
-	- More notes
-
-- Small tweaks and bug fixes
-
-------------------------------------------------
-
-Version		: 9.3.1
-Build date	: Aug / 03 / 2015
-
-------------------------------------------------
-
-- Adjustments to several themes
-- Icon reflections are now a reflection instead of rotation
-
-- Fix fullscreen dock overlapping fully expanded windows
-- Fix Logic Pro X crash
-- Fix menubar app about page not getting focus
-- Fix bundles not installing for some users
-- Fix picture background full width
-- Fix picture background rounded corners
-- Fix cDock-Helper not fully installing SIMBL
-- Fix cDock Agent failing to update application
-- Fix cDock bundles not updating until changes applied
-- Fix welcome window failing to load
-
-- Add UI to toggle Icon Highlight
-- Add UI to toggle Icon reflections
-- UI adjustments
-
-- Updated Translations
-
-------------------------------------------------
-
-Version		: 9.0 - 9.1.2
-Build date	: Jul / 31 / 2015
-
-------------------------------------------------
-
-- OS X 10.11 (El Capitan) support
-	- requires that rootless be turned off for the initial install
-
-- Dock customization changes
-	Additions:
-	- customize application indicators
-	- customize label background
-	- icon reflections
-	- icon shadows
-	- darken icons on mouse over
-	- option to show blurred glass layer
+- Faster window startup
+- Window reloading each time something is applied
+- Window not gaining focus when clicked in dock
+- Window not being able to be selected via Command + tab
+- Window not showing in mission control
+- Spacers are removed from right to left
 	
-	Improved:
-	- hide labels
-	- background positioning
-	- picture themes use 2 background images so your 
-	theme can have a horizontal and vertical image
+- New
 
-	Removed: (temporarily)
-	- background border layer 
-	- freely resize background
-	- customizable separator
+- SIMBL and Rootless information windows
+- Better about window
+- Localizable menubar
+- Dock theming changes without restarting dock
+- Theming and hidden dock settings separated into tabs
+- Greater control over making your own theme
 
-- Updated / Removed some stock themes
-- Fix cDock not working properly on Guest and Standard accounts
-- Fix cDock not moving self to /Applications in some cases
-- Fix issue on OS X 10.9 where dock might freeze after restarting
-- Fix themes not showing the first time the application is opened
-- Hopefully fixed cDock not opening in some cases
-- Prevent cDock from running in /applications/Utilities
-- Removed beta updates option
-- Adjustments to extra settings window
-- Copy bundles to plugin folder instead of linking
-- Remove some outdated self cleanup
-- Updated credits
-- Updated Italian translation
+- Theming changes
 
-- Menu-bar applet
-	- Fix text in dark mode being black
-	- Fix menu items not always showing
-	- removed update option
-	- icon changed to a basic gear
-	- open cDock option
+- 3D docks now include separator
+- Fixed label color applying to frost layer and mission control
+- Dock can be refreshed via CFNotificationCenterPostNotification
 
-------------------------------------------------
+- Removed
+
+- Menubar application
+- Dock plist backups
+- Reset icon cache option
+- Finder Folders on top (Use XtraFinder)
+- Finder Colored sidebar (Use XtraFinder)

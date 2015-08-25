@@ -16,6 +16,8 @@ extern NSInteger orient;
 ZKSwizzleInterface(_CDTile, Tile, NSObject);
 @implementation _CDTile
 - (void)labelAttached {
+    ZKOrig(void);
+    
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     

@@ -17,7 +17,6 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application
     self.aboutWindowController = [[PFAboutWindowController alloc] init];
-    //    self.checkUpdates;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
@@ -26,23 +25,6 @@
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
 	return YES;
-}
-
-- (void)checkUpdates {
-    NSBundle *myBundle = [NSBundle mainBundle];
-    NSString *path = [myBundle pathForResource:@"updates/wUpdater.app/Contents/MacOS/wUpdater" ofType:@""];
-    
-//    dlurl=$(curl -s https://api.github.com/repos/w0lfschild/cDock/releases/latest | grep 'browser_' | cut -d\" -f4)
-//    "$wupd_path" c "$app_path" org.w0lf.cDock "$3cur_ver" "$verurl" "$logurl" "$dlurl" "$autoinstall" &
-    NSArray *args = [NSArray arrayWithObjects:@"c", [[NSBundle mainBundle] bundlePath], @"org.w0lf.cDock2",
-            [NSString stringWithFormat:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]],
-            @"https://raw.githubusercontent.com/w0lfschild/cDock/master/_resource/version.txt",
-            @"https://raw.githubusercontent.com/w0lfschild/cDock/master/_resource/versionInfo.txt",
-            @"https://github.com/w0lfschild/test/raw/master/cDock-GUI.zip",
-            @"0", nil];
-
-    [NSTask launchedTaskWithLaunchPath:path arguments:args];
-    NSLog(@"Checking for updates...");
 }
 
 - (IBAction)showAboutWindow:(id)sender {

@@ -19,6 +19,23 @@
 
 BOOL timedelay = true;
 
+void checkUpdates() {
+    NSBundle *myBundle = [NSBundle mainBundle];
+    NSString *path = [myBundle pathForResource:@"updates/wUpdater.app/Contents/MacOS/wUpdater" ofType:@""];
+    
+    //    dlurl=$(curl -s https://api.github.com/repos/w0lfschild/cDock/releases/latest | grep 'browser_' | cut -d\" -f4)
+    //    "$wupd_path" c "$app_path" org.w0lf.cDock "$3cur_ver" "$verurl" "$logurl" "$dlurl" "$autoinstall" &
+    NSArray *args = [NSArray arrayWithObjects:@"c", [[NSBundle mainBundle] bundlePath], @"org.w0lf.cDock-GUI",
+                     [NSString stringWithFormat:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]],
+                     @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/version.txt",
+                     @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/versionInfo.txt",
+                     @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/release.zip",
+                     @"0", nil];
+    
+    [NSTask launchedTaskWithLaunchPath:path arguments:args];
+    NSLog(@"Checking for updates...");
+}
+
 void apply_WELL(NSMutableDictionary *prefs, NSString *well, NSColorWell *item) {
     [prefs setObject:[NSNumber numberWithFloat:item.color.redComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGR", well]];
     [prefs setObject:[NSNumber numberWithFloat:item.color.greenComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGG", well]];
@@ -160,6 +177,11 @@ void apply_ALL(ViewController *t)
     {
         timedelay = false;
         
+        [prefCD setObject:[NSNumber numberWithBool:true] forKey:@"cd_enabled"];
+        
+        NSMutableDictionary *tmpPlist0 = prefCD;
+        [tmpPlist0 writeToFile:thmePath atomically:YES];
+        
         [prefd setObject:[NSNumber numberWithBool:[t.dock_SOAA state]] forKey:@"static-only"];
         [prefd setObject:[NSNumber numberWithBool:[t.dock_DHI state]] forKey:@"showhidden"];
         [prefd setObject:[NSNumber numberWithBool:[t.dock_LDC state]] forKey:@"contents-immutable"];
@@ -200,7 +222,7 @@ void apply_ALL(ViewController *t)
         [pref setObject:[NSNumber numberWithBool:[t.dockBG state]] forKey:@"cd_dockBG"];
         [pref setObject:[NSNumber numberWithBool:[t.labelBG state]] forKey:@"cd_labelBG"];
         
-        [pref setObject:[NSNumber numberWithBool:[t.dock_is3D state]] forKey:@"cd_is3D"];
+        [pref setObject:[NSNumber numberWithBool:[t.cd_is3D state]] forKey:@"cd_is3D"];
         [pref setObject:[NSNumber numberWithBool:[t.dock_pictureBackground state]] forKey:@"cd_pictureBG"];
         
         [pref setObject:[NSNumber numberWithBool:[t.cd_customIndicator state]] forKey:@"cd_customIndicator"];
@@ -259,23 +281,49 @@ void apply_ALL(ViewController *t)
 
 @implementation ViewController
 
-- (NSMutableDictionary *)_dockPrefs {
-    return [NSMutableDictionary dictionaryWithContentsOfFile:prefDock];
-}
-
-- (NSMutableDictionary *)_cPrefs {
-    return [NSMutableDictionary dictionaryWithContentsOfFile:prefPath];
-}
-
-- (NSMutableDictionary *)_cDPrefs {
-    return [NSMutableDictionary dictionaryWithContentsOfFile:thmePath];
-}
-
-- (void)viewDidLoad {
-	[super viewDidLoad];
+void _windowFirstrun(ViewController *me) {
+    NSTabViewItem *tab0 = [me.tabView tabViewItemAtIndex:0];
+    NSTabViewItem *tab3 = [me.tabView tabViewItemAtIndex:3];
+    NSTabViewItem *tab4 = [me.tabView tabViewItemAtIndex:4];
     
+    long osx_version = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
+    NSString *rootless = nil;
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:@"/System/Library/ScriptingAdditions/SIMBL.osax"])
+    {
+        [me.tabView removeTabViewItem:tab0];
+        [me.tabView removeTabViewItem:tab3];
+        [me.tabView removeTabViewItem:tab4];
+        
+        if (osx_version >= 11)
+        {
+            // Rootless check
+            rootless = runCommand(@"touch /System/test 2>&1");
+            if ([rootless containsString:@"Operation not permitted"])
+            {
+                [me.tabView insertTabViewItem:tab3 atIndex:0];
+            }
+            else
+            {
+                [me.tabView insertTabViewItem:tab4 atIndex:0];
+            }
+        }
+        else
+        {
+            [me.tabView insertTabViewItem:tab4 atIndex:0];
+        }
+        
+        [me.tabView selectTabViewItemAtIndex:0];
+    }
+    else
+    {
+        [me.tabView removeTabViewItem:tab3];
+        [me.tabView removeTabViewItem:tab4];
+    }
+}
+
+void _windowSetup(ViewController *me) {
     [[NSColorPanel sharedColorPanel] setShowsAlpha:YES];
-    
     // cDock Preferences
     if (![[NSFileManager defaultManager] fileExistsAtPath:prefPath]) {
         NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
@@ -340,30 +388,30 @@ void apply_ALL(ViewController *t)
     }
     
     
-
+    
     
     // Dock settings
-    NSMutableDictionary *plist1 = self._dockPrefs;
+    NSMutableDictionary *plist1 = me._dockPrefs;
     prefd = plist1;
     
-    [_dock_SOAA setState:[[prefd objectForKey:@"static-only"] integerValue]];
-    [_dock_DHI setState:[[prefd objectForKey:@"showhidden"] integerValue]];
-    [_dock_LDC setState:[[prefd objectForKey:@"contents-immutable"] integerValue]];
-    [_dock_MOH setState:[[prefd objectForKey:@"mouse-over-hilite-stack"] integerValue]];
-    [_dock_SAM setState:[[prefd objectForKey:@"single-app"] integerValue]];
-    [_dock_NB setState:[[prefd objectForKey:@"no-bouncing"] integerValue]];
+    [me.dock_SOAA setState:[[prefd objectForKey:@"static-only"] integerValue]];
+    [me.dock_DHI setState:[[prefd objectForKey:@"showhidden"] integerValue]];
+    [me.dock_LDC setState:[[prefd objectForKey:@"contents-immutable"] integerValue]];
+    [me.dock_MOH setState:[[prefd objectForKey:@"mouse-over-hilite-stack"] integerValue]];
+    [me.dock_SAM setState:[[prefd objectForKey:@"single-app"] integerValue]];
+    [me.dock_NB setState:[[prefd objectForKey:@"no-bouncing"] integerValue]];
     
-    [_dock_magnification setFloatValue:[[prefd objectForKey:@"largesize"] integerValue]];
-    [_dock_tilesize setFloatValue:[[prefd objectForKey:@"tilesize"] integerValue]];
-    [_dock_autohide setFloatValue:3.0 - [[prefd objectForKey:@"autohide-time-modifier"] floatValue]];
+    [me.dock_magnification setFloatValue:[[prefd objectForKey:@"largesize"] integerValue]];
+    [me.dock_tilesize setFloatValue:[[prefd objectForKey:@"tilesize"] integerValue]];
+    [me.dock_autohide setFloatValue:3.0 - [[prefd objectForKey:@"autohide-time-modifier"] floatValue]];
     
     NSString *run = [NSString stringWithFormat:@"/usr/libexec/PlistBuddy -c \"Print persistent-apps:\" \"%@\" | grep -a \"spacer-tile\" | wc -l | tr -d ' '", prefDock];
     NSString *app_spacer = runCommand(run);
-    [_dock_appSpacers setFloatValue:[app_spacer integerValue]];
+    [me.dock_appSpacers setFloatValue:[app_spacer integerValue]];
     
     run = [NSString stringWithFormat:@"/usr/libexec/PlistBuddy -c \"Print persistent-others:\" \"%@\" | grep -a \"spacer-tile\" | wc -l | tr -d ' '", prefDock];
     NSString *doc_spacer = runCommand(run);
-    [_dock_docSpacers setFloatValue:[doc_spacer integerValue]];
+    [me.dock_docSpacers setFloatValue:[doc_spacer integerValue]];
     
     NSDictionary *parentDictionary = [plist1 objectForKey:@"persistent-others"];
     NSString *string = [NSString stringWithFormat:@"%@", parentDictionary];
@@ -371,7 +419,7 @@ void apply_ALL(ViewController *t)
     if ([string rangeOfString:@"recents-tile"].location != NSNotFound)
         keyExists = true;
     
-    [_dock_REC setState:@(keyExists).integerValue];
+    [me.dock_REC setState:@(keyExists).integerValue];
     
     
     
@@ -382,77 +430,130 @@ void apply_ALL(ViewController *t)
     
     long darkMode = [[pref objectForKey:@"cd_darkMode"] integerValue];
     if (darkMode >= 0.0 && darkMode <= 3.0) {
-        [_cd_darkMode selectItemAtIndex:(int)darkMode];
+        [me.cd_darkMode selectItemAtIndex:(int)darkMode];
     }
     
     NSArray* dirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:themfldr error:Nil];
-    [_cd_theme removeAllItems];
-    [ _cd_theme addItemWithTitle:@"None" ];
-    [ _cd_theme addItemsWithTitles:dirs ];
-    [ _cd_theme removeItemWithTitle:@".DS_Store" ];
+    [me.cd_theme removeAllItems];
+    [me.cd_theme addItemWithTitle:@"None" ];
+    [me.cd_theme addItemsWithTitles:dirs ];
+    [me.cd_theme removeItemWithTitle:@".DS_Store" ];
     
-    NSMutableDictionary *plist0 = self._cDPrefs;
+    NSMutableDictionary *plist0 = me._cDPrefs;
     prefCD = plist0;
     
-    [ _cd_theme selectItemWithTitle:thmeName];
+    [ me.auto_checkUpdates setState:[[prefCD objectForKey:@"autoCheck"] integerValue]];
+    [ me.auto_installUpdates setState:[[prefCD objectForKey:@"autoInstall"] integerValue]];
+    [ me.cd_theme selectItemWithTitle:thmeName];
     
-    [_cd_sizeIndicator setState:[[pref objectForKey:@"cd_sizeIndicator"] integerValue]];
-    [_cd_indicatorHeight setFloatValue:[[pref objectForKey:@"cd_indicatorHeight"] integerValue]];
-    [_cd_indicatorWidth setFloatValue:[[pref objectForKey:@"cd_indicatorWidth"] integerValue]];
+    [me.cd_sizeIndicator setState:[[pref objectForKey:@"cd_sizeIndicator"] integerValue]];
+    [me.cd_indicatorHeight setFloatValue:[[pref objectForKey:@"cd_indicatorHeight"] integerValue]];
+    [me.cd_indicatorWidth setFloatValue:[[pref objectForKey:@"cd_indicatorWidth"] integerValue]];
     
-    [_cd_customIndicator setState:[[pref objectForKey:@"cd_customIndicator"] integerValue]];
-    [_dock_is3D setState:[[pref objectForKey:@"cd_is3D"] integerValue]];
-    [_dock_pictureBackground setState:[[pref objectForKey:@"cd_pictureBG"] integerValue]];
+    [me.cd_customIndicator setState:[[pref objectForKey:@"cd_customIndicator"] integerValue]];
+    [me.cd_is3D setState:[[pref objectForKey:@"cd_is3D"] integerValue]];
+    [me.dock_pictureBackground setState:[[pref objectForKey:@"cd_pictureBG"] integerValue]];
     
-    [_cd_iconReflection setState:[[pref objectForKey:@"cd_iconReflection"] integerValue]];
-    [_darken_OMO setState:[[pref objectForKey:@"cd_darkenMouseOver"] integerValue]];
-    [_stay_FROSTY setState:[[pref objectForKey:@"cd_showFrost"] integerValue]];
-    [_GLASSED setState:[[pref objectForKey:@"cd_showGlass"] integerValue]];
-    [_dock_SEP setState:[[pref objectForKey:@"cd_showSeparator"] integerValue]];
+    [me.cd_iconReflection setState:[[pref objectForKey:@"cd_iconReflection"] integerValue]];
+    [me.darken_OMO setState:[[pref objectForKey:@"cd_darkenMouseOver"] integerValue]];
+    [me.stay_FROSTY setState:[[pref objectForKey:@"cd_showFrost"] integerValue]];
+    [me.GLASSED setState:[[pref objectForKey:@"cd_showGlass"] integerValue]];
+    [me.dock_SEP setState:[[pref objectForKey:@"cd_showSeparator"] integerValue]];
     
-    [_fullWidthDock setState:[[pref objectForKey:@"cd_fullWidth"] integerValue]];
-    [_hideLabels setState:[[pref objectForKey:@"cd_hideLabels"] integerValue]];
+    [me.fullWidthDock setState:[[pref objectForKey:@"cd_fullWidth"] integerValue]];
+    [me.hideLabels setState:[[pref objectForKey:@"cd_hideLabels"] integerValue]];
     
-    [_shadowBG setState:[[pref objectForKey:@"cd_iconShadow"] integerValue]];
-    [_shadowWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_iconshadowBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_iconShadowBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_iconShadowBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_iconShadowBGA"] floatValue]/100.0]];
+    [me.shadowBG setState:[[pref objectForKey:@"cd_iconShadow"] integerValue]];
+    [me.shadowWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_iconshadowBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_iconShadowBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_iconShadowBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_iconShadowBGA"] floatValue]/100.0]];
     
-    [_cd_indicatorBG setState:[[pref objectForKey:@"cd_colorIndicator"] integerValue]];
-    [_indicatorWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_indicatorBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_indicatorBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_indicatorBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_indicatorBGA"] floatValue]/100.0]];
+    [me.cd_indicatorBG setState:[[pref objectForKey:@"cd_colorIndicator"] integerValue]];
+    [me.indicatorWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_indicatorBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_indicatorBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_indicatorBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_indicatorBGA"] floatValue]/100.0]];
     
-    [_dockBG setState:[[pref objectForKey:@"cd_dockBG"] integerValue]];
-    [_dockWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_dockBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_dockBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_dockBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_dockBGA"] floatValue]/100.0]];
+    [me.dockBG setState:[[pref objectForKey:@"cd_dockBG"] integerValue]];
+    [me.dockWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_dockBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_dockBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_dockBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_dockBGA"] floatValue]/100.0]];
     
-    [_labelBG setState:[[pref objectForKey:@"cd_labelBG"] integerValue]];
-    [_labelWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_labelBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_labelBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_labelBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_labelBGA"] floatValue]/100.0]];
+    [me.labelBG setState:[[pref objectForKey:@"cd_labelBG"] integerValue]];
+    [me.labelWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_labelBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_labelBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_labelBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_labelBGA"] floatValue]/100.0]];
     
-    [_cd_borderSize setFloatValue:[[pref objectForKey:@"cd_borderSize"] integerValue]];
-    [_borderBG setState:[[pref objectForKey:@"cd_borderBG"] integerValue]];
-    [_borderWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_borderBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_borderBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_borderBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_borderBGA"] floatValue]/100.0]];
+    [me.cd_borderSize setFloatValue:[[pref objectForKey:@"cd_borderSize"] integerValue]];
+    [me.borderBG setState:[[pref objectForKey:@"cd_borderBG"] integerValue]];
+    [me.borderWELL setColor:[NSColor colorWithRed:[[pref objectForKey:@"cd_borderBGR"] floatValue]/255.0 green:[[pref objectForKey:@"cd_borderBGG"] floatValue]/255 blue:[[pref objectForKey:@"cd_borderBGB"] floatValue]/255.0 alpha:[[pref objectForKey:@"cd_borderBGA"] floatValue]/100.0]];
     
-    [_cd_cornerRadius setFloatValue:[[pref objectForKey:@"cd_cornerRadius"] integerValue]];
+    [me.cd_cornerRadius setFloatValue:[[pref objectForKey:@"cd_cornerRadius"] integerValue]];
     
-    [_cd_backgroundAlpha setFloatValue:[[pref objectForKey:@"cd_dockBGA"] floatValue]];
+    [me.cd_backgroundAlpha setFloatValue:[[pref objectForKey:@"cd_dockBGA"] floatValue]];
     
-    [_borderWELL setHidden:true];
-    [_dockWELL setHidden:true];
-    [_labelWELL setHidden:true];
-    [_indicatorWELL setHidden:true];
-    [_shadowWELL setHidden:true];
+    [me.borderWELL setHidden:true];
+    [me.dockWELL setHidden:true];
+    [me.labelWELL setHidden:true];
+    [me.indicatorWELL setHidden:true];
+    [me.shadowWELL setHidden:true];
     
-    if ([_borderBG state] == NSOnState)
-        [_borderWELL setHidden:false];
-    if ([_dockBG state] == NSOnState)
-        [_dockWELL setHidden:false];
-    if ([_labelBG state] == NSOnState)
-        [_labelWELL setHidden:false];
-    if ([_cd_indicatorBG state] == NSOnState)
-        [_indicatorWELL setHidden:false];
-    if ([_shadowBG state] == NSOnState)
-        [_shadowWELL setHidden:false];
+    if ([me.borderBG state] == NSOnState)
+        [me.borderWELL setHidden:false];
+    if ([me.dockBG state] == NSOnState)
+        [me.dockWELL setHidden:false];
+    if ([me.labelBG state] == NSOnState)
+        [me.labelWELL setHidden:false];
+    if ([me.cd_indicatorBG state] == NSOnState)
+        [me.indicatorWELL setHidden:false];
+    if ([me.shadowBG state] == NSOnState)
+        [me.shadowWELL setHidden:false];
+}
+
+- (NSMutableDictionary *)_dockPrefs {
+    return [NSMutableDictionary dictionaryWithContentsOfFile:prefDock];
+}
+
+- (NSMutableDictionary *)_cPrefs {
+    return [NSMutableDictionary dictionaryWithContentsOfFile:prefPath];
+}
+
+- (NSMutableDictionary *)_cDPrefs {
+    return [NSMutableDictionary dictionaryWithContentsOfFile:thmePath];
+}
+
+- (void)viewDidLoad {
+	[super viewDidLoad];
+    _windowFirstrun(self);
+    _windowSetup(self);
 }
 
 - (void)setRepresentedObject:(id)representedObject {
 	[super setRepresentedObject:representedObject];
+}
+
+- (IBAction)autoUpdateChange:(id)sender {
+    prefCD = self._cDPrefs;
+    [prefCD setObject:[NSNumber numberWithBool:[self.auto_checkUpdates state]] forKey:@"autoCheck"];
+    [prefCD writeToFile:thmePath atomically:YES];
+    if (self.auto_checkUpdates.state == NSOnState)
+        checkUpdates();
+}
+
+- (IBAction)autoInstallChange:(id)sender {
+    prefCD = self._cDPrefs;
+    [prefCD setObject:[NSNumber numberWithBool:[self.auto_installUpdates state]] forKey:@"autoInstall"];
+    [prefCD writeToFile:thmePath atomically:YES];
+}
+
+- (IBAction)disableTheming:(id)sender {
+    [prefCD setObject:[NSNumber numberWithBool:false] forKey:@"cd_enabled"];
+    
+    NSMutableDictionary *tmpPlist0 = prefCD;
+    [tmpPlist0 writeToFile:thmePath atomically:YES];
+    system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
+}
+
+- (IBAction)_resetDock:(id)sender {
+    NSError *error = nil;
+    [[NSFileManager defaultManager] removeItemAtPath:prefDock error:&error];
+    
+    if (error)
+        [NSAlert alertWithError:error];
+    
+    system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
+    _windowSetup(self);
 }
 
 - (IBAction)_valuechangeApply:(id)sender {
@@ -461,7 +562,7 @@ void apply_ALL(ViewController *t)
 
 - (IBAction)change_theme:(id)sender {
     theme_didChange(self);
-    self.viewDidLoad;
+    _windowSetup(self);
     apply_ALL(self);
 }
 
@@ -491,7 +592,7 @@ void apply_ALL(ViewController *t)
     }
     
     if ([sender state] == NSOffState) {
-        [_dock_is3D setState:0];
+        [_cd_is3D setState:0];
     }
     
     apply_ALL(self);
@@ -538,6 +639,7 @@ void apply_ALL(ViewController *t)
 
 - (IBAction)showPreferences:(id)sender {
     [ _tabView selectTabViewItemAtIndex:2 ];
+//    NSLog(@"%@", [_tabView tabViewItemAtIndex:0]);
 }
 
 

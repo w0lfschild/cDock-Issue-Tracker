@@ -13,6 +13,13 @@
 
 @property (weak) IBOutlet NSTabView *tabView;
 
+// cDock preferences
+@property (weak) IBOutlet NSButton *reset_Dock;
+@property (weak) IBOutlet NSButton *disable_cDock;
+
+@property (weak) IBOutlet NSButton *auto_checkUpdates;
+@property (weak) IBOutlet NSButton *auto_installUpdates;
+
 // cDock settings
 @property (weak) IBOutlet NSButton *fullWidthDock;
 @property (weak) IBOutlet NSButton *hideLabels;
@@ -46,7 +53,7 @@
 @property (weak) IBOutlet NSSlider *cd_indicatorHeight;
 @property (weak) IBOutlet NSColorWell *indicatorWELL;
 
-@property (weak) IBOutlet NSButton *dock_is3D;
+@property (weak) IBOutlet NSButton *cd_is3D;
 @property (weak) IBOutlet NSSlider *cd_backgroundAlpha;
 @property (weak) IBOutlet NSButton *dock_pictureBackground;
 
@@ -65,6 +72,8 @@
 @property (weak) IBOutlet NSSlider *dock_tilesize;
 @property (weak) IBOutlet NSSlider *dock_appSpacers;
 @property (weak) IBOutlet NSSlider *dock_docSpacers;
+
+//@property (weak) IBOutlet NSView *otherView;
 
 @end
 

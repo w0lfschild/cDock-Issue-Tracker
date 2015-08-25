@@ -666,16 +666,22 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Automatically check for updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="6VW-fD-ggl">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="autoUpdateChange:" target="XfG-lQ-9wD" id="F26-Cw-kC7"/>
+                                                    </connections>
                                                 </button>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DM9-NW-LhY">
                                                     <rect key="frame" x="150" y="204" width="221" height="18"/>
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Automatically install updates" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="FxG-VO-saA">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="autoInstallChange:" target="XfG-lQ-9wD" id="AYH-uh-891"/>
+                                                    </connections>
                                                 </button>
                                                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="J7f-8u-7JG">
                                                     <rect key="frame" x="212" y="195" width="96" height="5"/>
@@ -701,10 +707,13 @@
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLW-g6-B9E">
                                                     <rect key="frame" x="267" y="155" width="108" height="32"/>
                                                     <animations/>
-                                                    <buttonCell key="cell" type="push" title="Uninstall" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Jw-od-Kkv">
+                                                    <buttonCell key="cell" type="push" title="Disable" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Jw-od-Kkv">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="disableTheming:" target="XfG-lQ-9wD" id="8ST-Fy-OaY"/>
+                                                    </connections>
                                                 </button>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="933-Kb-CLW">
                                                     <rect key="frame" x="146" y="155" width="108" height="32"/>
@@ -713,7 +722,70 @@
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="_resetDock:" target="XfG-lQ-9wD" id="mdI-I6-d7o"/>
+                                                    </connections>
                                                 </button>
+                                            </subviews>
+                                            <animations/>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="Rootless" identifier="" id="b0M-ed-gwr">
+                                        <view key="view" id="FZg-zK-ZJS">
+                                            <rect key="frame" x="10" y="33" width="554" height="330"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJn-aQ-qFJ">
+                                                    <rect key="frame" x="15" y="37" width="524" height="270"/>
+                                                    <animations/>
+                                                    <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" id="CYj-4r-LjW">
+                                                        <font key="font" size="12" name="CourierNewPSMT"/>
+                                                        <mutableString key="title">cDock has detected that your computer has rootless enabled.
+
+Unfortunately this prevents cDock from being able to install SIMBL and theme the dock.
+
+If you would like to theme the dock you must first disable rootless by doing the following:
+
+1: Restart your computer
+2: Boot to recovery partition by holding (Command [⌘] +  R)
+3: Open terminal from the menubar
+4: Copy this command
+		csrutil disable
+5: Press return or enter
+6: Restart again</mutableString>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
+                                            </subviews>
+                                            <animations/>
+                                        </view>
+                                    </tabViewItem>
+                                    <tabViewItem label="SIMBL" identifier="" id="lct-vy-23e">
+                                        <view key="view" id="Hl5-MY-9JE">
+                                            <rect key="frame" x="10" y="33" width="554" height="330"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5z-P5-RaO">
+                                                    <rect key="frame" x="237" y="107" width="81" height="32"/>
+                                                    <animations/>
+                                                    <buttonCell key="cell" type="push" title="Install" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="FaT-gA-3YV">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7u-e8-teH">
+                                                    <rect key="frame" x="15" y="164" width="524" height="72"/>
+                                                    <animations/>
+                                                    <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" id="aTE-l5-7V0">
+                                                        <font key="font" size="12" name="HelveticaNeue-Thin"/>
+                                                        <string key="title">cDock requires SIMBL to theme the dock. A valid install of SIMBL wasn't detected.
+
+Would you like to install SIMBL now and start theming?</string>
+                                                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                </textField>
                                             </subviews>
                                             <animations/>
                                         </view>
@@ -733,6 +805,8 @@
                     </view>
                     <connections>
                         <outlet property="GLASSED" destination="QmW-3m-xH8" id="5Lw-ws-EPd"/>
+                        <outlet property="auto_checkUpdates" destination="fuA-Ff-Qm3" id="mve-aC-OBb"/>
+                        <outlet property="auto_installUpdates" destination="DM9-NW-LhY" id="Gii-uW-CHd"/>
                         <outlet property="borderBG" destination="Ig5-x6-BXT" id="Nfu-tW-HYw"/>
                         <outlet property="borderWELL" destination="r5f-wS-zAH" id="xOO-8I-SQl"/>
                         <outlet property="cd_backgroundAlpha" destination="T8f-7f-KFh" id="Vr3-Nq-ytW"/>
@@ -744,9 +818,11 @@
                         <outlet property="cd_indicatorBG" destination="Guw-gp-Mel" id="M3a-kb-WQs"/>
                         <outlet property="cd_indicatorHeight" destination="oHJ-oN-7aQ" id="gn9-Jh-BEB"/>
                         <outlet property="cd_indicatorWidth" destination="T3V-FM-Znv" id="W3E-tL-eO0"/>
+                        <outlet property="cd_is3D" destination="rtM-j0-uf2" id="HRQ-m8-QZa"/>
                         <outlet property="cd_sizeIndicator" destination="yqv-bU-Dxo" id="DYb-jN-9ib"/>
                         <outlet property="cd_theme" destination="Nql-Mc-JNf" id="Me9-f7-XLo"/>
                         <outlet property="darken_OMO" destination="Bxt-rb-lwP" id="wyc-p7-nAI"/>
+                        <outlet property="disable_cDock" destination="yLW-g6-B9E" id="mrj-LR-Udb"/>
                         <outlet property="dockBG" destination="2nq-rE-KGJ" id="hXL-t1-DI7"/>
                         <outlet property="dockWELL" destination="N8w-BA-Y8d" id="Liv-FY-lRL"/>
                         <outlet property="dock_DHI" destination="rNZ-rL-wuz" id="Bkb-eo-fgn"/>
@@ -760,7 +836,6 @@
                         <outlet property="dock_appSpacers" destination="6eG-7q-rYd" id="Gtl-6x-R00"/>
                         <outlet property="dock_autohide" destination="xBR-M4-MzF" id="s3d-px-OiS"/>
                         <outlet property="dock_docSpacers" destination="f4g-LZ-3U1" id="Mm6-lE-rEi"/>
-                        <outlet property="dock_is3D" destination="rtM-j0-uf2" id="Kb0-JS-You"/>
                         <outlet property="dock_magnification" destination="TN4-V0-fCj" id="2Bm-sf-P1p"/>
                         <outlet property="dock_pictureBackground" destination="bnM-Z5-6ed" id="oI9-lO-4YB"/>
                         <outlet property="dock_tilesize" destination="ESd-0z-DOU" id="GEn-Me-G7u"/>
@@ -769,6 +844,7 @@
                         <outlet property="indicatorWELL" destination="pXm-B8-DyI" id="OcN-ai-llL"/>
                         <outlet property="labelBG" destination="qNE-TA-mWw" id="i5o-f5-nIl"/>
                         <outlet property="labelWELL" destination="u4v-pW-qto" id="ESF-J8-lIs"/>
+                        <outlet property="reset_Dock" destination="933-Kb-CLW" id="NEJ-r8-zRu"/>
                         <outlet property="shadowBG" destination="fyH-w5-CcU" id="93X-W0-haV"/>
                         <outlet property="shadowWELL" destination="KAi-LY-1fS" id="wMf-xS-wvp"/>
                         <outlet property="stay_FROSTY" destination="tYB-1Q-wej" id="3Uj-id-Cu6"/>

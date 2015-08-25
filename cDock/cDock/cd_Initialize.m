@@ -174,15 +174,20 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID)
 {
 //    NSLog(@"Key: %@, Original Value: %@", key, orig_CFPreferencesCopyAppValue(key, applicationID));
     if ([(__bridge NSString *)key isEqualToString:@"AppleInterfaceTheme"] || [(__bridge NSString *)key isEqualToString:@"AppleInterfaceStyle"]) {
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 1) {
-            return @"Light";
-        } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 2) {
-            return @"Dark";
-        } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 3) {
-            if ([orig_CFPreferencesCopyAppValue(key, applicationID)  isEqual: @"Dark"]) {
+        if ([[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
+        {
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 1) {
                 return @"Light";
-            } else {
+            } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 2) {
                 return @"Dark";
+            } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 3) {
+                if ([orig_CFPreferencesCopyAppValue(key, applicationID)  isEqual: @"Dark"]) {
+                    return @"Light";
+                } else {
+                    return @"Dark";
+                }
+            } else {
+                return orig_CFPreferencesCopyAppValue(key, applicationID);
             }
         } else {
             return orig_CFPreferencesCopyAppValue(key, applicationID);
