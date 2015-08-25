@@ -11,9 +11,17 @@
 
 @interface ViewController : NSViewController
 
+// cDock settings
 @property (weak) IBOutlet NSButton *fullWidthDock;
 @property (weak) IBOutlet NSButton *hideLabels;
 @property (weak) IBOutlet NSButton *cd_iconReflection;
+@property (weak) IBOutlet NSButton *darken_OMO;
+@property (weak) IBOutlet NSButton *stay_FROSTY;
+@property (weak) IBOutlet NSButton *GLASSED;
+@property (weak) IBOutlet NSButton *dock_SEP;
+@property (weak) IBOutlet NSSlider *cd_cornerRadius;
+@property (weak) IBOutlet NSPopUpButton *cd_darkMode;
+@property (weak) IBOutlet NSPopUpButton *cd_theme;
 
 @property (weak) IBOutlet NSButton *dockBG;
 @property (weak) IBOutlet NSColorWell *dockWELL;
@@ -28,13 +36,6 @@
 @property (weak) IBOutlet NSButton *shadowBG;
 @property (weak) IBOutlet NSColorWell *shadowWELL;
 
-@property (weak) IBOutlet NSButton *darken_OMO;
-@property (weak) IBOutlet NSButton *stay_FROSTY;
-@property (weak) IBOutlet NSButton *GLASSED;
-@property (weak) IBOutlet NSButton *dock_SEP;
-
-@property (weak) IBOutlet NSSlider *cd_cornerRadius;
-
 // Indicators
 @property (weak) IBOutlet NSButton *cd_customIndicator;
 @property (weak) IBOutlet NSButton *cd_indicatorBG;
@@ -44,8 +45,11 @@
 @property (weak) IBOutlet NSColorWell *indicatorWELL;
 
 @property (weak) IBOutlet NSButton *dock_is3D;
+@property (weak) IBOutlet NSSlider *cd_backgroundAlpha;
 @property (weak) IBOutlet NSButton *dock_pictureBackground;
 
+
+// Dock settings
 @property (weak) IBOutlet NSButton *dock_SOAA;
 @property (weak) IBOutlet NSButton *dock_DHI;
 @property (weak) IBOutlet NSButton *dock_LDC;
@@ -54,7 +58,14 @@
 @property (weak) IBOutlet NSButton *dock_SAM;
 @property (weak) IBOutlet NSButton *dock_REC;
 
+@property (weak) IBOutlet NSSlider *dock_autohide;
+@property (weak) IBOutlet NSSlider *dock_magnification;
+@property (weak) IBOutlet NSSlider *dock_tilesize;
+@property (weak) IBOutlet NSSlider *dock_appSpacers;
+@property (weak) IBOutlet NSSlider *dock_docSpacers;
+
 @end
 
+NSMutableDictionary *prefCD;
 NSMutableDictionary *pref;
 NSMutableDictionary *prefd;

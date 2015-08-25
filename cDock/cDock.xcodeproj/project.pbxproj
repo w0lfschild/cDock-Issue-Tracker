@@ -24,6 +24,7 @@
 		FBBC5AEE1B6DE869007FB947 /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBC5AEA1B6DE869007FB947 /* PFAboutWindowController.m */; };
 		FBBC5AEF1B6DE869007FB947 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBBC5AEB1B6DE869007FB947 /* Credits.rtf */; };
 		FBBC5AF01B6DE869007FB947 /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBBC5AEC1B6DE869007FB947 /* EULA.rtf */; };
+		FBD1F6E91B8BA2E300DF2E91 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6E81B8BA2E300DF2E91 /* Icon.icns */; };
 		FBDE03671B5ED1EE00C1C5DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE03661B5ED1EE00C1C5DB /* main.m */; };
 		FBDE03761B5ED21900C1C5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03741B5ED21900C1C5DB /* Main.storyboard */; };
 		FBDE03771B5ED21900C1C5DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03751B5ED21900C1C5DB /* Images.xcassets */; };
@@ -56,6 +57,7 @@
 		FBBC5AEC1B6DE869007FB947 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBD1F6E81B8BA2E300DF2E91 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDE03661B5ED1EE00C1C5DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBDE03701B5ED1EE00C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 		FBDE03651B5ED1EE00C1C5DB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FBD1F6E81B8BA2E300DF2E91 /* Icon.icns */,
 				FBDE03701B5ED1EE00C1C5DB /* Info.plist */,
 				FBDE03661B5ED1EE00C1C5DB /* main.m */,
 			);
@@ -387,6 +390,7 @@
 				FBDE03761B5ED21900C1C5DB /* Main.storyboard in Resources */,
 				FBDE03771B5ED21900C1C5DB /* Images.xcassets in Resources */,
 				FB3EDF741B7088B000E96DC9 /* updates in Resources */,
+				FBD1F6E91B8BA2E300DF2E91 /* Icon.icns in Resources */,
 				FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */,
 				FB7ABC5C1B6AE234001D7E5A /* PFAboutWindow.xib in Resources */,
 			);

@@ -140,7 +140,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Theming" identifier="1" id="Ssp-Kg-i2P">
-                                        <view key="view" ambiguous="YES" id="bGW-BB-N0N">
+                                        <view key="view" id="bGW-BB-N0N">
                                             <rect key="frame" x="10" y="33" width="554" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -251,24 +251,6 @@
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="1IV-Hp-x2J"/>
                                                     </connections>
                                                 </colorWell>
-                                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q3b-M5-BDD">
-                                                    <rect key="frame" x="134" y="275" width="129" height="26"/>
-                                                    <animations/>
-                                                    <popUpButtonCell key="cell" type="push" title="System" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="f4P-qM-hTm" id="Zzw-EM-Dla">
-                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="menu"/>
-                                                        <menu key="menu" id="Mmf-WC-ERj">
-                                                            <items>
-                                                                <menuItem title="System" state="on" id="f4P-qM-hTm"/>
-                                                                <menuItem title="System Inverse" id="7hE-cs-V35">
-                                                                    <modifierMask key="keyEquivalentModifierMask"/>
-                                                                </menuItem>
-                                                                <menuItem title="Dark" id="RVi-rF-QRO"/>
-                                                                <menuItem title="Light" id="v5V-dh-rS7"/>
-                                                            </items>
-                                                        </menu>
-                                                    </popUpButtonCell>
-                                                </popUpButton>
                                                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nql-Mc-JNf">
                                                     <rect key="frame" x="134" y="301" width="129" height="26"/>
                                                     <animations/>
@@ -283,6 +265,9 @@
                                                             </items>
                                                         </menu>
                                                     </popUpButtonCell>
+                                                    <connections>
+                                                        <action selector="change_theme:" target="XfG-lQ-9wD" id="p07-Mn-uAc"/>
+                                                    </connections>
                                                 </popUpButton>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8o9-VP-E9d">
                                                     <rect key="frame" x="310" y="308" width="226" height="18"/>
@@ -399,7 +384,7 @@
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <action selector="changePictureBackground:" target="XfG-lQ-9wD" id="tvB-Mn-VQA"/>
+                                                        <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="sil-Ob-NPp"/>
                                                     </connections>
                                                 </button>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nu0-Et-0fj" userLabel="cd_darkMode">
@@ -433,6 +418,9 @@
                                                     <rect key="frame" x="392" y="74" width="144" height="21"/>
                                                     <animations/>
                                                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="85" tickMarkPosition="above" sliderType="linear" id="qFc-k3-9pe"/>
+                                                    <connections>
+                                                        <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="IeE-6c-cZr"/>
+                                                    </connections>
                                                 </slider>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TmF-mp-w5J">
                                                     <rect key="frame" x="15" y="70" width="106" height="20"/>
@@ -493,6 +481,27 @@
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="rgU-JP-a1u"/>
                                                     </connections>
                                                 </slider>
+                                                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q3b-M5-BDD">
+                                                    <rect key="frame" x="134" y="275" width="129" height="26"/>
+                                                    <animations/>
+                                                    <popUpButtonCell key="cell" type="push" title="Light" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="v5V-dh-rS7" id="Zzw-EM-Dla">
+                                                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="menu"/>
+                                                        <menu key="menu" id="Mmf-WC-ERj">
+                                                            <items>
+                                                                <menuItem title="System" id="f4P-qM-hTm"/>
+                                                                <menuItem title="Light" state="on" id="v5V-dh-rS7"/>
+                                                                <menuItem title="Dark" id="RVi-rF-QRO"/>
+                                                                <menuItem title="System Inverse" id="7hE-cs-V35">
+                                                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                                                </menuItem>
+                                                            </items>
+                                                        </menu>
+                                                    </popUpButtonCell>
+                                                    <connections>
+                                                        <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="z6q-9x-4C9"/>
+                                                    </connections>
+                                                </popUpButton>
                                             </subviews>
                                             <animations/>
                                         </view>
@@ -505,7 +514,7 @@
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pb1-5U-HIO" userLabel="dock_activeApps">
                                                     <rect key="frame" x="345" y="234" width="158" height="18"/>
                                                     <animations/>
-                                                    <buttonCell key="cell" type="check" title="Show only active apps" bezelStyle="regularSquare" imagePosition="right" alignment="right" state="on" inset="2" id="G72-4N-8nx">
+                                                    <buttonCell key="cell" type="check" title="Show only active apps" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="G72-4N-8nx">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
@@ -513,7 +522,7 @@
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rNZ-rL-wuz" userLabel="dock_dimHidden">
                                                     <rect key="frame" x="345" y="214" width="158" height="18"/>
                                                     <animations/>
-                                                    <buttonCell key="cell" type="check" title="Dim hidden Items" bezelStyle="regularSquare" imagePosition="right" alignment="right" state="on" inset="2" id="ECR-NM-8pe">
+                                                    <buttonCell key="cell" type="check" title="Dim hidden Items" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="ECR-NM-8pe">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
@@ -521,7 +530,7 @@
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7T-E1-Yne" userLabel="dock_lockContent">
                                                     <rect key="frame" x="345" y="194" width="158" height="18"/>
                                                     <animations/>
-                                                    <buttonCell key="cell" type="check" title="Lock Dock contents" bezelStyle="regularSquare" imagePosition="right" alignment="right" state="on" inset="2" id="VM9-MM-qDO">
+                                                    <buttonCell key="cell" type="check" title="Lock Dock contents" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="VM9-MM-qDO">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
@@ -529,7 +538,7 @@
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4O-0j-fh5" userLabel="dock_gridMouseOver">
                                                     <rect key="frame" x="345" y="174" width="158" height="18"/>
                                                     <animations/>
-                                                    <buttonCell key="cell" type="check" title="Fan mouse-over highlight" bezelStyle="regularSquare" imagePosition="right" alignment="right" state="on" inset="2" id="s5H-Dy-Mp5">
+                                                    <buttonCell key="cell" type="check" title="Fan mouse-over highlight" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="s5H-Dy-Mp5">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
@@ -537,7 +546,7 @@
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xcu-gt-S10" userLabel="dock_showRecents">
                                                     <rect key="frame" x="345" y="154" width="158" height="18"/>
                                                     <animations/>
-                                                    <buttonCell key="cell" type="check" title="Show recents folder" bezelStyle="regularSquare" imagePosition="right" alignment="right" state="on" inset="2" id="Ozl-Ev-ycp">
+                                                    <buttonCell key="cell" type="check" title="Show recents folder" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Ozl-Ev-ycp">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
@@ -545,7 +554,7 @@
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1GS-bb-wAt" userLabel="dock_noBounce">
                                                     <rect key="frame" x="345" y="134" width="158" height="18"/>
                                                     <animations/>
-                                                    <buttonCell key="cell" type="check" title="No app bounce" bezelStyle="regularSquare" imagePosition="right" alignment="right" state="on" inset="2" id="xin-R0-NcZ">
+                                                    <buttonCell key="cell" type="check" title="No app bounce" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="xin-R0-NcZ">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
@@ -553,7 +562,7 @@
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Krq-Pz-1vC" userLabel="dock_singleApp">
                                                     <rect key="frame" x="345" y="114" width="158" height="18"/>
                                                     <animations/>
-                                                    <buttonCell key="cell" type="check" title="Single app mode" bezelStyle="regularSquare" imagePosition="right" alignment="right" state="on" inset="2" id="vzm-mg-l8J">
+                                                    <buttonCell key="cell" type="check" title="Single app mode" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="vzm-mg-l8J">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
@@ -577,7 +586,7 @@
                                                     </textFieldCell>
                                                 </textField>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LAN-c3-V9A">
-                                                    <rect key="frame" x="50" y="154" width="125" height="20"/>
+                                                    <rect key="frame" x="50" y="149" width="125" height="20"/>
                                                     <animations/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Application Spacers" id="QjK-FO-w0Y">
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -588,12 +597,12 @@
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBR-M4-MzF">
                                                     <rect key="frame" x="175" y="233" width="99" height="21"/>
                                                     <animations/>
-                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="below" sliderType="linear" id="oxC-dI-WDc"/>
+                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="3" tickMarkPosition="below" sliderType="linear" id="oxC-dI-WDc"/>
                                                 </slider>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TN4-V0-fCj">
                                                     <rect key="frame" x="175" y="208" width="99" height="21"/>
                                                     <animations/>
-                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="kIU-Rn-0po"/>
+                                                    <sliderCell key="cell" state="on" alignment="left" minValue="16" maxValue="248" doubleValue="62" tickMarkPosition="above" sliderType="linear" id="kIU-Rn-0po"/>
                                                 </slider>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTw-xq-gFo">
                                                     <rect key="frame" x="50" y="213" width="106" height="17"/>
@@ -607,12 +616,12 @@
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ESd-0z-DOU">
                                                     <rect key="frame" x="175" y="180" width="99" height="21"/>
                                                     <animations/>
-                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="hYE-jL-hm9"/>
+                                                    <sliderCell key="cell" state="on" alignment="left" minValue="16" maxValue="128" doubleValue="42" tickMarkPosition="above" sliderType="linear" id="hYE-jL-hm9"/>
                                                 </slider>
                                                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6eG-7q-rYd">
-                                                    <rect key="frame" x="175" y="152" width="99" height="21"/>
+                                                    <rect key="frame" x="175" y="146" width="99" height="27"/>
                                                     <animations/>
-                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="Lor-6g-WNz"/>
+                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="10" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="Lor-6g-WNz"/>
                                                 </slider>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QzQ-aH-LOk">
                                                     <rect key="frame" x="223" y="68" width="108" height="32"/>
@@ -625,8 +634,13 @@
                                                         <action selector="applyPressed:" target="XfG-lQ-9wD" id="vN5-Hj-0VN"/>
                                                     </connections>
                                                 </button>
+                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-LZ-3U1">
+                                                    <rect key="frame" x="175" y="114" width="99" height="27"/>
+                                                    <animations/>
+                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="10" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="YLJ-B3-0hd"/>
+                                                </slider>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OA1-Ls-Fy9">
-                                                    <rect key="frame" x="50" y="130" width="125" height="20"/>
+                                                    <rect key="frame" x="50" y="117" width="125" height="20"/>
                                                     <animations/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Document Spacers" id="nNb-ai-pXp">
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -634,17 +648,12 @@
                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
                                                 </textField>
-                                                <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4g-LZ-3U1">
-                                                    <rect key="frame" x="175" y="128" width="99" height="21"/>
-                                                    <animations/>
-                                                    <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="YLJ-B3-0hd"/>
-                                                </slider>
                                             </subviews>
                                             <animations/>
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Preferences" identifier="3" id="2v7-Q8-54h">
-                                        <view key="view" id="0eC-Cp-aa4">
+                                        <view key="view" ambiguous="YES" id="0eC-Cp-aa4">
                                             <rect key="frame" x="10" y="33" width="554" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -737,14 +746,17 @@
                         <outlet property="GLASSED" destination="QmW-3m-xH8" id="5Lw-ws-EPd"/>
                         <outlet property="borderBG" destination="Ig5-x6-BXT" id="Nfu-tW-HYw"/>
                         <outlet property="borderWELL" destination="r5f-wS-zAH" id="xOO-8I-SQl"/>
+                        <outlet property="cd_backgroundAlpha" destination="T8f-7f-KFh" id="Vr3-Nq-ytW"/>
                         <outlet property="cd_borderSize" destination="rc9-TA-8u8" id="Bh7-Mi-VYT"/>
                         <outlet property="cd_cornerRadius" destination="FSQ-gb-xTL" id="End-9d-Tzt"/>
                         <outlet property="cd_customIndicator" destination="ogZ-qW-bny" id="q2b-Qu-Dbw"/>
+                        <outlet property="cd_darkMode" destination="Q3b-M5-BDD" id="IzD-kT-zuC"/>
                         <outlet property="cd_iconReflection" destination="BW7-oY-nIK" id="apl-V0-S24"/>
                         <outlet property="cd_indicatorBG" destination="Guw-gp-Mel" id="M3a-kb-WQs"/>
                         <outlet property="cd_indicatorHeight" destination="oHJ-oN-7aQ" id="gn9-Jh-BEB"/>
                         <outlet property="cd_indicatorWidth" destination="T3V-FM-Znv" id="W3E-tL-eO0"/>
                         <outlet property="cd_sizeIndicator" destination="yqv-bU-Dxo" id="DYb-jN-9ib"/>
+                        <outlet property="cd_theme" destination="Nql-Mc-JNf" id="Me9-f7-XLo"/>
                         <outlet property="darken_OMO" destination="Bxt-rb-lwP" id="wyc-p7-nAI"/>
                         <outlet property="dockBG" destination="2nq-rE-KGJ" id="hXL-t1-DI7"/>
                         <outlet property="dockWELL" destination="N8w-BA-Y8d" id="Liv-FY-lRL"/>
@@ -756,8 +768,13 @@
                         <outlet property="dock_SAM" destination="Krq-Pz-1vC" id="JPp-Cj-KQH"/>
                         <outlet property="dock_SEP" destination="foH-9N-xmL" id="U1e-GZ-Jqa"/>
                         <outlet property="dock_SOAA" destination="pb1-5U-HIO" id="a5g-6X-Cuh"/>
+                        <outlet property="dock_appSpacers" destination="6eG-7q-rYd" id="Gtl-6x-R00"/>
+                        <outlet property="dock_autohide" destination="xBR-M4-MzF" id="s3d-px-OiS"/>
+                        <outlet property="dock_docSpacers" destination="f4g-LZ-3U1" id="Mm6-lE-rEi"/>
                         <outlet property="dock_is3D" destination="rtM-j0-uf2" id="Kb0-JS-You"/>
+                        <outlet property="dock_magnification" destination="TN4-V0-fCj" id="2Bm-sf-P1p"/>
                         <outlet property="dock_pictureBackground" destination="bnM-Z5-6ed" id="oI9-lO-4YB"/>
+                        <outlet property="dock_tilesize" destination="ESd-0z-DOU" id="GEn-Me-G7u"/>
                         <outlet property="fullWidthDock" destination="ml0-ZT-wp5" id="EJ2-zG-gp7"/>
                         <outlet property="hideLabels" destination="8o9-VP-E9d" id="5V9-QS-KyN"/>
                         <outlet property="indicatorWELL" destination="pXm-B8-DyI" id="OcN-ai-llL"/>

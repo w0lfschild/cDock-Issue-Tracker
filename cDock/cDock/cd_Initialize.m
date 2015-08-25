@@ -19,6 +19,7 @@ extern long osx_minor;
 extern BOOL dispatch_prefFile;
 extern BOOL dispatch_dockFile;
 extern BOOL loadShadows;
+extern BOOL loadImages;
 extern void _forceRefresh();
 
 void notificationCallback (CFNotificationCenterRef center,
@@ -35,6 +36,7 @@ void notificationCallback (CFNotificationCenterRef center,
     if ([res isEqualToString:@"Reload"]) {
         dispatch_prefFile = true;
         dispatch_dockFile = true;
+        loadImages = true;
         loadShadows = true;
         _forceRefresh();
 //        NSLog(@"%@", res);

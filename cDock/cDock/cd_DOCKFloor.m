@@ -17,6 +17,13 @@ long osx_minor = 0;
 CGImageRef background;
 CGImageRef background1;
 BOOL loadShadows = true;
+BOOL loadImages = true;
+
+CGImageRef large;
+CGImageRef medium;
+CGImageRef small;
+CGImageRef medium_simple;
+CGImageRef small_simple;
 
 @interface _CDMAVSide : CALayer
 @end
@@ -28,8 +35,9 @@ BOOL loadShadows = true;
 void _loadImages()
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    static dispatch_once_t once;
-    dispatch_once(&once, ^ {
+    if (loadImages)
+    {
+        loadImages = false;
         NSString *picFile;
         
         picFile = [NSString stringWithFormat:@"%@/background.png", prefPath];
@@ -43,7 +51,19 @@ void _loadImages()
             background1 = CGImageCreateWithPNGDataProvider(CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:picFile]), NULL, true, kCGRenderingIntentDefault);
         else
             background1 = nil;
-    });
+        
+        CGDataProviderRef imgDataProvider;
+        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_large.png", prefPath]]);
+        large = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
+        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_medium.png", prefPath]]);
+        medium = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
+        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_small.png", prefPath]]);
+        small = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
+        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_medium_simple.png", prefPath]]);
+        medium_simple = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
+        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_small_simple.png", prefPath]]);
+        small_simple = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
+    }
 }
 
 void _forceRefresh()
@@ -89,9 +109,9 @@ void _loadShadows(CALayer* layer)
                 
             // Gotta refresh again here to get custom indicators to theme?
             // Can cause crash if not delayed...
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-//                _forceRefresh();
-//            });
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+                _forceRefresh();
+            });
             
 //            NSLog(@"Shadows and reflections initialized...");
         });
@@ -498,9 +518,8 @@ void _TenNine(CALayer* layer)
     }
     
     float brdSize = [[[Preferences sharedInstance] objectForKey:@"cd_borderSize"] floatValue];
-    
     // rounded corners
-    if (cornerSize >= 0) {
+    if (cornerSize > 0 && ![[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue]) {
         CGRect rect = _superLayer.bounds;
         
         // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
@@ -530,6 +549,10 @@ void _TenNine(CALayer* layer)
         }
         
         [ _materialLayer setFrame:rect ];
+    } else {
+        [ _materialLayer setCornerRadius:cornerSize ];
+        [ _backgroundLayer setCornerRadius:cornerSize ];
+        [ _borderLayer setCornerRadius:cornerSize ];
     }
     
     // Border layer

@@ -97,19 +97,27 @@ ZKSwizzleInterface(_CDECMaterialLayer, ECMaterialLayer, CALayer);
         return;
 
 //    NSLog(@"%lu", (unsigned long)_material);
+//    NSLog(@"%@", self.superlayer.class);
     
-    // Note : This also colors a bunch of stuff we may or may not want like the mission control backdrop in dark mode :|
     if ([[[Preferences sharedInstance] objectForKey:@"cd_labelBG"] boolValue]) {
-        NSUInteger _material = ZKHookIvar(self, NSUInteger, "_material");
-        if (_material != 0) {
-            float red = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGR"] floatValue];
-            float green = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGG"] floatValue];
-            float blue = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGB"] floatValue];
-            float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGA"] floatValue];
-            NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255 blue:blue/255.0 alpha:1.0];
-            CALayer *tintLayer = ZKHookIvar(self, CALayer *, "_backdropLayer");
-            [tintLayer setBackgroundColor:[goodColor CGColor]];
-            [tintLayer setOpacity:( alpha / 100.0 )];
+        
+        // Prevent coloration of frost layer and misssion control bar
+        if (self.superlayer.class != NSClassFromString(@"Dock.FloorLayer") && self.superlayer.class != NSClassFromString(@"CALayer")) {
+            
+//            NSLog(@"%@", self.debugDescription);
+            
+            NSUInteger _material = ZKHookIvar(self, NSUInteger, "_material");
+            if (_material != 0) {
+                float red = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGR"] floatValue];
+                float green = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGG"] floatValue];
+                float blue = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGB"] floatValue];
+                float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGA"] floatValue];
+                NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255 blue:blue/255.0 alpha:1.0];
+                CALayer *tintLayer = ZKHookIvar(self, CALayer *, "_backdropLayer");
+                [tintLayer setBackgroundColor:[goodColor CGColor]];
+                [tintLayer setOpacity:( alpha / 100.0 )];
+            }
+            
         }
     }
 }
