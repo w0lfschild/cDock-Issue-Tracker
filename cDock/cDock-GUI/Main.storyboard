@@ -23,7 +23,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="Q8X-IS-DZN"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="cau-1q-q57"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="cau-1q-q57">
+                                            <connections>
+                                                <action selector="showPreferences:" target="Ady-hI-5gd" id="Ine-4e-mkX"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="UXO-G5-8Uw"/>
                                         <menuItem title="Services" id="zku-MY-EOK">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -140,7 +144,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Theming" identifier="1" id="Ssp-Kg-i2P">
-                                        <view key="view" id="bGW-BB-N0N">
+                                        <view key="view" ambiguous="YES" id="bGW-BB-N0N">
                                             <rect key="frame" x="10" y="33" width="554" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -605,7 +609,7 @@
                                                     <sliderCell key="cell" state="on" alignment="left" minValue="16" maxValue="248" doubleValue="62" tickMarkPosition="above" sliderType="linear" id="kIU-Rn-0po"/>
                                                 </slider>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JTw-xq-gFo">
-                                                    <rect key="frame" x="50" y="213" width="106" height="17"/>
+                                                    <rect key="frame" x="50" y="210" width="106" height="20"/>
                                                     <animations/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Magnification" id="xCF-wu-j65">
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -653,7 +657,7 @@
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="Preferences" identifier="3" id="2v7-Q8-54h">
-                                        <view key="view" ambiguous="YES" id="0eC-Cp-aa4">
+                                        <view key="view" id="0eC-Cp-aa4">
                                             <rect key="frame" x="10" y="33" width="554" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -673,29 +677,6 @@
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                 </button>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VcX-E4-kQc">
-                                                    <rect key="frame" x="150" y="173" width="254" height="18"/>
-                                                    <animations/>
-                                                    <buttonCell key="cell" type="check" title="Auto-launch menubar application" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="NVi-1s-vg5">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WXK-rt-cFu">
-                                                    <rect key="frame" x="150" y="142" width="254" height="18"/>
-                                                    <animations/>
-                                                    <buttonCell key="cell" type="check" title="Reset Dock to factory settings" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="znS-Wi-gBL">
-                                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
-                                                    </buttonCell>
-                                                </button>
-                                                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="LhM-Qh-FUa">
-                                                    <rect key="frame" x="212" y="246" width="96" height="5"/>
-                                                    <animations/>
-                                                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <font key="titleFont" metaFont="system"/>
-                                                </box>
                                                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="J7f-8u-7JG">
                                                     <rect key="frame" x="212" y="195" width="96" height="5"/>
                                                     <animations/>
@@ -703,24 +684,32 @@
                                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <font key="titleFont" metaFont="system"/>
                                                 </box>
-                                                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="6hU-Aq-qn7">
-                                                    <rect key="frame" x="212" y="164" width="96" height="5"/>
+                                                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="6Qv-iX-E3a">
+                                                    <rect key="frame" x="212" y="246" width="96" height="5"/>
                                                     <animations/>
                                                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <font key="titleFont" metaFont="system"/>
                                                 </box>
                                                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="go6-bs-Fan">
-                                                    <rect key="frame" x="212" y="133" width="96" height="5"/>
+                                                    <rect key="frame" x="212" y="142" width="96" height="5"/>
                                                     <animations/>
                                                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <font key="titleFont" metaFont="system"/>
                                                 </box>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yLW-g6-B9E">
-                                                    <rect key="frame" x="206" y="96" width="108" height="32"/>
+                                                    <rect key="frame" x="267" y="155" width="108" height="32"/>
                                                     <animations/>
                                                     <buttonCell key="cell" type="push" title="Uninstall" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2Jw-od-Kkv">
+                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                        <font key="font" metaFont="system"/>
+                                                    </buttonCell>
+                                                </button>
+                                                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="933-Kb-CLW">
+                                                    <rect key="frame" x="146" y="155" width="108" height="32"/>
+                                                    <animations/>
+                                                    <buttonCell key="cell" type="push" title="Reset Dock" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="75a-8b-Zbd">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
@@ -783,6 +772,7 @@
                         <outlet property="shadowBG" destination="fyH-w5-CcU" id="93X-W0-haV"/>
                         <outlet property="shadowWELL" destination="KAi-LY-1fS" id="wMf-xS-wvp"/>
                         <outlet property="stay_FROSTY" destination="tYB-1Q-wej" id="3Uj-id-Cu6"/>
+                        <outlet property="tabView" destination="wMk-f4-fMq" id="29A-zN-jKr"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

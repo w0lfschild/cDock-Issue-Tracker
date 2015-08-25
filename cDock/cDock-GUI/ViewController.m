@@ -139,7 +139,7 @@ void apply_spacers(ViewController *t)
     {
         NSMutableArray *arr = [prefd valueForKey:@"persistent-others"];
         int _appCount = (int)arr.count;
-        for (int a = 0; a <= _appCount ; a++)
+        for (int a = _appCount - 1; a >= 0 ; a--)
         {
             if ( _adjust < 0 )
             {
@@ -147,8 +147,6 @@ void apply_spacers(ViewController *t)
                 if ([[dic valueForKey:@"tile-type"] isEqualToString:@"spacer-tile"])
                 {
                     [ arr removeObjectAtIndex:a ];
-                    a -= 1;
-                    _appCount -= 1;
                     _adjust += 1;
                 }
             }
@@ -536,6 +534,10 @@ void apply_ALL(ViewController *t)
         [_borderWELL setHidden:true];
     }
     apply_ALL(self);
+}
+
+- (IBAction)showPreferences:(id)sender {
+    [ _tabView selectTabViewItemAtIndex:2 ];
 }
 
 

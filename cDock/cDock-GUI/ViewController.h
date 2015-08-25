@@ -11,6 +11,8 @@
 
 @interface ViewController : NSViewController
 
+@property (weak) IBOutlet NSTabView *tabView;
+
 // cDock settings
 @property (weak) IBOutlet NSButton *fullWidthDock;
 @property (weak) IBOutlet NSButton *hideLabels;
