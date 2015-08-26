@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>cd_customIndicator</key>
+	<false/>
+	<key>cd_darkenMouseOver</key>
+	<true/>
+	<key>cd_dockBG</key>
+	<true/>
+	<key>cd_dockBGA</key>
+	<integer>75</integer>
+	<key>cd_dockBGB</key>
+	<integer>240</integer>
+	<key>cd_dockBGG</key>
+	<integer>210</integer>
+	<key>cd_dockBGR</key>
+	<integer>115</integer>
+	<key>cd_fullWidth</key>
+	<false/>
+	<key>cd_hideLabels</key>
+	<false/>
+	<key>cd_iconReflection</key>
+	<false/>
+	<key>cd_iconShadow</key>
+	<false/>
+	<key>cd_iconShadowBGA</key>
+	<integer>0</integer>
+	<key>cd_iconShadowBGB</key>
+	<integer>0</integer>
+	<key>cd_iconShadowBGG</key>
+	<integer>0</integer>
+	<key>cd_iconShadowBGR</key>
+	<real>0</real>
+	<key>cd_iconShadowBGS</key>
+	<integer>0</integer>
+	<key>cd_labelBG</key>
+	<true/>
+	<key>cd_labelBGA</key>
+	<integer>50</integer>
+	<key>cd_labelBGB</key>
+	<integer>240</integer>
+	<key>cd_labelBGG</key>
+	<integer>210</integer>
+	<key>cd_labelBGR</key>
+	<integer>115</integer>
+	<key>cd_pictureBG</key>
+	<false/>
+	<key>cd_pictureTile</key>
+	<false/>
+	<key>cd_showFrost</key>
+	<false/>
+	<key>cd_showGlass</key>
+	<false/>
+	<key>cd_showSeparator</key>
+	<true/>
+</dict>
+</plist>
