@@ -30,13 +30,7 @@
 - (IBAction)showAboutWindow:(id)sender {
     [self.aboutWindowController setAppURL:[[NSURL alloc] initWithString:@"https://github.com/w0lfschild/cDock2"]];
     [self.aboutWindowController setAppName:@"cDock 2"];
-    [self.aboutWindowController setAppCopyright:[[NSAttributedString alloc] initWithString:@"Copyright (c) 2015 Perceval F"
-                                                                                attributes:@{
-                                                                                             NSForegroundColorAttributeName : [NSColor tertiaryLabelColor],
-                                                                                             NSFontAttributeName  : [NSFont fontWithName:@"HelveticaNeue" size:11]}]];
     [self.aboutWindowController setWindowShouldHaveShadow:YES];
-    [self.aboutWindowController setAppVersion:[NSString stringWithFormat:@"Version %@ (Build 1)", [NSString stringWithFormat:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]]]];
-    [self.aboutWindowController showCredits:nil];
     [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
     [self.aboutWindowController showWindow:nil];
 }
