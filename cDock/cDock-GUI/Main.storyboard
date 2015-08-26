@@ -91,16 +91,16 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
             </objects>
-            <point key="canvasLocation" x="446" y="-23"/>
+            <point key="canvasLocation" x="453" y="-2"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" sceneMemberID="viewController">
+                    <window key="window" title="cDock 2" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="WAYAppStoreWindow">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="595" height="380"/>
@@ -112,7 +112,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.5" y="180"/>
+            <point key="canvasLocation" x="34.5" y="201"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -123,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rCv-KF-q0s">
-                                <rect key="frame" x="186" y="377" width="186" height="59"/>
+                                <rect key="frame" x="186" y="368" width="186" height="59"/>
                                 <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="cDock 2" id="J7h-kh-BFd">
                                     <font key="font" size="50" name="HelveticaNeue-UltraLight"/>
@@ -131,13 +131,6 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Qa3-cd-3Zx">
-                                <rect key="frame" x="0.0" y="366" width="559" height="5"/>
-                                <animations/>
-                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <font key="titleFont" metaFont="system"/>
-                            </box>
                             <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMk-f4-fMq">
                                 <rect key="frame" x="-8" y="-10" width="574" height="376"/>
                                 <animations/>
@@ -153,7 +146,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Fullscreen width Dock" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="wVK-RE-d2w">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="O6d-uX-GiF"/>
@@ -175,7 +168,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Darken icons on mouse-over" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="py5-2N-SN2">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="HjN-9V-iAC"/>
@@ -186,7 +179,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Show Frost layer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="z0U-7e-fKA">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="AZT-0o-g6Q"/>
@@ -197,7 +190,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Show Glass layer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="xIa-c3-rt5">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="TN1-Zg-9QK"/>
@@ -208,7 +201,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Show Separator layer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="D5B-NS-9gt">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="Jxv-ED-9Kg"/>
@@ -278,7 +271,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Hide icon labels" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="wAF-Rd-3wM">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="rVx-9l-BLB"/>
@@ -341,7 +334,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Show icon reflections" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="owa-kd-nd8">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="GR9-ia-anA"/>
@@ -352,7 +345,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Use image for application Indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="T8e-TA-XR3">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="5Kd-Bh-xD5"/>
@@ -363,7 +356,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Dock background image is 3D" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="EKa-M9-8kR">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="change3D:" target="XfG-lQ-9wD" id="fq3-Yb-6P0"/>
@@ -374,7 +367,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Use image for Dock background" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="JAV-NC-SC7">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="changePictureBackground:" target="XfG-lQ-9wD" id="zud-TY-Uah"/>
@@ -385,7 +378,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Resize standard Indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="3BY-lq-Hs4">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                                                        <font key="font" metaFont="system"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="sil-Ob-NPp"/>
@@ -793,7 +786,7 @@ Would you like to install SIMBL now and start theming?</string>
                                 </tabViewItems>
                             </tabView>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-pU-Scb">
-                                <rect key="frame" x="513" y="392" width="25" height="25"/>
+                                <rect key="frame" x="515" y="394" width="25" height="25"/>
                                 <animations/>
                                 <buttonCell key="cell" type="help" bezelStyle="helpButton" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="iXE-RC-pVL">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
