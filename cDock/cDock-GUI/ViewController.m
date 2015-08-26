@@ -19,18 +19,18 @@
 
 BOOL timedelay = true;
 
-void checkUpdates() {
+void checkUpdates(NSInteger autoInstall) {
     NSBundle *myBundle = [NSBundle mainBundle];
     NSString *path = [myBundle pathForResource:@"updates/wUpdater.app/Contents/MacOS/wUpdater" ofType:@""];
     
     //    dlurl=$(curl -s https://api.github.com/repos/w0lfschild/cDock/releases/latest | grep 'browser_' | cut -d\" -f4)
     //    "$wupd_path" c "$app_path" org.w0lf.cDock "$3cur_ver" "$verurl" "$logurl" "$dlurl" "$autoinstall" &
     NSArray *args = [NSArray arrayWithObjects:@"c", [[NSBundle mainBundle] bundlePath], @"org.w0lf.cDock-GUI",
-                     [NSString stringWithFormat:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]],
+                     [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]],
                      @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/version.txt",
                      @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/versionInfo.txt",
                      @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/release.zip",
-                     @"0", nil];
+                     [NSString stringWithFormat:@"%d", (int)autoInstall], nil];
     
     [NSTask launchedTaskWithLaunchPath:path arguments:args];
     NSLog(@"Checking for updates...");
@@ -446,6 +446,9 @@ void _windowSetup(ViewController *me) {
     [ me.auto_installUpdates setState:[[prefCD objectForKey:@"autoInstall"] integerValue]];
     [ me.cd_theme selectItemWithTitle:thmeName];
     
+    if (me.auto_checkUpdates.state == NSOnState)
+        checkUpdates([[prefCD objectForKey:@"autoInstall"] integerValue]);
+    
     [me.cd_sizeIndicator setState:[[pref objectForKey:@"cd_sizeIndicator"] integerValue]];
     [me.cd_indicatorHeight setFloatValue:[[pref objectForKey:@"cd_indicatorHeight"] integerValue]];
     [me.cd_indicatorWidth setFloatValue:[[pref objectForKey:@"cd_indicatorWidth"] integerValue]];
@@ -515,6 +518,9 @@ void _windowSetup(ViewController *me) {
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+
+//    NSLog(@"%@", self.superclass);
+    
     _windowFirstrun(self);
     _windowSetup(self);
 }
@@ -528,7 +534,7 @@ void _windowSetup(ViewController *me) {
     [prefCD setObject:[NSNumber numberWithBool:[self.auto_checkUpdates state]] forKey:@"autoCheck"];
     [prefCD writeToFile:thmePath atomically:YES];
     if (self.auto_checkUpdates.state == NSOnState)
-        checkUpdates();
+        checkUpdates([[prefCD objectForKey:@"autoInstall"] integerValue]);
 }
 
 - (IBAction)autoInstallChange:(id)sender {
