@@ -24,9 +24,11 @@
     [aWindow setTitlebarAppearsTransparent:true];
     [aWindow setTitleVisibility:NSWindowTitleHidden];
     
-    CGRect myFrame = aWindow.frame;
-    [aWindow setTitleBarHeight:80]; //62
-    [aWindow setFrame:myFrame display:true];
+//    CGRect myFrame = aWindow.frame;
+//    [aWindow setTitleBarHeight:80];
+//    [aWindow setFrame:myFrame display:true];
+    
+    [self.window setMovableByWindowBackground:YES];
     
     self.window.backgroundColor = [NSColor whiteColor];
     

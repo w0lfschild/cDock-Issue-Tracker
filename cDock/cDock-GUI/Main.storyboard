@@ -137,7 +137,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Theming" identifier="1" id="Ssp-Kg-i2P">
-                                        <view key="view" ambiguous="YES" id="bGW-BB-N0N">
+                                        <view key="view" id="bGW-BB-N0N">
                                             <rect key="frame" x="10" y="33" width="554" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -146,7 +146,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Fullscreen width Dock" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="wVK-RE-d2w">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="O6d-uX-GiF"/>
@@ -168,7 +168,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Darken icons on mouse-over" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="py5-2N-SN2">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="HjN-9V-iAC"/>
@@ -179,7 +179,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Show Frost layer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="z0U-7e-fKA">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="AZT-0o-g6Q"/>
@@ -190,7 +190,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Show Glass layer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="xIa-c3-rt5">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="TN1-Zg-9QK"/>
@@ -201,7 +201,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Show Separator layer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="D5B-NS-9gt">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="Jxv-ED-9Kg"/>
@@ -271,7 +271,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Hide icon labels" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="wAF-Rd-3wM">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="rVx-9l-BLB"/>
@@ -334,7 +334,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Show icon reflections" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="owa-kd-nd8">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="GR9-ia-anA"/>
@@ -345,7 +345,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Use image for application Indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="T8e-TA-XR3">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="5Kd-Bh-xD5"/>
@@ -356,7 +356,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Dock background image is 3D" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="EKa-M9-8kR">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="change3D:" target="XfG-lQ-9wD" id="fq3-Yb-6P0"/>
@@ -367,7 +367,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Use image for Dock background" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="JAV-NC-SC7">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="changePictureBackground:" target="XfG-lQ-9wD" id="zud-TY-Uah"/>
@@ -378,7 +378,7 @@
                                                     <animations/>
                                                     <buttonCell key="cell" type="check" title="Resize standard Indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="3BY-lq-Hs4">
                                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                                                        <font key="font" metaFont="system"/>
+                                                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
                                                         <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="sil-Ob-NPp"/>
@@ -733,7 +733,7 @@
                                                     <animations/>
                                                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" id="CYj-4r-LjW">
                                                         <font key="font" size="12" name="CourierNewPSMT"/>
-                                                        <mutableString key="title">cDock has detected that your computer has rootless enabled.
+                                                        <string key="title">cDock has detected that your computer has rootless enabled.
 
 Unfortunately this prevents cDock from being able to install SIMBL and theme the dock.
 
@@ -745,7 +745,7 @@ If you would like to theme the dock you must first disable rootless by doing the
 4: Copy this command
 		csrutil disable
 5: Press return or enter
-6: Restart again</mutableString>
+6: Restart again</string>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -755,7 +755,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="SIMBL" identifier="" id="lct-vy-23e">
-                                        <view key="view" id="Hl5-MY-9JE">
+                                        <view key="view" ambiguous="YES" id="Hl5-MY-9JE">
                                             <rect key="frame" x="10" y="33" width="554" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -766,6 +766,9 @@ If you would like to theme the dock you must first disable rootless by doing the
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
+                                                    <connections>
+                                                        <action selector="simblInstall:" target="XfG-lQ-9wD" id="d2e-Ud-peo"/>
+                                                    </connections>
                                                 </button>
                                                 <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L7u-e8-teH">
                                                     <rect key="frame" x="15" y="164" width="524" height="72"/>
@@ -811,6 +814,7 @@ Would you like to install SIMBL now and start theming?</string>
                         <outlet property="cd_indicatorBG" destination="Guw-gp-Mel" id="M3a-kb-WQs"/>
                         <outlet property="cd_indicatorHeight" destination="oHJ-oN-7aQ" id="gn9-Jh-BEB"/>
                         <outlet property="cd_indicatorWidth" destination="T3V-FM-Znv" id="W3E-tL-eO0"/>
+                        <outlet property="cd_installSIMBL" destination="r5z-P5-RaO" id="rF7-bW-Lhl"/>
                         <outlet property="cd_is3D" destination="rtM-j0-uf2" id="HRQ-m8-QZa"/>
                         <outlet property="cd_sizeIndicator" destination="yqv-bU-Dxo" id="DYb-jN-9ib"/>
                         <outlet property="cd_theme" destination="Nql-Mc-JNf" id="Me9-f7-XLo"/>

@@ -19,40 +19,9 @@
 
 BOOL timedelay = true;
 
-void checkUpdates(NSInteger autoInstall) {
-    NSBundle *myBundle = [NSBundle mainBundle];
-    NSString *path = [myBundle pathForResource:@"updates/wUpdater.app/Contents/MacOS/wUpdater" ofType:@""];
-    
-    //    dlurl=$(curl -s https://api.github.com/repos/w0lfschild/cDock/releases/latest | grep 'browser_' | cut -d\" -f4)
-    //    "$wupd_path" c "$app_path" org.w0lf.cDock "$3cur_ver" "$verurl" "$logurl" "$dlurl" "$autoinstall" &
-    NSArray *args = [NSArray arrayWithObjects:@"c", [[NSBundle mainBundle] bundlePath], @"org.w0lf.cDock-GUI",
-                     [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]],
-                     @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/version.txt",
-                     @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/versionInfo.txt",
-                     @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/release.zip",
-                     [NSString stringWithFormat:@"%d", (int)autoInstall], nil];
-    
-    [NSTask launchedTaskWithLaunchPath:path arguments:args];
-    NSLog(@"Checking for updates...");
-}
+// --------------------------- //
 
-void apply_WELL(NSMutableDictionary *prefs, NSString *well, NSColorWell *item) {
-    [prefs setObject:[NSNumber numberWithFloat:item.color.redComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGR", well]];
-    [prefs setObject:[NSNumber numberWithFloat:item.color.greenComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGG", well]];
-    [prefs setObject:[NSNumber numberWithFloat:item.color.blueComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGB", well]];
-    [prefs setObject:[NSNumber numberWithFloat:item.color.alphaComponent * 100] forKey:[NSString stringWithFormat:@"cd_%@BGA", well]];
-}
-
-void theme_didChange(ViewController *t)
-{
-    [prefCD setObject:t.cd_theme.selectedItem.title forKey:@"cd_theme"];
-    
-    NSMutableDictionary *tmpPlist0 = prefCD;
-    [tmpPlist0 writeToFile:thmePath atomically:YES];
-}
-
-NSString* runCommand(NSString * commandToRun)
-{
+NSString* runCommand(NSString * commandToRun) {
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/sh"];
     
@@ -76,8 +45,43 @@ NSString* runCommand(NSString * commandToRun)
     return output;
 }
 
-void apply_spacers(ViewController *t)
-{
+void launch_helper() {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"cDock-Agent" ofType:@"app"];
+    [[NSWorkspace sharedWorkspace] launchApplication:path];
+}
+
+void apply_WELL(NSMutableDictionary *prefs, NSString *well, NSColorWell *item) {
+    [prefs setObject:[NSNumber numberWithFloat:item.color.redComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGR", well]];
+    [prefs setObject:[NSNumber numberWithFloat:item.color.greenComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGG", well]];
+    [prefs setObject:[NSNumber numberWithFloat:item.color.blueComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGB", well]];
+    [prefs setObject:[NSNumber numberWithFloat:item.color.alphaComponent * 100] forKey:[NSString stringWithFormat:@"cd_%@BGA", well]];
+}
+
+void theme_didChange(ViewController *t) {
+    [prefCD setObject:t.cd_theme.selectedItem.title forKey:@"cd_theme"];
+    
+    NSMutableDictionary *tmpPlist0 = prefCD;
+    [tmpPlist0 writeToFile:thmePath atomically:YES];
+}
+
+void checkUpdates(NSInteger autoInstall) {
+    NSBundle *myBundle = [NSBundle mainBundle];
+    NSString *path = [myBundle pathForResource:@"updates/wUpdater.app/Contents/MacOS/wUpdater" ofType:@""];
+    
+    //NSString *relURL = runCommand(@"curl -s https://api.github.com/repos/w0lfschild/cDock/releases/latest | grep 'browser_' | cut -d\\\" -f4");
+    //NSLog(@"%@", runCommand(@"curl -s https://api.github.com/repos/w0lfschild/cDock/releases/latest | grep 'browser_' | cut -d\\\" -f4"));
+    NSArray *args = [NSArray arrayWithObjects:@"c", [[NSBundle mainBundle] bundlePath], @"org.w0lf.cDock-GUI",
+                     [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]],
+                     @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/version.txt",
+                     @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/versionInfo.txt",
+                     @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/release.zip",
+                     [NSString stringWithFormat:@"%d", (int)autoInstall], nil];
+    
+    [NSTask launchedTaskWithLaunchPath:path arguments:args];
+    NSLog(@"Checking for updates...");
+}
+
+void apply_spacers(ViewController *t) {
     prefd = [NSMutableDictionary dictionaryWithContentsOfFile:prefDock];
     
     if (t.dock_REC.state == NSOnState)
@@ -171,8 +175,7 @@ void apply_spacers(ViewController *t)
     }
 }
 
-void apply_ALL(ViewController *t)
-{
+void apply_ALL(ViewController *t) {
     if (timedelay)
     {
         timedelay = false;
@@ -279,7 +282,22 @@ void apply_ALL(ViewController *t)
     }
 }
 
+// --------------------------- //
+
 @implementation ViewController
+
+void _addLoginItem() {
+    NSMutableDictionary *SIMBLPrefs = [NSMutableDictionary dictionaryWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/net.culater.SIMBL_Agent.plist"]];
+    [SIMBLPrefs setObject:[NSArray arrayWithObjects:@"com.skype.skype", @"com.FilterForge.FilterForge4", @"com.apple.logic10", nil] forKey:@"SIMBLApplicationIdentifierBlacklist"];
+    [SIMBLPrefs writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/net.culater.SIMBL_Agent.plist"] atomically:YES];
+    
+    // Lets stick to the classics. Same method as cDock uses...
+    NSString *nullString;
+    NSString *loginAgent = [[NSBundle mainBundle] pathForResource:@"cDock-Agent" ofType:@"app"];
+    nullString = runCommand(@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDock-Agent\\\"\"");
+    NSString *addAgent = [NSString stringWithFormat:@"osascript -e \"tell application \\\"System Events\\\" to make new login item at end of login items with properties {path:\\\"%@\\\", hidden:false}\"", loginAgent];
+    nullString = runCommand(addAgent);
+}
 
 void _windowFirstrun(ViewController *me) {
     NSTabViewItem *tab0 = [me.tabView tabViewItemAtIndex:0];
@@ -317,6 +335,7 @@ void _windowFirstrun(ViewController *me) {
     }
     else
     {
+        launch_helper();
         [me.tabView removeTabViewItem:tab3];
         [me.tabView removeTabViewItem:tab4];
     }
@@ -324,9 +343,9 @@ void _windowFirstrun(ViewController *me) {
 
 void _windowSetup(ViewController *me) {
     [[NSColorPanel sharedColorPanel] setShowsAlpha:YES];
-    // cDock Preferences
+    // cDock Theme Preferences
     if (![[NSFileManager defaultManager] fileExistsAtPath:prefPath]) {
-        NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
+        pref = [[NSMutableDictionary alloc] init];
         
         [pref setObject:[NSNumber numberWithBool:false] forKey:@"cd_fullWidth"];
         [pref setObject:[NSNumber numberWithBool:false] forKey:@"cd_hideLabels"];
@@ -363,31 +382,22 @@ void _windowSetup(ViewController *me) {
         [pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_labelBGB"];
         [pref setObject:[NSNumber numberWithFloat:0.0] forKey:@"cd_labelBGA"];
         
-        [newDict writeToFile:prefPath atomically:NO];
+        NSMutableDictionary *tmpPlist = pref;
+        [tmpPlist writeToFile:prefPath atomically:YES];
     }
     
-    // Dock preferences
-    if (![[NSFileManager defaultManager] fileExistsAtPath:prefDock]) {
-        NSMutableDictionary *newDict = [[NSMutableDictionary alloc] init];
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"static-only"];             // Show Only Active Applications
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"showhidden"];              // Dim hidden items
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"contents-immutable"];      // Lock dock contents
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"largesize"];               // Maximum Magnification Level
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"magnification"];           // Magnification enabled status
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"mouse-over-hilite-stack"]; // Mouse over highlight
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"single-app"];              // Single app mode
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"no-bouncing"];             // App bounce for notifications
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"autohide-delay"];          // Delay for dock hiding
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"autohide-time-modifier"];  // Speed modifier for dock hiding
-        [pref setObject:[NSNumber numberWithBool:false] forKey:@"autohide"];                // Autohide the dock
+    // cDock Application Preferences
+    if (![[NSFileManager defaultManager] fileExistsAtPath:thmePath]) {
+        prefCD = [[NSMutableDictionary alloc] init];
         
-        // Mavericks only
-        [prefd setObject:[NSNumber numberWithBool:false] forKey:@"pinning"];                 // Dock Position
-        [prefd setObject:[NSNumber numberWithBool:false] forKey:@"use-new-list-stack"];      // Improved list view
-        [newDict writeToFile:prefDock atomically:NO];
+        [prefCD setObject:@"None" forKey:@"cd_theme"];
+        [prefCD setObject:[NSNumber numberWithBool:false] forKey:@"cd_enabled"];
+        [prefCD setObject:[NSNumber numberWithBool:true] forKey:@"autoCheck"];
+        [prefCD setObject:[NSNumber numberWithBool:false] forKey:@"autoInstall"];
+        
+        NSMutableDictionary *tmpPlist = prefCD;
+        [tmpPlist writeToFile:thmePath atomically:YES];
     }
-    
-    
     
     
     // Dock settings
@@ -433,18 +443,33 @@ void _windowSetup(ViewController *me) {
         [me.cd_darkMode selectItemAtIndex:(int)darkMode];
     }
     
-    NSArray* dirs = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:themfldr error:Nil];
+    NSMutableArray* dirs = [[NSMutableArray alloc] init];
+    [dirs addObjectsFromArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:themfldr error:Nil]];
+    
+    if ([dirs containsObject:@".DS_Store"]) {
+        [dirs removeObject:@".DS_Store"];
+    }
+    
     [me.cd_theme removeAllItems];
     [me.cd_theme addItemWithTitle:@"None" ];
     [me.cd_theme addItemsWithTitles:dirs ];
-    [me.cd_theme removeItemWithTitle:@".DS_Store" ];
     
     NSMutableDictionary *plist0 = me._cDPrefs;
     prefCD = plist0;
     
     [ me.auto_checkUpdates setState:[[prefCD objectForKey:@"autoCheck"] integerValue]];
     [ me.auto_installUpdates setState:[[prefCD objectForKey:@"autoInstall"] integerValue]];
-    [ me.cd_theme selectItemWithTitle:thmeName];
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:prefPath])
+    {
+//        NSLog(@"Exists: %@", prefPath);
+        [ me.cd_theme selectItemWithTitle:thmeName];
+    }
+    else
+    {
+//        NSLog(@"Not Found: %@", prefPath);
+        [ me.cd_theme selectItemWithTitle:@"None"];
+    }
     
     if (me.auto_checkUpdates.state == NSOnState)
         checkUpdates([[prefCD objectForKey:@"autoInstall"] integerValue]);
@@ -518,15 +543,18 @@ void _windowSetup(ViewController *me) {
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-
-//    NSLog(@"%@", self.superclass);
-    
     _windowFirstrun(self);
     _windowSetup(self);
+    _addLoginItem();
 }
 
 - (void)setRepresentedObject:(id)representedObject {
 	[super setRepresentedObject:representedObject];
+}
+
+- (IBAction)simblInstall:(id)sender {
+    launch_helper();
+    //    [NSTask launchedTaskWithLaunchPath:path arguments:];
 }
 
 - (IBAction)autoUpdateChange:(id)sender {
@@ -647,7 +675,6 @@ void _windowSetup(ViewController *me) {
     [ _tabView selectTabViewItemAtIndex:2 ];
 //    NSLog(@"%@", [_tabView tabViewItemAtIndex:0]);
 }
-
 
 - (IBAction)changeDockBG:(id)sender {
 	if ([sender state] == NSOnState) {

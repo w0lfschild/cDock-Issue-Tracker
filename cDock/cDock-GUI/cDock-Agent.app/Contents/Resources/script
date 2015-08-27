@@ -1,0 +1,91 @@
+#! /bin/bash
+
+# Restart SIMBL Agent
+restart_SIMBL() {
+	restart_count=$(more /tmp/dmpipe)
+	if [[ "$restart_count" == "QUIT" ]]; then
+		echo "Shutting down process"
+		sleep 2
+		exit
+	else
+		restart_count=$((restart_count + 1))
+		echo $restart_count >/tmp/dmpipe
+		echo "restart count is now : "$restart_count
+		{ simbl_run; sleep 1; exit; } &
+	fi
+}
+
+# Watch for crash loop
+crash_monitor() {
+	echo "Starting crash loop monitoring"
+	sleep 35
+	rs_count=$(more /tmp/dmpipe)
+	if [[ $rs_count -gt 5 ]]; then
+		echo "QUIT" >/tmp/dmpipe
+	else
+		echo 0 >/tmp/dmpipe
+	fi
+	echo "Stopping crash loop monitoring"
+}
+
+#	Integers
+total_count=0
+restart_count=0
+dockpid=0
+
+#	Strings
+resource_folder=$(cd "${0%/*}" && echo $PWD)
+
+source "$resource_folder"/share.sh
+source "$resource_folder"/simbl.sh
+
+for i in {1..3}; do resource_folder=$(dirname "$resource_folder"); done
+cdock_folder=$(dirname "$resource_folder")
+cdock_folder=$(dirname "$cdock_folder")
+
+PlistBuddy=/usr/libexec/PlistBuddy" -c"
+simbl_inst="$resource_folder/cDock-Installer.app"
+wupdt_path="$resource_folder/updates/wUpdater.app/Contents/MacOS/wUpdater"
+cdock_pl="$HOME"/Library/Preferences/org.w0lf.cDock.plist
+
+scriptDirectory="$resource_folder"
+
+log_dir="$HOME"/Library/Application\ Support/cDock/Agent/logs
+dir_check "$log_dir"
+> "$log_dir"/1.log
+exec &>"$log_dir"/1.log
+
+echo "$simbl_inst"
+echo "$wupdt_path"
+echo "$cdock_folder"
+echo "$scriptDirectory"
+
+#	App execution
+echo $restart_count >/tmp/dmpipe
+simbl_check
+simbl_run
+
+update_auto_install=$($PlistBuddy "Print autoInstall:" "$cdock_pl" 2>/dev/null || { $PlistBuddy "Add autoInstall integer 0" "$cdock_pl"; echo -n 0; } )
+update_auto_check=$($PlistBuddy "Print autoCheck" "$cdock_pl" 2>/dev/null || { $PlistBuddy "Add autoCheck integer 1" "$cdock_pl"; echo -n 1; } )
+curver=$($PlistBuddy "Print version" "$cdock_pl" 2>/dev/null || echo -n 1 )
+if [[ $update_auto_check == 1 ]]; then
+	update_check "$wupdt_path" "$cdock_folder" "$curver" "$update_auto_install" "d" &
+fi
+
+# Main monitor loop
+while [ 1 ]; do
+	# Grab dockID
+	newid=$(killall -s Dock | cut -f3 -d" ")
+
+	# If dock has been restarted it will have a new ID
+	if [[ $newid != $dockpid ]]; then
+		dockpid=$newid
+		restart_SIMBL
+		if [[ $restart_count -eq 1 ]]; then crash_monitor; fi &
+		sleep 5
+	else
+		sleep 5 # Sleep time between checks
+	fi
+done
+
+# END

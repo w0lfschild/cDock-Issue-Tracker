@@ -75,6 +75,7 @@
 
 //@property (weak) IBOutlet NSView *otherView;
 
+@property (weak) IBOutlet NSButton *cd_installSIMBL;
 @end
 
 NSMutableDictionary *prefCD;

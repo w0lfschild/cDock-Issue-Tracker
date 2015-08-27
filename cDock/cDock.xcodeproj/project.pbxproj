@@ -14,6 +14,8 @@
 		FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */; };
 		FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13C1B81B5BC00F16D5E /* fishhook.c */; };
 		FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */; };
+		FB3EC0E71B8EC35800272131 /* cDock-Agent.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E61B8EC35700272131 /* cDock-Agent.app */; };
+		FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */; };
 		FB3EDF741B7088B000E96DC9 /* updates in Resources */ = {isa = PBXBuildFile; fileRef = FB3EDF731B7088B000E96DC9 /* updates */; };
 		FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor.m */; };
 		FB7ABC5C1B6AE234001D7E5A /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC5A1B6AE234001D7E5A /* PFAboutWindow.xib */; };
@@ -49,6 +51,8 @@
 		FB0CF13D1B81B5BC00F16D5E /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = Fishhook/fishhook.h; sourceTree = "<group>"; };
 		FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = ZKSwizzle/ZKSwizzle.h; sourceTree = "<group>"; };
 		FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = ZKSwizzle/ZKSwizzle.m; sourceTree = "<group>"; };
+		FB3EC0E61B8EC35700272131 /* cDock-Agent.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Agent.app"; sourceTree = "<group>"; };
+		FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Installer.app"; sourceTree = "<group>"; };
 		FB3EDF731B7088B000E96DC9 /* updates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = updates; sourceTree = "<group>"; };
 		FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor.m; path = cDock/cd_DOCKFloor.m; sourceTree = SOURCE_ROOT; };
 		FB7ABC591B6AE234001D7E5A /* PFAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAboutWindowController.h; path = PFAboutWindow/PFAboutWindowController.h; sourceTree = "<group>"; };
@@ -255,6 +259,8 @@
 		FBDE03611B5ED1EE00C1C5DB /* cDock-GUI */ = {
 			isa = PBXGroup;
 			children = (
+				FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */,
+				FB3EC0E61B8EC35700272131 /* cDock-Agent.app */,
 				FBD1F71B1B8E4EA600DF2E91 /* WAYAppStoreWindow */,
 				FBD1F71E1B8E4EA600DF2E91 /* WAYWindow */,
 				FBD1F6FF1B8E433000DF2E91 /* INAppStoreWindow */,
@@ -437,6 +443,8 @@
 				FBDE03771B5ED21900C1C5DB /* Images.xcassets in Resources */,
 				FB3EDF741B7088B000E96DC9 /* updates in Resources */,
 				FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */,
+				FB3EC0E71B8EC35800272131 /* cDock-Agent.app in Resources */,
+				FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */,
 				FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */,
 				FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */,
 				FB7ABC5C1B6AE234001D7E5A /* PFAboutWindow.xib in Resources */,
@@ -668,10 +676,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = "cDock-GUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-GUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -681,10 +691,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = "cDock-GUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-GUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
