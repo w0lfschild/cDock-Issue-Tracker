@@ -101,8 +101,15 @@ ZKSwizzleInterface(_CDECMaterialLayer, ECMaterialLayer, CALayer);
     
     if ([[[Preferences sharedInstance] objectForKey:@"cd_labelBG"] boolValue]) {
         
-        // Prevent coloration of frost layer and misssion control bar
-        if (self.superlayer.class != NSClassFromString(@"Dock.FloorLayer") && self.superlayer.class != NSClassFromString(@"CALayer")) {
+        // Prevent coloration of some layers
+        
+        // Floor = Dock Background Frost Layer
+        // CALayer = Mission Control
+        // ECBezelIconListLayer = Application switcher background
+        
+        if (self.superlayer.class != NSClassFromString(@"Dock.FloorLayer")
+            && self.superlayer.class != NSClassFromString(@"CALayer")
+            && self.superlayer.class != NSClassFromString(@"ECBezelIconListLayer")) {
             
 //            NSLog(@"%@", self.debugDescription);
             

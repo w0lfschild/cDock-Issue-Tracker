@@ -339,6 +339,27 @@ void _windowFirstrun(ViewController *me) {
         [me.tabView removeTabViewItem:tab3];
         [me.tabView removeTabViewItem:tab4];
     }
+    
+    // Install dat bundle
+    NSError *error = nil;
+    NSString *srcPath = [[NSBundle mainBundle] pathForResource:@"cDock" ofType:@"bundle"];
+    NSString *dstPath = @"/Library/Application Support/SIMBL/Plugins/cDock.bundle";
+    [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:dstPath error:&error];
+    
+    // Install dem themes
+    NSString *thmPath = [[NSBundle mainBundle] pathForResource:@"themes" ofType:@""];
+    NSMutableArray* dirs = [[NSMutableArray alloc] init];
+    [dirs addObjectsFromArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:thmPath error:Nil]];
+    
+    for (NSString *theme in dirs) {
+        NSString *pattyCAKE = [[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"] stringByAppendingPathComponent:theme];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:pattyCAKE])
+        {
+            srcPath = [NSString stringWithFormat:@"%@/%@", thmPath, theme];
+            [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:pattyCAKE error:&error];
+        }
+    }
+    
 }
 
 void _windowSetup(ViewController *me) {

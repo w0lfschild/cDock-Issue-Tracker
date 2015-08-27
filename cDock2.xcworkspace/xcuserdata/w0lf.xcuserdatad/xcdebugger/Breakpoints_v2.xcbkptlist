@@ -256,11 +256,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/ViewController.m"
-            timestampString = "462345094.687252"
+            timestampString = "462351467.926624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "555"
-            endingLineNumber = "555"
+            startingLineNumber = "576"
+            endingLineNumber = "576"
             landmarkName = "-simblInstall:"
             landmarkType = "5">
          </BreakpointContent>
@@ -272,11 +272,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/ViewController.m"
-            timestampString = "462345094.687252"
+            timestampString = "462351467.926624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "549"
-            endingLineNumber = "549"
+            startingLineNumber = "570"
+            endingLineNumber = "570"
             landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
