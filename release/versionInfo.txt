@@ -1,32 +1,35 @@
 ------------------------------------------------
 
-Version : 0.9.2
-Build : 200
-Date : Aug / 27 / 2015
+Version : 0.9.3
+Build : 309
+Date : Aug / 30 / 2015
 
 ------------------------------------------------
 
-- *GUI rewritten in Objective C*
+- New / Improved
 
-- Fix
+	- Rewritten in Objective C
+	- Huge control over making your own theme
 
+	- Smaller application size
 	- Faster window startup
 	- App window no longer closes/opens each time something is applied
 	- App window now gains focus when clicked in dock
 	- App window now able to be selected via Command + tab
 	- App window now shows in mission control
 	- Spacers are removed from right to left
-	
-- New
-
-	- Huge control over making your own theme
 	- Ability to edit every theme variable in-app
 	- SIMBL and Rootless information windows
 	- Better about window
 	- Dock theming changes without restarting dock
 	- Theming and hidden dock settings separated into tabs
+	- 3D docks can now display a separator
+	- 3D docks now extend farther
+	- Custom images can be refreshed without restarting the dock
+	- Fixed label color applying to layers it shouldn't have
+	- Dock theme can be refreshed via CFNotificationCenterPostNotification
 
-- Gone
+- Removed
 
 	- Menubar application
 	- Dock plist backups
@@ -34,17 +37,9 @@ Date : Aug / 27 / 2015
 	- Finder Folders on top (Use XtraFinder)
 	- Finder Colored sidebar (Use XtraFinder)
 
-- Bundle changes
-
-	- 3D docks can now display a separator
-	- 3D docks now extend farther
-	- Custom images can be refreshed without restarting the dock
-	- Fixed label color applying to layers it shouldn't have
-	- Dock theme can be refreshed via CFNotificationCenterPostNotification
-
 - TODO
 
-	- Make sure all directories and files exist
+	- Make sure everything works
 	- Tweak login agent and simbl installer for new app
 	- Tooltips 
 	- Give dock settings sliders text input
@@ -53,3 +48,4 @@ Date : Aug / 27 / 2015
 		- Report
 	- Localizations
 	- Bundle changes
+	- Clean up code its getting sloppy
