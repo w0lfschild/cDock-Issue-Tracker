@@ -137,7 +137,7 @@
                                 <font key="font" metaFont="system"/>
                                 <tabViewItems>
                                     <tabViewItem label="Theming" identifier="1" id="Ssp-Kg-i2P">
-                                        <view key="view" id="bGW-BB-N0N">
+                                        <view key="view" ambiguous="YES" id="bGW-BB-N0N">
                                             <rect key="frame" x="10" y="33" width="554" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
@@ -337,7 +337,7 @@
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="GR9-ia-anA"/>
+                                                        <action selector="iconShadows:" target="XfG-lQ-9wD" id="IZb-Ku-u67"/>
                                                     </connections>
                                                 </button>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ogZ-qW-bny" userLabel="cd_customIndicators">
@@ -348,7 +348,7 @@
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="5Kd-Bh-xD5"/>
+                                                        <action selector="changeIndicators:" target="XfG-lQ-9wD" id="gal-Wt-2hx"/>
                                                     </connections>
                                                 </button>
                                                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rtM-j0-uf2" userLabel="cd_customSeparator">
@@ -381,7 +381,7 @@
                                                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                                     </buttonCell>
                                                     <connections>
-                                                        <action selector="_valuechangeApply:" target="XfG-lQ-9wD" id="sil-Ob-NPp"/>
+                                                        <action selector="changeIndicators:" target="XfG-lQ-9wD" id="078-Hj-zS9"/>
                                                     </connections>
                                                 </button>
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nu0-Et-0fj" userLabel="cd_darkMode">
@@ -755,7 +755,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                                         </view>
                                     </tabViewItem>
                                     <tabViewItem label="SIMBL" identifier="" id="lct-vy-23e">
-                                        <view key="view" ambiguous="YES" id="Hl5-MY-9JE">
+                                        <view key="view" id="Hl5-MY-9JE">
                                             <rect key="frame" x="10" y="33" width="554" height="330"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>

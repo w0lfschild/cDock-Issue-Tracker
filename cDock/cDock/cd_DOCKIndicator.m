@@ -19,22 +19,6 @@ extern CGImageRef small;
 extern CGImageRef medium_simple;
 extern CGImageRef small_simple;
 
-// Loading the images once prevents huge +50% or more CPU usage when mousing over icons with custom image indicators
-//void load()
-//{
-//    CGDataProviderRef imgDataProvider;
-//    imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_large.png", prefPath]]);
-//    large = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
-//    imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_medium.png", prefPath]]);
-//    medium = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
-//    imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_small.png", prefPath]]);
-//    small = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
-//    imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_medium_simple.png", prefPath]]);
-//    medium_simple = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
-//    imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_small_simple.png", prefPath]]);
-//    small_simple = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
-//}
-
 ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
 @implementation _CDIndicatorLayer
 //- (void)dockBackgroundChanged {
@@ -44,13 +28,15 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
 - (void)updateIndicatorForSize:(float)arg1 {
     ZKOrig(void, arg1);
     
+//    NSLog(@"Size: %f", arg1);
+    
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     
 //    CALayer *test = self.superlayer;
 //    NSLog(@"%@", test.debugDescription);
 //    NSLog(@"%f", arg1);
-//    NSLog(@"%@", self.debugDescription);
+//    NSLog(@"%@", self.superlayer.superclass);
     
     // Note to self this should be precentage based not solid numbers
     if (osx_minor > 9) {
@@ -80,11 +66,6 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
     
     // Image indicator
     if ([[[Preferences sharedInstance] objectForKey:@"cd_customIndicator"] boolValue]) {
-//        static dispatch_once_t once;
-//        dispatch_once(&once, ^ {
-//            load();
-//        });
-        
         self.compositingFilter = nil; // Prevent Dark/Light mode alteration
         
         self.backgroundColor = NSColor.clearColor.CGColor;

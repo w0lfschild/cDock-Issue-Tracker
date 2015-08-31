@@ -57,6 +57,7 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
         return;
     
 //    NSLog(@"%ld", (long)orient);
+//    NSLog(@"%ld", (long)self.frame.size.height);
     
     if ([[[Preferences sharedInstance] objectForKey:@"cd_iconShadow"] boolValue]) {
         float red = [[[Preferences sharedInstance] objectForKey:@"cd_iconShadowBGR"] floatValue];

@@ -18,6 +18,9 @@ CGImageRef background;
 CGImageRef background1;
 BOOL loadShadows = true;
 BOOL loadImages = true;
+BOOL loadIndicators = true;
+
+CALayer *FLOORLAYER = nil;
 
 CGImageRef large;
 CGImageRef medium;
@@ -66,14 +69,8 @@ void _loadImages()
     }
 }
 
-void _forceRefresh()
+void _toggleIndicators()
 {
-    if (osx_minor > 9) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
-        });
-    }
-    
     Class cls = NSClassFromString(@"DOCKPreferences");
     id dockPref = nil;
     SEL aSel = NSSelectorFromString(@"preferences");
@@ -90,30 +87,56 @@ void _forceRefresh()
     }
 }
 
+void _forceRefresh()
+{
+    if (osx_minor > 9) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
+        });
+    }
+    
+    if (FLOORLAYER == nil)
+    {
+        _toggleIndicators();
+    } else {
+        SEL aSel = NSSelectorFromString(@"layoutSublayers");
+        if ([FLOORLAYER respondsToSelector:aSel]) {
+            [FLOORLAYER performSelector:aSel];
+        }
+    }
+}
+
 // Fix for icon shadows / reflection layer not intializing on their own...
-void _loadShadows(CALayer* layer)
+void _loadShadows(CALayer *layer)
 {
     if (loadShadows) {
         loadShadows = false;
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.1 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         
             SEL aSel = @selector(layoutSublayers);
-            NSArray *tileLayers = layer.superlayer.sublayers;
+            SEL bSel = @selector(updateIndicatorForSize:);
+
+            // Fix Tiles and Indicators
+            NSMutableArray *tileLayers = [[NSMutableArray alloc] initWithArray:layer.superlayer.sublayers];
             for (CALayer *item in tileLayers)
             {
                 if (item.class == NSClassFromString(@"DOCKTileLayer")) {
                     if ([item respondsToSelector:aSel])
                         [item performSelector:aSel];
                 }
+                if ([[[Preferences sharedInstance] objectForKey:@"cd_colorIndicator"] boolValue]) {
+                    if (item.class == NSClassFromString(@"DOCKIndicatorLayer")) {
+                        if ([item respondsToSelector:bSel])
+                            [item performSelector:bSel];
+                    }
+                }
             }
-                
-            // Gotta refresh again here to get custom indicators to theme?
-            // Can cause crash if not delayed...
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-                _forceRefresh();
-            });
-            
-//            NSLog(@"Shadows and reflections initialized...");
+    }
+    
+    if (loadIndicators)
+    {
+        loadIndicators = false;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            _toggleIndicators();
         });
     }
 }
@@ -270,16 +293,20 @@ void _TenNine(CALayer* layer)
     }
 
     // rounded corners
-    if (cornerSize > (float)0) {
+    if (cornerSize > 0) {
         // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
-        if (brdSize > 0) {
-            if (brdSize < 2) brdSize = 2;
-            [ _backgroundLayer setCornerRadius:cornerSize / brdSize ];
-        } else {
-            [ _backgroundLayer setCornerRadius:cornerSize ];
+        if (_backgroundLayer != nil)
+        {
+            if (brdSize > 0) {
+                if (brdSize < 2) brdSize = 2;
+                [ _backgroundLayer setCornerRadius:cornerSize / brdSize ];
+            } else {
+                [ _backgroundLayer setCornerRadius:cornerSize ];
+            }
         }
         
-        [ _borderLayer setCornerRadius:cornerSize ];
+        if (_borderLayer != nil)
+            [ _borderLayer setCornerRadius:cornerSize ];
         
         if (orient == 0) {
             rect.size.height += cornerSize;
@@ -348,10 +375,12 @@ void _TenNine(CALayer* layer)
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     
+    if (FLOORLAYER == nil)
+        FLOORLAYER = self;
+    
     // Fix for icon shadows / reflection layer not intializing on their own...
 //    if ([[[Preferences sharedInstance] objectForKey:@"cd_iconShadow"] boolValue] || [[[Preferences sharedInstance] objectForKey:@"cd_iconReflection"] boolValue])
     _loadShadows(self);
-    
     _loadImages();
 
     // Update dock orientation
@@ -428,7 +457,8 @@ void _TenNine(CALayer* layer)
         
         [ _materialLayer setFrame: rect ];
     } else {
-        [ _materialLayer setFrame:_superLayer.bounds ];
+        if (cornerSize == 0)
+            [ _materialLayer setFrame:_superLayer.bounds ];
     }
     
     // Picture background
@@ -507,9 +537,6 @@ void _TenNine(CALayer* layer)
             rect.size.width = 1; //(_backgroundLayer.frame.size.width / 100) * 0.1;
             rect.size.height = _backgroundLayer.frame.size.height * .4;
             [_separatorLayer setFrame:rect];
-            
-            // Make sure we're in the front
-            _separatorLayer.zPosition = 999;
         } else {
             _separatorLayer.transform = CATransform3DIdentity;
         }
@@ -519,36 +546,39 @@ void _TenNine(CALayer* layer)
     
     float brdSize = [[[Preferences sharedInstance] objectForKey:@"cd_borderSize"] floatValue];
     // rounded corners
-    if (cornerSize > 0 && ![[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue]) {
-        CGRect rect = _superLayer.bounds;
+    if (cornerSize > 0) {
+        if (! [[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue])
+        {
+            // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
+            if (brdSize > 0) {
+                [ _backgroundLayer setCornerRadius:cornerSize / brdSize ];
+                [ _materialLayer setCornerRadius:cornerSize / brdSize ];
+                [ _borderLayer setCornerRadius:cornerSize / brdSize ];
+            } else {
+                [ _materialLayer setCornerRadius:cornerSize ];
+                [ _backgroundLayer setCornerRadius:cornerSize ];
+                [ _borderLayer setCornerRadius:cornerSize ];
+            }
         
-        // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
-        if (brdSize > 0) {
-            [ _backgroundLayer setCornerRadius:cornerSize / brdSize ];
-            [ _materialLayer setCornerRadius:cornerSize / brdSize ];
-            [ _borderLayer setCornerRadius:cornerSize / brdSize ];
-        } else {
-            [ _materialLayer setCornerRadius:cornerSize ];
-            [ _backgroundLayer setCornerRadius:cornerSize ];
             [ _borderLayer setCornerRadius:cornerSize ];
+
+            // Couldn't figure out how to adjust this layers corners so lets hide it
+            _glassLayer.hidden = YES;
+
+            CGRect rect1 = _superLayer.bounds;
+            
+            if (orient == 0) {
+                rect1.size.height += cornerSize;
+                rect1.origin.y -= cornerSize;
+            } else {
+                rect1.size.width += cornerSize;
+            }
+            if (orient == 1) {
+                rect1.origin.x -= cornerSize;
+            }
+            
+            [ _materialLayer setFrame:rect1 ];
         }
-    
-        [ _borderLayer setCornerRadius:cornerSize ];
-        
-        // Couldn't figure out how to adjust this layers corners so lets hide it
-        _glassLayer.hidden = YES;
-        
-        if (orient == 0) {
-            rect.size.height += cornerSize;
-            rect.origin.y -= cornerSize;
-        } else {
-            rect.size.width += cornerSize;
-        }
-        if (orient == 1) {
-            rect.origin.x -= cornerSize;
-        }
-        
-        [ _materialLayer setFrame:rect ];
     } else {
         [ _materialLayer setCornerRadius:cornerSize ];
         [ _backgroundLayer setCornerRadius:cornerSize ];
@@ -579,8 +609,11 @@ void _TenNine(CALayer* layer)
     // background layer should have same frame as frost layer
     [ _backgroundLayer setFrame: _materialLayer.frame];
     
-    [ _separatorLayer removeFromSuperlayer ];
-    [ _superLayer addSublayer:_separatorLayer ];
+//    _separatorLayer.zPosition = 999;
+    // Make sure separator is on top
+    [ _separatorLayer setZPosition:999 ];
+//    [ _separatorLayer removeFromSuperlayer ];
+//    [ _superLayer addSublayer:_separatorLayer ];
     
     // Pinning except the actual clickable tile areas don't move, not sure how to do that...
 //        CGRect r1 = _superLayer.bounds;

@@ -50,10 +50,10 @@ cdock_pl="$HOME"/Library/Preferences/org.w0lf.cDock.plist
 
 scriptDirectory="$resource_folder"
 
-log_dir="$HOME"/Library/Application\ Support/cDock/Agent/logs
+log_dir="$HOME"/Library/Application\ Support/cDock/logs
 dir_check "$log_dir"
-> "$log_dir"/1.log
-exec &>"$log_dir"/1.log
+> "$log_dir"/agent.log
+exec &>"$log_dir"/agent.log
 
 echo "$simbl_inst"
 echo "$wupdt_path"

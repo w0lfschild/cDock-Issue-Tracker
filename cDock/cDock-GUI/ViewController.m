@@ -21,6 +21,7 @@ BOOL timedelay = true;
 
 // --------------------------- //
 
+// Run shell string
 NSString* runCommand(NSString * commandToRun) {
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/sh"];
@@ -45,11 +46,41 @@ NSString* runCommand(NSString * commandToRun) {
     return output;
 }
 
+//void dockNotification(CFMutableDictionaryRef dict)
+void dockNotification(CFMutableDictionaryRef dict)
+{
+    CFNotificationCenterRef center = CFNotificationCenterGetDistributedCenter(); //CFNotificationCenterGetLocalCenter();
+    
+    // post a notification
+//    CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+//    CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+//    
+//    CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+//                                                                  &keyCallbacks, &valueCallbacks);
+//    CFDictionaryAddValue(dictionary, CFSTR("dock"), CFSTR("reload"));
+//    CFDictionaryAddValue(dictionary, CFSTR("shadow"), CFSTR("reload"));
+    
+    //    CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
+    CFNotificationCenterPostNotification(center, CFSTR("MyNotification"), NULL, dict, TRUE);
+    CFRelease(dict);
+}
+
+// Make sure directory exists
+void dirCheck(NSString *directory) {
+    BOOL isDir;
+    NSFileManager *fileManager= [NSFileManager defaultManager];
+    if(![fileManager fileExistsAtPath:directory isDirectory:&isDir])
+        if(![fileManager createDirectoryAtPath:directory withIntermediateDirectories:YES attributes:nil error:NULL])
+            NSLog(@"Error: Create folder failed %@", directory);
+}
+
+// Run helper agent
 void launch_helper() {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"cDock-Agent" ofType:@"app"];
     [[NSWorkspace sharedWorkspace] launchApplication:path];
 }
 
+// Set color well
 void apply_WELL(NSMutableDictionary *prefs, NSString *well, NSColorWell *item) {
     [prefs setObject:[NSNumber numberWithFloat:item.color.redComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGR", well]];
     [prefs setObject:[NSNumber numberWithFloat:item.color.greenComponent * 255] forKey:[NSString stringWithFormat:@"cd_%@BGG", well]];
@@ -57,6 +88,7 @@ void apply_WELL(NSMutableDictionary *prefs, NSString *well, NSColorWell *item) {
     [prefs setObject:[NSNumber numberWithFloat:item.color.alphaComponent * 100] forKey:[NSString stringWithFormat:@"cd_%@BGA", well]];
 }
 
+// Write to plist file
 void theme_didChange(ViewController *t) {
     [prefCD setObject:t.cd_theme.selectedItem.title forKey:@"cd_theme"];
     
@@ -64,6 +96,7 @@ void theme_didChange(ViewController *t) {
     [tmpPlist0 writeToFile:thmePath atomically:YES];
 }
 
+// Check for application updates
 void checkUpdates(NSInteger autoInstall) {
     NSBundle *myBundle = [NSBundle mainBundle];
     NSString *path = [myBundle pathForResource:@"updates/wUpdater.app/Contents/MacOS/wUpdater" ofType:@""];
@@ -81,6 +114,7 @@ void checkUpdates(NSInteger autoInstall) {
     NSLog(@"Checking for updates...");
 }
 
+// Apply changes to number of spacer tiles
 void apply_spacers(ViewController *t) {
     prefd = [NSMutableDictionary dictionaryWithContentsOfFile:prefDock];
     
@@ -175,6 +209,7 @@ void apply_spacers(ViewController *t) {
     }
 }
 
+// Refresh view contents and apply stuff on theme change
 void apply_ALL(ViewController *t) {
     if (timedelay)
     {
@@ -231,6 +266,7 @@ void apply_ALL(ViewController *t) {
         [pref setObject:[NSNumber numberWithBool:[t.cd_customIndicator state]] forKey:@"cd_customIndicator"];
         [pref setObject:[NSNumber numberWithBool:[t.cd_indicatorBG state]] forKey:@"cd_colorIndicator"];
         [pref setObject:[NSNumber numberWithBool:[t.shadowBG state]] forKey:@"cd_iconShadow"];
+        [pref setObject:[NSNumber numberWithInt:10] forKey:@"cd_iconShadowBGS"];
         
         [pref setObject:[NSNumber numberWithBool:[t.cd_iconReflection state]] forKey:@"cd_iconReflection"];
         [pref setObject:[NSNumber numberWithBool:[t.darken_OMO state]] forKey:@"cd_darkenMouseOver"];
@@ -261,22 +297,28 @@ void apply_ALL(ViewController *t) {
         NSMutableDictionary *tmpPlist = pref;
         [tmpPlist writeToFile:prefPath atomically:YES];
         
-        CFNotificationCenterRef center = CFNotificationCenterGetDistributedCenter(); //CFNotificationCenterGetLocalCenter();
-        
-        // post a notification
         CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
         CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+    
         CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
                                                                       &keyCallbacks, &valueCallbacks);
-        CFDictionaryAddValue(dictionary, CFSTR("TestKey"), CFSTR("Reload"));
         
-        //    CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
-        CFNotificationCenterPostNotification(center, CFSTR("MyNotification"), NULL, dictionary, TRUE);
-        CFRelease(dictionary);
+        CFDictionaryAddValue(dictionary, CFSTR("dock"), CFSTR("1"));
+        
+        if (t.shadowBG.state == NSOnState || t.cd_iconReflection.state == NSOnState || t.cd_indicatorBG.state == NSOnState || t.cd_sizeIndicator.state == NSOnState)
+        {
+            CFDictionaryAddValue(dictionary, CFSTR("shadow"), CFSTR("1"));
+        }
+        
+        if (t.cd_indicatorBG.state == NSOnState || t.cd_sizeIndicator.state == NSOnState)
+        {
+            CFDictionaryAddValue(dictionary, CFSTR("indicators"), CFSTR("1"));
+        }
+        
+        dockNotification(dictionary);
     
-        
         // Max dock refresh speed
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.025 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             timedelay = true;
         });
     }
@@ -284,8 +326,30 @@ void apply_ALL(ViewController *t) {
 
 // --------------------------- //
 
+@interface mySubclass : NSFileManager
+
+@end
+
+@implementation mySubclass
+
+//- (void)setColor:(NSColor *)color {
+//    NSLog(@"Yolo");
+//}
+
+- (BOOL)fileManager:(NSFileManager *)fileManager shouldProceedAfterError:(NSError *)error copyingItemAtPath:(NSString *)srcPath toPath:(NSString *)dstPath{
+    if ([error code] == NSFileWriteFileExistsError) //error code for: The operation couldn’t be completed. File exists
+        return YES;
+    else
+        return NO;
+}
+
+@end
+
+// --------------------------- //
+
 @implementation ViewController
 
+// Add agent to login items
 void _addLoginItem() {
     NSMutableDictionary *SIMBLPrefs = [NSMutableDictionary dictionaryWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/net.culater.SIMBL_Agent.plist"]];
     [SIMBLPrefs setObject:[NSArray arrayWithObjects:@"com.skype.skype", @"com.FilterForge.FilterForge4", @"com.apple.logic10", nil] forKey:@"SIMBLApplicationIdentifierBlacklist"];
@@ -299,6 +363,7 @@ void _addLoginItem() {
     nullString = runCommand(addAgent);
 }
 
+// Stuff I only want running once
 void _windowFirstrun(ViewController *me) {
     NSTabViewItem *tab0 = [me.tabView tabViewItemAtIndex:0];
     NSTabViewItem *tab3 = [me.tabView tabViewItemAtIndex:3];
@@ -309,6 +374,8 @@ void _windowFirstrun(ViewController *me) {
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:@"/System/Library/ScriptingAdditions/SIMBL.osax"])
     {
+        // Remove theming, rootles, and simbl tabs
+        // We will add the relevent one back in the code below
         [me.tabView removeTabViewItem:tab0];
         [me.tabView removeTabViewItem:tab3];
         [me.tabView removeTabViewItem:tab4];
@@ -319,19 +386,20 @@ void _windowFirstrun(ViewController *me) {
             rootless = runCommand(@"touch /System/test 2>&1");
             if ([rootless containsString:@"Operation not permitted"])
             {
+                // Add rootless tab
                 [me.tabView insertTabViewItem:tab3 atIndex:0];
             }
             else
             {
+                // Add SIMBL tab
                 [me.tabView insertTabViewItem:tab4 atIndex:0];
             }
         }
         else
         {
+            // Add SIMBL tab
             [me.tabView insertTabViewItem:tab4 atIndex:0];
         }
-        
-        [me.tabView selectTabViewItemAtIndex:0];
     }
     else
     {
@@ -340,13 +408,32 @@ void _windowFirstrun(ViewController *me) {
         [me.tabView removeTabViewItem:tab4];
     }
     
-    // Install dat bundle
+    [me.tabView selectTabViewItemAtIndex:0];
+    
+    // Install the bundle
     NSError *error = nil;
     NSString *srcPath = [[NSBundle mainBundle] pathForResource:@"cDock" ofType:@"bundle"];
     NSString *dstPath = @"/Library/Application Support/SIMBL/Plugins/cDock.bundle";
-    [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:dstPath error:&error];
     
-    // Install dem themes
+    NSString *srcBndl = [[NSBundle mainBundle] pathForResource:@"cDock.bundle/Contents/Info" ofType:@"plist"];
+    NSString *dstBndl = @"/Library/Application Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist";
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:dstBndl]){
+        NSString *srcVer = [[[NSMutableDictionary alloc] initWithContentsOfFile:srcBndl] objectForKey:@"CFBundleVersion"];
+        NSString *dstVer = [[[NSMutableDictionary alloc] initWithContentsOfFile:dstBndl] objectForKey:@"CFBundleVersion"];
+        if (![srcVer isEqual:dstVer])
+        {
+            NSLog(@"\nSource: %@\nDestination: %@", srcVer, dstVer);
+            [[NSFileManager defaultManager] removeItemAtPath:dstPath error:&error];
+            [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:dstPath error:&error];
+            system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
+        }
+    } else {
+        [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:dstPath error:&error];
+        system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
+    }
+    
+    // Install the themes
     NSString *thmPath = [[NSBundle mainBundle] pathForResource:@"themes" ofType:@""];
     NSMutableArray* dirs = [[NSMutableArray alloc] init];
     [dirs addObjectsFromArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:thmPath error:Nil]];
@@ -362,8 +449,17 @@ void _windowFirstrun(ViewController *me) {
     
 }
 
+// Stuff that happens when the window needs to refresh (Like a theme change)
 void _windowSetup(ViewController *me) {
-    [[NSColorPanel sharedColorPanel] setShowsAlpha:YES];
+    NSColorPanel *copo = [NSColorPanel sharedColorPanel];
+    [copo setShowsAlpha:YES];
+    [copo setShowsResizeIndicator:YES];
+    [copo setOpaque:YES];
+    [copo setShowsToolbarButton:YES];
+    [copo setTitle:@"cDock 2"];
+    
+//    [NSColorPanel sharedColorPanel]
+    
     // cDock Theme Preferences
     if (![[NSFileManager defaultManager] fileExistsAtPath:prefPath]) {
         pref = [[NSMutableDictionary alloc] init];
@@ -492,8 +588,8 @@ void _windowSetup(ViewController *me) {
         [ me.cd_theme selectItemWithTitle:@"None"];
     }
     
-    if (me.auto_checkUpdates.state == NSOnState)
-        checkUpdates([[prefCD objectForKey:@"autoInstall"] integerValue]);
+//    if (me.auto_checkUpdates.state == NSOnState)
+//        checkUpdates([[prefCD objectForKey:@"autoInstall"] integerValue]);
     
     [me.cd_sizeIndicator setState:[[pref objectForKey:@"cd_sizeIndicator"] integerValue]];
     [me.cd_indicatorHeight setFloatValue:[[pref objectForKey:@"cd_indicatorHeight"] integerValue]];
@@ -550,6 +646,23 @@ void _windowSetup(ViewController *me) {
         [me.shadowWELL setHidden:false];
 }
 
+
+
+
+//- (void)mouseUp:(NSEvent *)theEvent {
+//    CGPoint point = [self.view convertPoint:[theEvent locationInWindow] fromView:nil];
+//    CGRect rect = self.view.bounds;
+//    if ([self.view mouse:point inRect:rect]) {
+//        NSLog(@"Yes");
+//    } else {
+//        NSLog(@"No");
+//    }
+//}
+
+
+
+
+
 - (NSMutableDictionary *)_dockPrefs {
     return [NSMutableDictionary dictionaryWithContentsOfFile:prefDock];
 }
@@ -564,9 +677,19 @@ void _windowSetup(ViewController *me) {
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
+    
+    prefCD = self._cDPrefs;
+    [ _auto_checkUpdates setState:[[prefCD objectForKey:@"autoCheck"] integerValue]];
+    if ([[prefCD objectForKey:@"autoCheck"] boolValue])
+        checkUpdates([[prefCD objectForKey:@"autoCheck"] integerValue]);
+    
+    dirCheck([NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"]);
+    
     _windowFirstrun(self);
     _windowSetup(self);
     _addLoginItem();
+    
+    [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
@@ -576,6 +699,17 @@ void _windowSetup(ViewController *me) {
 - (IBAction)simblInstall:(id)sender {
     launch_helper();
     //    [NSTask launchedTaskWithLaunchPath:path arguments:];
+}
+
+- (IBAction)iconShadows:(id)sender {
+    CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+    CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+    
+    CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                  &keyCallbacks, &valueCallbacks);
+    CFDictionaryAddValue(dictionary, CFSTR("shadow"), CFSTR("1"));
+    dockNotification(dictionary);
+    apply_ALL(self);
 }
 
 - (IBAction)autoUpdateChange:(id)sender {
@@ -616,8 +750,38 @@ void _windowSetup(ViewController *me) {
 }
 
 - (IBAction)change_theme:(id)sender {
+    CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+    CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+    
+    CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                  &keyCallbacks, &valueCallbacks);
+    CFDictionaryAddValue(dictionary, CFSTR("images"), CFSTR("1"));
+    CFDictionaryAddValue(dictionary, CFSTR("indicators"), CFSTR("1"));
+    CFDictionaryAddValue(dictionary, CFSTR("shadow"), CFSTR("1"));
+    dockNotification(dictionary);
+    
     theme_didChange(self);
     _windowSetup(self);
+    apply_ALL(self);
+}
+
+- (IBAction)changeIndicators:(id)sender {
+    
+    if (_cd_customIndicator.state == 1)
+    {
+        [_cd_indicatorBG setState:0];
+        [_indicatorWELL setHidden:true];
+    }
+    
+    CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+    CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+    
+    CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                  &keyCallbacks, &valueCallbacks);
+    CFDictionaryAddValue(dictionary, CFSTR("dock"), CFSTR("1"));
+    CFDictionaryAddValue(dictionary, CFSTR("indicators"), CFSTR("1"));
+    dockNotification(dictionary);
+    
     apply_ALL(self);
 }
 
@@ -656,9 +820,19 @@ void _windowSetup(ViewController *me) {
 - (IBAction)changeIndicatorBG:(id)sender {
     if ([sender state] == NSOnState) {
         [_indicatorWELL setHidden:false];
+        [_cd_customIndicator setState:0];
     } else if ([sender state] == NSOffState) {
         [_indicatorWELL setHidden:true];
     }
+    
+    CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+    CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+    
+    CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                  &keyCallbacks, &valueCallbacks);
+    CFDictionaryAddValue(dictionary, CFSTR("indicators"), CFSTR("1"));
+    dockNotification(dictionary);
+    
     apply_ALL(self);
 }
 
@@ -666,6 +840,15 @@ void _windowSetup(ViewController *me) {
     if ([sender state] == NSOnState) {
         [_shadowWELL setHidden:false];
     } else if ([sender state] == NSOffState) {
+        
+        CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+        CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+        
+        CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                      &keyCallbacks, &valueCallbacks);
+        CFDictionaryAddValue(dictionary, CFSTR("shadow"), CFSTR("1"));
+        dockNotification(dictionary);
+        
         [_shadowWELL setHidden:true];
     }
     apply_ALL(self);

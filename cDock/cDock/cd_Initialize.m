@@ -20,6 +20,7 @@ extern BOOL dispatch_prefFile;
 extern BOOL dispatch_dockFile;
 extern BOOL loadShadows;
 extern BOOL loadImages;
+extern BOOL loadIndicators;
 extern void _forceRefresh();
 
 void notificationCallback (CFNotificationCenterRef center,
@@ -28,16 +29,25 @@ void notificationCallback (CFNotificationCenterRef center,
                            const void * object,
                            CFDictionaryRef userInfo) {
 //    CFShow(CFSTR("Received notification (dictionary):"));
-    NSLog(@"Got notification"); 
+//    NSLog(@"Got notification"); 
+//    NSLog(@"%@", userInfo);
     
-    NSString *res = [ (id)userInfo objectForKey:@"TestKey"];
+    if ([ (id)userInfo objectForKey:@"shadow"]) {
+        loadShadows = true;
+    }
+    
+    if ([ (id)userInfo objectForKey:@"indicators"]) {
+        loadIndicators = true;
+    }
+    
+    if ([ (id)userInfo objectForKey:@"images"]) {
+        loadImages = true;
+    }
+    
 //    NSLog(@"%@", res);
-    
-    if ([res isEqualToString:@"Reload"]) {
+    if ([ (id)userInfo objectForKey:@"dock"]) {
         dispatch_prefFile = true;
         dispatch_dockFile = true;
-        loadImages = true;
-        loadShadows = true;
         _forceRefresh();
 //        NSLog(@"%@", res);
 //        NSLog(@"cDock Reloaded");
