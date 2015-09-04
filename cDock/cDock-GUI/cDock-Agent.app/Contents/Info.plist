@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>cDock Agent</string>
 	<key>CFBundleIconFile</key>
-	<string>../../../appIcon.icns</string>
+	<string>../../../cDock.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.w0lf.cDockAgent</string>
 	<key>CFBundleInfoDictionaryVersion</key>

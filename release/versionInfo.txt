@@ -1,51 +1,51 @@
 ------------------------------------------------
 
-Version : 0.9.3
-Build : 309
-Date : Aug / 30 / 2015
+Version : 0.9.4
+Build : 969
+Date : Sep / 04 / 2015
 
 ------------------------------------------------
 
 - New / Improved
 
-	- Rewritten in Objective C
-	- Huge control over making your own theme
-
-	- Smaller application size
-	- Faster window startup
-	- App window no longer closes/opens each time something is applied
-	- App window now gains focus when clicked in dock
-	- App window now able to be selected via Command + tab
-	- App window now shows in mission control
-	- Spacers are removed from right to left
-	- Ability to edit every theme variable in-app
-	- SIMBL and Rootless information windows
-	- Better about window
-	- Dock theming changes without restarting dock
-	- Theming and hidden dock settings separated into tabs
-	- 3D docks can now display a separator
-	- 3D docks now extend farther
-	- Custom images can be refreshed without restarting the dock
-	- Fixed label color applying to layers it shouldn't have
-	- Dock theme can be refreshed via CFNotificationCenterPostNotification
+🆕 Rewritten in Objective C
+🆕 Fully Localizable
+🆕 Vibrant window on Yosemite and above
+🆕 Theme changes applied automatically in real time
+🆕 Ability to edit every theme variable in-app
+🆕 SIMBL information window
+🆕 Rootless information windows
+🆕 Separator layer can be colored
+🆕 Separator layer can be full height of dock
+🆕 Icon reflections bounce
+🆕 3D docks can now display a separator
+✅ Smaller application size
+✅ Faster application startup
+✅ Application window no longer closes/opens each time something is applied
+✅ Application window now gains focus when clicked in dock
+✅ Application window now able to be selected via Command + tab
+✅ Application window now shows in mission control
+✅ Spacers are removed from right to left
+✅ New fancy about window
+✅ Theming and hidden dock settings separated into their own tabs
+✅ 3D docks extend past content
+✅ Improved 10.9 compatibility
+✅ Improved 10.9 appearance to be more in line with 10.10+ docks
+✅ Fix label color applying to layers it shouldn't have
 
 - Removed
 
-	- Menubar application
-	- Dock plist backups
-	- Reset icon cache option
-	- Finder Folders on top (Use XtraFinder)
-	- Finder Colored sidebar (Use XtraFinder)
+❌ Menubar application
+❌ Dock plist backups
+❌ Reset icon cache option
+❌ Finder Folders on top (Use XtraFinder)
+❌ Finder Colored sidebar (Use XtraFinder)
 
-- TODO
+- Todo
 
-	- Make sure everything works
-	- Tweak login agent and simbl installer for new app
-	- Tooltips 
-	- Give dock settings sliders text input
-	- Add some buttons
-		- Donate 
-		- Report
-	- Localizations
-	- Bundle changes
-	- Clean up code its getting sloppy
+❌ refresh button
+❌ theme versioning for updating themes
+❌ cDock theme converter for pre cDock version 9 themes
+❌ import theme option
+❌ create theme option
+❌ localizations

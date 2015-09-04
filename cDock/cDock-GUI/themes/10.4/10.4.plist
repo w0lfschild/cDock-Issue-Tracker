@@ -2,36 +2,38 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>cd_separatorfullHeight</key>
+	<true/>
 	<key>cd_borderBG</key>
 	<false/>
 	<key>cd_borderBGA</key>
-	<real>50.429225921630859</real>
+	<real>60</real>
 	<key>cd_borderBGB</key>
-	<real>174.14653015136719</real>
+	<real>255</real>
 	<key>cd_borderBGG</key>
-	<real>71.152015686035156</real>
+	<real>255</real>
 	<key>cd_borderBGR</key>
 	<real>255</real>
 	<key>cd_borderSize</key>
-	<integer>0</integer>
+	<integer>1</integer>
 	<key>cd_colorIndicator</key>
 	<false/>
 	<key>cd_cornerRadius</key>
 	<integer>0</integer>
 	<key>cd_customIndicator</key>
-	<false/>
-	<key>cd_darkMode</key>
-	<integer>0</integer>
-	<key>cd_darkenMouseOver</key>
 	<true/>
+	<key>cd_darkMode</key>
+	<integer>1</integer>
+	<key>cd_darkenMouseOver</key>
+	<false/>
 	<key>cd_dockBG</key>
 	<true/>
 	<key>cd_dockBGA</key>
-	<real>75</real>
+	<real>30</real>
 	<key>cd_dockBGB</key>
-	<real>255</real>
+	<real>248</real>
 	<key>cd_dockBGG</key>
-	<real>127</real>
+	<real>248</real>
 	<key>cd_dockBGR</key>
 	<real>255</real>
 	<key>cd_fullWidth</key>
@@ -39,27 +41,27 @@
 	<key>cd_hideLabels</key>
 	<false/>
 	<key>cd_iconReflection</key>
-	<true/>
+	<false/>
 	<key>cd_iconShadow</key>
-	<true/>
+	<false/>
 	<key>cd_iconShadowBGA</key>
-	<real>33.389945983886719</real>
+	<real>100</real>
 	<key>cd_iconShadowBGB</key>
-	<real>255</real>
+	<real>100</real>
 	<key>cd_iconShadowBGG</key>
-	<real>255</real>
+	<real>100</real>
 	<key>cd_iconShadowBGR</key>
-	<real>0.0</real>
+	<real>0</real>
 	<key>cd_iconShadowBGS</key>
 	<integer>10</integer>
 	<key>cd_indicatorBGA</key>
-	<real>100</real>
+	<real>0</real>
 	<key>cd_indicatorBGB</key>
-	<real>0.48654085397720337</real>
+	<real>0</real>
 	<key>cd_indicatorBGG</key>
-	<real>0.46602541208267212</real>
+	<real>0</real>
 	<key>cd_indicatorBGR</key>
-	<real>0.45860466361045837</real>
+	<real>0</real>
 	<key>cd_indicatorHeight</key>
 	<integer>0</integer>
 	<key>cd_indicatorWidth</key>
@@ -71,17 +73,27 @@
 	<key>cd_labelBGA</key>
 	<real>50</real>
 	<key>cd_labelBGB</key>
-	<real>255</real>
+	<real>240</real>
 	<key>cd_labelBGG</key>
-	<real>127</real>
+	<real>210</real>
 	<key>cd_labelBGR</key>
-	<real>255</real>
+	<real>115</real>
 	<key>cd_pictureBG</key>
 	<false/>
 	<key>cd_pictureTile</key>
 	<false/>
-	<key>cd_showFrost</key>
+	<key>cd_separatorBG</key>
 	<true/>
+	<key>cd_separatorBGA</key>
+	<integer>60</integer>
+	<key>cd_separatorBGB</key>
+	<real>255</real>
+	<key>cd_separatorBGG</key>
+	<real>255</real>
+	<key>cd_separatorBGR</key>
+	<real>255</real>
+	<key>cd_showFrost</key>
+	<false/>
 	<key>cd_showGlass</key>
 	<false/>
 	<key>cd_showSeparator</key>

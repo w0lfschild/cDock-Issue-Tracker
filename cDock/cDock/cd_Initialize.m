@@ -65,18 +65,6 @@ void _setupPrefs()
         [newDict writeToFile:thmePath atomically:NO];
     }
     
-    // Make sure hide-mirror = true for 10.9 but just do it on all versions anyways
-    if ([[NSFileManager defaultManager] fileExistsAtPath:dockPath]) {
-        NSMutableDictionary *plist = [NSMutableDictionary dictionaryWithContentsOfFile:dockPath];
-        if ([[ plist objectForKey:@"hide-mirror"] boolValue] == false) {
-            system("defaults write com.apple.dock hide-mirror -bool TRUE");
-            plist = [NSMutableDictionary dictionaryWithContentsOfFile:dockPath];
-            if ([[ plist objectForKey:@"hide-mirror"] boolValue] == true) {
-                system("killall -KILL Dock; sleep 1; osascript -e \"tell application \"Dock\" to inject SIMBL into Snow Leopard\"");
-            }
-        }
-    }
-    
     if (![[NSFileManager defaultManager] fileExistsAtPath:prefFile]) {
         if (![[NSFileManager defaultManager] fileExistsAtPath:prefPath]) {
             NSError * error = nil;

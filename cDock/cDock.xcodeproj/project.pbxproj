@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7948B0DD1B98D4C40093DD9D /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7948B0DC1B98D4C40093DD9D /* PFAboutWindow.xib */; };
 		79D28C961B66BCB10036D668 /* cd_DOCKIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */; };
 		79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */; };
 		79D28C981B66BCB40036D668 /* cd_DOCKTile.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */; };
@@ -14,54 +15,57 @@
 		FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */; };
 		FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13C1B81B5BC00F16D5E /* fishhook.c */; };
 		FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */; };
+		FB14DA101B96482B00C52E53 /* cd_ECMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */; };
+		FB2E5FBD1B94291200252697 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2E5FBC1B94291200252697 /* main.m */; };
 		FB3EC0E71B8EC35800272131 /* cDock-Agent.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E61B8EC35700272131 /* cDock-Agent.app */; };
 		FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */; };
 		FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0EA1B8EE26D00272131 /* cDock.bundle */; };
 		FB3EDF741B7088B000E96DC9 /* updates in Resources */ = {isa = PBXBuildFile; fileRef = FB3EDF731B7088B000E96DC9 /* updates */; };
 		FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor.m */; };
-		FB7ABC5C1B6AE234001D7E5A /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC5A1B6AE234001D7E5A /* PFAboutWindow.xib */; };
 		FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */; };
 		FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */; };
 		FB7ABC661B6AEAA5001D7E5A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */; };
+		FBB740F01B9A4482000F84E3 /* MyApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB740F21B9A4482000F84E3 /* MyApp.xib */; };
 		FBBC5AED1B6DE869007FB947 /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBBC5AE91B6DE869007FB947 /* PFAboutWindow.xib */; };
 		FBBC5AEE1B6DE869007FB947 /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBC5AEA1B6DE869007FB947 /* PFAboutWindowController.m */; };
 		FBBC5AEF1B6DE869007FB947 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBBC5AEB1B6DE869007FB947 /* Credits.rtf */; };
 		FBBC5AF01B6DE869007FB947 /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBBC5AEC1B6DE869007FB947 /* EULA.rtf */; };
+		FBCA39101B96DD46003570BA /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCA390F1B96DD46003570BA /* heart2.png */; };
 		FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */; };
 		FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6F41B8D3A3600DF2E91 /* themes */; };
-		FBD1F6FC1B8E310300DF2E91 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F6FB1B8E310300DF2E91 /* WindowController.m */; };
 		FBD1F70F1B8E433000DF2E91 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F7081B8E433000DF2E91 /* INAppStoreWindow.m */; };
 		FBD1F7101B8E433000DF2E91 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F70B1B8E433000DF2E91 /* INWindowButton.m */; };
 		FBD1F7211B8E4EA600DF2E91 /* WAYAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F71D1B8E4EA600DF2E91 /* WAYAppStoreWindow.m */; };
 		FBD1F7221B8E4EA600DF2E91 /* WAYWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F7201B8E4EA600DF2E91 /* WAYWindow.m */; };
-		FBDE03671B5ED1EE00C1C5DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE03661B5ED1EE00C1C5DB /* main.m */; };
-		FBDE03761B5ED21900C1C5DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03741B5ED21900C1C5DB /* Main.storyboard */; };
-		FBDE03771B5ED21900C1C5DB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03751B5ED21900C1C5DB /* Images.xcassets */; };
+		FBD882291B98055F007D4F84 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD882281B98055F007D4F84 /* github.png */; };
 		FBDE038D1B5EE13500C1C5DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE038C1B5EE13500C1C5DB /* AppDelegate.m */; };
 		FBDE03901B5EE13500C1C5DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDE038F1B5EE13500C1C5DB /* main.m */; };
 		FBDE03921B5EE13500C1C5DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03911B5EE13500C1C5DB /* Assets.xcassets */; };
 		FBDE03951B5EE13500C1C5DB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03931B5EE13500C1C5DB /* MainMenu.xib */; };
 		FBDE03A21B5EF17000C1C5DB /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDE03A01B5EF17000C1C5DB /* icon.png */; };
 		FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843601B641D4A00F87E50 /* AppDelegate.m */; };
-		FBE843641B641D5800F87E50 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843631B641D5800F87E50 /* ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7948B0DC1B98D4C40093DD9D /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFAboutWindow.xib; path = PFAboutWindow/PFAboutWindow.xib; sourceTree = "<group>"; };
 		FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_Initialize.m; path = cDock/cd_Initialize.m; sourceTree = SOURCE_ROOT; };
 		FB0CF13C1B81B5BC00F16D5E /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fishhook.c; path = Fishhook/fishhook.c; sourceTree = "<group>"; };
 		FB0CF13D1B81B5BC00F16D5E /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = Fishhook/fishhook.h; sourceTree = "<group>"; };
 		FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = ZKSwizzle/ZKSwizzle.h; sourceTree = "<group>"; };
 		FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = ZKSwizzle/ZKSwizzle.m; sourceTree = "<group>"; };
+		FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_ECMaterial.m; path = cDock/cd_ECMaterial.m; sourceTree = SOURCE_ROOT; };
+		FB2E5FBC1B94291200252697 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "cDock-GUI/main.m"; sourceTree = SOURCE_ROOT; };
 		FB3EC0E61B8EC35700272131 /* cDock-Agent.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Agent.app"; sourceTree = "<group>"; };
 		FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Installer.app"; sourceTree = "<group>"; };
 		FB3EC0EA1B8EE26D00272131 /* cDock.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = cDock.bundle; sourceTree = "<group>"; };
 		FB3EDF731B7088B000E96DC9 /* updates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = updates; sourceTree = "<group>"; };
 		FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor.m; path = cDock/cd_DOCKFloor.m; sourceTree = SOURCE_ROOT; };
 		FB7ABC591B6AE234001D7E5A /* PFAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAboutWindowController.h; path = PFAboutWindow/PFAboutWindowController.h; sourceTree = "<group>"; };
-		FB7ABC5A1B6AE234001D7E5A /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFAboutWindow.xib; path = PFAboutWindow/PFAboutWindow.xib; sourceTree = "<group>"; };
 		FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAboutWindowController.m; path = PFAboutWindow/PFAboutWindowController.m; sourceTree = "<group>"; };
 		FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = PFAboutWindow/Credits.rtf; sourceTree = "<group>"; };
+		FBB740F11B9A4482000F84E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyApp.xib; sourceTree = "<group>"; };
+		FBB740F41B9A44A9000F84E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyApp.strings; sourceTree = "<group>"; };
 		FBBC5AE81B6DE869007FB947 /* PFAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAboutWindowController.h; path = PFAboutWindow/PFAboutWindowController.h; sourceTree = "<group>"; };
 		FBBC5AE91B6DE869007FB947 /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFAboutWindow.xib; path = PFAboutWindow/PFAboutWindow.xib; sourceTree = "<group>"; };
 		FBBC5AEA1B6DE869007FB947 /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAboutWindowController.m; path = PFAboutWindow/PFAboutWindowController.m; sourceTree = "<group>"; };
@@ -69,10 +73,9 @@
 		FBBC5AEC1B6DE869007FB947 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBCA390F1B96DD46003570BA /* heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart2.png; sourceTree = "<group>"; };
 		FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cDock.icns; sourceTree = "<group>"; };
 		FBD1F6F41B8D3A3600DF2E91 /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = themes; sourceTree = "<group>"; };
-		FBD1F6FA1B8E310300DF2E91 /* WindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowController.h; path = "cDock-GUI/WindowController.h"; sourceTree = SOURCE_ROOT; };
-		FBD1F6FB1B8E310300DF2E91 /* WindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WindowController.m; path = "cDock-GUI/WindowController.m"; sourceTree = SOURCE_ROOT; };
 		FBD1F7071B8E433000DF2E91 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
 		FBD1F7081B8E433000DF2E91 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
 		FBD1F7091B8E433000DF2E91 /* INAppStoreWindowCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindowCompatibility.h; sourceTree = "<group>"; };
@@ -82,11 +85,9 @@
 		FBD1F71D1B8E4EA600DF2E91 /* WAYAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYAppStoreWindow.m; sourceTree = "<group>"; };
 		FBD1F71F1B8E4EA600DF2E91 /* WAYWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYWindow.h; sourceTree = "<group>"; };
 		FBD1F7201B8E4EA600DF2E91 /* WAYWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYWindow.m; sourceTree = "<group>"; };
+		FBD882281B98055F007D4F84 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
 		FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBDE03661B5ED1EE00C1C5DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBDE03701B5ED1EE00C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBDE03741B5ED21900C1C5DB /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		FBDE03751B5ED21900C1C5DB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FBDE03891B5EE13500C1C5DB /* cDock-Menubar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-Menubar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDE038B1B5EE13500C1C5DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBDE038C1B5EE13500C1C5DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -102,8 +103,6 @@
 		FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKTile.m; path = cDock/cd_DOCKTile.m; sourceTree = SOURCE_ROOT; };
 		FBE8435F1B641D4A00F87E50 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "cDock-GUI/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		FBE843601B641D4A00F87E50 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "cDock-GUI/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
-		FBE843621B641D5800F87E50 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = "cDock-GUI/ViewController.h"; sourceTree = SOURCE_ROOT; };
-		FBE843631B641D5800F87E50 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = "cDock-GUI/ViewController.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,13 +148,32 @@
 			name = Fishhook;
 			sourceTree = "<group>";
 		};
+		FB2E5FB81B94288F00252697 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				FBE8435F1B641D4A00F87E50 /* AppDelegate.h */,
+				FBE843601B641D4A00F87E50 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		FB2E5FBB1B9428CB00252697 /* Titlebar */ = {
+			isa = PBXGroup;
+			children = (
+				FBD1F71B1B8E4EA600DF2E91 /* WAYAppStoreWindow */,
+				FBD1F71E1B8E4EA600DF2E91 /* WAYWindow */,
+				FBD1F6FF1B8E433000DF2E91 /* INAppStoreWindow */,
+			);
+			name = Titlebar;
+			sourceTree = "<group>";
+		};
 		FB7ABC5E1B6AE239001D7E5A /* PFAbout */ = {
 			isa = PBXGroup;
 			children = (
 				FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */,
 				FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */,
 				FB7ABC591B6AE234001D7E5A /* PFAboutWindowController.h */,
-				FB7ABC5A1B6AE234001D7E5A /* PFAboutWindow.xib */,
+				7948B0DC1B98D4C40093DD9D /* PFAboutWindow.xib */,
 				FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */,
 			);
 			name = PFAbout;
@@ -251,6 +269,7 @@
 				FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */,
 				FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor.m */,
 				FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */,
+				FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */,
 				FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */,
 				FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */,
 			);
@@ -261,14 +280,11 @@
 		FBDE03611B5ED1EE00C1C5DB /* cDock-GUI */ = {
 			isa = PBXGroup;
 			children = (
-				FBD1F71B1B8E4EA600DF2E91 /* WAYAppStoreWindow */,
-				FBD1F71E1B8E4EA600DF2E91 /* WAYWindow */,
-				FBD1F6FF1B8E433000DF2E91 /* INAppStoreWindow */,
+				FB2E5FBB1B9428CB00252697 /* Titlebar */,
 				FB7ABC5E1B6AE239001D7E5A /* PFAbout */,
 				FBDE03651B5ED1EE00C1C5DB /* Resource */,
 				FBDE037E1B5ED25700C1C5DB /* Classes */,
-				FBDE03741B5ED21900C1C5DB /* Main.storyboard */,
-				FBDE03751B5ED21900C1C5DB /* Images.xcassets */,
+				FBB740F21B9A4482000F84E3 /* MyApp.xib */,
 			);
 			path = "cDock-GUI";
 			sourceTree = "<group>";
@@ -282,8 +298,9 @@
 				FBD1F6F41B8D3A3600DF2E91 /* themes */,
 				FB3EDF731B7088B000E96DC9 /* updates */,
 				FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */,
+				FBD882281B98055F007D4F84 /* github.png */,
+				FBCA390F1B96DD46003570BA /* heart2.png */,
 				FBDE03701B5ED1EE00C1C5DB /* Info.plist */,
-				FBDE03661B5ED1EE00C1C5DB /* main.m */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -291,12 +308,8 @@
 		FBDE037E1B5ED25700C1C5DB /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FBE8435F1B641D4A00F87E50 /* AppDelegate.h */,
-				FBE843601B641D4A00F87E50 /* AppDelegate.m */,
-				FBE843621B641D5800F87E50 /* ViewController.h */,
-				FBE843631B641D5800F87E50 /* ViewController.m */,
-				FBD1F6FA1B8E310300DF2E91 /* WindowController.h */,
-				FBD1F6FB1B8E310300DF2E91 /* WindowController.m */,
+				FB2E5FBC1B94291200252697 /* main.m */,
+				FB2E5FB81B94288F00252697 /* AppDelegate */,
 			);
 			name = Classes;
 			path = "../../../untitled folder/Modck-master/ModckPreferences";
@@ -442,16 +455,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB7ABC661B6AEAA5001D7E5A /* Credits.rtf in Resources */,
-				FBDE03761B5ED21900C1C5DB /* Main.storyboard in Resources */,
-				FBDE03771B5ED21900C1C5DB /* Images.xcassets in Resources */,
 				FB3EDF741B7088B000E96DC9 /* updates in Resources */,
 				FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */,
 				FB3EC0E71B8EC35800272131 /* cDock-Agent.app in Resources */,
+				FBCA39101B96DD46003570BA /* heart2.png in Resources */,
+				FBD882291B98055F007D4F84 /* github.png in Resources */,
 				FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */,
 				FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */,
+				7948B0DD1B98D4C40093DD9D /* PFAboutWindow.xib in Resources */,
 				FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */,
+				FBB740F01B9A4482000F84E3 /* MyApp.xib in Resources */,
 				FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */,
-				FB7ABC5C1B6AE234001D7E5A /* PFAboutWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +524,7 @@
 				FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */,
 				FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */,
 				79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */,
+				FB14DA101B96482B00C52E53 /* cd_ECMaterial.m in Sources */,
 				FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor.m in Sources */,
 				79D28C981B66BCB40036D668 /* cd_DOCKTile.m in Sources */,
 				79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */,
@@ -520,15 +535,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBD1F6FC1B8E310300DF2E91 /* WindowController.m in Sources */,
+				FB2E5FBD1B94291200252697 /* main.m in Sources */,
 				FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */,
 				FBD1F7101B8E433000DF2E91 /* INWindowButton.m in Sources */,
 				FBD1F7221B8E4EA600DF2E91 /* WAYWindow.m in Sources */,
 				FBD1F70F1B8E433000DF2E91 /* INAppStoreWindow.m in Sources */,
 				FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */,
 				FBD1F7211B8E4EA600DF2E91 /* WAYAppStoreWindow.m in Sources */,
-				FBDE03671B5ED1EE00C1C5DB /* main.m in Sources */,
-				FBE843641B641D5800F87E50 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +558,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FBB740F21B9A4482000F84E3 /* MyApp.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBB740F11B9A4482000F84E3 /* Base */,
+				FBB740F41B9A44A9000F84E3 /* en */,
+			);
+			name = MyApp.xib;
+			path = "cDock-GUI";
+			sourceTree = SOURCE_ROOT;
+		};
 		FBDE03931B5EE13500C1C5DB /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -683,6 +706,7 @@
 				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = "cDock-GUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-GUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -698,6 +722,7 @@
 				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = "cDock-GUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-GUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";

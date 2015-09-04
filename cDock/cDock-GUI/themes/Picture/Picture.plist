@@ -2,20 +2,38 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>cd_borderBG</key>
+	<false/>
+	<key>cd_borderBGA</key>
+	<real>0.0</real>
+	<key>cd_borderBGB</key>
+	<real>0.0</real>
+	<key>cd_borderBGG</key>
+	<real>0.0</real>
+	<key>cd_borderBGR</key>
+	<real>0.0</real>
+	<key>cd_borderSize</key>
+	<integer>0</integer>
+	<key>cd_colorIndicator</key>
+	<false/>
+	<key>cd_cornerRadius</key>
+	<integer>0</integer>
 	<key>cd_customIndicator</key>
 	<false/>
+	<key>cd_darkMode</key>
+	<integer>0</integer>
 	<key>cd_darkenMouseOver</key>
 	<true/>
 	<key>cd_dockBG</key>
 	<false/>
 	<key>cd_dockBGA</key>
-	<integer>100</integer>
+	<real>100</real>
 	<key>cd_dockBGB</key>
-	<integer>0</integer>
+	<real>0.0</real>
 	<key>cd_dockBGG</key>
-	<integer>0</integer>
+	<real>0.0</real>
 	<key>cd_dockBGR</key>
-	<real>0</real>
+	<real>0.0</real>
 	<key>cd_fullWidth</key>
 	<false/>
 	<key>cd_hideLabels</key>
@@ -25,34 +43,60 @@
 	<key>cd_iconShadow</key>
 	<false/>
 	<key>cd_iconShadowBGA</key>
-	<integer>0</integer>
+	<real>0.0</real>
 	<key>cd_iconShadowBGB</key>
-	<integer>0</integer>
+	<real>0.0</real>
 	<key>cd_iconShadowBGG</key>
-	<integer>0</integer>
+	<real>0.0</real>
 	<key>cd_iconShadowBGR</key>
-	<real>0</real>
+	<real>0.0</real>
 	<key>cd_iconShadowBGS</key>
+	<integer>10</integer>
+	<key>cd_indicatorBGA</key>
+	<real>0.0</real>
+	<key>cd_indicatorBGB</key>
+	<real>0.0</real>
+	<key>cd_indicatorBGG</key>
+	<real>0.0</real>
+	<key>cd_indicatorBGR</key>
+	<real>0.0</real>
+	<key>cd_indicatorHeight</key>
 	<integer>0</integer>
+	<key>cd_indicatorWidth</key>
+	<integer>0</integer>
+	<key>cd_is3D</key>
+	<false/>
 	<key>cd_labelBG</key>
 	<false/>
 	<key>cd_labelBGA</key>
-	<integer>0</integer>
+	<real>0.0</real>
 	<key>cd_labelBGB</key>
-	<real>0</real>
+	<real>0.0</real>
 	<key>cd_labelBGG</key>
-	<real>0</real>
+	<real>0.0</real>
 	<key>cd_labelBGR</key>
-	<integer>0</integer>
+	<real>0.0</real>
 	<key>cd_pictureBG</key>
 	<true/>
 	<key>cd_pictureTile</key>
 	<true/>
+	<key>cd_separatorBG</key>
+	<false/>
+	<key>cd_separatorBGA</key>
+	<real>0.0</real>
+	<key>cd_separatorBGB</key>
+	<real>0.0</real>
+	<key>cd_separatorBGG</key>
+	<real>0.0</real>
+	<key>cd_separatorBGR</key>
+	<real>0.0</real>
 	<key>cd_showFrost</key>
 	<false/>
 	<key>cd_showGlass</key>
 	<false/>
 	<key>cd_showSeparator</key>
 	<true/>
+	<key>cd_sizeIndicator</key>
+	<false/>
 </dict>
 </plist>

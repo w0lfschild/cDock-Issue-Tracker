@@ -19,12 +19,9 @@
 
 NSStatusItem *statusItem;
 NSMenu *theMenu;
-long osx_minor = 0;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
-    
-    osx_minor = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
     
     self.aboutWindowController = [[PFAboutWindowController alloc] init];
     
@@ -40,7 +37,7 @@ long osx_minor = 0;
     [theMenu addItemWithTitle:@"Open cDock" action:@selector(open_cdock:) keyEquivalent:@""];
     [theMenu addItem:[NSMenuItem separatorItem]]; // A thin grey line
 //    [theMenu addItemWithTitle:@"About" action:@selector(orderFrontStandardAboutPanel:) keyEquivalent:@""];
-    [theMenu addItemWithTitle:@"About" action:@selector(aboutWindow:) keyEquivalent:@""];
+    [theMenu addItemWithTitle:@"About" action:@selector(showAboutWindow) keyEquivalent:@""];
     [theMenu addItemWithTitle:@"Donate" action:@selector(donate:) keyEquivalent:@""];
     [theMenu addItemWithTitle:@"Visit Website" action:@selector(visit_website:) keyEquivalent:@""];
 //    [theMenu addItemWithTitle:@"Check for updates..." action:nil keyEquivalent:@""];
@@ -67,29 +64,12 @@ long osx_minor = 0;
     [statusItem setMenu:theMenu];
 }
 
-- (IBAction)aboutWindow:(id)sender
-{
-    if (osx_minor == 9)
-    {
-        [ [NSApplication sharedApplication] performSelector:@selector(orderFrontStandardAboutPanel:) ];
-    }
-    else
-    {
-        [ self showAboutWindow ];
-    }
-}
-
 - (void)showAboutWindow
 {
     [self.aboutWindowController setAppURL:[[NSURL alloc] initWithString:@"https://github.com/w0lfschild/cDock"]];
     [self.aboutWindowController setAppName:@"cDock"];
-    [self.aboutWindowController setAppCopyright:[[NSAttributedString alloc] initWithString:@"Copyright (c) 2015 Wolfgang Baird"
-                                                                                attributes:@{
-                                                                                             NSForegroundColorAttributeName : [NSColor tertiaryLabelColor],
-                                                                                             NSFontAttributeName  : [NSFont fontWithName:@"HelveticaNeue" size:11]}]];
-    [self.aboutWindowController setAppVersion:@"Version 9.5"];
+    [self.aboutWindowController setAppVersion:@"Version 9.6"];
     [self.aboutWindowController setWindowShouldHaveShadow:YES];
-    [self.aboutWindowController showCredits:nil];
     [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
     [self.aboutWindowController showWindow:nil];
 }
@@ -102,7 +82,10 @@ long osx_minor = 0;
     CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
     CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
                                                                   &keyCallbacks, &valueCallbacks);
-    CFDictionaryAddValue(dictionary, CFSTR("TestKey"), CFSTR("Reload"));
+    CFDictionaryAddValue(dictionary, CFSTR("dock"), CFSTR("1"));
+    CFDictionaryAddValue(dictionary, CFSTR("shadow"), CFSTR("1"));
+    CFDictionaryAddValue(dictionary, CFSTR("indicators"), CFSTR("1"));
+    CFDictionaryAddValue(dictionary, CFSTR("images"), CFSTR("1"));
     
     //    CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
     CFNotificationCenterPostNotification(center, CFSTR("MyNotification"), NULL, dictionary, TRUE);

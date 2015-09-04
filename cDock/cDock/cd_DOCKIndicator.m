@@ -39,30 +39,28 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
 //    NSLog(@"%@", self.superlayer.superclass);
     
     // Note to self this should be precentage based not solid numbers
-    if (osx_minor > 9) {
-        // Color indicator
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_colorIndicator"] boolValue]) {
-            self.compositingFilter = nil; // @"plusD";
-            float red = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGR"] floatValue];
-            float green = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGG"] floatValue];
-            float blue = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGB"] floatValue];
-            float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGA"] floatValue];
-            NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
-            [self setBackgroundColor:[goodColor CGColor]];
-            [self setOpacity:(alpha / 100.0)];
-            
-//            NSLog(@"%f %f %f %f", red, green, blue, alpha);
-        }
-        
-        // Size indicator
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_sizeIndicator"] boolValue]) {
-            [ self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y,
-                                       [[[Preferences sharedInstance] objectForKey:@"cd_indicatorWidth"] floatValue],
-                                       [[[Preferences sharedInstance] objectForKey:@"cd_indicatorHeight"] floatValue]) ];
-        }
-        
-        // Probably cound add corner radius
+    
+    // Color indicator
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_colorIndicator"] boolValue]) {
+        self.contents = nil;
+        self.compositingFilter = nil; // @"plusD";
+        float red = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGR"] floatValue];
+        float green = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGG"] floatValue];
+        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGB"] floatValue];
+        float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGA"] floatValue];
+        NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+        [self setBackgroundColor:[goodColor CGColor]];
+        [self setOpacity:(alpha / 100.0)];
     }
+    
+    // Size indicator
+    if ([[[Preferences sharedInstance] objectForKey:@"cd_sizeIndicator"] boolValue]) {
+        [ self setFrame:CGRectMake(self.frame.origin.x, self.frame.origin.y,
+                                   [[[Preferences sharedInstance] objectForKey:@"cd_indicatorWidth"] floatValue],
+                                   [[[Preferences sharedInstance] objectForKey:@"cd_indicatorHeight"] floatValue]) ];
+    }
+    
+    // Probably cound add corner radius
     
     // Image indicator
     if ([[[Preferences sharedInstance] objectForKey:@"cd_customIndicator"] boolValue]) {
@@ -93,7 +91,74 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
         self.contentsGravity = kCAGravityBottom;
         self.frame = CGRectMake(self.frame.origin.x, 0, (CGFloat)CGImageGetWidth(image) / self.contentsScale, (CGFloat)CGImageGetHeight(image) / self.contentsScale);
     } else {
+//        NSLog(@"What's going on");
+        
         self.contents = nil;
+        
+        if (osx_minor == 9) {
+            self.compositingFilter = nil; // @"plusD";
+            [self setBackgroundColor:[[NSColor clearColor] CGColor]];
+            [self setOpacity:(100.0 / 100.0)];
+            float myVar = arg1 * .1;
+            if (myVar < 3)
+                myVar = 3;
+            if (myVar > 8)
+                myVar = 8;
+            
+            [ self setBounds:CGRectMake(self.frame.origin.x, self.frame.origin.y, myVar, myVar) ];
+            
+            CALayer *sub = nil;
+            
+            // Look for custom layers
+            for (CALayer *item in (NSMutableArray *)self.sublayers)
+            {
+                if ([item.name isEqual:@"_sub"])
+                    sub = item;
+            }
+            
+            // initialize border layer
+            if (sub == nil)
+            {
+                sub = [[CALayer alloc] init];
+                [ sub setName:(@"_sub")];
+                [ self addSublayer:sub ];
+            }
+            
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_colorIndicator"] boolValue]) {
+                float red = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGR"] floatValue];
+                float green = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGG"] floatValue];
+                float blue = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGB"] floatValue];
+                float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorBGA"] floatValue];
+                NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
+                [sub setBackgroundColor:[goodColor CGColor]];
+                [sub setOpacity:(alpha / 100.0)];
+            } else {
+                [sub setBackgroundColor:[[NSColor whiteColor] CGColor]];
+            }
+            
+            double xOrig = self.frame.origin.x;
+            if (myVar <= 1)
+                xOrig += 10;
+            double yOrig = myVar;
+            
+            if (orient == 0) {
+                [sub setFrame:CGRectMake(xOrig, yOrig, myVar, myVar)];
+            } else {
+                [sub setFrame:CGRectMake(xOrig, self.frame.origin.y, myVar, myVar)];
+            }
+            
+            if (myVar > 7)
+                myVar = 7;
+            [sub setCornerRadius:myVar];
+            
+//            if ([[[Preferences sharedInstance] objectForKey:@"cd_sizeIndicator"] boolValue]) {
+//                [ sub setFrame:CGRectMake([sub frame].origin.x, myVar,
+//                                           [[[Preferences sharedInstance] objectForKey:@"cd_indicatorWidth"] floatValue],
+//                                           [[[Preferences sharedInstance] objectForKey:@"cd_indicatorHeight"] floatValue]) ];
+//            }
+            
+//            NSLog(@"%f", self.frame.origin.y);
+        }
     }
 }
 @end

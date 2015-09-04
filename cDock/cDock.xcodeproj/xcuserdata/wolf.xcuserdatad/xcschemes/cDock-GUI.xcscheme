@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBDE035F1B5ED1EE00C1C5DB"
-               BuildableName = "cDock-GUI.app"
-               BlueprintName = "cDock-GUI"
+               BuildableName = "cDock 2.app"
+               BlueprintName = "cDock 2"
                ReferencedContainer = "container:cDock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBDE035F1B5ED1EE00C1C5DB"
-            BuildableName = "cDock-GUI.app"
-            BlueprintName = "cDock-GUI"
+            BuildableName = "cDock 2.app"
+            BlueprintName = "cDock 2"
             ReferencedContainer = "container:cDock.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -53,8 +53,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBDE035F1B5ED1EE00C1C5DB"
-            BuildableName = "cDock-GUI.app"
-            BlueprintName = "cDock-GUI"
+            BuildableName = "cDock 2.app"
+            BlueprintName = "cDock 2"
             ReferencedContainer = "container:cDock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -72,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "FBDE035F1B5ED1EE00C1C5DB"
-            BuildableName = "cDock-GUI.app"
-            BlueprintName = "cDock-GUI"
+            BuildableName = "cDock 2.app"
+            BlueprintName = "cDock 2"
             ReferencedContainer = "container:cDock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -7,14 +7,129 @@
 @import AppKit;
 
 extern NSInteger orient;
+double orig = 999;
+double orig2 = 999;
+
+struct FloatRect
+{
+    float left;
+    float top;
+    float right;
+    float bottom;
+};
 
 @interface Tile : NSObject
+{
+    unsigned int bouncing:1;
+    struct CGRect fGlobalBounds;
+}
 - (void)setSelected:(BOOL)arg1;
 - (void)setLabel:(id)arg1 stripAppSuffix:(_Bool)arg2;
 @end
 
 ZKSwizzleInterface(_CDTile, Tile, NSObject);
 @implementation _CDTile
+
+- (void)updateRect {
+    ZKOrig(void);
+//    ZKHookIvar(self, struct CGRect, "fGlobalBounds") = CGRectMake(1300, 1000, 50, 50);
+//    NSLog(@"%@", NSStringFromRect(ZKHookIvar(self, CGRect, "fGlobalBounds")));
+}
+
+- (void)setGlobalFrame:(struct FloatRect)arg1 {
+//    NSLog(@"%f", arg1.left);
+//    NSLog(@"%f", arg1.right);
+//    NSLog(@"%f", arg1.top);
+//    NSLog(@"%f", arg1.bottom);
+    
+//    if (Prefs(currentStyle) == DKTheme3DStyle) {
+//        CGFloat height = (CGFloat)labs((NSInteger)arg1.top - (NSInteger)arg1.bottom);
+//        arg1.bottom -= height * 0.1;
+//        arg1.top -= height * 0.1;
+//    }
+    
+    ZKOrig(void, arg1);
+}
+
+//- (void)removeIndicator {
+//    ZKOrig(void);
+//}
+
+//- (void)addIndicator {
+//    ZKOrig(void);
+//    
+//    NSUInteger count;
+//    Ivar *vars = class_copyIvarList([self.superclass class], &count);
+//    for (NSUInteger i=0; i<count; i++) {
+//        Ivar var = vars[i];
+//        NSLog(@"%s %s", ivar_getName(var), ivar_getTypeEncoding(var));
+//    }
+//    free(vars);
+//}
+
+- (void)update {
+    ZKOrig(void);
+    
+    int bounce = ZKHookIvar(self, int, "bouncing");
+    int bstop = ZKHookIvar(self, int, "bounceStop");
+    
+    CALayer *_iconLayer = ZKHookIvar(self, CALayer *, "_layer");
+    CALayer *_reflectionLayer = nil;
+    
+    // Check if our custom layer exists, if it does then reference it
+    for (CALayer *item in (NSMutableArray *)_iconLayer.sublayers)
+        if ([item.name  isEqual:@"_reflectionLayer"]) {
+            _reflectionLayer = item;
+            break;
+        }
+    
+    CGRect frm = _reflectionLayer.frame;
+    
+    if (orig == 999)
+    {
+        if (orient == 0) {
+            orig = _reflectionLayer.frame.origin.y;
+            orig2 = _iconLayer.frame.origin.y;
+        } else {
+            orig = _reflectionLayer.frame.origin.x;
+            orig2 = _iconLayer.frame.origin.x;
+        }
+    }
+    
+//    NSLog(@"%u", bounce);
+//    NSLog(@"%u", bstop);
+    
+//    if (bounce == 103488 || bounce == 285250112 || bounce == 16814784)
+    if (bounce != 0)
+    {
+        if (orient == 0) {
+            frm.origin.y = orig - 2 * (_iconLayer.frame.origin.y - orig2);
+        }
+        if (orient == 1) {
+            frm.origin.x = orig - 2 * (_iconLayer.frame.origin.x - orig2);
+        }
+        if (orient == 2) {
+            frm.origin.x = orig - 2 * (_iconLayer.frame.origin.x - orig2);
+        }
+        [_reflectionLayer setFrame:frm];
+    }
+    
+    if (bstop == 128 || bstop == 65666) {
+        orig = 999;
+        orig2 = 999;
+        if (orient == 0) {
+            frm.origin.y = (-frm.size.height);
+        }
+        if (orient == 1) {
+            frm.origin.x = (-frm.size.width);
+        }
+        if (orient == 2) {
+            frm.origin.x = (frm.size.width);
+        }
+        [_reflectionLayer setFrame:frm];
+    }
+}
+
 - (void)labelAttached {
     ZKOrig(void);
     
@@ -113,6 +228,7 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
             frm.origin.x += frm.size.width;
             _reflectionLayer.transform = CATransform3DMakeRotation(M_PI, 0, 1, 0);
         }
+        [ _reflectionLayer setBounds:(frm) ];
         [ _reflectionLayer setFrame:(frm) ];
         _reflectionLayer.opacity = 0.25;
     } else {
