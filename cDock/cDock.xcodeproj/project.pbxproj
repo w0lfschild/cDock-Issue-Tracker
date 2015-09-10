@@ -96,6 +96,7 @@
 		FBDE03941B5EE13500C1C5DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FBDE03961B5EE13500C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBDE03A01B5EF17000C1C5DB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		FBE7BA0F1B9D41EB005CA8F4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MyApp.strings; sourceTree = "<group>"; };
 		FBE843521B641CD100F87E50 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = cDock/Preferences/Preferences.h; sourceTree = SOURCE_ROOT; };
 		FBE843531B641CD100F87E50 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = cDock/Preferences/Preferences.m; sourceTree = SOURCE_ROOT; };
 		FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKIndicator.m; path = cDock/cd_DOCKIndicator.m; sourceTree = SOURCE_ROOT; };
@@ -563,6 +564,7 @@
 			children = (
 				FBB740F11B9A4482000F84E3 /* Base */,
 				FBB740F41B9A44A9000F84E3 /* en */,
+				FBE7BA0F1B9D41EB005CA8F4 /* fr */,
 			);
 			name = MyApp.xib;
 			path = "cDock-GUI";

@@ -14,8 +14,8 @@
 /* Class = "NSButton"; ibShadowedToolTip = "When enabled you will not be able to adjusting the contents of the Dock."; ObjectID = "20T-56-R9e"; */
 "20T-56-R9e.ibShadowedToolTip" = "When enabled you will not be able to adjusting the contents of the Dock.";
 
-/* Class = "NSMenuItem"; title = "About cDock"; ObjectID = "25v-1c-iQX"; */
-"25v-1c-iQX.title" = "About cDock";
+/* Class = "NSMenuItem"; title = "About cDock 2"; ObjectID = "25v-1c-iQX"; */
+"25v-1c-iQX.title" = "About cDock 2";
 
 /* Class = "NSTextFieldCell"; title = "Indicator Height"; ObjectID = "29C-Kl-LYw"; */
 "29C-Kl-LYw.title" = "Indicator Height";
@@ -86,11 +86,17 @@
 /* Class = "NSButton"; ibShadowedToolTip = "When enabled icons will not bounce in the dock. Instead the indicator light will flash while opening applications."; ObjectID = "Ela-hT-cEz"; */
 "Ela-hT-cEz.ibShadowedToolTip" = "When enabled icons will not bounce in the dock. Instead the indicator light will flash while opening applications.";
 
+/* Class = "NSButton"; ibShadowedToolTip = "When enabled a custom image will be used for indicators. If no custom image is present the theme, the indicators will be transparent."; ObjectID = "Exu-iI-5tD"; */
+"Exu-iI-5tD.ibShadowedToolTip" = "When enabled a custom image will be used for indicators. If no custom image is present the theme, the indicators will be transparent.";
+
 /* Class = "NSButtonCell"; title = "Resize standard Indicators"; ObjectID = "FPw-Sx-79e"; */
 "FPw-Sx-79e.title" = "Resize standard Indicators";
 
 /* Class = "NSButtonCell"; title = "Color separator layer"; ObjectID = "Fe1-Dg-8GN"; */
 "Fe1-Dg-8GN.title" = "Color separator layer";
+
+/* Class = "NSButton"; ibShadowedToolTip = "When enabled the standard indicators will be resized using the Indicator width and Indicator Height values from the controlls below. This does not resize image indicators."; ObjectID = "GIy-T6-HYp"; */
+"GIy-T6-HYp.ibShadowedToolTip" = "When enabled the standard indicators will be resized using the Indicator width and Indicator Height values from the controlls below. This does not resize image indicators.";
 
 /* Class = "NSMenuItem"; title = "Dark"; ObjectID = "IVL-e6-1BL"; */
 "IVL-e6-1BL.title" = "Dark";
@@ -100,6 +106,9 @@
 
 /* Class = "NSButtonCell"; title = "Color icon label background"; ObjectID = "J6X-Pp-Suq"; */
 "J6X-Pp-Suq.title" = "Color icon label background";
+
+/* Class = "NSMenuItem"; title = "Show in Finder..."; ObjectID = "JNZ-gF-p6N"; */
+"JNZ-gF-p6N.title" = "Show in Finder...";
 
 /* Class = "NSButtonCell"; title = "Automatically check for updates"; ObjectID = "Jat-HY-mGa"; */
 "Jat-HY-mGa.title" = "Automatically check for updates";
@@ -146,8 +155,14 @@
 /* Class = "NSButtonCell"; title = "I"; ObjectID = "TjS-NZ-BJb"; */
 "TjS-NZ-BJb.title" = "I";
 
-/* Class = "NSMenuItem"; title = "File"; ObjectID = "TrX-U9-2HC"; */
-"TrX-U9-2HC.title" = "File";
+/* Class = "NSMenuItem"; title = "Themes"; ObjectID = "TrX-U9-2HC"; */
+"TrX-U9-2HC.title" = "Themes";
+
+/* Class = "NSButton"; ibShadowedToolTip = "The thin separator that shows between the applications and folders of the dock."; ObjectID = "U4F-qL-Y4L"; */
+"U4F-qL-Y4L.ibShadowedToolTip" = "The thin separator that shows between the applications and folders of the dock.";
+
+/* Class = "NSButton"; ibShadowedToolTip = "The vibrant frosted layer that is part of the default dock."; ObjectID = "UVi-Li-Z9i"; */
+"UVi-Li-Z9i.ibShadowedToolTip" = "The vibrant frosted layer that is part of the default dock.";
 
 /* Class = "NSButtonCell"; title = "Color Dock border"; ObjectID = "UhF-n9-MLQ"; */
 "UhF-n9-MLQ.title" = "Color Dock border";
@@ -158,8 +173,14 @@
 /* Class = "NSButtonCell"; title = "Hide icon labels"; ObjectID = "Xcj-kV-0IH"; */
 "Xcj-kV-0IH.title" = "Hide icon labels";
 
+/* Class = "NSMenuItem"; title = "Import theme"; ObjectID = "YAD-ad-eNW"; */
+"YAD-ad-eNW.title" = "Import theme";
+
 /* Class = "NSMenuItem"; title = "Show All"; ObjectID = "YWS-oC-gWB"; */
 "YWS-oC-gWB.title" = "Show All";
+
+/* Class = "NSButton"; ibShadowedToolTip = "When this option is enabled the dock background will be extended slightly and the separator will be angled."; ObjectID = "YYT-y0-olJ"; */
+"YYT-y0-olJ.ibShadowedToolTip" = "When this option is enabled the dock background will be extended slightly and the separator will be angled.";
 
 /* Class = "NSTextField"; ibShadowedToolTip = "Size of the dock icons in square pixels."; ObjectID = "Yye-Qa-jCb"; */
 "Yye-Qa-jCb.ibShadowedToolTip" = "Size of the dock icons in square pixels.";
@@ -206,8 +227,14 @@
 /* Class = "NSBox"; title = "Box"; ObjectID = "cMe-aN-kwV"; */
 "cMe-aN-kwV.title" = "Box";
 
+/* Class = "NSButton"; ibShadowedToolTip = "Shows a clear layer with a thin outline that is part of the default dock. This layer is hidden even if enabled with certain settings."; ObjectID = "dRm-Ds-x37"; */
+"dRm-Ds-x37.ibShadowedToolTip" = "Shows a clear layer with a thin outline that is part of the default dock. This layer is hidden even if enabled with certain settings.";
+
 /* Class = "NSButtonCell"; title = "Vibrant window"; ObjectID = "dlI-Hn-U8V"; */
 "dlI-Hn-U8V.title" = "Vibrant window";
+
+/* Class = "NSButton"; ibShadowedToolTip = "When enabled a custom image will be used for the dock background. If no custom image is present the theme, the dock background will be transparent."; ObjectID = "dnd-b2-FXO"; */
+"dnd-b2-FXO.ibShadowedToolTip" = "When enabled a custom image will be used for the dock background. If no custom image is present the theme, the dock background will be transparent.";
 
 /* Class = "NSTextFieldCell"; title = "Document Spacers"; ObjectID = "dte-ni-DUy"; */
 "dte-ni-DUy.title" = "Document Spacers";
@@ -269,9 +296,6 @@
 /* Class = "NSTextFieldCell"; title = "Border Width"; ObjectID = "rPa-7s-8Yn"; */
 "rPa-7s-8Yn.title" = "Border Width";
 
-/* Class = "NSMenuItem"; title = "Item"; ObjectID = "rRd-wB-xgb"; */
-"rRd-wB-xgb.title" = "Item";
-
 /* Class = "NSButton"; ibShadowedToolTip = "Contact"; ObjectID = "sL9-Bt-3Ll"; */
 "sL9-Bt-3Ll.ibShadowedToolTip" = "Contact";
 
@@ -283,6 +307,9 @@
 
 /* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "wXz-7W-7rG"; */
 "wXz-7W-7rG.title" = "Bring All to Front";
+
+/* Class = "NSMenuItem"; title = "Create theme"; ObjectID = "wqr-D7-Wvj"; */
+"wqr-D7-Wvj.title" = "Create theme";
 
 /* Class = "NSTabViewItem"; label = "Preferences"; ObjectID = "wxX-Pl-iu9"; */
 "wxX-Pl-iu9.label" = "Preferences";

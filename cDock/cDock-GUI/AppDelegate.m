@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  ModckPreferences
+//  cDock GUI
 //
-//  Created by Mustafa Gezen on 19.07.2015.
-//  Copyright © 2015 Mustafa Gezen. All rights reserved.
+//  Created by Wolfgang Baird on 09.09.2015.
+//  Copyright © 2015 Wolfgang Baird. All rights reserved.
 //
 
 #import "AppDelegate.h"
@@ -85,13 +85,17 @@ NSString* runCommand(NSString * commandToRun) {
 }
 
 - (IBAction)applyDockChanges:(id)sender {
-    prefd = self._getDockPlist;
+    prefd = [self _getDockPlist];
     
     // Recents tile
     if (_dock_REC.state == NSOnState)
     {
-        NSString *check = runCommand([NSString stringWithFormat:@"/usr/libexec/PlistBuddy -c \"Print persistent-others:\" \"%@\" | grep -a recents-tile | wc -l", plist_Dock]);
-        if ([check containsString:@"0"])
+        NSString *find = @"recents-tile";
+        NSString *text = [NSString stringWithFormat:@"%@", [prefd objectForKey:@"persistent-others"]];
+        NSInteger strCount = [text length] - [[text stringByReplacingOccurrencesOfString:find withString:@""] length];
+        strCount /= [find length];
+        
+        if (strCount == 0)
         {
             NSMutableDictionary *subInfo = [[NSMutableDictionary alloc] init];
             [subInfo setValue:@"1" forKey:@"list-type"];
@@ -124,9 +128,14 @@ NSString* runCommand(NSString * commandToRun) {
     [spacerTile setValue:@"spacer-tile" forKey:@"tile-type"];
     [spacerTile setValue:subInfo forKeyPath:@"tile-data"];
     
+    
+    NSString *find = @"spacer-tile";
+    NSString *text = [NSString stringWithFormat:@"%@", [prefd objectForKey:@"persistent-apps"]];
+    NSInteger strCount = [text length] - [[text stringByReplacingOccurrencesOfString:find withString:@""] length];
+    strCount /= [find length];
+    
     // App spacers
-    int _acount = (int)[runCommand([NSString stringWithFormat:@"/usr/libexec/PlistBuddy -c \"Print persistent-apps:\" \"%@\" | grep -a \"spacer-tile\" | wc -l | tr -d ' '", plist_Dock]) integerValue];
-    int _adjust = (int)_dock_appSpacers.floatValue - _acount;
+    NSInteger _adjust = (int)_dock_appSpacers.floatValue - strCount;
     if ( _adjust > 0 )
     {
         NSMutableArray *arr = [prefd valueForKey:@"persistent-apps"];
@@ -151,9 +160,12 @@ NSString* runCommand(NSString * commandToRun) {
         }
     }
     
+    text = [NSString stringWithFormat:@"%@", [prefd objectForKey:@"persistent-others"]];
+    strCount = [text length] - [[text stringByReplacingOccurrencesOfString:find withString:@""] length];
+    strCount /= [find length];
+    
     // Doc spacers
-    _acount = (int)[runCommand([NSString stringWithFormat:@"/usr/libexec/PlistBuddy -c \"Print persistent-others:\" \"%@\" | grep -a \"spacer-tile\" | wc -l | tr -d ' '", plist_Dock]) integerValue];
-    _adjust = (int)_dock_docSpacers.floatValue - _acount;
+    _adjust = (int)_dock_docSpacers.floatValue - strCount;
     if ( _adjust > 0 )
     {
         NSMutableArray *arr = [prefd valueForKey:@"persistent-others"];
@@ -321,6 +333,7 @@ NSString* runCommand(NSString * commandToRun) {
             // Default release if we get nil from the above
             relURL = @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/release.zip";
         }
+        NSLog(@"%@", relURL);
         NSArray *args = [NSArray arrayWithObjects:@"c", [[NSBundle mainBundle] bundlePath], @"org.w0lf.cDock-GUI",
                          [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]],
                          @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/version.txt",
@@ -396,8 +409,7 @@ NSString* runCommand(NSString * commandToRun) {
     
     
     // Dock settings
-    NSMutableDictionary *plist1 = [self _getDockPlist];
-    prefd = plist1;
+    prefd = [self _getDockPlist];
     
     [_dock_SOAA setState:[[prefd objectForKey:@"static-only"] integerValue]];
     [_dock_DHI setState:[[prefd objectForKey:@"showhidden"] integerValue]];
@@ -411,17 +423,19 @@ NSString* runCommand(NSString * commandToRun) {
     if ([prefd objectForKey:@"autohide-time-modifier"])
         [_dock_autohide setFloatValue:3.0 - [[prefd objectForKey:@"autohide-time-modifier"] floatValue]];
     
-    /* These two add about .2 seconds to the startup time could probably be done on another thread*/
-    NSString *run = [NSString stringWithFormat:@"/usr/libexec/PlistBuddy -c \"Print persistent-apps:\" \"%@\" | grep -a \"spacer-tile\" | wc -l | tr -d ' '", plist_Dock];
-    NSString *app_spacer = runCommand(run);
-    [_dock_appSpacers setFloatValue:[app_spacer integerValue]];
+    NSString *find = @"spacer-tile";
     
-    run = [NSString stringWithFormat:@"/usr/libexec/PlistBuddy -c \"Print persistent-others:\" \"%@\" | grep -a \"spacer-tile\" | wc -l | tr -d ' '", plist_Dock];
-    NSString *doc_spacer = runCommand(run);
-    [_dock_docSpacers setFloatValue:[doc_spacer integerValue]];
-    /* These two add about .2 seconds to the startup time could probably be done on another thread*/
+    NSString *text = [NSString stringWithFormat:@"%@", [prefd objectForKey:@"persistent-apps"]];
+    NSInteger strCount = [text length] - [[text stringByReplacingOccurrencesOfString:find withString:@""] length];
+    strCount /= [find length];
+    [_dock_appSpacers setFloatValue:strCount];
     
-    NSDictionary *parentDictionary = [plist1 objectForKey:@"persistent-others"];
+    text = [NSString stringWithFormat:@"%@", [prefd objectForKey:@"persistent-others"]];
+    strCount = [text length] - [[text stringByReplacingOccurrencesOfString:find withString:@""] length];
+    strCount /= [find length];
+    [_dock_docSpacers setFloatValue:strCount];
+    
+    NSDictionary *parentDictionary = [prefd objectForKey:@"persistent-others"];
     NSString *string = [NSString stringWithFormat:@"%@", parentDictionary];
     BOOL keyExists = false;
     if ([string rangeOfString:@"recents-tile"].location != NSNotFound)
@@ -451,6 +465,10 @@ NSString* runCommand(NSString * commandToRun) {
     
     NSMutableDictionary *plist0 = [self _getcDockPlist];
     prefCD = plist0;
+    
+    [ _cdock_isVibrant setState:[[prefCD objectForKey:@"blurView"] integerValue]];
+    if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10)
+        [_cdock_isVibrant setEnabled:false];
     
     [ _auto_checkUpdates setState:[[prefCD objectForKey:@"autoCheck"] integerValue]];
     [ _auto_installUpdates setState:[[prefCD objectForKey:@"autoInstall"] integerValue]];
@@ -608,6 +626,7 @@ NSString* runCommand(NSString * commandToRun) {
 }
 
 - (NSMutableDictionary *)_getDockPlist {
+//    return [[NSMutableDictionary alloc] initWithDictionary:[[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.apple.dock"]];
     return [NSMutableDictionary dictionaryWithContentsOfFile:plist_Dock];
 }
 
@@ -628,7 +647,7 @@ NSString* runCommand(NSString * commandToRun) {
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application
     
-    prefCD = self._getcDockPlist;
+    prefCD = [self _getcDockPlist];
     
     // Setup window
     [self setupWindow];
@@ -644,7 +663,7 @@ NSString* runCommand(NSString * commandToRun) {
     [self tooltipToggle:nil];
     
     // Directory check
-    [self dirCheck:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"]];
+    [self dirCheck:themeFldr];
     [self dirCheck:@"/Library/Application Support/SIMBL/Plugins/"];
     
     // Install the bundle
@@ -676,7 +695,7 @@ NSString* runCommand(NSString * commandToRun) {
     [dirs addObjectsFromArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:thmPath error:Nil]];
     
     for (NSString *theme in dirs) {
-        NSString *pattyCAKE = [[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"] stringByAppendingPathComponent:theme];
+        NSString *pattyCAKE = [themeFldr stringByAppendingPathComponent:theme];
         if (![[NSFileManager defaultManager] fileExistsAtPath:pattyCAKE])
         {
             srcPath = [NSString stringWithFormat:@"%@/%@", thmPath, theme];
@@ -745,22 +764,18 @@ NSString* runCommand(NSString * commandToRun) {
         // Launch dock agent
         [self launch_helper];
         
-        // Add SIMBL tab
+        // Add theme tab
         [editTab setView:_themeView];
-//        [editTab setView:_simblView];
     }
     [_tabView selectTabViewItemAtIndex:0];
     
     // Resize buttons
     // For translations and tooltips
-    for (NSView *stf in _themeView.subviews)
+    for (NSButton *btn in [_themeView subviews])
     {
-        for (NSButton *btn in [stf subviews])
-        {
-            if (btn.class != NSClassFromString(@"NSPopUpButton"))
+        if (btn.class != NSClassFromString(@"NSPopUpButton"))
                 if ([btn respondsToSelector:@selector(sizeToFit)])
                     [btn sizeToFit];
-        }
     }
     
     self.aboutWindowController = [[PFAboutWindowController alloc] init];
@@ -829,30 +844,33 @@ NSString* runCommand(NSString * commandToRun) {
 }
 
 - (IBAction)showAboutWindow:(id)sender {
-    if (self.aboutWindowController == nil)
-        self.aboutWindowController = [[PFAboutWindowController alloc] init];
+    if (_aboutWindowController == nil)
+        _aboutWindowController = [[PFAboutWindowController alloc] init];
     
     [self.aboutWindowController setAppURL:[[NSURL alloc] initWithString:@"https://github.com/w0lfschild/cDock2"]];
     [self.aboutWindowController setAppName:@"cDock 2"];
     [self.aboutWindowController setWindowShouldHaveShadow:YES];
+    
+//    if ([[prefCD valueForKey:@"blurView"] boolValue])
+//    {
+//        Class vibrantClass=NSClassFromString(@"NSVisualEffectView");
+//        if (vibrantClass)
+//        {
+//            NSVisualEffectView *vibrant=[[vibrantClass alloc] initWithFrame:[_aboutWindowController.window.contentView bounds]];
+//            [vibrant setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
+//            [vibrant setBlendingMode:NSVisualEffectBlendingModeBehindWindow];
+//            [[_aboutWindowController.window contentView] addSubview:vibrant positioned:NSWindowBelow relativeTo:nil];
+//        }
+//    }
+    
     [self.aboutWindowController showWindow:nil];
     [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
-    
-//    [(WAYAppStoreWindow *)self.aboutWindowController.window setTitlebarAppearsTransparent:true];
-//    Class vibrantClass=NSClassFromString(@"NSVisualEffectView");
-//    if (vibrantClass)
-//    {
-//        NSView *theview = [self.aboutWindowController.window contentView];
-//        NSVisualEffectView *vibrant=[[vibrantClass alloc] initWithFrame:theview.bounds];
-//        [vibrant setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
-//        [vibrant setBlendingMode:NSVisualEffectBlendingModeBehindWindow];
-//        [theview addSubview:vibrant positioned:NSWindowBelow relativeTo:nil];
-//    }
-//    [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
 }
 
 - (IBAction)showPreferences:(id)sender {
+//    [_aboutWindowController close];
     [ _tabView selectTabViewItemAtIndex:2 ];
+    [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
 }
 
 - (IBAction)showPopover:(id)sender {
@@ -879,6 +897,7 @@ NSString* runCommand(NSString * commandToRun) {
             [self launch_helper];
             NSTabViewItem *editTab = [_tabView tabViewItemAtIndex:0];
             [editTab setView:_themeView];
+            system("osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
             NSLog(@"SIMBL Installed");
         });
     });
@@ -1049,13 +1068,152 @@ NSString* runCommand(NSString * commandToRun) {
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/w0lfschild"]];
 }
 
+- (IBAction)show_themes:(id)sender {
+    NSURL *folderURL = [NSURL fileURLWithPath: themeFldr];
+    [[NSWorkspace sharedWorkspace] openURL: folderURL];
+}
+
+- (IBAction)createTheme:(id)sender {
+    NSSavePanel* svgDlg = [NSSavePanel savePanel];
+    [svgDlg setTitle:@"Create cDock Theme"];
+    [svgDlg setPrompt:@"Create"];
+    [svgDlg setAllowedFileTypes:[[NSArray alloc] initWithObjects:@"plist", nil]];
+    [svgDlg setDirectoryURL:[NSURL fileURLWithPath:themeFldr]];
+    [svgDlg setExtensionHidden:true];
+    [svgDlg setShowsTagField:false];
+    
+    if ([svgDlg runModal] == NSOKButton) {
+        // Got it, use the panel.URL field for something
+        NSLog(@"%@", [svgDlg nameFieldStringValue]);
+        NSLog(@"%@", [svgDlg URL]);
+        
+        NSError *error;
+        NSString *thmPath = [[NSBundle mainBundle] pathForResource:@"themes" ofType:@""];
+        NSString *text = [[svgDlg nameFieldStringValue] stringByReplacingOccurrencesOfString:@".plist" withString:@""];
+        NSString *pattyCAKE = [themeFldr stringByAppendingPathComponent:text];
+        
+        NSString *mv1 = [themeFldr stringByAppendingFormat:@"/%@/Pink.plist", text];
+        NSString *mv2 = [themeFldr stringByAppendingFormat:@"/%@/%@.plist", text, text];
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:pattyCAKE])
+        {
+            NSString *srcPath = [thmPath stringByAppendingPathComponent:@"Pink"];
+            [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:pattyCAKE error:&error];
+            [[NSFileManager defaultManager] moveItemAtPath:mv1 toPath:mv2 error:&error];
+            
+            CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+            CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+            
+            CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                          &keyCallbacks, &valueCallbacks);
+            CFDictionaryAddValue(dictionary, CFSTR("dock"), CFSTR("1"));
+            CFDictionaryAddValue(dictionary, CFSTR("images"), CFSTR("1"));
+            CFDictionaryAddValue(dictionary, CFSTR("indicators"), CFSTR("1"));
+            CFDictionaryAddValue(dictionary, CFSTR("shadow"), CFSTR("1"));
+            [self dockNotification:dictionary];
+            
+            prefCD = [self _getcDockPlist];
+            [prefCD setObject:[NSNumber numberWithBool:true] forKey:@"cd_enabled"];
+            [prefCD setObject:text forKey:@"cd_theme"];
+            NSMutableDictionary *tmpPlist0 = prefCD;
+            [tmpPlist0 writeToFile:plist_cDock atomically:YES];
+            
+            [self setupTheme];
+            [self applyChanges:nil];
+        }
+    } else {
+        // Cancel was pressed...
+    }
+}
+
+- (IBAction)importTheme:(id)sender {
+    NSOpenPanel* opnDlg = [NSOpenPanel openPanel];
+    [opnDlg setTitle:@"Import cDock Theme"];
+    [opnDlg setPrompt:@"Import"];
+    [opnDlg setDirectoryURL:[NSURL fileURLWithPath:[NSSearchPathForDirectoriesInDomains(NSDownloadsDirectory, NSUserDomainMask, YES) firstObject]]];
+    
+    //Disable file selection
+    [opnDlg setCanChooseFiles: false];
+    
+    //Enable folder selection
+    [opnDlg setCanChooseDirectories: true];
+    
+    //Enable alias resolving
+    [opnDlg setResolvesAliases: true];
+    
+    //Disable multiple selection
+    [opnDlg setAllowsMultipleSelection: false];
+    
+    if ([opnDlg runModal] == NSOKButton) {
+        // Got it, use the panel.URL field for something
+        NSLog(@"%@", [opnDlg URL]);
+        
+        NSError *error;
+        NSString* selTheme = opnDlg.URL.path;
+        NSString* theFileName = [[selTheme lastPathComponent] stringByDeletingPathExtension];
+        NSString* destTheme = [themeFldr stringByAppendingPathComponent:theFileName];
+        
+        if (![[NSFileManager defaultManager] fileExistsAtPath:destTheme])
+        {
+//            NSLog(@"\n%@\n%@", selTheme, theFileName);
+            [[NSFileManager defaultManager] copyItemAtPath:selTheme toPath:destTheme error:&error];
+//            NSLog(@"%@", error);
+            
+            CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+            CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+            
+            CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                          &keyCallbacks, &valueCallbacks);
+            CFDictionaryAddValue(dictionary, CFSTR("dock"), CFSTR("1"));
+            CFDictionaryAddValue(dictionary, CFSTR("images"), CFSTR("1"));
+            CFDictionaryAddValue(dictionary, CFSTR("indicators"), CFSTR("1"));
+            CFDictionaryAddValue(dictionary, CFSTR("shadow"), CFSTR("1"));
+            [self dockNotification:dictionary];
+            
+            prefCD = [self _getcDockPlist];
+            [prefCD setObject:[NSNumber numberWithBool:true] forKey:@"cd_enabled"];
+            [prefCD setObject:theFileName forKey:@"cd_theme"];
+            NSMutableDictionary *tmpPlist0 = prefCD;
+            [tmpPlist0 writeToFile:plist_cDock atomically:YES];
+            
+            [self setupTheme];
+            [self applyChanges:nil];
+        }
+
+    } else {
+        // Cancel was pressed...
+    }
+}
+
+
+- (IBAction)changeVibrancy:(id)sender {
+    prefCD = self._getcDockPlist;
+    [prefCD setObject:[NSNumber numberWithBool:[self.cdock_isVibrant state]] forKey:@"blurView"];
+    [prefCD writeToFile:plist_cDock atomically:YES];
+    
+    Class vibrantClass=NSClassFromString(@"NSVisualEffectView");
+    if (vibrantClass)
+    {
+        if ([[prefCD valueForKey:@"blurView"] boolValue])
+        {
+            NSVisualEffectView *vibrant=[[vibrantClass alloc] initWithFrame:[[_window contentView] bounds]];
+            [vibrant setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
+            [vibrant setBlendingMode:NSVisualEffectBlendingModeBehindWindow];
+            if (![_window.contentView.subviews containsObject:vibrant])
+                [[_window contentView] addSubview:vibrant positioned:NSWindowBelow relativeTo:nil];
+        } else {
+            for (NSVisualEffectView *v in (NSMutableArray *)_window.contentView.subviews)
+            {
+                if ([v class] == vibrantClass) {
+                    [v removeFromSuperview];
+                    break;
+                }
+            }
+        }
+    }
+}
+
 - (IBAction)send_email:(id)sender {
-//    NSString *encodedSubject = [NSString stringWithFormat:@"SUBJECT=%@", [[self subject] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
-//    NSString *encodedBody = [NSString stringWithFormat:@"BODY=%@", [[self bodyString] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
-//    NSString *encodedTo = [[self to] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-//    NSString *encodedURLString = [NSString stringWithFormat:@"mailto:%@?%@&%@", encodedTo, encodedSubject, encodedBody];
-//    NSURL *mailtoURL = [NSURL URLWithString:encodedURLString];
-//    [[NSWorkspace sharedWorkspace] openURL:mailtoURL];
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"mailto:aguywithlonghair@gmail.com"]];
 }
 

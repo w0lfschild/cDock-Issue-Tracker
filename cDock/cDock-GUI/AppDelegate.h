@@ -1,9 +1,9 @@
 //
 //  AppDelegate.h
-//  ModckPreferences
+//  cDock GUI
 //
-//  Created by Mustafa Gezen on 19.07.2015.
-//  Copyright © 2015 Mustafa Gezen. All rights reserved.
+//  Created by Wolfgang Baird on 09.09.2015.
+//  Copyright © 2015 Wolfgang Baird. All rights reserved.
 //
 
 @import Foundation;
@@ -11,11 +11,13 @@
 #import "WAYAppStoreWindow.h"
 #import "PFAboutWindowController.h"
 
-# define themeName [[NSMutableDictionary dictionaryWithContentsOfFile:plist_cDock] objectForKey:@"cd_theme"]
-# define themeFldr [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"]
-# define plist_cDock [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/org.w0lf.cDock.plist"]
-# define plist_Dock [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/com.apple.dock.plist"]
-# define plist_Theme [NSHomeDirectory() stringByAppendingFormat:@"/Library/Application Support/cDock/themes/%@/%@.plist", themeName, themeName]
+# define appSupport  [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) firstObject]
+# define usrLibrary  [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject]
+# define themeName   [[NSMutableDictionary dictionaryWithContentsOfFile:plist_cDock] objectForKey:@"cd_theme"]
+# define themeFldr   [appSupport stringByAppendingPathComponent:@"cDock/themes/"]
+# define plist_Theme [appSupport stringByAppendingFormat:@"/cDock/themes/%@/%@.plist", themeName, themeName]
+# define plist_cDock [usrLibrary stringByAppendingPathComponent:@"Preferences/org.w0lf.cDock.plist"]
+# define plist_Dock  [usrLibrary stringByAppendingPathComponent:@"Preferences/com.apple.dock.plist"]
 
 //# define plist_Theme []
 
@@ -52,6 +54,7 @@
 @property (weak) IBOutlet NSButton *disable_cDock;
 @property (weak) IBOutlet NSButton *auto_checkUpdates;
 @property (weak) IBOutlet NSButton *auto_installUpdates;
+@property (weak) IBOutlet NSButton *cdock_isVibrant;
 
 // cDock settings
 @property (weak) IBOutlet NSButton *cd_fullWidth;
@@ -63,6 +66,7 @@
 @property (weak) IBOutlet NSButton *cd_showSeparator;
 @property (weak) IBOutlet NSSlider *cd_cornerRadius;
 @property (weak) IBOutlet NSSlider *cd_borderSize;
+
 @property (weak) IBOutlet NSPopUpButton *cd_darkMode;
 @property (weak) IBOutlet NSPopUpButton *cd_theme;
 

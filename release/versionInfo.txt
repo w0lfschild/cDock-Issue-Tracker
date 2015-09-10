@@ -1,37 +1,42 @@
 ------------------------------------------------
 
-Version : 0.9.4
-Build : 969
-Date : Sep / 04 / 2015
+Version : 0.9.5
+Build : 1162
+Date : Sep / 10 / 2015
 
 ------------------------------------------------
 
 - New / Improved
 
-🆕 Rewritten in Objective C
-🆕 Fully Localizable
+🆕 User interface rewritten in Objective C
+🆕 Option to show cDock themes folder
+🆕 Name themes when creating them
+🆕 Better window layout
 🆕 Vibrant window on Yosemite and above
+🆕 Fully Localizable
 🆕 Theme changes applied automatically in real time
 🆕 Ability to edit every theme variable in-app
 🆕 SIMBL information window
 🆕 Rootless information windows
 🆕 Separator layer can be colored
 🆕 Separator layer can be full height of dock
-🆕 Icon reflections bounce
 🆕 3D docks can now display a separator
+🆕 Icon reflections bounce
+🆕 About window update
 ✅ Smaller application size
 ✅ Faster application startup
 ✅ Application window no longer closes/opens each time something is applied
 ✅ Application window now gains focus when clicked in dock
 ✅ Application window now able to be selected via Command + tab
 ✅ Application window now shows in mission control
+✅ Application window now can minimize to icon
 ✅ Spacers are removed from right to left
-✅ New fancy about window
 ✅ Theming and hidden dock settings separated into their own tabs
 ✅ 3D docks extend past content
 ✅ Improved 10.9 compatibility
 ✅ Improved 10.9 appearance to be more in line with 10.10+ docks
 ✅ Fix label color applying to layers it shouldn't have
+✅ Bug fixes and performance improvements
 
 - Removed
 
@@ -43,9 +48,6 @@ Date : Sep / 04 / 2015
 
 - Todo
 
-❌ refresh button
 ❌ theme versioning for updating themes
-❌ cDock theme converter for pre cDock version 9 themes
-❌ import theme option
-❌ create theme option
+❌ theme updater for themes using older formats
 ❌ localizations

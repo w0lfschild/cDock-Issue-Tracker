@@ -87,6 +87,12 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
             }
         }
         
+        if (orient == 2) {
+            [self setValue:@-1 forKeyPath:@"transform.scale.x"];
+        } else {
+            self.transform = CATransform3DIdentity;
+        }
+        
         self.contents = (__bridge id)image;
         self.contentsGravity = kCAGravityBottom;
         self.frame = CGRectMake(self.frame.origin.x, 0, (CGFloat)CGImageGetWidth(image) / self.contentsScale, (CGFloat)CGImageGetHeight(image) / self.contentsScale);
