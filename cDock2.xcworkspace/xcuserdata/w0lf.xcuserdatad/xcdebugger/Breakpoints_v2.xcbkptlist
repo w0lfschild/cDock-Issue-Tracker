@@ -336,11 +336,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock/cd_DOCKIndicator.m"
-            timestampString = "462522579.655262"
+            timestampString = "463691692.445384"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "-updateIndicatorForSize:"
             landmarkType = "5">
          </BreakpointContent>
@@ -368,11 +368,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "463479700.006056"
+            timestampString = "463703766.072764"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "934"
-            endingLineNumber = "934"
+            startingLineNumber = "936"
+            endingLineNumber = "936"
             landmarkName = "-changeDarkMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -416,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "463479700.006056"
+            timestampString = "463703766.072764"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "813"
-            endingLineNumber = "813"
+            startingLineNumber = "815"
+            endingLineNumber = "815"
             landmarkName = "-change_theme:"
             landmarkType = "5">
          </BreakpointContent>
