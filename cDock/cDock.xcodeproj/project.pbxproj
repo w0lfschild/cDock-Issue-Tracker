@@ -48,6 +48,7 @@
 		FBD882291B98055F007D4F84 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD882281B98055F007D4F84 /* github.png */; };
 		FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843601B641D4A00F87E50 /* AppDelegate.m */; };
 		FBF610611BC0362E00FDCCA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF610601BC0362E00FDCCA4 /* main.m */; };
+		FBF610661BC06EC300FDCCA4 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF610651BC06EC300FDCCA4 /* PFMoveApplication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,8 @@
 		FBE8435F1B641D4A00F87E50 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "cDock-GUI/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		FBE843601B641D4A00F87E50 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "cDock-GUI/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		FBF610601BC0362E00FDCCA4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "cDock-GUI/main.m"; sourceTree = SOURCE_ROOT; };
+		FBF610641BC06EC300FDCCA4 /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
+		FBF610651BC06EC300FDCCA4 /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,8 +246,7 @@
 		FBDE03611B5ED1EE00C1C5DB /* cDock GUI */ = {
 			isa = PBXGroup;
 			children = (
-				FB2E5FBB1B9428CB00252697 /* Titlebar */,
-				FB7ABC5E1B6AE239001D7E5A /* PFAbout */,
+				FBF610621BC06E8F00FDCCA4 /* Sources */,
 				FBDE03651B5ED1EE00C1C5DB /* Resource */,
 				FBDE037E1B5ED25700C1C5DB /* Classes */,
 				FBB740F21B9A4482000F84E3 /* MyApp.xib */,
@@ -278,6 +280,25 @@
 			);
 			name = Classes;
 			path = "../../../untitled folder/Modck-master/ModckPreferences";
+			sourceTree = "<group>";
+		};
+		FBF610621BC06E8F00FDCCA4 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FBF610631BC06EC300FDCCA4 /* PFMoveApplication */,
+				FB7ABC5E1B6AE239001D7E5A /* PFAbout */,
+				FB2E5FBB1B9428CB00252697 /* Titlebar */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		FBF610631BC06EC300FDCCA4 /* PFMoveApplication */ = {
+			isa = PBXGroup;
+			children = (
+				FBF610641BC06EC300FDCCA4 /* PFMoveApplication.h */,
+				FBF610651BC06EC300FDCCA4 /* PFMoveApplication.m */,
+			);
+			path = PFMoveApplication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +467,7 @@
 				FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */,
 				FBF610611BC0362E00FDCCA4 /* main.m in Sources */,
 				FBD1F7211B8E4EA600DF2E91 /* WAYAppStoreWindow.m in Sources */,
+				FBF610661BC06EC300FDCCA4 /* PFMoveApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

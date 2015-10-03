@@ -10,6 +10,7 @@
 @import AppKit;
 #import "WAYAppStoreWindow.h"
 #import "PFAboutWindowController.h"
+#import "PFMoveApplication.h"
 
 # define appSupport  [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) firstObject]
 # define usrLibrary  [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject]

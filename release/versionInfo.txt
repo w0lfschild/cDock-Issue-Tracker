@@ -1,7 +1,7 @@
 ------------------------------------------------
 
-Version	: 0.9.6
-Build 	: 1190
+Version	: 0.9.7
+Build 	: 1205
 Status	: Public
 Date 	: Oct / 03 / 2015
 
@@ -15,7 +15,11 @@ Date 	: Oct / 03 / 2015
 - Donate button added to main window
 - Misc adjustments
 
-0.9.7 planned changes
+0.9.7 changes
+- Offer to move to Applications folder
+- Fix update issue
+
+0.9.8 planned changes
 - cDock agent re-write
 - Merge cDock agent and cDock installer
 - Lower agent energy use

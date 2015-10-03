@@ -334,6 +334,7 @@ NSString* runCommand(NSString * commandToRun) {
             relURL = @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/release.zip";
         }
         NSLog(@"%@", relURL);
+        relURL = [relURL stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSArray *args = [NSArray arrayWithObjects:@"c", [[NSBundle mainBundle] bundlePath], @"org.w0lf.cDock-GUI",
                          [NSString stringWithFormat:@"%@", [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]],
                          @"https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/version.txt",
@@ -644,6 +645,11 @@ NSString* runCommand(NSString * commandToRun) {
     return self;
 }
 
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
+    
+}
+
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Insert code here to initialize your application
     
@@ -787,6 +793,12 @@ NSString* runCommand(NSString * commandToRun) {
     NSLog(@"executionTime = %f", executionTime);
     
     [[NSRunningApplication currentApplication] activateWithOptions:(NSApplicationActivateAllWindows | NSApplicationActivateIgnoringOtherApps)];
+    
+    // Offer to the move the Application if necessary.
+    // Note that if the user chooses to move the application,
+    // this call will never return. Therefore you can suppress
+    // any first run UI by putting it after this call.
+    PFMoveToApplicationsFolderIfNecessary();
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
