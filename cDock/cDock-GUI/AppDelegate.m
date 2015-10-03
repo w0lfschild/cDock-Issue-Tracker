@@ -1094,12 +1094,12 @@ NSString* runCommand(NSString * commandToRun) {
         NSString *text = [[svgDlg nameFieldStringValue] stringByReplacingOccurrencesOfString:@".plist" withString:@""];
         NSString *pattyCAKE = [themeFldr stringByAppendingPathComponent:text];
         
-        NSString *mv1 = [themeFldr stringByAppendingFormat:@"/%@/Pink.plist", text];
+        NSString *mv1 = [themeFldr stringByAppendingFormat:@"/%@/Default.plist", text];
         NSString *mv2 = [themeFldr stringByAppendingFormat:@"/%@/%@.plist", text, text];
         
         if (![[NSFileManager defaultManager] fileExistsAtPath:pattyCAKE])
         {
-            NSString *srcPath = [thmPath stringByAppendingPathComponent:@"Pink"];
+            NSString *srcPath = [thmPath stringByAppendingPathComponent:@"Default"];
             [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:pattyCAKE error:&error];
             [[NSFileManager defaultManager] moveItemAtPath:mv1 toPath:mv2 error:&error];
             

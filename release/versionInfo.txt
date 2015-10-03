@@ -1,9 +1,9 @@
 ------------------------------------------------
 
 Version	: 0.9.6
-Build 	: 1162
-Status	: Beta
-Date 	: Sep / XX / 2015
+Build 	: 1190
+Status	: Public
+Date 	: Oct / 03 / 2015
 
 ------------------------------------------------
 
@@ -12,36 +12,12 @@ Date 	: Sep / XX / 2015
 - Creating a theme uses default instead of pink theme
 - Use standard window menubar item
 - Small theme adjustments
+- Donate button added to main window
 - Misc adjustments
 
-- cDock agent re-written
-- cDock agent and cDock installer merged
-- Lower energy use
+0.9.7 planned changes
+- cDock agent re-write
+- Merge cDock agent and cDock installer
+- Lower agent energy use
 
 ------------------------------------------------
-
-- New -
-
-🆕 UI rewritten in Objective C
-🆕 Vibrant window on Yosemite and above
-🆕 SIMBL information window
-🆕 Rootless information windows
-🆕 Theme changes applied without dock restarts
-🆕 Edit every theme variable in-app
-🆕 Show themes folder
-🆕 Name themes when creating them
-🆕 3D docks extend past content
-🆕 Improved 10.9 appearance to be more in line with 10.10+ docks 
-🆕 Separator layer can be colored
-🆕 Separator layer can be full height of dock
-🆕 Separator layer is displayed in 3D docks
-🆕 Icon reflections bounce
-🆕 Bug fixes and performance improvements
-
-- Removed -
-
-❌ Menubar application (No longer useful)
-❌ Dock plist backups
-❌ Reset icon cache option
-❌ Finder Folders on top (Use XtraFinder)
-❌ Finder Colored sidebar (Use XtraFinder)
