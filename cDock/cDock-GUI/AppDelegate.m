@@ -332,7 +332,6 @@ NSString* runCommand(NSString * commandToRun) {
     }
 }
 
-// Check for application updates
 - (void)checkUpdates:(NSInteger)autoInstall {
     dispatch_queue_t myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(myQueue, ^{
@@ -657,14 +656,6 @@ NSString* runCommand(NSString * commandToRun) {
     return self;
 }
 
-//- (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
-//    prefCD = [self _getcDockPlist];
-//    
-//    // Setup window
-//    [self setupWindow];
-//}
-
-
 //- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
     //    NSLog(@"%ld", _window.styleMask);
@@ -702,8 +693,10 @@ NSString* runCommand(NSString * commandToRun) {
         if (![srcVer isEqual:dstVer])
         {
             NSLog(@"\nSource: %@\nDestination: %@", srcVer, dstVer);
-            [[NSFileManager defaultManager] removeItemAtPath:dstPath error:&error];
-            [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:dstPath error:&error];
+            [[NSFileManager defaultManager] replaceItemAtURL:[NSURL fileURLWithPath:dstPath] withItemAtURL:[NSURL fileURLWithPath:srcPath] backupItemName:nil options:NSFileManagerItemReplacementUsingNewMetadataOnly resultingItemURL:nil error:&error];
+            
+//            [[NSFileManager defaultManager] removeItemAtPath:dstPath error:&error];
+//            [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:dstPath error:&error];
             system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
         }
     } else {
@@ -925,7 +918,7 @@ NSString* runCommand(NSString * commandToRun) {
             [self launch_helper];
             NSTabViewItem *editTab = [_tabView tabViewItemAtIndex:0];
             [editTab setView:_themeView];
-            system("osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
+            system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
             NSLog(@"SIMBL Installed");
         });
     });
@@ -1212,7 +1205,6 @@ NSString* runCommand(NSString * commandToRun) {
         // Cancel was pressed...
     }
 }
-
 
 - (IBAction)changeVibrancy:(id)sender {
     prefCD = self._getcDockPlist;

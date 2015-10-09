@@ -19,10 +19,13 @@ Date 	: Oct / 03 / 2015
 - Offer to move to Applications folder
 - Fix update issue
 
-0.9.8 planned changes
+0.9.8 changes
+- Fix issue with bundle not being updated properly (https://github.com/rmvz39)
 - Fix window not being fully setup before displaying
-- Fix update issues
 - Don't leave agent child processes around
+
+0.9.9 planned changes
+- Fix update issues
 - Merge cDock agent and cDock installer
 - cDock agent re-write
 - Lower agent energy use

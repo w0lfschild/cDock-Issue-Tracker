@@ -368,11 +368,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "465766950.93953"
+            timestampString = "466120580.41587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "962"
-            endingLineNumber = "962"
+            startingLineNumber = "964"
+            endingLineNumber = "964"
             landmarkName = "-changeDarkMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -416,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "465766950.93953"
+            timestampString = "466120580.41587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "841"
-            endingLineNumber = "841"
+            startingLineNumber = "843"
+            endingLineNumber = "843"
             landmarkName = "-change_theme:"
             landmarkType = "5">
          </BreakpointContent>
