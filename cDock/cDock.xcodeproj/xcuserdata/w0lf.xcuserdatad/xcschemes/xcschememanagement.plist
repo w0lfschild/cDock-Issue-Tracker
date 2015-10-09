@@ -21,10 +21,25 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>cDock-Helper.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>FB2BEB2F1BAA99A5003372C5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBB2AB2A1BC0A54100319A8A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FBB2AB3F1BC0A5BD00319A8A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

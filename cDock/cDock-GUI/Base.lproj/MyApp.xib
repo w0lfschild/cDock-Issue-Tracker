@@ -444,7 +444,7 @@ CA
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-uI-gTM">
                         <rect key="frame" x="466" y="384" width="29" height="26"/>
                         <animations/>
-                        <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="EA65EABA-360B-4A16-B9BB-2EB3CA813221" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="M5Q-Fg-6G5">
+                        <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="DC7373BA-8A42-4B32-93BC-E5FD09227394" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="M5Q-Fg-6G5">
                             <behavior key="behavior" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -455,7 +455,7 @@ CA
                 </subviews>
                 <animations/>
             </view>
-            <point key="canvasLocation" x="-197.5" y="-196.5"/>
+            <point key="canvasLocation" x="-308.5" y="-182.5"/>
         </window>
         <customView id="ezM-xe-e5L">
             <rect key="frame" x="0.0" y="0.0" width="557" height="330"/>
@@ -799,7 +799,7 @@ Would you like to install SIMBL now and start theming?</string>
                     <animations/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" id="Pq8-h4-hqa">
                         <font key="font" size="12" name="CourierNewPSMT"/>
-                        <mutableString key="title">cDock has detected that your computer has System Integrity Protection enabled.
+                        <string key="title">cDock has detected that your computer has System Integrity Protection enabled.
 
 Unfortunately this prevents cDock from being able to install SIMBL and theme the dock.
 
@@ -811,7 +811,7 @@ If you would like to theme the dock you must first disable rootless by doing the
 4: Copy this command
 		csrutil disable
 5: Press return or enter
-6: Restart your computer again</mutableString>
+6: Restart your computer again</string>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -867,7 +867,7 @@ If you would like to theme the dock you must first disable rootless by doing the
         </customView>
     </objects>
     <resources>
-        <image name="EA65EABA-360B-4A16-B9BB-2EB3CA813221" width="1" height="1">
+        <image name="DC7373BA-8A42-4B32-93BC-E5FD09227394" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

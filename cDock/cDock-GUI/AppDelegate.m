@@ -80,6 +80,18 @@ NSString* runCommand(NSString * commandToRun) {
 }
 
 - (void)launch_helper {
+//    int my_pid = [[NSProcessInfo processInfo] processIdentifier];
+//    NSLog(@"%d _swag", my_pid);
+    NSString *nullString = [NSString stringWithFormat:@"for item in $(ps aux | grep [c]Dock..gent | tr -s ' ' | cut -d ' ' -f 2); do echo $item; done"];
+    nullString = runCommand(nullString);
+    NSArray *myWords = [nullString componentsSeparatedByString:@"\n"];
+    for (NSNumber *anid in myWords)
+    {
+        NSString *killer = [NSString stringWithFormat:@"kill %@", anid];
+        if (![killer isEqualToString:@"kill "])
+            runCommand(killer);
+    }
+    //system('for item in $(ps aux | grep "cDock" | tr -s ' ' | cut -d ' ' -f 2); do kill "$item"; done')
     NSString *path = [[NSBundle mainBundle] pathForResource:@"cDock-Agent" ofType:@"app"];
     [[NSWorkspace sharedWorkspace] launchApplication:path];
 }
@@ -645,15 +657,17 @@ NSString* runCommand(NSString * commandToRun) {
     return self;
 }
 
+//- (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
+//    prefCD = [self _getcDockPlist];
+//    
+//    // Setup window
+//    [self setupWindow];
+//}
+
+
+//- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
-    
-}
-
-
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application
-    
-//    NSLog(@"%ld", _window.styleMask);
+    //    NSLog(@"%ld", _window.styleMask);
     
     prefCD = [self _getcDockPlist];
     

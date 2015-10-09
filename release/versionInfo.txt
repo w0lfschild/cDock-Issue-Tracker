@@ -10,7 +10,7 @@ Date 	: Oct / 03 / 2015
 0.9.6 changes
 - Default theme
 - Creating a theme uses default instead of pink theme
-- Use standard window menubar item
+- Use standard window menubar item (Afloat loads)
 - Small theme adjustments
 - Donate button added to main window
 - Misc adjustments
@@ -20,8 +20,11 @@ Date 	: Oct / 03 / 2015
 - Fix update issue
 
 0.9.8 planned changes
-- cDock agent re-write
+- Fix window not being fully setup before displaying
+- Fix update issues
+- Don't leave agent child processes around
 - Merge cDock agent and cDock installer
+- cDock agent re-write
 - Lower agent energy use
 
 ------------------------------------------------

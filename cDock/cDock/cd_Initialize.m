@@ -195,4 +195,3 @@ id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID)
     }
 }
 @end
-

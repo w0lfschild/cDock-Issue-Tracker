@@ -37,6 +37,10 @@
 		FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */; };
 		FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */; };
 		FB7ABC661B6AEAA5001D7E5A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */; };
+		FBB2AB441BC0A5BD00319A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */; };
+		FBB2AB471BC0A5BD00319A8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB461BC0A5BD00319A8A /* main.m */; };
+		FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */; };
+		FBB2AB4C1BC0A5BD00319A8A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */; };
 		FBB740F01B9A4482000F84E3 /* MyApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB740F21B9A4482000F84E3 /* MyApp.xib */; };
 		FBCA39101B96DD46003570BA /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCA390F1B96DD46003570BA /* heart2.png */; };
 		FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */; };
@@ -68,6 +72,13 @@
 		FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAboutWindowController.m; path = PFAboutWindow/PFAboutWindowController.m; sourceTree = "<group>"; };
 		FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = PFAboutWindow/Credits.rtf; sourceTree = "<group>"; };
+		FBB2AB401BC0A5BD00319A8A /* cDock-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FBB2AB461BC0A5BD00319A8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FBB2AB4B1BC0A5BD00319A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FBB2AB4D1BC0A5BD00319A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBB740F11B9A4482000F84E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyApp.xib; sourceTree = "<group>"; };
 		FBB740F41B9A44A9000F84E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyApp.strings; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FBB2AB3D1BC0A5BD00319A8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBC4F4EA1B5ED0EC0078D4E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,11 +176,33 @@
 			name = PFAbout;
 			sourceTree = "<group>";
 		};
+		FBB2AB411BC0A5BD00319A8A /* cDock-Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */,
+				FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */,
+				FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */,
+				FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */,
+				FBB2AB4D1BC0A5BD00319A8A /* Info.plist */,
+				FBB2AB451BC0A5BD00319A8A /* Supporting Files */,
+			);
+			path = "cDock-Helper";
+			sourceTree = "<group>";
+		};
+		FBB2AB451BC0A5BD00319A8A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBB2AB461BC0A5BD00319A8A /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FBC4F4E41B5ED0EC0078D4E4 = {
 			isa = PBXGroup;
 			children = (
 				FBC4F4EF1B5ED0EC0078D4E4 /* cDock Bundle */,
 				FBDE03611B5ED1EE00C1C5DB /* cDock GUI */,
+				FBB2AB411BC0A5BD00319A8A /* cDock-Helper */,
 				FBC4F4EE1B5ED0EC0078D4E4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -172,6 +212,7 @@
 			children = (
 				FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */,
 				FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */,
+				FBB2AB401BC0A5BD00319A8A /* cDock-Helper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -304,6 +345,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FBB2AB3F1BC0A5BD00319A8A /* cDock-Helper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBB2AB4E1BC0A5BD00319A8A /* Build configuration list for PBXNativeTarget "cDock-Helper" */;
+			buildPhases = (
+				FBB2AB3C1BC0A5BD00319A8A /* Sources */,
+				FBB2AB3D1BC0A5BD00319A8A /* Frameworks */,
+				FBB2AB3E1BC0A5BD00319A8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "cDock-Helper";
+			productName = "cDock-Helper";
+			productReference = FBB2AB401BC0A5BD00319A8A /* cDock-Helper.app */;
+			productType = "com.apple.product-type.application";
+		};
 		FBC4F4EC1B5ED0EC0078D4E4 /* cDock */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBC4F4F31B5ED0EC0078D4E4 /* Build configuration list for PBXNativeTarget "cDock" */;
@@ -352,6 +410,9 @@
 					FB2BEB2F1BAA99A5003372C5 = {
 						CreatedOnToolsVersion = 7.1;
 					};
+					FBB2AB3F1BC0A5BD00319A8A = {
+						CreatedOnToolsVersion = 7.1;
+					};
 					FBC4F4EC1B5ED0EC0078D4E4 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -376,11 +437,21 @@
 				FB2BEB2F1BAA99A5003372C5 /* Build */,
 				FBC4F4EC1B5ED0EC0078D4E4 /* cDock */,
 				FBDE035F1B5ED1EE00C1C5DB /* cDock 2 */,
+				FBB2AB3F1BC0A5BD00319A8A /* cDock-Helper */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FBB2AB3E1BC0A5BD00319A8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */,
+				FBB2AB4C1BC0A5BD00319A8A /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBC4F4EB1B5ED0EC0078D4E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,6 +511,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FBB2AB3C1BC0A5BD00319A8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBB2AB471BC0A5BD00319A8A /* main.m in Sources */,
+				FBB2AB441BC0A5BD00319A8A /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FBC4F4E91B5ED0EC0078D4E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -474,6 +554,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBB2AB4B1BC0A5BD00319A8A /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
 		FBB740F21B9A4482000F84E3 /* MyApp.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -498,6 +586,34 @@
 		FB2BEB321BAA99A5003372C5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FBB2AB4F1BC0A5BD00319A8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "cDock-Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Helper";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FBB2AB501BC0A5BD00319A8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "cDock-Helper/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -661,6 +777,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		FBB2AB4E1BC0A5BD00319A8A /* Build configuration list for PBXNativeTarget "cDock-Helper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBB2AB4F1BC0A5BD00319A8A /* Debug */,
+				FBB2AB501BC0A5BD00319A8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		FBC4F4E81B5ED0EC0078D4E4 /* Build configuration list for PBXProject "cDock" */ = {
 			isa = XCConfigurationList;
