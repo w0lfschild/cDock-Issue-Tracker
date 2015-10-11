@@ -656,7 +656,10 @@ NSString* runCommand(NSString * commandToRun) {
     return self;
 }
 
-//- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    
+}
+
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
     //    NSLog(@"%ld", _window.styleMask);
     
@@ -692,10 +695,12 @@ NSString* runCommand(NSString * commandToRun) {
     if ([[NSFileManager defaultManager] fileExistsAtPath:dstBndl]){
         NSString *srcVer = [[[NSMutableDictionary alloc] initWithContentsOfFile:srcBndl] objectForKey:@"CFBundleVersion"];
         NSString *dstVer = [[[NSMutableDictionary alloc] initWithContentsOfFile:dstBndl] objectForKey:@"CFBundleVersion"];
-        if (![srcVer isEqual:dstVer])
+        if (![srcVer isEqual:dstVer] && ![srcPath isEqualToString:@""])
         {
             NSLog(@"\nSource: %@\nDestination: %@", srcVer, dstVer);
-            [[NSFileManager defaultManager] replaceItemAtURL:[NSURL fileURLWithPath:dstPath] withItemAtURL:[NSURL fileURLWithPath:srcPath] backupItemName:nil options:NSFileManagerItemReplacementUsingNewMetadataOnly resultingItemURL:nil error:&error];
+            [[NSFileManager defaultManager] removeItemAtPath:@"/tmp/cDock.bundle" error:&error];
+            [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:@"/tmp/cDock.bundle" error:&error];
+            [[NSFileManager defaultManager] replaceItemAtURL:[NSURL fileURLWithPath:dstPath] withItemAtURL:[NSURL fileURLWithPath:@"/tmp/cDock.bundle"] backupItemName:nil options:NSFileManagerItemReplacementUsingNewMetadataOnly resultingItemURL:nil error:&error];
             
 //            [[NSFileManager defaultManager] removeItemAtPath:dstPath error:&error];
 //            [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:dstPath error:&error];

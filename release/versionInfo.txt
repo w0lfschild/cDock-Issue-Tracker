@@ -1,7 +1,7 @@
 ------------------------------------------------
 
 Version	: 0.9.8
-Build 	: 1287
+Build 	: 1297
 Status	: Public
 Date 	: Oct / 10 / 2015
 
@@ -18,8 +18,9 @@ Date 	: Oct / 10 / 2015
 - Fix update issue
 
 0.9.8
-- Fix issue with bundle not being updated properly (https://github.com/rmvz39)
+- Hopefully fix issue with bundle not being updated properly (https://github.com/rmvz39)
 - Fix window not being fully setup before displaying
+- Fix app freezing if updating bundle
 - Fix updater not restarting cDock
 - Fix updater leaving agent child processes running
 - Fix cDock agent looking for wrong updates

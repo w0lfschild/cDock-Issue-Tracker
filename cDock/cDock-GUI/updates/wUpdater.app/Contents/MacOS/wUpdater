@@ -407,7 +407,9 @@ if [[ $opperation = i ]]; then
 		echo "old app -- $oldDirectory"
 		echo "Closing and Installing app"
         echo "${applicationName}"
-        for item in $(ps aux | grep [c]Dock | tr -s ' ' | cut -d ' ' -f 2); do kill "$item"; done
+        #for item in $(ps aux | grep [c]Dock | tr -s ' ' | cut -d ' ' -f 2); do kill "$item"; done
+        killall "cDock"
+        killall "cDock 2"
         killall "${applicationName}"
 		killall "CocoaDialog"
 		killall "cocoaDialog"
