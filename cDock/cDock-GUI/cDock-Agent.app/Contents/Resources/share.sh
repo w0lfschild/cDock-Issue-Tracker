@@ -31,9 +31,9 @@ update_check_step2() {
 	    update_auto_install=$($PlistBuddy "Print autoInstall:" "$cdock_pl" 2>/dev/null || { defaults write org.w0lf.cDock "autoInstall" 0; echo -n 0; } )
 
 	    # Stable urls
-	    dlurl=$(curl -s https://api.github.com/repos/w0lfschild/cDock/releases/latest | grep 'browser_' | cut -d\" -f4)
-	    verurl="https://raw.githubusercontent.com/w0lfschild/cDock/master/_resource/version.txt"
-	    logurl="https://raw.githubusercontent.com/w0lfschild/cDock/master/_resource/versionInfo.txt"
+	    dlurl=$(curl -s https://api.github.com/repos/w0lfschild/cDock2/releases/latest | grep 'browser_' | cut -d\" -f4)
+	    verurl="https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/version.txt"
+	    logurl="https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/versionInfo.txt"
 
 	    defaults write org.w0lf.cDock "lastupdateCheck" "${cur_date}"
 	    "$1" c "$2" org.w0lf.cDock "$3" "$verurl" "$logurl" "$dlurl" "$4" &

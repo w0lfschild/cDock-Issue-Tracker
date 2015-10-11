@@ -1,33 +1,44 @@
 ------------------------------------------------
 
-Version	: 0.9.7
-Build 	: 1205
+Version	: 0.9.8
+Build 	: 1287
 Status	: Public
-Date 	: Oct / 03 / 2015
+Date 	: Oct / 10 / 2015
 
 ------------------------------------------------
 
-0.9.6 changes
-- Default theme
+0.9.6
+- Added default theme
 - Creating a theme uses default instead of pink theme
-- Use standard window menubar item (Afloat loads)
-- Small theme adjustments
-- Donate button added to main window
+- Use standard window menubar item
 - Misc adjustments
 
-0.9.7 changes
+0.9.7
 - Offer to move to Applications folder
 - Fix update issue
 
-0.9.8 changes
+0.9.8
 - Fix issue with bundle not being updated properly (https://github.com/rmvz39)
 - Fix window not being fully setup before displaying
-- Don't leave agent child processes around
+- Fix updater not restarting cDock
+- Fix updater leaving agent child processes running
+- Fix cDock agent looking for wrong updates
+- Fix Show icon reflection not turning off without Dock reset
+- Don't try removing Opee Framework when installing SIMBL
+- Updated credits
+- Dock icon size minimum changed to 8 from 16
+- Restart Agent when cDock opens
+- Main window remembers position on screen when closing and reopening
 
-0.9.9 planned changes
-- Fix update issues
+future changes
+- Reload dock button on theming tab
 - Merge cDock agent and cDock installer
 - cDock agent re-write
 - Lower agent energy use
+- Improve updater
+- Fix coloring labels not turning off without dock restart
+- Delete theme option
+- Dock settings use text boxes with steppers
+- Automatically remove/update/replace themes from older versions
 
 ------------------------------------------------

@@ -6,16 +6,11 @@ exec &>"$log_dir"/helper.log
 
 echo "Removing old files"
 if [[ -h /Library/Application\ Support/SIMBL/Plugins ]]; then rm -vr /Library/Application\ Support/SIMBL/Plugins; fi
-
 if [[ -e "$HOME"/Library/ScriptingAdditions/SIMBL.osax ]]; then rm -vr "$HOME"/Library/ScriptingAdditions/SIMBL.osax; fi
 if [[ -e "$HOME"/Library/ScriptingAdditions/EasySIMBL.osax ]]; then rm -vr "$HOME"/Library/ScriptingAdditions/EasySIMBL.osax; fi
-
 if [[ -e /Library/ScriptingAdditions/SIMBL.osax ]]; then rm -vr /Library/ScriptingAdditions/SIMBL.osax; fi
 if [[ -e /Library/ScriptingAdditions/EasySIMBL.osax ]]; then rm -vr /Library/ScriptingAdditions/EasySIMBL.osax; fi
-
-if [[ -e /Library/Frameworks/Opee.framework ]]; then rm -vr /Library/Frameworks/Opee.framework; fi
 if [[ -e /Library/LaunchAgents/net.culater.SIMBL.Agent.plist ]]; then rm -v /Library/LaunchAgents/net.culater.SIMBL.Agent.plist; fi
-	
 if [[ -e /System/Library/ScriptingAdditions/SIMBL.osax ]]; then rm -vr /System/Library/ScriptingAdditions/SIMBL.osax; fi
 if [[ -e /System/Library/LaunchAgents/net.culater.SIMBL.Agent.plist ]]; then rm -v /System/Library/LaunchAgents/net.culater.SIMBL.Agent.plist; fi
 

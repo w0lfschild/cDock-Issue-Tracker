@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9046" systemVersion="15B22c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9046" systemVersion="15B30a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9046"/>
@@ -180,7 +180,7 @@ CA
                 </menuItem>
             </items>
         </menu>
-        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="F0z-JX-Cv5" customClass="WAYAppStoreWindow">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="MainWindow" animationBehavior="default" id="F0z-JX-Cv5" customClass="WAYAppStoreWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="559" height="427"/>
@@ -242,7 +242,7 @@ CA
                                         <button toolTip="When enabled a mouse-over highlight will be visible when viewing folders in the Dock using the grid or fan view." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ekl-Tu-0OP" userLabel="dock_gridMouseOver">
                                             <rect key="frame" x="345" y="174" width="158" height="18"/>
                                             <animations/>
-                                            <buttonCell key="cell" type="check" title="Fan mouse-over highlight" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="QbO-FD-iXX">
+                                            <buttonCell key="cell" type="check" title="Fan/Grid item highlight" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="QbO-FD-iXX">
                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                 <font key="font" size="13" name="HelveticaNeue-Thin"/>
                                             </buttonCell>
@@ -313,7 +313,7 @@ CA
                                         <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HK1-Bk-e8D">
                                             <rect key="frame" x="175" y="180" width="99" height="21"/>
                                             <animations/>
-                                            <sliderCell key="cell" state="on" alignment="left" minValue="16" maxValue="128" doubleValue="42" tickMarkPosition="above" sliderType="linear" id="NWb-Zg-3gD"/>
+                                            <sliderCell key="cell" state="on" alignment="left" minValue="8" maxValue="128" doubleValue="42" tickMarkPosition="above" sliderType="linear" id="NWb-Zg-3gD"/>
                                         </slider>
                                         <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YT7-4n-mKl">
                                             <rect key="frame" x="175" y="146" width="99" height="27"/>
@@ -394,7 +394,7 @@ CA
                                             <font key="titleFont" metaFont="system"/>
                                         </box>
                                         <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="7i1-dl-uCF">
-                                            <rect key="frame" x="212" y="142" width="96" height="5"/>
+                                            <rect key="frame" x="212" y="115" width="96" height="5"/>
                                             <animations/>
                                             <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                                             <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -427,6 +427,14 @@ CA
                                                 <action selector="changeVibrancy:" target="fOu-kz-Wle" id="JAT-Hp-J2b"/>
                                             </connections>
                                         </button>
+                                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwD-h3-QtY">
+                                            <rect key="frame" x="146" y="122" width="229" height="32"/>
+                                            <animations/>
+                                            <buttonCell key="cell" type="push" title="Remove Bundle" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tNV-ZK-DXF">
+                                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                <font key="font" metaFont="system"/>
+                                            </buttonCell>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                 </view>
@@ -444,7 +452,7 @@ CA
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-uI-gTM">
                         <rect key="frame" x="466" y="384" width="29" height="26"/>
                         <animations/>
-                        <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="DC7373BA-8A42-4B32-93BC-E5FD09227394" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="M5Q-Fg-6G5">
+                        <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="6161224E-BE2A-40FD-BC10-D277FB4D644D" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="M5Q-Fg-6G5">
                             <behavior key="behavior" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -867,7 +875,7 @@ If you would like to theme the dock you must first disable rootless by doing the
         </customView>
     </objects>
     <resources>
-        <image name="DC7373BA-8A42-4B32-93BC-E5FD09227394" width="1" height="1">
+        <image name="6161224E-BE2A-40FD-BC10-D277FB4D644D" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

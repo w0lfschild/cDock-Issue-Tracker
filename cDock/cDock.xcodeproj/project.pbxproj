@@ -785,6 +785,7 @@
 				FBB2AB501BC0A5BD00319A8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBC4F4E81B5ED0EC0078D4E4 /* Build configuration list for PBXProject "cDock" */ = {
 			isa = XCConfigurationList;

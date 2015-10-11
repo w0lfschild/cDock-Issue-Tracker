@@ -567,7 +567,7 @@ NSString* runCommand(NSString * commandToRun) {
     [_cd_showFrost setAction:@selector(applyChanges:)];
     [_cd_showGlass setAction:@selector(applyChanges:)];
     [_cd_showSeparator setAction:@selector(applyChanges:)];
-    [_cd_iconReflection setAction:@selector(applyChanges:)];
+    [_cd_iconReflection setAction:@selector(changeReflection:)];
     
     [_cd_sizeIndicator setAction:@selector(applyChanges:)];
     [_cd_customIndicator setAction:@selector(changeIndicators:)];
@@ -661,6 +661,8 @@ NSString* runCommand(NSString * commandToRun) {
     //    NSLog(@"%ld", _window.styleMask);
     
     prefCD = [self _getcDockPlist];
+    [prefCD setObject:[NSString stringWithFormat:@"%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]] forKey:@"version"];
+    [prefCD writeToFile:plist_cDock atomically:YES];
     
     // Setup window
     [self setupWindow];
@@ -957,6 +959,23 @@ NSString* runCommand(NSString * commandToRun) {
     CFDictionaryAddValue(dictionary, CFSTR("dock"), CFSTR("1"));
     CFDictionaryAddValue(dictionary, CFSTR("indicators"), CFSTR("1"));
     [self dockNotification:dictionary];
+}
+
+- (IBAction)changeReflection:(id)sender {
+    if (_cd_iconReflection.state == 0)
+    {
+        CFDictionaryKeyCallBacks keyCallbacks = {0, NULL, NULL, CFCopyDescription, CFEqual, NULL};
+        CFDictionaryValueCallBacks valueCallbacks  = {0, NULL, NULL, CFCopyDescription, CFEqual};
+        
+        CFMutableDictionaryRef dictionary = CFDictionaryCreateMutable(kCFAllocatorDefault, 1,
+                                                                      &keyCallbacks, &valueCallbacks);
+        CFDictionaryAddValue(dictionary, CFSTR("dock"), CFSTR("1"));
+        CFDictionaryAddValue(dictionary, CFSTR("shadow"), CFSTR("1"));
+        CFDictionaryAddValue(dictionary, CFSTR("indicators"), CFSTR("1"));
+        [self dockNotification:dictionary];
+
+    }
+    [self applyChanges:nil];
 }
 
 - (IBAction)changeIndicators:(id)sender {
