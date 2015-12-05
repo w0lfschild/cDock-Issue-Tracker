@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.10.1912</string>
+	<string>0.10.1923</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>0.10.1912</string>
+	<string>0.10.1923</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2015 Wolfgang Baird. All rights reserved.</string>
 	<key>NSPrincipalClass</key>

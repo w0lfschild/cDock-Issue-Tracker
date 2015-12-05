@@ -16,6 +16,7 @@
 # define usrLibrary  [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject]
 # define themeName   [[NSMutableDictionary dictionaryWithContentsOfFile:plist_cDock] objectForKey:@"cd_theme"]
 # define themeFldr   [appSupport stringByAppendingPathComponent:@"cDock/themes/"]
+# define curThemFldr [appSupport stringByAppendingFormat:@"/cDock/themes/%@/", themeName]
 # define plist_Theme [appSupport stringByAppendingFormat:@"/cDock/themes/%@/%@.plist", themeName, themeName]
 # define plist_cDock [usrLibrary stringByAppendingPathComponent:@"Preferences/org.w0lf.cDock.plist"]
 # define plist_Dock  [usrLibrary stringByAppendingPathComponent:@"Preferences/com.apple.dock.plist"]
@@ -49,6 +50,7 @@
 @property (weak) IBOutlet NSView *themeView;
 @property (weak) IBOutlet NSView *simblView;
 @property (weak) IBOutlet NSView *rootlView;
+@property (weak) IBOutlet NSView *dockView;
 
 // cDock preferences
 @property (weak) IBOutlet NSButton *reset_Dock;

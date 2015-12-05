@@ -757,6 +757,7 @@ NSString* runCommand(NSString * commandToRun) {
     long osx_version = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
     NSString *rootless = nil;
     NSTabViewItem *editTab = [_tabView tabViewItemAtIndex:0];
+    [[_tabView tabViewItemAtIndex:1] setView:_dockView];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:@"/System/Library/ScriptingAdditions/SIMBL.osax"])
     {        
@@ -1114,7 +1115,7 @@ NSString* runCommand(NSString * commandToRun) {
 }
 
 - (IBAction)show_themes:(id)sender {
-    NSURL *folderURL = [NSURL fileURLWithPath: themeFldr];
+    NSURL *folderURL = [NSURL fileURLWithPath: curThemFldr];
     [[NSWorkspace sharedWorkspace] openURL: folderURL];
 }
 
@@ -1169,6 +1170,18 @@ NSString* runCommand(NSString * commandToRun) {
     } else {
         // Cancel was pressed...
     }
+}
+
+- (IBAction)deleteTheme:(id)sender {
+    NSError *error;
+    [[NSFileManager defaultManager] removeItemAtPath:curThemFldr error:&error];
+    if (error.code != NSFileNoSuchFileError) {
+        NSLog(@"%@", error);
+    }
+    [self setupTheme];
+    [self applyChanges:nil];
+//    NSURL *folderURL = [NSURL fileURLWithPath: curThemFldr];
+//    [[NSWorkspace sharedWorkspace] openURL: folderURL];
 }
 
 - (IBAction)importTheme:(id)sender {

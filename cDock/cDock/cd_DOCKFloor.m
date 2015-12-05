@@ -75,11 +75,12 @@ void _loadImages()
 
 void _toggleIndicators()
 {
-//    Class cls = NSClassFromString(@"DOCK.FloorLayer");
-//    SEL aSel = NSSelectorFromString(@"layoutSublayers");
-//    if ([cls respondsToSelector:aSel]) {
-//        [cls performSelector:aSel];
+//    Class cls1 = NSClassFromString(@"DOCK.FloorLayer");
+//    SEL aSel1 = NSSelectorFromString(@"layoutSublayers");
+//    if ([cls1 respondsToSelector:aSel1]) {
+//        [cls1 performSelector:aSel1];
 //    }
+    
     Class cls = NSClassFromString(@"DOCKPreferences");
     id dockPref = nil;
     SEL aSel = NSSelectorFromString(@"preferences");
@@ -106,6 +107,11 @@ void _forceRefresh()
     
     if (FLOORLAYER == nil)
     {
+        Class cls1 = NSClassFromString(@"DOCK.FloorLayer");
+        SEL aSel1 = NSSelectorFromString(@"layoutSublayers");
+        if ([cls1 respondsToSelector:aSel1]) {
+            [cls1 performSelector:aSel1];
+        }
         _toggleIndicators();
     } else {
         SEL aSel = NSSelectorFromString(@"layoutSublayers");
@@ -131,28 +137,28 @@ void _loadShadows(CALayer *layer)
             }
         }
         
-            // Fix Tiles and Indicators
-            NSMutableArray *tileLayers = [[NSMutableArray alloc] initWithArray:layer.superlayer.sublayers];
-            for (CALayer *item in tileLayers)
-            {
-                if (item.class == NSClassFromString(@"DOCKTileLayer")) {
-                    if ([item respondsToSelector:aSel])
-                        [item performSelector:aSel];
+        // Fix Tiles and Indicators
+        NSMutableArray *tileLayers = [[NSMutableArray alloc] initWithArray:layer.superlayer.sublayers];
+        for (CALayer *item in tileLayers)
+        {
+            if (item.class == NSClassFromString(@"DOCKTileLayer")) {
+                if ([item respondsToSelector:aSel])
+                    [item performSelector:aSel];
+            }
+            
+            if (item.class == NSClassFromString(@"DOCKIndicatorLayer")) {
+                if ([item respondsToSelector:aSel]) {
+                    [item performSelector:aSel];
                 }
-                
-                if (item.class == NSClassFromString(@"DOCKIndicatorLayer")) {
-                    if ([item respondsToSelector:aSel]) {
-                        [item performSelector:aSel];
-                    }
-                }
-                
+            }
+            
 //                if ([[[Preferences sharedInstance] objectForKey:@"cd_colorIndicator"] boolValue]) {
 //                    if (item.class == NSClassFromString(@"DOCKIndicatorLayer")) {
 //                        if ([item respondsToSelector:bSel])
 //                            [item performSelector:bSel withObject:[NSNumber numberWithFloat:0]];
 //                    }
 //                }
-            }
+        }
     }
     
     if (loadIndicators)

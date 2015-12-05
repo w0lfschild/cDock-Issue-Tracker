@@ -53,6 +53,7 @@
 		FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843601B641D4A00F87E50 /* AppDelegate.m */; };
 		FBF610611BC0362E00FDCCA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF610601BC0362E00FDCCA4 /* main.m */; };
 		FBF610661BC06EC300FDCCA4 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF610651BC06EC300FDCCA4 /* PFMoveApplication.m */; };
+		FBFAC5121C0C30740051D8CB /* ThemeController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFAC5111C0C30740051D8CB /* ThemeController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,8 @@
 		FBF610601BC0362E00FDCCA4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "cDock-GUI/main.m"; sourceTree = SOURCE_ROOT; };
 		FBF610641BC06EC300FDCCA4 /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
 		FBF610651BC06EC300FDCCA4 /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
+		FBFAC5101C0C30740051D8CB /* ThemeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ThemeController.h; path = "cDock-GUI/ThemeController.h"; sourceTree = SOURCE_ROOT; };
+		FBFAC5111C0C30740051D8CB /* ThemeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ThemeController.m; path = "cDock-GUI/ThemeController.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +321,8 @@
 				FBF610601BC0362E00FDCCA4 /* main.m */,
 				FBE8435F1B641D4A00F87E50 /* AppDelegate.h */,
 				FBE843601B641D4A00F87E50 /* AppDelegate.m */,
+				FBFAC5101C0C30740051D8CB /* ThemeController.h */,
+				FBFAC5111C0C30740051D8CB /* ThemeController.m */,
 			);
 			name = Classes;
 			path = "../../../untitled folder/Modck-master/ModckPreferences";
@@ -540,6 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBFAC5121C0C30740051D8CB /* ThemeController.m in Sources */,
 				FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */,
 				FBD1F7101B8E433000DF2E91 /* INWindowButton.m in Sources */,
 				FBD1F7221B8E4EA600DF2E91 /* WAYWindow.m in Sources */,

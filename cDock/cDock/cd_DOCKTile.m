@@ -70,8 +70,9 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
 - (void)update {
     ZKOrig(void);
     
-    int bounce = ZKHookIvar(self, int, "bouncing");
+//    int bounce = ZKHookIvar(self, int, "bouncing");
     int bstop = ZKHookIvar(self, int, "bounceStop");
+    float moveMe = ZKHookIvar(self, float, "bounceNow");
     
     CALayer *_iconLayer = ZKHookIvar(self, CALayer *, "_layer");
     CALayer *_reflectionLayer = nil;
@@ -96,11 +97,12 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
         }
     }
     
-//    NSLog(@"%u", bounce);
-//    NSLog(@"%u", bstop);
+//    NSLog(@"Launching   : %f", moveMe);
+//    NSLog(@"Bounce Run  : %u", bounce);
+//    NSLog(@"Bounce Stop : %u", bstop);
     
 //    if (bounce == 103488 || bounce == 285250112 || bounce == 16814784)
-    if (bounce != 0)
+    if (moveMe != 0.0)
     {
         if (orient == 0) {
             frm.origin.y = orig - 2 * (_iconLayer.frame.origin.y - orig2);
@@ -114,7 +116,7 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
         [_reflectionLayer setFrame:frm];
     }
     
-    if (bstop == 128 || bstop == 65666) {
+    if (bstop == 128 || bstop == 65666 || bstop == 65664) {
         orig = 999;
         orig2 = 999;
         if (orient == 0) {
