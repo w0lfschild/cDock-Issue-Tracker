@@ -2,11 +2,9 @@
 //  cDockTile.m
 //
 
-#import "Preferences.h"
-#import "ZKSwizzle.h"
-@import AppKit;
+#import "cd_shared.h"
 
-extern NSInteger orient;
+//extern NSInteger orient;
 double orig = 999;
 double orig2 = 999;
 

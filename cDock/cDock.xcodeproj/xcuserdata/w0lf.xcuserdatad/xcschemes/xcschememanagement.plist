@@ -4,13 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Build.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<true/>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
 		<key>cDock Bundle.xcscheme</key>
 		<dict>
 			<key>orderHint</key>

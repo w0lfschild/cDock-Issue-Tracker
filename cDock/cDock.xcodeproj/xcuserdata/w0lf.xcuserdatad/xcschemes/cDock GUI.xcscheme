@@ -3,9 +3,23 @@
    LastUpgradeVersion = "0710"
    version = "1.3">
    <BuildAction
-      parallelizeBuildables = "YES"
+      parallelizeBuildables = "NO"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FBC4F4EC1B5ED0EC0078D4E4"
+               BuildableName = "cDock.bundle"
+               BlueprintName = "cDock"
+               ReferencedContainer = "container:cDock.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
@@ -28,26 +42,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBDE03381B5ED1B100C1C5DB"
-               BuildableName = "cDock-GUITests.xctest"
-               BlueprintName = "cDock-GUITests"
-               ReferencedContainer = "container:cDock.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBDE03431B5ED1B100C1C5DB"
-               BuildableName = "cDock-GUIUITests.xctest"
-               BlueprintName = "cDock-GUIUITests"
-               ReferencedContainer = "container:cDock.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

@@ -51,6 +51,8 @@
 @property (weak) IBOutlet NSView *simblView;
 @property (weak) IBOutlet NSView *rootlView;
 @property (weak) IBOutlet NSView *dockView;
+@property (weak) IBOutlet NSView *prefView;
+
 
 // cDock preferences
 @property (weak) IBOutlet NSButton *reset_Dock;
@@ -58,6 +60,8 @@
 @property (weak) IBOutlet NSButton *auto_checkUpdates;
 @property (weak) IBOutlet NSButton *auto_installUpdates;
 @property (weak) IBOutlet NSButton *cdock_isVibrant;
+
+@property IBOutlet NSTextView *changeLog;
 
 // cDock settings
 @property (weak) IBOutlet NSButton *cd_fullWidth;
@@ -106,11 +110,14 @@
 @property (weak) IBOutlet NSButton *dock_NB;
 @property (weak) IBOutlet NSButton *dock_SAM;
 @property (weak) IBOutlet NSButton *dock_REC;
-@property (weak) IBOutlet NSSlider *dock_autohide;
-@property (weak) IBOutlet NSSlider *dock_magnification;
-@property (weak) IBOutlet NSSlider *dock_tilesize;
-@property (weak) IBOutlet NSSlider *dock_appSpacers;
-@property (weak) IBOutlet NSSlider *dock_docSpacers;
+@property (weak) IBOutlet NSButton *dock_autohide;
+@property (weak) IBOutlet NSButton *dock_magnification;
+
+@property (weak) IBOutlet NSTextField *dock_autohide_value;
+@property (weak) IBOutlet NSTextField *dock_magnification_value;
+@property (weak) IBOutlet NSTextField *dock_tilesize;
+@property (weak) IBOutlet NSTextField *dock_appSpacers;
+@property (weak) IBOutlet NSTextField *dock_docSpacers;
 
 @property (weak) IBOutlet NSButton *cd_installSIMBL;
 

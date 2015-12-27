@@ -40,6 +40,58 @@ NSString* runCommand(NSString * commandToRun) {
     return output;
 }
 
+@interface swagNumFormatter : NSNumberFormatter
+- (BOOL)isPartialStringValid:(NSString *)partialString newEditingString:(NSString **)newString errorDescription:(NSString **) error;
+@end
+
+@implementation swagNumFormatter
+
+- (BOOL)isPartialStringValid:(NSString *)partialString newEditingString:(NSString **)newString errorDescription:(NSString **) error
+{
+    // Make sure we clear newString and error to ensure old values aren't being used
+    if (newString) { *newString = nil; }
+    if (error)     { *error = nil; }
+    
+//    NSLog(@"STRING: %@", partialString);
+    
+    NSCharacterSet *allItems = [NSCharacterSet characterSetWithCharactersInString:@"0123456789."];
+    if (![[partialString stringByTrimmingCharactersInSet:allItems] isEqualToString:@""]) {
+        return NO;
+    }
+    
+    if ([partialString containsString:@"."]) {
+        if ([partialString length] > 6) {
+            return NO;
+        } else {
+            // No leading number
+            if ([partialString characterAtIndex:0] == '.')
+                return NO;
+            
+            NSArray *lines = [partialString componentsSeparatedByString: @"."];
+            
+            // Limit integers to three places
+            if ([lines[0] length] > 3)
+                return NO;
+            
+            // Limit decimal places to two places
+            if ([lines[1] length] > 2)
+                return NO;
+            
+            // More than one decimal
+            if (lines.count > 2)
+                return NO;
+        }
+    } else {
+        if ([partialString length] > 3) {
+            return NO;
+        }
+    }
+    
+    return YES;
+}
+
+@end
+
 @implementation AppDelegate
 
 - (void)dockNotification:(CFMutableDictionaryRef)dict {
@@ -213,24 +265,22 @@ NSString* runCommand(NSString * commandToRun) {
     
     [prefd setObject:[NSNumber numberWithFloat:[_dock_tilesize floatValue]] forKey:@"tilesize"];
     
-    if (_dock_magnification.floatValue == 0.0) {
-        [prefd setObject:[NSNumber numberWithBool:false] forKey:@"magnification"];
-        [prefd setObject:[NSNumber numberWithFloat:0] forKey:@"largesize"];
+    if ([_dock_magnification state] == NSOnState) {
+        [prefd setObject:[NSNumber numberWithBool:true] forKey:@"magnification"];
+        [prefd setObject:[NSNumber numberWithFloat:[_dock_magnification_value floatValue]] forKey:@"largesize"];
     }
     else
     {
-        [prefd setObject:[NSNumber numberWithBool:true] forKey:@"magnification"];
-        [prefd setObject:[NSNumber numberWithFloat:[_dock_magnification floatValue]] forKey:@"largesize"];
+        [prefd setObject:[NSNumber numberWithBool:false] forKey:@"magnification"];
     }
     
-    if (_dock_autohide.floatValue == 0.0) {
-        [prefd setObject:[NSNumber numberWithBool:false] forKey:@"autohide"];
-        [prefd setObject:[NSNumber numberWithFloat:3.0] forKey:@"autohide-time-modifier"];
+    if ([_dock_autohide state] == NSOnState) {
+        [prefd setObject:[NSNumber numberWithBool:true] forKey:@"autohide"];
+        [prefd setObject:[NSNumber numberWithFloat:3.0 - [_dock_autohide_value floatValue]] forKey:@"autohide-time-modifier"];
     }
     else
     {
-        [prefd setObject:[NSNumber numberWithBool:true] forKey:@"autohide"];
-        [prefd setObject:[NSNumber numberWithFloat:3.0 - [_dock_autohide floatValue]] forKey:@"autohide-time-modifier"];
+        [prefd setObject:[NSNumber numberWithBool:false] forKey:@"autohide"];
     }
     
     [prefd writeToFile:@"/tmp/dock.plist" atomically:YES];
@@ -419,9 +469,13 @@ NSString* runCommand(NSString * commandToRun) {
         [tmpPlist writeToFile:plist_cDock atomically:YES];
     }
     
+    [[_changeLog textStorage] setAttributedString:[[NSAttributedString alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"changeLOG" ofType:@"rtf"] documentAttributes:nil]];
     
     // Dock settings
     prefd = [self _getDockPlist];
+    
+    swagNumFormatter *_customFormatter = [[swagNumFormatter alloc] init];
+    [_dock_autohide_value setFormatter:_customFormatter];
     
     [_dock_SOAA setState:[[prefd objectForKey:@"static-only"] integerValue]];
     [_dock_DHI setState:[[prefd objectForKey:@"showhidden"] integerValue]];
@@ -429,11 +483,13 @@ NSString* runCommand(NSString * commandToRun) {
     [_dock_MOH setState:[[prefd objectForKey:@"mouse-over-hilite-stack"] integerValue]];
     [_dock_SAM setState:[[prefd objectForKey:@"single-app"] integerValue]];
     [_dock_NB setState:[[prefd objectForKey:@"no-bouncing"] integerValue]];
-    [_dock_magnification setFloatValue:[[prefd objectForKey:@"largesize"] integerValue]];
+    [_dock_autohide setState:[[prefd objectForKey:@"autohide"] integerValue]];
+    [_dock_magnification setState:[[prefd objectForKey:@"magnification"] integerValue]];
+    [_dock_magnification_value setFloatValue:[[prefd objectForKey:@"largesize"] integerValue]];
     [_dock_tilesize setFloatValue:[[prefd objectForKey:@"tilesize"] integerValue]];
     
     if ([prefd objectForKey:@"autohide-time-modifier"])
-        [_dock_autohide setFloatValue:3.0 - [[prefd objectForKey:@"autohide-time-modifier"] floatValue]];
+        [_dock_autohide_value setFloatValue:3.0 - [[prefd objectForKey:@"autohide-time-modifier"] floatValue]];
     
     NSString *find = @"spacer-tile";
     
@@ -662,7 +718,6 @@ NSString* runCommand(NSString * commandToRun) {
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
     //    NSLog(@"%ld", _window.styleMask);
-    
     prefCD = [self _getcDockPlist];
     [prefCD setObject:[NSString stringWithFormat:@"%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]] forKey:@"version"];
     [prefCD writeToFile:plist_cDock atomically:YES];
@@ -758,6 +813,7 @@ NSString* runCommand(NSString * commandToRun) {
     NSString *rootless = nil;
     NSTabViewItem *editTab = [_tabView tabViewItemAtIndex:0];
     [[_tabView tabViewItemAtIndex:1] setView:_dockView];
+    [[_tabView tabViewItemAtIndex:2] setView:_prefView];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:@"/System/Library/ScriptingAdditions/SIMBL.osax"])
     {        

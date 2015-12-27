@@ -2,14 +2,7 @@
 //  Preferences.m
 //
 
-#import "Preferences.h"
-# define thmePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/org.w0lf.cDock.plist"]
-# define thmeName [[NSMutableDictionary dictionaryWithContentsOfFile:thmePath] objectForKey:@"cd_theme"]
-# define prefPath [[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"] stringByAppendingPathComponent:thmeName]
-# define prefFile [[prefPath stringByAppendingPathComponent:thmeName ] stringByAppendingString:@".plist"]
-
-bool dispatch_prefFile = true;
-bool dispatch_dockFile = true;
+#import "cd_shared.h"
 
 @implementation Preferences
 

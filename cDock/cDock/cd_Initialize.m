@@ -2,26 +2,34 @@
 //  cDockInitialize.m
 //
 
-#import "Preferences.h"
-#import "ZKSwizzle.h"
+#import "cd_shared.h"
 #import "fishhook.h"
 #import <dlfcn.h>
-@import AppKit;
 
-# define dockPath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/com.apple.dock.plist"]
-# define thmePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/org.w0lf.cDock.plist"]
-# define thmeName [[NSMutableDictionary dictionaryWithContentsOfFile:thmePath] objectForKey:@"cd_theme"]
-# define prefPath [[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"] stringByAppendingPathComponent:thmeName]
-# define prefFile [[prefPath stringByAppendingPathComponent:thmeName ] stringByAppendingString:@".plist"]
+NSInteger orient = 0;
+long osx_minor = 0;
+CGImageRef background;
+CGImageRef background1;
+BOOL loadShadows = true;
+BOOL loadImages = true;
+BOOL loadIndicators = true;
+CALayer *FLOORLAYER = nil;
+CGImageRef large;
+CGImageRef medium;
+CGImageRef small;
+CGImageRef medium_simple;
+CGImageRef small_simple;
+bool dispatch_prefFile = true;
+bool dispatch_dockFile = true;
 
-extern NSInteger orient;
-extern long osx_minor;
-extern BOOL dispatch_prefFile;
-extern BOOL dispatch_dockFile;
-extern BOOL loadShadows;
-extern BOOL loadImages;
-extern BOOL loadIndicators;
-extern void _forceRefresh();
+//extern NSInteger orient;
+//extern long osx_minor;
+//extern BOOL dispatch_prefFile;
+//extern BOOL dispatch_dockFile;
+//extern BOOL loadShadows;
+//extern BOOL loadImages;
+//extern BOOL loadIndicators;
+//extern void _forceRefresh();
 
 void notificationCallback (CFNotificationCenterRef center,
                            void * observer,

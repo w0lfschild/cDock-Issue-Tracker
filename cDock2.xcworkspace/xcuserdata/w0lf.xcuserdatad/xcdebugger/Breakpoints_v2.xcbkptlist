@@ -352,11 +352,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "462875160.15173"
+            timestampString = "472464492.173812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "-apply_WELL:withWELL:"
             landmarkType = "5">
          </BreakpointContent>
@@ -368,11 +368,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "471047494.068964"
+            timestampString = "472467577.214984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "963"
-            endingLineNumber = "963"
+            startingLineNumber = "1019"
+            endingLineNumber = "1019"
             landmarkName = "-changeDarkMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -384,11 +384,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "465766950.93953"
+            timestampString = "472464492.173812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "-applyDockChanges:"
             landmarkType = "5">
          </BreakpointContent>
@@ -400,11 +400,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "466121784.509613"
+            timestampString = "472467577.214984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "638"
-            endingLineNumber = "638"
+            startingLineNumber = "694"
+            endingLineNumber = "694"
             landmarkName = "-setupWindow"
             landmarkType = "5">
          </BreakpointContent>
@@ -416,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "471047494.068964"
+            timestampString = "472467577.214984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "842"
-            endingLineNumber = "842"
+            startingLineNumber = "898"
+            endingLineNumber = "898"
             landmarkName = "-change_theme:"
             landmarkType = "5">
          </BreakpointContent>
@@ -448,13 +448,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "466226303.979923"
+            timestampString = "472467577.214984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "663"
-            endingLineNumber = "663"
+            startingLineNumber = "719"
+            endingLineNumber = "719"
             landmarkName = "-applicationWillFinishLaunching:"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "cDock/cDock-GUI/AppDelegate.h"
+            timestampString = "472467547.044537"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "changeLog"
+            landmarkType = "19">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

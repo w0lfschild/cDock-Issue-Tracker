@@ -2,22 +2,7 @@
 //  cDockIndicator.m
 //
 
-#import "Preferences.h"
-#import "ZKSwizzle.h"
-@import AppKit;
-
-# define thmePath [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/org.w0lf.cDock.plist"]
-# define thmeName [[NSMutableDictionary dictionaryWithContentsOfFile:thmePath] objectForKey:@"cd_theme"]
-# define prefPath [[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Application Support/cDock/themes/"] stringByAppendingPathComponent:thmeName]
-# define prefFile [[prefPath stringByAppendingPathComponent:thmeName ] stringByAppendingString:@".plist"]
-
-extern NSInteger orient;
-extern long osx_minor;
-extern CGImageRef large;
-extern CGImageRef medium;
-extern CGImageRef small;
-extern CGImageRef medium_simple;
-extern CGImageRef small_simple;
+#import "cd_shared.h"
 
 ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
 @implementation _CDIndicatorLayer

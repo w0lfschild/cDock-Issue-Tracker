@@ -2,11 +2,9 @@
 //  cDockLabel.m
 //
 
-#import "Preferences.h"
-#import "ZKSwizzle.h"
-@import AppKit;
+#import "cd_shared.h"
 
-extern long osx_minor;
+//extern long osx_minor;
 
 @interface ECMaterialLayer : CALayer
 {
