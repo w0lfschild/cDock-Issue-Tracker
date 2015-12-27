@@ -11,4 +11,3 @@ cDock 2 is the successor to the application cDock. It is designed to make themin
 - Theme away
 
 ![Preview](preview.png)
-![Preview](preview.gif)
