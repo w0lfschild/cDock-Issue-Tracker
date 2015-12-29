@@ -476,6 +476,10 @@ NSString* runCommand(NSString * commandToRun) {
     
     swagNumFormatter *_customFormatter = [[swagNumFormatter alloc] init];
     [_dock_autohide_value setFormatter:_customFormatter];
+    [_dock_magnification_value setFormatter:_customFormatter];
+    [_dock_appSpacers setFormatter:_customFormatter];
+    [_dock_docSpacers setFormatter:_customFormatter];
+    [_dock_tilesize setFormatter:_customFormatter];
     
     [_dock_SOAA setState:[[prefd objectForKey:@"static-only"] integerValue]];
     [_dock_DHI setState:[[prefd objectForKey:@"showhidden"] integerValue]];

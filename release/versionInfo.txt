@@ -1,24 +1,22 @@
-------------------------------------------------
+cDock 2		: 0.9.10 (1454)
+Bundle		: 0.11.1 (1961)
+SIMBL		: 0.9.10
+Build Date 	: Dec / 27 / 2015
 
-Version	: 0.9.8
-Build 	: 1297
-Status	: Public
-Date 	: Oct / 10 / 2015
+0.9.10
+- Improved dock settings tab
+- Show in Finder reveals theme folder
+- UI adjustments
+- Changelog shows in preferences tab
+- Reset dock moved to dock settings tab
 
-------------------------------------------------
-
-0.9.6
-- Added default theme
-- Creating a theme uses default instead of pink theme
-- Use standard window menubar item
-- Misc adjustments
-
-0.9.7
-- Offer to move to Applications folder
-- Fix update issue
+0.9.9
+- Delete theme option
+- Fix icon reflection not loading on start
+- Fix icon reflection when opening apps not in dock
 
 0.9.8
-- Hopefully fix issue with bundle not being updated properly (https://github.com/rmvz39)
+- Fix issue with bundle not being updated properly 
 - Fix window not being fully setup before displaying
 - Fix app freezing if updating bundle
 - Fix updater not restarting cDock
@@ -29,17 +27,27 @@ Date 	: Oct / 10 / 2015
 - Updated credits
 - Dock icon size minimum changed to 8 from 16
 - Restart Agent when cDock opens
-- Main window remembers position on screen when closing and reopening
+- Main window remembers position on screen
 
-future changes
+0.9.7
+- Offer to move to Applications folder
+- Fix update issue
+
+0.9.6
+- Added default theme
+- Creating a theme uses default instead of pink theme
+- Use standard window menubar item
+- Misc adjustments
+
+Goals:
+- Move indicator lights to top layer
+- Switch to sparkle for updates
 - Reload dock button on theming tab
+- More logging / logging to a file
+- Another attempt at fixing issues with bundle installation
+- Automatically update/replace themes from older versions
 - Merge cDock agent and cDock installer
 - cDock agent re-write
 - Lower agent energy use
-- Improve updater
 - Fix coloring labels not turning off without dock restart
-- Delete theme option
-- Dock settings use text boxes with steppers
-- Automatically remove/update/replace themes from older versions
-
-------------------------------------------------
+- Install without disabling SIP
