@@ -45,13 +45,19 @@
                 <outlet property="dockBG" destination="xgN-ah-egs" id="qqe-Vz-rJQ"/>
                 <outlet property="dockView" destination="oYt-BD-UAt" id="uca-Hf-w68"/>
                 <outlet property="dockWELL" destination="879-Dp-FKx" id="n6x-cX-ran"/>
+                <outlet property="dock_ANB" destination="3yA-Wd-coR" id="yQf-c6-NuP"/>
+                <outlet property="dock_AOB" destination="Ela-hT-cEz" id="VpE-fu-Wbw"/>
                 <outlet property="dock_DHI" destination="bNA-7v-ob0" id="eRC-4c-ERE"/>
                 <outlet property="dock_LDC" destination="20T-56-R9e" id="6jI-SO-An2"/>
                 <outlet property="dock_MOH" destination="Ekl-Tu-0OP" id="QuC-7y-1sA"/>
-                <outlet property="dock_NB" destination="Ela-hT-cEz" id="coo-Ks-lyT"/>
+                <outlet property="dock_MU" destination="tq5-LB-9FG" id="7Cv-GW-OSO"/>
+                <outlet property="dock_MWI" destination="6cR-bN-6wG" id="p2O-ZG-UdR"/>
+                <outlet property="dock_POS" destination="C8L-nA-Wbf" id="MAX-Qz-ULw"/>
                 <outlet property="dock_REC" destination="mY9-P7-eRv" id="JJJ-xW-301"/>
+                <outlet property="dock_SAI" destination="1Gp-ot-OZ0" id="8JU-9V-C0t"/>
                 <outlet property="dock_SAM" destination="gz7-gZ-nrD" id="D2J-Fj-jom"/>
                 <outlet property="dock_SOAA" destination="bc8-iU-0Cq" id="SIX-Xd-U1A"/>
+                <outlet property="dock_STO" destination="wdV-PX-U1F" id="yxi-Ly-GyJ"/>
                 <outlet property="dock_appSpacers" destination="mnT-Ux-s30" id="iWP-gb-rdb"/>
                 <outlet property="dock_autohide" destination="3jO-fp-BJv" id="oNX-WX-GcV"/>
                 <outlet property="dock_autohide_value" destination="qdU-X1-0PZ" id="85I-fg-qgr"/>
@@ -67,6 +73,7 @@
                 <outlet property="pop_info" destination="4wy-Fc-cad" id="HxW-aS-aAu"/>
                 <outlet property="pop_paypal" destination="ykr-bt-cRW" id="dYP-c3-Uii"/>
                 <outlet property="pop_toggle" destination="fw5-uI-gTM" id="H3S-DG-pN0"/>
+                <outlet property="pop_translate" destination="CrG-uZ-1Vg" id="DMR-6I-2qt"/>
                 <outlet property="poppy" destination="G5F-t2-zFR" id="QxR-qJ-voa"/>
                 <outlet property="prefView" destination="a6r-ae-gYE" id="wyV-wV-5aO"/>
                 <outlet property="reset_Dock" destination="nz5-T0-qPs" id="szw-Ft-Wy8"/>
@@ -197,14 +204,6 @@ CA
                 <rect key="frame" x="0.0" y="0.0" width="559" height="427"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wFv-R3-70q">
-                        <rect key="frame" x="187" y="368" width="186" height="59"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="cDock 2" id="vDo-7a-SBD">
-                            <font key="font" size="50" name="HelveticaNeue-UltraLight"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <button toolTip="Donate" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ykr-bt-cRW">
                         <rect key="frame" x="499" y="377" width="40" height="40"/>
                         <buttonCell key="cell" type="smallSquare" title="P" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="ZAQ-MD-cp2">
@@ -213,8 +212,8 @@ CA
                         </buttonCell>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-uI-gTM">
-                        <rect key="frame" x="466" y="384" width="29" height="26"/>
-                        <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="0AE29FAD-452D-4220-AA95-69B000B7B439" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="M5Q-Fg-6G5">
+                        <rect key="frame" x="417" y="383" width="29" height="26"/>
+                        <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="CD554DE1-F637-4F14-8E54-1E05949593DC" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="M5Q-Fg-6G5">
                             <behavior key="behavior" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -246,6 +245,34 @@ CA
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
+                    <button toolTip="Translate" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CrG-uZ-1Vg">
+                        <rect key="frame" x="451" y="377" width="40" height="40"/>
+                        <buttonCell key="cell" type="smallSquare" title="T" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="BFV-a5-qLw">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wnB-ra-Tnt">
+                        <rect key="frame" x="201" y="362" width="157" height="65"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NWC-nS-tx8">
+                                <rect key="frame" x="0.0" y="3" width="148" height="59"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="cDock" id="agb-UA-IkZ">
+                                    <font key="font" size="50" name="HelveticaNeue-UltraLight"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AlK-0h-9Ui">
+                                <rect key="frame" x="139" y="27" width="28" height="28"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="2" id="EF4-ZR-mOK">
+                                    <font key="font" size="24" name="HelveticaNeue-Thin"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </customView>
                 </subviews>
             </view>
             <point key="canvasLocation" x="-233.5" y="-144.5"/>
@@ -615,65 +642,9 @@ If you would like to theme the dock you must first disable rootless by doing the
             <rect key="frame" x="0.0" y="0.0" width="557" height="330"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button toolTip="When enabled the Dock will only show icons of running applications. Everything else except the trash will be hidden." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-iU-0Cq" userLabel="dock_activeApps">
-                    <rect key="frame" x="348" y="288" width="158" height="18"/>
-                    <buttonCell key="cell" type="check" title="Show only active apps" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="hb5-WD-fUF">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
-                <button toolTip="When enabled running applications that are hidden (⌘+H) will appear dimmed in the Dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNA-7v-ob0" userLabel="dock_dimHidden">
-                    <rect key="frame" x="348" y="268" width="158" height="18"/>
-                    <buttonCell key="cell" type="check" title="Dim hidden Items" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="LKq-aD-A0K">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
-                <button toolTip="When enabled you will not be able to adjusting the contents of the Dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20T-56-R9e" userLabel="dock_lockContent">
-                    <rect key="frame" x="348" y="248" width="158" height="18"/>
-                    <buttonCell key="cell" type="check" title="Lock Dock contents" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Cke-Od-CG6">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
-                <button toolTip="When enabled a mouse-over highlight will be visible when viewing folders in the Dock using the grid or fan view." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ekl-Tu-0OP" userLabel="dock_gridMouseOver">
-                    <rect key="frame" x="348" y="228" width="158" height="18"/>
-                    <buttonCell key="cell" type="check" title="Fan/Grid item highlight" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="QbO-FD-iXX">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
-                <button toolTip="When enabled icons will not bounce in the dock. Instead the indicator light will flash while opening applications." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ela-hT-cEz" userLabel="dock_noBounce">
-                    <rect key="frame" x="348" y="168" width="158" height="18"/>
-                    <buttonCell key="cell" type="check" title="App opening bounce" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Sxc-gD-TwQ">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
-                <button toolTip="When enabled icons will not bounce in the dock. Instead the indicator light will flash while opening applications." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yA-Wd-coR" userLabel="dock_noBounce">
-                    <rect key="frame" x="348" y="148" width="158" height="18"/>
-                    <buttonCell key="cell" type="check" title="App notification bounce" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" state="on" inset="2" id="vZq-go-gdO">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
-                <button toolTip="When enabled icons will not bounce in the dock. Instead the indicator light will flash while opening applications." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cR-bN-6wG" userLabel="dock_noBounce">
-                    <rect key="frame" x="348" y="128" width="171" height="18"/>
-                    <buttonCell key="cell" type="check" title="Minimize windows to icon" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" state="on" inset="2" id="THX-wn-H1H">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
-                <button toolTip="When enabled clicking an app in the dock will open that app while also hiding all other windows." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gz7-gZ-nrD" userLabel="dock_singleApp">
-                    <rect key="frame" x="348" y="188" width="158" height="18"/>
-                    <buttonCell key="cell" type="check" title="Single app mode" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Zdj-VQ-QNQ">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
                 <textField toolTip="Application spacers are simply a transparent icon. They can be dragged and re-arranged in the dock however you would like." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iRe-Sh-ibt">
                     <rect key="frame" x="29" y="204" width="125" height="20"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Application Spacers" id="oTP-iB-LeF">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Application spacers" id="oTP-iB-LeF">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -681,13 +652,13 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField toolTip="Document spacers are simply a transparent icon. They can be dragged and re-arranged in the dock however you would like." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DR5-71-iol">
                     <rect key="frame" x="29" y="172" width="125" height="20"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Document Spacers" id="dte-ni-DUy">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Document spacers" id="dte-ni-DUy">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField toolTip="Document spacers are simply a transparent icon. They can be dragged and re-arranged in the dock however you would like." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="onS-HL-QXj">
+                <textField toolTip="Minimiztion effect." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="onS-HL-QXj">
                     <rect key="frame" x="29" y="141" width="125" height="20"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Minimize using" id="XdU-Ie-ZcR">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -695,7 +666,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField toolTip="Document spacers are simply a transparent icon. They can be dragged and re-arranged in the dock however you would like." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2j-np-TYt">
+                <textField toolTip="Position of dock on the screen." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2j-np-TYt">
                     <rect key="frame" x="29" y="107" width="125" height="20"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Position on screen" id="cMU-Uq-yAk">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -703,28 +674,16 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mY9-P7-eRv" userLabel="dock_showRecents">
-                    <rect key="frame" x="348" y="208" width="158" height="18"/>
-                    <string key="toolTip">When enabled a recent items folder stack is added to the Dock. This can be set to show Applications, Documents, Servers, Volumes or Items with a right or control click.</string>
-                    <buttonCell key="cell" type="check" title="Show recents folder" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="PkM-Iw-dn2">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qdU-X1-0PZ">
-                    <rect key="frame" x="232" y="288" width="75" height="22"/>
+                    <rect key="frame" x="225" y="288" width="75" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="57L-Qe-6kN">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4na-SL-FRt">
-                    <rect key="frame" x="305" y="286" width="19" height="27"/>
-                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" valueWraps="YES" id="kKA-IN-ULP"/>
-                </stepper>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j3w-Fb-ebg">
-                    <rect key="frame" x="232" y="260" width="75" height="22"/>
+                    <rect key="frame" x="225" y="260" width="75" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="niu-Ov-idd">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="LVi-oV-a19"/>
                         <font key="font" metaFont="system"/>
@@ -732,10 +691,6 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yu-s0-47E">
-                    <rect key="frame" x="305" y="258" width="19" height="27"/>
-                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" valueWraps="YES" id="xsb-kb-H1h"/>
-                </stepper>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZrJ-D6-Rdd">
                     <rect key="frame" x="29" y="263" width="125" height="18"/>
                     <string key="toolTip">Magnification level of the dock. Having this option set to anything other than 0 will make your Dock icons grow larger as you move your mouse over them. Higher numbers mean larger icons. If the Magnification level is smaller than the Icon size you will not see magnification.</string>
@@ -745,7 +700,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                     </buttonCell>
                 </button>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjq-Xl-ks9">
-                    <rect key="frame" x="232" y="232" width="75" height="22"/>
+                    <rect key="frame" x="225" y="232" width="75" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="tOh-GH-KLR">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Cfp-H3-zhN"/>
                         <font key="font" metaFont="system"/>
@@ -753,12 +708,8 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ej-jK-XdC">
-                    <rect key="frame" x="305" y="230" width="19" height="27"/>
-                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" valueWraps="YES" id="jQG-UT-jpu"/>
-                </stepper>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnT-Ux-s30">
-                    <rect key="frame" x="232" y="202" width="75" height="22"/>
+                    <rect key="frame" x="225" y="202" width="75" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="vpp-Pa-QuU">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Nkf-Mk-C1Y"/>
                         <font key="font" metaFont="system"/>
@@ -766,12 +717,8 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w6b-9a-4l8">
-                    <rect key="frame" x="305" y="200" width="19" height="27"/>
-                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" valueWraps="YES" id="K7R-46-h0J"/>
-                </stepper>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yJ-La-1QQ">
-                    <rect key="frame" x="232" y="172" width="75" height="22"/>
+                    <rect key="frame" x="225" y="172" width="75" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="7Jx-1M-GA4">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="hSt-Xq-cgE"/>
                         <font key="font" metaFont="system"/>
@@ -779,10 +726,6 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <stepper horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WX8-1h-sQH">
-                    <rect key="frame" x="305" y="170" width="19" height="27"/>
-                    <stepperCell key="cell" continuous="YES" alignment="left" maxValue="100" valueWraps="YES" id="0n5-qI-SO6"/>
-                </stepper>
                 <button toolTip="Autohide speed for the dock. High numbers means quicker hiding." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jO-fp-BJv">
                     <rect key="frame" x="29" y="290" width="125" height="18"/>
                     <buttonCell key="cell" type="check" title="Autohide" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ehu-9B-gjj">
@@ -792,7 +735,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <textField toolTip="Size of the dock icons in square pixels." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-Qa-jCb">
                     <rect key="frame" x="29" y="236" width="106" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Icon Size" id="LKR-J6-VaV">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Icon size" id="LKR-J6-VaV">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -808,36 +751,32 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <action selector="applyDockChanges:" target="fOu-kz-Wle" id="SfQ-Gk-mXN"/>
                     </connections>
                 </button>
-                <button toolTip="When enabled icons will not bounce in the dock. Instead the indicator light will flash while opening applications." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gp-ot-OZ0" userLabel="dock_noBounce">
-                    <rect key="frame" x="348" y="108" width="158" height="18"/>
-                    <buttonCell key="cell" type="check" title="Show app indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" enabled="NO" state="on" inset="2" id="uPU-qI-yPq">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                </button>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tq5-LB-9FG">
-                    <rect key="frame" x="195" y="137" width="129" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Genie effect" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Ngj-pY-C2i" id="dUo-T4-vPr">
+                    <rect key="frame" x="198" y="137" width="105" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="dUo-T4-vPr">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="VL5-ik-idf">
                             <items>
-                                <menuItem title="Genie effect" state="on" id="Ngj-pY-C2i"/>
-                                <menuItem title="Scale effect" id="pf1-qg-fYM"/>
+                                <menuItem title="Genie" id="Ngj-pY-C2i"/>
+                                <menuItem title="Scale" id="pf1-qg-fYM"/>
+                                <menuItem title="Suck" id="g40-bw-px9">
+                                    <modifierMask key="keyEquivalentModifierMask"/>
+                                </menuItem>
                             </items>
                         </menu>
                     </popUpButtonCell>
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-nA-Wbf">
-                    <rect key="frame" x="195" y="104" width="129" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Right" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="x2r-wT-GUT" id="jTd-wu-hX0">
+                    <rect key="frame" x="198" y="104" width="105" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="jTd-wu-hX0">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="tao-uu-GMh">
                             <items>
                                 <menuItem title="Left" id="SuF-fH-wXg"/>
                                 <menuItem title="Bottom" id="ZeP-B9-itF"/>
-                                <menuItem title="Right" state="on" id="x2r-wT-GUT"/>
+                                <menuItem title="Right" id="x2r-wT-GUT"/>
                             </items>
                         </menu>
                     </popUpButtonCell>
@@ -847,6 +786,84 @@ If you would like to theme the dock you must first disable rootless by doing the
                     <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ohP-rP-LlR">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled the Dock will only show icons of running applications. Everything else except the trash will be hidden." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-iU-0Cq" userLabel="dock_activeApps">
+                    <rect key="frame" x="352" y="294" width="158" height="18"/>
+                    <buttonCell key="cell" type="check" title="Show only active apps" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="hb5-WD-fUF">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled running applications that are hidden (⌘+H) will appear dimmed in the Dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNA-7v-ob0" userLabel="dock_dimHidden">
+                    <rect key="frame" x="352" y="274" width="158" height="18"/>
+                    <buttonCell key="cell" type="check" title="Dim hidden Items" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="LKq-aD-A0K">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled you will not be able to adjusting the contents of the Dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20T-56-R9e" userLabel="dock_lockContent">
+                    <rect key="frame" x="352" y="254" width="158" height="18"/>
+                    <buttonCell key="cell" type="check" title="Lock dock contents" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Cke-Od-CG6">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled a mouse-over highlight will be visible when viewing folders in the Dock using the grid or fan view." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ekl-Tu-0OP" userLabel="dock_gridMouseOver">
+                    <rect key="frame" x="352" y="234" width="158" height="18"/>
+                    <buttonCell key="cell" type="check" title="Grid highlight" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="QbO-FD-iXX">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled icons bounce in the dock when opening." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ela-hT-cEz" userLabel="dock_noBounce">
+                    <rect key="frame" x="352" y="174" width="158" height="18"/>
+                    <buttonCell key="cell" type="check" title="App opening bounce" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Sxc-gD-TwQ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled icons will bounce in the dock when the app requires interaction." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yA-Wd-coR" userLabel="dock_noBounce">
+                    <rect key="frame" x="352" y="154" width="158" height="18"/>
+                    <buttonCell key="cell" type="check" title="App notification bounce" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="vZq-go-gdO">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled windows will minimize into the appication dock icon." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cR-bN-6wG" userLabel="dock_noBounce">
+                    <rect key="frame" x="352" y="134" width="171" height="18"/>
+                    <buttonCell key="cell" type="check" title="Minimize windows to icon" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="THX-wn-H1H">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled clicking an app in the dock will open that app while also hiding all other windows." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gz7-gZ-nrD" userLabel="dock_singleApp">
+                    <rect key="frame" x="352" y="194" width="158" height="18"/>
+                    <buttonCell key="cell" type="check" title="Single app mode" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Zdj-VQ-QNQ">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mY9-P7-eRv" userLabel="dock_showRecents">
+                    <rect key="frame" x="352" y="214" width="158" height="18"/>
+                    <string key="toolTip">When enabled a recent items folder stack is added to the Dock. This can be set to show Applications, Documents, Servers, Volumes or Items with a right or control click.</string>
+                    <buttonCell key="cell" type="check" title="Show recents folder" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="PkM-Iw-dn2">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled open applications will show an idicator below their icon in the dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gp-ot-OZ0" userLabel="dock_noBounce">
+                    <rect key="frame" x="352" y="114" width="158" height="18"/>
+                    <buttonCell key="cell" type="check" title="Show app indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="uPU-qI-yPq">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="When enabled open applications will show an idicator below their icon in the dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdV-PX-U1F" userLabel="dock_noBounce">
+                    <rect key="frame" x="352" y="94" width="158" height="18"/>
+                    <buttonCell key="cell" type="check" title="Scroll gestures" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="W0e-F8-ibA">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
                     </buttonCell>
                 </button>
             </subviews>
@@ -870,12 +887,6 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                     </buttonCell>
                 </button>
-                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="cMe-aN-kwV">
-                    <rect key="frame" x="73" y="163" width="96" height="5"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
-                </box>
                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="z1Y-5o-l7p">
                     <rect key="frame" x="80" y="307" width="96" height="5"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
@@ -904,14 +915,14 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <rect key="frame" x="1" y="1" width="290" height="288"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView ambiguous="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="5Cs-ct-PMs">
+                            <textView ambiguous="YES" editable="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="5Cs-ct-PMs">
                                 <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="290" height="288"/>
+                                <size key="minSize" width="288" height="288"/>
                                 <size key="maxSize" width="896" height="10000000"/>
                                 <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="290" height="288"/>
+                                <size key="minSize" width="288" height="288"/>
                                 <size key="maxSize" width="896" height="10000000"/>
                             </textView>
                         </subviews>
@@ -926,13 +937,6 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zw3-ty-ncV">
-                    <rect key="frame" x="14" y="117" width="229" height="32"/>
-                    <buttonCell key="cell" type="push" title="Disable Theming" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kaK-gT-owJ">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cwD-h3-QtY">
                     <rect key="frame" x="14" y="34" width="229" height="32"/>
                     <buttonCell key="cell" type="push" title="Uninstall SIMBL" bezelStyle="rounded" alignment="center" enabled="NO" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tNV-ZK-DXF">
@@ -947,12 +951,26 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zw3-ty-ncV">
+                    <rect key="frame" x="14" y="100" width="229" height="32"/>
+                    <buttonCell key="cell" type="push" title="Disable Theming" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kaK-gT-owJ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1V-3Y-YRa">
+                    <rect key="frame" x="18" y="225" width="221" height="18"/>
+                    <buttonCell key="cell" type="check" title="Instant tool tips" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="Avb-hb-mxv">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
+                    </buttonCell>
+                </button>
             </subviews>
             <point key="canvasLocation" x="387.5" y="-81"/>
         </customView>
     </objects>
     <resources>
-        <image name="0AE29FAD-452D-4220-AA95-69B000B7B439" width="1" height="1">
+        <image name="CD554DE1-F637-4F14-8E54-1E05949593DC" width="1" height="1">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

@@ -254,34 +254,26 @@ NSString* runCommand(NSString * commandToRun) {
         }
     }
     
+    NSArray *orientations = [NSArray arrayWithObjects:@"left", @"bottom", @"right", nil];
+    NSArray *mineffects = [NSArray arrayWithObjects:@"genie", @"scale", @"suck", nil];
+    
     [prefd setObject:[NSNumber numberWithBool:[_dock_SOAA state]] forKey:@"static-only"];
     [prefd setObject:[NSNumber numberWithBool:[_dock_DHI state]] forKey:@"showhidden"];
     [prefd setObject:[NSNumber numberWithBool:[_dock_LDC state]] forKey:@"contents-immutable"];
     [prefd setObject:[NSNumber numberWithBool:[_dock_MOH state]] forKey:@"mouse-over-hilite-stack"];
     [prefd setObject:[NSNumber numberWithBool:[_dock_SAM state]] forKey:@"single-app"];
-    
-    [prefd setObject:[NSNumber numberWithBool:[_dock_NB state]] forKey:@"no-bouncing"];
-    [prefd setObject:[NSNumber numberWithBool:(1 - [_dock_NB state])] forKey:@"launchanim"];
-    
+    [prefd setObject:[NSNumber numberWithBool:[_dock_ANB state]] forKey:@"no-bouncing"];
+    [prefd setObject:[NSNumber numberWithBool:[_dock_AOB state]] forKey:@"launchanim"];
+    [prefd setObject:[NSNumber numberWithBool:[_dock_SAI state]] forKey:@"show-process-indicators"];
+    [prefd setObject:[NSNumber numberWithBool:[_dock_MWI state]] forKey:@"minimize-to-application"];
+    [prefd setObject:[NSNumber numberWithBool:[_dock_STO state]] forKey:@"scroll-to-open"];
+    [prefd setObject:[NSNumber numberWithBool:[_dock_magnification state]] forKey:@"magnification"];
+    [prefd setObject:[NSNumber numberWithBool:[_dock_autohide state]] forKey:@"autohide"];
     [prefd setObject:[NSNumber numberWithFloat:[_dock_tilesize floatValue]] forKey:@"tilesize"];
-    
-    if ([_dock_magnification state] == NSOnState) {
-        [prefd setObject:[NSNumber numberWithBool:true] forKey:@"magnification"];
-        [prefd setObject:[NSNumber numberWithFloat:[_dock_magnification_value floatValue]] forKey:@"largesize"];
-    }
-    else
-    {
-        [prefd setObject:[NSNumber numberWithBool:false] forKey:@"magnification"];
-    }
-    
-    if ([_dock_autohide state] == NSOnState) {
-        [prefd setObject:[NSNumber numberWithBool:true] forKey:@"autohide"];
-        [prefd setObject:[NSNumber numberWithFloat:3.0 - [_dock_autohide_value floatValue]] forKey:@"autohide-time-modifier"];
-    }
-    else
-    {
-        [prefd setObject:[NSNumber numberWithBool:false] forKey:@"autohide"];
-    }
+    [prefd setObject:[NSNumber numberWithFloat:[_dock_magnification_value floatValue]] forKey:@"largesize"];
+    [prefd setObject:[NSNumber numberWithFloat:3.0 - [_dock_autohide_value floatValue]] forKey:@"autohide-time-modifier"];
+    [prefd setObject:[orientations objectAtIndex:[_dock_POS indexOfSelectedItem]] forKey:@"orientation"];
+    [prefd setObject:[mineffects objectAtIndex:[_dock_MU indexOfSelectedItem]] forKey:@"mineffect"];
     
     [prefd writeToFile:@"/tmp/dock.plist" atomically:YES];
     system("defaults import com.apple.dock /tmp/dock.plist");
@@ -481,19 +473,26 @@ NSString* runCommand(NSString * commandToRun) {
     [_dock_docSpacers setFormatter:_customFormatter];
     [_dock_tilesize setFormatter:_customFormatter];
     
+    NSArray *orientations = [NSArray arrayWithObjects:@"left", @"bottom", @"right", nil];
+    NSArray *mineffects = [NSArray arrayWithObjects:@"genie", @"scale", @"suck", nil];
+    
     [_dock_SOAA setState:[[prefd objectForKey:@"static-only"] integerValue]];
     [_dock_DHI setState:[[prefd objectForKey:@"showhidden"] integerValue]];
     [_dock_LDC setState:[[prefd objectForKey:@"contents-immutable"] integerValue]];
     [_dock_MOH setState:[[prefd objectForKey:@"mouse-over-hilite-stack"] integerValue]];
     [_dock_SAM setState:[[prefd objectForKey:@"single-app"] integerValue]];
-    [_dock_NB setState:[[prefd objectForKey:@"no-bouncing"] integerValue]];
+    [_dock_ANB setState:[[prefd objectForKey:@"no-bouncing"] integerValue]];
     [_dock_autohide setState:[[prefd objectForKey:@"autohide"] integerValue]];
     [_dock_magnification setState:[[prefd objectForKey:@"magnification"] integerValue]];
     [_dock_magnification_value setFloatValue:[[prefd objectForKey:@"largesize"] integerValue]];
     [_dock_tilesize setFloatValue:[[prefd objectForKey:@"tilesize"] integerValue]];
-    
-    if ([prefd objectForKey:@"autohide-time-modifier"])
-        [_dock_autohide_value setFloatValue:3.0 - [[prefd objectForKey:@"autohide-time-modifier"] floatValue]];
+    [_dock_AOB setState:[[prefd objectForKey:@"launchanim"] integerValue]];
+    [_dock_SAI setState:[[prefd objectForKey:@"show-process-indicators"] integerValue]];
+    [_dock_MWI setState:[[prefd objectForKey:@"minimize-to-application"] integerValue]];
+    [_dock_STO setState:[[prefd objectForKey:@"scroll-to-open"] integerValue]];
+    [_dock_POS selectItemAtIndex:[orientations indexOfObject:[prefd objectForKey:@"orientation"]]];
+    [_dock_MU selectItemAtIndex:[mineffects indexOfObject:[prefd objectForKey:@"mineffect"]]];
+    [_dock_autohide_value setFloatValue:3.0 - [[prefd objectForKey:@"autohide-time-modifier"] floatValue]];
     
     NSString *find = @"spacer-tile";
     
@@ -738,6 +737,8 @@ NSString* runCommand(NSString * commandToRun) {
     [copo setTitle:@"cDock 2"];
     
     [self tooltipToggle:nil];
+    if ([[prefCD objectForKey:@"tooltips"] boolValue])
+        [self tooltipToggle:nil];
     
     // Directory check
     [self dirCheck:themeFldr];
@@ -803,6 +804,10 @@ NSString* runCommand(NSString * commandToRun) {
     [_pop_paypal setImage:[NSImage imageNamed:@"heart2.png"]];
     [[_pop_paypal cell] setImageScaling:NSImageScaleProportionallyUpOrDown];
     [_pop_paypal setAction:@selector(donate:)];
+    
+    [_pop_translate setImage:[NSImage imageNamed:@"translate.png"]];
+    [[_pop_translate cell] setImageScaling:NSImageScaleProportionallyUpOrDown];
+    [_pop_translate setAction:@selector(translate:)];
     
     [_pop_github setImage:[NSImage imageNamed:@"github.png"]];
     [[_pop_github cell] setImageScaling:NSImageScaleProportionallyUpOrDown];
@@ -924,12 +929,11 @@ NSString* runCommand(NSString * commandToRun) {
     NSToolTipManager *test = [NSToolTipManager sharedToolTipManager];
     if (showTooltips)
     {
-        showTooltips = false;
         [test setInitialToolTipDelay:0.1];
     } else {
-        showTooltips = true;
-        [test setInitialToolTipDelay:5];
+        [test setInitialToolTipDelay:2];
     }
+    showTooltips = !showTooltips;
 }
 
 - (IBAction)showAboutWindow:(id)sender {
@@ -1328,6 +1332,12 @@ NSString* runCommand(NSString * commandToRun) {
             }
         }
     }
+}
+
+- (IBAction)translate:(id)sender {
+    NSString *myURL = [[NSBundle mainBundle] pathForResource:@"MyApp"
+                                                      ofType:@"strings"];
+    [[NSWorkspace sharedWorkspace] openFile:myURL];
 }
 
 - (IBAction)send_email:(id)sender {

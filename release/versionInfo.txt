@@ -1,14 +1,23 @@
-cDock 2		: 0.9.10 (1454)
-Bundle		: 0.11.1 (1961)
+cDock 2		: 0.9.11 (1503)
+Bundle		: 0.11.1 (2012)
 SIMBL		: 0.9.10
-Build Date 	: Dec / 27 / 2015
+Build Date 	: Jan / 02 / 2016
+
+0.9.11
+- Added more options to dock settings tab
+- Added translate button to menubar
+- All options in dock settings tab now enabled
+- Shortened long tool tip popover time
+- Removed steppers in dock settings tab
+- Changelog text not editable
+- Minor UI adjustments
 
 0.9.10
 - Improved dock settings tab
 - Show in Finder reveals theme folder
-- UI adjustments
 - Changelog shows in preferences tab
 - Reset dock moved to dock settings tab
+- Minor UI adjustments
 
 0.9.9
 - Delete theme option
@@ -23,7 +32,6 @@ Build Date 	: Dec / 27 / 2015
 - Fix updater leaving agent child processes running
 - Fix cDock agent looking for wrong updates
 - Fix Show icon reflection not turning off without Dock reset
-- Don't try removing Opee Framework when installing SIMBL
 - Updated credits
 - Dock icon size minimum changed to 8 from 16
 - Restart Agent when cDock opens
@@ -40,11 +48,11 @@ Build Date 	: Dec / 27 / 2015
 - Misc adjustments
 
 Goals:
+- Improved formatters for dock settings
 - Move indicator lights to top layer
 - Switch to sparkle for updates
 - Reload dock button on theming tab
 - More logging / logging to a file
-- Another attempt at fixing issues with bundle installation
 - Automatically update/replace themes from older versions
 - Merge cDock agent and cDock installer
 - cDock agent re-write

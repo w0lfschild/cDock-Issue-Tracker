@@ -29,6 +29,9 @@
 		FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13C1B81B5BC00F16D5E /* fishhook.c */; };
 		FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */; };
 		FB14DA101B96482B00C52E53 /* cd_ECMaterial10.m in Sources */ = {isa = PBXBuildFile; fileRef = FB14DA0F1B96482B00C52E53 /* cd_ECMaterial10.m */; };
+		FB1CCC371C3875A3003D5BDC /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F7081B8E433000DF2E91 /* INAppStoreWindow.m */; };
+		FB1CCC381C3875E3003D5BDC /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F70B1B8E433000DF2E91 /* INWindowButton.m */; };
+		FB1CCC3A1C388871003D5BDC /* translate.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCC391C388871003D5BDC /* translate.png */; };
 		FB1E22731C28E4310085E29A /* cd_DOCKFloor9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1E22721C28E4310085E29A /* cd_DOCKFloor9.m */; };
 		FB1E22761C29027E0085E29A /* cd_DOCKIndicator9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1E22751C29027E0085E29A /* cd_DOCKIndicator9.m */; };
 		FB1E22781C2904F00085E29A /* cd_shared.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1E22771C2904F00085E29A /* cd_shared.m */; };
@@ -48,8 +51,6 @@
 		FBCA39101B96DD46003570BA /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCA390F1B96DD46003570BA /* heart2.png */; };
 		FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */; };
 		FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6F41B8D3A3600DF2E91 /* themes */; };
-		FBD1F70F1B8E433000DF2E91 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F7081B8E433000DF2E91 /* INAppStoreWindow.m */; };
-		FBD1F7101B8E433000DF2E91 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F70B1B8E433000DF2E91 /* INWindowButton.m */; };
 		FBD1F7211B8E4EA600DF2E91 /* WAYAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F71D1B8E4EA600DF2E91 /* WAYAppStoreWindow.m */; };
 		FBD1F7221B8E4EA600DF2E91 /* WAYWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F7201B8E4EA600DF2E91 /* WAYWindow.m */; };
 		FBD882291B98055F007D4F84 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD882281B98055F007D4F84 /* github.png */; };
@@ -67,6 +68,9 @@
 		FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = ZKSwizzle/ZKSwizzle.h; sourceTree = "<group>"; };
 		FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = ZKSwizzle/ZKSwizzle.m; sourceTree = "<group>"; };
 		FB14DA0F1B96482B00C52E53 /* cd_ECMaterial10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_ECMaterial10.m; path = cDock/cd_ECMaterial10.m; sourceTree = SOURCE_ROOT; };
+		FB1CCC391C388871003D5BDC /* translate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = translate.png; sourceTree = "<group>"; };
+		FB1CCC3B1C388CDE003D5BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyApp.xib; sourceTree = "<group>"; };
+		FB1CCC3C1C388CF4003D5BDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyApp.strings; sourceTree = "<group>"; };
 		FB1E22721C28E4310085E29A /* cd_DOCKFloor9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cd_DOCKFloor9.m; sourceTree = SOURCE_ROOT; };
 		FB1E22741C28E53C0085E29A /* cd_shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cd_shared.h; sourceTree = SOURCE_ROOT; };
 		FB1E22751C29027E0085E29A /* cd_DOCKIndicator9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cd_DOCKIndicator9.m; sourceTree = SOURCE_ROOT; };
@@ -87,8 +91,6 @@
 		FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBB2AB4B1BC0A5BD00319A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FBB2AB4D1BC0A5BD00319A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBB740F11B9A4482000F84E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyApp.xib; sourceTree = "<group>"; };
-		FBB740F41B9A44A9000F84E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyApp.strings; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBCA390F1B96DD46003570BA /* heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart2.png; sourceTree = "<group>"; };
@@ -107,7 +109,6 @@
 		FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDE03701B5ED1EE00C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBE661B91C294B7D004AE953 /* changeLOG.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = changeLOG.rtf; sourceTree = "<group>"; };
-		FBE7BA0F1B9D41EB005CA8F4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/MyApp.strings; sourceTree = "<group>"; };
 		FBE843521B641CD100F87E50 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = cDock/Preferences/Preferences.h; sourceTree = SOURCE_ROOT; };
 		FBE843531B641CD100F87E50 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = cDock/Preferences/Preferences.m; sourceTree = SOURCE_ROOT; };
 		FBE843581B641CEC00F87E50 /* cd_DOCKIndicator10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKIndicator10.m; path = cDock/cd_DOCKIndicator10.m; sourceTree = SOURCE_ROOT; };
@@ -337,6 +338,7 @@
 				FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */,
 				FBD882281B98055F007D4F84 /* github.png */,
 				FBCA390F1B96DD46003570BA /* heart2.png */,
+				FB1CCC391C388871003D5BDC /* translate.png */,
 				FBE661B91C294B7D004AE953 /* changeLOG.rtf */,
 			);
 			name = Resource;
@@ -501,6 +503,7 @@
 				FBCA39101B96DD46003570BA /* heart2.png in Resources */,
 				FBD882291B98055F007D4F84 /* github.png in Resources */,
 				FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */,
+				FB1CCC3A1C388871003D5BDC /* translate.png in Resources */,
 				FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */,
 				7948B0DD1B98D4C40093DD9D /* PFAboutWindow.xib in Resources */,
 				FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */,
@@ -574,10 +577,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB1CCC381C3875E3003D5BDC /* INWindowButton.m in Sources */,
+				FB1CCC371C3875A3003D5BDC /* INAppStoreWindow.m in Sources */,
 				FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */,
-				FBD1F7101B8E433000DF2E91 /* INWindowButton.m in Sources */,
 				FBD1F7221B8E4EA600DF2E91 /* WAYWindow.m in Sources */,
-				FBD1F70F1B8E433000DF2E91 /* INAppStoreWindow.m in Sources */,
 				FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */,
 				FBF610611BC0362E00FDCCA4 /* main.m in Sources */,
 				FBD1F7211B8E4EA600DF2E91 /* WAYAppStoreWindow.m in Sources */,
@@ -599,9 +602,8 @@
 		FBB740F21B9A4482000F84E3 /* MyApp.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FBB740F11B9A4482000F84E3 /* Base */,
-				FBB740F41B9A44A9000F84E3 /* en */,
-				FBE7BA0F1B9D41EB005CA8F4 /* fr */,
+				FB1CCC3B1C388CDE003D5BDC /* Base */,
+				FB1CCC3C1C388CF4003D5BDC /* en */,
 			);
 			name = MyApp.xib;
 			path = "cDock-GUI";

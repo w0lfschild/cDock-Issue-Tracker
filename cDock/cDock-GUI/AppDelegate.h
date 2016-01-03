@@ -44,6 +44,7 @@
 @property (weak) IBOutlet NSButton *pop_paypal;
 @property (weak) IBOutlet NSButton *pop_email;
 @property (weak) IBOutlet NSButton *pop_github;
+@property (weak) IBOutlet NSButton *pop_translate;
 
 // Views
 @property (weak) IBOutlet NSTabView *tabView;
@@ -103,15 +104,23 @@
 @property (weak) IBOutlet NSButton *cd_pictureBackground;
 
 // Dock settings
-@property (weak) IBOutlet NSButton *dock_SOAA;
-@property (weak) IBOutlet NSButton *dock_DHI;
-@property (weak) IBOutlet NSButton *dock_LDC;
-@property (weak) IBOutlet NSButton *dock_MOH;
-@property (weak) IBOutlet NSButton *dock_NB;
-@property (weak) IBOutlet NSButton *dock_SAM;
-@property (weak) IBOutlet NSButton *dock_REC;
+@property (weak) IBOutlet NSButton *dock_SOAA;// show only active apps
+@property (weak) IBOutlet NSButton *dock_DHI; // dim hidden items
+@property (weak) IBOutlet NSButton *dock_LDC; // lock dock contents
+@property (weak) IBOutlet NSButton *dock_MOH; // mouse over highlight
+@property (weak) IBOutlet NSButton *dock_AOB; // app opening bounce
+@property (weak) IBOutlet NSButton *dock_SAM; // single app mode
+@property (weak) IBOutlet NSButton *dock_REC; // recents folder
+@property (weak) IBOutlet NSButton *dock_MWI; // minimize window to icon
+@property (weak) IBOutlet NSButton *dock_SAI; // show icon indicators
+@property (weak) IBOutlet NSButton *dock_ANB; // app notification bounce
+@property (weak) IBOutlet NSButton *dock_STO; // scroll to open
+
 @property (weak) IBOutlet NSButton *dock_autohide;
 @property (weak) IBOutlet NSButton *dock_magnification;
+
+@property (weak) IBOutlet NSPopUpButton *dock_POS;
+@property (weak) IBOutlet NSPopUpButton *dock_MU;
 
 @property (weak) IBOutlet NSTextField *dock_autohide_value;
 @property (weak) IBOutlet NSTextField *dock_magnification_value;
