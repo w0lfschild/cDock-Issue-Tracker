@@ -32,9 +32,6 @@
 		FB1CCC371C3875A3003D5BDC /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F7081B8E433000DF2E91 /* INAppStoreWindow.m */; };
 		FB1CCC381C3875E3003D5BDC /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F70B1B8E433000DF2E91 /* INWindowButton.m */; };
 		FB1CCC3A1C388871003D5BDC /* translate.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCC391C388871003D5BDC /* translate.png */; };
-		FB1E22731C28E4310085E29A /* cd_DOCKFloor9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1E22721C28E4310085E29A /* cd_DOCKFloor9.m */; };
-		FB1E22761C29027E0085E29A /* cd_DOCKIndicator9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1E22751C29027E0085E29A /* cd_DOCKIndicator9.m */; };
-		FB1E22781C2904F00085E29A /* cd_shared.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1E22771C2904F00085E29A /* cd_shared.m */; };
 		FB3EC0E71B8EC35800272131 /* cDock-Agent.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E61B8EC35700272131 /* cDock-Agent.app */; };
 		FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */; };
 		FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0EA1B8EE26D00272131 /* cDock.bundle */; };
@@ -43,6 +40,9 @@
 		FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */; };
 		FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */; };
 		FB7ABC661B6AEAA5001D7E5A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */; };
+		FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C841C3A307E00192556 /* cd_shared.m */; };
+		FB8E2C881C3A309100192556 /* cd_DOCKFloor9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C861C3A309100192556 /* cd_DOCKFloor9.m */; };
+		FB8E2C891C3A309100192556 /* cd_DOCKIndicator9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C871C3A309100192556 /* cd_DOCKIndicator9.m */; };
 		FBB2AB441BC0A5BD00319A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */; };
 		FBB2AB471BC0A5BD00319A8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB461BC0A5BD00319A8A /* main.m */; };
 		FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */; };
@@ -71,10 +71,6 @@
 		FB1CCC391C388871003D5BDC /* translate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = translate.png; sourceTree = "<group>"; };
 		FB1CCC3B1C388CDE003D5BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyApp.xib; sourceTree = "<group>"; };
 		FB1CCC3C1C388CF4003D5BDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyApp.strings; sourceTree = "<group>"; };
-		FB1E22721C28E4310085E29A /* cd_DOCKFloor9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cd_DOCKFloor9.m; sourceTree = SOURCE_ROOT; };
-		FB1E22741C28E53C0085E29A /* cd_shared.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cd_shared.h; sourceTree = SOURCE_ROOT; };
-		FB1E22751C29027E0085E29A /* cd_DOCKIndicator9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cd_DOCKIndicator9.m; sourceTree = SOURCE_ROOT; };
-		FB1E22771C2904F00085E29A /* cd_shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cd_shared.m; sourceTree = SOURCE_ROOT; };
 		FB3EC0E61B8EC35700272131 /* cDock-Agent.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Agent.app"; sourceTree = "<group>"; };
 		FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Installer.app"; sourceTree = "<group>"; };
 		FB3EC0EA1B8EE26D00272131 /* cDock.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = cDock.bundle; sourceTree = "<group>"; };
@@ -84,6 +80,10 @@
 		FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAboutWindowController.m; path = PFAboutWindow/PFAboutWindowController.m; sourceTree = "<group>"; };
 		FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = PFAboutWindow/Credits.rtf; sourceTree = "<group>"; };
+		FB8E2C831C3A307400192556 /* cd_shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cd_shared.h; path = cDock/cd_shared.h; sourceTree = SOURCE_ROOT; };
+		FB8E2C841C3A307E00192556 /* cd_shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_shared.m; path = cDock/cd_shared.m; sourceTree = SOURCE_ROOT; };
+		FB8E2C861C3A309100192556 /* cd_DOCKFloor9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor9.m; path = cDock/cd_DOCKFloor9.m; sourceTree = SOURCE_ROOT; };
+		FB8E2C871C3A309100192556 /* cd_DOCKIndicator9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKIndicator9.m; path = cDock/cd_DOCKIndicator9.m; sourceTree = SOURCE_ROOT; };
 		FBB2AB401BC0A5BD00319A8A /* cDock-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -167,8 +167,8 @@
 		FB1E22701C28E3B20085E29A /* 10.9 */ = {
 			isa = PBXGroup;
 			children = (
-				FB1E22721C28E4310085E29A /* cd_DOCKFloor9.m */,
-				FB1E22751C29027E0085E29A /* cd_DOCKIndicator9.m */,
+				FB8E2C861C3A309100192556 /* cd_DOCKFloor9.m */,
+				FB8E2C871C3A309100192556 /* cd_DOCKIndicator9.m */,
 			);
 			name = 10.9;
 			sourceTree = "<group>";
@@ -302,8 +302,8 @@
 		FBD71EB11B5F201900C50402 /* cDock Theming */ = {
 			isa = PBXGroup;
 			children = (
-				FB1E22741C28E53C0085E29A /* cd_shared.h */,
-				FB1E22771C2904F00085E29A /* cd_shared.m */,
+				FB8E2C831C3A307400192556 /* cd_shared.h */,
+				FB8E2C841C3A307E00192556 /* cd_shared.m */,
 				FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */,
 				FB1E22711C28E3BC0085E29A /* 10.10+ */,
 				FB1E22701C28E3B20085E29A /* 10.9 */,
@@ -560,15 +560,15 @@
 			files = (
 				FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */,
 				79D28C961B66BCB10036D668 /* cd_DOCKIndicator10.m in Sources */,
+				FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */,
 				FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */,
-				FB1E22761C29027E0085E29A /* cd_DOCKIndicator9.m in Sources */,
 				FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */,
 				79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */,
+				FB8E2C891C3A309100192556 /* cd_DOCKIndicator9.m in Sources */,
 				FB14DA101B96482B00C52E53 /* cd_ECMaterial10.m in Sources */,
-				FB1E22781C2904F00085E29A /* cd_shared.m in Sources */,
 				FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor10.m in Sources */,
 				79D28C981B66BCB40036D668 /* cd_DOCKTile.m in Sources */,
-				FB1E22731C28E4310085E29A /* cd_DOCKFloor9.m in Sources */,
+				FB8E2C881C3A309100192556 /* cd_DOCKFloor9.m in Sources */,
 				79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

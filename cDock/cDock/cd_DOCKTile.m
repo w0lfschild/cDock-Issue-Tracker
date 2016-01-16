@@ -7,6 +7,7 @@
 //extern NSInteger orient;
 double orig = 999;
 double orig2 = 999;
+bool swag = true;
 
 struct FloatRect
 {
@@ -23,14 +24,46 @@ struct FloatRect
 }
 - (void)setSelected:(BOOL)arg1;
 - (void)setLabel:(id)arg1 stripAppSuffix:(_Bool)arg2;
+- (id)layer;
+@end
+
+ZKSwizzleInterface(_CDMini, DOCKMiniView, NSObject);
+@implementation _CDMini
+
+- (id)initWithTile:(id)arg1 context:(unsigned int)arg2 window:(unsigned int)arg3 {
+    NSLog(@"abc");
+    return ZKOrig(id, arg1, arg2, arg3);
+}
+
 @end
 
 ZKSwizzleInterface(_CDTile, Tile, NSObject);
 @implementation _CDTile
 
+- (id)layer {
+//    NSLog(@"abc");
+//    CALayer *tile = ZKOrig(id);
+//    NSLog(@"%@", NSStringFromPoint(tile.position));
+//    NSLog(@"%@", ZKOrig(id));
+    return ZKOrig(id);
+}
+
 - (void)updateRect {
-    ZKOrig(void);
+//    ZKOrig(void);
+
 //    ZKHookIvar(self, struct CGRect, "fGlobalBounds") = CGRectMake(1300, 1000, 50, 50);
+//    NSObject *test = ZKHookIvar(self, NSObject*, "_miniView");
+//    CGRect frame = ZKHookIvar(test, CGRect, "_stageFrame");
+//    NSLog(@"%@", NSStringFromRect(frame));
+    
+//    struct FloatRect myFR;
+//    myFR.left = 50;
+//    myFR.top = 1000;
+//    myFR.right = 150;
+//    myFR.bottom = 1050;
+//    [self setGlobalFrame:myFR];
+    
+    ZKOrig(void);
 //    NSLog(@"%@", NSStringFromRect(ZKHookIvar(self, CGRect, "fGlobalBounds")));
 }
 
@@ -40,11 +73,9 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
 //    NSLog(@"%f", arg1.top);
 //    NSLog(@"%f", arg1.bottom);
     
-//    if (Prefs(currentStyle) == DKTheme3DStyle) {
-//        CGFloat height = (CGFloat)labs((NSInteger)arg1.top - (NSInteger)arg1.bottom);
-//        arg1.bottom -= height * 0.1;
-//        arg1.top -= height * 0.1;
-//    }
+    CGFloat height = (CGFloat)labs((NSInteger)arg1.top - (NSInteger)arg1.bottom);
+    arg1.bottom -= height * 0.1;
+    arg1.top -= height * 0.1;
     
     ZKOrig(void, arg1);
 }
@@ -67,6 +98,7 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
 
 - (void)update {
     ZKOrig(void);
+//    [self set];
     
 //    int bounce = ZKHookIvar(self, int, "bouncing");
     int bstop = ZKHookIvar(self, int, "bounceStop");

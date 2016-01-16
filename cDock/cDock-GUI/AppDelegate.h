@@ -76,7 +76,7 @@
 @property (weak) IBOutlet NSSlider *cd_borderSize;
 
 @property (weak) IBOutlet NSPopUpButton *cd_darkMode;
-@property (weak) IBOutlet NSPopUpButton *cd_theme;
+@property (weak) IBOutlet NSPopUpButton *cd_themePicker;
 
 // Color pickers
 @property (weak) IBOutlet NSButton *dockBG;

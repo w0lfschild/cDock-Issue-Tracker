@@ -530,9 +530,9 @@ NSString* runCommand(NSString * commandToRun) {
         [dirs removeObject:@".DS_Store"];
     }
     
-    [_cd_theme removeAllItems];
-    [_cd_theme addItemWithTitle:@"None" ];
-    [_cd_theme addItemsWithTitles:dirs ];
+    [_cd_themePicker removeAllItems];
+    [_cd_themePicker addItemWithTitle:@"None" ];
+    [_cd_themePicker addItemsWithTitles:dirs ];
     
     NSMutableDictionary *plist0 = [self _getcDockPlist];
     prefCD = plist0;
@@ -547,12 +547,12 @@ NSString* runCommand(NSString * commandToRun) {
     if ([[NSFileManager defaultManager] fileExistsAtPath:plist_Theme])
     {
         //        NSLog(@"Exists: %@", plist_Theme);
-        [ _cd_theme selectItemWithTitle:themeName];
+        [ _cd_themePicker selectItemWithTitle:themeName];
     }
     else
     {
         //        NSLog(@"Not Found: %@", plist_Theme);
-        [ _cd_theme selectItemWithTitle:@"None"];
+        [ _cd_themePicker selectItemWithTitle:@"None"];
     }
     
     [_cd_sizeIndicator setState:[[pref objectForKey:@"cd_sizeIndicator"] integerValue]];
@@ -693,6 +693,20 @@ NSString* runCommand(NSString * commandToRun) {
     }
     
     [_window setBackgroundColor:[NSColor whiteColor]];
+    
+//    CGDirectDisplayID displayForPoint;
+//    CGImageRef image = CGDisplayCreateImageForRect(displayForPoint, CGRectMake(2, 2, 1, 1));
+//    NSBitmapImageRep *bitmap = [[NSBitmapImageRep alloc] initWithCGImage:image];
+//    CGImageRelease(image);
+//    NSColor *color = [bitmap colorAtX:0 y:0];
+//
+//    NSLog(@"Red: %f", [color redComponent]);
+//    NSLog(@"Green: %f", [color greenComponent]);
+//    NSLog(@"Blue: %f", [color blueComponent]);
+//
+//    color = [color colorWithAlphaComponent:1];
+//    [_window setBackgroundColor:color];
+    
     [_window setMovableByWindowBackground:YES];
 }
 
@@ -917,7 +931,7 @@ NSString* runCommand(NSString * commandToRun) {
     
     prefCD = self._getcDockPlist;
     [prefCD setObject:[NSNumber numberWithBool:true] forKey:@"cd_enabled"];
-    [prefCD setObject:_cd_theme.selectedItem.title forKey:@"cd_theme"];
+    [prefCD setObject:_cd_themePicker.selectedItem.title forKey:@"cd_theme"];
     NSMutableDictionary *tmpPlist0 = prefCD;
     [tmpPlist0 writeToFile:plist_cDock atomically:YES];
     
