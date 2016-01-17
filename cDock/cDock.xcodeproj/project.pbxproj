@@ -20,26 +20,32 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		7948B0DD1B98D4C40093DD9D /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7948B0DC1B98D4C40093DD9D /* PFAboutWindow.xib */; };
 		79D28C961B66BCB10036D668 /* cd_DOCKIndicator10.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843581B641CEC00F87E50 /* cd_DOCKIndicator10.m */; };
 		79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */; };
 		79D28C981B66BCB40036D668 /* cd_DOCKTile.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */; };
 		79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843531B641CD100F87E50 /* Preferences.m */; };
+		FB09A4E11C4B275E0072C553 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4CD1C4B275E0072C553 /* INAppStoreWindow.m */; };
+		FB09A4E21C4B275E0072C553 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4D01C4B275E0072C553 /* INWindowButton.m */; };
+		FB09A4E31C4B275E0072C553 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4D31C4B275E0072C553 /* Credits.rtf */; };
+		FB09A4E41C4B275E0072C553 /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4D41C4B275E0072C553 /* EULA.rtf */; };
+		FB09A4E51C4B275E0072C553 /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4D51C4B275E0072C553 /* PFAboutWindow.xib */; };
+		FB09A4E61C4B275E0072C553 /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4D71C4B275E0072C553 /* PFAboutWindowController.m */; };
+		FB09A4E71C4B275E0072C553 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4DA1C4B275E0072C553 /* PFMoveApplication.m */; };
+		FB09A4E81C4B275E0072C553 /* WAYAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4DD1C4B275E0072C553 /* WAYAppStoreWindow.m */; };
+		FB09A4E91C4B275E0072C553 /* WAYWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4E01C4B275E0072C553 /* WAYWindow.m */; };
+		FB09A4EF1C4B27880072C553 /* donate.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4EB1C4B27880072C553 /* donate.png */; };
+		FB09A4F01C4B27880072C553 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4EC1C4B27880072C553 /* github.png */; };
+		FB09A4F11C4B27880072C553 /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4ED1C4B27880072C553 /* heart2.png */; };
+		FB09A4F21C4B27880072C553 /* translate.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4EE1C4B27880072C553 /* translate.png */; };
 		FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */; };
 		FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13C1B81B5BC00F16D5E /* fishhook.c */; };
 		FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */; };
 		FB14DA101B96482B00C52E53 /* cd_ECMaterial10.m in Sources */ = {isa = PBXBuildFile; fileRef = FB14DA0F1B96482B00C52E53 /* cd_ECMaterial10.m */; };
-		FB1CCC371C3875A3003D5BDC /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F7081B8E433000DF2E91 /* INAppStoreWindow.m */; };
-		FB1CCC381C3875E3003D5BDC /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F70B1B8E433000DF2E91 /* INWindowButton.m */; };
-		FB1CCC3A1C388871003D5BDC /* translate.png in Resources */ = {isa = PBXBuildFile; fileRef = FB1CCC391C388871003D5BDC /* translate.png */; };
 		FB3EC0E71B8EC35800272131 /* cDock-Agent.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E61B8EC35700272131 /* cDock-Agent.app */; };
 		FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */; };
 		FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0EA1B8EE26D00272131 /* cDock.bundle */; };
 		FB3EDF741B7088B000E96DC9 /* updates in Resources */ = {isa = PBXBuildFile; fileRef = FB3EDF731B7088B000E96DC9 /* updates */; };
 		FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor10.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor10.m */; };
-		FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */; };
-		FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */; };
-		FB7ABC661B6AEAA5001D7E5A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */; };
 		FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C841C3A307E00192556 /* cd_shared.m */; };
 		FB8E2C881C3A309100192556 /* cd_DOCKFloor9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C861C3A309100192556 /* cd_DOCKFloor9.m */; };
 		FB8E2C891C3A309100192556 /* cd_DOCKIndicator9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C871C3A309100192556 /* cd_DOCKIndicator9.m */; };
@@ -48,27 +54,40 @@
 		FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */; };
 		FBB2AB4C1BC0A5BD00319A8A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */; };
 		FBB740F01B9A4482000F84E3 /* MyApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB740F21B9A4482000F84E3 /* MyApp.xib */; };
-		FBCA39101B96DD46003570BA /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = FBCA390F1B96DD46003570BA /* heart2.png */; };
 		FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */; };
 		FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6F41B8D3A3600DF2E91 /* themes */; };
-		FBD1F7211B8E4EA600DF2E91 /* WAYAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F71D1B8E4EA600DF2E91 /* WAYAppStoreWindow.m */; };
-		FBD1F7221B8E4EA600DF2E91 /* WAYWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD1F7201B8E4EA600DF2E91 /* WAYWindow.m */; };
-		FBD882291B98055F007D4F84 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = FBD882281B98055F007D4F84 /* github.png */; };
 		FBE661BA1C294B7D004AE953 /* changeLOG.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBE661B91C294B7D004AE953 /* changeLOG.rtf */; };
 		FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843601B641D4A00F87E50 /* AppDelegate.m */; };
 		FBF610611BC0362E00FDCCA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF610601BC0362E00FDCCA4 /* main.m */; };
-		FBF610661BC06EC300FDCCA4 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF610651BC06EC300FDCCA4 /* PFMoveApplication.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7948B0DC1B98D4C40093DD9D /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PFAboutWindow.xib; path = PFAboutWindow/PFAboutWindow.xib; sourceTree = "<group>"; };
+		FB09A4CC1C4B275E0072C553 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
+		FB09A4CD1C4B275E0072C553 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
+		FB09A4CE1C4B275E0072C553 /* INAppStoreWindowCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindowCompatibility.h; sourceTree = "<group>"; };
+		FB09A4CF1C4B275E0072C553 /* INWindowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWindowButton.h; sourceTree = "<group>"; };
+		FB09A4D01C4B275E0072C553 /* INWindowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INWindowButton.m; sourceTree = "<group>"; };
+		FB09A4D31C4B275E0072C553 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		FB09A4D41C4B275E0072C553 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = EULA.rtf; sourceTree = "<group>"; };
+		FB09A4D51C4B275E0072C553 /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFAboutWindow.xib; sourceTree = "<group>"; };
+		FB09A4D61C4B275E0072C553 /* PFAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAboutWindowController.h; sourceTree = "<group>"; };
+		FB09A4D71C4B275E0072C553 /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAboutWindowController.m; sourceTree = "<group>"; };
+		FB09A4D91C4B275E0072C553 /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
+		FB09A4DA1C4B275E0072C553 /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
+		FB09A4DC1C4B275E0072C553 /* WAYAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYAppStoreWindow.h; sourceTree = "<group>"; };
+		FB09A4DD1C4B275E0072C553 /* WAYAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYAppStoreWindow.m; sourceTree = "<group>"; };
+		FB09A4DF1C4B275E0072C553 /* WAYWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYWindow.h; sourceTree = "<group>"; };
+		FB09A4E01C4B275E0072C553 /* WAYWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYWindow.m; sourceTree = "<group>"; };
+		FB09A4EB1C4B27880072C553 /* donate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = donate.png; path = icons/donate.png; sourceTree = "<group>"; };
+		FB09A4EC1C4B27880072C553 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = github.png; path = icons/github.png; sourceTree = "<group>"; };
+		FB09A4ED1C4B27880072C553 /* heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart2.png; path = icons/heart2.png; sourceTree = "<group>"; };
+		FB09A4EE1C4B27880072C553 /* translate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = translate.png; path = icons/translate.png; sourceTree = "<group>"; };
 		FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_Initialize.m; path = cDock/cd_Initialize.m; sourceTree = SOURCE_ROOT; };
 		FB0CF13C1B81B5BC00F16D5E /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fishhook.c; path = Fishhook/fishhook.c; sourceTree = "<group>"; };
 		FB0CF13D1B81B5BC00F16D5E /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = Fishhook/fishhook.h; sourceTree = "<group>"; };
 		FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = ZKSwizzle/ZKSwizzle.h; sourceTree = "<group>"; };
 		FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = ZKSwizzle/ZKSwizzle.m; sourceTree = "<group>"; };
 		FB14DA0F1B96482B00C52E53 /* cd_ECMaterial10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_ECMaterial10.m; path = cDock/cd_ECMaterial10.m; sourceTree = SOURCE_ROOT; };
-		FB1CCC391C388871003D5BDC /* translate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = translate.png; sourceTree = "<group>"; };
 		FB1CCC3B1C388CDE003D5BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyApp.xib; sourceTree = "<group>"; };
 		FB1CCC3C1C388CF4003D5BDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyApp.strings; sourceTree = "<group>"; };
 		FB3EC0E61B8EC35700272131 /* cDock-Agent.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Agent.app"; sourceTree = "<group>"; };
@@ -76,10 +95,6 @@
 		FB3EC0EA1B8EE26D00272131 /* cDock.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = cDock.bundle; sourceTree = "<group>"; };
 		FB3EDF731B7088B000E96DC9 /* updates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = updates; sourceTree = "<group>"; };
 		FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor10.m; path = cDock/cd_DOCKFloor10.m; sourceTree = SOURCE_ROOT; };
-		FB7ABC591B6AE234001D7E5A /* PFAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFAboutWindowController.h; path = PFAboutWindow/PFAboutWindowController.h; sourceTree = "<group>"; };
-		FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFAboutWindowController.m; path = PFAboutWindow/PFAboutWindowController.m; sourceTree = "<group>"; };
-		FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = EULA.rtf; path = PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
-		FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = PFAboutWindow/Credits.rtf; sourceTree = "<group>"; };
 		FB8E2C831C3A307400192556 /* cd_shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cd_shared.h; path = cDock/cd_shared.h; sourceTree = SOURCE_ROOT; };
 		FB8E2C841C3A307E00192556 /* cd_shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_shared.m; path = cDock/cd_shared.m; sourceTree = SOURCE_ROOT; };
 		FB8E2C861C3A309100192556 /* cd_DOCKFloor9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor9.m; path = cDock/cd_DOCKFloor9.m; sourceTree = SOURCE_ROOT; };
@@ -93,19 +108,8 @@
 		FBB2AB4D1BC0A5BD00319A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBCA390F1B96DD46003570BA /* heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart2.png; sourceTree = "<group>"; };
 		FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cDock.icns; sourceTree = "<group>"; };
 		FBD1F6F41B8D3A3600DF2E91 /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = themes; sourceTree = "<group>"; };
-		FBD1F7071B8E433000DF2E91 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
-		FBD1F7081B8E433000DF2E91 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
-		FBD1F7091B8E433000DF2E91 /* INAppStoreWindowCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindowCompatibility.h; sourceTree = "<group>"; };
-		FBD1F70A1B8E433000DF2E91 /* INWindowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWindowButton.h; sourceTree = "<group>"; };
-		FBD1F70B1B8E433000DF2E91 /* INWindowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INWindowButton.m; sourceTree = "<group>"; };
-		FBD1F71C1B8E4EA600DF2E91 /* WAYAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYAppStoreWindow.h; sourceTree = "<group>"; };
-		FBD1F71D1B8E4EA600DF2E91 /* WAYAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYAppStoreWindow.m; sourceTree = "<group>"; };
-		FBD1F71F1B8E4EA600DF2E91 /* WAYWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYWindow.h; sourceTree = "<group>"; };
-		FBD1F7201B8E4EA600DF2E91 /* WAYWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WAYWindow.m; sourceTree = "<group>"; };
-		FBD882281B98055F007D4F84 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = github.png; sourceTree = "<group>"; };
 		FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDE03701B5ED1EE00C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBE661B91C294B7D004AE953 /* changeLOG.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = changeLOG.rtf; sourceTree = "<group>"; };
@@ -117,8 +121,6 @@
 		FBE8435F1B641D4A00F87E50 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "cDock-GUI/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		FBE843601B641D4A00F87E50 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "cDock-GUI/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		FBF610601BC0362E00FDCCA4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "cDock-GUI/main.m"; sourceTree = SOURCE_ROOT; };
-		FBF610641BC06EC300FDCCA4 /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
-		FBF610651BC06EC300FDCCA4 /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,88 @@
 			name = ZKSwizzle;
 			sourceTree = "<group>";
 		};
+		FB09A4CA1C4B275E0072C553 /* INAppStoreWindow */ = {
+			isa = PBXGroup;
+			children = (
+				FB09A4CB1C4B275E0072C553 /* Extensions */,
+				FB09A4CC1C4B275E0072C553 /* INAppStoreWindow.h */,
+				FB09A4CD1C4B275E0072C553 /* INAppStoreWindow.m */,
+				FB09A4CE1C4B275E0072C553 /* INAppStoreWindowCompatibility.h */,
+				FB09A4CF1C4B275E0072C553 /* INWindowButton.h */,
+				FB09A4D01C4B275E0072C553 /* INWindowButton.m */,
+				FB09A4D11C4B275E0072C553 /* VAColorCheckbox */,
+			);
+			name = INAppStoreWindow;
+			path = resources/INAppStoreWindow;
+			sourceTree = "<group>";
+		};
+		FB09A4CB1C4B275E0072C553 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB09A4D11C4B275E0072C553 /* VAColorCheckbox */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VAColorCheckbox;
+			sourceTree = "<group>";
+		};
+		FB09A4D21C4B275E0072C553 /* PFAboutWindow */ = {
+			isa = PBXGroup;
+			children = (
+				FB09A4D31C4B275E0072C553 /* Credits.rtf */,
+				FB09A4D41C4B275E0072C553 /* EULA.rtf */,
+				FB09A4D51C4B275E0072C553 /* PFAboutWindow.xib */,
+				FB09A4D61C4B275E0072C553 /* PFAboutWindowController.h */,
+				FB09A4D71C4B275E0072C553 /* PFAboutWindowController.m */,
+			);
+			name = PFAboutWindow;
+			path = resources/PFAboutWindow;
+			sourceTree = "<group>";
+		};
+		FB09A4D81C4B275E0072C553 /* PFMoveApplication */ = {
+			isa = PBXGroup;
+			children = (
+				FB09A4D91C4B275E0072C553 /* PFMoveApplication.h */,
+				FB09A4DA1C4B275E0072C553 /* PFMoveApplication.m */,
+			);
+			name = PFMoveApplication;
+			path = resources/PFMoveApplication;
+			sourceTree = "<group>";
+		};
+		FB09A4DB1C4B275E0072C553 /* WAYAppStoreWindow */ = {
+			isa = PBXGroup;
+			children = (
+				FB09A4DC1C4B275E0072C553 /* WAYAppStoreWindow.h */,
+				FB09A4DD1C4B275E0072C553 /* WAYAppStoreWindow.m */,
+			);
+			name = WAYAppStoreWindow;
+			path = resources/WAYAppStoreWindow;
+			sourceTree = "<group>";
+		};
+		FB09A4DE1C4B275E0072C553 /* WAYWindow */ = {
+			isa = PBXGroup;
+			children = (
+				FB09A4DF1C4B275E0072C553 /* WAYWindow.h */,
+				FB09A4E01C4B275E0072C553 /* WAYWindow.m */,
+			);
+			name = WAYWindow;
+			path = resources/WAYWindow;
+			sourceTree = "<group>";
+		};
+		FB09A4EA1C4B27720072C553 /* Titlebar */ = {
+			isa = PBXGroup;
+			children = (
+				FB09A4CA1C4B275E0072C553 /* INAppStoreWindow */,
+				FB09A4DB1C4B275E0072C553 /* WAYAppStoreWindow */,
+				FB09A4DE1C4B275E0072C553 /* WAYWindow */,
+			);
+			name = Titlebar;
+			sourceTree = "<group>";
+		};
 		FB13CA031B6746D1006F3D89 /* Fishhook */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,28 +265,6 @@
 				FB14DA0F1B96482B00C52E53 /* cd_ECMaterial10.m */,
 			);
 			name = "10.10+";
-			sourceTree = "<group>";
-		};
-		FB2E5FBB1B9428CB00252697 /* Titlebar */ = {
-			isa = PBXGroup;
-			children = (
-				FBD1F71B1B8E4EA600DF2E91 /* WAYAppStoreWindow */,
-				FBD1F71E1B8E4EA600DF2E91 /* WAYWindow */,
-				FBD1F6FF1B8E433000DF2E91 /* INAppStoreWindow */,
-			);
-			name = Titlebar;
-			sourceTree = "<group>";
-		};
-		FB7ABC5E1B6AE239001D7E5A /* PFAbout */ = {
-			isa = PBXGroup;
-			children = (
-				FB7ABC651B6AEAA5001D7E5A /* Credits.rtf */,
-				FB7ABC621B6AE9F6001D7E5A /* EULA.rtf */,
-				FB7ABC591B6AE234001D7E5A /* PFAboutWindowController.h */,
-				7948B0DC1B98D4C40093DD9D /* PFAboutWindow.xib */,
-				FB7ABC5B1B6AE234001D7E5A /* PFAboutWindowController.m */,
-			);
-			name = PFAbout;
 			sourceTree = "<group>";
 		};
 		FBB2AB411BC0A5BD00319A8A /* cDock-Helper */ = {
@@ -259,36 +321,6 @@
 			path = cDock;
 			sourceTree = "<group>";
 		};
-		FBD1F6FF1B8E433000DF2E91 /* INAppStoreWindow */ = {
-			isa = PBXGroup;
-			children = (
-				FBD1F7071B8E433000DF2E91 /* INAppStoreWindow.h */,
-				FBD1F7081B8E433000DF2E91 /* INAppStoreWindow.m */,
-				FBD1F7091B8E433000DF2E91 /* INAppStoreWindowCompatibility.h */,
-				FBD1F70A1B8E433000DF2E91 /* INWindowButton.h */,
-				FBD1F70B1B8E433000DF2E91 /* INWindowButton.m */,
-			);
-			path = INAppStoreWindow;
-			sourceTree = "<group>";
-		};
-		FBD1F71B1B8E4EA600DF2E91 /* WAYAppStoreWindow */ = {
-			isa = PBXGroup;
-			children = (
-				FBD1F71C1B8E4EA600DF2E91 /* WAYAppStoreWindow.h */,
-				FBD1F71D1B8E4EA600DF2E91 /* WAYAppStoreWindow.m */,
-			);
-			path = WAYAppStoreWindow;
-			sourceTree = "<group>";
-		};
-		FBD1F71E1B8E4EA600DF2E91 /* WAYWindow */ = {
-			isa = PBXGroup;
-			children = (
-				FBD1F71F1B8E4EA600DF2E91 /* WAYWindow.h */,
-				FBD1F7201B8E4EA600DF2E91 /* WAYWindow.m */,
-			);
-			path = WAYWindow;
-			sourceTree = "<group>";
-		};
 		FBD71EAD1B5F201900C50402 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,9 +368,10 @@
 				FBD1F6F41B8D3A3600DF2E91 /* themes */,
 				FB3EDF731B7088B000E96DC9 /* updates */,
 				FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */,
-				FBD882281B98055F007D4F84 /* github.png */,
-				FBCA390F1B96DD46003570BA /* heart2.png */,
-				FB1CCC391C388871003D5BDC /* translate.png */,
+				FB09A4EB1C4B27880072C553 /* donate.png */,
+				FB09A4EC1C4B27880072C553 /* github.png */,
+				FB09A4ED1C4B27880072C553 /* heart2.png */,
+				FB09A4EE1C4B27880072C553 /* translate.png */,
 				FBE661B91C294B7D004AE953 /* changeLOG.rtf */,
 			);
 			name = Resource;
@@ -358,20 +391,11 @@
 		FBF610621BC06E8F00FDCCA4 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				FBF610631BC06EC300FDCCA4 /* PFMoveApplication */,
-				FB7ABC5E1B6AE239001D7E5A /* PFAbout */,
-				FB2E5FBB1B9428CB00252697 /* Titlebar */,
+				FB09A4EA1C4B27720072C553 /* Titlebar */,
+				FB09A4D21C4B275E0072C553 /* PFAboutWindow */,
+				FB09A4D81C4B275E0072C553 /* PFMoveApplication */,
 			);
 			name = Sources;
-			sourceTree = "<group>";
-		};
-		FBF610631BC06EC300FDCCA4 /* PFMoveApplication */ = {
-			isa = PBXGroup;
-			children = (
-				FBF610641BC06EC300FDCCA4 /* PFMoveApplication.h */,
-				FBF610651BC06EC300FDCCA4 /* PFMoveApplication.m */,
-			);
-			path = PFMoveApplication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -495,18 +519,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB7ABC661B6AEAA5001D7E5A /* Credits.rtf in Resources */,
+				FB09A4F01C4B27880072C553 /* github.png in Resources */,
 				FB3EDF741B7088B000E96DC9 /* updates in Resources */,
+				FB09A4F21C4B27880072C553 /* translate.png in Resources */,
 				FBE661BA1C294B7D004AE953 /* changeLOG.rtf in Resources */,
+				FB09A4F11C4B27880072C553 /* heart2.png in Resources */,
 				FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */,
 				FB3EC0E71B8EC35800272131 /* cDock-Agent.app in Resources */,
-				FBCA39101B96DD46003570BA /* heart2.png in Resources */,
-				FBD882291B98055F007D4F84 /* github.png in Resources */,
+				FB09A4EF1C4B27880072C553 /* donate.png in Resources */,
 				FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */,
-				FB1CCC3A1C388871003D5BDC /* translate.png in Resources */,
+				FB09A4E51C4B275E0072C553 /* PFAboutWindow.xib in Resources */,
+				FB09A4E41C4B275E0072C553 /* EULA.rtf in Resources */,
 				FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */,
-				7948B0DD1B98D4C40093DD9D /* PFAboutWindow.xib in Resources */,
-				FB7ABC641B6AE9F6001D7E5A /* EULA.rtf in Resources */,
+				FB09A4E31C4B275E0072C553 /* Credits.rtf in Resources */,
 				FBB740F01B9A4482000F84E3 /* MyApp.xib in Resources */,
 				FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */,
 			);
@@ -577,14 +602,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB1CCC381C3875E3003D5BDC /* INWindowButton.m in Sources */,
-				FB1CCC371C3875A3003D5BDC /* INAppStoreWindow.m in Sources */,
+				FB09A4E81C4B275E0072C553 /* WAYAppStoreWindow.m in Sources */,
+				FB09A4E91C4B275E0072C553 /* WAYWindow.m in Sources */,
+				FB09A4E21C4B275E0072C553 /* INWindowButton.m in Sources */,
 				FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */,
-				FBD1F7221B8E4EA600DF2E91 /* WAYWindow.m in Sources */,
-				FB7ABC5D1B6AE234001D7E5A /* PFAboutWindowController.m in Sources */,
+				FB09A4E61C4B275E0072C553 /* PFAboutWindowController.m in Sources */,
+				FB09A4E11C4B275E0072C553 /* INAppStoreWindow.m in Sources */,
 				FBF610611BC0362E00FDCCA4 /* main.m in Sources */,
-				FBD1F7211B8E4EA600DF2E91 /* WAYAppStoreWindow.m in Sources */,
-				FBF610661BC06EC300FDCCA4 /* PFMoveApplication.m in Sources */,
+				FB09A4E71C4B275E0072C553 /* PFMoveApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
