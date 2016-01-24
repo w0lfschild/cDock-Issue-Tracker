@@ -50,6 +50,7 @@
 		FB8E2C891C3A309100192556 /* cd_DOCKIndicator9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C871C3A309100192556 /* cd_DOCKIndicator9.m */; };
 		FB98BED61C54B253004BAE85 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB98BED51C54B253004BAE85 /* Sparkle.framework */; };
 		FB98BED81C54B2B3004BAE85 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FB98BED51C54B253004BAE85 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FB98BEDA1C55538C004BAE85 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FB98BED91C55538C004BAE85 /* dsa_pub.pem */; };
 		FBB2AB441BC0A5BD00319A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */; };
 		FBB2AB471BC0A5BD00319A8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB461BC0A5BD00319A8A /* main.m */; };
 		FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */; };
@@ -113,6 +114,7 @@
 		FB8E2C861C3A309100192556 /* cd_DOCKFloor9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor9.m; path = cDock/cd_DOCKFloor9.m; sourceTree = SOURCE_ROOT; };
 		FB8E2C871C3A309100192556 /* cd_DOCKIndicator9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKIndicator9.m; path = cDock/cd_DOCKIndicator9.m; sourceTree = SOURCE_ROOT; };
 		FB98BED51C54B253004BAE85 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		FB98BED91C55538C004BAE85 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		FBB2AB401BC0A5BD00319A8A /* cDock-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -387,6 +389,7 @@
 				FB09A4EC1C4B27880072C553 /* github.png */,
 				FB09A4ED1C4B27880072C553 /* heart2.png */,
 				FB09A4EE1C4B27880072C553 /* translate.png */,
+				FB98BED91C55538C004BAE85 /* dsa_pub.pem */,
 				FBE661B91C294B7D004AE953 /* changeLOG.rtf */,
 			);
 			name = Resource;
@@ -545,6 +548,7 @@
 				FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */,
 				FB09A4E51C4B275E0072C553 /* PFAboutWindow.xib in Resources */,
 				FB09A4E41C4B275E0072C553 /* EULA.rtf in Resources */,
+				FB98BEDA1C55538C004BAE85 /* dsa_pub.pem in Resources */,
 				FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */,
 				FB09A4E31C4B275E0072C553 /* Credits.rtf in Resources */,
 				FBB740F01B9A4482000F84E3 /* MyApp.xib in Resources */,

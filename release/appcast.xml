@@ -10,15 +10,21 @@
         <description>
           <![CDATA[
             <ul>
-              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-              <li>Suspendisse sed felis ac ante ultrices rhoncus. Etiam quis elit vel nibh placerat facilisis in id leo.</li>
-              <li>Vestibulum nec tortor odio, nec malesuada libero. Cras vel convallis nunc.</li>
-              <li>Suspendisse tristique massa eget velit consequat tincidunt. Praesent sodales hendrerit pretium.</li>
+                <li>OS X 10.9 bugfixes</li>
+                <li>App indicators moved to top layer</li>
+                <li>Reset (delete) all themes option</li>
+                <li>Changed donation link</li>
+                <li>Sparkle updates</li>
             </ul>
           ]]>
         </description>
         <pubDate>Sat, 26 Jul 2014 15:20:11 +0000</pubDate>
-        <enclosure url="http://sparkle-project.org/files/Sparkle%20Test%20App.zip" sparkle:version="9000" sparkle:shortVersionString="9000" length="107758" type="application/octet-stream" sparkle:dsaSignature="MCwCFCdoW13VBGJWIfIklKxQVyetgxE7AhQTVuY9uQT0KOV1UEk21epBsGZMPg==" />
+        <enclosure url="https://github.com/w0lfschild/app_updates/raw/master/cDock/cDock_0.9.12.zip"
+                   sparkle:version="9000"
+                   sparkle:shortVersionString="9000"
+                   length="3113489"
+                   type="application/octet-stream"
+                   sparkle:dsaSignature="MC0CFHTMPFPAOJzfkv41C+KaiV7phHU2AhUAlQMldQmPpK6DvRErjlqWO/F5HfM=" />
       </item>
   </channel>
 </rss>
