@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Sparkle Test App Changelog</title>
-    <link>http://sparkle-project.org/files/sparkletestcast.xml</link>
+    <link>https://github.com/w0lfschild/cdock2/raw/master/release/appcast.xml</link>
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
       <item>
-        <title>Version 2.0</title>
+        <title>Version 0.9.13</title>
         <description>
           <![CDATA[
             <ul>
@@ -18,7 +18,7 @@
           ]]>
         </description>
         <pubDate>Sat, 26 Jul 2014 15:20:11 +0000</pubDate>
-        <enclosure url="http://sparkle-project.org/files/Sparkle%20Test%20App.zip" sparkle:version="2.0" length="107758" type="application/octet-stream" sparkle:dsaSignature="MCwCFCdoW13VBGJWIfIklKxQVyetgxE7AhQTVuY9uQT0KOV1UEk21epBsGZMPg==" />
+        <enclosure url="http://sparkle-project.org/files/Sparkle%20Test%20App.zip" sparkle:version="9000" sparkle:shortVersionString="0.9.13" length="107758" type="application/octet-stream" sparkle:dsaSignature="MCwCFCdoW13VBGJWIfIklKxQVyetgxE7AhQTVuY9uQT0KOV1UEk21epBsGZMPg==" />
       </item>
   </channel>
 </rss>
