@@ -13,6 +13,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <customObject id="XJC-kV-FjN" customClass="SUUpdater"/>
         <customObject id="fOu-kz-Wle" customClass="AppDelegate">
             <connections>
                 <outlet property="auto_checkUpdates" destination="2PH-5e-Vi8" id="34P-Jp-g6v"/>
@@ -72,7 +73,6 @@
                 <outlet property="pop_github" destination="mgW-ix-J1Z" id="XPo-9E-A9c"/>
                 <outlet property="pop_info" destination="4wy-Fc-cad" id="HxW-aS-aAu"/>
                 <outlet property="pop_paypal" destination="ykr-bt-cRW" id="dYP-c3-Uii"/>
-                <outlet property="pop_toggle" destination="fw5-uI-gTM" id="H3S-DG-pN0"/>
                 <outlet property="pop_translate" destination="CrG-uZ-1Vg" id="DMR-6I-2qt"/>
                 <outlet property="poppy" destination="G5F-t2-zFR" id="QxR-qJ-voa"/>
                 <outlet property="prefView" destination="a6r-ae-gYE" id="wyV-wV-5aO"/>
@@ -103,6 +103,12 @@
                             <menuItem title="Preferences…" keyEquivalent="," id="8NG-yC-NdB">
                                 <connections>
                                     <action selector="showPreferences:" target="-1" id="agc-oz-9pN"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Check for updates..." id="jHx-tD-KHw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="XJC-kV-FjN" id="bpg-yo-coe"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CSH-WG-9Rh"/>
@@ -159,6 +165,15 @@ CA
                                     <action selector="deleteTheme:" target="fOu-kz-Wle" id="XrI-dX-lTf"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Delete all" id="83n-Td-gJS">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="deleteThemeFolder:" target="fOu-kz-Wle" id="OmH-zv-GRX"/>
+                                </connections>
+                            </menuItem>
                             <menuItem title="Show in Finder..." id="JNZ-gF-p6N">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
@@ -196,7 +211,7 @@ CA
             </items>
         </menu>
         <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="MainWindow" animationBehavior="default" id="F0z-JX-Cv5" customClass="WAYAppStoreWindow">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="559" height="427"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
@@ -210,16 +225,6 @@ CA
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fw5-uI-gTM">
-                        <rect key="frame" x="417" y="383" width="29" height="26"/>
-                        <buttonCell key="cell" type="disclosure" bezelStyle="roundedDisclosure" image="4F8998B0-F7DB-4A3A-907E-8C80FEB3A4BE" imagePosition="overlaps" alignment="center" borderStyle="border" inset="2" id="M5Q-Fg-6G5">
-                            <behavior key="behavior" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <action selector="showPopover:" target="fOu-kz-Wle" id="Ecy-TH-HoV"/>
-                        </connections>
                     </button>
                     <tabView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqJ-EM-hRE">
                         <rect key="frame" x="-8" y="-10" width="575" height="376"/>
@@ -503,12 +508,12 @@ CA
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VOC-En-ghr">
-                    <rect key="frame" x="395" y="12" width="144" height="21"/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="16" doubleValue="2" tickMarkPosition="above" sliderType="linear" id="fol-cL-utD"/>
+                    <rect key="frame" x="395" y="12" width="144" height="27"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="16" doubleValue="2.1333333333333333" tickMarkPosition="below" numberOfTickMarks="16" allowsTickMarkValuesOnly="YES" sliderType="linear" id="fol-cL-utD"/>
                 </slider>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hH-i6-wvt">
-                    <rect key="frame" x="395" y="40" width="144" height="21"/>
-                    <sliderCell key="cell" state="on" alignment="left" maxValue="16" doubleValue="2" tickMarkPosition="above" sliderType="linear" id="pc0-Bo-ziS"/>
+                    <rect key="frame" x="393" y="39" width="148" height="27"/>
+                    <sliderCell key="cell" state="on" alignment="left" maxValue="16" doubleValue="2.1333333333333333" tickMarkPosition="below" numberOfTickMarks="16" allowsTickMarkValuesOnly="YES" sliderType="linear" id="pc0-Bo-ziS"/>
                 </slider>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sXS-l6-PcA">
                     <rect key="frame" x="137" y="267" width="129" height="26"/>
@@ -597,47 +602,12 @@ If you would like to theme the dock you must first disable rootless by doing the
             </subviews>
             <point key="canvasLocation" x="-233.5" y="1101"/>
         </customView>
-        <viewController id="TAD-Mo-GUc" userLabel="Popover View Controller">
-            <connections>
-                <outlet property="view" destination="EYq-PG-2tF" id="ujt-pX-qQ5"/>
-            </connections>
-        </viewController>
+        <viewController id="TAD-Mo-GUc" userLabel="Popover View Controller"/>
         <popover behavior="t" id="G5F-t2-zFR">
             <connections>
                 <outlet property="contentViewController" destination="TAD-Mo-GUc" id="6Ff-dA-dar"/>
             </connections>
         </popover>
-        <customView id="EYq-PG-2tF" userLabel="Button View">
-            <rect key="frame" x="0.0" y="0.0" width="206" height="75"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-            <subviews>
-                <button toolTip="Contact" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sL9-Bt-3Ll">
-                    <rect key="frame" x="78" y="15" width="50" height="50"/>
-                    <buttonCell key="cell" type="smallSquare" title="E" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="oKs-Ko-cd6">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
-                <button toolTip="Show tips instantly" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wy-Fc-cad">
-                    <rect key="frame" x="20" y="15" width="50" height="50"/>
-                    <buttonCell key="cell" type="smallSquare" title="I" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="TjS-NZ-BJb">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="tooltipToggle:" target="fOu-kz-Wle" id="x8J-8S-bMV"/>
-                    </connections>
-                </button>
-                <button toolTip="Visit developer GitHub" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-ix-J1Z">
-                    <rect key="frame" x="136" y="15" width="50" height="50"/>
-                    <buttonCell key="cell" type="smallSquare" title="G" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="5Gd-Lq-UWa">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                </button>
-            </subviews>
-            <point key="canvasLocation" x="212" y="-342.5"/>
-        </customView>
         <customView id="oYt-BD-UAt" userLabel="Dock View">
             <rect key="frame" x="0.0" y="0.0" width="557" height="330"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -916,7 +886,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView ambiguous="YES" editable="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="5Cs-ct-PMs">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="288"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="minSize" width="290" height="288"/>
@@ -933,7 +903,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.96710526315789469" horizontal="NO" id="zhU-cn-KeD">
-                        <rect key="frame" x="-13" y="1" width="16" height="0.0"/>
+                        <rect key="frame" x="-15" y="1" width="16" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
@@ -965,62 +935,35 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                     </buttonCell>
                 </button>
+                <button toolTip="Contact" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sL9-Bt-3Ll">
+                    <rect key="frame" x="103" y="148" width="50" height="50"/>
+                    <buttonCell key="cell" type="smallSquare" title="E" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="oKs-Ko-cd6">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <button toolTip="Show tips instantly" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4wy-Fc-cad">
+                    <rect key="frame" x="45" y="148" width="50" height="50"/>
+                    <buttonCell key="cell" type="smallSquare" title="I" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="TjS-NZ-BJb">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="tooltipToggle:" target="fOu-kz-Wle" id="x8J-8S-bMV"/>
+                    </connections>
+                </button>
+                <button toolTip="Visit developer GitHub" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mgW-ix-J1Z">
+                    <rect key="frame" x="161" y="148" width="50" height="50"/>
+                    <buttonCell key="cell" type="smallSquare" title="G" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="5Gd-Lq-UWa">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
             </subviews>
             <point key="canvasLocation" x="387.5" y="-81"/>
         </customView>
     </objects>
     <resources>
-        <image name="4F8998B0-F7DB-4A3A-907E-8C80FEB3A4BE" width="1" height="1">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
-GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
-c1dOU0NvbG9ygAKADRIgwwAAgAOAC1Z7MSwgMX3SFQoWGFpOUy5vYmplY3RzoReABIAK0hUKGh2iGxyA
-BYAGgAkQANIgCiEiXxAUTlNUSUZGUmVwcmVzZW50YXRpb26AB4AITxEIrE1NACoAAAAKAAAADgEAAAMA
-AAABAAEAAAEBAAMAAAABAAEAAAECAAMAAAACAAgACAEDAAMAAAABAAEAAAEGAAMAAAABAAEAAAERAAQA
-AAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAIAAAEWAAMAAAABAAEAAAEXAAQAAAABAAAAAgEcAAMA
-AAABAAEAAAFSAAMAAAABAAEAAAFTAAMAAAACAAEAAYdzAAcAAAf0AAAAuAAAAAAAAAf0YXBwbAIgAABt
-bnRyR1JBWVhZWiAH0AACAA4ADAAAAABhY3NwQVBQTAAAAABub25lAAAAAAAAAAAAAAAAAAAAAAAA9tYA
-AQAAAADTLWFwcGwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVk
-ZXNjAAAAwAAAAG9kc2NtAAABMAAABmZjcHJ0AAAHmAAAADh3dHB0AAAH0AAAABRrVFJDAAAH5AAAAA5k
-ZXNjAAAAAAAAABVHZW5lcmljIEdyYXkgUHJvZmlsZQAAAAAAAAAAAAAAFUdlbmVyaWMgR3JheSBQcm9m
-aWxlAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbWx1YwAAAAAA
-AAAfAAAADHNrU0sAAAAqAAABhGVuVVMAAAAoAAABrmNhRVMAAAAsAAAB1nZpVk4AAAAsAAACAnB0QlIA
-AAAqAAACLnVrVUEAAAAsAAACWGZyRlUAAAAqAAAChGh1SFUAAAAuAAACrnpoVFcAAAAQAAAC3G5iTk8A
-AAAsAAAC7GtvS1IAAAAYAAADGGNzQ1oAAAAkAAADMGhlSUwAAAAgAAADVHJvUk8AAAAkAAADdGRlREUA
-AAA6AAADmGl0SVQAAAAuAAAD0nN2U0UAAAAuAAAEAHpoQ04AAAAQAAAELmphSlAAAAAWAAAEPmVsR1IA
-AAAkAAAEVHB0UE8AAAA4AAAEeG5sTkwAAAAqAAAEsGVzRVMAAAAoAAAE2nRoVEgAAAAkAAAFAnRyVFIA
-AAAiAAAFJmZpRkkAAAAsAAAFSGhySFIAAAA6AAAFdHBsUEwAAAA2AAAFrnJ1UlUAAAAmAAAF5GFyRUcA
-AAAoAAAGCmRhREsAAAA0AAAGMgBWAWEAZQBvAGIAZQBjAG4A/QAgAHMAaQB2AP0AIABwAHIAbwBmAGkA
-bABHAGUAbgBlAHIAaQBjACAARwByAGEAeQAgAFAAcgBvAGYAaQBsAGUAUABlAHIAZgBpAGwAIABkAGUA
-IABnAHIAaQBzACAAZwBlAG4A6AByAGkAYwBDHqUAdQAgAGgA7ABuAGgAIABNAOAAdQAgAHgA4QBtACAA
-QwBoAHUAbgBnAFAAZQByAGYAaQBsACAAQwBpAG4AegBhACAARwBlAG4A6QByAGkAYwBvBBcEMAQzBDAE
-OwRMBD0EOAQ5ACAEPwRABD4ERAQwBDkEOwAgAEcAcgBhAHkAUAByAG8AZgBpAGwAIABnAOkAbgDpAHIA
-aQBxAHUAZQAgAGcAcgBpAHMAwQBsAHQAYQBsAOEAbgBvAHMAIABzAHoA/AByAGsAZQAgAHAAcgBvAGYA
-aQBskBp1KHBwlo6Ccl9pY8+P8ABHAGUAbgBlAHIAaQBzAGsAIABnAHIA5QB0AG8AbgBlAHAAcgBvAGYA
-aQBsx3y8GAAgAEcAcgBhAHkAINUEuFzTDMd8AE8AYgBlAGMAbgD9ACABYQBlAGQA/QAgAHAAcgBvAGYA
-aQBsBeQF6AXVBeQF2QXcACAARwByAGEAeQAgBdsF3AXcBdkAUAByAG8AZgBpAGwAIABnAHIAaQAgAGcA
-ZQBuAGUAcgBpAGMAQQBsAGwAZwBlAG0AZQBpAG4AZQBzACAARwByAGEAdQBzAHQAdQBmAGUAbgAtAFAA
-cgBvAGYAaQBsAFAAcgBvAGYAaQBsAG8AIABnAHIAaQBnAGkAbwAgAGcAZQBuAGUAcgBpAGMAbwBHAGUA
-bgBlAHIAaQBzAGsAIABnAHIA5QBzAGsAYQBsAGUAcAByAG8AZgBpAGxmbpAacHBepmPPj/Blh072TgCC
-LDCwMOwwpDDXMO0w1TChMKQw6wOTA7UDvQO5A7oDzAAgA8ADwQO/A8YDrwO7ACADswO6A8EDuQBQAGUA
-cgBmAGkAbAAgAGcAZQBuAOkAcgBpAGMAbwAgAGQAZQAgAGMAaQBuAHoAZQBuAHQAbwBzAEEAbABnAGUA
-bQBlAGUAbgAgAGcAcgBpAGoAcwBwAHIAbwBmAGkAZQBsAFAAZQByAGYAaQBsACAAZwByAGkAcwAgAGcA
-ZQBuAOkAcgBpAGMAbw5CDhsOIw5EDh8OJQ5MDioONQ5ADhcOMg4XDjEOSA4nDkQOGwBHAGUAbgBlAGwA
-IABHAHIAaQAgAFAAcgBvAGYAaQBsAGkAWQBsAGUAaQBuAGUAbgAgAGgAYQByAG0AYQBhAHAAcgBvAGYA
-aQBpAGwAaQBHAGUAbgBlAHIAaQENAGsAaQAgAHAAcgBvAGYAaQBsACAAcwBpAHYAaQBoACAAdABvAG4A
-bwB2AGEAVQBuAGkAdwBlAHIAcwBhAGwAbgB5ACAAcAByAG8AZgBpAGwAIABzAHoAYQByAG8BWwBjAGkE
-HgQxBEkEOAQ5ACAEQQQ1BEAESwQ5ACAEPwRABD4ERAQ4BDsETAZFBkQGQQAgBioGOQYxBkoGQQAgAEcA
-cgBhAHkAIAYnBkQGOQYnBkUARwBlAG4AZQByAGUAbAAgAGcAcgDlAHQAbwBuAGUAYgBlAHMAawByAGkA
-dgBlAGwAcwBlAAB0ZXh0AAAAAENvcHlyaWdodCAyMDA3IEFwcGxlIEluYy4sIGFsbCByaWdodHMgcmVz
-ZXJ2ZWQuAFhZWiAAAAAAAADzUQABAAAAARbMY3VydgAAAAAAAAABAc0AANIlJicoWiRjbGFzc25hbWVY
-JGNsYXNzZXNfEBBOU0JpdG1hcEltYWdlUmVwoycpKlpOU0ltYWdlUmVwWE5TT2JqZWN00iUmLC1XTlNB
-cnJheaIsKtIlJi8wXk5TTXV0YWJsZUFycmF5oy8sKtMyMwo0NTZXTlNXaGl0ZVxOU0NvbG9yU3BhY2VE
-MCAwABADgAzSJSY4OVdOU0NvbG9yojgq0iUmOzxXTlNJbWFnZaI7Kl8QD05TS2V5ZWRBcmNoaXZlctE/
-QFRyb290gAEACAARABoAIwAtADIANwBGAEwAVwBeAGUAcgB5AIEAgwCFAIoAjACOAJUAmgClAKcAqQCr
-ALAAswC1ALcAuQC7AMAA1wDZANsJiwmQCZsJpAm3CbsJxgnPCdQJ3AnfCeQJ8wn3Cf4KBgoTChgKGgoc
-CiEKKQosCjEKOQo8Ck4KUQpWAAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAClg
-</mutableData>
-        </image>
         <sound name="Blow"/>
     </resources>
 </document>

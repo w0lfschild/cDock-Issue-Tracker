@@ -3,6 +3,7 @@
 //
 
 #import "cd_shared.h"
+#import <QuartzCore/QuartzCore.h>
 
 ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
 @implementation _CDIndicatorLayer
@@ -10,6 +11,8 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
     ZKOrig(void, arg1);
     
 //    NSLog(@"Size: %f", arg1);
+    
+    [ self setZPosition:999 ];
     
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
@@ -136,13 +139,42 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
             
             if (myVar > 7)
                 myVar = 7;
-            [sub setCornerRadius:myVar];
+//            [sub setCornerRadius:myVar];
+            
             
 //            if ([[[Preferences sharedInstance] objectForKey:@"cd_sizeIndicator"] boolValue]) {
-//                [ sub setFrame:CGRectMake([sub frame].origin.x, myVar,
+//                [ self setFrame:CGRectMake(self.frame.origin.x , self.frame.origin.y,
 //                                           [[[Preferences sharedInstance] objectForKey:@"cd_indicatorWidth"] floatValue],
 //                                           [[[Preferences sharedInstance] objectForKey:@"cd_indicatorHeight"] floatValue]) ];
 //            }
+            
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_sizeIndicator"] boolValue]) {
+//                [ sub setFrame:CGRectMake([sub frame].origin.x, myVar,
+//                                           [[[Preferences sharedInstance] objectForKey:@"cd_indicatorWidth"] floatValue],
+//                                           [[[Preferences sharedInstance] objectForKey:@"cd_indicatorHeight"] floatValue]) ];
+                float myWidth = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorWidth"] floatValue];
+                float myHeight = [[[Preferences sharedInstance] objectForKey:@"cd_indicatorHeight"] floatValue];
+                
+                float xCenter = self.frame.origin.x + (self.frame.size.width / 2);
+                float yCenter = self.frame.origin.y + (self.frame.size.height / 2);
+                
+                if (orient == 1)
+                    xCenter += 1;
+                if (orient == 2)
+                    xCenter -= 1;
+                if (orient == 0)
+                    yCenter += 5;
+                
+                [ sub setFrame:CGRectMake(xCenter - myWidth/2, yCenter - (myHeight/2),
+                                          myWidth,
+                                          myHeight) ];
+            }
+            
+            if (sub.frame.size.width > sub.frame.size.height) {
+                [sub setCornerRadius:sub.frame.size.height/2];
+            } else {
+                [sub setCornerRadius:sub.frame.size.width/2];
+            }
             
 //            NSLog(@"%f", self.frame.origin.y);
         }

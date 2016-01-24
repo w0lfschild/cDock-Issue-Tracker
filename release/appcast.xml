@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+      <title>cDock Changelog</title>
+      <link>https://raw.githubusercontent.com/w0lfschild/cDock2/master/release/appcast.xml</link>
+      <description>Most recent changes with links to updates.</description>
+      <language>en</language>
+      <item>
+          <title>Version 0.9.13</title>
+            <sparkle:releaseNotesLink>http://macbartender.com/updates/1-3-3/rnotes.html<sparkle:releaseNotesLink>
+            <pubDate>January 23, 2015 09:45:00 +0000</pubDate>
+            <enclosure url="http://macbartender.com/updates/1-3-3/Bartender.zip" sparkle:version="9001" sparkle:shortVersionString="1.3.3" length="4025403" type="application/octet-stream" sparkle:dsaSignature="MC4CFQCIs5QZA7pgIjqdQQ3OCFmZdXLLdwIVAIbbSBLBdVNIKfSx56G4N5+aJBq8" />
+      </item>
+    </channel>
+</rss>

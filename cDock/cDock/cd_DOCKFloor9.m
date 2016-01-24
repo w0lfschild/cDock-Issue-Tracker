@@ -278,9 +278,15 @@ void _TenNine(CALayer* layer)
         // Adjust height to fit 3D size
         if ([[[Preferences sharedInstance] objectForKey:@"cd_separatorfullHeight"] boolValue]) {
             CGRect rect = _separatorLayer.frame;
-            rect.size.width = 1;
-            rect.origin.y = 0;
-            rect.size.height = _backgroundLayer.frame.size.height;
+            if (orient == 0) {
+                rect.size.width = 1;
+                rect.origin.y = 0;
+                rect.size.height = _backgroundLayer.frame.size.height;
+            } else {
+                rect.size.height = 1;
+                rect.origin.x = 0;
+                rect.size.width = _backgroundLayer.frame.size.width;
+            }
             [_separatorLayer setFrame:rect];
         }
         

@@ -59,7 +59,17 @@ NSString* runCommand(NSString * commandToRun) {
         return NO;
     }
     
-    if ([partialString containsString:@"."]) {
+    BOOL hasString = false;
+    if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion > 9) {
+        if ([partialString containsString:@"."])
+            hasString = true;
+    } else {
+        NSRange range = [partialString rangeOfString:@"."];
+        if(range.location != NSNotFound)
+            hasString = true;
+    }
+    
+    if (hasString) {
         if ([partialString length] > 6) {
             return NO;
         } else {
@@ -676,8 +686,8 @@ NSString* runCommand(NSString * commandToRun) {
         _window.titleBarHeight = 0.0;
     } else {
         [_window setTitlebarAppearsTransparent:true];
-//        if ([_window respondsToSelector:@selector(_setTexturedBackground:)])
-//            [_window performSelector:@selector(_setTexturedBackground:) withObject:[NSNumber numberWithBool:false]];
+        if ([_window respondsToSelector:@selector(_setTexturedBackground:)])
+            [_window performSelector:@selector(_setTexturedBackground:) withObject:[NSNumber numberWithBool:false]];
     }
     
     if ([[prefCD valueForKey:@"blurView"] boolValue])
@@ -786,18 +796,7 @@ NSString* runCommand(NSString * commandToRun) {
     }
     
     // Install the themes
-    NSString *thmPath = [[NSBundle mainBundle] pathForResource:@"themes" ofType:@""];
-    NSMutableArray* dirs = [[NSMutableArray alloc] init];
-    [dirs addObjectsFromArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:thmPath error:Nil]];
-    
-    for (NSString *theme in dirs) {
-        NSString *pattyCAKE = [themeFldr stringByAppendingPathComponent:theme];
-        if (![[NSFileManager defaultManager] fileExistsAtPath:pattyCAKE])
-        {
-            srcPath = [NSString stringWithFormat:@"%@/%@", thmPath, theme];
-            [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:pattyCAKE error:&error];
-        }
-    }
+    [self setupThemes];
     
     // Add login item
     [self addLoginItem];
@@ -901,6 +900,23 @@ NSString* runCommand(NSString * commandToRun) {
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender {
 	return YES;
+}
+
+- (void)setupThemes {
+    NSString* srcPath = @"";
+    NSError* error;
+    NSString *thmPath = [[NSBundle mainBundle] pathForResource:@"themes" ofType:@""];
+    NSMutableArray* dirs = [[NSMutableArray alloc] init];
+    [dirs addObjectsFromArray:[[NSFileManager defaultManager] contentsOfDirectoryAtPath:thmPath error:Nil]];
+    
+    for (NSString *theme in dirs) {
+        NSString *pattyCAKE = [themeFldr stringByAppendingPathComponent:theme];
+        if (![[NSFileManager defaultManager] fileExistsAtPath:pattyCAKE])
+        {
+            srcPath = [NSString stringWithFormat:@"%@/%@", thmPath, theme];
+            [[NSFileManager defaultManager] copyItemAtPath:srcPath toPath:pattyCAKE error:&error];
+        }
+    }
 }
 
 - (IBAction)autoUpdateChange:(id)sender {
@@ -1185,7 +1201,8 @@ NSString* runCommand(NSString * commandToRun) {
 }
 
 - (IBAction)donate:(id)sender {
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://goo.gl/vF92sf"]];
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://goo.gl/DSyEFR"]];
+    //http://goo.gl/vF92sf
 }
 
 - (IBAction)visit_github:(id)sender {
@@ -1262,6 +1279,21 @@ NSString* runCommand(NSString * commandToRun) {
 //    [[NSWorkspace sharedWorkspace] openURL: folderURL];
 }
 
+- (IBAction)deleteThemeFolder:(id)sender {
+    NSError *error;
+    [[NSFileManager defaultManager] removeItemAtPath:themeFldr error:&error];
+    if (error.code != NSFileNoSuchFileError) {
+        NSLog(@"%@", error);
+    }
+    [self setupTheme];
+    [self dirCheck:themeFldr];
+    [self setupThemes];
+    [self setupTheme];
+    [self applyChanges:nil];
+    //    NSURL *folderURL = [NSURL fileURLWithPath: curThemFldr];
+    //    [[NSWorkspace sharedWorkspace] openURL: folderURL];
+}
+
 - (IBAction)importTheme:(id)sender {
     NSOpenPanel* opnDlg = [NSOpenPanel openPanel];
     [opnDlg setTitle:@"Import cDock Theme"];
@@ -1334,10 +1366,10 @@ NSString* runCommand(NSString * commandToRun) {
             NSVisualEffectView *vibrant=[[vibrantClass alloc] initWithFrame:[[_window contentView] bounds]];
             [vibrant setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
             [vibrant setBlendingMode:NSVisualEffectBlendingModeBehindWindow];
-            if (![_window.contentView.subviews containsObject:vibrant])
+            if (![[_window.contentView subviews] containsObject:vibrant])
                 [[_window contentView] addSubview:vibrant positioned:NSWindowBelow relativeTo:nil];
         } else {
-            for (NSVisualEffectView *v in (NSMutableArray *)_window.contentView.subviews)
+            for (NSVisualEffectView *v in (NSMutableArray *)[_window.contentView subviews])
             {
                 if ([v class] == vibrantClass) {
                     [v removeFromSuperview];
