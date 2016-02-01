@@ -40,8 +40,8 @@
         </description>
         <pubDate>Sat, 26 Jul 2014 15:20:11 +0000</pubDate>
         <enclosure url="https://github.com/w0lfschild/app_updates/raw/master/cDock/cDock_0.9.12.zip"
-                   sparkle:version="1710"
-                   sparkle:shortVersionString="0.10.1"
+                   sparkle:version="2000"
+                   sparkle:shortVersionString="0.11.2"
                    length="3113489"
                    type="application/octet-stream"
                    sparkle:dsaSignature="MC0CFHTMPFPAOJzfkv41C+KaiV7phHU2AhUAlQMldQmPpK6DvRErjlqWO/F5HfM=" />
