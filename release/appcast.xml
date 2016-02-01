@@ -6,22 +6,42 @@
     <description>Most recent changes with links to updates.</description>
     <language>en</language>
       <item>
-        <title>Version 0.9.13</title>
+        <title>Version 0.10.1</title>
         <description>
           <![CDATA[
             <ul>
-                <li>OS X 10.9 bugfixes</li>
-                <li>App indicators moved to top layer</li>
-                <li>Reset (delete) all themes option</li>
+                <li>Added full size separator toggle</li>
+                <li>Auto-updates is default setting</li>
+                <li>CDock agent re-write (cDock-Helper)</li>
                 <li>Changed donation link</li>
-                <li>Sparkle updates</li>
+                <li>Check for updates to menubar</li>
+                <li>Disable theming button moved to theme view</li>
+                <li>Faster inject after killing dock</li>
+                <li>Fixed (some) OS X 10.9 bundle bugs</li>
+                <li>Fixed OS X 10.9 dock settings bugs</li>
+                <li>Future updates via Sparkle</li>
+                <li>Indicators moved to top layer</li>
+                <li>Instant tooltips toggle</li>
+                <li>Lower agent energy use</li>
+                <li>Merge cDock agent and cDock installer</li>
+                <li>New about tab</li>
+                <li>Option to hide Donate button</li>
+                <li>Removed PFAboutWindow</li>
+                <li>Removed cDock-Agent</li>
+                <li>Removed cDock-Installer</li>
+                <li>Reset (delete) all themes option</li>
+                <li>Restart dock button added to theme view</li>
+                <li>Save window position toggle</li>
+                <li>UI Changes</li>
+                <li>Use org.w0lf.cDock-GUI for all GUI preferences</li>
+                <li>Visit website button</li>
             </ul>
           ]]>
         </description>
         <pubDate>Sat, 26 Jul 2014 15:20:11 +0000</pubDate>
         <enclosure url="https://github.com/w0lfschild/app_updates/raw/master/cDock/cDock_0.9.12.zip"
-                   sparkle:version="9000"
-                   sparkle:shortVersionString="9000"
+                   sparkle:version="1595"
+                   sparkle:shortVersionString="0.10.2"
                    length="3113489"
                    type="application/octet-stream"
                    sparkle:dsaSignature="MC0CFHTMPFPAOJzfkv41C+KaiV7phHU2AhUAlQMldQmPpK6DvRErjlqWO/F5HfM=" />
