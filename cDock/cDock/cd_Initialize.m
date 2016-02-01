@@ -5,6 +5,7 @@
 #import "cd_shared.h"
 #import "fishhook.h"
 #import <dlfcn.h>
+#import "UncaughtExceptionHandler.h"
 
 NSInteger orient = 0;
 long osx_minor = 0;
@@ -129,7 +130,8 @@ void _setupPrefs()
 @interface initialize : NSObject
 @end
 @implementation initialize
-+ (void)load {
++ (void)load
+{
     // Read system version
     osx_minor = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
     
@@ -140,6 +142,8 @@ void _setupPrefs()
     CFNotificationCenterAddObserver(center, NULL, notificationCallback,
                                     CFSTR("MyNotification"), NULL,
                                     CFNotificationSuspensionBehaviorDeliverImmediately);
+    
+    InstallUncaughtExceptionHandler();
     
     // remove oberver
 //    CFNotificationCenterRemoveObserver(center, NULL, CFSTR("TestValue"), NULL);

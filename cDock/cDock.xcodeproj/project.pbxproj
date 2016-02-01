@@ -6,19 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		FB2BEB2F1BAA99A5003372C5 /* Build */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = FB2BEB301BAA99A5003372C5 /* Build configuration list for PBXAggregateTarget "Build" */;
-			buildPhases = (
-			);
-			dependencies = (
-			);
-			name = Build;
-			productName = Build;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		79D28C961B66BCB10036D668 /* cd_DOCKIndicator10.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843581B641CEC00F87E50 /* cd_DOCKIndicator10.m */; };
 		79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */; };
@@ -28,8 +15,6 @@
 		FB09A4E21C4B275E0072C553 /* INWindowButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4D01C4B275E0072C553 /* INWindowButton.m */; };
 		FB09A4E31C4B275E0072C553 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4D31C4B275E0072C553 /* Credits.rtf */; };
 		FB09A4E41C4B275E0072C553 /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4D41C4B275E0072C553 /* EULA.rtf */; };
-		FB09A4E51C4B275E0072C553 /* PFAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4D51C4B275E0072C553 /* PFAboutWindow.xib */; };
-		FB09A4E61C4B275E0072C553 /* PFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4D71C4B275E0072C553 /* PFAboutWindowController.m */; };
 		FB09A4E71C4B275E0072C553 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4DA1C4B275E0072C553 /* PFMoveApplication.m */; };
 		FB09A4E81C4B275E0072C553 /* WAYAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4DD1C4B275E0072C553 /* WAYAppStoreWindow.m */; };
 		FB09A4E91C4B275E0072C553 /* WAYWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FB09A4E01C4B275E0072C553 /* WAYWindow.m */; };
@@ -40,25 +25,30 @@
 		FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13C1B81B5BC00F16D5E /* fishhook.c */; };
 		FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */; };
 		FB14DA101B96482B00C52E53 /* cd_ECMaterial10.m in Sources */ = {isa = PBXBuildFile; fileRef = FB14DA0F1B96482B00C52E53 /* cd_ECMaterial10.m */; };
-		FB3EC0E71B8EC35800272131 /* cDock-Agent.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E61B8EC35700272131 /* cDock-Agent.app */; };
-		FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */; };
 		FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0EA1B8EE26D00272131 /* cDock.bundle */; };
 		FB3EDF741B7088B000E96DC9 /* updates in Resources */ = {isa = PBXBuildFile; fileRef = FB3EDF731B7088B000E96DC9 /* updates */; };
 		FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor10.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor10.m */; };
+		FB6BA6391C5744860099544C /* MyApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6BA6381C5744860099544C /* MyApp.xib */; };
+		FB6BA63B1C587E110099544C /* webicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FB6BA63A1C587E110099544C /* webicon.png */; };
 		FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C841C3A307E00192556 /* cd_shared.m */; };
 		FB8E2C881C3A309100192556 /* cd_DOCKFloor9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C861C3A309100192556 /* cd_DOCKFloor9.m */; };
 		FB8E2C891C3A309100192556 /* cd_DOCKIndicator9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C871C3A309100192556 /* cd_DOCKIndicator9.m */; };
 		FB98BED61C54B253004BAE85 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB98BED51C54B253004BAE85 /* Sparkle.framework */; };
 		FB98BED81C54B2B3004BAE85 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FB98BED51C54B253004BAE85 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB98BEDA1C55538C004BAE85 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FB98BED91C55538C004BAE85 /* dsa_pub.pem */; };
+		FBA827161C5D53F40069A2E8 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA827151C5D53F40069A2E8 /* UncaughtExceptionHandler.m */; };
+		FBA827181C5E8B1E0069A2E8 /* SIMBL.osax in Resources */ = {isa = PBXBuildFile; fileRef = FBA827171C5E8B1E0069A2E8 /* SIMBL.osax */; };
+		FBA8271D1C5EC7AE0069A2E8 /* SIMBL_Install.sh in Resources */ = {isa = PBXBuildFile; fileRef = FBA8271C1C5EC7AE0069A2E8 /* SIMBL_Install.sh */; };
+		FBA827221C5ED4520069A2E8 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB98BED51C54B253004BAE85 /* Sparkle.framework */; };
+		FBA827261C5F0E2A0069A2E8 /* cDock-Helper.app in Resources */ = {isa = PBXBuildFile; fileRef = FBA827241C5F0A160069A2E8 /* cDock-Helper.app */; };
+		FBA827291C5F1FFC0069A2E8 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */; };
 		FBB2AB441BC0A5BD00319A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */; };
 		FBB2AB471BC0A5BD00319A8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB461BC0A5BD00319A8A /* main.m */; };
 		FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */; };
 		FBB2AB4C1BC0A5BD00319A8A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */; };
-		FBB740F01B9A4482000F84E3 /* MyApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB740F21B9A4482000F84E3 /* MyApp.xib */; };
 		FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */; };
 		FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6F41B8D3A3600DF2E91 /* themes */; };
-		FBE661BA1C294B7D004AE953 /* changeLOG.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBE661B91C294B7D004AE953 /* changeLOG.rtf */; };
+		FBE661BA1C294B7D004AE953 /* changelog.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBE661B91C294B7D004AE953 /* changelog.rtf */; };
 		FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843601B641D4A00F87E50 /* AppDelegate.m */; };
 		FBF610611BC0362E00FDCCA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF610601BC0362E00FDCCA4 /* main.m */; };
 /* End PBXBuildFile section */
@@ -82,11 +72,8 @@
 		FB09A4CE1C4B275E0072C553 /* INAppStoreWindowCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindowCompatibility.h; sourceTree = "<group>"; };
 		FB09A4CF1C4B275E0072C553 /* INWindowButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INWindowButton.h; sourceTree = "<group>"; };
 		FB09A4D01C4B275E0072C553 /* INWindowButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INWindowButton.m; sourceTree = "<group>"; };
-		FB09A4D31C4B275E0072C553 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
-		FB09A4D41C4B275E0072C553 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = EULA.rtf; sourceTree = "<group>"; };
-		FB09A4D51C4B275E0072C553 /* PFAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFAboutWindow.xib; sourceTree = "<group>"; };
-		FB09A4D61C4B275E0072C553 /* PFAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAboutWindowController.h; sourceTree = "<group>"; };
-		FB09A4D71C4B275E0072C553 /* PFAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAboutWindowController.m; sourceTree = "<group>"; };
+		FB09A4D31C4B275E0072C553 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Credits.rtf; path = resources/PFAboutWindow/Credits.rtf; sourceTree = "<group>"; };
+		FB09A4D41C4B275E0072C553 /* EULA.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = EULA.rtf; path = resources/PFAboutWindow/EULA.rtf; sourceTree = "<group>"; };
 		FB09A4D91C4B275E0072C553 /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
 		FB09A4DA1C4B275E0072C553 /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
 		FB09A4DC1C4B275E0072C553 /* WAYAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WAYAppStoreWindow.h; sourceTree = "<group>"; };
@@ -102,19 +89,23 @@
 		FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = ZKSwizzle/ZKSwizzle.h; sourceTree = "<group>"; };
 		FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = ZKSwizzle/ZKSwizzle.m; sourceTree = "<group>"; };
 		FB14DA0F1B96482B00C52E53 /* cd_ECMaterial10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_ECMaterial10.m; path = cDock/cd_ECMaterial10.m; sourceTree = SOURCE_ROOT; };
-		FB1CCC3B1C388CDE003D5BDC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MyApp.xib; sourceTree = "<group>"; };
-		FB1CCC3C1C388CF4003D5BDC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MyApp.strings; sourceTree = "<group>"; };
-		FB3EC0E61B8EC35700272131 /* cDock-Agent.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Agent.app"; sourceTree = "<group>"; };
-		FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Installer.app"; sourceTree = "<group>"; };
 		FB3EC0EA1B8EE26D00272131 /* cDock.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = cDock.bundle; sourceTree = "<group>"; };
 		FB3EDF731B7088B000E96DC9 /* updates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = updates; sourceTree = "<group>"; };
 		FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor10.m; path = cDock/cd_DOCKFloor10.m; sourceTree = SOURCE_ROOT; };
+		FB6BA6381C5744860099544C /* MyApp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyApp.xib; sourceTree = "<group>"; };
+		FB6BA63A1C587E110099544C /* webicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = webicon.png; sourceTree = "<group>"; };
 		FB8E2C831C3A307400192556 /* cd_shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cd_shared.h; path = cDock/cd_shared.h; sourceTree = SOURCE_ROOT; };
 		FB8E2C841C3A307E00192556 /* cd_shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_shared.m; path = cDock/cd_shared.m; sourceTree = SOURCE_ROOT; };
 		FB8E2C861C3A309100192556 /* cd_DOCKFloor9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor9.m; path = cDock/cd_DOCKFloor9.m; sourceTree = SOURCE_ROOT; };
 		FB8E2C871C3A309100192556 /* cd_DOCKIndicator9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKIndicator9.m; path = cDock/cd_DOCKIndicator9.m; sourceTree = SOURCE_ROOT; };
 		FB98BED51C54B253004BAE85 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		FB98BED91C55538C004BAE85 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		FBA827141C5D53F40069A2E8 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		FBA827151C5D53F40069A2E8 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		FBA827171C5E8B1E0069A2E8 /* SIMBL.osax */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SIMBL.osax; sourceTree = "<group>"; };
+		FBA8271C1C5EC7AE0069A2E8 /* SIMBL_Install.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = SIMBL_Install.sh; sourceTree = "<group>"; };
+		FBA827241C5F0A160069A2E8 /* cDock-Helper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Helper.app"; sourceTree = "<group>"; };
+		FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		FBB2AB401BC0A5BD00319A8A /* cDock-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,7 +119,7 @@
 		FBD1F6F41B8D3A3600DF2E91 /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = themes; sourceTree = "<group>"; };
 		FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDE03701B5ED1EE00C1C5DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBE661B91C294B7D004AE953 /* changeLOG.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = changeLOG.rtf; sourceTree = "<group>"; };
+		FBE661B91C294B7D004AE953 /* changelog.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = changelog.rtf; sourceTree = "<group>"; };
 		FBE843521B641CD100F87E50 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = cDock/Preferences/Preferences.h; sourceTree = SOURCE_ROOT; };
 		FBE843531B641CD100F87E50 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = cDock/Preferences/Preferences.m; sourceTree = SOURCE_ROOT; };
 		FBE843581B641CEC00F87E50 /* cd_DOCKIndicator10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKIndicator10.m; path = cDock/cd_DOCKIndicator10.m; sourceTree = SOURCE_ROOT; };
@@ -144,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA827221C5ED4520069A2E8 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,19 +193,6 @@
 			children = (
 			);
 			path = VAColorCheckbox;
-			sourceTree = "<group>";
-		};
-		FB09A4D21C4B275E0072C553 /* PFAboutWindow */ = {
-			isa = PBXGroup;
-			children = (
-				FB09A4D31C4B275E0072C553 /* Credits.rtf */,
-				FB09A4D41C4B275E0072C553 /* EULA.rtf */,
-				FB09A4D51C4B275E0072C553 /* PFAboutWindow.xib */,
-				FB09A4D61C4B275E0072C553 /* PFAboutWindowController.h */,
-				FB09A4D71C4B275E0072C553 /* PFAboutWindowController.m */,
-			);
-			name = PFAboutWindow;
-			path = resources/PFAboutWindow;
 			sourceTree = "<group>";
 		};
 		FB09A4D81C4B275E0072C553 /* PFMoveApplication */ = {
@@ -284,9 +263,42 @@
 			name = "10.10+";
 			sourceTree = "<group>";
 		};
+		FB6BA63C1C589EF70099544C /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				FB6BA63A1C587E110099544C /* webicon.png */,
+				FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */,
+				FB09A4EC1C4B27880072C553 /* github.png */,
+				FB09A4ED1C4B27880072C553 /* heart2.png */,
+				FB09A4EE1C4B27880072C553 /* translate.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		FB6BA63D1C589F090099544C /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				FB09A4D31C4B275E0072C553 /* Credits.rtf */,
+				FB09A4D41C4B275E0072C553 /* EULA.rtf */,
+				FBE661B91C294B7D004AE953 /* changelog.rtf */,
+				FBDE03701B5ED1EE00C1C5DB /* Info.plist */,
+			);
+			name = Info;
+			sourceTree = "<group>";
+		};
+		FBA827271C5F165F0069A2E8 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Scripts;
+			sourceTree = "<group>";
+		};
 		FBB2AB411BC0A5BD00319A8A /* cDock-Helper */ = {
 			isa = PBXGroup;
 			children = (
+				FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */,
+				FBA827171C5E8B1E0069A2E8 /* SIMBL.osax */,
+				FBA8271C1C5EC7AE0069A2E8 /* SIMBL_Install.sh */,
 				FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */,
 				FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */,
 				FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */,
@@ -332,6 +344,8 @@
 				79A33DAE1B6C0630007299FC /* ZKSwizzle */,
 				FB13CA031B6746D1006F3D89 /* Fishhook */,
 				FBD71EAD1B5F201900C50402 /* Preferences */,
+				FBA827141C5D53F40069A2E8 /* UncaughtExceptionHandler.h */,
+				FBA827151C5D53F40069A2E8 /* UncaughtExceptionHandler.m */,
 				FBD71EB11B5F201900C50402 /* cDock Theming */,
 				FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */,
 			);
@@ -370,8 +384,7 @@
 				FBF610621BC06E8F00FDCCA4 /* Sources */,
 				FBDE03651B5ED1EE00C1C5DB /* Resource */,
 				FBDE037E1B5ED25700C1C5DB /* Classes */,
-				FBDE03701B5ED1EE00C1C5DB /* Info.plist */,
-				FBB740F21B9A4482000F84E3 /* MyApp.xib */,
+				FB6BA6381C5744860099544C /* MyApp.xib */,
 			);
 			name = "cDock GUI";
 			path = "cDock-GUI";
@@ -380,17 +393,14 @@
 		FBDE03651B5ED1EE00C1C5DB /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FB98BED91C55538C004BAE85 /* dsa_pub.pem */,
+				FBA827241C5F0A160069A2E8 /* cDock-Helper.app */,
 				FB3EC0EA1B8EE26D00272131 /* cDock.bundle */,
-				FB3EC0E81B8EC5EF00272131 /* cDock-Installer.app */,
-				FB3EC0E61B8EC35700272131 /* cDock-Agent.app */,
 				FBD1F6F41B8D3A3600DF2E91 /* themes */,
 				FB3EDF731B7088B000E96DC9 /* updates */,
-				FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */,
-				FB09A4EC1C4B27880072C553 /* github.png */,
-				FB09A4ED1C4B27880072C553 /* heart2.png */,
-				FB09A4EE1C4B27880072C553 /* translate.png */,
-				FB98BED91C55538C004BAE85 /* dsa_pub.pem */,
-				FBE661B91C294B7D004AE953 /* changeLOG.rtf */,
+				FBA827271C5F165F0069A2E8 /* Scripts */,
+				FB6BA63C1C589EF70099544C /* Icons */,
+				FB6BA63D1C589F090099544C /* Info */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -410,7 +420,6 @@
 			isa = PBXGroup;
 			children = (
 				FB09A4EA1C4B27720072C553 /* Titlebar */,
-				FB09A4D21C4B275E0072C553 /* PFAboutWindow */,
 				FB09A4D81C4B275E0072C553 /* PFMoveApplication */,
 			);
 			name = Sources;
@@ -426,6 +435,7 @@
 				FBB2AB3C1BC0A5BD00319A8A /* Sources */,
 				FBB2AB3D1BC0A5BD00319A8A /* Frameworks */,
 				FBB2AB3E1BC0A5BD00319A8A /* Resources */,
+				FBA827231C5F08BB0069A2E8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -482,9 +492,6 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Wolfgang Baird";
 				TargetAttributes = {
-					FB2BEB2F1BAA99A5003372C5 = {
-						CreatedOnToolsVersion = 7.1;
-					};
 					FBB2AB3F1BC0A5BD00319A8A = {
 						CreatedOnToolsVersion = 7.1;
 					};
@@ -509,7 +516,6 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FB2BEB2F1BAA99A5003372C5 /* Build */,
 				FBC4F4EC1B5ED0EC0078D4E4 /* cDock */,
 				FBDE035F1B5ED1EE00C1C5DB /* cDock 2 */,
 				FBB2AB3F1BC0A5BD00319A8A /* cDock-Helper */,
@@ -522,8 +528,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA827291C5F1FFC0069A2E8 /* dsa_pub.pem in Resources */,
+				FBA827181C5E8B1E0069A2E8 /* SIMBL.osax in Resources */,
 				FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */,
 				FBB2AB4C1BC0A5BD00319A8A /* MainMenu.xib in Resources */,
+				FBA8271D1C5EC7AE0069A2E8 /* SIMBL_Install.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,20 +547,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBA827261C5F0E2A0069A2E8 /* cDock-Helper.app in Resources */,
 				FB09A4F01C4B27880072C553 /* github.png in Resources */,
+				FB6BA6391C5744860099544C /* MyApp.xib in Resources */,
 				FB3EDF741B7088B000E96DC9 /* updates in Resources */,
 				FB09A4F21C4B27880072C553 /* translate.png in Resources */,
-				FBE661BA1C294B7D004AE953 /* changeLOG.rtf in Resources */,
+				FBE661BA1C294B7D004AE953 /* changelog.rtf in Resources */,
+				FB6BA63B1C587E110099544C /* webicon.png in Resources */,
 				FB09A4F11C4B27880072C553 /* heart2.png in Resources */,
 				FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */,
-				FB3EC0E71B8EC35800272131 /* cDock-Agent.app in Resources */,
-				FB3EC0E91B8EC5EF00272131 /* cDock-Installer.app in Resources */,
-				FB09A4E51C4B275E0072C553 /* PFAboutWindow.xib in Resources */,
 				FB09A4E41C4B275E0072C553 /* EULA.rtf in Resources */,
 				FB98BEDA1C55538C004BAE85 /* dsa_pub.pem in Resources */,
 				FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */,
 				FB09A4E31C4B275E0072C553 /* Credits.rtf in Resources */,
-				FBB740F01B9A4482000F84E3 /* MyApp.xib in Resources */,
 				FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -559,6 +567,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FBA827231C5F08BB0069A2E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app\" \"$HOME\"/GitHub/wb_cDock2/cDock/cDock-GUI";
+		};
 		FBCB4FD81B5F2973007476C4 /* Move Bundle */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -571,7 +592,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\n\n# Copy binary to git repos\n# cp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"$HOME\"/GitHub/wb_cDock/app/bundles\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"$HOME\"/GitHub/wb_cDock2/cDock/cDock-GUI\n\nkillall -KILL Dock\nsleep 1\nosascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\n";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n\npreCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\npostCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" /Library/Application\\ Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist)\n\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\n\n# Copy binary to git repos\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"$HOME\"/GitHub/wb_cDock2/cDock/cDock-GUI\n\nif [ \"$preCompile\" -ne \"$postCompile\" ]; then\n    killall -KILL Dock\n    sleep 1\n    osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\nfi\n";
 		};
 		FBD1F6F61B8D3C1C00DF2E91 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -607,6 +628,7 @@
 				FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */,
 				FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */,
 				FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */,
+				FBA827161C5D53F40069A2E8 /* UncaughtExceptionHandler.m in Sources */,
 				79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */,
 				FB8E2C891C3A309100192556 /* cd_DOCKIndicator9.m in Sources */,
 				FB14DA101B96482B00C52E53 /* cd_ECMaterial10.m in Sources */,
@@ -625,7 +647,6 @@
 				FB09A4E91C4B275E0072C553 /* WAYWindow.m in Sources */,
 				FB09A4E21C4B275E0072C553 /* INWindowButton.m in Sources */,
 				FBE843611B641D4A00F87E50 /* AppDelegate.m in Sources */,
-				FB09A4E61C4B275E0072C553 /* PFAboutWindowController.m in Sources */,
 				FB09A4E11C4B275E0072C553 /* INAppStoreWindow.m in Sources */,
 				FBF610611BC0362E00FDCCA4 /* main.m in Sources */,
 				FB09A4E71C4B275E0072C553 /* PFMoveApplication.m in Sources */,
@@ -643,41 +664,21 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		FBB740F21B9A4482000F84E3 /* MyApp.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB1CCC3B1C388CDE003D5BDC /* Base */,
-				FB1CCC3C1C388CF4003D5BDC /* en */,
-			);
-			name = MyApp.xib;
-			path = "cDock-GUI";
-			sourceTree = SOURCE_ROOT;
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		FB2BEB311BAA99A5003372C5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		FB2BEB321BAA99A5003372C5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		FBB2AB4F1BC0A5BD00319A8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "cDock-Helper/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -690,8 +691,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "cDock-Helper/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -857,15 +862,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FB2BEB301BAA99A5003372C5 /* Build configuration list for PBXAggregateTarget "Build" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FB2BEB311BAA99A5003372C5 /* Debug */,
-				FB2BEB321BAA99A5003372C5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		FBB2AB4E1BC0A5BD00319A8A /* Build configuration list for PBXNativeTarget "cDock-Helper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
