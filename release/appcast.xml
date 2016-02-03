@@ -57,11 +57,11 @@
           </description>
           <pubDate>Tue, 02 Feb 2016 20:15:11 +0000</pubDate>
           <enclosure url="https://github.com/w0lfschild/app_updates/raw/master/cDock/cDock_0.10.2.zip"
-          sparkle:version="1710"
+          sparkle:version="1712"
           sparkle:shortVersionString="0.10.2"
-          length="3278483"
+          length="3262123"
           type="application/octet-stream"
-          sparkle:dsaSignature="MCwCFE2fTsqnkrk/GtEAsWX5gxsIW9WKAhRuvAJoy74b7m65B0DiqKN5h1N+JQ==" />
+          sparkle:dsaSignature="MC0CFQC+UkRe+xsoirGk9w5A+ShqtWXxWwIUUCYzG/f1qUrEYpAf8wQxL4mw1yc=" />
       </item>
   </channel>
 </rss>
