@@ -1,7 +1,7 @@
 cDock 2		: 0.10.2
 Bundle		: 0.11.2
 SIMBL		: 0.9.10
-Build Date 	: Jan / 31 / 2016
+Build Date 	: Feb / 02 / 2016
 
 0.10.2
 - Bugfixes

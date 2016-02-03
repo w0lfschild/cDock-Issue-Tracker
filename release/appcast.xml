@@ -59,9 +59,9 @@
           <enclosure url="https://github.com/w0lfschild/app_updates/raw/master/cDock/cDock_0.10.2.zip"
           sparkle:version="1710"
           sparkle:shortVersionString="0.10.2"
-          length="3285529"
+          length="3278483"
           type="application/octet-stream"
-          sparkle:dsaSignature="MC4CFQC0RtD8s3L6ovw6KOQmMtzgROnNNwIVAK6xXahXt5oyehKKRO4vLrhouY3r" />
+          sparkle:dsaSignature="MCwCFE2fTsqnkrk/GtEAsWX5gxsIW9WKAhRuvAJoy74b7m65B0DiqKN5h1N+JQ==" />
       </item>
   </channel>
 </rss>
