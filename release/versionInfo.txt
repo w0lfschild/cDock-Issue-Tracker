@@ -1,7 +1,10 @@
-cDock 2		: 0.10.1
+cDock 2		: 0.10.2
 Bundle		: 0.11.2
 SIMBL		: 0.9.10
 Build Date 	: Jan / 31 / 2016
+
+0.10.2
+- Bugfixes
 
 0.10.1
 - Merge cDock agent and cDock installer
