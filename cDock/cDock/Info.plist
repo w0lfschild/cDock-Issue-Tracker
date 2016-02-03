@@ -19,7 +19,9 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2313</string>
+	<string>2314</string>
+	<key>DevURL</key>
+	<string>https://github.com/w0lfschild/cDock2</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2015 Wolfgang Baird. All rights reserved.</string>
 	<key>NSPrincipalClass</key>

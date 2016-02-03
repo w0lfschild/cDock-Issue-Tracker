@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FBB2AB2A1BC0A54100319A8A"
-               BuildableName = "cDock-Helper.app"
-               BlueprintName = "cDock-Helper"
+               BlueprintIdentifier = "FBB2AB3F1BC0A5BD00319A8A"
+               BuildableName = "cDockHelper.app"
+               BlueprintName = "cDockHelper"
                ReferencedContainer = "container:cDock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBB2AB2A1BC0A54100319A8A"
-            BuildableName = "cDock-Helper.app"
-            BlueprintName = "cDock-Helper"
+            BlueprintIdentifier = "FBB2AB3F1BC0A5BD00319A8A"
+            BuildableName = "cDockHelper.app"
+            BlueprintName = "cDockHelper"
             ReferencedContainer = "container:cDock.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBB2AB2A1BC0A54100319A8A"
-            BuildableName = "cDock-Helper.app"
-            BlueprintName = "cDock-Helper"
+            BlueprintIdentifier = "FBB2AB3F1BC0A5BD00319A8A"
+            BuildableName = "cDockHelper.app"
+            BlueprintName = "cDockHelper"
             ReferencedContainer = "container:cDock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FBB2AB2A1BC0A54100319A8A"
-            BuildableName = "cDock-Helper.app"
-            BlueprintName = "cDock-Helper"
+            BlueprintIdentifier = "FBB2AB3F1BC0A5BD00319A8A"
+            BuildableName = "cDockHelper.app"
+            BlueprintName = "cDockHelper"
             ReferencedContainer = "container:cDock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

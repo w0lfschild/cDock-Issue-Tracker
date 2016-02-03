@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FBB2AB3F1BC0A5BD00319A8A"
-               BuildableName = "cDock-Helper.app"
-               BlueprintName = "cDock-Helper"
+               BuildableName = "cDockHelper.app"
+               BlueprintName = "cDockHelper"
                ReferencedContainer = "container:cDock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

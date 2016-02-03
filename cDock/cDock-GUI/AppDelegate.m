@@ -225,9 +225,9 @@ NSString* runCommand(NSString * commandToRun) {
         
         // Lets stick to the classics. Same method as cDock uses...
         NSString *nullString;
-        NSString *loginAgent = [[NSBundle mainBundle] pathForResource:@"cDock-Helper" ofType:@"app"];
+        NSString *loginAgent = [[NSBundle mainBundle] pathForResource:@"cDockHelper" ofType:@"app"];
         nullString = runCommand(@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDock-Agent\\\"\"");
-        nullString = runCommand(@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDock-Helper\\\"\"");
+        nullString = runCommand(@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDockHelper\\\"\"");
         NSString *addAgent = [NSString stringWithFormat:@"osascript -e \"tell application \\\"System Events\\\" to make new login item at end of login items with properties {path:\\\"%@\\\", hidden:false}\"", loginAgent];
         nullString = runCommand(addAgent);
     });
@@ -253,9 +253,9 @@ NSString* runCommand(NSString * commandToRun) {
         if (![killer isEqualToString:@"kill "])
             runCommand(killer);
     }
-    system("killall cDock-Helper");
+    system("killall cDockHelper");
     //system('for item in $(ps aux | grep "cDock" | tr -s ' ' | cut -d ' ' -f 2); do kill "$item"; done')
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"cDock-Helper" ofType:@"app"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"cDockHelper" ofType:@"app"];
     [[NSWorkspace sharedWorkspace] launchApplication:path];
 }
 
@@ -747,8 +747,8 @@ NSString* runCommand(NSString * commandToRun) {
         _window.titleBarHeight = 0.0;
     } else {
         [_window setTitlebarAppearsTransparent:true];
-        if ([_window respondsToSelector:@selector(_setTexturedBackground:)])
-            [_window performSelector:@selector(_setTexturedBackground:) withObject:[NSNumber numberWithBool:false]];
+//        if ([_window respondsToSelector:@selector(_setTexturedBackground:)])
+//            [_window performSelector:@selector(_setTexturedBackground:) withObject:[NSNumber numberWithBool:false]];
     }
     
     if ([[prefCD valueForKey:@"blurView"] boolValue])
@@ -1060,7 +1060,7 @@ NSString* runCommand(NSString * commandToRun) {
 }
 
 - (IBAction)simblInstall:(id)sender {
-    NSArray *apps = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"org.w0lf.cDock-Helper"];
+    NSArray *apps = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"org.w0lf.cDockHelper"];
     if (apps.count)
     {
         [(NSRunningApplication *)[apps objectAtIndex:0] terminate];

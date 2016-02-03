@@ -106,7 +106,7 @@
 		FBA8271C1C5EC7AE0069A2E8 /* SIMBL_Install.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = SIMBL_Install.sh; sourceTree = "<group>"; };
 		FBA827241C5F0A160069A2E8 /* cDock-Helper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = "cDock-Helper.app"; sourceTree = "<group>"; };
 		FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		FBB2AB401BC0A5BD00319A8A /* cDock-Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock-Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBB2AB401BC0A5BD00319A8A /* cDockHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cDockHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FBB2AB461BC0A5BD00319A8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -235,6 +235,15 @@
 			name = Titlebar;
 			sourceTree = "<group>";
 		};
+		FB0CF6901C61B054002CF3DE /* Excpetion */ = {
+			isa = PBXGroup;
+			children = (
+				FBA827141C5D53F40069A2E8 /* UncaughtExceptionHandler.h */,
+				FBA827151C5D53F40069A2E8 /* UncaughtExceptionHandler.m */,
+			);
+			name = Excpetion;
+			sourceTree = "<group>";
+		};
 		FB13CA031B6746D1006F3D89 /* Fishhook */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,7 +342,7 @@
 			children = (
 				FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */,
 				FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */,
-				FBB2AB401BC0A5BD00319A8A /* cDock-Helper.app */,
+				FBB2AB401BC0A5BD00319A8A /* cDockHelper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -344,8 +353,7 @@
 				79A33DAE1B6C0630007299FC /* ZKSwizzle */,
 				FB13CA031B6746D1006F3D89 /* Fishhook */,
 				FBD71EAD1B5F201900C50402 /* Preferences */,
-				FBA827141C5D53F40069A2E8 /* UncaughtExceptionHandler.h */,
-				FBA827151C5D53F40069A2E8 /* UncaughtExceptionHandler.m */,
+				FB0CF6901C61B054002CF3DE /* Excpetion */,
 				FBD71EB11B5F201900C50402 /* cDock Theming */,
 				FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */,
 			);
@@ -428,9 +436,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FBB2AB3F1BC0A5BD00319A8A /* cDock-Helper */ = {
+		FBB2AB3F1BC0A5BD00319A8A /* cDockHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FBB2AB4E1BC0A5BD00319A8A /* Build configuration list for PBXNativeTarget "cDock-Helper" */;
+			buildConfigurationList = FBB2AB4E1BC0A5BD00319A8A /* Build configuration list for PBXNativeTarget "cDockHelper" */;
 			buildPhases = (
 				FBB2AB3C1BC0A5BD00319A8A /* Sources */,
 				FBB2AB3D1BC0A5BD00319A8A /* Frameworks */,
@@ -441,9 +449,9 @@
 			);
 			dependencies = (
 			);
-			name = "cDock-Helper";
+			name = cDockHelper;
 			productName = "cDock-Helper";
-			productReference = FBB2AB401BC0A5BD00319A8A /* cDock-Helper.app */;
+			productReference = FBB2AB401BC0A5BD00319A8A /* cDockHelper.app */;
 			productType = "com.apple.product-type.application";
 		};
 		FBC4F4EC1B5ED0EC0078D4E4 /* cDock */ = {
@@ -518,7 +526,7 @@
 			targets = (
 				FBC4F4EC1B5ED0EC0078D4E4 /* cDock */,
 				FBDE035F1B5ED1EE00C1C5DB /* cDock 2 */,
-				FBB2AB3F1BC0A5BD00319A8A /* cDock-Helper */,
+				FBB2AB3F1BC0A5BD00319A8A /* cDockHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -592,7 +600,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n\npreCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\npostCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" /Library/Application\\ Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist)\n\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\n\n# Copy binary to git repos\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"$HOME\"/GitHub/wb_cDock2/cDock/cDock-GUI\n\nif [ \"$preCompile\" -ne \"$postCompile\" ]; then\n    killall -KILL Dock\n    sleep 1\n    osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\nfi\n";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n\npreCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\npostCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" /Library/Application\\ Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist)\n\ncp -f /Users/$USER/GitHub/wb_cDock2/cDock/cDock-GUI/cDock.icns \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\"/Contents/icon.icns\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\n\n# Copy binary to git repos\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"$HOME\"/GitHub/wb_cDock2/cDock/cDock-GUI\n\nif [ \"$preCompile\" -ne \"$postCompile\" ]; then\n    killall -KILL Dock\n    sleep 1\n    osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\nfi\n";
 		};
 		FBD1F6F61B8D3C1C00DF2E91 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -862,7 +870,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FBB2AB4E1BC0A5BD00319A8A /* Build configuration list for PBXNativeTarget "cDock-Helper" */ = {
+		FBB2AB4E1BC0A5BD00319A8A /* Build configuration list for PBXNativeTarget "cDockHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FBB2AB4F1BC0A5BD00319A8A /* Debug */,
