@@ -38,7 +38,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>https://github.com/w0lfschild/cdock2/raw/master/release/appcast.xml</string>
+	<string>https://github.com/w0lfschild/app_updates/raw/master/cDock/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>
