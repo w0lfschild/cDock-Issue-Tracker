@@ -16,30 +16,6 @@ BOOL showTooltips = false;
 BOOL enableTheming = true;
 NSDate *methodStart;
 
-NSString* runCommand(NSString * commandToRun) {
-    NSTask *task = [[NSTask alloc] init];
-    [task setLaunchPath:@"/bin/sh"];
-    
-    NSArray *arguments = [NSArray arrayWithObjects:
-                          @"-c" ,
-                          [NSString stringWithFormat:@"%@", commandToRun],
-                          nil];
-    //    NSLog(@"run command:%@", commandToRun);
-    [task setArguments:arguments];
-    
-    NSPipe *pipe = [NSPipe pipe];
-    [task setStandardOutput:pipe];
-    
-    NSFileHandle *file = [pipe fileHandleForReading];
-    
-    [task launch];
-    
-    NSData *data = [file readDataToEndOfFile];
-    
-    NSString *output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    return output;
-}
-
 @interface swagNumFormatter : NSNumberFormatter
 
 - (BOOL)isPartialStringValid:(NSString *)partialString newEditingString:(NSString **)newString errorDescription:(NSString **) error;
@@ -226,10 +202,10 @@ NSString* runCommand(NSString * commandToRun) {
         // Lets stick to the classics. Same method as cDock uses...
         NSString *nullString;
         NSString *loginAgent = [[NSBundle mainBundle] pathForResource:@"cDockHelper" ofType:@"app"];
-        nullString = runCommand(@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDock-Agent\\\"\"");
-        nullString = runCommand(@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDockHelper\\\"\"");
+        nullString = [self runCommand:@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDock-Agent\\\"\""];
+        nullString = [self runCommand:@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDockHelper\\\"\""];
         NSString *addAgent = [NSString stringWithFormat:@"osascript -e \"tell application \\\"System Events\\\" to make new login item at end of login items with properties {path:\\\"%@\\\", hidden:false}\"", loginAgent];
-        nullString = runCommand(addAgent);
+        nullString = [self runCommand:addAgent];
     });
 }
 
@@ -245,13 +221,13 @@ NSString* runCommand(NSString * commandToRun) {
 //    int my_pid = [[NSProcessInfo processInfo] processIdentifier];
 //    NSLog(@"%d _swag", my_pid);
     NSString *nullString = [NSString stringWithFormat:@"for item in $(ps aux | grep [c]Dock..gent | tr -s ' ' | cut -d ' ' -f 2); do echo $item; done"];
-    nullString = runCommand(nullString);
+    nullString = [self runCommand:nullString];
     NSArray *myWords = [nullString componentsSeparatedByString:@"\n"];
     for (NSNumber *anid in myWords)
     {
         NSString *killer = [NSString stringWithFormat:@"kill %@", anid];
         if (![killer isEqualToString:@"kill "])
-            runCommand(killer);
+            [self runCommand:killer];
     }
     system("killall cDockHelper");
     //system('for item in $(ps aux | grep "cDock" | tr -s ' ' | cut -d ' ' -f 2); do kill "$item"; done')
@@ -886,7 +862,7 @@ NSString* runCommand(NSString * commandToRun) {
         if (osx_version >= 11)
         {
             // Rootless check
-            rootless = runCommand(@"touch /System/test 2>&1");
+            rootless = [self runCommand:@"touch /System/test 2>&1"];
             if ([rootless containsString:@"Operation not permitted"])
             {
                 [editTab setView:_rootlView];   // Add rootless tab

@@ -632,11 +632,11 @@ CA
             <point key="canvasLocation" x="-234" y="380"/>
         </customView>
         <customView id="8dO-d3-A7g">
-            <rect key="frame" x="0.0" y="0.0" width="557" height="330"/>
+            <rect key="frame" x="0.0" y="0.0" width="558" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSG-st-ekY">
-                    <rect key="frame" x="16" y="144" width="524" height="72"/>
+                    <rect key="frame" x="17" y="179" width="524" height="72"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" id="5Ha-z5-mOF">
                         <font key="font" size="14" name="HelveticaNeue-Thin"/>
                         <string key="title">cDock requires SIMBL to theme the dock. A valid install of SIMBL wasn't detected.
@@ -647,24 +647,24 @@ Would you like to install SIMBL now and start theming?</string>
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PqP-lx-PPW">
-                    <rect key="frame" x="238" y="108" width="81" height="32"/>
+                    <rect key="frame" x="239" y="143" width="81" height="32"/>
                     <buttonCell key="cell" type="push" title="Install" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0LV-NG-vvf">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="386.5" y="1208"/>
+            <point key="canvasLocation" x="386" y="1316"/>
         </customView>
         <customView id="3dI-cq-yL8">
-            <rect key="frame" x="0.0" y="0.0" width="557" height="330"/>
+            <rect key="frame" x="0.0" y="0.0" width="558" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDT-2b-Rpj">
-                    <rect key="frame" x="16" y="22" width="524" height="288"/>
+                    <rect key="frame" x="17" y="56" width="524" height="288"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" id="Pq8-h4-hqa">
                         <font key="font" size="12" name="CourierNewPSMT"/>
-                        <string key="title">cDock has detected that your computer has System Integrity Protection enabled.
+                        <mutableString key="title">cDock has detected that your computer has System Integrity Protection enabled.
 
 Unfortunately this prevents cDock from being able to install SIMBL and theme the dock.
 
@@ -676,13 +676,13 @@ If you would like to theme the dock you must first disable rootless by doing the
 4: Copy this command
 		csrutil disable
 5: Press return or enter
-6: Restart your computer again</string>
+6: Restart your computer again</mutableString>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
-            <point key="canvasLocation" x="387.5" y="820"/>
+            <point key="canvasLocation" x="386" y="860"/>
         </customView>
         <customView id="oYt-BD-UAt" userLabel="Dock View">
             <rect key="frame" x="0.0" y="0.0" width="558" height="400"/>
