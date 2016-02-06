@@ -1,15 +1,14 @@
-cDock 2		: 0.10.2
-Bundle		: 0.11.2
-SIMBL		: 0.9.10
-Build Date 	: Feb / 02 / 2016
+cDock.app		: 0.10.3
+cDock.bundle		: 0.11.2
+SIMBL.osax		: 0.9.10
+cDockHelper.app		: 1.0
+Build Date 		: Feb / 05 / 2016
 
-0.10.2
+0.10.3
 - Bugfixes
-
-0.10.1
 - Merge cDock agent and cDock installer
-- cDock agent re-write (cDock-Helper)
-- Lower agent energy use
+- cDock agent re-write (cDockHelper)
+- Lower agent energy use (No polling)
 - Faster inject after killing dock
 - Fixed (some) OS X 10.9 bundle bugs
 - Fixed OS X 10.9 dock settings bugs
@@ -27,7 +26,7 @@ Build Date 	: Feb / 02 / 2016
 - New about tab
 - Changed donation link
 - Indicators moved to top layer
-- Use org.w0lf.cDock-GUI for all GUI preferences
+- Use org.w0lf.cDock-GUI for GUI preferences
 - Visit website button
 - Removed PFAboutWindow
 - Removed cDock-Agent
