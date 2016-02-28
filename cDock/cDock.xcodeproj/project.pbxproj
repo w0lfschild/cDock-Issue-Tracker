@@ -582,7 +582,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app\" \"$HOME\"/GitHub/wb_cDock2/cDock/cDock-GUI";
+			shellScript = "cp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.app\" \"${SRCROOT}\"/cDock-GUI";
 		};
 		FBCB4FD81B5F2973007476C4 /* Move Bundle */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -596,7 +596,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n\npreCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\npostCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" /Library/Application\\ Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist)\n\ncp -f /Users/$USER/GitHub/wb_cDock2/cDock/cDock-GUI/cDock.icns \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\"/Contents/icon.icns\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\n\n# Copy binary to git repos\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"$HOME\"/GitHub/wb_cDock2/cDock/cDock-GUI\n\nif [ \"$preCompile\" -ne \"$postCompile\" ]; then\n    killall -KILL Dock\n    sleep 1\n    osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\nfi\n";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n\npreCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\npostCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" /Library/Application\\ Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist)\n\n# Copy icon\ncp -f \"${SRCROOT}\"/cDock-GUI/cDock.icns \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\"/Contents/icon.icns\n\n# Install bundle\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\n\n# Copy bundle to git folder\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"${SRCROOT}\"/cDock-GUI\n\nif [ \"$preCompile\" -ne \"$postCompile\" ]; then\n    killall -KILL Dock\n    sleep 1\n    osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\nfi\n";
 		};
 		FBD1F6F61B8D3C1C00DF2E91 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -681,7 +681,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "cDock-Helper/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../../../Frameworks $SRCROOT/cDock";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -698,7 +698,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "cDock-Helper/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../../../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../../../Frameworks $SRCROOT/cDock";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";

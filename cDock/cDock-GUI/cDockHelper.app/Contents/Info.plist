@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>15E33e</string>
+	<string>15E49a</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -46,11 +46,6 @@
 	<string>10.9</string>
 	<key>LSUIElement</key>
 	<true/>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2015 Wolfgang Baird. All rights reserved.</string>
 	<key>NSMainNibFile</key>
@@ -58,7 +53,7 @@
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
-	<string>https://github.com/w0lfschild/cdock2/raw/master/release/appcast.xml</string>
+	<string>https://github.com/w0lfschild/app_updates/raw/master/cDock/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>
