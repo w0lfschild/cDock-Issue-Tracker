@@ -81,7 +81,13 @@ void _forceRefresh()
     
     if (FLOORLAYER == nil)
     {
-        Class cls1 = NSClassFromString(@"DOCK.FloorLayer");
+        Class cls1;
+        if (osx_minor == 10)
+        {
+            cls1 = NSClassFromString(@"DOCKFloorLayer");
+        } else {
+            cls1 = NSClassFromString(@"DOCK.FloorLayer");
+        }
         SEL aSel1 = NSSelectorFromString(@"layoutSublayers");
         if ([cls1 respondsToSelector:aSel1]) {
             [cls1 performSelector:aSel1];

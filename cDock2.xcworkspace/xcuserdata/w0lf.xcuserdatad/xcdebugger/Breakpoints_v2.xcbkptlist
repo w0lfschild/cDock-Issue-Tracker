@@ -357,7 +357,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
             endingLineNumber = "212"
-            landmarkName = "-apply_WELL:withWELL:"
+            landmarkName = "-dirCheck:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -373,7 +373,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1105"
             endingLineNumber = "1105"
-            landmarkName = "-changeDarkMode:"
+            landmarkName = "-changeIndicators:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -405,7 +405,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "778"
             endingLineNumber = "778"
-            landmarkName = "-setupWindow"
+            landmarkName = "-applicationWillFinishLaunching:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -421,7 +421,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "974"
             endingLineNumber = "974"
-            landmarkName = "-change_theme:"
+            landmarkName = "-selectView:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

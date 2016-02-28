@@ -23,15 +23,6 @@ CGImageRef small_simple;
 bool dispatch_prefFile = true;
 bool dispatch_dockFile = true;
 
-//extern NSInteger orient;
-//extern long osx_minor;
-//extern BOOL dispatch_prefFile;
-//extern BOOL dispatch_dockFile;
-//extern BOOL loadShadows;
-//extern BOOL loadImages;
-//extern BOOL loadIndicators;
-//extern void _forceRefresh();
-
 void notificationCallback (CFNotificationCenterRef center,
                            void * observer,
                            CFStringRef name,
@@ -143,10 +134,7 @@ void _setupPrefs()
                                     CFSTR("MyNotification"), NULL,
                                     CFNotificationSuspensionBehaviorDeliverImmediately);
     
-    InstallUncaughtExceptionHandler();
-    
-    // remove oberver
-//    CFNotificationCenterRemoveObserver(center, NULL, CFSTR("TestValue"), NULL);
+//    InstallUncaughtExceptionHandler();
     
     // Create prefs if they don't exist
     _setupPrefs();
@@ -162,8 +150,6 @@ void _setupPrefs()
         ZKSwizzle(_CDMAVSide, DOCKSideGlassFloorLayer);
     }
     
-    // Something tells me I could do this without fishhook if I already have ZKSwizzle
-    // But I don't really know what's going on here
     if (osx_minor > 9) {
         orig_CFPreferencesCopyAppValue = dlsym(RTLD_DEFAULT, "CFPreferencesCopyAppValue");
         rebind_symbols((struct rebinding[1]){{"CFPreferencesCopyAppValue", hax_CFPreferencesCopyAppValue}}, 1);

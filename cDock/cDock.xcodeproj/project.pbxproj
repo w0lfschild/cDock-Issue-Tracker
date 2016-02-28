@@ -303,25 +303,25 @@
 		FBB2AB411BC0A5BD00319A8A /* cDock-Helper */ = {
 			isa = PBXGroup;
 			children = (
-				FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */,
+				FBB7934A1C7A8DF4006BF301 /* stuff */,
 				FBA827171C5E8B1E0069A2E8 /* SIMBL.osax */,
 				FBA8271C1C5EC7AE0069A2E8 /* SIMBL_Install.sh */,
 				FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */,
 				FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */,
-				FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */,
-				FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */,
 				FBB2AB4D1BC0A5BD00319A8A /* Info.plist */,
-				FBB2AB451BC0A5BD00319A8A /* Supporting Files */,
 			);
 			path = "cDock-Helper";
 			sourceTree = "<group>";
 		};
-		FBB2AB451BC0A5BD00319A8A /* Supporting Files */ = {
+		FBB7934A1C7A8DF4006BF301 /* stuff */ = {
 			isa = PBXGroup;
 			children = (
 				FBB2AB461BC0A5BD00319A8A /* main.m */,
+				FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */,
+				FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */,
+				FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */,
 			);
-			name = "Supporting Files";
+			name = stuff;
 			sourceTree = "<group>";
 		};
 		FBC4F4E41B5ED0EC0078D4E4 = {

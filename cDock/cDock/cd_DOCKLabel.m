@@ -4,28 +4,20 @@
 
 #import "cd_shared.h"
 
-//extern long osx_minor;
-
 ZKSwizzleInterface(__CDthing, ECStatusLabelLayer, CALayer);
 @implementation __CDthing
-
-- (void)_renderBadgeImage {
-    ZKOrig(void);
+//- (void)_renderBadgeImage {
+//    ZKOrig(void);
 //    [self setBackgroundColor:[[NSColor whiteColor] CGColor]];
 //    [self setOpacity:1];
 //    NSLog(@"t");
-}
-
-//- (id)initWithMaxSize:(double)arg1 scaleFactor:(float)arg2 {
-//    NSLog(@"TTT");
-//    return ZKOrig(id);
 //}
 
 //- (void)layoutForFrame:(struct CGRect)arg1 {
 //    ZKOrig(void);
-////    [self setBackgroundColor:[[NSColor whiteColor] CGColor]];
-////    [self setOpacity:1];
-//    NSLog(@"TTT");
+//    [self setBackgroundColor:[[NSColor whiteColor] CGColor]];
+//    [self setOpacity:1];
+//    NSLog(@"t");
 //}
 @end
 
