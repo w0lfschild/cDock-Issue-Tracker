@@ -751,6 +751,12 @@ NSDate *methodStart;
     [_pop_email setImage:[NSImage imageNamed:NSImageNameUserAccounts]];
     [[_pop_email cell] setImageScaling:NSImageScaleProportionallyUpOrDown];
     [_pop_email setAction:@selector(send_email:)];
+    
+    NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
+    [_appName setStringValue:[infoDict objectForKey:@"CFBundleExecutable"]];
+    [_appVersion setStringValue:[NSString stringWithFormat:@"Version %@ (%@)", [infoDict objectForKey:@"CFBundleShortVersionString"], [infoDict objectForKey:@"CFBundleVersion"]]];
+    [_appCopyright setStringValue:@"Copyright © 2015 Wolfgang Baird"];
+
 }
 
 - (NSMutableDictionary *)_getDockPlist {
@@ -974,9 +980,9 @@ NSDate *methodStart;
         [_tabView selectTabViewItemAtIndex:[tabs indexOfObject:sender]];
     for (NSButton *g in tabs) {
         if (![g isEqualTo:sender])
-            [g setState:NSOffState];
+            g.layer.backgroundColor = [NSColor clearColor].CGColor;
         else
-            [g setState:NSOnState];
+            g.layer.backgroundColor =  [NSColor colorWithCalibratedRed:0.121f green:0.4375f blue:0.1992f alpha:0.2578f].CGColor;
     }
 }
 
@@ -993,25 +999,21 @@ NSDate *methodStart;
 }
 
 - (IBAction)toggle_Donate:(id)sender {
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"CDHideDonate"])
+    NSButton *btn = sender;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:[btn state]] forKey:@"CDHideDonate"];
+    if ([btn state])
     {
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:true] forKey:@"CDHideDonate"];
-        [NSAnimationContext runAnimationGroup:^(NSAnimationContext *context) {
-            context.duration = 1;
-            _pop_paypal.animator.alphaValue = 0;
-            _pop_translate.animator.alphaValue = 0;
-        }
-         
-        completionHandler:^{
-            _pop_paypal.hidden = YES;
-            _pop_translate.hidden = YES;
-            _pop_paypal.alphaValue = 1;
-            _pop_translate.alphaValue = 1;
-        }];
+        [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setDuration:1.0];
+        [[_pop_paypal animator] setAlphaValue:0];
+        [[_pop_paypal animator] setHidden:true];
+        [NSAnimationContext endGrouping];
     } else {
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:false] forKey:@"CDHideDonate"];
-        [_pop_paypal setHidden:false];
-        [_pop_translate setHidden:false];
+        [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setDuration:1.0];
+        [[_pop_paypal animator] setAlphaValue:1];
+        [[_pop_paypal animator] setHidden:false];
+        [NSAnimationContext endGrouping];
     }
 }
 

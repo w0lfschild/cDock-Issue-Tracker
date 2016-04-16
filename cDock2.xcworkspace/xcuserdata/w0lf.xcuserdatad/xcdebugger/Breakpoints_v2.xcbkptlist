@@ -368,11 +368,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "475990867.014432"
+            timestampString = "480114145.683092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1105"
-            endingLineNumber = "1105"
+            startingLineNumber = "1107"
+            endingLineNumber = "1107"
             landmarkName = "-changeIndicators:"
             landmarkType = "5">
          </BreakpointContent>
@@ -400,11 +400,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "475990867.014432"
+            timestampString = "480113864.023181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "778"
-            endingLineNumber = "778"
+            startingLineNumber = "784"
+            endingLineNumber = "784"
             landmarkName = "-applicationWillFinishLaunching:"
             landmarkType = "5">
          </BreakpointContent>
@@ -416,11 +416,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.m"
-            timestampString = "475990867.014432"
+            timestampString = "480113864.023181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "974"
-            endingLineNumber = "974"
+            startingLineNumber = "980"
+            endingLineNumber = "980"
             landmarkName = "-selectView:"
             landmarkType = "5">
          </BreakpointContent>
@@ -432,11 +432,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "cDock/cDock-GUI/AppDelegate.h"
-            timestampString = "475570378.744988"
+            timestampString = "480113864.023181"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "cdock_changeLog"
             landmarkType = "19">
          </BreakpointContent>

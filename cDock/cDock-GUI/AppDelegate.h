@@ -39,6 +39,10 @@
 // Sparkle updater
 @property (weak) IBOutlet SUUpdater *myUpdater;
 
+@property IBOutlet NSTextField *appName;
+@property IBOutlet NSTextField *appVersion;
+@property IBOutlet NSTextField *appCopyright;
+
 // Tab buttons
 @property (weak) IBOutlet NSButton *viewTab0;
 @property (weak) IBOutlet NSButton *viewTab1;
