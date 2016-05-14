@@ -66,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FB07EA6A1CE7A49400BEF3F8 /* Apple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Apple; sourceTree = "<group>"; };
 		FB09A4CC1C4B275E0072C553 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
 		FB09A4CD1C4B275E0072C553 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
 		FB09A4CE1C4B275E0072C553 /* INAppStoreWindowCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindowCompatibility.h; sourceTree = "<group>"; };
@@ -327,6 +328,7 @@
 		FBC4F4E41B5ED0EC0078D4E4 = {
 			isa = PBXGroup;
 			children = (
+				FB07EA6A1CE7A49400BEF3F8 /* Apple */,
 				FB98BED51C54B253004BAE85 /* Sparkle.framework */,
 				FBC4F4EF1B5ED0EC0078D4E4 /* cDock Bundle */,
 				FBDE03611B5ED1EE00C1C5DB /* cDock GUI */,
@@ -499,12 +501,14 @@
 				TargetAttributes = {
 					FBB2AB3F1BC0A5BD00319A8A = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = EX596BNL45;
 					};
 					FBC4F4EC1B5ED0EC0078D4E4 = {
 						CreatedOnToolsVersion = 7.0;
 					};
 					FBDE035F1B5ED1EE00C1C5DB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = EX596BNL45;
 					};
 				};
 			};
@@ -596,7 +600,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\n\npreCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\npostCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" /Library/Application\\ Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist)\n\n# Copy icon\n# cp -f \"${SRCROOT}\"/cDock-GUI/cDock.icns \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\"/Contents/icon.icns\n\n# Install bundle\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\n\n# Copy bundle to git folder\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"${SRCROOT}\"/cDock-GUI\n\nif [ \"$preCompile\" -ne \"$postCompile\" ]; then\n    killall -KILL Dock\n    sleep 1\n    osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\nfi\n";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\npreCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\npostCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" /Library/Application\\ Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist)\n\n# Copy icon\n# cp -f \"${SRCROOT}\"/cDock-GUI/cDock.icns \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\"/Contents/icon.icns\n\n# Install bundle\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\n\n# Copy bundle to git folder\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"${SRCROOT}\"/cDock-GUI\n\nif [ \"$preCompile\" -ne \"$postCompile\" ]; then\n    killall -KILL Dock\n    sleep 1\n    osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\nfi\n";
 		};
 		FBD1F6F61B8D3C1C00DF2E91 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -675,6 +679,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -692,6 +697,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -825,6 +831,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -844,6 +851,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = NO;
 				FRAMEWORK_SEARCH_PATHS = (

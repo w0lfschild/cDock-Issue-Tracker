@@ -276,7 +276,7 @@
     [ _backgroundLayer setFrame: _materialLayer.frame];
     
     // Make sure separator is on top
-    [ _separatorLayer setZPosition:999 ];
+    [ _separatorLayer setZPosition:998 ];
     
 //    Pinning except the actual clickable tile areas don't move, not sure how to do that...
 //        CGRect r1 = _superLayer.bounds;

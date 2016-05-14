@@ -22,11 +22,19 @@ struct FloatRect
 }
 - (void)setSelected:(BOOL)arg1;
 - (void)setLabel:(id)arg1 stripAppSuffix:(_Bool)arg2;
+- (void)setHidden:(BOOL)arg1;
+- (void)doCommand:(unsigned int)arg1;
 - (id)layer;
 @end
 
 ZKSwizzleInterface(_CDTile, Tile, NSObject);
 @implementation _CDTile
+
+- (void)doCommand:(unsigned int)arg1;
+{
+    ZKOrig(void, arg1);
+//    NSLog(@"%d", arg1);
+}
 
 - (void)setGlobalFrame:(struct FloatRect)arg1 {
     /* Resize icons
@@ -37,14 +45,39 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
      
      */
     ZKOrig(void, arg1);
+    
+    /* Remove trash icon*/
+//    if ([self respondsToSelector:@selector(resetTrashIcon)])
+//    {
+//        [(Tile*)self setHidden:true];
+//        [(Tile*)self doCommand:1004];
+//    }
 }
 
 - (void)removeIndicator {
     ZKOrig(void);
+    
+    [(Tile*)self setSelected:true];
+    
+    CALayer *_tileLayer = ZKHookIvar(self, CALayer *, "_layer");
+    for (CALayer *item in (NSMutableArray *)_tileLayer.sublayers)
+        if ([item.name  isEqual:@"_reflectionLayer"]) {
+            item.hidden = YES;
+            break;
+        }
 }
 
 - (void)addIndicator {
     ZKOrig(void);
+    
+    [(Tile*)self setSelected:false];
+    
+    CALayer *_tileLayer = ZKHookIvar(self, CALayer *, "_layer");
+    for (CALayer *item in (NSMutableArray *)_tileLayer.sublayers)
+        if ([item.name  isEqual:@"_reflectionLayer"]) {
+            item.hidden = NO;
+            break;
+        }
 //    NSUInteger count;
 //    Ivar *vars = class_copyIvarList([self.superclass class], &count);
 //    for (NSUInteger i=0; i<count; i++) {
@@ -153,6 +186,8 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
 - (void)layoutSublayers {
     ZKOrig(void);
     
+    [ self setZPosition:999 ];
+    
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;
     
@@ -213,9 +248,10 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
         _reflectionLayer = [NSKeyedUnarchiver unarchiveObjectWithData: buffer];
         [ _reflectionLayer setName:(@"_reflectionLayer")];
         [ self addSublayer:_reflectionLayer ];
+        _reflectionLayer.hidden = YES;
     }
     
-    _reflectionLayer.hidden = NO;
+//    _reflectionLayer.hidden = NO;
     
     // Transform reflecition layer using CATransform3DMakeRotation
     CGRect frm = _iconLayer.frame ;

@@ -12,7 +12,7 @@ ZKSwizzleInterface(_CDIndicatorLayer, DOCKIndicatorLayer, CALayer)
     
 //    NSLog(@"Size: %f", arg1);
     
-    [ self setZPosition:999 ];
+    [ self setZPosition:998 ];
     
     if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
         return;

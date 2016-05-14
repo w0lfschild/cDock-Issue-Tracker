@@ -48,6 +48,7 @@
 @property (weak) IBOutlet NSButton *viewTab1;
 @property (weak) IBOutlet NSButton *viewTab2;
 @property (weak) IBOutlet NSButton *viewTab3;
+@property (weak) IBOutlet NSButton *donatebutton;
 
 // Image buttons
 @property (weak) IBOutlet NSButton *pop_paypal;
@@ -77,6 +78,7 @@
 @property (weak) IBOutlet NSButton      *cdock_isVibrant;
 @property (weak) IBOutlet NSButton      *cdock_fastTooltips;
 @property (weak) IBOutlet NSPopUpButton *cdock_updates;
+@property (weak) IBOutlet NSPopUpButton *cdock_updates_interval;
 @property        IBOutlet NSTextView    *cdock_changeLog;
 
 /* cDock settings */

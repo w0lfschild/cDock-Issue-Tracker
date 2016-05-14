@@ -14,8 +14,6 @@
 #include <sys/time.h>
 
 @interface AppDelegate ()
-
-@property int dockPID;
 @property (weak) IBOutlet NSWindow *window;
 @end
 
@@ -84,10 +82,13 @@ static pid_t gTargetPID = -1;
     while (!dockIsRunning) {
         NSArray *processess = [NSRunningApplication runningApplicationsWithBundleIdentifier:@"com.apple.dock"];
         if (processess.count) {
-            dockIsRunning = true;
             app = [processess objectAtIndex:0];
-            usleep(1000000);
-            break;
+            if (app.processIdentifier != -1)
+            {
+                dockIsRunning = true;
+                usleep(1000000);
+                break;
+            }
         }
         usleep(100000);
     }
@@ -95,6 +96,7 @@ static pid_t gTargetPID = -1;
     system("osascript -e \"tell application \\\"Dock\\\" to inject SIMBL into Snow Leopard\"");
     gTargetPID = app.processIdentifier;
     NSLog(@"%d", app.processIdentifier);
+    NSLog(@"%@", app.bundleIdentifier);
     [self testNoteExit:nil];
 }
 
@@ -117,7 +119,6 @@ static pid_t gTargetPID = -1;
     {
         NSLog(@"Checking for updates...");
         [myUpdater checkForUpdatesInBackground];
-        [myUpdater setUpdateCheckInterval:86400];
     }
 }
 

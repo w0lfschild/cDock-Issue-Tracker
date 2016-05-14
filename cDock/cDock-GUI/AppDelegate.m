@@ -590,11 +590,15 @@ NSDate *methodStart;
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SUAutomaticallyUpdate"]) {
         [_cdock_updates selectItemAtIndex:2];
+        [_myUpdater checkForUpdatesInBackground];
     } else if ([[NSUserDefaults standardUserDefaults] boolForKey:@"SUEnableAutomaticChecks"]) {
         [_cdock_updates selectItemAtIndex:1];
+        [_myUpdater checkForUpdatesInBackground];
     } else {
         [_cdock_updates selectItemAtIndex:0];
     }
+    
+    [_cdock_updates_interval selectItemWithTag:[[[NSUserDefaults standardUserDefaults] objectForKey:@"SUScheduledCheckInterval"] integerValue]];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"CDRememberWindow"])
     {
@@ -603,6 +607,8 @@ NSDate *methodStart;
     } else {
         [_cdock_rememberWindow setState:NSOffState];
     }
+    
+    [_donatebutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"CDHideDonate"]) {
         [_cdock_hideDonate setState:NSOnState];
@@ -723,8 +729,6 @@ NSDate *methodStart;
         _window.titleBarHeight = 0.0;
     } else {
         [_window setTitlebarAppearsTransparent:true];
-//        if ([_window respondsToSelector:@selector(_setTexturedBackground:)])
-//            [_window performSelector:@selector(_setTexturedBackground:) withObject:[NSNumber numberWithBool:false]];
     }
     
     if ([[prefCD valueForKey:@"blurView"] boolValue])
@@ -888,7 +892,12 @@ NSDate *methodStart;
         [self launch_helper];                   // Launch dock agent
         [editTab setView:_themeView];           // Add theme tab
     }
-    [self selectView:_viewTab0];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"CDStartTab"]) {
+        NSArray *tabs = [[NSArray alloc] initWithObjects:_viewTab0, _viewTab1, _viewTab2, _viewTab3, nil];
+        [self selectView:[tabs objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"CDStartTab"] integerValue]]];
+    } else {
+        [self selectView:_viewTab0];
+    }
 //    [_tabView selectTabViewItemAtIndex:0];
     
     // Resize buttons for translations and tooltips
@@ -934,22 +943,33 @@ NSDate *methodStart;
     }
 }
 
-- (IBAction)changeAutoUpdate:(id)sender {
-    if ([_cdock_updates indexOfSelectedItem] == 0)
-    {
+- (void)sendNotification {
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = @"Hello, World!";
+    notification.informativeText = [NSString stringWithFormat:@"details details details"];
+    notification.soundName = NSUserNotificationDefaultSoundName;
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+}
+
+- (IBAction)changeAutoUpdates:(id)sender {
+    int selected = (int)[(NSPopUpButton*)sender indexOfSelectedItem];
+    if (selected == 0)
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:false] forKey:@"SUEnableAutomaticChecks"];
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:false] forKey:@"SUAutomaticallyUpdate"];
-    }
-    else if ([_cdock_updates indexOfSelectedItem] == 1)
+    if (selected == 1)
     {
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:true] forKey:@"SUEnableAutomaticChecks"];
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:false] forKey:@"SUAutomaticallyUpdate"];
     }
-    else
+    if (selected == 2)
     {
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:true] forKey:@"SUEnableAutomaticChecks"];
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:true] forKey:@"SUAutomaticallyUpdate"];
     }
+}
+
+- (IBAction)changeUpdateFrequency:(id)sender {
+    int selected = (int)[(NSPopUpButton*)sender selectedTag];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInt:selected] forKey:@"SUScheduledCheckInterval"];
 }
 
 - (IBAction)change_theme:(id)sender {
@@ -1451,6 +1471,11 @@ NSDate *methodStart;
         [[clipView animator] setBoundsOrigin:newOrigin];
         [NSAnimationContext endGrouping];
     }
+}
+
+- (IBAction)toggleStartTab:(id)sender {
+    NSPopUpButton *btn = sender;
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithInteger:[btn indexOfSelectedItem]] forKey:@"CDStartTab"];
 }
 
 - (IBAction)restartDock:(id)sender {

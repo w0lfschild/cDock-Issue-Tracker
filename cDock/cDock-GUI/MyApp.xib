@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9532" systemVersion="15E61b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9532"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -44,11 +44,8 @@
                 <outlet property="cd_sizeIndicator" destination="GIy-T6-HYp" id="Ywf-lx-M3p"/>
                 <outlet property="cd_themePicker" destination="w97-xy-Xbj" id="heN-7s-oPO"/>
                 <outlet property="cdock_changeLog" destination="5Cs-ct-PMs" id="YQh-Ks-AoW"/>
-                <outlet property="cdock_fastTooltips" destination="HDk-mL-c6g" id="Oco-fE-uJ5"/>
-                <outlet property="cdock_hideDonate" destination="h5w-OK-Vtn" id="vdN-vb-cKI"/>
-                <outlet property="cdock_isVibrant" destination="UFP-49-mG1" id="m10-6K-fML"/>
-                <outlet property="cdock_rememberWindow" destination="h1V-3Y-YRa" id="YBS-aM-IGL"/>
-                <outlet property="cdock_updates" destination="Ky9-Mg-nLp" id="6HI-CU-Tk9"/>
+                <outlet property="cdock_updates" destination="VKT-qf-WE9" id="fkh-P6-lbc"/>
+                <outlet property="cdock_updates_interval" destination="PZM-U6-0xE" id="35r-6u-TrK"/>
                 <outlet property="disable_cDock" destination="zw3-ty-ncV" id="ilo-MI-j5d"/>
                 <outlet property="dockBG" destination="xgN-ah-egs" id="qqe-Vz-rJQ"/>
                 <outlet property="dockView" destination="oYt-BD-UAt" id="uca-Hf-w68"/>
@@ -73,11 +70,11 @@
                 <outlet property="dock_magnification" destination="ZrJ-D6-Rdd" id="OY3-UT-8X7"/>
                 <outlet property="dock_magnification_value" destination="j3w-Fb-ebg" id="4f0-kD-AGd"/>
                 <outlet property="dock_tilesize" destination="kjq-Xl-ks9" id="x6Y-UR-tE8"/>
+                <outlet property="donatebutton" destination="3Im-tI-3hN" id="e9q-Ti-peT"/>
                 <outlet property="indicatorWELL" destination="YjA-54-rLG" id="mJD-V4-7kL"/>
                 <outlet property="labelBG" destination="hqr-dg-2Jw" id="9vb-AO-lZU"/>
                 <outlet property="labelWELL" destination="UTQ-iL-fSo" id="4mL-tw-dcU"/>
                 <outlet property="myUpdater" destination="XJC-kV-FjN" id="DmI-HX-QQ0"/>
-                <outlet property="pop_paypal" destination="ykr-bt-cRW" id="dYP-c3-Uii"/>
                 <outlet property="prefView" destination="a6r-ae-gYE" id="wyV-wV-5aO"/>
                 <outlet property="reset_Dock" destination="nz5-T0-qPs" id="szw-Ft-Wy8"/>
                 <outlet property="rootlView" destination="3dI-cq-yL8" id="k8k-1V-RUX"/>
@@ -109,16 +106,22 @@
                                     <action selector="showAboutWindow:" target="-1" id="NYJ-6d-oPJ"/>
                                 </connections>
                             </menuItem>
-                            <menuItem isSeparatorItem="YES" id="XKP-Pa-k26"/>
-                            <menuItem title="Preferences…" keyEquivalent="," id="8NG-yC-NdB">
-                                <connections>
-                                    <action selector="showPreferences:" target="-1" id="agc-oz-9pN"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="Check for updates..." id="jHx-tD-KHw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="checkForUpdates:" target="XJC-kV-FjN" id="bpg-yo-coe"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Donate..." id="Fq2-Qf-xNq">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="donate:" target="fOu-kz-Wle" id="4Y2-OT-Jxl"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="XKP-Pa-k26"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="8NG-yC-NdB">
+                                <connections>
+                                    <action selector="showPreferences:" target="-1" id="agc-oz-9pN"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="CSH-WG-9Rh"/>
@@ -230,7 +233,7 @@ CA
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ePE-8E-saa">
-                        <rect key="frame" x="145" y="477" width="100" height="24"/>
+                        <rect key="frame" x="144" y="477" width="100" height="24"/>
                         <buttonCell key="cell" type="square" title="Theming" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="mhF-0H-p9b">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -240,7 +243,7 @@ CA
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQQ-AG-2tZ">
-                        <rect key="frame" x="442" y="477" width="100" height="24"/>
+                        <rect key="frame" x="342" y="477" width="100" height="24"/>
                         <buttonCell key="cell" type="square" title="Preferences" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="MIv-rR-SZM">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -250,7 +253,7 @@ CA
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H8n-GI-GcB">
-                        <rect key="frame" x="541" y="477" width="100" height="24"/>
+                        <rect key="frame" x="441" y="477" width="100" height="24"/>
                         <buttonCell key="cell" type="square" title="About" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="mmb-aF-FUI">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -260,7 +263,7 @@ CA
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWM-sw-mGg">
-                        <rect key="frame" x="343" y="477" width="100" height="24"/>
+                        <rect key="frame" x="243" y="477" width="100" height="24"/>
                         <buttonCell key="cell" type="square" title="Dock" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="os6-7i-4QU">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -304,21 +307,14 @@ CA
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <font key="titleFont" metaFont="system"/>
                     </box>
-                    <button toolTip="Donate" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ykr-bt-cRW">
-                        <rect key="frame" x="118" y="479" width="20" height="20"/>
-                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="heart2" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="ZAQ-MD-cp2">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                    </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dCh-XT-luf">
-                        <rect key="frame" x="244" y="477" width="100" height="24"/>
-                        <buttonCell key="cell" type="square" title="Discover" bezelStyle="shadowlessSquare" alignment="center" enabled="NO" imageScaling="proportionallyDown" inset="2" id="294-gA-3l1">
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Im-tI-3hN">
+                        <rect key="frame" x="541" y="477" width="100" height="24"/>
+                        <buttonCell key="cell" type="square" title="Donate" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="pOd-Dd-Muw">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="selectView:" target="fOu-kz-Wle" id="UPq-rJ-wHl"/>
+                            <action selector="donate:" target="fOu-kz-Wle" id="Ggp-CV-ypY"/>
                         </connections>
                     </button>
                 </subviews>
@@ -545,8 +541,8 @@ CA
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zw3-ty-ncV">
-                    <rect key="frame" x="474" y="403" width="152" height="32"/>
-                    <buttonCell key="cell" type="push" title="Disable Theming" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kaK-gT-owJ">
+                    <rect key="frame" x="474" y="410" width="152" height="25"/>
+                    <buttonCell key="cell" type="roundTextured" title="Disable Theming" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kaK-gT-owJ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -600,8 +596,8 @@ CA
                     <sliderCell key="cell" state="on" alignment="left" maxValue="16" doubleValue="2.1333333333333333" tickMarkPosition="below" numberOfTickMarks="16" allowsTickMarkValuesOnly="YES" sliderType="linear" id="fol-cL-utD"/>
                 </slider>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRF-BN-ee0">
-                    <rect key="frame" x="474" y="429" width="152" height="32"/>
-                    <buttonCell key="cell" type="push" title="Restart Dock" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fWK-O5-C8I">
+                    <rect key="frame" x="474" y="436" width="152" height="25"/>
+                    <buttonCell key="cell" type="roundTextured" title="Restart Dock" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fWK-O5-C8I">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -666,7 +662,7 @@ Would you like to install SIMBL now and start theming?</string>
                     </buttonCell>
                 </button>
             </subviews>
-            <point key="canvasLocation" x="386" y="1316"/>
+            <point key="canvasLocation" x="437" y="1307"/>
         </customView>
         <customView id="3dI-cq-yL8">
             <rect key="frame" x="0.0" y="0.0" width="558" height="400"/>
@@ -694,7 +690,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                     </textFieldCell>
                 </textField>
             </subviews>
-            <point key="canvasLocation" x="386" y="860"/>
+            <point key="canvasLocation" x="437" y="856"/>
         </customView>
         <customView id="oYt-BD-UAt" userLabel="Dock View">
             <rect key="frame" x="0.0" y="0.0" width="640" height="470"/>
@@ -908,8 +904,8 @@ If you would like to theme the dock you must first disable rootless by doing the
                     </buttonCell>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D4K-eq-cOg">
-                    <rect key="frame" x="228" y="13" width="185" height="32"/>
-                    <buttonCell key="cell" type="push" title="Apply" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Blow" inset="2" id="0pH-6Q-34a">
+                    <rect key="frame" x="228" y="20" width="185" height="25"/>
+                    <buttonCell key="cell" type="roundTextured" title="Apply" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Blow" inset="2" id="0pH-6Q-34a">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -918,8 +914,8 @@ If you would like to theme the dock you must first disable rootless by doing the
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nz5-T0-qPs">
-                    <rect key="frame" x="546" y="13" width="80" height="32"/>
-                    <buttonCell key="cell" type="push" title="Reset" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ohP-rP-LlR">
+                    <rect key="frame" x="546" y="20" width="80" height="25"/>
+                    <buttonCell key="cell" type="roundTextured" title="Reset" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ohP-rP-LlR">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -937,99 +933,113 @@ If you would like to theme the dock you must first disable rootless by doing the
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UFP-49-mG1">
-                    <rect key="frame" x="209" y="286" width="221" height="18"/>
-                    <buttonCell key="cell" type="check" title="Vibrant window" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dlI-Hn-U8V">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="changeVibrancy:" target="fOu-kz-Wle" id="JAT-Hp-J2b"/>
-                    </connections>
-                </button>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h1V-3Y-YRa">
-                    <rect key="frame" x="209" y="266" width="221" height="18"/>
-                    <buttonCell key="cell" type="check" title="Remember window position" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Avb-hb-mxv">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="toggle_RememberWindow:" target="fOu-kz-Wle" id="6MD-fX-Qfu"/>
-                    </connections>
-                </button>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h5w-OK-Vtn">
-                    <rect key="frame" x="209" y="246" width="221" height="18"/>
-                    <buttonCell key="cell" type="check" title="Hide donate button" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="gQm-3i-Zyo">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="toggle_Donate:" target="fOu-kz-Wle" id="EKO-yX-0gi"/>
-                    </connections>
-                </button>
-                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDk-mL-c6g">
-                    <rect key="frame" x="209" y="226" width="221" height="18"/>
-                    <buttonCell key="cell" type="check" title="Instant tool tips" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Y5e-j1-aAG">
-                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="tooltipToggle:" target="fOu-kz-Wle" id="rZ7-Si-48i"/>
-                    </connections>
-                </button>
-                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ky9-Mg-nLp">
-                    <rect key="frame" x="209" y="196" width="222" height="26"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="aMF-yr-EE2">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
-                        <menu key="menu" id="Zk3-QV-07s">
-                            <items>
-                                <menuItem title="Don't check for updates" id="lC7-9b-iou"/>
-                                <menuItem title="Automatically check" id="IPh-OC-00F"/>
-                                <menuItem title="Automatically update" id="c1Y-85-tL4"/>
-                            </items>
-                        </menu>
-                    </popUpButtonCell>
-                    <connections>
-                        <action selector="changeAutoUpdate:" target="fOu-kz-Wle" id="vIF-GU-HBK"/>
-                    </connections>
-                </popUpButton>
-                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ENT-gK-tuY">
-                    <rect key="frame" x="209" y="165" width="222" height="26"/>
-                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="dcn-ug-Pez" id="T7W-Y6-igH">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="menu"/>
-                        <menu key="menu" id="ikg-I0-84D">
-                            <items>
-                                <menuItem state="on" id="dcn-ug-Pez"/>
-                                <menuItem title="Item 2" id="bTH-0e-1o3"/>
-                                <menuItem title="Item 3" id="lMb-0Z-jvV"/>
-                            </items>
-                        </menu>
-                    </popUpButtonCell>
-                </popUpButton>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TWV-yG-u3c">
-                    <rect key="frame" x="105" y="200" width="100" height="20"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Updates" id="A1p-S9-nsU">
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AVi-47-8Ev">
-                    <rect key="frame" x="105" y="169" width="100" height="20"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Update Interval" id="8uz-5b-r4U">
-                        <font key="font" size="13" name="HelveticaNeue-Thin"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="7i1-dl-uCF">
                     <rect key="frame" x="272" y="18" width="96" height="5"/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <font key="titleFont" metaFont="system"/>
                 </box>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suW-VG-x4n">
+                    <rect key="frame" x="210" y="291" width="200" height="18"/>
+                    <buttonCell key="cell" type="check" title="Instant tooltips" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dX3-9F-kVK">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Gz3-lU-9g1" name="value" keyPath="values.CDToolTips" id="0Gr-W5-xd2"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ksb-rN-M5D">
+                    <rect key="frame" x="210" y="271" width="200" height="18"/>
+                    <buttonCell key="cell" type="check" title="Hide donate button" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="edj-at-z6G">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-q9-PTP">
+                    <rect key="frame" x="210" y="251" width="200" height="18"/>
+                    <buttonCell key="cell" type="check" title="Remember window position" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ein-3x-q3T">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="smallSystem"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="Gz3-lU-9g1" name="value" keyPath="values.CDRememberWindow" id="Fu8-41-R7y"/>
+                    </connections>
+                </button>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VKT-qf-WE9">
+                    <rect key="frame" x="210" y="187" width="222" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="7wA-rT-7ck">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="64h-MG-ThS">
+                            <items>
+                                <menuItem title="Don't check for updates" id="KkU-C5-N2H"/>
+                                <menuItem title="Automatically check" id="7ea-aJ-2YQ"/>
+                                <menuItem title="Automatically update" id="nDr-KW-gac"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="changeAutoUpdates:" target="fOu-kz-Wle" id="idR-Qv-dFc"/>
+                    </connections>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nH4-E2-i1J">
+                    <rect key="frame" x="210" y="218" width="222" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="6zb-YE-kNQ">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="e6X-Bd-hyS">
+                            <items>
+                                <menuItem title="Theming" id="agP-Zs-Dg4"/>
+                                <menuItem title="Dock" id="ssd-jy-p9N"/>
+                                <menuItem title="Preferences" id="NiF-Tc-LpK"/>
+                                <menuItem title="About" id="hhe-Eh-TDi"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZM-U6-0xE">
+                    <rect key="frame" x="210" y="158" width="222" height="26"/>
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="KLr-14-oCe">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="menu"/>
+                        <menu key="menu" id="Eg4-oC-J38">
+                            <items>
+                                <menuItem title="Hourly" tag="3600" id="wpi-vR-ZPb"/>
+                                <menuItem title="Daily" tag="86400" id="qyi-yn-Dac"/>
+                                <menuItem title="Weekly" tag="604800" id="0S5-3S-az1"/>
+                                <menuItem title="Monthly" tag="2629800" id="i4f-uL-NTn"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                    <connections>
+                        <action selector="changeUpdateFrequency:" target="fOu-kz-Wle" id="mZe-mE-76c"/>
+                    </connections>
+                </popUpButton>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wA-3E-SJa">
+                    <rect key="frame" x="106" y="224" width="100" height="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Default Tab" id="a2k-vy-PcI">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HI2-7k-F5Z">
+                    <rect key="frame" x="106" y="164" width="100" height="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Update Interval" id="wGP-NX-rzN">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZU-Od-G6V">
+                    <rect key="frame" x="106" y="193" width="100" height="14"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Updates" id="cXE-xV-2r5">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <point key="canvasLocation" x="478" y="-169"/>
         </customView>
@@ -1038,8 +1048,8 @@ If you would like to theme the dock you must first disable rootless by doing the
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JtK-KM-lcp">
-                    <rect key="frame" x="264" y="13" width="112" height="32"/>
-                    <buttonCell key="cell" type="push" title="Credits" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0AA-py-GWr">
+                    <rect key="frame" x="264" y="20" width="112" height="25"/>
+                    <buttonCell key="cell" type="roundTextured" title="Credits" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0AA-py-GWr">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1048,8 +1058,8 @@ If you would like to theme the dock you must first disable rootless by doing the
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Fd-LO-zEa">
-                    <rect key="frame" x="473" y="13" width="112" height="32"/>
-                    <buttonCell key="cell" type="push" title="EULA" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d5a-w9-JBr">
+                    <rect key="frame" x="473" y="20" width="112" height="25"/>
+                    <buttonCell key="cell" type="roundTextured" title="EULA" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d5a-w9-JBr">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1086,8 +1096,8 @@ If you would like to theme the dock you must first disable rootless by doing the
                     </scroller>
                 </scrollView>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaE-22-fKu">
-                    <rect key="frame" x="55" y="13" width="112" height="32"/>
-                    <buttonCell key="cell" type="push" title="Changelog" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EKV-JI-PtE">
+                    <rect key="frame" x="55" y="20" width="112" height="25"/>
+                    <buttonCell key="cell" type="roundTextured" title="Changelog" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EKV-JI-PtE">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -1150,13 +1160,13 @@ If you would like to theme the dock you must first disable rootless by doing the
             </subviews>
             <point key="canvasLocation" x="478" y="380"/>
         </customView>
+        <userDefaultsController representsSharedInstance="YES" id="Gz3-lU-9g1"/>
     </objects>
     <resources>
         <image name="NSApplicationIcon" width="128" height="128"/>
         <image name="NSComputer" width="32" height="32"/>
         <image name="NSUserAccounts" width="32" height="32"/>
         <image name="github" width="256" height="256"/>
-        <image name="heart2" width="300" height="300"/>
         <sound name="Blow"/>
     </resources>
 </document>
