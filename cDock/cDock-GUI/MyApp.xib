@@ -889,7 +889,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                     </buttonCell>
                 </button>
-                <button toolTip="When enabled open applications will show an idicator below their icon in the dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gp-ot-OZ0" userLabel="dock_noBounce">
+                <button toolTip="When enabled open applications will show an indicator below their icon in the dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gp-ot-OZ0" userLabel="dock_noBounce">
                     <rect key="frame" x="396" y="146" width="158" height="18"/>
                     <buttonCell key="cell" type="check" title="Show app indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="uPU-qI-yPq">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
