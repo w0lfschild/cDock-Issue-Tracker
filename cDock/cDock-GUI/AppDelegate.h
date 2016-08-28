@@ -9,7 +9,6 @@
 @import Foundation;
 @import AppKit;
 @import Sparkle;
-#import "WAYAppStoreWindow.h"
 #import "PFMoveApplication.h"
 
 # define appSupport  [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) firstObject]
@@ -34,7 +33,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 // Windows
-@property WAYAppStoreWindow *window;
+@property NSWindow *window;
 
 // Sparkle updater
 @property (weak) IBOutlet SUUpdater *myUpdater;

@@ -608,7 +608,12 @@ NSDate *methodStart;
         [_cdock_rememberWindow setState:NSOffState];
     }
     
-    [_donatebutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
+    if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10)
+    {
+        [[_donatebutton cell] setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:1.000f]];
+    } else {
+       [_donatebutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
+    }
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"CDHideDonate"]) {
         [_cdock_hideDonate setState:NSOnState];
@@ -724,11 +729,12 @@ NSDate *methodStart;
 - (void)setupWindow {
     if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10)
     {
-        _window.centerTrafficLightButtons = false;
-        _window.showsBaselineSeparator = false;
-        _window.titleBarHeight = 0.0;
+//        _window.centerTrafficLightButtons = false;
+//        _window.showsBaselineSeparator = false;
+//        _window.titleBarHeight = 0.0;
     } else {
         [_window setTitlebarAppearsTransparent:true];
+        _window.styleMask |= NSFullSizeContentViewWindowMask;
     }
     
     if ([[prefCD valueForKey:@"blurView"] boolValue])
@@ -759,7 +765,7 @@ NSDate *methodStart;
     NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
     [_appName setStringValue:[infoDict objectForKey:@"CFBundleExecutable"]];
     [_appVersion setStringValue:[NSString stringWithFormat:@"Version %@ (%@)", [infoDict objectForKey:@"CFBundleShortVersionString"], [infoDict objectForKey:@"CFBundleVersion"]]];
-    [_appCopyright setStringValue:@"Copyright © 2015 Wolfgang Baird"];
+    [_appCopyright setStringValue:@"Copyright © 2015 - 2016 Wolfgang Baird"];
 
 }
 
@@ -999,10 +1005,18 @@ NSDate *methodStart;
     if ([tabs containsObject:sender])
         [_tabView selectTabViewItemAtIndex:[tabs indexOfObject:sender]];
     for (NSButton *g in tabs) {
-        if (![g isEqualTo:sender])
-            g.layer.backgroundColor = [NSColor clearColor].CGColor;
-        else
-            g.layer.backgroundColor =  [NSColor colorWithCalibratedRed:0.121f green:0.4375f blue:0.1992f alpha:0.2578f].CGColor;
+        if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10) {
+            if (![g isEqualTo:sender])
+                [[g cell] setBackgroundColor:[NSColor whiteColor]];
+            else
+                [[g cell] setBackgroundColor:[NSColor colorWithCalibratedRed:0.121f green:0.4375f blue:0.1992f alpha:1.0000f]];
+        } else {
+            if (![g isEqualTo:sender])
+                g.layer.backgroundColor = [NSColor clearColor].CGColor;
+            else
+                g.layer.backgroundColor =  [NSColor colorWithCalibratedRed:0.121f green:0.4375f blue:0.1992f alpha:0.2578f].CGColor;
+        }
+        
     }
 }
 
@@ -1258,6 +1272,10 @@ NSDate *methodStart;
     [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/w0lfschild"]];
 }
 
+- (IBAction)visit_source:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/w0lfschild/cDock2"]];
+}
+
 - (IBAction)show_themes:(id)sender {
     NSURL *folderURL = [NSURL fileURLWithPath: curThemFldr];
     [[NSWorkspace sharedWorkspace] openURL: folderURL];
@@ -1479,7 +1497,7 @@ NSDate *methodStart;
 }
 
 - (IBAction)restartDock:(id)sender {
-    system("killall Dock");
+    system("killall Dock; sleep 2; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
 }
 
 @end

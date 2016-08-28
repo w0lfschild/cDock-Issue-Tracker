@@ -5,76 +5,12 @@
 	<key>files</key>
 	<dict>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			UgF2ewN0H67k2TL87SVKJrER9MY=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Info.plist</key>
 		<data>
-		8YtfimVXYOEluI3BplPa3T6llPU=
-		</data>
-		<key>Resources/SIMBL.osax/Contents/MacOS/SIMBL</key>
-		<data>
-		+DED5ZV3F49/H7gsp6Xf/t6d7+g=
-		</data>
-		<key>Resources/SIMBL.osax/Contents/Resources/English.lproj/InfoPlist.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			menkgzdGJlKzENWxKLMFxqqe2QU=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/English.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MYWm1ZDSptNHx7+FptEJQeWm3EY=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/Info.plist</key>
-		<data>
-		GN2yHNJfXEgEFfByhY1OSMdO+Ec=
-		</data>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/MacOS/SIMBL Agent</key>
-		<data>
-		z/px4ijIDoGWrCEbpbFzl1b8j5c=
-		</data>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/PkgInfo</key>
-		<data>
-		9ZIHSRd1hCaqrHUsIHNf/SS9x+0=
-		</data>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/Resources/English.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			eQZBxUe9Qg2jNOhb0bx4nflpjiM=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/Resources/net.culater.SIMBL.Agent.plist</key>
-		<data>
-		avsDZuNJVa9B/jKBXG7GvfMgAxQ=
-		</data>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL.rsrc</key>
-		<data>
-		ZRGVZFtBSJ8Vh70xVepVm1O6Hz0=
-		</data>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL.sdef</key>
-		<data>
-		YPGmcMn5SUk+dz9P0L9H83DRxSg=
+		spFce1ixXReFkC+I17tSYmv88Ng=
 		</data>
 		<key>Resources/SIMBL_Install.sh</key>
 		<data>
-		F5lo+ckrBWQX6J7aUwSAXeSO69k=
+		FZm7LMSPdM4rA2K9ghQrGTFOsmM=
 		</data>
 		<key>Resources/dsa_pub.pem</key>
 		<data>
@@ -87,151 +23,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UgF2ewN0H67k2TL87SVKJrER9MY=
+			spFce1ixXReFkC+I17tSYmv88Ng=
 			</data>
 			<key>hash2</key>
 			<data>
-			xHaMgVtdmlqomid7Isql0+ZWQxw+umPG/gwSRxvreMA=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			8YtfimVXYOEluI3BplPa3T6llPU=
-			</data>
-			<key>hash2</key>
-			<data>
-			h3lBAmHrCu7JXQhfWVrGeE9+IzAAGYVn2dnNbYc/uXs=
-			</data>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/MacOS/SIMBL</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+DED5ZV3F49/H7gsp6Xf/t6d7+g=
-			</data>
-			<key>hash2</key>
-			<data>
-			um6OdkMF54MswgK/WaT3LvQcE5QwundL7zlLQ8WnSFI=
-			</data>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/English.lproj/InfoPlist.strings</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			menkgzdGJlKzENWxKLMFxqqe2QU=
-			</data>
-			<key>hash2</key>
-			<data>
-			8dz/H3zNP8Hx0xEijNVoyra5zKYrEvjrbSNWakNiSB0=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/English.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MYWm1ZDSptNHx7+FptEJQeWm3EY=
-			</data>
-			<key>hash2</key>
-			<data>
-			SWdBRq2jwbkiAjWKCsUl+M7Ai9TBAdWJhopQV6PxROo=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			GN2yHNJfXEgEFfByhY1OSMdO+Ec=
-			</data>
-			<key>hash2</key>
-			<data>
-			rshGOsscfAYHWZGDUyFhXtGqN0nh6pOdU2etjSZjZkI=
-			</data>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/MacOS/SIMBL Agent</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			z/px4ijIDoGWrCEbpbFzl1b8j5c=
-			</data>
-			<key>hash2</key>
-			<data>
-			/hBGHOy6cttKGBrwedPvCCAnNQ5Ispy0RoNqjloZplA=
-			</data>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/PkgInfo</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			9ZIHSRd1hCaqrHUsIHNf/SS9x+0=
-			</data>
-			<key>hash2</key>
-			<data>
-			yBHRauafRQKD0fRcTxTD8yo8Hk96oseqSspYayXnNKs=
-			</data>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/Resources/English.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			eQZBxUe9Qg2jNOhb0bx4nflpjiM=
-			</data>
-			<key>hash2</key>
-			<data>
-			f272HSuxF8qCRtuWZOpwqmVxcvakK2FfvpLqIZv8mmQ=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL Agent.app/Contents/Resources/net.culater.SIMBL.Agent.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			avsDZuNJVa9B/jKBXG7GvfMgAxQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			SixLyN/7JVu3GVqX9/ujH/ZBbHxrnij+qWkd2XXteng=
-			</data>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL.rsrc</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			ZRGVZFtBSJ8Vh70xVepVm1O6Hz0=
-			</data>
-			<key>hash2</key>
-			<data>
-			OGd+Vw65cwz74U5yYl3VaYCPQB8spI7xlkyFminzY9A=
-			</data>
-		</dict>
-		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL.sdef</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			YPGmcMn5SUk+dz9P0L9H83DRxSg=
-			</data>
-			<key>hash2</key>
-			<data>
-			mDiUAin4NC1+/WWzlSVONuAFxHohrQb6pTFoOoOr5Yk=
+			CkG1nOF313Dp0P7a/4GQG+1hppG/rEvQl9fILejBAHs=
 			</data>
 		</dict>
 		<key>Resources/SIMBL_Install.sh</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F5lo+ckrBWQX6J7aUwSAXeSO69k=
+			FZm7LMSPdM4rA2K9ghQrGTFOsmM=
 			</data>
 			<key>hash2</key>
 			<data>
-			J/J7n4oUIc45fcXep1DhPVi4X07OiUrAk3BNVG8+9mw=
+			MFPDeyCN4whJKDyum4yTUwMUwAmBuE0X5SJIDeMmHeU=
 			</data>
 		</dict>
 		<key>Resources/dsa_pub.pem</key>
@@ -263,6 +70,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -322,6 +134,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>

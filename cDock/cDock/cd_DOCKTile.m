@@ -57,7 +57,7 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
 - (void)removeIndicator {
     ZKOrig(void);
     
-    [(Tile*)self setSelected:true];
+//    [(Tile*)self setSelected:true];
     
     CALayer *_tileLayer = ZKHookIvar(self, CALayer *, "_layer");
     for (CALayer *item in (NSMutableArray *)_tileLayer.sublayers)
@@ -70,7 +70,7 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
 - (void)addIndicator {
     ZKOrig(void);
     
-    [(Tile*)self setSelected:false];
+//    [(Tile*)self setSelected:false];
     
     CALayer *_tileLayer = ZKHookIvar(self, CALayer *, "_layer");
     for (CALayer *item in (NSMutableArray *)_tileLayer.sublayers)

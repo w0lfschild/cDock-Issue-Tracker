@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.11.4</string>
+	<string>0.12.1</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2479</string>
+	<string>4012</string>
 	<key>DevURL</key>
 	<string>https://github.com/w0lfschild/cDock2</string>
 	<key>NSHumanReadableCopyright</key>

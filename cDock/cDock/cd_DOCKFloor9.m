@@ -14,7 +14,6 @@
 {
     _Bool _mirrorOff;
 }
-- (void)turnMirrorOff;
 @end
 
 // OS X 10.9 Mavericks implementation

@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15F31a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11185.3" systemVersion="16A294a" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11185.3"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -43,7 +43,7 @@
                 <outlet property="cd_showSeparator" destination="U4F-qL-Y4L" id="IOP-nV-Zdy"/>
                 <outlet property="cd_sizeIndicator" destination="GIy-T6-HYp" id="Ywf-lx-M3p"/>
                 <outlet property="cd_themePicker" destination="w97-xy-Xbj" id="heN-7s-oPO"/>
-                <outlet property="cdock_changeLog" destination="5Cs-ct-PMs" id="YQh-Ks-AoW"/>
+                <outlet property="cdock_changeLog" destination="CvA-jp-SUU" id="DK8-L9-XlC"/>
                 <outlet property="cdock_updates" destination="VKT-qf-WE9" id="fkh-P6-lbc"/>
                 <outlet property="cdock_updates_interval" destination="PZM-U6-0xE" id="35r-6u-TrK"/>
                 <outlet property="disable_cDock" destination="zw3-ty-ncV" id="ilo-MI-j5d"/>
@@ -223,18 +223,19 @@ CA
                 </menuItem>
             </items>
         </menu>
-        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="F0z-JX-Cv5" customClass="WAYAppStoreWindow">
+        <window allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" frameAutosaveName="" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="640" height="500"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="640" height="500"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ePE-8E-saa">
-                        <rect key="frame" x="144" y="477" width="100" height="24"/>
-                        <buttonCell key="cell" type="square" title="Theming" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="mhF-0H-p9b">
+                        <rect key="frame" x="144" y="478" width="100" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="Theming" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="mhF-0H-p9b">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -244,7 +245,8 @@ CA
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQQ-AG-2tZ">
                         <rect key="frame" x="342" y="477" width="100" height="24"/>
-                        <buttonCell key="cell" type="square" title="Preferences" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="MIv-rR-SZM">
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="Preferences" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="MIv-rR-SZM">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -254,7 +256,8 @@ CA
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H8n-GI-GcB">
                         <rect key="frame" x="441" y="477" width="100" height="24"/>
-                        <buttonCell key="cell" type="square" title="About" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="mmb-aF-FUI">
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="About" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="mmb-aF-FUI">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -264,7 +267,8 @@ CA
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hWM-sw-mGg">
                         <rect key="frame" x="243" y="477" width="100" height="24"/>
-                        <buttonCell key="cell" type="square" title="Dock" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="os6-7i-4QU">
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="Dock" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="os6-7i-4QU">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -274,6 +278,7 @@ CA
                     </button>
                     <tabView fixedFrame="YES" drawsBackground="NO" type="noTabsNoBorder" translatesAutoresizingMaskIntoConstraints="NO" id="eqJ-EM-hRE">
                         <rect key="frame" x="1" y="0.0" width="640" height="474"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <font key="font" metaFont="system"/>
                         <tabViewItems>
                             <tabViewItem label="Theming" identifier="1" id="1hW-CC-MOj">
@@ -301,15 +306,14 @@ CA
                             </tabViewItem>
                         </tabViewItems>
                     </tabView>
-                    <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="srA-G3-g1f">
-                        <rect key="frame" x="0.0" y="475" width="640" height="4"/>
-                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <font key="titleFont" metaFont="system"/>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="srA-G3-g1f">
+                        <rect key="frame" x="0.0" y="475" width="640" height="5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Im-tI-3hN">
                         <rect key="frame" x="541" y="477" width="100" height="24"/>
-                        <buttonCell key="cell" type="square" title="Donate" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="pOd-Dd-Muw">
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="smallSquare" title="Donate" bezelStyle="smallSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="pOd-Dd-Muw">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -327,6 +331,7 @@ CA
             <subviews>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Og-ok-g2K">
                     <rect key="frame" x="303" y="398" width="247" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Fullscreen width Dock" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Vqh-mk-4Gk">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -334,6 +339,7 @@ CA
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRr-ZQ-XgP">
                     <rect key="frame" x="18" y="234" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Full width separator" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="kOl-gE-A3Z">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -344,6 +350,7 @@ CA
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hqr-dg-2Jw">
                     <rect key="frame" x="18" y="169" width="180" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Color icon label background" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="J6X-Pp-Suq">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -351,6 +358,7 @@ CA
                 </button>
                 <button toolTip="When enabled a mouse-over highlight will be visible on icons in the dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZbA-rz-xPL" userLabel="cd_darkenMouseOver">
                     <rect key="frame" x="303" y="120" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Darken icons on mouse-over" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="bTK-vL-29c">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -358,6 +366,7 @@ CA
                 </button>
                 <button toolTip="The vibrant frosted layer that is part of the default dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UVi-Li-Z9i" userLabel="cd_showFrost">
                     <rect key="frame" x="303" y="442" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Show Frost layer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="QJo-l9-jpg">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -365,6 +374,7 @@ CA
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dRm-Ds-x37" userLabel="cd_showGlass">
                     <rect key="frame" x="303" y="420" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <string key="toolTip">Shows a clear layer with a thin outline that is part of the default dock. This layer is hidden even if enabled with certain settings.</string>
                     <buttonCell key="cell" type="check" title="Show Glass layer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="OCN-Dk-PVL">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -373,6 +383,7 @@ CA
                 </button>
                 <button toolTip="The thin separator that shows between the applications and folders of the dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4F-qL-Y4L" userLabel="cd_showSeparator">
                     <rect key="frame" x="18" y="210" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Show Separator layer" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Rdo-VA-wDw">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -380,6 +391,7 @@ CA
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4NW-HW-mOE">
                     <rect key="frame" x="18" y="437" width="55" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Theme" id="lK5-Rr-ilE">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -388,22 +400,27 @@ CA
                 </textField>
                 <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="879-Dp-FKx">
                     <rect key="frame" x="213" y="351" width="50" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
                 <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UTQ-iL-fSo">
                     <rect key="frame" x="213" y="168" width="50" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
                 <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vcE-AB-cVG" userLabel="Shadow WELL">
                     <rect key="frame" x="213" y="144" width="50" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
                 <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YjA-54-rLG" userLabel="Indicator WELL">
                     <rect key="frame" x="213" y="75" width="50" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w97-xy-Xbj">
                     <rect key="frame" x="137" y="433" width="129" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Default" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="bM2-DF-ImV" id="oD1-7G-fen">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -421,6 +438,7 @@ CA
                 </popUpButton>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ir4-A5-Kc5">
                     <rect key="frame" x="18" y="145" width="180" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Color icon shadows" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="lmh-UF-ymC">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -428,6 +446,7 @@ CA
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DR1-cO-39l">
                     <rect key="frame" x="18" y="76" width="180" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Color indicator lights" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="8CB-6t-Wfo">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -435,6 +454,7 @@ CA
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8nE-rU-1yc">
                     <rect key="frame" x="18" y="258" width="180" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Color separator layer" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Fe1-Dg-8GN">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -442,6 +462,7 @@ CA
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xgN-ah-egs">
                     <rect key="frame" x="18" y="352" width="180" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Color Dock background" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="xUU-vF-Xgw">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -449,10 +470,12 @@ CA
                 </button>
                 <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GH9-5f-kbe" userLabel="BorderWell">
                     <rect key="frame" x="213" y="281" width="50" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zAY-B8-71u">
                     <rect key="frame" x="18" y="282" width="180" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Color Dock border" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="UhF-n9-MLQ">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -460,6 +483,7 @@ CA
                 </button>
                 <button toolTip="When enabled icons will show a reflection below or beside them." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ar6-tA-AXC" userLabel="cd_iconReflections">
                     <rect key="frame" x="303" y="169" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Show icon reflections" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="xZA-Xt-CdJ">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -467,6 +491,7 @@ CA
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Exu-iI-5tD" userLabel="cd_customIndicators">
                     <rect key="frame" x="18" y="52" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <string key="toolTip">When enabled a custom image will be used for indicators. If no custom image is present the theme, the indicators will be transparent.</string>
                     <buttonCell key="cell" type="check" title="Use image for application Indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="CdA-sm-gBY">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -475,6 +500,7 @@ CA
                 </button>
                 <button toolTip="When this option is enabled the dock background will be extended slightly and the separator will be angled." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YYT-y0-olJ" userLabel="cd_customSeparator">
                     <rect key="frame" x="303" y="353" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Dock background image is 3D" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="zYN-zz-qKT">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -482,6 +508,7 @@ CA
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dnd-b2-FXO" userLabel="cd_pictureBackground">
                     <rect key="frame" x="18" y="328" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <string key="toolTip">When enabled a custom image will be used for the dock background. If no custom image is present the theme, the dock background will be transparent.</string>
                     <buttonCell key="cell" type="check" title="Use image for Dock background" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="82n-r5-Iju">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -490,6 +517,7 @@ CA
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GIy-T6-HYp" userLabel="cd_pictureBackground">
                     <rect key="frame" x="303" y="77" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <string key="toolTip">When enabled the standard indicators will be resized using the Indicator width and Indicator Height values from the controlls below. This does not resize image indicators.</string>
                     <buttonCell key="cell" type="check" title="Resize standard Indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="FPw-Sx-79e">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -498,6 +526,7 @@ CA
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XeH-nx-z8E" userLabel="cd_darkMode">
                     <rect key="frame" x="18" y="411" width="124" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Dock dark mode" id="AYg-rJ-nBE">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -506,6 +535,7 @@ CA
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQG-em-CWw">
                     <rect key="frame" x="302" y="324" width="106" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Image Alpha" id="PGq-wL-Lyi">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -513,11 +543,13 @@ CA
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vnr-kn-dGg">
-                    <rect key="frame" x="405" y="324" width="145" height="27"/>
+                    <rect key="frame" x="405" y="324" width="145" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="85" tickMarkPosition="below" numberOfTickMarks="10" sliderType="linear" id="4ws-vF-SOq"/>
                 </slider>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sXS-l6-PcA">
                     <rect key="frame" x="137" y="407" width="129" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" title="Light" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="qmR-jb-Z2h" id="Uop-jI-dit">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -538,10 +570,12 @@ CA
                 </popUpButton>
                 <colorWell hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nWy-AV-nfh" userLabel="Indicator WELL">
                     <rect key="frame" x="213" y="257" width="50" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" red="0.05813049898" green="0.055541899059999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                 </colorWell>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zw3-ty-ncV">
                     <rect key="frame" x="474" y="410" width="152" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundTextured" title="Disable Theming" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kaK-gT-owJ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -549,6 +583,7 @@ CA
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q5Q-6k-wyb">
                     <rect key="frame" x="302" y="241" width="106" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Border Width" id="rPa-7s-8Yn">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -557,6 +592,7 @@ CA
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yzs-UX-rA2">
                     <rect key="frame" x="302" y="281" width="106" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Corner radius" id="v8l-Rs-D5g">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -564,15 +600,18 @@ CA
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJH-xx-JMe">
-                    <rect key="frame" x="405" y="276" width="145" height="27"/>
+                    <rect key="frame" x="405" y="276" width="145" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" state="on" alignment="left" maxValue="10" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="1id-LC-MEH"/>
                 </slider>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FYZ-cc-PsD">
-                    <rect key="frame" x="405" y="236" width="145" height="27"/>
+                    <rect key="frame" x="405" y="236" width="145" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" state="on" alignment="left" maxValue="10" doubleValue="1.1111111111111112" tickMarkPosition="below" numberOfTickMarks="10" allowsTickMarkValuesOnly="YES" sliderType="linear" id="mOH-yd-hsU"/>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GBH-8C-ucS">
                     <rect key="frame" x="301" y="49" width="106" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Indicator Width" id="RFN-C0-02b">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -580,11 +619,13 @@ CA
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hH-i6-wvt">
-                    <rect key="frame" x="404" y="48" width="145" height="27"/>
+                    <rect key="frame" x="404" y="48" width="145" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" state="on" alignment="left" maxValue="16" doubleValue="2.1333333333333333" tickMarkPosition="below" numberOfTickMarks="16" allowsTickMarkValuesOnly="YES" sliderType="linear" id="pc0-Bo-ziS"/>
                 </slider>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0EM-Cz-6cF">
                     <rect key="frame" x="302" y="17" width="106" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Indicator Height" id="29C-Kl-LYw">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -592,11 +633,13 @@ CA
                     </textFieldCell>
                 </textField>
                 <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VOC-En-ghr">
-                    <rect key="frame" x="405" y="16" width="145" height="27"/>
+                    <rect key="frame" x="405" y="16" width="145" height="24"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <sliderCell key="cell" state="on" alignment="left" maxValue="16" doubleValue="2.1333333333333333" tickMarkPosition="below" numberOfTickMarks="16" allowsTickMarkValuesOnly="YES" sliderType="linear" id="fol-cL-utD"/>
                 </slider>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fRF-BN-ee0">
                     <rect key="frame" x="474" y="436" width="152" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundTextured" title="Restart Dock" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fWK-O5-C8I">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -605,32 +648,25 @@ CA
                         <action selector="restartDock:" target="fOu-kz-Wle" id="Znc-0X-aK2"/>
                     </connections>
                 </button>
-                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-aM-xBu">
+                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-aM-xBu">
                     <rect key="frame" x="0.0" y="385" width="640" height="5"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </box>
-                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Xc6-MF-Pos">
+                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Xc6-MF-Pos">
                     <rect key="frame" x="0.0" y="313" width="640" height="5"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </box>
-                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="DI8-vr-KWI">
+                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="DI8-vr-KWI">
                     <rect key="frame" x="0.0" y="199" width="640" height="5"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </box>
-                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="09X-qd-B3H">
+                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="09X-qd-B3H">
                     <rect key="frame" x="0.0" y="109" width="640" height="5"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </box>
                 <button toolTip="When enabled all appication and folder name popups on the Dock will be hidden." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c1F-8N-7GF">
                     <rect key="frame" x="303" y="145" width="226" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Show icon labels" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Xcj-kV-0IH">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -645,6 +681,7 @@ CA
             <subviews>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSG-st-ekY">
                     <rect key="frame" x="17" y="179" width="524" height="72"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" id="5Ha-z5-mOF">
                         <font key="font" size="14" name="HelveticaNeue-Thin"/>
                         <string key="title">cDock requires SIMBL to theme the dock. A valid install of SIMBL wasn't detected.
@@ -656,6 +693,7 @@ Would you like to install SIMBL now and start theming?</string>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PqP-lx-PPW">
                     <rect key="frame" x="239" y="143" width="81" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Install" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0LV-NG-vvf">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -670,6 +708,7 @@ Would you like to install SIMBL now and start theming?</string>
             <subviews>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDT-2b-Rpj">
                     <rect key="frame" x="17" y="56" width="524" height="288"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" selectable="YES" sendsActionOnEndEditing="YES" state="on" id="Pq8-h4-hqa">
                         <font key="font" size="12" name="CourierNewPSMT"/>
                         <string key="title">cDock has detected that your computer has System Integrity Protection enabled.
@@ -698,6 +737,7 @@ If you would like to theme the dock you must first disable rootless by doing the
             <subviews>
                 <textField toolTip="Application spacers are simply a transparent icon. They can be dragged and re-arranged in the dock however you would like." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iRe-Sh-ibt">
                     <rect key="frame" x="73" y="236" width="125" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Application spacers" id="oTP-iB-LeF">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -706,6 +746,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField toolTip="Document spacers are simply a transparent icon. They can be dragged and re-arranged in the dock however you would like." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DR5-71-iol">
                     <rect key="frame" x="73" y="204" width="125" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Document spacers" id="dte-ni-DUy">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -714,6 +755,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField toolTip="Minimiztion effect." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="onS-HL-QXj">
                     <rect key="frame" x="73" y="173" width="125" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Minimize using" id="XdU-Ie-ZcR">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -722,6 +764,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField toolTip="Position of dock on the screen." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m2j-np-TYt">
                     <rect key="frame" x="73" y="139" width="125" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Position on screen" id="cMU-Uq-yAk">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -730,6 +773,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qdU-X1-0PZ">
                     <rect key="frame" x="269" y="320" width="75" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="57L-Qe-6kN">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -738,6 +782,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j3w-Fb-ebg">
                     <rect key="frame" x="269" y="292" width="75" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="niu-Ov-idd">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="LVi-oV-a19"/>
                         <font key="font" metaFont="system"/>
@@ -747,6 +792,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZrJ-D6-Rdd">
                     <rect key="frame" x="73" y="295" width="125" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <string key="toolTip">Magnification level of the dock. Having this option set to anything other than 0 will make your Dock icons grow larger as you move your mouse over them. Higher numbers mean larger icons. If the Magnification level is smaller than the Icon size you will not see magnification.</string>
                     <buttonCell key="cell" type="check" title="Magnification" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="Ujy-xp-Gqd">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -755,6 +801,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjq-Xl-ks9">
                     <rect key="frame" x="269" y="264" width="75" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="tOh-GH-KLR">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Cfp-H3-zhN"/>
                         <font key="font" metaFont="system"/>
@@ -764,6 +811,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnT-Ux-s30">
                     <rect key="frame" x="269" y="234" width="75" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="vpp-Pa-QuU">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="Nkf-Mk-C1Y"/>
                         <font key="font" metaFont="system"/>
@@ -773,6 +821,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1yJ-La-1QQ">
                     <rect key="frame" x="269" y="204" width="75" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" baseWritingDirection="leftToRight" alignment="right" bezelStyle="round" id="7Jx-1M-GA4">
                         <numberFormatter key="formatter" formatterBehavior="default10_4" numberStyle="decimal" minimumIntegerDigits="1" maximumIntegerDigits="2000000000" maximumFractionDigits="3" id="hSt-Xq-cgE"/>
                         <font key="font" metaFont="system"/>
@@ -782,6 +831,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <button toolTip="Autohide speed for the dock. High numbers means quicker hiding." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3jO-fp-BJv">
                     <rect key="frame" x="73" y="322" width="125" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Autohide" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ehu-9B-gjj">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -789,6 +839,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <textField toolTip="Size of the dock icons in square pixels." horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-Qa-jCb">
                     <rect key="frame" x="73" y="268" width="106" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Icon size" id="LKR-J6-VaV">
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -797,6 +848,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tq5-LB-9FG">
                     <rect key="frame" x="242" y="169" width="105" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="dUo-T4-vPr">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -813,6 +865,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C8L-nA-Wbf">
                     <rect key="frame" x="242" y="136" width="105" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="jTd-wu-hX0">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -827,6 +880,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </popUpButton>
                 <button toolTip="When enabled the Dock will only show icons of running applications. Everything else except the trash will be hidden." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bc8-iU-0Cq" userLabel="dock_activeApps">
                     <rect key="frame" x="396" y="326" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Show only active apps" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="hb5-WD-fUF">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -834,6 +888,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button toolTip="When enabled running applications that are hidden (⌘+H) will appear dimmed in the Dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bNA-7v-ob0" userLabel="dock_dimHidden">
                     <rect key="frame" x="396" y="306" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Dim hidden Items" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="LKq-aD-A0K">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -841,6 +896,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button toolTip="When enabled you will not be able to adjusting the contents of the Dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="20T-56-R9e" userLabel="dock_lockContent">
                     <rect key="frame" x="396" y="286" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Lock dock contents" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Cke-Od-CG6">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -848,6 +904,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button toolTip="When enabled a mouse-over highlight will be visible when viewing folders in the Dock using the grid or fan view." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ekl-Tu-0OP" userLabel="dock_gridMouseOver">
                     <rect key="frame" x="396" y="266" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Grid highlight" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="QbO-FD-iXX">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -855,6 +912,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button toolTip="When enabled icons bounce in the dock when opening." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ela-hT-cEz" userLabel="dock_noBounce">
                     <rect key="frame" x="396" y="206" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="App opening bounce" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Sxc-gD-TwQ">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -862,6 +920,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button toolTip="When enabled icons will bounce in the dock when the app requires interaction." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3yA-Wd-coR" userLabel="dock_noBounce">
                     <rect key="frame" x="396" y="186" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="App notification bounce" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="vZq-go-gdO">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -869,6 +928,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button toolTip="When enabled windows will minimize into the appication dock icon." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6cR-bN-6wG" userLabel="dock_noBounce">
                     <rect key="frame" x="396" y="166" width="171" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Minimize windows to icon" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="THX-wn-H1H">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -876,6 +936,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button toolTip="When enabled clicking an app in the dock will open that app while also hiding all other windows." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gz7-gZ-nrD" userLabel="dock_singleApp">
                     <rect key="frame" x="396" y="226" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Single app mode" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="Zdj-VQ-QNQ">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -883,6 +944,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mY9-P7-eRv" userLabel="dock_showRecents">
                     <rect key="frame" x="396" y="246" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <string key="toolTip">When enabled a recent items folder stack is added to the Dock. This can be set to show Applications, Documents, Servers, Volumes or Items with a right or control click.</string>
                     <buttonCell key="cell" type="check" title="Show recents folder" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="PkM-Iw-dn2">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -891,6 +953,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button toolTip="When enabled open applications will show an indicator below their icon in the dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gp-ot-OZ0" userLabel="dock_noBounce">
                     <rect key="frame" x="396" y="146" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Show app indicators" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="uPU-qI-yPq">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -898,6 +961,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button toolTip="When enabled open applications will show an idicator below their icon in the dock." fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wdV-PX-U1F" userLabel="dock_noBounce">
                     <rect key="frame" x="396" y="126" width="158" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Scroll gestures" bezelStyle="regularSquare" imagePosition="left" alignment="left" state="on" inset="2" id="W0e-F8-ibA">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" size="13" name="HelveticaNeue-Thin"/>
@@ -905,6 +969,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D4K-eq-cOg">
                     <rect key="frame" x="228" y="20" width="185" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundTextured" title="Apply" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" sound="Blow" inset="2" id="0pH-6Q-34a">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -915,6 +980,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nz5-T0-qPs">
                     <rect key="frame" x="546" y="20" width="80" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundTextured" title="Reset" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ohP-rP-LlR">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -927,20 +993,17 @@ If you would like to theme the dock you must first disable rootless by doing the
             <rect key="frame" x="0.0" y="0.0" width="640" height="470"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="z1Y-5o-l7p">
+                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="z1Y-5o-l7p">
                     <rect key="frame" x="272" y="447" width="96" height="5"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </box>
-                <box verticalHuggingPriority="750" fixedFrame="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="7i1-dl-uCF">
-                    <rect key="frame" x="272" y="18" width="96" height="5"/>
-                    <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                    <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="system"/>
+                <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="7i1-dl-uCF">
+                    <rect key="frame" x="272" y="18" width="96" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                 </box>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="suW-VG-x4n">
                     <rect key="frame" x="210" y="291" width="200" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Instant tooltips" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dX3-9F-kVK">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -951,6 +1014,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ksb-rN-M5D">
                     <rect key="frame" x="210" y="271" width="200" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Hide donate button" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="edj-at-z6G">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -958,6 +1022,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q5B-q9-PTP">
                     <rect key="frame" x="210" y="251" width="200" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Remember window position" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="ein-3x-q3T">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="smallSystem"/>
@@ -968,6 +1033,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VKT-qf-WE9">
                     <rect key="frame" x="210" y="187" width="222" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="7wA-rT-7ck">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -985,6 +1051,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nH4-E2-i1J">
                     <rect key="frame" x="210" y="218" width="222" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="6zb-YE-kNQ">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -1000,6 +1067,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </popUpButton>
                 <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PZM-U6-0xE">
                     <rect key="frame" x="210" y="158" width="222" height="26"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="KLr-14-oCe">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
@@ -1018,6 +1086,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </popUpButton>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wA-3E-SJa">
                     <rect key="frame" x="106" y="224" width="100" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Default Tab" id="a2k-vy-PcI">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1026,6 +1095,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HI2-7k-F5Z">
                     <rect key="frame" x="106" y="164" width="100" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Update Interval" id="wGP-NX-rzN">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1034,6 +1104,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZU-Od-G6V">
                     <rect key="frame" x="106" y="193" width="100" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Updates" id="cXE-xV-2r5">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1049,6 +1120,7 @@ If you would like to theme the dock you must first disable rootless by doing the
             <subviews>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JtK-KM-lcp">
                     <rect key="frame" x="264" y="20" width="112" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundTextured" title="Credits" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0AA-py-GWr">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -1059,6 +1131,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Fd-LO-zEa">
                     <rect key="frame" x="473" y="20" width="112" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundTextured" title="EULA" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="d5a-w9-JBr">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -1067,36 +1140,9 @@ If you would like to theme the dock you must first disable rootless by doing the
                         <action selector="aboutInfo:" target="fOu-kz-Wle" id="R58-2s-JAJ"/>
                     </connections>
                 </button>
-                <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOQ-tK-WIT">
-                    <rect key="frame" x="20" y="61" width="600" height="250"/>
-                    <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="e1b-Re-HC6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView ambiguous="YES" editable="NO" drawsBackground="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="5Cs-ct-PMs">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="250"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="minSize" width="600" height="250"/>
-                                <size key="maxSize" width="896" height="10000000"/>
-                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                <size key="minSize" width="600" height="250"/>
-                                <size key="maxSize" width="896" height="10000000"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </clipView>
-                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="Gv7-1Y-4qA">
-                        <rect key="frame" x="1" y="273" width="290" height="16"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </scroller>
-                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="0.96710526315789469" horizontal="NO" id="zhU-cn-KeD">
-                        <rect key="frame" x="-16" y="0.0" width="16" height="0.0"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </scroller>
-                </scrollView>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaE-22-fKu">
                     <rect key="frame" x="55" y="20" width="112" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="roundTextured" title="Changelog" bezelStyle="texturedRounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="EKV-JI-PtE">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -1107,13 +1153,18 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lk5-nM-6d1">
                     <rect key="frame" x="20" y="322" width="128" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSApplicationIcon" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="jyD-YJ-Q5M">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="visit_website:" target="fOu-kz-Wle" id="aAh-3T-kja"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="anW-kX-w2g">
                     <rect key="frame" x="170" y="387" width="368" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="n4J-Gh-ulK">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1122,6 +1173,7 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KJ7-9C-aMV">
                     <rect key="frame" x="170" y="371" width="368" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="219-9V-RH6">
                         <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1130,13 +1182,18 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <button toolTip="Developer GitHub" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7h-p5-mnz">
                     <rect key="frame" x="584" y="414" width="36" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="github" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="Itv-uu-ygM">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="visit_github:" target="fOu-kz-Wle" id="EQt-5i-yZb"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WPq-ks-gVN">
                     <rect key="frame" x="170" y="406" width="368" height="44"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="hbd-rS-KRC">
                         <font key="font" size="36" name="HelveticaNeue-Thin"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1145,18 +1202,53 @@ If you would like to theme the dock you must first disable rootless by doing the
                 </textField>
                 <button toolTip="Contact Developer" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0jD-yP-VDL">
                     <rect key="frame" x="584" y="371" width="36" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSUserAccounts" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="xUb-g9-PWW">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="send_email:" target="fOu-kz-Wle" id="5a7-HT-voV"/>
+                    </connections>
                 </button>
                 <button toolTip="View Source" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hKw-OV-Xuy">
                     <rect key="frame" x="584" y="327" width="36" height="36"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSComputer" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="KWv-CH-2Tv">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="visit_source:" target="fOu-kz-Wle" id="VQL-qy-5Cx"/>
+                    </connections>
                 </button>
+                <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSp-kC-Fbi">
+                    <rect key="frame" x="20" y="52" width="600" height="259"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="pZh-vn-u2k">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="259"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView ambiguous="YES" editable="NO" drawsBackground="NO" importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="CvA-jp-SUU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="259"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="minSize" width="600" height="259"/>
+                                <size key="maxSize" width="624" height="10000000"/>
+                                <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </clipView>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="8oc-Wu-MMX">
+                        <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Seg-Sz-Tnt">
+                        <rect key="frame" x="584" y="0.0" width="16" height="259"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
             </subviews>
             <point key="canvasLocation" x="478" y="380"/>
         </customView>

@@ -7,6 +7,7 @@
 //
 
 @import Sparkle;
+@import SIMBLManager;
 #import "AppDelegate.h"
 #include <CoreServices/CoreServices.h>
 #include <sys/types.h>
@@ -122,36 +123,41 @@ static pid_t gTargetPID = -1;
     }
 }
 
-- (void)checkSIMBL {
-    NSMutableDictionary *local = [NSMutableDictionary dictionaryWithContentsOfFile:@"/System/Library/ScriptingAdditions/SIMBL.osax/Contents/Info.plist"];
-    NSMutableDictionary *current = [NSMutableDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SIMBL.osax/Contents/Info" ofType:@"plist"]];
-    NSString *locVer = [local objectForKey:@"CFBundleVersion"];
-    NSString *curVer = [current objectForKey:@"CFBundleVersion"];
+- (void)checkSIMBL {    
+    Boolean install = false;
+    Boolean installOne = false;
+    Boolean installTwo = false;
+    SIMBLManager *sim_m = [SIMBLManager sharedInstance];
     
-    if (![locVer isEqualToString:curVer])
-        [self installSIMBL];
-}
-
-- (void)installSIMBL {
-    NSString *output = nil;
-    NSString *processErrorDescription = nil;
-    NSString *script = [[NSBundle mainBundle] pathForResource:@"SIMBL_Install" ofType:@"sh"];
-//    NSLog(@"%@", script);
-    bool success = [self runProcessAsAdministrator:script withArguments:[[NSArray alloc] init] output:&output errorDescription:&processErrorDescription];
-    
-    if (!success) {
-        NSLog(@"Fail");
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert setMessageText:@"SIMBL install failed!"];
-        [alert setInformativeText:@"Something went wrong, probably System Integrity Protection."];
-        [alert addButtonWithTitle:@"Ok"];
-        NSLog(@"%ld", (long)[alert runModal]);
+    if ([sim_m AGENT_needsUpdate])
+    {
+        install = true;
+        installOne = true;
     }
+    
+    if ([sim_m OSAX_needsUpdate])
+    {
+        install = true;
+        installTwo = true;
+    }
+    
+    if (install)
+    {
+        if (installOne && !installTwo)
+            [sim_m AGENT_install];
+        
+        if (installOne && installTwo)
+            [sim_m SIMBL_install];
+        
+        if (installTwo && !installOne)
+            [sim_m OSAX_install];
+    }
+
 }
 
 - (IBAction)testNoteExit:(id)sender
 {
-    FILE *                  f;
+//    FILE *                  f;
     int                     kq;
     struct kevent           changes;
     CFFileDescriptorContext context = { 0, (__bridge void *)(self), NULL, NULL, NULL };

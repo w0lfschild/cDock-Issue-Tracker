@@ -140,7 +140,7 @@ void _setupPrefs()
     _setupPrefs();
     
     // Swizzle based on OSX version
-    if (osx_minor == 11)
+    if (osx_minor >= 11)
         ZKSwizzle(_CDDOCKFloorLayer, Dock.FloorLayer);
     if (osx_minor == 10)
         ZKSwizzle(_CDDOCKFloorLayer, DOCKFloorLayer);
