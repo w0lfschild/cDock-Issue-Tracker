@@ -6,11 +6,7 @@
 	<dict>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
 		<data>
-		spFce1ixXReFkC+I17tSYmv88Ng=
-		</data>
-		<key>Resources/SIMBL_Install.sh</key>
-		<data>
-		FZm7LMSPdM4rA2K9ghQrGTFOsmM=
+		UgF2ewN0H67k2TL87SVKJrER9MY=
 		</data>
 		<key>Resources/dsa_pub.pem</key>
 		<data>
@@ -23,22 +19,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			spFce1ixXReFkC+I17tSYmv88Ng=
+			UgF2ewN0H67k2TL87SVKJrER9MY=
 			</data>
 			<key>hash2</key>
 			<data>
-			CkG1nOF313Dp0P7a/4GQG+1hppG/rEvQl9fILejBAHs=
-			</data>
-		</dict>
-		<key>Resources/SIMBL_Install.sh</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			FZm7LMSPdM4rA2K9ghQrGTFOsmM=
-			</data>
-			<key>hash2</key>
-			<data>
-			MFPDeyCN4whJKDyum4yTUwMUwAmBuE0X5SJIDeMmHeU=
+			xHaMgVtdmlqomid7Isql0+ZWQxw+umPG/gwSRxvreMA=
 			</data>
 		</dict>
 		<key>Resources/dsa_pub.pem</key>

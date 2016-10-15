@@ -15,15 +15,15 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.12.1</string>
+	<string>0.12.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>4012</string>
+	<string>4037</string>
 	<key>DevURL</key>
 	<string>https://github.com/w0lfschild/cDock2</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 Wolfgang Baird. All rights reserved.</string>
+	<string>Copyright © 2015 - 2016 Wolfgang Baird. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
 	<key>SIMBLTargetApplications</key>

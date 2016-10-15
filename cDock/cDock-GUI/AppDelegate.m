@@ -16,13 +16,13 @@ BOOL showTooltips = false;
 BOOL enableTheming = true;
 NSDate *methodStart;
 
-@interface swagNumFormatter : NSNumberFormatter
+@interface docknumFormatter : NSNumberFormatter
 
 - (BOOL)isPartialStringValid:(NSString *)partialString newEditingString:(NSString **)newString errorDescription:(NSString **) error;
 
 @end
 
-@implementation swagNumFormatter
+@implementation docknumFormatter
 
 - (BOOL)isPartialStringValid:(NSString *)partialString newEditingString:(NSString **)newString errorDescription:(NSString **) error {
     // Make sure we clear newString and error to ensure old values aren't being used
@@ -86,11 +86,7 @@ NSDate *methodStart;
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/sh"];
     
-    NSArray *arguments = [NSArray arrayWithObjects:
-                          @"-c" ,
-                          [NSString stringWithFormat:@"%@", commandToRun],
-                          nil];
-    //    NSLog(@"run command:%@", commandToRun);
+    NSArray *arguments = [NSArray arrayWithObjects:@"-c", [NSString stringWithFormat:@"%@", commandToRun], nil];
     [task setArguments:arguments];
     
     NSPipe *pipe = [NSPipe pipe];
@@ -104,79 +100,6 @@ NSDate *methodStart;
     
     NSString *output = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     return output;
-}
-
-- (void) runScript:(NSString*)scriptName
-{
-    NSTask *task;
-    task = [[NSTask alloc] init];
-    [task setLaunchPath: @"/bin/sh"];
-    
-    NSArray *arguments;
-    NSString* newpath = [NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] privateFrameworksPath], scriptName];
-    NSLog(@"shell script path: %@",newpath);
-    arguments = [NSArray arrayWithObjects:newpath, nil];
-    [task setArguments: arguments];
-    
-    NSPipe *pipe;
-    pipe = [NSPipe pipe];
-    [task setStandardOutput: pipe];
-    
-    NSFileHandle *file;
-    file = [pipe fileHandleForReading];
-    
-    [task launch];
-    
-    NSData *data;
-    data = [file readDataToEndOfFile];
-    
-    NSString *string;
-    string = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
-    NSLog (@"script returned:\n%@", string);
-}
-
-- (BOOL) runProcessAsAdministrator:(NSString*)scriptPath
-                     withArguments:(NSArray *)arguments
-                            output:(NSString **)output
-                  errorDescription:(NSString **)errorDescription {
-    
-    NSString * allArgs = [arguments componentsJoinedByString:@" "];
-    NSString * fullScript = [NSString stringWithFormat:@"'%@' %@", scriptPath, allArgs];
-    
-    NSDictionary *errorInfo = [NSDictionary new];
-    NSString *script =  [NSString stringWithFormat:@"do shell script \"%@\" with administrator privileges", fullScript];
-    
-    NSAppleScript *appleScript = [[NSAppleScript new] initWithSource:script];
-    NSAppleEventDescriptor * eventResult = [appleScript executeAndReturnError:&errorInfo];
-    
-    // Check errorInfo
-    if (! eventResult)
-    {
-        // Describe common errors
-        *errorDescription = nil;
-        if ([errorInfo valueForKey:NSAppleScriptErrorNumber])
-        {
-            NSNumber * errorNumber = (NSNumber *)[errorInfo valueForKey:NSAppleScriptErrorNumber];
-            if ([errorNumber intValue] == -128)
-                *errorDescription = @"The administrator password is required to do this.";
-        }
-        
-        // Set error message from provided message
-        if (*errorDescription == nil)
-        {
-            if ([errorInfo valueForKey:NSAppleScriptErrorMessage])
-                *errorDescription =  (NSString *)[errorInfo valueForKey:NSAppleScriptErrorMessage];
-        }
-        
-        return NO;
-    }
-    else
-    {
-        // Set output to the AppleScript's output
-        *output = [eventResult stringValue];
-        
-        return YES;
-    }
 }
 
 - (void)dockNotification:(CFMutableDictionaryRef)dict {
@@ -195,17 +118,33 @@ NSDate *methodStart;
 - (void)addLoginItem {
     dispatch_queue_t myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_async(myQueue, ^{
-        NSMutableDictionary *SIMBLPrefs = [NSMutableDictionary dictionaryWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/net.culater.SIMBL_Agent.plist"]];
-        [SIMBLPrefs setObject:[NSArray arrayWithObjects:@"com.skype.skype", @"com.FilterForge.FilterForge4", @"com.apple.logic10", nil] forKey:@"SIMBLApplicationIdentifierBlacklist"];
-        [SIMBLPrefs writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:@"Library/Preferences/net.culater.SIMBL_Agent.plist"] atomically:YES];
+        NSString *plist = @"Library/Preferences/org.w0lf.SIMBLAgent.plist";
+        NSMutableDictionary *SIMBLPrefs = [NSMutableDictionary dictionaryWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:plist]];
+        NSArray *blacklist = [SIMBLPrefs objectForKey:@"SIMBLApplicationIdentifierBlacklist"];
+        NSArray *alwaysBlaklisted = @[@"com.skype.skype", @"com.FilterForge.FilterForge4", @"com.apple.logic10", @"net.brockerhoff.RB.RB-App-Checker-Lite"];
+        NSMutableArray *newlist = [[NSMutableArray alloc] initWithArray:blacklist];
+        for (NSString *app in alwaysBlaklisted)
+            if (![blacklist containsObject:app])
+                [newlist addObject:app];
+        [SIMBLPrefs setObject:newlist forKey:@"SIMBLApplicationIdentifierBlacklist"];
+        [SIMBLPrefs writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:plist] atomically:YES];
         
-        // Lets stick to the classics. Same method as cDock uses...
-        NSString *nullString;
+        // Applescript to the rescue
         NSString *loginAgent = [[NSBundle mainBundle] pathForResource:@"cDockHelper" ofType:@"app"];
-        nullString = [self runCommand:@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDock-Agent\\\"\""];
-        nullString = [self runCommand:@"osascript -e \"tell application \\\"System Events\\\" to delete login items \\\"cDockHelper\\\"\""];
-        NSString *addAgent = [NSString stringWithFormat:@"osascript -e \"tell application \\\"System Events\\\" to make new login item at end of login items with properties {path:\\\"%@\\\", hidden:false}\"", loginAgent];
-        nullString = [self runCommand:addAgent];
+        NSDictionary* errorDict;
+        NSAppleEventDescriptor* returnDescriptor = NULL;
+        NSString *applescript =  [NSString stringWithFormat:@"\
+                                  tell application \"System Events\"\n\
+                                  if login item \"cDock-Agent\" exists then delete login item \"cDock-Agent\"\n\
+                                  if (login item \"cDockHelper\" exists) is false then\n\
+                                  make new login item at end of login items with properties {path:\"%@\", hidden:false}\n\
+                                  else\n\
+                                  delete login item \"cDockHelper\"\n\
+                                  make new login item at end of login items with properties {path:\"%@\", hidden:false}\n\
+                                  end if\n\
+                                  end tell", loginAgent, loginAgent];
+        NSAppleScript* scriptObject = [[NSAppleScript alloc] initWithSource:applescript];
+        returnDescriptor = [scriptObject executeAndReturnError: &errorDict];
     });
 }
 
@@ -218,19 +157,8 @@ NSDate *methodStart;
 }
 
 - (void)launch_helper {
-//    int my_pid = [[NSProcessInfo processInfo] processIdentifier];
-//    NSLog(@"%d _swag", my_pid);
-    NSString *nullString = [NSString stringWithFormat:@"for item in $(ps aux | grep [c]Dock..gent | tr -s ' ' | cut -d ' ' -f 2); do echo $item; done"];
-    nullString = [self runCommand:nullString];
-    NSArray *myWords = [nullString componentsSeparatedByString:@"\n"];
-    for (NSNumber *anid in myWords)
-    {
-        NSString *killer = [NSString stringWithFormat:@"kill %@", anid];
-        if (![killer isEqualToString:@"kill "])
-            [self runCommand:killer];
-    }
-    system("killall cDockHelper");
-    //system('for item in $(ps aux | grep "cDock" | tr -s ' ' | cut -d ' ' -f 2); do kill "$item"; done')
+    for (NSRunningApplication *run in [NSRunningApplication runningApplicationsWithBundleIdentifier:@"org.w0lf.cDock-Helper"])
+        [run terminate];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"cDockHelper" ofType:@"app"];
     [[NSWorkspace sharedWorkspace] launchApplication:path];
 }
@@ -361,7 +289,6 @@ NSDate *methodStart;
     [prefd setObject:[NSNumber numberWithFloat:3.0 - [_dock_autohide_value floatValue]] forKey:@"autohide-time-modifier"];
     [prefd setObject:[orientations objectAtIndex:[_dock_POS indexOfSelectedItem]] forKey:@"orientation"];
     [prefd setObject:[mineffects objectAtIndex:[_dock_MU indexOfSelectedItem]] forKey:@"mineffect"];
-    
     [prefd writeToFile:@"/tmp/dock.plist" atomically:YES];
     system("defaults import com.apple.dock /tmp/dock.plist");
     system("killall Dock; sleep 2; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
@@ -518,7 +445,7 @@ NSDate *methodStart;
     // Dock settings
     prefd = [self _getDockPlist];
     
-    swagNumFormatter *_customFormatter = [[swagNumFormatter alloc] init];
+    docknumFormatter *_customFormatter = [[docknumFormatter alloc] init];
     [_dock_autohide_value setFormatter:_customFormatter];
     [_dock_magnification_value setFormatter:_customFormatter];
     [_dock_appSpacers setFormatter:_customFormatter];
@@ -1480,7 +1407,21 @@ NSDate *methodStart;
     }
     if ([sender isEqualTo:_showEULA])
     {
-        [[_cdock_changeLog textStorage] setAttributedString:[[NSAttributedString alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"EULA" ofType:@"rtf"] documentAttributes:nil]];
+        NSMutableAttributedString *mutableAttString = [[NSMutableAttributedString alloc] init];
+        NSAttributedString *newAttString = nil;
+        newAttString = [[NSAttributedString alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"EULA" ofType:@"rtf"] documentAttributes:nil];
+        [mutableAttString appendAttributedString:newAttString];
+        newAttString = [[NSAttributedString alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"binventory_LICENSE" ofType:@"txt"] documentAttributes:nil];
+        [mutableAttString appendAttributedString:newAttString];
+        newAttString = [[NSAttributedString alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"fishhook_LICENSE" ofType:@"txt"] documentAttributes:nil];
+        [mutableAttString appendAttributedString:newAttString];
+        newAttString = [[NSAttributedString alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"SGDirWatchDog_LICENSE" ofType:@"txt"] documentAttributes:nil];
+        [mutableAttString appendAttributedString:newAttString];
+        newAttString = [[NSAttributedString alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"ZKSwizzle_LICENSE" ofType:@"txt"] documentAttributes:nil];
+        [mutableAttString appendAttributedString:newAttString];
+        
+        [[_cdock_changeLog textStorage] setAttributedString:mutableAttString];
+//        [[_cdock_changeLog textStorage] setAttributedString:[[NSAttributedString alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"EULA" ofType:@"rtf"] documentAttributes:nil]];
         
         [NSAnimationContext beginGrouping];
         NSClipView* clipView = [[_cdock_changeLog enclosingScrollView] contentView];

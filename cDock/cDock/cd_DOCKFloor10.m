@@ -24,7 +24,7 @@
     _loadImages();
 
     // Update dock orientation
-    if (osx_minor == 11) {
+    if (osx_minor >= 11) {
         object_getInstanceVariable(self, "orientation", (void **)&orient);
     } else {
         object_getInstanceVariable(self, "_orientation", (void **)&orient);
