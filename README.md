@@ -1,6 +1,6 @@
 # cDock2
 
-cDock is an application designed to make theming your dock easy and robust on OS X versions 10.9 to 10.11.
+cDock is an application designed to make theming your dock easy and robust on macOS versions 10.9+.
 
 # Installation
 
