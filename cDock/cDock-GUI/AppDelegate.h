@@ -9,7 +9,10 @@
 @import Foundation;
 @import AppKit;
 @import Sparkle;
+@import ServiceManagement;
+
 #import "PFMoveApplication.h"
+#import "StartAtLoginController.h"
 
 # define appSupport  [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) firstObject]
 # define usrLibrary  [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject]
@@ -43,10 +46,11 @@
 @property IBOutlet NSTextField *appCopyright;
 
 // Tab buttons
-@property (weak) IBOutlet NSButton *viewTab0;
-@property (weak) IBOutlet NSButton *viewTab1;
-@property (weak) IBOutlet NSButton *viewTab2;
-@property (weak) IBOutlet NSButton *viewTab3;
+@property (weak) IBOutlet NSButton *viewTheming;
+@property (weak) IBOutlet NSButton *viewDock;
+@property (weak) IBOutlet NSButton *viewAbout;
+@property (weak) IBOutlet NSButton *viewPreferences;
+@property (weak) IBOutlet NSButton *reportbutton;
 @property (weak) IBOutlet NSButton *donatebutton;
 
 // Image buttons
@@ -56,13 +60,13 @@
 @property (weak) IBOutlet NSButton *pop_translate;
 
 // Views
-@property (weak) IBOutlet NSTabView *tabView;
+@property (weak) IBOutlet NSView *tabMain;
 @property (weak) IBOutlet NSView *themeView;
-@property (weak) IBOutlet NSView *simblView;
-@property (weak) IBOutlet NSView *rootlView;
 @property (weak) IBOutlet NSView *dockView;
 @property (weak) IBOutlet NSView *prefView;
 @property (weak) IBOutlet NSView *aboutView;
+@property (weak) IBOutlet NSView *simblView;
+@property (weak) IBOutlet NSView *rootlView;
 
 // cDock about
 @property (weak) IBOutlet NSButton      *showChanges;

@@ -8,6 +8,7 @@
 
 @import Sparkle;
 @import SIMBLManager;
+
 #import "AppDelegate.h"
 #include <CoreServices/CoreServices.h>
 #include <sys/types.h>
@@ -22,6 +23,17 @@
 
 // We assume that some other code sets up gTargetPID.
 static pid_t gTargetPID = -1;
+
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification
+{
+//    NSString *appPath = [[[[[[NSBundle mainBundle] bundlePath]
+//                            stringByDeletingLastPathComponent]
+//                            stringByDeletingLastPathComponent]
+//                            stringByDeletingLastPathComponent]
+//                            stringByDeletingLastPathComponent];
+//    [[NSWorkspace sharedWorkspace] launchApplication:appPath];
+//    [NSApp terminate:nil];
+}
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     [self startObserving];

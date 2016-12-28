@@ -15,6 +15,8 @@ BOOL timedelay = true;
 BOOL showTooltips = false;
 BOOL enableTheming = true;
 NSDate *methodStart;
+NSArray *tabViewButtons;
+NSArray *tabViews;
 
 @interface docknumFormatter : NSNumberFormatter
 
@@ -81,8 +83,7 @@ NSDate *methodStart;
 
 @implementation AppDelegate
 
-- (NSString*) runCommand:(NSString*)commandToRun
-{
+- (NSString*) runCommand:(NSString*)commandToRun {
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/sh"];
     
@@ -116,36 +117,21 @@ NSDate *methodStart;
 }
 
 - (void)addLoginItem {
-    dispatch_queue_t myQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(myQueue, ^{
-        NSString *plist = @"Library/Preferences/org.w0lf.SIMBLAgent.plist";
-        NSMutableDictionary *SIMBLPrefs = [NSMutableDictionary dictionaryWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:plist]];
-        NSArray *blacklist = [SIMBLPrefs objectForKey:@"SIMBLApplicationIdentifierBlacklist"];
-        NSArray *alwaysBlaklisted = @[@"com.skype.skype", @"com.FilterForge.FilterForge4", @"com.apple.logic10", @"net.brockerhoff.RB.RB-App-Checker-Lite"];
-        NSMutableArray *newlist = [[NSMutableArray alloc] initWithArray:blacklist];
-        for (NSString *app in alwaysBlaklisted)
-            if (![blacklist containsObject:app])
-                [newlist addObject:app];
-        [SIMBLPrefs setObject:newlist forKey:@"SIMBLApplicationIdentifierBlacklist"];
-        [SIMBLPrefs writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:plist] atomically:YES];
-        
-        // Applescript to the rescue
-        NSString *loginAgent = [[NSBundle mainBundle] pathForResource:@"cDockHelper" ofType:@"app"];
-        NSDictionary* errorDict;
-        NSAppleEventDescriptor* returnDescriptor = NULL;
-        NSString *applescript =  [NSString stringWithFormat:@"\
-                                  tell application \"System Events\"\n\
-                                  if login item \"cDock-Agent\" exists then delete login item \"cDock-Agent\"\n\
-                                  if (login item \"cDockHelper\" exists) is false then\n\
-                                  make new login item at end of login items with properties {path:\"%@\", hidden:false}\n\
-                                  else\n\
-                                  delete login item \"cDockHelper\"\n\
-                                  make new login item at end of login items with properties {path:\"%@\", hidden:false}\n\
-                                  end if\n\
-                                  end tell", loginAgent, loginAgent];
-        NSAppleScript* scriptObject = [[NSAppleScript alloc] initWithSource:applescript];
-        returnDescriptor = [scriptObject executeAndReturnError: &errorDict];
-    });
+    NSString *plist = @"Library/Preferences/org.w0lf.SIMBLAgent.plist";
+    NSMutableDictionary *SIMBLPrefs = [NSMutableDictionary dictionaryWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:plist]];
+    NSArray *blacklist = [SIMBLPrefs objectForKey:@"SIMBLApplicationIdentifierBlacklist"];
+    NSArray *alwaysBlaklisted = @[@"com.skype.skype", @"com.FilterForge.FilterForge4", @"com.apple.logic10", @"net.brockerhoff.RB.RB-App-Checker-Lite"];
+    NSMutableArray *newlist = [[NSMutableArray alloc] initWithArray:blacklist];
+    for (NSString *app in alwaysBlaklisted)
+        if (![blacklist containsObject:app])
+            [newlist addObject:app];
+    [SIMBLPrefs setObject:newlist forKey:@"SIMBLApplicationIdentifierBlacklist"];
+    [SIMBLPrefs writeToFile:[NSHomeDirectory() stringByAppendingPathComponent:plist] atomically:YES];
+    
+    StartAtLoginController *loginController = [[StartAtLoginController alloc] initWithIdentifier:@"org.w0lf.cDock-Helper"];
+    BOOL startsAtLogin = [loginController startAtLogin];
+    if (!startsAtLogin)
+        loginController.startAtLogin = YES;
 }
 
 - (void)dirCheck:(NSString *)directory {
@@ -538,8 +524,10 @@ NSDate *methodStart;
     if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10)
     {
         [[_donatebutton cell] setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:1.000f]];
+        [[_reportbutton cell] setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:1.000f]];
     } else {
-       [_donatebutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
+        [_donatebutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
+        [_reportbutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
     }
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"CDHideDonate"]) {
@@ -654,14 +642,30 @@ NSDate *methodStart;
 }
 
 - (void)setupWindow {
+    tabViewButtons = [NSArray arrayWithObjects:_viewTheming, _viewDock, _viewAbout, _viewPreferences, nil];
+    for (NSButton *btn in tabViewButtons)
+    {
+        [btn setWantsLayer:YES];
+        [btn setTarget:self];
+        [btn setAction:@selector(selectView:)];
+    }
+    
+    [_donatebutton setWantsLayer:YES];
+    [_reportbutton setWantsLayer:YES];
+    [_donatebutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
+    [_reportbutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
+    
+    tabViews = [NSArray arrayWithObjects:_themeView, _dockView, _aboutView, _prefView, nil];
+    
     if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10)
     {
-//        _window.centerTrafficLightButtons = false;
-//        _window.showsBaselineSeparator = false;
-//        _window.titleBarHeight = 0.0;
+
     } else {
         [_window setTitlebarAppearsTransparent:true];
         _window.styleMask |= NSFullSizeContentViewWindowMask;
+        NSRect frame = _window.frame;
+        frame.size.height += 22;
+        [_window setFrame:frame display:true];
     }
     
     if ([[prefCD valueForKey:@"blurView"] boolValue])
@@ -719,7 +723,6 @@ NSDate *methodStart;
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {
-    
     prefCD = [self _getcDockPlist];
     [prefCD setObject:[NSString stringWithFormat:@"%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]] forKey:@"version"];
     [prefCD writeToFile:plist_cDock atomically:YES];
@@ -795,11 +798,6 @@ NSDate *methodStart;
     // Setup tabview
     long osx_version = [[NSProcessInfo processInfo] operatingSystemVersion].minorVersion;
     NSString *rootless = nil;
-    NSTabViewItem *editTab = [_tabView tabViewItemAtIndex:0];
-    [[_tabView tabViewItemAtIndex:1] setView:_dockView];
-    [[_tabView tabViewItemAtIndex:2] setView:_prefView];
-    [[_tabView tabViewItemAtIndex:3] setView:_aboutView];
-    
     if (![[NSFileManager defaultManager] fileExistsAtPath:@"/System/Library/ScriptingAdditions/SIMBL.osax"])
     {        
         if (osx_version >= 11)
@@ -808,30 +806,29 @@ NSDate *methodStart;
             rootless = [self runCommand:@"touch /System/test 2>&1"];
             if ([rootless containsString:@"Operation not permitted"])
             {
-                [editTab setView:_rootlView];   // Add rootless tab
+                [_tabMain setSubviews:[NSArray arrayWithObject:_rootlView]];   // Add rootless tab
             }
             else
             {
-                [editTab setView:_simblView];   // Add SIMBL tab
+                [_tabMain setSubviews:[NSArray arrayWithObject:_simblView]];   // Add SIMBL tab
             }
         }
         else
         {
-            [editTab setView:_simblView];       // Add SIMBL tab
+            [_tabMain setSubviews:[NSArray arrayWithObject:_simblView]];       // Add SIMBL tab
         }
     }
     else
     {
         [self launch_helper];                   // Launch dock agent
-        [editTab setView:_themeView];           // Add theme tab
+        [self selectView:[tabViewButtons objectAtIndex:0]]; // Add theme tab
     }
+    
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"CDStartTab"]) {
-        NSArray *tabs = [[NSArray alloc] initWithObjects:_viewTab0, _viewTab1, _viewTab2, _viewTab3, nil];
-        [self selectView:[tabs objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"CDStartTab"] integerValue]]];
+        [self selectView:[tabViewButtons objectAtIndex:[[[NSUserDefaults standardUserDefaults] objectForKey:@"CDStartTab"] integerValue]]];
     } else {
-        [self selectView:_viewTab0];
+        [self selectView:[tabViewButtons objectAtIndex:0]];
     }
-//    [_tabView selectTabViewItemAtIndex:0];
     
     // Resize buttons for translations and tooltips
     for (NSButton *btn in [_themeView subviews])
@@ -928,10 +925,9 @@ NSDate *methodStart;
 }
 
 - (IBAction)selectView:(id)sender {
-    NSArray *tabs = [NSArray arrayWithObjects:_viewTab0, _viewTab1, _viewTab2, _viewTab3, nil];
-    if ([tabs containsObject:sender])
-        [_tabView selectTabViewItemAtIndex:[tabs indexOfObject:sender]];
-    for (NSButton *g in tabs) {
+    if ([tabViewButtons containsObject:sender])
+        [_tabMain setSubviews:[NSArray arrayWithObject:[tabViews objectAtIndex:[tabViewButtons indexOfObject:sender]]]];
+    for (NSButton *g in tabViewButtons) {
         if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10) {
             if (![g isEqualTo:sender])
                 [[g cell] setBackgroundColor:[NSColor whiteColor]];
@@ -991,11 +987,11 @@ NSDate *methodStart;
 }
 
 - (IBAction)showAboutWindow:(id)sender {
-    [self selectView:_viewTab3];
+    [self selectView:_viewAbout];
 }
 
 - (IBAction)showPreferences:(id)sender {
-    [self selectView:_viewTab2];
+    [self selectView:_viewPreferences];
 }
 
 - (IBAction)simblInstall:(id)sender {
@@ -1016,8 +1012,8 @@ NSDate *methodStart;
         dispatch_async(dispatch_get_main_queue(), ^{
             // Insert code to be executed on the main thread here
             [self launch_helper];
-            NSTabViewItem *editTab = [_tabView tabViewItemAtIndex:0];
-            [editTab setView:_themeView];
+//            NSTabViewItem *editTab = [_tabView tabViewItemAtIndex:0];
+//            [editTab setView:_themeView];
             system("killall Dock; sleep 1; osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'");
             NSLog(@"SIMBL Installed");
         });
@@ -1185,6 +1181,10 @@ NSDate *methodStart;
         [_dockWELL setHidden:true];
     }
     [self applyChanges:nil];
+}
+
+- (IBAction)report:(id)sender {
+    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://github.com/w0lfschild/cDock2/issues/new"]];
 }
 
 - (IBAction)donate:(id)sender {
@@ -1421,7 +1421,6 @@ NSDate *methodStart;
         [mutableAttString appendAttributedString:newAttString];
         
         [[_cdock_changeLog textStorage] setAttributedString:mutableAttString];
-//        [[_cdock_changeLog textStorage] setAttributedString:[[NSAttributedString alloc] initWithPath:[[NSBundle mainBundle] pathForResource:@"EULA" ofType:@"rtf"] documentAttributes:nil]];
         
         [NSAnimationContext beginGrouping];
         NSClipView* clipView = [[_cdock_changeLog enclosingScrollView] contentView];

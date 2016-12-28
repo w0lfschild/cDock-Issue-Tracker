@@ -164,6 +164,44 @@ void _setupPrefs()
     NSLog(@"OS X 10.%li, cDock loaded...", osx_minor);
 }
 
+- (void)classDump
+{
+    NSMutableArray* classNames = [NSMutableArray array];
+    unsigned int count = 0;
+    const char** classes = objc_copyClassNamesForImage([[[NSBundle mainBundle] executablePath] UTF8String], &count);
+    for(unsigned int i=0;i<count;i++){
+        NSString* className = [NSString stringWithUTF8String:classes[i]];
+        [classNames addObject:className];
+    }
+    
+    BOOL isDir;
+    NSString *dir = [NSString stringWithFormat:@"/tmp/%@", [[[NSBundle mainBundle] executablePath] lastPathComponent]];
+    NSFileManager *fileManager= [NSFileManager defaultManager];
+    if(![fileManager fileExistsAtPath:dir isDirectory:&isDir])
+        if(![fileManager createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:NULL])
+            NSLog(@"Error: Create folder failed %@", dir);
+    
+    for (Class clz in classNames)
+    {
+        NSString *file = [NSString stringWithFormat:@"%@/%@.h", dir, NSStringFromClass(clz)];
+        [[NSFileManager defaultManager] createFileAtPath:file contents:nil attributes:nil];
+        
+        unsigned int methodCount = 0;
+        Method *methods = class_copyMethodList(clz, &methodCount);
+//        printf("Found %d methods on '%s'\n", methodCount, class_getName(clz));
+        NSMutableArray *meth = [NSMutableArray new];
+        for (unsigned int i = 0; i < methodCount; i++) {
+            Method method = methods[i];
+            [meth addObject:[NSString stringWithFormat:@"%s", sel_getName(method_getName(method))]];
+//            printf("\t'%s' has method named '%s' of encoding '%s'\n", class_getName(clz), sel_getName(method_getName(method)), method_getTypeEncoding(method));
+        }
+        NSString *str = [NSString stringWithFormat:@"%@", meth];
+        [str writeToFile:file atomically:YES encoding:NSUTF8StringEncoding error:nil];
+    }
+    
+    NSLog(@"meme_ %@", classNames);
+}
+
 // Force dock into dark or light mode
 static id (*orig_CFPreferencesCopyAppValue)(CFStringRef key, CFStringRef applicationID);
 id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID)
