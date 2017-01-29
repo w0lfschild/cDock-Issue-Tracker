@@ -8,9 +8,9 @@
 
 @import Foundation;
 @import AppKit;
-@import Sparkle;
 @import ServiceManagement;
 
+#import <DevMateKit/DevMateKit.h>
 #import "PFMoveApplication.h"
 #import "StartAtLoginController.h"
 
