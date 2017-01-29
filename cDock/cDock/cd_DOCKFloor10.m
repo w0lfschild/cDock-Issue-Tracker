@@ -2,6 +2,8 @@
 //  cDockFloor.m
 //
 
+@import QuartzCore;
+
 #import "cd_shared.h"
 
 @interface _CDDOCKFloorLayer : CALayer
@@ -154,6 +156,36 @@
         NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
         [_backgroundLayer setBackgroundColor:[goodColor CGColor]];
         [_backgroundLayer setOpacity:(alpha / 100.0)];
+        
+        
+        /* Gradient Fill
+        
+        CAGradientLayer *_gradientLayer = nil;
+        
+        // Look for custom layers
+        for (CAGradientLayer *item in (NSMutableArray *)_superLayer.sublayers)
+            if ([item.name isEqual:@"_gradientLayer"])
+                _gradientLayer = item;
+        
+        // initialize border layer
+        if (_gradientLayer == nil)
+        {
+            _gradientLayer = [CAGradientLayer layer];
+            [ _gradientLayer setName:(@"_gradientLayer")];
+            [ _superLayer addSublayer:_gradientLayer ];
+        }
+        
+        NSColor * highColor = [NSColor colorWithWhite:1.000 alpha:1.000];
+        NSColor * lowColor = [NSColor redColor];
+        
+        //The gradient, simply enough.  It is a rectangle
+        [_gradientLayer setFrame:_backgroundLayer.frame];
+        [_gradientLayer setColors:[NSArray arrayWithObjects:(id)[highColor CGColor], (id)[lowColor CGColor], nil]];
+    
+        [_gradientLayer setStartPoint:CGPointMake(0.2, 0.8)];
+        [_gradientLayer setEndPoint:CGPointMake(0.8, 0.2)];
+         
+         */
     }
 
     if (![[[Preferences sharedInstance] objectForKey:@"cd_dockBG"] boolValue] && ![[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue])

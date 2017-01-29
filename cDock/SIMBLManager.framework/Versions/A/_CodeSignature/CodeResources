@@ -4,82 +4,81 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Resources/.DS_Store</key>
-		<data>
-		p9LhG22AQdW26/o4pDpVHn7J2PM=
-		</data>
 		<key>Resources/Info.plist</key>
 		<data>
-		vGFmVgz70bfHPfEeJXQw+mEtb9A=
+		SR0R/dz5p/Q5v2xP6ri+4uEnnX0=
 		</data>
 		<key>Resources/SIMBL.osax/Contents/Info.plist</key>
 		<data>
-		MJCM2lcM/xjDqVjvacZumD+xPgo=
+		dWTGrgXSKF12jXLTiL+AoIKmIYg=
 		</data>
 		<key>Resources/SIMBL.osax/Contents/MacOS/SIMBL</key>
 		<data>
-		YAi6AaR3S7aQofE6iTqHE5wWyMM=
+		AZf6Hk2mMNFa9JB9Gypc36MJ//w=
 		</data>
 		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL.rsrc</key>
 		<data>
 		I+cxeCTKDErtGJTTLS9rNdfy0k4=
 		</data>
+		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL.sdef</key>
+		<data>
+		BNObSap+PHdU3zRhPEKLTwcGnF8=
+		</data>
 		<key>Resources/SIMBL.osax/Contents/_CodeSignature/CodeResources</key>
 		<data>
-		tTOKVROnysg6Smh6H8gDaBzT5bs=
+		xJ1ShJp6J6jvtNFpA1pNJfeOpG8=
 		</data>
 		<key>Resources/SIMBLAgent.app/Contents/Info.plist</key>
 		<data>
-		5dPGkz2nEoKkngAOOtMgREww9Zo=
+		AH2tbkJ5vCjVbROeErF9xxlZ1to=
 		</data>
 		<key>Resources/SIMBLAgent.app/Contents/MacOS/SIMBLAgent</key>
 		<data>
-		a3unIA9kU2zGhpczYH4dDwPaEAQ=
+		cG94+SjdYBnhFDl9O1tcLbVUBiE=
 		</data>
 		<key>Resources/SIMBLAgent.app/Contents/PkgInfo</key>
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
 		</data>
-		<key>Resources/SIMBLAgent.app/Contents/Resources/Base.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tYi/4Z3aR9MyUx6aIvG1I8Pg4w4=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
 		<key>Resources/SIMBLAgent.app/Contents/Resources/net.culater.SIMBL.Agent.plist</key>
 		<data>
 		wYFzYNfsP7GiAQTHdDl8wxzApgg=
 		</data>
 		<key>Resources/SIMBLAgent.app/Contents/_CodeSignature/CodeResources</key>
 		<data>
-		mbUz+5y9Cqo0pHQe/LlMQNeyV74=
+		KmpR/NJdS/xwoLVDq0m5/C7K+9Q=
 		</data>
 		<key>Resources/installAgent</key>
 		<data>
-		ZRNShmdF+iKuqRWqiXHeZXJB9C4=
+		fkLWkgN5EwS2Dqm8mRtIj0tMLLE=
 		</data>
 		<key>Resources/installOSAX</key>
 		<data>
-		Ip6L7plAceObRHjzkae1jY5S5rY=
+		L/FnwsrdxOm1Z6LNF14S92vjQ54=
 		</data>
 		<key>Resources/installSIMBL</key>
 		<data>
-		i/SxjUJ8zodMKNzeLZppgJMWals=
+		Kw4qrbMcpjX9A+OEnsZpcGemvoQ=
 		</data>
 		<key>Resources/removeSIMBL</key>
 		<data>
-		tkDC5Khw9kd64EDEE56uKQNAfp8=
+		GC/GsX3p/+DwusfHFnB70Gh6G+k=
 		</data>
 		<key>Resources/sim_c.nib</key>
 		<data>
-		ISSiQloPS9gSTiaW3x9sX3asWoA=
+		INCX6JmGqDiTKHpP/46MJc2rQB0=
 		</data>
 		<key>Resources/sip_c.nib</key>
 		<data>
-		hSOfTq4DlWmjGMRXf+lCQuKaW4o=
+		lqN0TUtukfwLAluqzmmszC36jWk=
+		</data>
+		<key>Resources/unsign</key>
+		<data>
+		inUmo8rM6aN8wJobDtqt6j7xFJE=
+		</data>
+		<key>Resources/xcodepatch</key>
+		<data>
+		VxvwJb+SlKkXBiW0efLV+Ghpdqw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -88,11 +87,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Nc0zFbibnWVth1d+/FCTBShQjRc=
+			0nYZP8wPLUHAPlhgTmGp6vGHgxo=
 			</data>
 			<key>hash2</key>
 			<data>
-			tyyTjEHhi02qrlQp2ngnqu+4xDakSx5ej9RSmIfZEQE=
+			PLWiLdw1KsaevtKs8wk6W78HoiAecNiq3nDljkktnWU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -110,33 +109,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vGFmVgz70bfHPfEeJXQw+mEtb9A=
+			SR0R/dz5p/Q5v2xP6ri+4uEnnX0=
 			</data>
 			<key>hash2</key>
 			<data>
-			5ov7xRiY7FZfG41Vy4YFTfMEfBaTYEWi3tERo5zxG/g=
+			QikkAUzleLkaJ61m54CrT8yUntV/8GnmEbZ3KiSf8NQ=
 			</data>
 		</dict>
 		<key>Resources/SIMBL.osax/Contents/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MJCM2lcM/xjDqVjvacZumD+xPgo=
+			dWTGrgXSKF12jXLTiL+AoIKmIYg=
 			</data>
 			<key>hash2</key>
 			<data>
-			dPj8B+hb/hXro4pM8//FsmrCBmAkU6urHFTZAGV/gC0=
+			9epTluVElOWtGdYXRnqGngiA3ka4KD5OPz4ilICdQz4=
 			</data>
 		</dict>
 		<key>Resources/SIMBL.osax/Contents/MacOS/SIMBL</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YAi6AaR3S7aQofE6iTqHE5wWyMM=
+			AZf6Hk2mMNFa9JB9Gypc36MJ//w=
 			</data>
 			<key>hash2</key>
 			<data>
-			kDouN4eEOuNbPhf5HMprZKvBBbvGoEXe8lMCdEqOKBk=
+			MlZ4/K0sp8FSfPz47SVlbyslQZ+deOog9mE1/GQJ9Xs=
 			</data>
 		</dict>
 		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL.rsrc</key>
@@ -150,37 +149,48 @@
 			g+/hRsEvYUk+HSpBFlGR0BaJKbVsccWq2cQU4r10K1o=
 			</data>
 		</dict>
+		<key>Resources/SIMBL.osax/Contents/Resources/SIMBL.sdef</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BNObSap+PHdU3zRhPEKLTwcGnF8=
+			</data>
+			<key>hash2</key>
+			<data>
+			7TDBjOJ+M0pPZ0FiAzjkuyqpTI5ELKQ35Qk0L/ajo+M=
+			</data>
+		</dict>
 		<key>Resources/SIMBL.osax/Contents/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tTOKVROnysg6Smh6H8gDaBzT5bs=
+			xJ1ShJp6J6jvtNFpA1pNJfeOpG8=
 			</data>
 			<key>hash2</key>
 			<data>
-			5/t1RRZ6GxQkL9hqD63NCbPoR4frGUsVK/V02o8DdIk=
+			LrJPaq46H0y3Ui722DgB99lkTjLp4ZXo/8Hz5npVzHo=
 			</data>
 		</dict>
 		<key>Resources/SIMBLAgent.app/Contents/Info.plist</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5dPGkz2nEoKkngAOOtMgREww9Zo=
+			AH2tbkJ5vCjVbROeErF9xxlZ1to=
 			</data>
 			<key>hash2</key>
 			<data>
-			fSBSDG5sDN7Kw7NtMEnxocQWHOA8WeqcDzJMu77I+nE=
+			lHJorG73A4j/7r6ssdLQ8LOPPodTfBwcGIqCQY/OUyo=
 			</data>
 		</dict>
 		<key>Resources/SIMBLAgent.app/Contents/MacOS/SIMBLAgent</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			a3unIA9kU2zGhpczYH4dDwPaEAQ=
+			cG94+SjdYBnhFDl9O1tcLbVUBiE=
 			</data>
 			<key>hash2</key>
 			<data>
-			2GswTncOorcI1Z2kAposlrxUdxyvA1XbYKwVmXJZ18w=
+			hPk+T8VO/1hlVji3UcB07ugNQT+01KXGpkjyWbQcrrQ=
 			</data>
 		</dict>
 		<key>Resources/SIMBLAgent.app/Contents/PkgInfo</key>
@@ -193,19 +203,6 @@
 			<data>
 			glAhkclISwTWhTdPmHmgBmBpxJuKyuegSwHTjQfo7KA=
 			</data>
-		</dict>
-		<key>Resources/SIMBLAgent.app/Contents/Resources/Base.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tYi/4Z3aR9MyUx6aIvG1I8Pg4w4=
-			</data>
-			<key>hash2</key>
-			<data>
-			7xAqQQtX00qakP2M1Gj/AP6vY47EjbI3trH8FKvn3aA=
-			</data>
-			<key>optional</key>
-			<true/>
 		</dict>
 		<key>Resources/SIMBLAgent.app/Contents/Resources/net.culater.SIMBL.Agent.plist</key>
 		<dict>
@@ -222,77 +219,99 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mbUz+5y9Cqo0pHQe/LlMQNeyV74=
+			KmpR/NJdS/xwoLVDq0m5/C7K+9Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			mHniAJsLmUnARn1qoO9VyAtOwAtXGurObgEA97dXXU0=
+			+A05IOXDhCGVFuhv/MVkDVG1vCj7OFYvVjrQeLJ4LwM=
 			</data>
 		</dict>
 		<key>Resources/installAgent</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ZRNShmdF+iKuqRWqiXHeZXJB9C4=
+			fkLWkgN5EwS2Dqm8mRtIj0tMLLE=
 			</data>
 			<key>hash2</key>
 			<data>
-			04aTZIh/CpuQvq+S7xphASX1k5dCetb7/Tk+f6PUHyQ=
+			bmK/rkmFxiX2B4YBFKT6Pee8nRZ+6ZGRqPuAhbjmJkE=
 			</data>
 		</dict>
 		<key>Resources/installOSAX</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Ip6L7plAceObRHjzkae1jY5S5rY=
+			L/FnwsrdxOm1Z6LNF14S92vjQ54=
 			</data>
 			<key>hash2</key>
 			<data>
-			8EI2CXq4fsUEpW7G1WCWRg/AZonEQ+bmDWqsz7gWaq4=
+			NeKqMUiy7nK0cXBpJ0hgZHjaC/jchccDRC2x/Dv3g88=
 			</data>
 		</dict>
 		<key>Resources/installSIMBL</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			i/SxjUJ8zodMKNzeLZppgJMWals=
+			Kw4qrbMcpjX9A+OEnsZpcGemvoQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			h/Mj8lslKFVUX7ZACPvwqRhP2hp4EZZ8phceVwjS8cA=
+			19MnO80Snsb0KYSVfqOkFOifAADTccdrJkEsOYhqGL8=
 			</data>
 		</dict>
 		<key>Resources/removeSIMBL</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			tkDC5Khw9kd64EDEE56uKQNAfp8=
+			GC/GsX3p/+DwusfHFnB70Gh6G+k=
 			</data>
 			<key>hash2</key>
 			<data>
-			T+yY+M+vJtWbEeygBOgpPFA63gc7Y9QhDMZz+cTrj3A=
+			if9fK6z+U3niL0OqlX3JFUQr4HQQUE9k2uEAmkDg6jk=
 			</data>
 		</dict>
 		<key>Resources/sim_c.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ISSiQloPS9gSTiaW3x9sX3asWoA=
+			INCX6JmGqDiTKHpP/46MJc2rQB0=
 			</data>
 			<key>hash2</key>
 			<data>
-			MZkkKDuwPy5Q4zFLwuzuPDzovQoPi0mzx2WoTyk030Y=
+			Nla8pU7qk5rz/WBnPNi10v3C2b4nglD2WUOgXl40wLE=
 			</data>
 		</dict>
 		<key>Resources/sip_c.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hSOfTq4DlWmjGMRXf+lCQuKaW4o=
+			lqN0TUtukfwLAluqzmmszC36jWk=
 			</data>
 			<key>hash2</key>
 			<data>
-			UpwRVtwyjFSBRp1FiFjzNxOVn+fmpCadgk6Fc1OV1LU=
+			vMvVXJcfopxCoph8VqCAjgFRGgCUjPoRb8PEYsN5xho=
+			</data>
+		</dict>
+		<key>Resources/unsign</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			inUmo8rM6aN8wJobDtqt6j7xFJE=
+			</data>
+			<key>hash2</key>
+			<data>
+			DvDcxRelKpWw3xRppImoNeVSE6DCrlaBNdit6ynStZI=
+			</data>
+		</dict>
+		<key>Resources/xcodepatch</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			VxvwJb+SlKkXBiW0efLV+Ghpdqw=
+			</data>
+			<key>hash2</key>
+			<data>
+			Y8Dh2axalRPU0ja3ZHOYardOuHswdJi7AhJK6r83RBk=
 			</data>
 		</dict>
 	</dict>

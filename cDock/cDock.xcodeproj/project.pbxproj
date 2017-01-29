@@ -18,9 +18,9 @@
 		FB09A4F11C4B27880072C553 /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4ED1C4B27880072C553 /* heart2.png */; };
 		FB09A4F21C4B27880072C553 /* translate.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4EE1C4B27880072C553 /* translate.png */; };
 		FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */; };
-		FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13C1B81B5BC00F16D5E /* fishhook.c */; };
 		FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */; };
 		FB14DA101B96482B00C52E53 /* cd_ECMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */; };
+		FB2260101E18928100D699B5 /* cd_testing.m in Sources */ = {isa = PBXBuildFile; fileRef = FB22600F1E18928100D699B5 /* cd_testing.m */; };
 		FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0EA1B8EE26D00272131 /* cDock.bundle */; };
 		FB5549851D723A4500E41E93 /* binventory_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB5549811D723A4500E41E93 /* binventory_LICENSE.txt */; };
 		FB5549861D723A4500E41E93 /* fishhook_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB5549821D723A4500E41E93 /* fishhook_LICENSE.txt */; };
@@ -28,7 +28,6 @@
 		FB5549881D723A4500E41E93 /* ZKSwizzle_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB5549841D723A4500E41E93 /* ZKSwizzle_LICENSE.txt */; };
 		FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor10.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor10.m */; };
 		FB6BA6391C5744860099544C /* MyApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6BA6381C5744860099544C /* MyApp.xib */; };
-		FB6BA63B1C587E110099544C /* icons in Resources */ = {isa = PBXBuildFile; fileRef = FB6BA63A1C587E110099544C /* icons */; };
 		FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C841C3A307E00192556 /* cd_shared.m */; };
 		FB8E2C881C3A309100192556 /* cd_DOCKFloor9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C861C3A309100192556 /* cd_DOCKFloor9.m */; };
 		FB959CC91E127F10006DB989 /* StartAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87D6181DEAAF2500600149 /* StartAtLoginController.m */; };
@@ -43,6 +42,10 @@
 		FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */; };
 		FBB2AB4C1BC0A5BD00319A8A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */; };
 		FBB95BD51DEAB4960007CECE /* cDockHelper.app in Copy LoginItem */ = {isa = PBXBuildFile; fileRef = FB0CF6911C61B5AF002CF3DE /* cDockHelper.app */; };
+		FBBC185D1E17310900E785FA /* cd_ECStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBC185C1E17310900E785FA /* cd_ECStatusLabel.m */; };
+		FBBC185F1E175F1000E785FA /* cd_Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBC185E1E175F1000E785FA /* cd_Tile.m */; };
+		FBBC18651E17913800E785FA /* updates in Resources */ = {isa = PBXBuildFile; fileRef = FBBC18641E17913800E785FA /* updates */; };
+		FBBC18671E17A0EA00E785FA /* webicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBBC18661E17A0EA00E785FA /* webicon.png */; };
 		FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */; };
 		FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6F41B8D3A3600DF2E91 /* themes */; };
 		FBE661BA1C294B7D004AE953 /* changelog.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FBE661B91C294B7D004AE953 /* changelog.rtf */; };
@@ -88,12 +91,11 @@
 		FB09A4ED1C4B27880072C553 /* heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart2.png; path = icons/heart2.png; sourceTree = "<group>"; };
 		FB09A4EE1C4B27880072C553 /* translate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = translate.png; path = icons/translate.png; sourceTree = "<group>"; };
 		FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_Initialize.m; path = cDock/cd_Initialize.m; sourceTree = SOURCE_ROOT; };
-		FB0CF13C1B81B5BC00F16D5E /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = fishhook.c; path = Fishhook/fishhook.c; sourceTree = "<group>"; };
-		FB0CF13D1B81B5BC00F16D5E /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = fishhook.h; path = Fishhook/fishhook.h; sourceTree = "<group>"; };
 		FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = ZKSwizzle/ZKSwizzle.h; sourceTree = "<group>"; };
 		FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = ZKSwizzle/ZKSwizzle.m; sourceTree = "<group>"; };
 		FB0CF6911C61B5AF002CF3DE /* cDockHelper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = cDockHelper.app; sourceTree = "<group>"; };
 		FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_ECMaterial.m; path = cDock/cd_ECMaterial.m; sourceTree = SOURCE_ROOT; };
+		FB22600F1E18928100D699B5 /* cd_testing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cd_testing.m; sourceTree = SOURCE_ROOT; };
 		FB3EC0EA1B8EE26D00272131 /* cDock.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = cDock.bundle; sourceTree = "<group>"; };
 		FB5549811D723A4500E41E93 /* binventory_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = binventory_LICENSE.txt; path = liscense/binventory_LICENSE.txt; sourceTree = "<group>"; };
 		FB5549821D723A4500E41E93 /* fishhook_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fishhook_LICENSE.txt; path = liscense/fishhook_LICENSE.txt; sourceTree = "<group>"; };
@@ -101,7 +103,6 @@
 		FB5549841D723A4500E41E93 /* ZKSwizzle_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZKSwizzle_LICENSE.txt; path = liscense/ZKSwizzle_LICENSE.txt; sourceTree = "<group>"; };
 		FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor10.m; path = cDock/cd_DOCKFloor10.m; sourceTree = SOURCE_ROOT; };
 		FB6BA6381C5744860099544C /* MyApp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyApp.xib; sourceTree = "<group>"; };
-		FB6BA63A1C587E110099544C /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icons; sourceTree = "<group>"; };
 		FB87D6171DEAAF2500600149 /* StartAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartAtLoginController.h; path = resources/StartAtLoginController/StartAtLoginController.h; sourceTree = "<group>"; };
 		FB87D6181DEAAF2500600149 /* StartAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartAtLoginController.m; path = resources/StartAtLoginController/StartAtLoginController.m; sourceTree = "<group>"; };
 		FB8E2C831C3A307400192556 /* cd_shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cd_shared.h; path = cDock/cd_shared.h; sourceTree = SOURCE_ROOT; };
@@ -119,6 +120,10 @@
 		FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBB2AB4B1BC0A5BD00319A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FBB2AB4D1BC0A5BD00319A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBBC185C1E17310900E785FA /* cd_ECStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cd_ECStatusLabel.m; sourceTree = SOURCE_ROOT; };
+		FBBC185E1E175F1000E785FA /* cd_Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = cd_Tile.m; sourceTree = SOURCE_ROOT; };
+		FBBC18641E17913800E785FA /* updates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = updates; sourceTree = "<group>"; };
+		FBBC18661E17A0EA00E785FA /* webicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = webicon.png; path = icons/webicon.png; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cDock.icns; sourceTree = "<group>"; };
@@ -194,15 +199,6 @@
 			name = Excpetion;
 			sourceTree = "<group>";
 		};
-		FB13CA031B6746D1006F3D89 /* Fishhook */ = {
-			isa = PBXGroup;
-			children = (
-				FB0CF13C1B81B5BC00F16D5E /* fishhook.c */,
-				FB0CF13D1B81B5BC00F16D5E /* fishhook.h */,
-			);
-			name = Fishhook;
-			sourceTree = "<group>";
-		};
 		FB1E22701C28E3B20085E29A /* 10.9 */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,7 +214,10 @@
 				FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */,
 				FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */,
 				FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */,
+				FBBC185C1E17310900E785FA /* cd_ECStatusLabel.m */,
 				FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */,
+				FBBC185E1E175F1000E785FA /* cd_Tile.m */,
+				FB22600F1E18928100D699B5 /* cd_testing.m */,
 			);
 			name = "10.9+";
 			sourceTree = "<group>";
@@ -237,11 +236,11 @@
 		FB6BA63C1C589EF70099544C /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				FB6BA63A1C587E110099544C /* icons */,
 				FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */,
 				FB09A4EC1C4B27880072C553 /* github.png */,
 				FB09A4ED1C4B27880072C553 /* heart2.png */,
 				FB09A4EE1C4B27880072C553 /* translate.png */,
+				FBBC18661E17A0EA00E785FA /* webicon.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -338,7 +337,6 @@
 			isa = PBXGroup;
 			children = (
 				79A33DAE1B6C0630007299FC /* ZKSwizzle */,
-				FB13CA031B6746D1006F3D89 /* Fishhook */,
 				FBD71EAD1B5F201900C50402 /* Preferences */,
 				FB0CF6901C61B054002CF3DE /* Excpetion */,
 				FBD71EB11B5F201900C50402 /* cDock Theming */,
@@ -393,6 +391,7 @@
 				FB98BED91C55538C004BAE85 /* dsa_pub.pem */,
 				FB0CF6911C61B5AF002CF3DE /* cDockHelper.app */,
 				FB3EC0EA1B8EE26D00272131 /* cDock.bundle */,
+				FBBC18641E17913800E785FA /* updates */,
 				FBD1F6F41B8D3A3600DF2E91 /* themes */,
 			);
 			name = Resource;
@@ -536,15 +535,16 @@
 			files = (
 				FB5549881D723A4500E41E93 /* ZKSwizzle_LICENSE.txt in Resources */,
 				FB5549861D723A4500E41E93 /* fishhook_LICENSE.txt in Resources */,
+				FBBC18651E17913800E785FA /* updates in Resources */,
 				FB09A4F01C4B27880072C553 /* github.png in Resources */,
 				FB6BA6391C5744860099544C /* MyApp.xib in Resources */,
 				FB5549871D723A4500E41E93 /* SGDirWatchDog_LICENSE.txt in Resources */,
 				FB09A4F21C4B27880072C553 /* translate.png in Resources */,
 				FBE661BA1C294B7D004AE953 /* changelog.rtf in Resources */,
 				FB5549851D723A4500E41E93 /* binventory_LICENSE.txt in Resources */,
-				FB6BA63B1C587E110099544C /* icons in Resources */,
 				FB09A4F11C4B27880072C553 /* heart2.png in Resources */,
 				FBD1F6F51B8D3A3600DF2E91 /* themes in Resources */,
+				FBBC18671E17A0EA00E785FA /* webicon.png in Resources */,
 				FB09A4E41C4B275E0072C553 /* EULA.rtf in Resources */,
 				FB98BEDA1C55538C004BAE85 /* dsa_pub.pem in Resources */,
 				FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */,
@@ -581,7 +581,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\npreCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\npostCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" /Library/Application\\ Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist)\n\n# Copy icon\n# cp -f \"${SRCROOT}\"/cDock-GUI/cDock.icns \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\"/Contents/icon.icns\n\n# Install bundle\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\n\n# Copy bundle to git folder\ncp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"${SRCROOT}\"/cDock-GUI\n\nif [ \"$preCompile\" -ne \"$postCompile\" ]; then\n    killall -KILL Dock\n    sleep 1\n    osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\nfi\n";
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n\npreCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\npostCompile=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" /Library/Application\\ Support/SIMBL/Plugins/cDock.bundle/Contents/Info.plist)\n\n# Copy icon\n# cp -f \"${SRCROOT}\"/cDock-GUI/cDock.icns \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\"/Contents/icon.icns\n\n# Install bundle\nif [[ -e /Library/Application\\ Support/SIMBL/Plugins ]]; then\n    cp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" /Library/Application\\ Support/SIMBL/Plugins\nfi\n\n# Copy bundle to git folder\nif [[ -e \"${SRCROOT}\"/cDock-GUI ]]; then\n    cp -Rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_NAME}.bundle\" \"${SRCROOT}\"/cDock-GUI\nfi\n\nif [ \"$preCompile\" -ne \"$postCompile\" ]; then\n    killall -KILL Dock\n    sleep 1\n    osascript -e 'tell application \"Dock\" to inject SIMBL into Snow Leopard'\nfi\n";
 		};
 		FBD1F6F61B8D3C1C00DF2E91 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -615,12 +615,14 @@
 				FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */,
 				79D28C961B66BCB10036D668 /* cd_DOCKIndicator.m in Sources */,
 				FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */,
+				FBBC185D1E17310900E785FA /* cd_ECStatusLabel.m in Sources */,
 				FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */,
-				FB0CF13E1B81B5BC00F16D5E /* fishhook.c in Sources */,
+				FB2260101E18928100D699B5 /* cd_testing.m in Sources */,
 				FBA827161C5D53F40069A2E8 /* UncaughtExceptionHandler.m in Sources */,
 				79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */,
 				FB14DA101B96482B00C52E53 /* cd_ECMaterial.m in Sources */,
 				FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor10.m in Sources */,
+				FBBC185F1E175F1000E785FA /* cd_Tile.m in Sources */,
 				79D28C981B66BCB40036D668 /* cd_DOCKTile.m in Sources */,
 				FB8E2C881C3A309100192556 /* cd_DOCKFloor9.m in Sources */,
 				79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */,

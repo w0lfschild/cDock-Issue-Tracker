@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Update SIMBL.osax and remove possible old or alternate version
 
@@ -21,7 +21,7 @@ function createFolder() {
 
 log_dir="$HOME"/Library/"Application Support"/mySIMBL/logs
 createFolder "$log_dir"
-exec &>"$log_dir"/update.log
+exec &>"$log_dir"/installAgent.log
  
 cleanupFiles=(
 	"/Library/Application Support/SIMBL/SIMBLAgent.app"
@@ -34,6 +34,9 @@ setupFolders=(
 	"/Library/Application Support/SIMBL/Plugins (Disabled)"
 	"/Library/Application Support/SIMBL"
 	)
+
+launchctl unload /Library/LaunchAgents/net.culater.SIMBL.Agent.plist
+killall SIMBLAgent
 
 echo "Removing old files"
 
@@ -52,11 +55,12 @@ done
 echo "Installing SIMBLAgent"
 
 mySIMBL=$(dirname "$0")
+echo "$mySIMBL"
 cp -vr "$mySIMBL"/SIMBLAgent.app "/Library/Application Support/SIMBL/"
 cp -v "$mySIMBL"/SIMBLAgent.app/Contents/Resources/net.culater.SIMBL.Agent.plist "/Library/LaunchAgents"
 
 echo "Launching Agent"
 
-open -a "/Library/Application Support/SIMBL/SIMBLAgent.app"
+launchctl load /Library/LaunchAgents/net.culater.SIMBL.Agent.plist
 
 echo "Done"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Update SIMBL and remove possible old or alternate version
 
@@ -14,14 +14,14 @@ function nukeFiles() {
 
 function createFolder() {
 	if [[ ! -e "$1" ]]; then
-		mkdir -pv "$1"
+        mkdir -pv "$1"
 	fi
-	chmod 777 "$1"
+    chmod 777 "$1"
 }
 
 log_dir="$HOME"/Library/"Application Support"/mySIMBL/logs
 createFolder "$log_dir"
-exec &>"$log_dir"/update.log
+exec &>"$log_dir"/installSIMBL.log
  
 cleanupFiles=(
 	"/Library/Application Support/SIMBL/SIMBLAgent.app"
@@ -40,6 +40,9 @@ setupFolders=(
 	"/Library/Application Support/SIMBL/Plugins (Disabled)"
 	"/Library/Application Support/SIMBL"
 	)
+
+launchctl unload /Library/LaunchAgents/net.culater.SIMBL.Agent.plist
+killall SIMBLAgent
 
 echo "Removing old files"
 
@@ -64,6 +67,6 @@ cp -v "$mySIMBL"/SIMBLAgent.app/Contents/Resources/net.culater.SIMBL.Agent.plist
 
 echo "Launching Agent"
 
-open -a "/Library/Application Support/SIMBL/SIMBLAgent.app"
+launchctl load /Library/LaunchAgents/net.culater.SIMBL.Agent.plist
 
 echo "Done"

@@ -108,7 +108,11 @@ void _loadShadows(CALayer *layer)
         loadShadows = false;
         
         SEL aSel = @selector(layoutSublayers);
+        
+        #pragma clang diagnostic push
+        #pragma clang diagnostic ignored "-Wundeclared-selector"
         SEL bSel = @selector(updateIndicatorForSize:);
+        #pragma clang diagnostic pop
         
         if ([[[Preferences sharedInstance] objectForKey:@"cd_colorIndicator"] boolValue]) {
             Class cls = NSClassFromString(@"DOCKIndicatorLayer");

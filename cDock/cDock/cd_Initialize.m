@@ -3,8 +3,6 @@
 //
 
 #import "cd_shared.h"
-#import "fishhook.h"
-#import <dlfcn.h>
 #import "UncaughtExceptionHandler.h"
 
 NSInteger orient = 0;
@@ -22,6 +20,39 @@ CGImageRef medium_simple;
 CGImageRef small_simple;
 bool dispatch_prefFile = true;
 bool dispatch_dockFile = true;
+
+// Force dock into dark or light mode
+ZKSwizzleInterface(wb_CFXPreferences, _CFXPreferences, NSObject)
+@implementation wb_CFXPreferences
+
+- (void *)copyAppValueForKey:(struct __CFString *)arg1 identifier:(struct __CFString *)arg2 container:(struct __CFString *)arg3 configurationURL:(struct __CFURL *)arg4
+{
+//    NSLog(@"wb_ %@", arg1);
+    if ([(__bridge NSString *)arg1 isEqualToString:@"AppleInterfaceTheme"] || [(__bridge NSString *)arg1 isEqualToString:@"AppleInterfaceStyle"]) {
+        if ([[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
+        {
+            if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 1) {
+                return @"Light";
+            } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 2) {
+                return @"Dark";
+            } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 3) {
+                if ([(id)ZKOrig(void *, arg1, arg2, arg3, arg4)  isEqual:@"Dark"]) {
+                    return @"Light";
+                } else {
+                    return @"Dark";
+                }
+            } else {
+                return ZKOrig(void *, arg1, arg2, arg3, arg4);
+            }
+        } else {
+            return ZKOrig(void *, arg1, arg2, arg3, arg4);
+        }
+    } else {
+        return ZKOrig(void *, arg1, arg2, arg3, arg4);
+    }
+}
+
+@end
 
 void notificationCallback (CFNotificationCenterRef center,
                            void * observer,
@@ -134,7 +165,7 @@ void _setupPrefs()
                                     CFSTR("MyNotification"), NULL,
                                     CFNotificationSuspensionBehaviorDeliverImmediately);
     
-//    InstallUncaughtExceptionHandler();
+    InstallUncaughtExceptionHandler();
     
     // Create prefs if they don't exist
     _setupPrefs();
@@ -150,84 +181,9 @@ void _setupPrefs()
         ZKSwizzle(_CDMAVSide, DOCKSideGlassFloorLayer);
     }
     
-    if (osx_minor > 9) {
-        orig_CFPreferencesCopyAppValue = dlsym(RTLD_DEFAULT, "CFPreferencesCopyAppValue");
-        rebind_symbols((struct rebinding[1]){{"CFPreferencesCopyAppValue", hax_CFPreferencesCopyAppValue}}, 1);
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
-//        });
-    }
-    
     // Force dock to refresh
     _forceRefresh();
     
     NSLog(@"OS X 10.%li, cDock loaded...", osx_minor);
-}
-
-- (void)classDump
-{
-    NSMutableArray* classNames = [NSMutableArray array];
-    unsigned int count = 0;
-    const char** classes = objc_copyClassNamesForImage([[[NSBundle mainBundle] executablePath] UTF8String], &count);
-    for(unsigned int i=0;i<count;i++){
-        NSString* className = [NSString stringWithUTF8String:classes[i]];
-        [classNames addObject:className];
-    }
-    
-    BOOL isDir;
-    NSString *dir = [NSString stringWithFormat:@"/tmp/%@", [[[NSBundle mainBundle] executablePath] lastPathComponent]];
-    NSFileManager *fileManager= [NSFileManager defaultManager];
-    if(![fileManager fileExistsAtPath:dir isDirectory:&isDir])
-        if(![fileManager createDirectoryAtPath:dir withIntermediateDirectories:YES attributes:nil error:NULL])
-            NSLog(@"Error: Create folder failed %@", dir);
-    
-    for (Class clz in classNames)
-    {
-        NSString *file = [NSString stringWithFormat:@"%@/%@.h", dir, NSStringFromClass(clz)];
-        [[NSFileManager defaultManager] createFileAtPath:file contents:nil attributes:nil];
-        
-        unsigned int methodCount = 0;
-        Method *methods = class_copyMethodList(clz, &methodCount);
-//        printf("Found %d methods on '%s'\n", methodCount, class_getName(clz));
-        NSMutableArray *meth = [NSMutableArray new];
-        for (unsigned int i = 0; i < methodCount; i++) {
-            Method method = methods[i];
-            [meth addObject:[NSString stringWithFormat:@"%s", sel_getName(method_getName(method))]];
-//            printf("\t'%s' has method named '%s' of encoding '%s'\n", class_getName(clz), sel_getName(method_getName(method)), method_getTypeEncoding(method));
-        }
-        NSString *str = [NSString stringWithFormat:@"%@", meth];
-        [str writeToFile:file atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    }
-    
-    NSLog(@"meme_ %@", classNames);
-}
-
-// Force dock into dark or light mode
-static id (*orig_CFPreferencesCopyAppValue)(CFStringRef key, CFStringRef applicationID);
-id hax_CFPreferencesCopyAppValue(CFStringRef key, CFStringRef applicationID)
-{
-//    NSLog(@"Key: %@, Original Value: %@", key, orig_CFPreferencesCopyAppValue(key, applicationID));
-    if ([(__bridge NSString *)key isEqualToString:@"AppleInterfaceTheme"] || [(__bridge NSString *)key isEqualToString:@"AppleInterfaceStyle"]) {
-        if ([[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
-        {
-            if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 1) {
-                return @"Light";
-            } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 2) {
-                return @"Dark";
-            } else if ([[[Preferences sharedInstance] objectForKey:@"cd_darkMode"] intValue] == 3) {
-                if ([orig_CFPreferencesCopyAppValue(key, applicationID)  isEqual: @"Dark"]) {
-                    return @"Light";
-                } else {
-                    return @"Dark";
-                }
-            } else {
-                return orig_CFPreferencesCopyAppValue(key, applicationID);
-            }
-        } else {
-            return orig_CFPreferencesCopyAppValue(key, applicationID);
-        }
-    } else {
-        return orig_CFPreferencesCopyAppValue(key, applicationID);
-    }
 }
 @end

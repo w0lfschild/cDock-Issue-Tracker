@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Resources/Base.lproj/MainMenu.nib</key>
-		<data>
-		tYi/4Z3aR9MyUx6aIvG1I8Pg4w4=
-		</data>
 		<key>Resources/net.culater.SIMBL.Agent.plist</key>
 		<data>
 		wYFzYNfsP7GiAQTHdDl8wxzApgg=
@@ -15,17 +11,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Resources/Base.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			tYi/4Z3aR9MyUx6aIvG1I8Pg4w4=
-			</data>
-			<key>hash2</key>
-			<data>
-			7xAqQQtX00qakP2M1Gj/AP6vY47EjbI3trH8FKvn3aA=
-			</data>
-		</dict>
 		<key>Resources/net.culater.SIMBL.Agent.plist</key>
 		<dict>
 			<key>hash</key>

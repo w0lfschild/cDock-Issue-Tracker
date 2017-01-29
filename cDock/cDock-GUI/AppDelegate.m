@@ -668,17 +668,17 @@ NSArray *tabViews;
         [_window setFrame:frame display:true];
     }
     
-    if ([[prefCD valueForKey:@"blurView"] boolValue])
-    {
-        Class vibrantClass=NSClassFromString(@"NSVisualEffectView");
-        if (vibrantClass)
-        {
-            NSVisualEffectView *vibrant=[[vibrantClass alloc] initWithFrame:[[_window contentView] bounds]];
-            [vibrant setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
-            [vibrant setBlendingMode:NSVisualEffectBlendingModeBehindWindow];
-            [[_window contentView] addSubview:vibrant positioned:NSWindowBelow relativeTo:nil];
-        }
-    }
+//    if ([[prefCD valueForKey:@"blurView"] boolValue])
+//    {
+//        Class vibrantClass=NSClassFromString(@"NSVisualEffectView");
+//        if (vibrantClass)
+//        {
+//            NSVisualEffectView *vibrant=[[vibrantClass alloc] initWithFrame:[[_window contentView] bounds]];
+//            [vibrant setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
+//            [vibrant setBlendingMode:NSVisualEffectBlendingModeBehindWindow];
+//            [[_window contentView] addSubview:vibrant positioned:NSWindowBelow relativeTo:nil];
+//        }
+//    }
     
     [_window setBackgroundColor:[NSColor whiteColor]];
     [_window setMovableByWindowBackground:YES];
