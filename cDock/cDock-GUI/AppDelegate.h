@@ -47,9 +47,15 @@
 
 // Tab buttons
 @property (weak) IBOutlet NSButton *viewTheming;
+@property (weak) IBOutlet NSButton *viewCustomize;
 @property (weak) IBOutlet NSButton *viewDock;
+@property (weak) IBOutlet NSButton *viewSIMBL;
+
 @property (weak) IBOutlet NSButton *viewAbout;
 @property (weak) IBOutlet NSButton *viewPreferences;
+
+@property (weak) IBOutlet NSButton *restartbutton;
+@property (weak) IBOutlet NSButton *feedbackbutton;
 @property (weak) IBOutlet NSButton *reportbutton;
 @property (weak) IBOutlet NSButton *donatebutton;
 
@@ -61,10 +67,14 @@
 
 // Views
 @property (weak) IBOutlet NSView *tabMain;
+
 @property (weak) IBOutlet NSView *themeView;
+@property (weak) IBOutlet NSView *customizeView;
 @property (weak) IBOutlet NSView *dockView;
+@property (weak) IBOutlet NSView *simblinfoView;
 @property (weak) IBOutlet NSView *prefView;
 @property (weak) IBOutlet NSView *aboutView;
+
 @property (weak) IBOutlet NSView *simblView;
 @property (weak) IBOutlet NSView *rootlView;
 

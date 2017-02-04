@@ -19,7 +19,7 @@
 // OS X 10.9 Mavericks implementation
 void _TenNine(CALayer* layer)
 {
-    if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
+    if (!iscDockEnabled)
         return;
     
     _loadShadows(layer);
@@ -45,9 +45,8 @@ void _TenNine(CALayer* layer)
         if (!flag) {
             object_setInstanceVariable(layer, "_dontEverShowMirror", (void *)YES);
             SEL aSel = NSSelectorFromString(@"turnMirrorOff");
-            if ([layer respondsToSelector:aSel]) {
+            if ([layer respondsToSelector:aSel])
                 [layer performSelector:aSel];
-            }
         }
     }
     
@@ -63,8 +62,7 @@ void _TenNine(CALayer* layer)
     CALayer *_borderLayer = nil;
     
     // Look for custom layers
-    for (CALayer *item in (NSMutableArray *)_superLayer.sublayers)
-    {
+    for (CALayer *item in (NSMutableArray *)_superLayer.sublayers) {
         if ([item.name isEqual:@"_backgroundLayer"])
             _backgroundLayer = item;
         if ([item.name isEqual:@"_borderLayer"])
@@ -72,16 +70,14 @@ void _TenNine(CALayer* layer)
     }
     
     // initialize border layer
-    if (_borderLayer == nil)
-    {
+    if (_borderLayer == nil) {
         _borderLayer = [[CALayer alloc] init];
         [ _borderLayer setName:(@"_borderLayer")];
         [ _superLayer addSublayer:_borderLayer ];
     }
     
     // initialize background layer
-    if (_backgroundLayer == nil)
-    {
+    if (_backgroundLayer == nil) {
         _backgroundLayer = [[CALayer alloc] init];
         [ _backgroundLayer setName:(@"_backgroundLayer")];
         [ _superLayer addSublayer:_backgroundLayer ];
@@ -101,8 +97,7 @@ void _TenNine(CALayer* layer)
     // Picture background
     if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue]) {
         // Check orientation
-        if (orient == 0)
-        {
+        if (orient == 0) {
             if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
                 if (background)
                     [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background size:NSZeroSize]] CGColor] ];
@@ -112,9 +107,7 @@ void _TenNine(CALayer* layer)
                 [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
                 [ _backgroundLayer setContents:(__bridge id)background ];
             }
-        }
-        else
-        {
+        } else {
             if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
                 if (background1)
                     [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background1 size:NSZeroSize]] CGColor] ];
@@ -132,7 +125,7 @@ void _TenNine(CALayer* layer)
         float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGA"] floatValue];
         [_backgroundLayer setOpacity:(alpha / 100.0)];
     } else {
-        [ _backgroundLayer setContents:nil ];
+        [_backgroundLayer setContents:nil];
     }
     
     // Color background
@@ -166,8 +159,7 @@ void _TenNine(CALayer* layer)
         if (rect.size.height < 40)
             rect.size.height = rect.size.height * .9;
         
-        if (![[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue])
-        {
+        if (![[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue]) {
             rect.origin.x += rect.size.width *.02;
             rect.size.width -= rect.size.width *.03;
         }
@@ -196,8 +188,7 @@ void _TenNine(CALayer* layer)
     // rounded corners
     if (cornerSize > 0) {
         // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
-        if (_backgroundLayer != nil)
-        {
+        if (_backgroundLayer != nil) {
             if (brdSize > 0) {
                 if (brdSize < 2) brdSize = 2;
                 [ _backgroundLayer setCornerRadius:cornerSize / brdSize ];
@@ -227,8 +218,7 @@ void _TenNine(CALayer* layer)
     [ _backgroundLayer setOpacity:(alpha / 100.0)];
     
     // Custom separtor
-    if (orient == 0)
-    {
+    if (orient == 0) {
         rect = _separatorLayer.frame;
         rect.origin.x = rect.origin.x + rect.size.width / 2;
         rect.size.width = 1;
@@ -273,7 +263,6 @@ void _TenNine(CALayer* layer)
             _separatorLayer.transform = CATransform3DIdentity;
         }
     } else {
-        
         // Adjust height to fit 3D size
         if ([[[Preferences sharedInstance] objectForKey:@"cd_separatorfullHeight"] boolValue]) {
             CGRect rect = _separatorLayer.frame;
@@ -288,7 +277,6 @@ void _TenNine(CALayer* layer)
             }
             [_separatorLayer setFrame:rect];
         }
-        
         _separatorLayer.transform = CATransform3DIdentity;
     }
     

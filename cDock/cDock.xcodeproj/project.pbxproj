@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		79D28C961B66BCB10036D668 /* cd_DOCKIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */; };
-		79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */; };
-		79D28C981B66BCB40036D668 /* cd_DOCKTile.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */; };
 		79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE843531B641CD100F87E50 /* Preferences.m */; };
 		FB09A4E31C4B275E0072C553 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4D31C4B275E0072C553 /* Credits.rtf */; };
 		FB09A4E41C4B275E0072C553 /* EULA.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4D41C4B275E0072C553 /* EULA.rtf */; };
@@ -17,32 +14,36 @@
 		FB09A4F01C4B27880072C553 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4EC1C4B27880072C553 /* github.png */; };
 		FB09A4F11C4B27880072C553 /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4ED1C4B27880072C553 /* heart2.png */; };
 		FB09A4F21C4B27880072C553 /* translate.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4EE1C4B27880072C553 /* translate.png */; };
-		FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */; };
-		FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */; };
+		FB0CF13B1B81B4E100F16D5E /* cDockInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13A1B81B4E100F16D5E /* cDockInitialize.m */; };
 		FB14DA101B96482B00C52E53 /* cd_ECMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */; };
-		FB2260101E18928100D699B5 /* cd_testing.m in Sources */ = {isa = PBXBuildFile; fileRef = FB22600F1E18928100D699B5 /* cd_testing.m */; };
+		FB1EB0B41E456594001E6254 /* cd_DarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1EB0B31E456594001E6254 /* cd_DarkMode.m */; };
+		FB1EB0B61E456667001E6254 /* cd_DOCKTile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1EB0B51E456667001E6254 /* cd_DOCKTile.m */; };
+		FB1EB0B81E456D7E001E6254 /* cd_DOCKLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1EB0B71E456D7E001E6254 /* cd_DOCKLabel.m */; };
+		FB1EB0BA1E456FA4001E6254 /* cd_Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1EB0B91E456FA4001E6254 /* cd_Tile.m */; };
+		FB1EB0BC1E45842C001E6254 /* cd_ECStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1EB0BB1E45842C001E6254 /* cd_ECStatusLabel.m */; };
+		FB1EB0BE1E458A3E001E6254 /* cd_DOCKIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1EB0BD1E458A3E001E6254 /* cd_DOCKIndicator.m */; };
 		FB3DCF6E1E3D83F90031EFCA /* DevMateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3DCF6C1E3D83F90031EFCA /* DevMateKit.framework */; };
 		FB3DCF6F1E3D83F90031EFCA /* SIMBLManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3DCF6D1E3D83F90031EFCA /* SIMBLManager.framework */; };
+		FB3DCF701E3D91F30031EFCA /* DevMateKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3DCF6C1E3D83F90031EFCA /* DevMateKit.framework */; };
+		FB3DCF711E3D91F30031EFCA /* SIMBLManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB3DCF6D1E3D83F90031EFCA /* SIMBLManager.framework */; };
+		FB3DCF721E3D92850031EFCA /* DevMateKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = FB3DCF6C1E3D83F90031EFCA /* DevMateKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FB3DCF731E3D92850031EFCA /* SIMBLManager.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = FB3DCF6D1E3D83F90031EFCA /* SIMBLManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FB3EC0EB1B8EE26D00272131 /* cDock.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FB3EC0EA1B8EE26D00272131 /* cDock.bundle */; };
 		FB5549851D723A4500E41E93 /* binventory_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB5549811D723A4500E41E93 /* binventory_LICENSE.txt */; };
 		FB5549861D723A4500E41E93 /* fishhook_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB5549821D723A4500E41E93 /* fishhook_LICENSE.txt */; };
 		FB5549871D723A4500E41E93 /* SGDirWatchDog_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB5549831D723A4500E41E93 /* SGDirWatchDog_LICENSE.txt */; };
 		FB5549881D723A4500E41E93 /* ZKSwizzle_LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB5549841D723A4500E41E93 /* ZKSwizzle_LICENSE.txt */; };
-		FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor10.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor10.m */; };
+		FB69E83F1E404F940001E26E /* ZKSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = FB69E83E1E404F940001E26E /* ZKSwizzle.m */; };
 		FB6BA6391C5744860099544C /* MyApp.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB6BA6381C5744860099544C /* MyApp.xib */; };
+		FB84A9941E4691F3002CFA4D /* cd_DOCKFloor10.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84A9931E4691F3002CFA4D /* cd_DOCKFloor10.m */; };
+		FB84A9961E469FD6002CFA4D /* cd_DOCKFloor9.m in Sources */ = {isa = PBXBuildFile; fileRef = FB84A9951E469FD6002CFA4D /* cd_DOCKFloor9.m */; };
 		FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C841C3A307E00192556 /* cd_shared.m */; };
-		FB8E2C881C3A309100192556 /* cDock-Bundle in Sources */ = {isa = PBXBuildFile; fileRef = FB8E2C861C3A309100192556 /* cDock-Bundle */; };
 		FB959CC91E127F10006DB989 /* StartAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB87D6181DEAAF2500600149 /* StartAtLoginController.m */; };
 		FB98BEDA1C55538C004BAE85 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FB98BED91C55538C004BAE85 /* dsa_pub.pem */; };
-		FBA827161C5D53F40069A2E8 /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA827151C5D53F40069A2E8 /* UncaughtExceptionHandler.m */; };
 		FBA827291C5F1FFC0069A2E8 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */; };
 		FBB2AB441BC0A5BD00319A8A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */; };
 		FBB2AB471BC0A5BD00319A8A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB2AB461BC0A5BD00319A8A /* main.m */; };
-		FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */; };
-		FBB2AB4C1BC0A5BD00319A8A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */; };
 		FBB95BD51DEAB4960007CECE /* cDockHelper.app in Copy LoginItem */ = {isa = PBXBuildFile; fileRef = FB0CF6911C61B5AF002CF3DE /* cDockHelper.app */; };
-		FBBC185D1E17310900E785FA /* cd_ECStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBC185C1E17310900E785FA /* cd_ECStatusLabel.m */; };
-		FBBC185F1E175F1000E785FA /* cd_Tile.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBC185E1E175F1000E785FA /* cd_Tile.m */; };
 		FBBC18651E17913800E785FA /* updates in Resources */ = {isa = PBXBuildFile; fileRef = FBBC18641E17913800E785FA /* updates */; };
 		FBBC18671E17A0EA00E785FA /* webicon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBBC18661E17A0EA00E785FA /* webicon.png */; };
 		FBD1F6F01B8BF44A00DF2E91 /* cDock.icns in Resources */ = {isa = PBXBuildFile; fileRef = FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */; };
@@ -59,6 +60,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				FB3DCF721E3D92850031EFCA /* DevMateKit.framework in Copy Frameworks */,
+				FB3DCF731E3D92850031EFCA /* SIMBLManager.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,12 +87,15 @@
 		FB09A4EC1C4B27880072C553 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = github.png; path = icons/github.png; sourceTree = "<group>"; };
 		FB09A4ED1C4B27880072C553 /* heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart2.png; path = icons/heart2.png; sourceTree = "<group>"; };
 		FB09A4EE1C4B27880072C553 /* translate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = translate.png; path = icons/translate.png; sourceTree = "<group>"; };
-		FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_Initialize.m; path = "cDock-Bundle/cd_Initialize.m"; sourceTree = SOURCE_ROOT; };
-		FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = "../cDock-Bundle/ZKSwizzle/ZKSwizzle.h"; sourceTree = "<group>"; };
-		FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = "../cDock-Bundle/ZKSwizzle/ZKSwizzle.m"; sourceTree = "<group>"; };
+		FB0CF13A1B81B4E100F16D5E /* cDockInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockInitialize.m; path = "cDock-Bundle/cDockInitialize.m"; sourceTree = SOURCE_ROOT; };
 		FB0CF6911C61B5AF002CF3DE /* cDockHelper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = cDockHelper.app; sourceTree = "<group>"; };
 		FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_ECMaterial.m; path = "cDock-Bundle/cd_ECMaterial.m"; sourceTree = SOURCE_ROOT; };
-		FB22600F1E18928100D699B5 /* cd_testing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_testing.m; path = "cDock-Bundle/cd_testing.m"; sourceTree = SOURCE_ROOT; };
+		FB1EB0B31E456594001E6254 /* cd_DarkMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DarkMode.m; path = "cDock-Bundle/cd_DarkMode.m"; sourceTree = SOURCE_ROOT; };
+		FB1EB0B51E456667001E6254 /* cd_DOCKTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKTile.m; path = "cDock-Bundle/cd_DOCKTile.m"; sourceTree = SOURCE_ROOT; };
+		FB1EB0B71E456D7E001E6254 /* cd_DOCKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKLabel.m; path = "cDock-Bundle/cd_DOCKLabel.m"; sourceTree = SOURCE_ROOT; };
+		FB1EB0B91E456FA4001E6254 /* cd_Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_Tile.m; path = "cDock-Bundle/cd_Tile.m"; sourceTree = SOURCE_ROOT; };
+		FB1EB0BB1E45842C001E6254 /* cd_ECStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_ECStatusLabel.m; path = "cDock-Bundle/cd_ECStatusLabel.m"; sourceTree = SOURCE_ROOT; };
+		FB1EB0BD1E458A3E001E6254 /* cd_DOCKIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKIndicator.m; path = "cDock-Bundle/cd_DOCKIndicator.m"; sourceTree = SOURCE_ROOT; };
 		FB3DCF6C1E3D83F90031EFCA /* DevMateKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DevMateKit.framework; path = Frameworks/DevMateKit.framework; sourceTree = "<group>"; };
 		FB3DCF6D1E3D83F90031EFCA /* SIMBLManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SIMBLManager.framework; path = Frameworks/SIMBLManager.framework; sourceTree = "<group>"; };
 		FB3EC0EA1B8EE26D00272131 /* cDock.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = cDock.bundle; sourceTree = "<group>"; };
@@ -97,30 +103,25 @@
 		FB5549821D723A4500E41E93 /* fishhook_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = fishhook_LICENSE.txt; path = liscense/fishhook_LICENSE.txt; sourceTree = "<group>"; };
 		FB5549831D723A4500E41E93 /* SGDirWatchDog_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SGDirWatchDog_LICENSE.txt; path = liscense/SGDirWatchDog_LICENSE.txt; sourceTree = "<group>"; };
 		FB5549841D723A4500E41E93 /* ZKSwizzle_LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ZKSwizzle_LICENSE.txt; path = liscense/ZKSwizzle_LICENSE.txt; sourceTree = "<group>"; };
-		FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor10.m; path = "cDock-Bundle/cd_DOCKFloor10.m"; sourceTree = SOURCE_ROOT; };
+		FB69E83D1E404F940001E26E /* ZKSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZKSwizzle.h; path = "cDock-Bundle/ZKSwizzle/ZKSwizzle.h"; sourceTree = SOURCE_ROOT; };
+		FB69E83E1E404F940001E26E /* ZKSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZKSwizzle.m; path = "cDock-Bundle/ZKSwizzle/ZKSwizzle.m"; sourceTree = SOURCE_ROOT; };
 		FB6BA6381C5744860099544C /* MyApp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyApp.xib; sourceTree = "<group>"; };
+		FB84A9931E4691F3002CFA4D /* cd_DOCKFloor10.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor10.m; path = "cDock-Bundle/cd_DOCKFloor10.m"; sourceTree = SOURCE_ROOT; };
+		FB84A9951E469FD6002CFA4D /* cd_DOCKFloor9.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKFloor9.m; path = "cDock-Bundle/cd_DOCKFloor9.m"; sourceTree = SOURCE_ROOT; };
 		FB87D6171DEAAF2500600149 /* StartAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartAtLoginController.h; path = resources/StartAtLoginController/StartAtLoginController.h; sourceTree = "<group>"; };
 		FB87D6181DEAAF2500600149 /* StartAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartAtLoginController.m; path = resources/StartAtLoginController/StartAtLoginController.m; sourceTree = "<group>"; };
 		FB8E2C831C3A307400192556 /* cd_shared.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = cd_shared.h; path = "cDock-Bundle/cd_shared.h"; sourceTree = SOURCE_ROOT; };
 		FB8E2C841C3A307E00192556 /* cd_shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_shared.m; path = "cDock-Bundle/cd_shared.m"; sourceTree = SOURCE_ROOT; };
-		FB8E2C861C3A309100192556 /* cDock-Bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = "cDock-Bundle"; sourceTree = SOURCE_ROOT; };
 		FB98BED91C55538C004BAE85 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		FBA827141C5D53F40069A2E8 /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UncaughtExceptionHandler.h; path = "../cDock-Bundle/UncaughtExceptionHandler.h"; sourceTree = "<group>"; };
-		FBA827151C5D53F40069A2E8 /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UncaughtExceptionHandler.m; path = "../cDock-Bundle/UncaughtExceptionHandler.m"; sourceTree = "<group>"; };
 		FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		FBB2AB401BC0A5BD00319A8A /* cDockHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cDockHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		FBB2AB461BC0A5BD00319A8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FBB2AB4B1BC0A5BD00319A8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FBB2AB4D1BC0A5BD00319A8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBBC185C1E17310900E785FA /* cd_ECStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_ECStatusLabel.m; path = "cDock-Bundle/cd_ECStatusLabel.m"; sourceTree = SOURCE_ROOT; };
-		FBBC185E1E175F1000E785FA /* cd_Tile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_Tile.m; path = "cDock-Bundle/cd_Tile.m"; sourceTree = SOURCE_ROOT; };
 		FBBC18641E17913800E785FA /* updates */ = {isa = PBXFileReference; lastKnownFileType = folder; path = updates; sourceTree = "<group>"; };
 		FBBC18661E17A0EA00E785FA /* webicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = webicon.png; path = icons/webicon.png; sourceTree = "<group>"; };
 		FBC4F4ED1B5ED0EC0078D4E4 /* cDock.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cDock.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../cDock-Bundle/Info.plist"; sourceTree = "<group>"; };
 		FBD1F6EF1B8BF44A00DF2E91 /* cDock.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = cDock.icns; sourceTree = "<group>"; };
 		FBD1F6F41B8D3A3600DF2E91 /* themes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = themes; sourceTree = "<group>"; };
 		FBDE03601B5ED1EE00C1C5DB /* cDock 2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cDock 2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,9 +129,6 @@
 		FBE661B91C294B7D004AE953 /* changelog.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = changelog.rtf; path = info/changelog.rtf; sourceTree = "<group>"; };
 		FBE843521B641CD100F87E50 /* Preferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Preferences.h; path = "cDock-Bundle/Preferences/Preferences.h"; sourceTree = SOURCE_ROOT; };
 		FBE843531B641CD100F87E50 /* Preferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Preferences.m; path = "cDock-Bundle/Preferences/Preferences.m"; sourceTree = SOURCE_ROOT; };
-		FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKIndicator.m; path = "cDock-Bundle/cd_DOCKIndicator.m"; sourceTree = SOURCE_ROOT; };
-		FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKLabel.m; path = "cDock-Bundle/cd_DOCKLabel.m"; sourceTree = SOURCE_ROOT; };
-		FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DOCKTile.m; path = "cDock-Bundle/cd_DOCKTile.m"; sourceTree = SOURCE_ROOT; };
 		FBE8435F1B641D4A00F87E50 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = "cDock-GUI/AppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		FBE843601B641D4A00F87E50 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = "cDock-GUI/AppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		FBF610601BC0362E00FDCCA4 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "cDock-GUI/main.m"; sourceTree = SOURCE_ROOT; };
@@ -141,6 +139,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3DCF701E3D91F30031EFCA /* DevMateKit.framework in Frameworks */,
+				FB3DCF711E3D91F30031EFCA /* SIMBLManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,8 +166,8 @@
 		79A33DAE1B6C0630007299FC /* ZKSwizzle */ = {
 			isa = PBXGroup;
 			children = (
-				FB0CF13F1B81B68900F16D5E /* ZKSwizzle.h */,
-				FB0CF1401B81B68900F16D5E /* ZKSwizzle.m */,
+				FB69E83D1E404F940001E26E /* ZKSwizzle.h */,
+				FB69E83E1E404F940001E26E /* ZKSwizzle.m */,
 			);
 			name = ZKSwizzle;
 			sourceTree = "<group>";
@@ -182,36 +182,27 @@
 			path = resources/PFMoveApplication;
 			sourceTree = "<group>";
 		};
-		FB0CF6901C61B054002CF3DE /* Excpetion */ = {
+		FB1E22701C28E3B20085E29A /* Dock 10.9 */ = {
 			isa = PBXGroup;
 			children = (
-				FBA827141C5D53F40069A2E8 /* UncaughtExceptionHandler.h */,
-				FBA827151C5D53F40069A2E8 /* UncaughtExceptionHandler.m */,
+				FB84A9951E469FD6002CFA4D /* cd_DOCKFloor9.m */,
 			);
-			name = Excpetion;
+			name = "Dock 10.9";
 			sourceTree = "<group>";
 		};
-		FB1E22701C28E3B20085E29A /* 10.9 */ = {
+		FB1E22711C28E3BC0085E29A /* Dock 10.9+ */ = {
 			isa = PBXGroup;
 			children = (
-				FB8E2C861C3A309100192556 /* cDock-Bundle */,
-			);
-			name = 10.9;
-			sourceTree = "<group>";
-		};
-		FB1E22711C28E3BC0085E29A /* 10.9+ */ = {
-			isa = PBXGroup;
-			children = (
-				FB5E0BE01B673DF200AC2E6D /* cd_DOCKFloor10.m */,
-				FBE843581B641CEC00F87E50 /* cd_DOCKIndicator.m */,
+				FB1EB0B31E456594001E6254 /* cd_DarkMode.m */,
+				FB84A9931E4691F3002CFA4D /* cd_DOCKFloor10.m */,
+				FB1EB0BD1E458A3E001E6254 /* cd_DOCKIndicator.m */,
+				FB1EB0B71E456D7E001E6254 /* cd_DOCKLabel.m */,
+				FB1EB0B51E456667001E6254 /* cd_DOCKTile.m */,
 				FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */,
-				FBE843591B641CEC00F87E50 /* cd_DOCKLabel.m */,
-				FBBC185C1E17310900E785FA /* cd_ECStatusLabel.m */,
-				FBE8435A1B641CEC00F87E50 /* cd_DOCKTile.m */,
-				FBBC185E1E175F1000E785FA /* cd_Tile.m */,
-				FB22600F1E18928100D699B5 /* cd_testing.m */,
+				FB1EB0BB1E45842C001E6254 /* cd_ECStatusLabel.m */,
+				FB1EB0B91E456FA4001E6254 /* cd_Tile.m */,
 			);
-			name = "10.9+";
+			name = "Dock 10.9+";
 			sourceTree = "<group>";
 		};
 		FB5549801D723A1F00E41E93 /* License */ = {
@@ -256,16 +247,6 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
-		FB869BE31E0E5693002654CF /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				FBB2AB461BC0A5BD00319A8A /* main.m */,
-				FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */,
-				FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
 		FB87D61A1DEAAF2A00600149 /* StartAtLoginController */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,21 +259,13 @@
 		FBB2AB411BC0A5BD00319A8A /* cDock-Helper */ = {
 			isa = PBXGroup;
 			children = (
-				FBB7934A1C7A8DF4006BF301 /* Resource */,
-				FB869BE31E0E5693002654CF /* Classes */,
-				FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */,
+				FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */,
+				FBB2AB461BC0A5BD00319A8A /* main.m */,
+				FBB2AB421BC0A5BD00319A8A /* AppDelegate.h */,
+				FBB2AB431BC0A5BD00319A8A /* AppDelegate.m */,
 				FBB2AB4D1BC0A5BD00319A8A /* Info.plist */,
 			);
 			path = "cDock-Helper";
-			sourceTree = "<group>";
-		};
-		FBB7934A1C7A8DF4006BF301 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				FBA827281C5F1FFC0069A2E8 /* dsa_pub.pem */,
-				FBB2AB481BC0A5BD00319A8A /* Assets.xcassets */,
-			);
-			name = Resource;
 			sourceTree = "<group>";
 		};
 		FBC129C11DEA3D6300B0D6D5 /* FrameWorks */ = {
@@ -329,33 +302,22 @@
 			isa = PBXGroup;
 			children = (
 				79A33DAE1B6C0630007299FC /* ZKSwizzle */,
-				FBD71EAD1B5F201900C50402 /* Preferences */,
-				FB0CF6901C61B054002CF3DE /* Excpetion */,
 				FBD71EB11B5F201900C50402 /* cDock Theming */,
-				FBC4F4F01B5ED0EC0078D4E4 /* Info.plist */,
 			);
 			name = "cDock Bundle";
 			path = cDock;
 			sourceTree = "<group>";
 		};
-		FBD71EAD1B5F201900C50402 /* Preferences */ = {
-			isa = PBXGroup;
-			children = (
-				FBE843521B641CD100F87E50 /* Preferences.h */,
-				FBE843531B641CD100F87E50 /* Preferences.m */,
-			);
-			name = Preferences;
-			path = "../../../untitled folder/Modck-master/Modck";
-			sourceTree = "<group>";
-		};
 		FBD71EB11B5F201900C50402 /* cDock Theming */ = {
 			isa = PBXGroup;
 			children = (
+				FB0CF13A1B81B4E100F16D5E /* cDockInitialize.m */,
 				FB8E2C831C3A307400192556 /* cd_shared.h */,
 				FB8E2C841C3A307E00192556 /* cd_shared.m */,
-				FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */,
-				FB1E22711C28E3BC0085E29A /* 10.9+ */,
-				FB1E22701C28E3B20085E29A /* 10.9 */,
+				FBE843521B641CD100F87E50 /* Preferences.h */,
+				FBE843531B641CD100F87E50 /* Preferences.m */,
+				FB1E22711C28E3BC0085E29A /* Dock 10.9+ */,
+				FB1E22701C28E3B20085E29A /* Dock 10.9 */,
 			);
 			name = "cDock Theming";
 			path = "../../../untitled folder/Modck-master/Modck";
@@ -509,8 +471,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBA827291C5F1FFC0069A2E8 /* dsa_pub.pem in Resources */,
-				FBB2AB491BC0A5BD00319A8A /* Assets.xcassets in Resources */,
-				FBB2AB4C1BC0A5BD00319A8A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,20 +564,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB0CF1411B81B68900F16D5E /* ZKSwizzle.m in Sources */,
-				79D28C961B66BCB10036D668 /* cd_DOCKIndicator.m in Sources */,
+				FB1EB0BA1E456FA4001E6254 /* cd_Tile.m in Sources */,
+				FB1EB0B81E456D7E001E6254 /* cd_DOCKLabel.m in Sources */,
 				FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */,
-				FBBC185D1E17310900E785FA /* cd_ECStatusLabel.m in Sources */,
-				FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */,
-				FB2260101E18928100D699B5 /* cd_testing.m in Sources */,
-				FBA827161C5D53F40069A2E8 /* UncaughtExceptionHandler.m in Sources */,
+				FB0CF13B1B81B4E100F16D5E /* cDockInitialize.m in Sources */,
+				FB69E83F1E404F940001E26E /* ZKSwizzle.m in Sources */,
+				FB84A9941E4691F3002CFA4D /* cd_DOCKFloor10.m in Sources */,
+				FB1EB0B41E456594001E6254 /* cd_DarkMode.m in Sources */,
 				79D28C9A1B66BCC00036D668 /* Preferences.m in Sources */,
+				FB1EB0B61E456667001E6254 /* cd_DOCKTile.m in Sources */,
+				FB1EB0BE1E458A3E001E6254 /* cd_DOCKIndicator.m in Sources */,
 				FB14DA101B96482B00C52E53 /* cd_ECMaterial.m in Sources */,
-				FB5E0BE11B673DF200AC2E6D /* cd_DOCKFloor10.m in Sources */,
-				FBBC185F1E175F1000E785FA /* cd_Tile.m in Sources */,
-				79D28C981B66BCB40036D668 /* cd_DOCKTile.m in Sources */,
-				FB8E2C881C3A309100192556 /* cDock-Bundle in Sources */,
-				79D28C971B66BCB30036D668 /* cd_DOCKLabel.m in Sources */,
+				FB84A9961E469FD6002CFA4D /* cd_DOCKFloor9.m in Sources */,
+				FB1EB0BC1E45842C001E6254 /* cd_ECStatusLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,28 +593,17 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		FBB2AB4A1BC0A5BD00319A8A /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FBB2AB4B1BC0A5BD00319A8A /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		FBB2AB4F1BC0A5BD00319A8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EX596BNL45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "cDock-Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../../../Frameworks $SRCROOT";
@@ -668,13 +616,13 @@
 		FBB2AB501BC0A5BD00319A8A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EX596BNL45;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = "cDock-Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../../../../Frameworks $SRCROOT";
@@ -816,6 +764,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/DevMateKit/DevMateKit.framework/Frameworks",
 				);
 				INFOPLIST_FILE = "cDock-GUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
@@ -838,6 +787,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Frameworks/DevMateKit/DevMateKit.framework/Frameworks",
 				);
 				INFOPLIST_FILE = "cDock-GUI/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";

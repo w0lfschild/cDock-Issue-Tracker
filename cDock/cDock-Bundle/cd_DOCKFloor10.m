@@ -11,11 +11,12 @@
 
 // OS X 10.10 Yosemite and 10.11 El Capitan implementation
 @implementation _CDDOCKFloorLayer
+
 - (void)layoutSublayers {
     ZKOrig(void);
     
     // Do nothing if not enabled
-    if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
+    if (!iscDockEnabled)
         return;
         
     if (FLOORLAYER == nil)
@@ -45,8 +46,7 @@
     CALayer *_backgroundLayer = nil;
     
     // Look for custom layers
-    for (CALayer *item in (NSMutableArray *)_superLayer.sublayers)
-    {
+    for (CALayer *item in (NSMutableArray *)_superLayer.sublayers) {
         if ([item.name isEqual:@"_borderLayer"])
             _borderLayer = item;
         if ([item.name isEqual:@"_backgroundLayer"])
@@ -54,16 +54,14 @@
     }
     
     // initialize border layer
-    if (_borderLayer == nil)
-    {
+    if (_borderLayer == nil) {
         _borderLayer = [[CALayer alloc] init];
         [ _borderLayer setName:(@"_borderLayer")];
         [ _superLayer addSublayer:_borderLayer ];
     }
     
     // initialize background layer
-    if (_backgroundLayer == nil)
-    {
+    if (_backgroundLayer == nil) {
         _backgroundLayer = [[CALayer alloc] init];
         [ _backgroundLayer setHidden:false ];
         [ _backgroundLayer setName:(@"_backgroundLayer")];
@@ -78,17 +76,16 @@
     _backgroundLayer.hidden = NO;
     
     // Read corner radius
-    float cornerSize = [[[Preferences sharedInstance] objectForKey:@"cd_cornerRadius"] floatValue];
+    float cornerSize = [readPref(@"cd_cornerRadius") floatValue];
     
     // Lets make the frost layer rectangular by default
     _materialLayer.cornerRadius = 0;
     _materialLayer.borderWidth = 0;
 
     // Full width dock
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue]) {
+    if ([readPref(@"cd_background.fullwidth") boolValue]) {
         CGRect rect = _superLayer.bounds;
         
-        // Best to avoid += or -= used to keep incrementally grow forever
         if (orient == 0) {
             rect.size.width = [[NSScreen mainScreen] frame].size.width * 2;
             rect.origin.x = -([[NSScreen mainScreen] frame].size.width / 2);
@@ -104,10 +101,9 @@
     }
     
     // Picture background
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue]) {
-        if (orient == 0)
-        {
-            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
+    if ([readPref(@"cd_background.picture") boolValue]) {
+        if (orient == 0) {
+            if ([readPref(@"cd_background.tile") boolValue]) {
                 if (background)
                     [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background size:NSZeroSize]] CGColor] ];
                 else
@@ -116,10 +112,8 @@
                 [ _backgroundLayer setBackgroundColor:[[NSColor clearColor] CGColor] ];
                 [ _backgroundLayer setContents:(__bridge id)background ];
             }
-        }
-        else
-        {
-            if ([[[Preferences sharedInstance] objectForKey:@"cd_pictureTile"] boolValue]) {
+        } else {
+            if ([readPref(@"cd_background.tile") boolValue]) {
                 if (background1)
                     [ _backgroundLayer setBackgroundColor:[[NSColor colorWithPatternImage:[[NSImage alloc] initWithCGImage:background1 size:NSZeroSize]] CGColor] ];
                 else
@@ -130,33 +124,25 @@
             }
         }
 
-        if (![[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue])
+        if (![readPref(@"cd_background.fullwidth") boolValue])
             [ _materialLayer setFrame: _superLayer.bounds ];
         
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue] && orient == 0)
-        {
+        if ([readPref(@"cd_background.3d") boolValue] && orient == 0) {
             CGRect rect = _superLayer.bounds;
             rect.size.width = rect.size.width * 1.025;
             rect.origin.x -= (rect.size.width * 0.025) / 2;
             [ _materialLayer setFrame: rect ];
         }
         
-        float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGA"] floatValue];
-        [_backgroundLayer setOpacity:(alpha / 100.0)];
+        [_backgroundLayer setOpacity:([readPref(@"cd_background.alp") floatValue] / 100.0)];
     } else {
         [ _backgroundLayer setContents:nil ];
     }
 
     // Color background layer
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_dockBG"] boolValue]) {
-        float red = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGR"] floatValue];
-        float green = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGG"] floatValue];
-        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGB"] floatValue];
-        float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_dockBGA"] floatValue];
-        NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
-        [_backgroundLayer setBackgroundColor:[goodColor CGColor]];
-        [_backgroundLayer setOpacity:(alpha / 100.0)];
-        
+    if ([readPref(@"cd_background.enabled") boolValue]) {
+        [_backgroundLayer setBackgroundColor:[_readColor(@"cd_background") CGColor]];
+        [_backgroundLayer setOpacity:([readPref(@"cd_background.alp") floatValue] / 100.0)];
         
         /* Gradient Fill
         
@@ -188,23 +174,19 @@
          */
     }
 
-    if (![[[Preferences sharedInstance] objectForKey:@"cd_dockBG"] boolValue] && ![[[Preferences sharedInstance] objectForKey:@"cd_pictureBG"] boolValue])
+    if (![readPref(@"cd_background.enabled") boolValue] && ![readPref(@"cd_background.picture") boolValue])
         _backgroundLayer.hidden = YES;
     
     // Separator
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_separatorBG"] boolValue]) {
+    if ([readPref(@"cd_separator.enabled") boolValue]) {
         [_separatorLayer setCompositingFilter:nil];
-        float red = [[[Preferences sharedInstance] objectForKey:@"cd_separatorBGR"] floatValue];
-        float green = [[[Preferences sharedInstance] objectForKey:@"cd_separatorBGG"] floatValue];
-        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_separatorBGB"] floatValue];
-        [ _separatorLayer setBackgroundColor:[[NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0] CGColor]];
-        [ _separatorLayer setOpacity:([[[Preferences sharedInstance] objectForKey:@"cd_separatorBGA"] floatValue] / 100.0)];
-//        NSLog(@"%@", _separatorLayer.debugDescription);
+        [_separatorLayer setBackgroundColor:[_readColor(@"cd_separator") CGColor]];
+        [_separatorLayer setOpacity:([readPref(@"cd_separator.alp") floatValue] / 100.0)];
     } else {
         [_separatorLayer setCompositingFilter:@"plusD"];
     }
     
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_is3D"] boolValue]) {
+    if ([readPref(@"cd_background.3d") boolValue]) {
         if (orient == 0) {
             // Kinda cool rotating...
 //            CATransform3D current = _separatorLayer.transform;
@@ -225,7 +207,7 @@
     } else {
         
         // Adjust height to fit 3D size
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_separatorfullHeight"] boolValue]) {
+        if ([readPref(@"cd_separator.fullheight") boolValue]) {
             CGRect rect = _separatorLayer.frame;
             if (orient == 0) {
                 rect.size.width = 1;
@@ -242,23 +224,22 @@
         _separatorLayer.transform = CATransform3DIdentity;
     }
     
-    float brdSize = [[[Preferences sharedInstance] objectForKey:@"cd_borderSize"] floatValue];
+    float brdSize = [readPref(@"cd_border.size") floatValue];
     // rounded corners
     if (cornerSize > 0) {
-        if (! [[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue])
-        {
+        if (![readPref(@"cd_background.fullwidth") boolValue]) {
             // Not sure if there is some exact math but this mitigates the gap between the corner of the background layers and the border layer showing
             if (brdSize > 0) {
-                [ _backgroundLayer setCornerRadius:cornerSize / brdSize ];
-                [ _materialLayer setCornerRadius:cornerSize / brdSize ];
-                [ _borderLayer setCornerRadius:cornerSize / brdSize ];
+                [_backgroundLayer setCornerRadius:cornerSize / brdSize];
+                [_materialLayer setCornerRadius:cornerSize / brdSize];
+                [_borderLayer setCornerRadius:cornerSize / brdSize];
             } else {
-                [ _materialLayer setCornerRadius:cornerSize ];
-                [ _backgroundLayer setCornerRadius:cornerSize ];
-                [ _borderLayer setCornerRadius:cornerSize ];
+                [_materialLayer setCornerRadius:cornerSize];
+                [_backgroundLayer setCornerRadius:cornerSize];
+                [_borderLayer setCornerRadius:cornerSize];
             }
         
-            [ _borderLayer setCornerRadius:cornerSize ];
+            [_borderLayer setCornerRadius:cornerSize];
 
             // Couldn't figure out how to adjust this layers corners so lets hide it
             _glassLayer.hidden = YES;
@@ -271,33 +252,29 @@
             } else {
                 rect1.size.width += cornerSize;
             }
-            if (orient == 1) {
+            if (orient == 1)
                 rect1.origin.x -= cornerSize;
-            }
             
             [ _materialLayer setFrame:rect1 ];
         }
     } else {
-        [ _materialLayer setCornerRadius:cornerSize ];
-        [ _backgroundLayer setCornerRadius:cornerSize ];
-        [ _borderLayer setCornerRadius:cornerSize ];
+        [_materialLayer setCornerRadius:cornerSize];
+        [_backgroundLayer setCornerRadius:cornerSize];
+        [_borderLayer setCornerRadius:cornerSize];
     }
     
     // Border layer
-    brdSize = [[[Preferences sharedInstance] objectForKey:@"cd_borderSize"] floatValue];
+    brdSize = [readPref(@"cd_border.size") floatValue];
     if (brdSize > 0) {
         CGRect newFrame = _materialLayer.frame;
         newFrame.origin.x -= brdSize;
         newFrame.size.width += brdSize * 2;
         newFrame.origin.y -= brdSize;
         newFrame.size.height += brdSize * 2;
-        float red = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGR"] floatValue];
-        float green = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGG"] floatValue];
-        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_borderBGB"] floatValue];
         [ _borderLayer setFrame:newFrame];
         [ _borderLayer setBackgroundColor:[[NSColor clearColor] CGColor]];
-        [ _borderLayer setBorderColor:[[NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0] CGColor]];
-        [ _borderLayer setOpacity:([[[Preferences sharedInstance] objectForKey:@"cd_borderBGA"] floatValue] / 100.0)];
+        [ _borderLayer setBorderColor:[_readColor(@"cd_border") CGColor]];
+        [ _borderLayer setOpacity:([readPref(@"cd_border.alp") floatValue] / 100.0)];
         [ _borderLayer setBorderWidth:brdSize];
         [ _borderLayer setHidden:false];
     } else {
@@ -305,36 +282,30 @@
     }
     
     // background layer should have same frame as frost layer
-    [ _backgroundLayer setFrame: _materialLayer.frame];
+    [_backgroundLayer setFrame: _materialLayer.frame];
     
     // Make sure separator is on top
-    [ _separatorLayer setZPosition:998 ];
-    
-//    Pinning except the actual clickable tile areas don't move, not sure how to do that...
-//        CGRect r1 = _superLayer.bounds;
-//        CGRect rect = _superLayer.superlayer.frame;
-//        rect.origin.x = -([[NSScreen mainScreen] frame].size.width - r1.size.width) / 2;
-//        _superLayer.superlayer.frame = rect;
-//    NSLog(@"%@",  self.superlayer.debugDescription);
+    [_separatorLayer setZPosition:998];
 
     // Hide layers if we want to
-    if (![[[Preferences sharedInstance] objectForKey:@"cd_showFrost"] boolValue])
+    if (![readPref(@"cd_stock.frost") boolValue])
         _materialLayer.hidden = YES;
     
-    if (![[[Preferences sharedInstance] objectForKey:@"cd_showGlass"] boolValue]) {
+    if (![readPref(@"cd_stock.glass") boolValue]) {
         _glassLayer.hidden = YES;
     } else {
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_fullWidth"] boolValue])
+        if ([readPref(@"cd_background.fullwidth") boolValue])
             _glassLayer.hidden = YES;
-        if ([[[Preferences sharedInstance] objectForKey:@"cd_dockBG"] boolValue])
+        if ([readPref(@"cd_background.enabled") boolValue])
             _glassLayer.hidden = YES;
     }
 
-    if (![[[Preferences sharedInstance] objectForKey:@"cd_showSeparator"] boolValue])
+    if (![readPref(@"cd_stock.separator") boolValue])
         _separatorLayer.hidden = YES;
 
     // Setting sublayer to just the separator seems to work nice for this
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_isTransparent"] boolValue])
-        [ _superLayer setSublayers:[NSArray arrayWithObjects:_separatorLayer, nil] ];
+    if ([readPref(@"cd_background.transparent") boolValue])
+        [_superLayer setSublayers:[NSArray arrayWithObjects:_separatorLayer, nil]];
 }
+
 @end

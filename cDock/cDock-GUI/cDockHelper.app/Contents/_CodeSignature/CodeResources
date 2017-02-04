@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>Resources/Base.lproj/MainMenu.nib</key>
-		<data>
-		5B4vAHdfU/5hdBSnGbgl8io2+Gw=
-		</data>
 		<key>Resources/dsa_pub.pem</key>
 		<data>
 		xTG+8Mz0ApRf45IuyyPyz8kG/ac=
@@ -15,17 +11,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>Resources/Base.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			5B4vAHdfU/5hdBSnGbgl8io2+Gw=
-			</data>
-			<key>hash2</key>
-			<data>
-			A3CJWMndRLejK7Ip/kkHgwk5PqWNM8eGRXBMezpSmfU=
-			</data>
-		</dict>
 		<key>Resources/dsa_pub.pem</key>
 		<dict>
 			<key>hash</key>

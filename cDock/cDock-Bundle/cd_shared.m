@@ -8,53 +8,47 @@
 
 #import "cd_shared.h"
 
-@interface cd_shared : NSObject
-@end
-
 @implementation cd_shared 
 
-void _loadImages()
-{
+CGImageRef _fetchIMG(NSString* file) {
+    CGImageRef result = nil;
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (loadImages)
-    {
-        loadImages = false;
-        NSString *picFile;
-        
-        picFile = [NSString stringWithFormat:@"%@/background.png", prefPath];
-        if ([fileManager fileExistsAtPath:picFile])
-            background = CGImageCreateWithPNGDataProvider(CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:picFile]), NULL, true, kCGRenderingIntentDefault);
-        else
-            background = nil;
-        
-        picFile = [NSString stringWithFormat:@"%@/background1.png", prefPath];
-        if ([fileManager fileExistsAtPath:picFile])
-            background1 = CGImageCreateWithPNGDataProvider(CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:picFile]), NULL, true, kCGRenderingIntentDefault);
-        else
-            background1 = nil;
-        
-        CGDataProviderRef imgDataProvider;
-        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_large.png", prefPath]]);
-        large = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
-        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_medium.png", prefPath]]);
-        medium = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
-        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_small.png", prefPath]]);
-        small = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
-        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_medium_simple.png", prefPath]]);
-        medium_simple = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
-        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/indicator_small_simple.png", prefPath]]);
-        small_simple = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
+    NSString *picFile = [NSString stringWithFormat:@"%@/%@", prefPath, file];
+    if ([fileManager fileExistsAtPath:picFile])
+        result = CGImageCreateWithPNGDataProvider(CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:picFile]), NULL, true, kCGRenderingIntentDefault);
+    //    CGDataProviderRef imgDataProvider;
+    //        imgDataProvider = CGDataProviderCreateWithCFData((CFDataRef)[NSData dataWithContentsOfFile:picFile]);
+    //        result = CGImageCreateWithPNGDataProvider(imgDataProvider, NULL, true, kCGRenderingIntentDefault);
+    return result;
+}
+
+NSColor* _readColor(NSString* key) {
+    NSColor *goodColor = nil;
+    NSMutableDictionary *keyDict = [readPref(key) copy];
+    NSNumber *red, *blu, *grn;
+    if ([keyDict allKeys].count) {
+        red = [keyDict objectForKey:@"red"];
+        blu = [keyDict objectForKey:@"blu"];
+        grn = [keyDict objectForKey:@"grn"];
+    }
+    goodColor = [NSColor colorWithRed:red.floatValue/255.0 green:grn.floatValue/255.0 blue:blu.floatValue/255.0 alpha:100.0];
+    return goodColor;
+}
+
+void _loadImages() {
+    if (loadImages) {
+        loadImages      = false;
+        background      = _fetchIMG(@"background.png");
+        background1     = _fetchIMG(@"background1.png");
+        large           = _fetchIMG(@"indicator_large.png");
+        medium          = _fetchIMG(@"indicator_medium.png");
+        small           = _fetchIMG(@"indicator_small.png");
+        medium_simple   = _fetchIMG(@"indicator_medium_simple.png");
+        small_simple    = _fetchIMG(@"indicator_small_simple.png");
     }
 }
 
-void _toggleIndicators()
-{
-    //    Class cls1 = NSClassFromString(@"DOCK.FloorLayer");
-    //    SEL aSel1 = NSSelectorFromString(@"layoutSublayers");
-    //    if ([cls1 respondsToSelector:aSel1]) {
-    //        [cls1 performSelector:aSel1];
-    //    }
-    
+void _toggleIndicators() {    
     Class cls = NSClassFromString(@"DOCKPreferences");
     id dockPref = nil;
     SEL aSel = NSSelectorFromString(@"preferences");
@@ -71,39 +65,34 @@ void _toggleIndicators()
     }
 }
 
-void _forceRefresh()
-{
+void _forceRefresh() {
+    // Send AppleInterfaceThemeChangedNotification if we're on macOS above Mavericks
     if (osx_minor > 9) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             CFNotificationCenterPostNotification(CFNotificationCenterGetDistributedCenter(), CFSTR("AppleInterfaceThemeChangedNotification"), (void *)0x1, NULL, YES);
         });
     }
     
-    if (FLOORLAYER == nil)
-    {
+    // Either hook the floor layer for the first time or send it layoutSublayers
+    if (FLOORLAYER == nil) {
         Class cls1;
-        if (osx_minor == 10)
-        {
+        if (osx_minor == 10) {
             cls1 = NSClassFromString(@"DOCKFloorLayer");
         } else {
             cls1 = NSClassFromString(@"DOCK.FloorLayer");
         }
         SEL aSel1 = NSSelectorFromString(@"layoutSublayers");
-        if ([cls1 respondsToSelector:aSel1]) {
+        if ([cls1 respondsToSelector:aSel1])
             [cls1 performSelector:aSel1];
-        }
         _toggleIndicators();
     } else {
         SEL aSel = NSSelectorFromString(@"layoutSublayers");
-        if ([FLOORLAYER respondsToSelector:aSel]) {
+        if ([FLOORLAYER respondsToSelector:aSel])
             [FLOORLAYER performSelector:aSel];
-        }
     }
 }
 
-// Fix for icon shadows / reflection layer not intializing on their own...
-void _loadShadows(CALayer *layer)
-{
+void _loadShadows(CALayer *layer) {
     if (loadShadows) {
         loadShadows = false;
         
@@ -123,8 +112,7 @@ void _loadShadows(CALayer *layer)
         
         // Fix Tiles and Indicators
         NSMutableArray *tileLayers = [[NSMutableArray alloc] initWithArray:layer.superlayer.sublayers];
-        for (CALayer *item in tileLayers)
-        {
+        for (CALayer *item in tileLayers) {
             if (item.class == NSClassFromString(@"DOCKTileLayer")) {
                 if ([item respondsToSelector:aSel])
                     [item performSelector:aSel];
@@ -145,14 +133,12 @@ void _loadShadows(CALayer *layer)
         }
     }
     
-    if (loadIndicators)
-    {
+    if (loadIndicators) {
         loadIndicators = false;
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             _toggleIndicators();
         });
     }
 }
-
 
 @end

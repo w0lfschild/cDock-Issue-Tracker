@@ -2,9 +2,9 @@
 //  cDockLabel.m
 //
 
-#import "cd_shared.h"
+// Icon labels
 
-//extern long osx_minor;
+#import "cd_shared.h"
 
 @interface ECMaterialLayer : CALayer
 {
@@ -18,30 +18,26 @@
 
 ZKSwizzleInterface(_CDECMaterialLayer, ECMaterialLayer, CALayer);
 @implementation _CDECMaterialLayer
+
 - (void)setBounds:(CGRect)arg1 {
     ZKOrig(void, arg1);
     
-    if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
+    if (!iscDockEnabled)
         return;
-
-//    NSLog(@"%lu", (unsigned long)_material);
-//    NSLog(@"%@", self.superlayer.class);
     
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_labelBG"] boolValue]) {
-        
-        // Prevent coloration of some layers
-        
-        // Floor = Dock Background Frost Layer
-        // CALayer = Mission Control
-        // ECBezelIconListLayer = Application switcher background
+    if ([readPref(@"cd_label.enabled") boolValue]) {
+        /*
+         Prevent coloring of some layers
+         Floor = Dock Background Frost Layer
+         CALayer = Mission Control
+         ECBezelIconListLayer = Application switcher background
+         */
         
         if (self.superlayer.class != NSClassFromString(@"Dock.FloorLayer")
             && self.superlayer.class != NSClassFromString(@"DOCKFloorLayer")
             && self.superlayer.class != NSClassFromString(@"CALayer")
             && self.superlayer.class != NSClassFromString(@"ECBezelIconListLayer")) {
-            
-//            NSLog(@"%@", self.debugDescription);
-            
+                        
             NSUInteger _material = ZKHookIvar(self, NSUInteger, "_material");
             if (_material != 0) {
 //                CALayer *_tintLayer = ZKHookIvar(self, CALayer *, "_tintLayer");
@@ -49,17 +45,15 @@ ZKSwizzleInterface(_CDECMaterialLayer, ECMaterialLayer, CALayer);
 //                [_tintLayer setOpacity:0];
 //                _tintLayer.compositingFilter = nil;
                 
-                float red = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGR"] floatValue];
-                float green = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGG"] floatValue];
-                float blue = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGB"] floatValue];
-                float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGA"] floatValue];
-                NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255 blue:blue/255.0 alpha:1.0];
                 CALayer *_backdropLayer = ZKHookIvar(self, CALayer *, "_backdropLayer");
-                [_backdropLayer setBackgroundColor:[goodColor CGColor]];
-                [_backdropLayer setOpacity:( alpha / 100.0 )];
+                NSColor *_newColor = _readColor(@"cd_label");
+                [_backdropLayer setBackgroundColor:[_newColor CGColor]];
+                [_backdropLayer setOpacity:[readPref(@"cd_label.alp") floatValue] / 100.0];
+                
             }
             
         }
     }
 }
+
 @end

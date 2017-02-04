@@ -6,10 +6,11 @@
 //  Copyright © 2015 Wolfgang Baird. All rights reserved.
 //
 
-@import Sparkle;
 @import SIMBLManager;
 
 #import "AppDelegate.h"
+#import <DevMateKit/DevMateKit.h>
+
 #include <CoreServices/CoreServices.h>
 #include <sys/types.h>
 #include <sys/event.h>

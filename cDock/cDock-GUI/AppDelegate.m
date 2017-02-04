@@ -83,7 +83,7 @@ NSArray *tabViews;
 
 @implementation AppDelegate
 
-- (NSString*) runCommand:(NSString*)commandToRun {
+- (NSString*)runCommand:(NSString*)commandToRun {
     NSTask *task = [[NSTask alloc] init];
     [task setLaunchPath:@"/bin/sh"];
     
@@ -120,7 +120,7 @@ NSArray *tabViews;
     NSString *plist = @"Library/Preferences/org.w0lf.SIMBLAgent.plist";
     NSMutableDictionary *SIMBLPrefs = [NSMutableDictionary dictionaryWithContentsOfFile:[NSHomeDirectory() stringByAppendingPathComponent:plist]];
     NSArray *blacklist = [SIMBLPrefs objectForKey:@"SIMBLApplicationIdentifierBlacklist"];
-    NSArray *alwaysBlaklisted = @[@"com.skype.skype", @"com.FilterForge.FilterForge4", @"com.apple.logic10", @"net.brockerhoff.RB.RB-App-Checker-Lite"];
+    NSArray *alwaysBlaklisted = @[@"com.skype.skype", @"com.FilterForge.FilterForge4", @"com.apple.logic10", @"net.brockerhoff.RB.RB-App-Checker-Lite", @"org.w0lf.mySIMBL"];
     NSMutableArray *newlist = [[NSMutableArray alloc] initWithArray:blacklist];
     for (NSString *app in alwaysBlaklisted)
         if (![blacklist containsObject:app])
@@ -153,33 +153,25 @@ NSArray *tabViews;
     prefd = [self _getDockPlist];
     
     // Recents tile
-    if (_dock_REC.state == NSOnState)
-    {
+    if (_dock_REC.state == NSOnState) {
         NSString *find = @"recents-tile";
         NSString *text = [NSString stringWithFormat:@"%@", [prefd objectForKey:@"persistent-others"]];
         NSInteger strCount = [text length] - [[text stringByReplacingOccurrencesOfString:find withString:@""] length];
         strCount /= [find length];
-        
-        if (strCount == 0)
-        {
+        if (strCount == 0) {
             NSMutableDictionary *subInfo = [[NSMutableDictionary alloc] init];
             [subInfo setValue:@"1" forKey:@"list-type"];
-            
             NSMutableDictionary *recTile = [[NSMutableDictionary alloc] init];
             [recTile setValue:@"recents-tile" forKey:@"tile-type"];
             [recTile setValue:subInfo forKeyPath:@"tile-data"];
-            
             NSMutableArray *arr = [prefd valueForKey:@"persistent-others"];
-            [ arr addObject:recTile];
+            [arr addObject:recTile];
         }
-    }
-    else
-    {
+    } else {
         NSMutableArray *arr = [prefd valueForKey:@"persistent-others"];
         for (int a = 0; a < arr.count; a++) {
             NSMutableDictionary *dic = [arr objectAtIndex:a];
-            if ([[dic valueForKey:@"tile-type"] isEqualToString:@"recents-tile"])
-            {
+            if ([[dic valueForKey:@"tile-type"] isEqualToString:@"recents-tile"]) {
                 [arr removeObjectAtIndex:a];
                 break;
             }
@@ -193,7 +185,6 @@ NSArray *tabViews;
     [spacerTile setValue:@"spacer-tile" forKey:@"tile-type"];
     [spacerTile setValue:subInfo forKeyPath:@"tile-data"];
     
-    
     NSString *find = @"spacer-tile";
     NSString *text = [NSString stringWithFormat:@"%@", [prefd objectForKey:@"persistent-apps"]];
     NSInteger strCount = [text length] - [[text stringByReplacingOccurrencesOfString:find withString:@""] length];
@@ -201,23 +192,18 @@ NSArray *tabViews;
     
     // App spacers
     NSInteger _adjust = (int)_dock_appSpacers.floatValue - strCount;
-    if ( _adjust > 0 )
-    {
+    if ( _adjust > 0 ) {
         NSMutableArray *arr = [prefd valueForKey:@"persistent-apps"];
         for (int a = 0; a < _adjust ; a++)
             [ arr addObject:spacerTile ];
     }
-    if ( _adjust < 0 )
-    {
+    if ( _adjust < 0 ) {
         NSMutableArray *arr = [prefd valueForKey:@"persistent-apps"];
         int _appCount = (int)arr.count;
-        for (int a = _appCount - 1; a >= 0 ; a--)
-        {
-            if ( _adjust < 0 )
-            {
+        for (int a = _appCount - 1; a >= 0 ; a--) {
+            if ( _adjust < 0 ) {
                 NSMutableDictionary *dic = [arr objectAtIndex:a];
-                if ([[dic valueForKey:@"tile-type"] isEqualToString:@"spacer-tile"])
-                {
+                if ([[dic valueForKey:@"tile-type"] isEqualToString:@"spacer-tile"]) {
                     [ arr removeObjectAtIndex:a ];
                     _adjust += 1;
                 }
@@ -231,23 +217,18 @@ NSArray *tabViews;
     
     // Doc spacers
     _adjust = (int)_dock_docSpacers.floatValue - strCount;
-    if ( _adjust > 0 )
-    {
+    if ( _adjust > 0 ) {
         NSMutableArray *arr = [prefd valueForKey:@"persistent-others"];
         for (int a = 0; a < _adjust ; a++)
             [ arr addObject:spacerTile ];
     }
-    if ( _adjust < 0 )
-    {
+    if ( _adjust < 0 ) {
         NSMutableArray *arr = [prefd valueForKey:@"persistent-others"];
         int _appCount = (int)arr.count;
-        for (int a = _appCount - 1; a >= 0 ; a--)
-        {
-            if ( _adjust < 0 )
-            {
+        for (int a = _appCount - 1; a >= 0 ; a--) {
+            if ( _adjust < 0 ) {
                 NSMutableDictionary *dic = [arr objectAtIndex:a];
-                if ([[dic valueForKey:@"tile-type"] isEqualToString:@"spacer-tile"])
-                {
+                if ([[dic valueForKey:@"tile-type"] isEqualToString:@"spacer-tile"]) {
                     [ arr removeObjectAtIndex:a ];
                     _adjust += 1;
                 }
@@ -257,7 +238,6 @@ NSArray *tabViews;
     
     NSArray *orientations = [NSArray arrayWithObjects:@"left", @"bottom", @"right", nil];
     NSArray *mineffects = [NSArray arrayWithObjects:@"genie", @"scale", @"suck", nil];
-    
     [prefd setObject:[NSNumber numberWithBool:[_dock_SOAA state]] forKey:@"static-only"];
     [prefd setObject:[NSNumber numberWithBool:[_dock_DHI state]] forKey:@"showhidden"];
     [prefd setObject:[NSNumber numberWithBool:[_dock_LDC state]] forKey:@"contents-immutable"];
@@ -521,15 +501,6 @@ NSArray *tabViews;
         [_cdock_rememberWindow setState:NSOffState];
     }
     
-    if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10)
-    {
-        [[_donatebutton cell] setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:1.000f]];
-        [[_reportbutton cell] setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:1.000f]];
-    } else {
-        [_donatebutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
-        [_reportbutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
-    }
-    
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"CDHideDonate"]) {
         [_cdock_hideDonate setState:NSOnState];
         [_pop_paypal setHidden:true];
@@ -642,20 +613,46 @@ NSArray *tabViews;
 }
 
 - (void)setupWindow {
-    tabViewButtons = [NSArray arrayWithObjects:_viewTheming, _viewDock, _viewAbout, _viewPreferences, nil];
+    tabViewButtons = [NSArray arrayWithObjects:_viewTheming, _viewCustomize, _viewDock, _viewSIMBL, _viewAbout, _viewPreferences, nil];
     for (NSButton *btn in tabViewButtons)
     {
+        NSRect frame = [btn frame];
+        frame.size.height = 1;
+        frame.origin.y += 30;
+        
+        NSBox *line = [[NSBox alloc] initWithFrame:frame];
+        [line setBoxType:NSBoxSeparator];
+        [_window.contentView addSubview:line];
+        
         [btn setWantsLayer:YES];
         [btn setTarget:self];
         [btn setAction:@selector(selectView:)];
     }
     
-    [_donatebutton setWantsLayer:YES];
-    [_reportbutton setWantsLayer:YES];
-    [_donatebutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
-    [_reportbutton.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
+    NSBox *line = [[NSBox alloc] initWithFrame:CGRectMake(0, _viewSIMBL.frame.origin.y - 1, 125, 1)];
+    [line setBoxType:NSBoxSeparator];
+    [_window.contentView addSubview:line];
+
+    NSBox *vert = [[NSBox alloc] initWithFrame:CGRectMake(125, 0, 1, 500)];
+    [vert setBoxType:NSBoxSeparator];
+    [_window.contentView addSubview:vert];
     
-    tabViews = [NSArray arrayWithObjects:_themeView, _dockView, _aboutView, _prefView, nil];
+    
+    NSArray *bottomButtons = [NSArray arrayWithObjects:_restartbutton, _feedbackbutton, _donatebutton, _reportbutton, nil];
+
+    for (NSButton *btn in bottomButtons) {
+        [btn setWantsLayer:YES];
+        if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10)
+        {
+            [[btn cell] setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:1.000f]];
+            [[btn cell] setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:1.000f]];
+        } else {
+            [btn.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
+            [btn.layer setBackgroundColor:[NSColor colorWithCalibratedRed:0.438f green:0.121f blue:0.199f alpha:0.258f].CGColor];
+        }
+    }
+    
+    tabViews = [NSArray arrayWithObjects:_themeView, _customizeView, _dockView, _simblinfoView, _aboutView, _prefView, nil];
     
     if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10)
     {
@@ -718,8 +715,13 @@ NSArray *tabViews;
     return self;
 }
 
+- (IBAction)showFeedbackDialog:(id)sender {
+    [DevMateKit showFeedbackDialog:nil inMode:DMFeedbackIndependentMode];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    
+    [DevMateKit sendTrackingReport:nil delegate:nil];
+    [DevMateKit setupIssuesController:nil reportingUnhandledIssues:YES];
 }
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification {

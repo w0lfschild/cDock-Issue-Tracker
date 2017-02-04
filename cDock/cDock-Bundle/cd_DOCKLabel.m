@@ -2,57 +2,47 @@
 //  cDockLabel.m
 //
 
+// Label hide and show and Mavericks label coloring
+
 #import "cd_shared.h"
 
 ZKSwizzleInterface(__CDLabel, DOCKLabelLayer, CALayer);
 @implementation __CDLabel
+
 -(void)layoutSublayers {
     ZKOrig(void);
     
-    if (![[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue])
+    if (!iscDockEnabled)
         return;
     
     if (osx_minor == 9) {
-        float red = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGR"] floatValue];
-        float green = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGG"] floatValue];
-        float blue = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGB"] floatValue];
-        NSColor *goodColor = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
-        
-        red = [[[Preferences sharedInstance] objectForKey:@"cd_iconShadowBGR"] floatValue];
-        green = [[[Preferences sharedInstance] objectForKey:@"cd_iconShadowBGG"] floatValue];
-        blue = [[[Preferences sharedInstance] objectForKey:@"cd_iconShadowBGB"] floatValue];
-        float size = [[[Preferences sharedInstance] objectForKey:@"cd_iconShadowBGS"] floatValue];
-        NSColor *goodColor2 = [NSColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1.0];
-        
+        NSColor *_labelColor = _readColor(@"cd_label");
+        NSColor *_shadowColor = _readColor(@"cd_iconSahdow");
+        NSNumber *_shadowSize = readPref(@"cd_iconSahdow.size");
         NSArray *test = self.sublayers;
         if (test != nil) {
             CALayer *layer2 = [ test objectAtIndex:0 ];
-            if ([[[Preferences sharedInstance] objectForKey:@"cd_labelBG"] boolValue]) {
-                float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_labelBGA"] floatValue];
-                [layer2 setBackgroundColor:[goodColor CGColor]];
-                [layer2 setOpacity:(alpha / 100.0)];
-                if (test.count > 1) {
-                    [[ test objectAtIndex:1 ] setContents:nil];
-                }
+            if ([readPref(@"cd_label.enabled") boolValue]) {
+                [layer2 setBackgroundColor:[_labelColor CGColor]];
+                [layer2 setOpacity:([readPref(@"cd_label.alp") floatValue] / 100.0)];
                 [layer2 setCornerRadius: 10];
+                if (test.count > 1)
+                    [[test objectAtIndex:1] setContents:nil];
             } else {
                 [layer2 setBackgroundColor:[[NSColor clearColor] CGColor]];
                 [layer2 setOpacity:1];
             }
-            if ([[[Preferences sharedInstance] objectForKey:@"cd_iconShadow"] boolValue]) {
-                float alpha = [[[Preferences sharedInstance] objectForKey:@"cd_iconShadowBGA"] floatValue];
-                NSSize mySize;
-                mySize.width = 0;
-                mySize.height = -10;
-                layer2.shadowOpacity = alpha / 100.0;
-                layer2.shadowColor = [goodColor2 CGColor];
-                layer2.shadowRadius = size;
-                layer2.shadowOffset = mySize;
+            if ([readPref(@"cd_iconShadow.enabled") boolValue]) {
+                NSSize mySize = NSMakeSize(0, -10);
+                [layer2 setShadowOpacity:[readPref(@"cd_iconShadow.alp") floatValue] / 100.0];
+                [layer2 setShadowColor:[_shadowColor CGColor]];
+                [layer2 setShadowRadius:_shadowSize.floatValue];
+                [layer2 setShadowOffset:mySize];
             }
         }
     }
     
-    if ([[[Preferences sharedInstance] objectForKey:@"cd_hideLabels"] boolValue]) {
+    if ([readPref(@"cd_hideLabels") boolValue]) {
         for (CALayer *layer in self.sublayers) {
             layer.hidden = YES;
         }
@@ -62,4 +52,5 @@ ZKSwizzleInterface(__CDLabel, DOCKLabelLayer, CALayer);
         }
     }
 }
+
 @end
