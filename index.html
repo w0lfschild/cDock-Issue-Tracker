@@ -25,6 +25,31 @@
         <link rel="stylesheet" href="components/pg.blocks/css/blocks.css">
         <link rel="stylesheet" href="components/pg.blocks/css/plugins.css">
         <link rel="stylesheet" href="components/pg.blocks/css/style-library-1.css">
+
+        <!-- DevMate Traffic Tracking script -->
+        <script type="text/javascript">
+            /* DO NOT MODIFY */
+            var _dmq = _dmq || [];
+            _dmq.push( ['_setAccount', 'DM-0002634'] );
+            /* END "DO NOT MODIFY" */
+
+            _dmq.push( ['_setUseGoogle', true] );
+            _dmq.push( ['_trackProducts', '0002'] );
+
+            (function() {
+            var dmt = document.createElement('script'); dmt.type = 'text/javascript'; dmt.async = true;
+            dmt.src = window.location.protocol + '//cdn.devmate.com/track/dm.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(dmt, s);
+            })();
+        </script>
+
+        <!-- Paddle purchase script -->
+        <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+        <script type="text/javascript">
+            Paddle.Setup({
+                vendor: 26643
+            });
+        </script>
     </head>     
     <body data-spy="scroll" data-target="nav">
         <script src="Header.js"></script>
@@ -532,12 +557,6 @@
             <!-- /.container -->
         </section>
         <script src="Footer.js"></script>
-        <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
-        <script type="text/javascript">
-			Paddle.Setup({
-				vendor: 26643
-			});
-		</script>
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>         
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>         
         <script type="text/javascript" src="js/plugins.js"></script>
