@@ -13,7 +13,6 @@
 #define prefPath    [[appsuppt stringByAppendingPathComponent:@"cDock/themes/"] stringByAppendingPathComponent:thmeName]
 #define prefFile    [[prefPath stringByAppendingPathComponent:thmeName ] stringByAppendingString:@".plist"]
 #define readPref(p) [[Preferences sharedInstance] valueForKeyPath:p]
-
 #define iscDockEnabled   [[[Preferences sharedInstance2] objectForKey:@"cd_enabled"] boolValue]
 
 #import "Preferences.h"
@@ -38,9 +37,9 @@ extern CGImageRef small_simple;
 extern bool dispatch_prefFile;
 extern bool dispatch_dockFile;
 
-extern void _loadShadows();
-extern void _forceRefresh();
-extern void _loadImages();
+extern void _loadShadows(CALayer *layer);
+extern void _forceRefresh(void);
+extern void _loadImages(void);
 extern NSColor* _readColor(NSString* key);
 
 @interface cd_shared : NSObject

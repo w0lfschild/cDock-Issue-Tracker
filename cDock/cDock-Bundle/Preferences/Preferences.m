@@ -49,8 +49,11 @@
 }
 
 - (id)valueForKeyPath:(NSString *)keyPath {
-    if ([self->_prefs valueForKeyPath:keyPath]) {
-        return [self->_prefs valueForKeyPath:keyPath];
+    if ([self->_prefs respondsToSelector:@selector(valueForKeyPath:)]) {
+        if ([self->_prefs valueForKeyPath:keyPath])
+            return [self->_prefs valueForKeyPath:keyPath];
+        else
+            return nil;
     } else {
         return nil;
     }

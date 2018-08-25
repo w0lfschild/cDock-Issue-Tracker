@@ -46,7 +46,6 @@
 @property IBOutlet NSTextField *appCopyright;
 
 // Tab buttons
-@property (weak) IBOutlet NSButton *viewTheming;
 @property (weak) IBOutlet NSButton *viewCustomize;
 @property (weak) IBOutlet NSButton *viewDock;
 @property (weak) IBOutlet NSButton *viewSIMBL;
@@ -59,16 +58,9 @@
 @property (weak) IBOutlet NSButton *reportbutton;
 @property (weak) IBOutlet NSButton *donatebutton;
 
-// Image buttons
-@property (weak) IBOutlet NSButton *pop_paypal;
-@property (weak) IBOutlet NSButton *pop_email;
-@property (weak) IBOutlet NSButton *pop_github;
-@property (weak) IBOutlet NSButton *pop_translate;
-
 // Views
 @property (weak) IBOutlet NSView *tabMain;
 
-@property (weak) IBOutlet NSView *themeView;
 @property (weak) IBOutlet NSView *customizeView;
 @property (weak) IBOutlet NSView *dockView;
 @property (weak) IBOutlet NSView *simblinfoView;

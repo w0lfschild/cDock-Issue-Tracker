@@ -19,15 +19,15 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.12.4</string>
+	<string>0.13.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>4155</string>
+	<string>4221</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 - 2016 Wolfgang Baird. All rights reserved.</string>
+	<string>Copyright © 2015 - 2017 Wolfgang Baird. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MyApp</string>
 	<key>NSPrincipalClass</key>

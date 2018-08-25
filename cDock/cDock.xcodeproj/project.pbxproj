@@ -14,7 +14,7 @@
 		FB09A4F01C4B27880072C553 /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4EC1C4B27880072C553 /* github.png */; };
 		FB09A4F11C4B27880072C553 /* heart2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4ED1C4B27880072C553 /* heart2.png */; };
 		FB09A4F21C4B27880072C553 /* translate.png in Resources */ = {isa = PBXBuildFile; fileRef = FB09A4EE1C4B27880072C553 /* translate.png */; };
-		FB0CF13B1B81B4E100F16D5E /* cDockInitialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13A1B81B4E100F16D5E /* cDockInitialize.m */; };
+		FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */; };
 		FB14DA101B96482B00C52E53 /* cd_ECMaterial.m in Sources */ = {isa = PBXBuildFile; fileRef = FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */; };
 		FB1EB0B41E456594001E6254 /* cd_DarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1EB0B31E456594001E6254 /* cd_DarkMode.m */; };
 		FB1EB0B61E456667001E6254 /* cd_DOCKTile.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1EB0B51E456667001E6254 /* cd_DOCKTile.m */; };
@@ -87,7 +87,7 @@
 		FB09A4EC1C4B27880072C553 /* github.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = github.png; path = icons/github.png; sourceTree = "<group>"; };
 		FB09A4ED1C4B27880072C553 /* heart2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = heart2.png; path = icons/heart2.png; sourceTree = "<group>"; };
 		FB09A4EE1C4B27880072C553 /* translate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = translate.png; path = icons/translate.png; sourceTree = "<group>"; };
-		FB0CF13A1B81B4E100F16D5E /* cDockInitialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cDockInitialize.m; path = "cDock-Bundle/cDockInitialize.m"; sourceTree = SOURCE_ROOT; };
+		FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_Initialize.m; path = "cDock-Bundle/cd_Initialize.m"; sourceTree = SOURCE_ROOT; };
 		FB0CF6911C61B5AF002CF3DE /* cDockHelper.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; path = cDockHelper.app; sourceTree = "<group>"; };
 		FB14DA0F1B96482B00C52E53 /* cd_ECMaterial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_ECMaterial.m; path = "cDock-Bundle/cd_ECMaterial.m"; sourceTree = SOURCE_ROOT; };
 		FB1EB0B31E456594001E6254 /* cd_DarkMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = cd_DarkMode.m; path = "cDock-Bundle/cd_DarkMode.m"; sourceTree = SOURCE_ROOT; };
@@ -305,13 +305,12 @@
 				FBD71EB11B5F201900C50402 /* cDock Theming */,
 			);
 			name = "cDock Bundle";
-			path = cDock;
 			sourceTree = "<group>";
 		};
 		FBD71EB11B5F201900C50402 /* cDock Theming */ = {
 			isa = PBXGroup;
 			children = (
-				FB0CF13A1B81B4E100F16D5E /* cDockInitialize.m */,
+				FB0CF13A1B81B4E100F16D5E /* cd_Initialize.m */,
 				FB8E2C831C3A307400192556 /* cd_shared.h */,
 				FB8E2C841C3A307E00192556 /* cd_shared.m */,
 				FBE843521B641CD100F87E50 /* Preferences.h */,
@@ -320,7 +319,6 @@
 				FB1E22701C28E3B20085E29A /* Dock 10.9 */,
 			);
 			name = "cDock Theming";
-			path = "../../../untitled folder/Modck-master/Modck";
 			sourceTree = "<group>";
 		};
 		FBDE03611B5ED1EE00C1C5DB /* cDock GUI */ = {
@@ -359,7 +357,6 @@
 				FBE843601B641D4A00F87E50 /* AppDelegate.m */,
 			);
 			name = Classes;
-			path = "../../../untitled folder/Modck-master/ModckPreferences";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +424,7 @@
 		FBC4F4E51B5ED0EC0078D4E4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Wolfgang Baird";
 				TargetAttributes = {
 					FBB2AB3F1BC0A5BD00319A8A = {
@@ -567,7 +564,7 @@
 				FB1EB0BA1E456FA4001E6254 /* cd_Tile.m in Sources */,
 				FB1EB0B81E456D7E001E6254 /* cd_DOCKLabel.m in Sources */,
 				FB8E2C851C3A307E00192556 /* cd_shared.m in Sources */,
-				FB0CF13B1B81B4E100F16D5E /* cDockInitialize.m in Sources */,
+				FB0CF13B1B81B4E100F16D5E /* cd_Initialize.m in Sources */,
 				FB69E83F1E404F940001E26E /* ZKSwizzle.m in Sources */,
 				FB84A9941E4691F3002CFA4D /* cd_DOCKFloor10.m in Sources */,
 				FB1EB0B41E456594001E6254 /* cd_DarkMode.m in Sources */,
@@ -598,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EX596BNL45;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -610,6 +608,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -617,6 +616,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = EX596BNL45;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -629,6 +629,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
@@ -640,14 +641,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -671,7 +678,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -684,14 +690,20 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -723,7 +735,6 @@
 				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				INFOPLIST_FILE = "cDock-Bundle/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Application Support/SIMBL/Plugins";
-				LIBRARY_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = org.w0lf.cDock;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -757,6 +768,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = EX596BNL45;
@@ -767,10 +779,11 @@
 					"$(PROJECT_DIR)/Frameworks/DevMateKit/DevMateKit.framework/Frameworks",
 				);
 				INFOPLIST_FILE = "cDock-GUI/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks $SRCROOT";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-GUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
@@ -780,6 +793,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = NO;
 				DEVELOPMENT_TEAM = EX596BNL45;
@@ -790,10 +804,11 @@
 					"$(PROJECT_DIR)/Frameworks/DevMateKit/DevMateKit.framework/Frameworks",
 				);
 				INFOPLIST_FILE = "cDock-GUI/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks $SRCROOT";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.w0lf.cDock-GUI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;

@@ -36,22 +36,22 @@ ZKSwizzleInterface(_CDTileLayer, DOCKTileLayer, CALayer)
 - (void)layoutSublayers {
     ZKOrig(void);
     
-    [ self setZPosition:999 ];
-    
-    if (!iscDockEnabled)
-        return;
-    
-    if ([readPref(@"cd_iconShadow.enabled") boolValue]) {
-        NSSize mySize;
-        mySize.width = 0;
-        mySize.height = -10;
-        [self setShadowColor:[_readColor(@"cd_iconShadow") CGColor]];
-        [self setShadowOpacity:[readPref(@"cd_iconShadow.alp") floatValue] / 100.0];
-        [self setShadowRadius:[readPref(@"cd_iconShadow.size") floatValue]];
-        [self setShadowOffset:mySize];
-    } else {
-        [self setShadowOpacity:0];
-    }
+//    [ self setZPosition:999 ];
+//    
+//    if (!iscDockEnabled)
+//        return;
+//    
+//    if ([readPref(@"cd_iconShadow.enabled") boolValue]) {
+//        NSSize mySize;
+//        mySize.width = 0;
+//        mySize.height = -10;
+//        [self setShadowColor:[_readColor(@"cd_iconShadow") CGColor]];
+//        [self setShadowOpacity:[readPref(@"cd_iconShadow.alp") floatValue] / 100.0];
+//        [self setShadowRadius:[readPref(@"cd_iconShadow.size") floatValue]];
+//        [self setShadowOffset:mySize];
+//    } else {
+//        [self setShadowOpacity:0];
+//    }
     
     // Icon reflections
     [self reflectionLayerUpdate];

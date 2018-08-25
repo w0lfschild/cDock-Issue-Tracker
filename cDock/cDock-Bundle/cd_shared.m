@@ -25,7 +25,7 @@ CGImageRef _fetchIMG(NSString* file) {
 NSColor* _readColor(NSString* key) {
     NSColor *goodColor = nil;
     NSMutableDictionary *keyDict = [readPref(key) copy];
-    NSNumber *red, *blu, *grn;
+    NSNumber *red = nil, *blu = nil, *grn = nil;
     if ([keyDict allKeys].count) {
         red = [keyDict objectForKey:@"red"];
         blu = [keyDict objectForKey:@"blu"];

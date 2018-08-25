@@ -55,52 +55,52 @@ ZKSwizzleInterface(_CDTile, Tile, NSObject);
         return;
     
     /* Remove finder icon*/
-    if ([readPref(@"cd_hideIcons.finder") boolValue]) {
-        if ([self.className isEqualToString:@"DOCKDesktopTile"]) {
-            [(Tile*)self willBeRemovedFromDock];
-            [(Tile*)self doCommand:1004];
-        }
-    }
+//    if ([readPref(@"cd_hideIcons.finder") boolValue]) {
+//        if ([self.className isEqualToString:@"DOCKDesktopTile"]) {
+//            [(Tile*)self willBeRemovedFromDock];
+//            [(Tile*)self doCommand:1004];
+//        }
+//    }
 
     /* Remove trash icon*/
-    if ([readPref(@"cd_hideIcons.trash") boolValue]) {
-        if ([self.className isEqualToString:@"DOCKTrashTile"]) {
-            [(Tile*)self willBeRemovedFromDock];
-            [(Tile*)self doCommand:1004];
-        }
-    }
+//    if ([readPref(@"cd_hideIcons.trash") boolValue]) {
+//        if ([self.className isEqualToString:@"DOCKTrashTile"]) {
+//            [(Tile*)self willBeRemovedFromDock];
+//            [(Tile*)self doCommand:1004];
+//        }
+//    }
     
-    CALayer *_iconLayer = ZKHookIvar(self, CALayer *, "_layer");
-    
-    if ([_iconLayer respondsToSelector:@selector(layoutSublayers)])
-        [_iconLayer performSelector:@selector(layoutSublayers)];
-    
-    CALayer *_reflectionLayer = nil;
-    for (CALayer *item in (NSMutableArray *)_iconLayer.sublayers) {
-        if ([item.name  isEqual:@"_reflectionLayer"]) {
-            _reflectionLayer = item;
-            break;
-        }
-    }
-    
-    Boolean isRunning = [(Tile*)self hasIndicator];
-    Boolean isProc = [self.className isEqualToString:@"DOCKProcessTile"] || [self.className isEqualToString:@"DOCKFileTile"];
-    if ([readPref(@"cd_iconReflection") boolValue]) {
-        if (isRunning) {
-            [_reflectionLayer setHidden:NO];
-        } else {
-            if ([readPref(@"cd_dimInactive") boolValue])
-                if (isProc)
-                    [(Tile*)self setSelected:true];
-            if ([readPref(@"cd_appReflection") boolValue])
-                if (isProc)
-                    [_reflectionLayer setHidden:YES];
-                else
-                    [_reflectionLayer setHidden:NO];
-            else
-                [_reflectionLayer setHidden:NO];
-        }
-    }
+//    CALayer *_iconLayer = ZKHookIvar(self, CALayer *, "_layer");
+//    
+//    if ([_iconLayer respondsToSelector:@selector(layoutSublayers)])
+//        [_iconLayer performSelector:@selector(layoutSublayers)];
+//    
+//    CALayer *_reflectionLayer = nil;
+//    for (CALayer *item in (NSMutableArray *)_iconLayer.sublayers) {
+//        if ([item.name  isEqual:@"_reflectionLayer"]) {
+//            _reflectionLayer = item;
+//            break;
+//        }
+//    }
+//    
+//    Boolean isRunning = [(Tile*)self hasIndicator];
+//    Boolean isProc = [self.className isEqualToString:@"DOCKProcessTile"] || [self.className isEqualToString:@"DOCKFileTile"];
+//    if ([readPref(@"cd_iconReflection") boolValue]) {
+//        if (isRunning) {
+//            [_reflectionLayer setHidden:NO];
+//        } else {
+//            if ([readPref(@"cd_dimInactive") boolValue])
+//                if (isProc)
+//                    [(Tile*)self setSelected:true];
+//            if ([readPref(@"cd_appReflection") boolValue])
+//                if (isProc)
+//                    [_reflectionLayer setHidden:YES];
+//                else
+//                    [_reflectionLayer setHidden:NO];
+//            else
+//                [_reflectionLayer setHidden:NO];
+//        }
+//    }
 }
 
 - (void)removeIndicator {

@@ -2,6 +2,8 @@
 //  cDockFloor.m
 //
 
+// Dock background, border, separator, frost and glass layers
+
 @import QuartzCore;
 
 #import "cd_shared.h"

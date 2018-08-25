@@ -503,12 +503,10 @@ NSArray *tabViews;
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"CDHideDonate"]) {
         [_cdock_hideDonate setState:NSOnState];
-        [_pop_paypal setHidden:true];
-        [_pop_translate setHidden:true];
+        [_donatebutton setHidden:true];
     } else {
         [_cdock_hideDonate setState:NSOffState];
-        [_pop_paypal setHidden:false];
-        [_pop_translate setHidden:false];
+        [_donatebutton setHidden:false];
     }
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"CDToolTips"]) {
@@ -613,7 +611,7 @@ NSArray *tabViews;
 }
 
 - (void)setupWindow {
-    tabViewButtons = [NSArray arrayWithObjects:_viewTheming, _viewCustomize, _viewDock, _viewSIMBL, _viewAbout, _viewPreferences, nil];
+    tabViewButtons = [NSArray arrayWithObjects:_viewCustomize, _viewDock, _viewSIMBL, _viewAbout, _viewPreferences, nil];
     for (NSButton *btn in tabViewButtons)
     {
         NSRect frame = [btn frame];
@@ -633,7 +631,7 @@ NSArray *tabViews;
     [line setBoxType:NSBoxSeparator];
     [_window.contentView addSubview:line];
 
-    NSBox *vert = [[NSBox alloc] initWithFrame:CGRectMake(125, 0, 1, 500)];
+    NSBox *vert = [[NSBox alloc] initWithFrame:CGRectMake(125, 0, 1, 600)];
     [vert setBoxType:NSBoxSeparator];
     [_window.contentView addSubview:vert];
     
@@ -652,7 +650,7 @@ NSArray *tabViews;
         }
     }
     
-    tabViews = [NSArray arrayWithObjects:_themeView, _customizeView, _dockView, _simblinfoView, _aboutView, _prefView, nil];
+    tabViews = [NSArray arrayWithObjects:_customizeView, _dockView, _simblinfoView, _aboutView, _prefView, nil];
     
     if ([[NSProcessInfo processInfo] operatingSystemVersion].minorVersion < 10)
     {
@@ -680,20 +678,13 @@ NSArray *tabViews;
     [_window setBackgroundColor:[NSColor whiteColor]];
     [_window setMovableByWindowBackground:YES];
     
-    [[_pop_paypal cell] setImageScaling:NSImageScaleProportionallyUpOrDown];
-    [_pop_paypal setAction:@selector(donate:)];
-    [[_pop_translate cell] setImageScaling:NSImageScaleProportionallyUpOrDown];
-    [_pop_translate setAction:@selector(translate:)];
-    [[_pop_github cell] setImageScaling:NSImageScaleProportionallyUpOrDown];
-    [_pop_github setAction:@selector(visit_github:)];
-    [_pop_email setImage:[NSImage imageNamed:NSImageNameUserAccounts]];
-    [[_pop_email cell] setImageScaling:NSImageScaleProportionallyUpOrDown];
-    [_pop_email setAction:@selector(send_email:)];
-    
     NSDictionary* infoDict = [[NSBundle mainBundle] infoDictionary];
     [_appName setStringValue:[infoDict objectForKey:@"CFBundleExecutable"]];
     [_appVersion setStringValue:[NSString stringWithFormat:@"Version %@ (%@)", [infoDict objectForKey:@"CFBundleShortVersionString"], [infoDict objectForKey:@"CFBundleVersion"]]];
-    [_appCopyright setStringValue:@"Copyright © 2015 - 2016 Wolfgang Baird"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"yyyy"];
+    NSString * currentYEAR = [formatter stringFromDate:[NSDate date]];
+    [_appCopyright setStringValue:[NSString stringWithFormat:@"Copyright © 2015 - %@ Wolfgang Baird", currentYEAR]];
 
 }
 
@@ -833,7 +824,7 @@ NSArray *tabViews;
     }
     
     // Resize buttons for translations and tooltips
-    for (NSButton *btn in [_themeView subviews])
+    for (NSButton *btn in [_customizeView subviews])
     {
         if (btn.class != NSClassFromString(@"NSPopUpButton"))
                 if ([btn respondsToSelector:@selector(sizeToFit)])
@@ -964,14 +955,14 @@ NSArray *tabViews;
     {
         [NSAnimationContext beginGrouping];
         [[NSAnimationContext currentContext] setDuration:1.0];
-        [[_pop_paypal animator] setAlphaValue:0];
-        [[_pop_paypal animator] setHidden:true];
+        [[_donatebutton animator] setAlphaValue:0];
+        [[_donatebutton animator] setHidden:true];
         [NSAnimationContext endGrouping];
     } else {
         [NSAnimationContext beginGrouping];
         [[NSAnimationContext currentContext] setDuration:1.0];
-        [[_pop_paypal animator] setAlphaValue:1];
-        [[_pop_paypal animator] setHidden:false];
+        [[_donatebutton animator] setAlphaValue:1];
+        [[_donatebutton animator] setHidden:false];
         [NSAnimationContext endGrouping];
     }
 }
