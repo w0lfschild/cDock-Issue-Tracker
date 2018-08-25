@@ -1,0 +1,4149 @@
+
+
+/*
+Template Name: Bootstrap Starter Kit - Header 1
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+/*	HEADER 1
+/*----------------------------------------------------*/
+
+#header-1
+{
+    width: 100%;
+    background: none;
+    height: 80px;
+}
+
+#header-1 .main-nav
+{
+    background-color: #193441;
+    border: 0;
+    height: 80px;
+}
+
+#header-1 .main-nav .navbar-toggle
+{
+    margin-right: 0;
+    margin-top: 0;
+    background: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+#header-1 .main-nav .navbar-toggle:focus
+{
+    outline: none;
+}
+
+#header-1 .main-nav .navbar-toggle .icon-bar
+{
+    background-color: rgba(255, 255, 255, 0.6);
+    height: 3px;
+}
+
+#header-1 .main-nav .navbar-toggle:hover .icon-bar
+{
+    background-color: #fff;
+}
+
+#header-1 .main-nav .nav
+{
+    margin-top: 12px;
+}
+
+#header-1 .main-nav .navbar-nav > li a {
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 15px;
+	color: #fff;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+#header-1 .main-nav .navbar-nav > li.active a
+{
+    color: #3498DB;
+    background: none;
+}
+
+
+#header-1 .main-nav .navbar-nav > li a:hover
+{
+    color: #3498DB;
+    background: none;
+}
+
+#header-1 .main-nav .navbar-nav > li a:focus
+{
+    outline: none;
+    background: none;
+}
+
+#header-1 .main-nav .navbar-nav > li a:active
+{
+    outline: none;
+    background: none;
+}
+
+#header-1 .main-nav .navbar-nav > li.active
+{
+    color: #333;
+}
+
+#header-1 .main-nav .nav .dropdown-menu
+{
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    margin: 0;
+    border: none;
+    text-transform: none;
+    min-width: 180px;
+    background: #3E606F;
+}
+
+#header-1 .main-nav .nav .dropdown-menu:before
+{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #3E606F;
+    position: absolute;
+    right: 35px;
+    top: -10px;
+}
+
+#header-1 .main-nav .nav .dropdown-menu a
+{
+    padding: 8px 20px;
+    color: #fff;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+#header-1 .main-nav .nav .dropdown-menu a:hover
+{
+    background: #193441;
+    color: #fff;
+}
+
+#header-1 .brand-img
+{
+    max-width: 150px;
+    padding: 20px 0;
+}
+
+.headroom
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .2s ease-in-out;
+}
+
+.headroom--unpinned
+{
+    top: -100px;
+}
+
+.headroom--pinned
+{
+    top: 0;
+}
+
+/* Override bootstrap default */
+
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus
+{
+    background: none;
+}
+
+/*	HEADER 1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Extra small devices (phones, less than 768px) */
+
+@media (max-width: 767px)
+{
+    #header-1 .brand-img
+    {
+        float: none;
+        margin: 0 auto;
+        text-align: center;
+    }
+    #header-1 .navbar-fixed-top
+    {
+        position: relative;
+    }
+    #header-1 .navbar-collapse
+    {
+        border-top: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        top: 80px;
+        position: absolute;
+        background: #193441;
+        z-index: 999;
+    }
+    #header-1 .navbar-collapse .nav
+    {
+        margin: 0;
+    }
+    #header-1 .main-nav .nav .dropdown-menu:before
+    {
+        display: none;
+    }
+    #header-1 .navbar-fixed-top .navbar-collapse,
+	#header-1 .navbar-fixed-bottom .navbar-collapse
+    {
+        max-height: inherit;
+    }
+}
+
+/* Small devices (tablets, 768px and up) */
+
+@media (min-width: 768px){
+  
+	
+  
+  
+}
+
+/* Medium devices (desktops, 992px and up) */
+
+@media (min-width: 992px){
+  
+	
+  
+  
+}
+
+
+
+/*
+Template Name: Bootstrap Starter Kit - Header 2
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+/*	HEADER 2
+/*----------------------------------------------------*/
+
+#header-2
+{
+    width: 100%;
+    position: relative;
+    z-index: 999;
+}
+
+#header-2 .brand-img
+{
+    float: none;
+    margin: 30px auto;
+    text-align: center;
+    max-width: 150px;
+}
+
+#header-2 .navbar-toggle
+{
+    margin-right: 0;
+    margin-top: 0;
+    background: none;
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    border: none;
+}
+
+#header-2 .navbar-toggle:focus
+{
+    outline: none;
+}
+
+#header-2 .navbar-toggle .icon-bar
+{
+    background-color: #999;
+    height: 3px;
+}
+
+#header-2 .navbar-toggle:hover .icon-bar
+{
+    background-color: #3498DB;
+}
+
+#header-2 .navbar-fixed-top .navbar-collapse
+{
+    max-height: inherit;
+    border-top: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+#header-2 .main-nav .nav
+{
+    margin-top: 25px;
+}
+
+#header-2 .main-nav .navbar-nav > li a
+{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #666;
+    background: none;
+}
+
+#header-2 .main-nav .navbar-nav > li.active a
+{
+    color: #3498DB;
+}
+
+
+#header-2 .main-nav .navbar-nav > li a:hover
+{
+    color: #3498DB;
+}
+
+#header-2 .main-nav .navbar-nav > li a:focus
+{
+    outline: none;
+}
+
+#header-2 .main-nav .nav .dropdown-menu
+{
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    margin: 0;
+    border: none;
+    text-transform: none;
+    min-width: 180px;
+    background: #3E606F;
+}
+
+#header-2 .main-nav .nav .dropdown-menu a
+{
+    padding: 8px 20px;
+    color: #666;
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+#header-2 .main-nav .nav .dropdown-menu a:hover
+{
+    background: #3498DB;
+    color: #fff;
+}
+
+/* Override bootstrap default */
+
+#header-2 .main-nav .nav .open > a,
+#header-2 .main-nav .nav .open > a:hover,
+#header-2 .main-nav .nav .open > a:focus
+{
+    background: none;
+}
+
+/*	Header 2 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px)
+{
+    #header-2 .main-nav .nav .dropdown-menu
+    {
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        border-radius: 4px;
+        -moz-background-clip: padding;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        margin: 0;
+        border: none;
+        text-transform: none;
+        min-width: 180px;
+        background: #3E606F;
+    }
+    #header-2 .main-nav .nav .dropdown-menu:before
+    {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid #3E606F;
+        position: absolute;
+        right: 35px;
+        top: -10px;
+    }
+    #header-2 .main-nav .nav .dropdown-menu a
+    {
+        padding: 8px 20px;
+        color: #fff;
+        -webkit-opacity: 1;
+        -moz-opacity: 1;
+        opacity: 1;
+    }
+    #header-2 .main-nav .nav .dropdown-menu a:hover
+    {
+        background: #193441;
+        color: #fff;
+    }
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px){
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+/*
+Template Name: Bootstrap Starter Kit - Header 3
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+/*	HEADER 3
+/*----------------------------------------------------*/
+
+#header-3 {
+    width: 100%;
+}
+
+#header-3 .brand {
+	position: relative;
+}
+
+#header-3 .brand-img {
+	position: absolute;
+	left: 15px;
+	top: 0;
+	max-width: 150px;
+}
+
+#header-3 nav {
+	background-color: #233447;
+	margin-top: -1px;
+}
+
+#header-3 nav ul {
+	list-style: none;
+	padding: 0;
+}
+
+#header-3 nav ul li {
+	color: rgba(255, 255, 255, 0.6);
+	display: block;
+	border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+	transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	padding-left: 0;
+	position: relative;
+}
+
+#header-3 nav ul li:last-child {
+	border: none;
+}
+
+#header-3 nav ul li a {
+	color: rgba(255, 255, 255, 0.6);
+	display: block;
+	padding: 20px;
+	transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	padding-left: 0;
+	position: relative;
+}
+
+#header-3 nav ul li a:hover, #header-3 nav ul li a:focus {
+	text-decoration: none;
+	color: rgba(255, 255, 255, 1);
+}
+
+#header-3 #nav-toggle {
+	position: absolute;
+	right: 15px;
+	top: 0;
+}
+
+#header-3 #nav-toggle {
+	cursor: pointer;
+	padding: 10px 35px 16px 0px;
+}
+
+#header-3 #nav-toggle span, #header-3 #nav-toggle span:before, #header-3 #nav-toggle span:after {
+	cursor: pointer;
+	border-radius: 1px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	-o-border-radius: 1px;
+	height: 5px;
+	width: 35px;
+	background: #353535;
+	position: absolute;
+	display: block;
+	content: '';
+}
+
+#header-3 #nav-toggle span:before { top: -10px; }
+#header-3 #nav-toggle span:after { bottom: -10px; }
+
+#header-3 #nav-toggle span, #header-3 #nav-toggle span:before, #header-3 #nav-toggle span:after {
+	transition: all 500ms ease-in-out;
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+}
+
+#header-3 #nav-toggle.active span { background-color: transparent; }
+
+#header-3 #nav-toggle.active span:before, #header-3 #nav-toggle.active span:after { top: 0; }
+
+#header-3 #nav-toggle.active span:before {
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+}
+
+#header-3 #nav-toggle.active span:after {
+	transform: translateY(-10px) rotate(-45deg);
+	-webkit-transform: translateY(-10px) rotate(-45deg);
+	-ms-transform: translateY(-10px) rotate(-45deg);
+	top: 10px;
+}
+
+#header-3 .navicon {
+	position: relative;
+	height: 26px;
+}
+
+
+
+#header-3 .indicator {
+	position: absolute;
+	right: 0 !important;
+}
+
+#header-3 .pull { display: none; }
+
+
+#header-3 .hero {
+	background: url('../images/header-3-bg.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 50px 0 300px 0;
+	height: auto;
+}
+
+#header-3 .hero h1 {
+	margin-top: 100px;
+	font-weight: 600;
+	color: #31152B;
+}
+
+#header-3 .hero .lead {
+	font-weight: 600;
+	color: #723147;
+}
+
+
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  
+	
+  
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+	
+  
+}
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+	
+	  
+}
+/*
+Template Name: Bootstrap Starter Kit - Promo Blocks
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+
+
+/*	PROMO BLOCK 1
+/*----------------------------------------------------*/
+
+.promo-1 {
+	background: url("../images/water-bg.jpg") center top no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	padding: 140px 0;
+}
+
+.promo-1 .video-wrapper {
+	max-width: 600px;
+	margin: 20px auto 0 auto;
+}
+
+
+/*	PROMO BLOCK 1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	PROMO BLOCK 2
+/*----------------------------------------------------*/
+
+.promo-2 h1 {
+	font-size: 60px;
+}
+
+.promo-2 h1, .promo-2 h2 {
+	color: #ffffff;
+}
+
+.promo-2 .countDown {
+	margin: 80px auto 40px auto;
+	font-size: 0;
+}
+
+.promo-2 .countDown .countDown-input {
+	display: none;
+}
+
+.promo-2 .countDown .countDown-wrap {
+	width: 185px;
+	margin: 0 15px 20px;
+	display: inline-block;
+	background: rgba(133, 214, 222, 0.1);
+	border-left: 4px solid #F39C12;
+	border-right: 4px solid #F39C12;
+}
+
+.promo-2 .countDown .digits {
+	display: block;
+	margin-top: 34px;
+	margin-bottom: -6px;
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	font-size: 120px;
+	color: #ffffff;
+}
+
+.promo-2 .countDown .digits-label {
+	margin-bottom: 18px;
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #ffffff;
+}
+
+
+/*	PROMO BLOCK 2 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	PROMO BLOCK 3
+/*----------------------------------------------------*/
+
+.promo-3 {
+	background: url("../images/star-sky.jpg") center top no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+	padding: 140px 0;
+}
+
+.promo-3 h1 {
+	font-size: 60px;
+	color: #ffffff;
+}
+
+.promo-3 h2 {
+	font-weight: 600;
+	color: #ffffff;
+}
+
+.promo-3 a {
+	margin-top: 40px;
+}
+
+
+/*	PROMO BLOCK 3 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+
+/*
+Template Name: Bootstrap Starter Kit - Content Blocks 1
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+/*	CONTENT BLOCK 1-1
+/*----------------------------------------------------*/
+
+.content-1-1
+{
+    background: url("../images/typewriter-bg.jpg") center top no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.content-1-1 .container
+{
+    margin-top: 380px;
+}
+
+.content-1-1 h1
+{
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/*	CONTENT BLOCK 1-1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px){
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px){
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+/*	CONTENT BLOCK 1-2
+/*----------------------------------------------------*/
+
+/*	CONTENT BLOCK 1-2 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px){
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px){
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+/*	CONTENT BLOCK 1-3
+/*----------------------------------------------------*/
+
+.content-1-3
+{
+    text-align: center;
+}
+
+.content-1-3 p
+{
+    padding: 0 20px;
+}
+
+.content-1-3 .services-wrapper
+{
+    margin: 20px 0 0;
+}
+
+.content-1-3 .services-wrapper .icon
+{
+    height: 175px;
+    width: 175px;
+    max-width: 100%;
+    border-radius: 50%;
+    -o-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin: 0 auto 50px;
+}
+
+.content-1-3 .services-wrapper .icon span
+{
+    line-height: 175px;
+    color: #fff;
+    font-size: 55px;
+}
+
+/*	CONTENT BLOCK 1-3 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px){
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px){
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+/*	CONTENT BLOCK 1-4
+/*----------------------------------------------------*/
+
+.content-1-4
+{
+    padding: 0px;
+    position: relative;
+}
+
+.content-1-4 .image-container
+{
+    position: absolute;
+    height: 100%;
+    padding: 0px;
+    top: 0px;
+}
+
+.content-1-4 .image-container .background-image-holder
+{
+    background: #cccccc url('../images/dark-logs-bg.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+}
+
+.content-1-4 .content
+{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.content-1-4 h1
+{
+    margin-bottom: 32px;
+}
+
+.content-1-4 p.lead
+{
+    margin-bottom: 20px;
+}
+
+/*	CONTENT BLOCK 1-4 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Extra small devices (phones, less than 768px) */
+
+@media (max-width: 767px)
+{
+    .content-1-4 .image-container
+    {
+        display: none;
+    }
+}
+
+/*	CONTENT BLOCK 1-5
+/*----------------------------------------------------*/
+
+.content-1-5 h1
+{
+    color: #3498DB;
+}
+
+/*	CONTENT BLOCK 1-3 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px){
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px){
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+/*	CONTENT BLOCK 1-6
+/*----------------------------------------------------*/
+
+.content-1-6 h2
+{
+    margin-bottom: 40px !important;
+}
+
+.content-1-6 .client-row
+{
+    overflow: hidden;
+    text-align: center;
+    line-height: 0;
+}
+
+.content-1-6 .client-row .col-md-3
+{
+    display: inline-block;
+    min-height: 80px;
+    line-height: 80px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.content-1-6 .client-row img
+{
+    max-width: 140px;
+    opacity: 0.3;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-backface-visibility: none;
+    height: auto;
+}
+
+.content-1-6 .client-row img:hover
+{
+    opacity: 1;
+}
+
+.content-1-6 .client-row .row-wrapper
+{
+    display: inline-block;
+    width: 80%;
+}
+
+.content-1-6 .client-row:last-child .row-wrapper
+{
+    border-bottom: none;
+}
+
+.content-1-6 .row-wrapper .col-md-3
+{
+}
+
+.content-1-6 .row-wrapper .col-md-3:last-child
+{
+    border-right: none;
+}
+
+/*	CONTENT BLOCK 1-6 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Extra small devices (phones, less than 768px) */
+
+@media (max-width: 767px)
+{
+    .content-1-6 .client-row .row-wrapper
+    {
+        border-bottom: none;
+    }
+    .content-1-6 .row-wrapper .col-md-3
+    {
+        border-right: none;
+    }
+}
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px){
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px)
+{
+    .content-1-6 .client-row .row-wrapper
+    {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .content-1-6 .row-wrapper .col-md-3
+    {
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+/*	CONTENT BLOCK 1-7
+/*----------------------------------------------------*/
+
+.content-1-7
+{
+    text-align: center;
+    padding: 64px 0px 64px 0px;
+}
+
+.content-1-7 .col-md-2
+{
+    height: 80px;
+    line-height: 80px;
+}
+
+.content-1-7 img
+{
+    max-width: 140px;
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    opacity: 0.4;
+    height: auto;
+}
+
+.content-1-7 img:hover
+{
+    opacity: 1;
+}
+
+/*	CONTENT BLOCK 1-7 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Extra small devices (phones, less than 768px) */
+
+@media (max-width: 767px){
+	
+	
+	
+}
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px){
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px){
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+/*	CONTENT BLOCK 1-9
+/*----------------------------------------------------*/
+
+.content-1-9 h4
+{
+    margin-top: 0;
+}
+
+.content-1-9 .fa
+{
+    font-size: 32px;
+    color: #16A085;
+}
+
+/*	CONTENT BLOCK 1-9 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px){
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px){
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+/*
+Template Name: Bootstrap Starter Kit - Content Blocks 2
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+
+
+/*	CONTENT BLOCK 2-1
+/*----------------------------------------------------*/
+
+.content-2-1 .btn-outline {
+	margin-bottom: 30px;
+}
+
+.content-2-1 h2 {
+	color: #ffffff;
+}
+
+
+/*	CONTENT BLOCK 2-1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	CONTENT BLOCK 2-2
+/*----------------------------------------------------*/
+
+.content-2-2 h3 { font-weight: 300; }
+.content-2-2 h3, .content-2-2 p { color: #ffffff; }
+
+.content-2-2 .icon-outline {
+	height: 150px;
+	width: 150px;
+	max-width: 100%;
+	border: 4px solid rgba(255,255,255,0.6);
+	border-radius: 50%;
+	-o-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	position: relative;
+	margin: 0 auto 50px;
+	-webkit-transition: box-shadow 0.2s;
+	-moz-transition: box-shadow 0.2s;
+	transition: box-shadow 0.2s;
+}
+
+.content-2-2 .icon-outline:hover {
+	box-shadow: 0 0 0 14px rgba(255,255,255,0.4);
+	color: #fff;
+}
+
+.content-2-2 .icon-outline span {
+	line-height: 150px;
+	color: #fff;
+	font-size: 55px;
+}
+
+
+/*	CONTENT BLOCK 2-2 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	CONTENT BLOCK 2-3
+/*----------------------------------------------------*/
+
+.content-2-3 h2 {
+	color: #ffffff;
+	margin: 0;
+}
+
+
+
+/*	CONTENT BLOCK 2-3 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	CONTENT BLOCK 2-4
+/*----------------------------------------------------*/
+
+.content-2-4 i {
+	clear: both;
+}
+
+#quote-carousel {
+
+}
+
+.content-2-4 h1, .content-2-4 p {
+	color: #ffffff;
+    font-size: 44px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    line-height: 1.1;
+}
+
+
+
+/*	CONTENT BLOCK 2-4 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 2-5
+/*----------------------------------------------------*/
+
+/* Light */
+.content-2-5-light h2 {
+	color: #333333;
+}
+
+/* Dark */
+.content-2-5-dark h2 {
+	color: #ffffff;
+}
+
+.content-2-5-dark h2 a {
+	color: #f1c40f;
+}
+
+.content-2-5-dark h2 a:hover {
+	color: #ffffff;
+}
+
+
+/*	CONTENT BLOCK 2-5 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	CONTENT BLOCK 2-6
+/*----------------------------------------------------*/
+
+.content-2-6 .btn-outline {
+	margin: 1.8em;
+}
+
+.content-2-6 h2 {
+	font-weight: 700;
+	line-height: 1.4em;
+	color: #ffffff;
+}
+
+
+/*	CONTENT BLOCK 2-6 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	CONTENT BLOCK 2-7
+/*----------------------------------------------------*/
+
+.content-2-7 {
+	background: url("../images/dark-logs-bg.jpg");
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+}
+
+.content-2-7 .counter-icon {
+	font-size: 5em;
+	margin-top: 30px;
+	color: #f39c12;
+}
+
+.content-2-7 .counter, .content-2-7 .counter-text {
+	font-family: 'Lato', Helvetica, Arial, sans-serif;
+	font-weight: 700;
+	color: #f39c12;
+}
+
+.content-2-7 .counter-text {
+	font-size: 20px;
+}
+
+.content-2-7 .counter {
+	font-size: 44px;
+	color: #fff;
+}
+
+.content-2-7 .underlined-title h1, .content-2-7 .underlined-title h2 {
+	color: #fff;
+}
+
+
+/*	CONTENT BLOCK 2-7 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	CONTENT BLOCK 2-8
+/*----------------------------------------------------*/
+
+.content-2-8 {
+	padding: 0px;
+	position: relative;
+}
+
+.content-2-8 .image-container {
+	position: absolute;
+	height: 100%;
+	padding: 0px;
+	top: 0px;
+}
+
+.content-2-8 .image-container .background-image-holder {
+	background: url('../images/gold-iphone.png') no-repeat bottom center;
+	
+	height: 100%;
+}
+
+.content-2-8 .content {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+.content-2-8 h1 {
+	font-weight: 600;
+	font-size: 56px;
+}
+
+.content-2-8 h3 {
+	margin-top: 0;
+	font-weight: 600;
+}
+
+.content-2-8 h1, .content-2-8 h3, .content-2-8 .lead, .content-2-8 p, .content-2-8 span {
+	color: #ffffff;
+}
+
+
+/*	CONTENT BLOCK 2-8 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	CONTENT BLOCK 2-9
+/*----------------------------------------------------*/
+
+.content-2-9 {
+	background: #ccc;
+	min-height: 260px;
+	position: relative;
+}
+
+.content-2-9 .project {
+	height: 260px;
+	overflow: hidden;
+	position: relative;
+	padding: 0;
+}
+
+.content-2-9 .project img {
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translateY(-50%) translateX(-50%);
+    -moz-transform: translateY(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.content-2-9 .project .background-image-holder {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-size: cover !important;
+	z-index: 0;
+	background-position: 50% 50% !important;
+}
+
+
+.content-2-9 .project .hover-state {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	background-color: rgba(44, 62, 80, 0.6);
+	text-align: center;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	transition: all .5s ease;
+	opacity: 0;
+	padding: 0 25px;
+}
+
+.content-2-9 .project:hover .hover-state {
+	opacity: 1;
+}
+
+.content-2-9 .project .hover-state h3 {
+	color: #fff;
+	margin-top: 40px;
+	margin-bottom: 8px;
+}
+
+.content-2-9 .project .hover-state p {
+	color: #fff;
+}
+
+.content-2-9 .project .hover-state .align-vertical {
+	-webkit-transform: translate3d(0, 20px, 0);
+	-moz-transform: translate3d(0, 20px, 0);
+	transform: translate3d(0, 20px, 0);
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	transition: all .5s ease;
+	opacity: 0;
+}
+
+.content-2-9 .project:hover .align-vertical {
+	-webkit-transform: translate3d(0, 0px, 0);
+	-moz-transform: translate3d(0, 0px, 0);
+	transform: translate3d(0, 0px, 0);
+	opacity: 1;
+}
+
+
+/*	CONTENT BLOCK 2-9 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	.content-2-9 {
+		min-height: 520px;
+	}
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	.content-2-9 {
+		min-height: 260px;
+	}
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	CONTENT BLOCK 2-10
+/*----------------------------------------------------*/
+
+.content-2-10 .border-box {
+	border: 4px solid #BDC3C7;
+	padding: 20px 40px;
+}
+
+.content-2-10 .border-box h2 {
+	
+}
+
+
+
+/*	CONTENT BLOCK 2-10 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}/*
+Template Name: Bootstrap Starter Kit - Content Blocks 3
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+/* MTCH */
+.overlay-aqua {
+	background-color: rgba(26, 188, 156, 0.8);
+}
+.overlay-orange {
+	background-color: rgba(253, 156, 18, 0.8);
+}
+.overlay-blue {
+	background-color: rgba(52, 152, 219, 0.8);
+}
+
+/*	CONTENT BLOCK 3-1
+/*----------------------------------------------------*/
+
+.content-3-1 {
+	background-image: url("../images/palm-trees.jpg");
+	background-size: cover !important;
+	min-height: 500px;
+}
+
+.content-3-1 .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+}
+
+.content-3-1 h1, .content-3-1 h2 {
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.content-3-1 h1 {
+	
+}
+
+.content-3-1 h2 {
+	margin-top: 100px;
+	font-size: 13px;
+}
+
+
+/*	CONTENT BLOCK 3-1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	.content-3-1 {
+		min-height: 400px;
+	}
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-2
+/*----------------------------------------------------*/
+
+.content-3-2 {
+	background-image: url("../images/camera-girl.jpg");
+	background-size: cover !important;
+	min-height: 500px;
+}
+
+.content-3-2 .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+}
+
+.content-3-2 h1, .content-3-2 h2 {
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.content-3-2 h1 {
+	
+}
+
+.content-3-2 h2 {
+	margin-top: 100px;
+	font-size: 13px;
+}
+
+
+/*	CONTENT BLOCK 3-2 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	.content-3-2 {
+		min-height: 400px;
+	}
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-3
+/*----------------------------------------------------*/
+
+.content-3-3 {
+	background-image: url("../images/seagulls.jpg");
+	background-size: cover !important;
+	min-height: 500px;
+}
+
+.content-3-3 .overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+}
+
+.content-3-3 h1, .content-3-3 h2 {
+	color: #fff;
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.content-3-3 h1 {
+	
+}
+
+.content-3-3 h2 {
+	margin-top: 100px;
+	font-size: 13px;
+}
+
+
+/*	CONTENT BLOCK 3-3 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	.content-3-3 {
+		min-height: 400px;
+	}
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-4
+/*----------------------------------------------------*/
+
+
+
+
+
+
+/*	CONTENT BLOCK 3-4 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-5
+/*----------------------------------------------------*/
+
+.content-3-5 .feature-box {
+    background: #723147;
+    margin: 20px 0;
+    padding: 35px 30px;
+    text-align: center;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+}
+
+.content-3-5 .feature-box:hover {
+    background-color: #31152B;
+}
+
+.content-3-5 .icon {
+    margin: 0 auto;
+    background-color: #ffffff;
+    text-align: center;
+    color: #723147;
+    font-size: 60px;
+    height: 140px;
+    width: 140px;
+    line-height: 130px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+}
+
+.content-3-5 .feature-box p {
+    line-height: 25px;
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.content-3-5 .feature-box h3 {
+    padding: 15px 0px 0px;
+    color: #ffffff;
+}
+
+.content-3-5 .feature-box, .content-3-5 .feature-box:hover, .content-3-5 .feature-icon, .content-3-5 .feature-box:hover .feature-icon {
+    transition: all 0.4s ease-in 0s;
+    -moz-transition: all 0.4s ease-in 0s;
+    -webkit-transition: all 0.4s ease-in 0s;
+    -o-transition: all 0.4s ease-in 0s;
+    -ms-transition: all 0.4s ease-in 0s;
+}
+
+
+/*	CONTENT BLOCK 3-5 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-6
+/*----------------------------------------------------*/
+
+.content-3-6 .feature-box {
+    background: #91AA9D;
+    margin: 20px 0;
+    padding: 35px 30px;
+    text-align: center;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -o-border-radius: 4px;
+    -ms-border-radius: 4px;
+}
+
+.content-3-6 .feature-box:hover {
+    background-color: #3E606F;
+}
+
+.content-3-6 .icon {
+    margin: 0 auto;
+    background-color: #ffffff;
+    text-align: center;
+    color: #91AA9D;
+    font-size: 60px;
+    height: 140px;
+    width: 140px;
+    line-height: 130px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;
+    -ms-border-radius: 50%;
+}
+
+.content-3-6 .feature-box p {
+    line-height: 25px;
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+.content-3-6 .feature-box h3 {
+    padding: 15px 0px 0px;
+    color: #ffffff;
+}
+
+.content-3-6 .feature-box, .content-3-6 .feature-box:hover, .content-3-6 .feature-icon, .content-3-6 .feature-box:hover .feature-icon {
+    transition: all 0.4s ease-in 0s;
+    -moz-transition: all 0.4s ease-in 0s;
+    -webkit-transition: all 0.4s ease-in 0s;
+    -o-transition: all 0.4s ease-in 0s;
+    -ms-transition: all 0.4s ease-in 0s;
+}
+
+
+/*	CONTENT BLOCK 3-6 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-7
+/*----------------------------------------------------*/
+
+.content-3-7 .underlined-title {
+	padding-bottom: 0;
+}
+
+
+
+
+/*	CONTENT BLOCK 3-7 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-8
+/*----------------------------------------------------*/
+
+.content-3-8 .underlined-title {
+	padding-bottom: 0;
+    text-align: left;
+}
+
+.content-3-8 .underlined-title hr {
+    float: left;
+}
+
+.content-3-8 .underlined-title h2 {
+	clear: left;
+}
+
+
+/*	CONTENT BLOCK 3-8 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-9
+/*----------------------------------------------------*/
+
+.content-3-9 .underlined-title {
+	padding-bottom: 0;
+    text-align: right;
+}
+
+.content-3-9 .underlined-title hr {
+    float: right;
+}
+
+.content-3-9 .underlined-title h2 {
+	clear: right;
+}
+
+
+/*	CONTENT BLOCK 3-9 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-10
+/*----------------------------------------------------*/
+
+.content-3-10 {
+	padding: 0px;
+	position: relative;
+}
+
+.content-3-10 .image-container {
+	position: absolute;
+	height: 300px;
+	padding: 0px;
+	top: 0px;
+}
+
+.content-3-10 .image-container .background-image-holder {
+	background: url('../images/low-poly-1.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+}
+
+.content-3-10 .content {
+	margin-top: 300px;
+	padding: 40px;
+}
+
+.content-3-10 h3 {
+	margin-bottom: 32px;
+}
+
+.content-3-10 p {
+	margin-bottom: 20px;
+}
+
+
+
+/*	CONTENT BLOCK 3-10 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	.content-3-10 .image-container {
+		height: 100%;
+	}
+	
+	.content-3-10 .content {
+		margin-top: 0px;
+		padding: 80px 15px 80px 80px;
+	}
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*	CONTENT BLOCK 3-11
+/*----------------------------------------------------*/
+
+.content-3-11 {
+	padding: 0px;
+	position: relative;
+}
+
+.content-3-11 .image-container {
+	position: absolute;
+	height: 300px;
+	padding: 0px;
+	top: 0px;
+	right: 0px;
+}
+
+.content-3-11 .image-container .background-image-holder {
+	background: url('../images/low-poly-2.jpg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100%;
+}
+
+.content-3-11 .content {
+	margin-top: 300px;
+	padding: 40px;
+}
+
+.content-3-11 h3 {
+	margin-bottom: 32px;
+}
+
+.content-3-11 p {
+	margin-bottom: 20px;
+}
+
+
+
+/*	CONTENT BLOCK 3-11 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	.content-3-11 .image-container {
+		height: 100%;
+	}
+	
+	.content-3-11 .content {
+		margin-top: 0px;
+		padding: 80px 80px 80px 15px;
+	}
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}/*
+Template Name: Bootstrap Starter Kit - Gallery 2
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+
+
+/*	Gallery 2
+/*----------------------------------------------------*/
+
+.gallery-2-title {
+	text-align: center;
+	padding-bottom: 30px;
+}
+
+.gallery-2-title h1 { color: #2c3e50; margin: 0; }
+.gallery-2-title h2 { color: #95a5a6; }
+
+.gallery-2-title hr {
+	width: 10%;
+	border-width: 2px;
+	border-color: #16a085;
+}
+
+*, *:after, *:before { box-sizing: border-box; }
+
+.grid {
+	overflow: hidden;
+	text-align: center;
+	margin: 10px 0;
+}
+
+/* Common style */
+.grid figure {
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	overflow: hidden;
+	height: 300px;
+	background: #2c3e50;
+	text-align: center;
+	cursor: pointer;
+}
+
+.grid figure img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	opacity: 0.8;
+}
+
+.grid figure figcaption {
+	padding: 2em;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.25em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure figcaption::before,
+.grid figure figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure figcaption,
+.grid figure a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure h2 {
+	word-spacing: -0.15em;
+	
+	font-weight: 300;
+}
+
+.grid figure h2 span {
+	font-weight: 800;
+}
+
+.grid figure h2,
+.grid figure p {
+	margin: 0;
+}
+
+.grid figure p {
+	letter-spacing: 1px;
+	font-size: 68.5%;
+}
+
+/* Individual effects */
+
+/*---------------*/
+/***** Lily *****/
+/*---------------*/
+
+figure.effect-lily img {
+	width: -webkit-calc(100% + 50px);
+	width: calc(100% + 50px);
+	opacity: 0.5;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-40px,0, 0);
+	transform: translate3d(-40px,0,0);
+}
+
+figure.effect-lily figcaption {
+	top: auto;
+	bottom: 0;
+	height: 50%;
+	text-align: left;
+}
+
+figure.effect-lily h2,
+figure.effect-lily p {
+	-webkit-transform: translate3d(0,40px,0);
+	transform: translate3d(0,40px,0);
+}
+
+figure.effect-lily h2 {
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+}
+
+figure.effect-lily p {
+	color: rgba(255,255,255,0.6);
+	opacity: 0;
+	-webkit-transition: opacity 0.2s, -webkit-transform 0.35s;
+	transition: opacity 0.2s, transform 0.35s;
+}
+
+figure.effect-lily:hover img,
+figure.effect-lily:hover p {
+	opacity: 1;
+}
+
+figure.effect-lily:hover img,
+figure.effect-lily:hover h2,
+figure.effect-lily:hover p {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-lily:hover p {
+	-webkit-transition-delay: 0.05s;
+	transition-delay: 0.05s;
+	-webkit-transition-duration: 0.35s;
+	transition-duration: 0.35s;
+}
+
+
+
+
+
+
+
+/*	Gallery 1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+/*
+Template Name: Bootstrap Starter Kit - Gallery 1
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+/*	Gallery 1
+/*----------------------------------------------------*/
+
+/* Gallery Item
+ * -------------------------- */
+
+.isotope-gallery-container .col-md-3
+{
+    margin-right: -1px;
+}
+
+.gallery-item-wrapper
+{
+    padding-bottom: 25px;
+}
+
+.gallery-item
+{
+    overflow: hidden;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    border-radius: 3px;
+}
+
+.flush .gallery-item
+{
+    border-radius: 0;
+}
+
+.gallery-item .gallery-thumb
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item .gallery-thumb img
+{
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.gallery-item:hover .gallery-thumb img
+{
+    transform: scale(1.1);
+}
+
+.gallery-item .gallery-thumb .image-overlay
+{
+    background-color: #2c3e50;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.gallery-item:hover .gallery-thumb .image-overlay
+{
+    opacity: 0.50;
+    filter: alpha(opacity=50);
+}
+
+.gallery-item .gallery-thumb .gallery-zoom, .gallery-item .gallery-thumb .gallery-link {
+    width: 45px;
+    height: 45px;
+    text-align: center;
+    background-color: #2c3e50;
+    display: none;
+    line-height: 45px;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    border-radius: 2px;
+}
+
+.gallery-item .gallery-thumb .gallery-zoom:hover, .gallery-item .gallery-thumb .gallery-link:hover
+{
+    background-color: #1ABC9C;
+    color: #ffffff;
+}
+
+.gallery-item .gallery-thumb .gallery-zoom:focus, .gallery-item .gallery-thumb .gallery-link:focus
+{
+    outline: none;
+}
+
+.gallery-item .gallery-thumb .gallery-link
+{
+    right: 0;
+    margin-right: -45px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.gallery-item .gallery-thumb .gallery-zoom
+{
+    left: 0;
+    margin-left: -45px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.gallery-item:hover .gallery-thumb .gallery-zoom
+{
+    display: block;
+    left: 50%;
+    margin-left: -48px;
+}
+
+.gallery-item:hover .gallery-thumb .gallery-link
+{
+    display: block;
+    right: 50%;
+    margin-right: -48px;
+}
+
+.gallery-item .gallery-details
+{
+    text-align: center;
+    padding-top: 20px;
+    background-color: #fff;
+    border: 2px solid #ecf0f1;
+    border-top: 0;
+    overflow: hidden;
+}
+
+.gallery-item .gallery-details h5
+{
+    margin: 0;
+    font-size: 1em;
+    font-weight: 700;
+    position: relative;
+}
+
+.gallery-item .gallery-details p
+{
+    font-size: .9em;
+}
+
+/* Gallery Filter
+ * -------------------------- */
+
+.filter
+{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 60px 0;
+    text-align: center;
+}
+
+.filter li
+{
+    display: inline-block;
+    margin: 0;
+}
+
+.filter li:before
+{
+    display: inline-block;
+    content: "/";
+    padding: 0 25px 0 19px;
+    color: rgba(0,0,0,0.20);
+}
+
+.filter li:first-child:before
+{
+    display: none;
+}
+
+.filter li a
+{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+.filter li a:hover,
+.filter li a:focus,
+.filter li a.active
+{
+    color: #1ABC9C;
+    text-decoration: none;
+}
+
+/* Isotope Animating
+ * -------------------------- */
+
+.isotope,
+.isotope .isotope-item
+{
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -ms-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+
+.isotope
+{
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    -ms-transition-property: height, width;
+    -o-transition-property: height, width;
+    transition-property: height, width;
+}
+
+.isotope .isotope-item
+{
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    -ms-transition-property: -ms-transform, opacity;
+    -o-transition-property: -o-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+/**** disabling Isotope CSS3 transitions ****/
+
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition
+{
+    -webkit-transition-duration: 0s;
+    -moz-transition-duration: 0s;
+    -ms-transition-duration: 0s;
+    -o-transition-duration: 0s;
+    transition-duration: 0s;
+}
+
+/*	Gallery 1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px){
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px){
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+
+
+/*
+Template Name: Bootstrap Starter Kit - Team 1
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+/*	Team 1
+/*----------------------------------------------------*/
+
+.team-1 h2
+{
+    margin-bottom: 50px;
+}
+
+.team-member
+{
+    max-width: 500px;
+    margin: 0 auto 20px auto;
+    overflow: hidden;
+    border-top: 0;
+    border: 1px solid #f5f5f5;
+    border-radius: 4px;
+}
+
+.team-details
+{
+    padding: 20px;
+}
+
+.team-member .member-name
+{
+    margin-top: 20px;
+    position: relative;
+}
+
+.team-member .member-name:before
+{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #ecf0f1;
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+
+.team-member .position
+{
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+}
+
+.team-member .social-links
+{
+    padding-top: 10px;
+}
+
+.team-member .social-links > li a
+{
+    border-color: #ecf0f1;
+    border-radius: 3px;
+}
+
+/*	Team 1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px){
+	
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px){
+	
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px){
+	
+	
+	
+}
+
+.team-member > img
+{
+    width: 100%;
+}
+
+
+
+/*
+Template Name: Bootstrap Starter Kit - Team 2
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+/*	Team 2
+/*----------------------------------------------------*/
+
+.team-2 .team-wrapper
+{
+    padding-bottom: 25px;
+}
+
+.team-2 .team-wrapper .team-item
+{
+    max-width: 500px;
+    margin: 0 auto;
+    overflow: hidden;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.team-2 .team-wrapper .team-item .team-thumb
+{
+    position: relative;
+    overflow: hidden;
+}
+
+.team-2 .team-wrapper .team-item .team-thumb img
+{
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.team-2 .team-wrapper .team-item:hover .team-thumb img
+{
+    transform: scale(1.1);
+}
+
+.team-2 .team-wrapper .team-item .team-thumb .image-overlay
+{
+    background-color: #2c3e50;
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.team-2 .team-wrapper .team-item:hover .team-thumb .image-overlay
+{
+    opacity: 0.50;
+    filter: alpha(opacity=50);
+}
+
+.team-2 .team-wrapper .team-item .team-thumb .team-link
+{
+    position: absolute;
+    color: #fff;
+    display: block;
+}
+
+.team-2 .team-wrapper .team-item .team-thumb .team-link:hover
+{
+    color: #F39C12;
+}
+
+.team-2 .col-sm-4 .team-item .team-thumb .team-link, .team-2 .col-md-3 .team-item .team-thumb .team-link
+{
+    top: 0;
+    left: 45%;
+    margin-top: -50px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.team-2 .col-sm-4 .team-item:hover .team-thumb .team-link, .team-2 .col-md-3 .team-item:hover .team-thumb .team-link
+{
+    display: block;
+    top: 58%;
+    left: 45%;
+}
+
+.team-2 .team-wrapper .team-item .team-details
+{
+    text-align: center;
+    padding-top: 20px;
+    background-color: #fff;
+    border-top: 0;
+    overflow: hidden;
+}
+
+/*	Team 2 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width : 768px)
+{
+    .team-2 .col-sm-4 .team-item .team-thumb .team-link
+    {
+        left: 40%;
+    }
+    .team-2 .col-sm-4 .team-item:hover .team-thumb .team-link
+    {
+        top: 66%;
+        left: 40%;
+    }
+    .team-2 .col-sm-6 .team-item .team-thumb .team-link
+    {
+        left: 43.4%;
+    }
+    .team-2 .col-sm-6 .team-item:hover .team-thumb .team-link
+    {
+        top: 60%;
+        left: 43.4%;
+    }
+}
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width : 992px)
+{
+    .team-2 .col-sm-4 .team-item .team-thumb .team-link
+    {
+        left: 42%;
+    }
+    .team-2 .col-sm-4 .team-item:hover .team-thumb .team-link
+    {
+        top: 62%;
+        left: 42%;
+    }
+    .team-2 .col-md-3 .team-item .team-thumb .team-link
+    {
+        left: 39%;
+    }
+    .team-2 .col-md-3 .team-item:hover .team-thumb .team-link
+    {
+        top: 66%;
+        left: 39%;
+    }
+}
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width : 1200px)
+{
+    .team-2 .col-sm-4 .team-item .team-thumb .team-link
+    {
+        left: 43.4%;
+    }
+    .team-2 .col-sm-4 .team-item:hover .team-thumb .team-link
+    {
+        top: 60%;
+        left: 43.4%;
+    }
+    .team-2 .col-md-3 .team-item .team-thumb .team-link
+    {
+        left: 41.3%;
+    }
+    .team-2 .col-md-3 .team-item:hover .team-thumb .team-link
+    {
+        top: 63%;
+        left: 41.3%;
+    }
+}
+
+/*
+Template Name: Bootstrap Starter Kit - Pricing Tables 1
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+
+
+/*	Pricing Tables 1
+/*----------------------------------------------------*/
+
+.pricing-table-1 .price-block {
+	text-align: center;
+	color: #ffffff;
+	transition: all 0.25s;
+	max-width: 400px;
+	margin: 0 auto 20px auto;
+}
+
+.pricing-table-1 h3 {
+	text-transform: uppercase;
+	padding: 20px 0;
+	background: #2c3e50;
+	margin: 0;
+	border-radius: 6px 6px 0 0;
+}
+
+.pricing-table-1 .price {
+	display: inline-block;
+	background: #898989;
+	width: 100%;
+}
+
+.pricing-table-1 .price-figure {
+	font-size: 24px;
+	text-transform: uppercase;
+	padding-top: 14px;
+}
+
+.pricing-table-1 .price-number {
+	font-weight: 600;
+	display: block;
+	margin-bottom: 0;
+}
+
+.pricing-table-1 .price-tenure {
+	font-size: 11px;
+	margin-top: 0;
+}
+
+.pricing-table-1 .features {
+	background: #e6e6e6;
+	color: #555555;
+	padding: 0;
+	margin: 0;
+}
+
+.pricing-table-1 .features li {
+	padding: 8px 15px;
+	border-bottom: 1px solid #ccc;
+	list-style-type: none;
+}
+
+.pricing-table-1 .price-footer {
+	display: block;
+	background: #2c3e50;
+	border-radius: 0 0 6px 6px;
+	margin-top: -5px;
+	padding: 10px 0;
+}
+
+
+/* Hover Effects */
+.pricing-table-1 .price-block:hover {
+	transform: scale(1.04) translateY(-5px);
+	-webkit-transform: scale(1.04) translateY(-5px);
+	z-index: 1;
+	border-bottom: 0 none;
+}
+
+.pricing-table-1 .price-block:hover .price.pastel-blue { background: #6082EB; }
+.pricing-table-1 .price-block:hover .price.pastel-green { background: #18B29D; }
+.pricing-table-1 .price-block:hover .price.pastel-red { background: #FF5E65; }
+.pricing-table-1 .price-block:hover .price.pastel-orange { background: #FFB068; }
+
+
+.pricing-table-1 .price-block:hover h3 {
+	background: #233447;
+}
+
+/* Ribbons */
+.ribbon {
+	position: absolute;
+	top: -4px;
+	right: 11px;
+	width: 82px;
+	height: 82px;
+	overflow: hidden;
+	z-index: 10
+}
+
+.red-hot { background: url("../images/ribbons/red-hot.png") 0 0 no-repeat; }
+.best-value { background: url("../images/ribbons/best-value.png") 0 0 no-repeat; }
+.super-cool { background: url("../images/ribbons/super-cool.png") 0 0 no-repeat; }
+.new { background: url("../images/ribbons/new.png") 0 0 no-repeat; }
+.premium { background: url("../images/ribbons/premium.png") 0 0 no-repeat; }
+.exclusive { background: url("../images/ribbons/exclusive.png") 0 0 no-repeat; }
+.popular { background: url("../images/ribbons/popular.png") 0 0 no-repeat; }
+.five-stars { background: url("../images/ribbons/five-stars.png") 0 0 no-repeat; }
+
+
+
+/*	Pricing Tables 1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	.pricing-table-1 .price-block {
+		margin-bottom: 20px;
+    }
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+/*
+Template Name: Bootstrap Starter Kit - Pricing Tables 2
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+
+
+/*	Pricing Table 2
+/*----------------------------------------------------*/
+
+.pricing-table-2 .tables-row {
+	margin-top: 40px;
+}
+
+.pricing-table-2 .price-block {
+	max-width: 500px;
+	margin: 0 auto 40px auto;
+	-webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.pricing-table-2 .price-block header {
+	background: #2F4052;
+	text-align: center;
+	padding: 50px;
+}
+
+.pricing-table-2 .price-block h2 {
+	font-size: 20px;
+	font-weight: 400;
+	letter-spacing: .15em;
+	text-transform: uppercase;
+	color: #FFF;
+}
+
+.pricing-table-2 .price-block .btn {
+	margin-bottom: 0;
+}
+
+.pricing-table-2 .price-block .price {
+	margin-bottom: 15px;
+	color: #ffffff;
+}
+
+.pricing-table-2 .price-block .price * {
+	font-family: 'Lato', sans-serif;
+	line-height: 100%;
+}
+
+.pricing-table-2 .price-block .price .amount {
+	font-size: 120px;
+	font-weight: 900;
+}
+
+.pricing-table-2 .price-block .price .currency {
+	position: relative;
+	top: 16px;
+	font-size: 24px;
+	vertical-align: top;
+	margin-right: 5px;
+}
+
+.pricing-table-2 .price-block .price .period {
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+.pricing-table-2 .price-block .features {
+	background: #F5F7FA;
+	padding: 25px 35px;
+	border: 1px solid #E6E9ED;
+	border-top: none;
+	border-bottom-width: 2px;
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+	margin-top: 0 !important;
+}
+
+.pricing-table-2 .price-block .features li {
+	padding: 15px 0;
+ 	border-top: 1px solid #BCC7D1;
+	list-style: none;
+}
+
+.pricing-table-2 .price-block .features li:first-child {
+	border: none;
+}
+
+.pricing-table-2 .price-block .features li i {
+	margin-right: 10px;
+}
+
+.pricing-table-2 .col-4 .price-block header {
+	padding: 40px;
+}
+
+.pricing-table-2 .col-4 .price-block h2 {
+	font-size: 18px;
+}
+
+.pricing-table-2 .col-4 .price-block .price .amount {
+	font-size: 90px;
+}
+
+.pricing-table-2 .col-4 .price-block .features {
+	padding: 20px 30px;
+}
+
+/* Ribbon & Colors */
+.ribbon {
+	position: absolute;
+	top: -4px;
+	right: 11px;
+	width: 82px;
+	height: 82px;
+	overflow: hidden;
+	z-index: 10
+}
+
+.red-hot { background: url("../images/ribbons/red-hot.png") 0 0 no-repeat; }
+.best-value { background: url("../images/ribbons/best-value.png") 0 0 no-repeat; }
+.super-cool { background: url("../images/ribbons/super-cool.png") 0 0 no-repeat; }
+.new { background: url("../images/ribbons/new.png") 0 0 no-repeat; }
+.premium { background: url("../images/ribbons/premium.png") 0 0 no-repeat; }
+.exclusive { background: url("../images/ribbons/exclusive.png") 0 0 no-repeat; }
+.popular { background: url("../images/ribbons/popular.png") 0 0 no-repeat; }
+.five-stars { background: url("../images/ribbons/five-stars.png") 0 0 no-repeat; }
+
+
+
+/*	Pricing Table 2 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+/*
+Template Name: Bootstrap Starter Kit - Contact 1
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+
+
+/*	CONTACT 1
+/*----------------------------------------------------*/
+
+.contact-1 .form-container {
+	margin-top: 60px;
+}
+
+.contact-1 .contact-info {
+	margin-top: 40px;
+	padding: 0;
+	list-style: none;
+}
+
+.contact-1 .contact-info span {
+	margin-right: 7px;
+	color: #1abc9c;
+	padding-right: 5px;
+}
+
+.contact-1 .contact-info li {
+	display: inline-block;
+	margin: 0 10px;
+	font-size: 15px;
+	font-weight: 700;
+	color: #2e2e2e
+}
+
+.contact-1 .contact-info li a {
+	color: #2e2e2e
+}
+
+.contact-1 .contact-info li a:hover {
+	color: #1abc9c
+}
+
+#map {
+    width:100%;
+    height:350px;
+}
+
+#contact span.required {
+	font-size: 13px;
+	color: #ff0000;
+}
+
+#message {
+	margin-bottom: 20px;
+	padding: 0;
+}
+
+.error_message {
+	display: block;
+	background: #FBE3E4;
+	padding: 10px 0;
+	color: #8a1f11;
+	border: 2px solid #FBC2C4;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+
+/*	CONTACT 1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+/*
+Template Name: Bootstrap Starter Kit - Contact 3
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+
+
+/*	CONTACT 3
+/*----------------------------------------------------*/
+
+.contact-3 h2 {
+	margin-top: 0;
+}
+
+.contact-3 .map-img {
+	margin-top: 40px;
+}
+
+#contact span.required {
+	font-size: 13px;
+	color: #ff0000;
+}
+
+#message {
+	margin-bottom: 20px;
+	padding: 0;
+}
+
+.error_message {
+	display: block;
+	background: #FBE3E4;
+	padding: 10px 0 10px 15px;
+	color: #8a1f11;
+	border: 2px solid #FBC2C4;
+	border-radius: 6px;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+}
+
+
+/*	CONTACT 3 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+/*
+Template Name: Bootstrap Starter Kit - Blog 1
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+
+
+/*	Blog 1
+/*----------------------------------------------------*/
+
+.blog-1 .post {
+	text-align: center;
+	padding: 10px 0;
+}
+
+.blog-1 .post img {
+	margin: 30px 0;
+}
+
+
+
+
+
+
+
+/*	Blog 1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+	
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+	
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+/*
+Template Name: Bootstrap Starter Kit - Footers 1
+Description: Business Startup & Prototyping HTML Framework
+Author: Theme Spirit
+Author URI: http://www.creativemarket.com/theme_spirit
+
+Version: 1.0
+
+*/
+
+
+
+
+
+
+/*	FOOTER 1-1
+/*----------------------------------------------------*/
+
+.footer-1-1 {
+	padding-top: 60px;
+	padding-bottom: 20px;
+}
+
+.footer-1-1 h3, .footer-1-1 h4, .footer-1-1 .lead, .footer-1-1 li {
+	color: #ffffff;
+}
+
+.footer-1-1 .brand-img {
+	width: 200px;
+	margin-bottom: 30px;
+}
+
+.footer-1-1 h4 {
+	margin-bottom: 20px;
+}
+
+.footer-1-1 ul {
+	list-style-type: none;
+	margin: 0 0 26px;
+	padding: 0;
+}
+
+.footer-1-1 ul li {
+	border-top: 1px solid #bdc3c7;
+	line-height: 19px;
+	padding: 6px 0;
+}
+
+.footer-1-1 li:first-child {
+	border-top: none;
+	padding-top: 1px;
+}
+
+
+/*	FOOTER 1-1 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	FOOTER 1-2
+/*----------------------------------------------------*/
+
+.footer-1-2 {
+	padding-top: 40px;
+	padding-bottom: 30px;
+}
+
+.footer-1-2 .brand-img {
+	margin: 0 auto;
+	width: 150px;
+}
+
+.big-social {
+	margin-top: 20px;
+}
+
+.big-social .social-item {
+	text-align: center;
+}
+
+.big-social .social-item a {
+	display: block;
+	border-radius: 4px;
+	padding: 18px;
+	color: #ffffff;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+.big-social .social-item a h4 {
+	color: #ffffff;
+	visibility: hidden;
+	margin-bottom: 0;
+}
+
+.big-social .social-item a:hover h4, .big-social .social-item a:focus h4 { visibility:visible; }
+
+.big-social .social-item.facebook a:hover, .big-social .social-item.facebook a:focus { background-color:#016bb6; }
+.big-social .social-item.twitter a:hover, .big-social .social-item.twitter a:focus { background-color:#08c1e2; }
+.big-social .social-item.google a:hover, .big-social .social-item.google a:focus { background-color:#d94b34; }
+
+
+/*	FOOTER 1-2 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	FOOTER 1-3
+/*----------------------------------------------------*/
+
+.footer-1-3 {
+	padding-top: 40px;
+	padding-bottom: 10px;
+}
+
+.footer-1-3 .brand-img {
+	width: 180px;
+}
+
+.footer-1-3 .social {
+	margin-top: 20px;
+}
+
+.footer-1-3 .address-bold-line {
+	font-weight: 700;
+	margin: 0;
+	color: #ffffff;
+}
+
+.footer-1-3 .address {
+	color: #ffffff;
+}
+
+.footer-1-3 .footer-text {
+	border-top: #ecf0f1 1px solid;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.footer-1-3 .footer-text p {
+	color: #ecf0f1;
+	
+}
+
+
+/*	FOOTER 1-3 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	FOOTER 1-4
+/*----------------------------------------------------*/
+
+.footer-1-4 {
+	padding-top: 60px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.footer-1-4 h2 {
+	color: #ffffff;
+}
+
+.footer-1-4 .footer-form {
+	margin-top: 40px;
+}
+
+.footer-1-4 input[type=text], .footer-1-4 input[type=email] {
+	background-color: rgba(255, 255, 255, 0.1);
+	border: solid 1px #fff;
+	padding: 20px;
+	width: 30%;
+	color: #fff;
+}
+
+.footer-1-4 input[type=submit] {
+	background: rgba(61, 201, 179, 0.5);
+	border: solid 1px rgba(61, 201, 179, 0.5);
+	padding: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.footer-1-4 input[type=submit]:hover {
+	background: rgba(61, 201, 179, 1);
+	border: solid 1px rgba(61, 201, 179, 1);
+	color: #fff;
+}
+
+.footer-1-4 .social {
+	margin-top: 30px;
+}
+
+
+/*	FOOTER 1-4 MEDIA QUERIES
+/*----------------------------------------------------*/
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	
+		
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	
+
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	
+	
+	
+}
+
+
+
+
+/*	FOOTER Copyright Bar
+/*----------------------------------------------------*/
+
+.copyright-bar {
+	height: 70px;
+	padding-top: 20px;
+	background-color: #233447;
+	position: relative;
+	bottom: 0;
+}
+
+.copyright-bar p {
+	color: #ffffff;
+	font-weight: 700;
+	margin: 0;
+}
+
+
+
+
+/*	FOOTER Copyright Bar 2
+/*----------------------------------------------------*/
+
+.copyright-bar-2 {
+	height: 80px;
+	padding-top: 28px;
+	background-color: #233447;
+	position: relative;
+	bottom: 0;
+}
+
+.copyright-bar-2 p {
+	color: #ffffff;
+	font-weight: 700;
+	margin: 0;
+}

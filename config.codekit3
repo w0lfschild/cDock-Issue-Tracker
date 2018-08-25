@@ -1,0 +1,7498 @@
+{
+"AAInfo": "This is a CodeKit 3 project config file. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. Doing so will cause CodeKit to crash and\/or corrupt your project. I know it looks like JSON, but it is *not*. Many numbers in this file are 64-bit long long bitFlags, which JSON does not support. These numbers *cannot* be treated as discrete values and if you attempt to parse this file as standard JSON with any public JSON parser, these values will be corrupted. This file is not backwards-compatible with CodeKit 1 or 2. For more information, see https:\/\/codekitapp.com\/",
+"buildSteps": [
+	{
+		"name": "Process All Remaining Files and Folders",
+		"stepType": 1,
+		"uuidString": "21C5DF54-BAE4-49A9-BAC0-FB0B43DAB26F"
+		}
+	],
+"creatorBuild": "26680",
+"files": {
+	"\/.editorconfig": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/.editorconfig",
+		"oF": 0
+		},
+	"\/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/.gitignore",
+		"oF": 0
+		},
+	"\/.htaccess": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/.htaccess",
+		"oF": 0
+		},
+	"\/_pgbackup\/cdock_1535097891.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/_pgbackup\/cdock_1535097891.html",
+		"oF": 0
+		},
+	"\/_pgbackup\/cdock_1535097970.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/_pgbackup\/cdock_1535097970.html",
+		"oF": 0
+		},
+	"\/_pgbackup\/cdock_1535098093.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/_pgbackup\/cdock_1535098093.html",
+		"oF": 0
+		},
+	"\/_pgbackup\/cdock_1535098208.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/_pgbackup\/cdock_1535098208.html",
+		"oF": 0
+		},
+	"\/_pgbackup\/cdock_1535098264.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/_pgbackup\/cdock_1535098264.html",
+		"oF": 0
+		},
+	"\/_pgbackup\/cdock_1535098361.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/_pgbackup\/cdock_1535098361.html",
+		"oF": 0
+		},
+	"\/_pgbackup\/cdock_1535098394.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/_pgbackup\/cdock_1535098394.html",
+		"oF": 0
+		},
+	"\/_pgbackup\/Header_1535095275.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/_pgbackup\/Header_1535095275.html",
+		"oF": 0
+		},
+	"\/_pgbackup\/index_1535095299.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/_pgbackup\/index_1535095299.html",
+		"oF": 0
+		},
+	"\/_pgbackup\/pinegrow_1535095275.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535095275-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/_pgbackup\/pinegrow_1535095299.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535095299-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/_pgbackup\/pinegrow_1535097891.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535097891-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/_pgbackup\/pinegrow_1535097945.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535097945-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/_pgbackup\/pinegrow_1535097970.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535097970-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/_pgbackup\/pinegrow_1535098093.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535098093-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/_pgbackup\/pinegrow_1535098208.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535098208-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/_pgbackup\/pinegrow_1535098264.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535098264-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/_pgbackup\/pinegrow_1535098361.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535098361-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/_pgbackup\/pinegrow_1535098394.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/_pgbackup\/pinegrow_1535098394-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/app_cdock.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/app_cdock.html",
+		"oF": 0
+		},
+	"\/app_cYose.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/app_cYose.html",
+		"oF": 0
+		},
+	"\/app_dBoot.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/app_dBoot.html",
+		"oF": 0
+		},
+	"\/app_Flashlight.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/app_Flashlight.html",
+		"oF": 0
+		},
+	"\/app_MacPlus.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/app_MacPlus.html",
+		"oF": 0
+		},
+	"\/app_vTool.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/app_vTool.html",
+		"oF": 0
+		},
+	"\/assets\/js\/ie10-viewport-bug-workaround.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/assets\/js\/ie10-viewport-bug-workaround-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/assets\/js\/jquery.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/assets\/js\/jquery.min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534556845.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534556845-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534556943.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534556943-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534557023.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534557023-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534557040.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534557040-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967741.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967741-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967802.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967802-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967806.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967806-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967904.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967904-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967917.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534967917-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968030.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968030-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968446.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968446-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968488.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968488-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968557.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968557-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968734.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534968734-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969269.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969269-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969506.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969506-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969563.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969563-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969590.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969590-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969635.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969635-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969651.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969651-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969782.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969782-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969808.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969808-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969875.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534969875-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970001.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970001-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970170.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970170-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970257.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970257-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970350.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970350-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970401.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970401-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970442.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970442-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970519.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970519-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970556.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970556-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970701.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970701-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970937.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970937-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970966.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970966-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970997.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534970997-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971136.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971136-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971206.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971206-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971231.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971231-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971305.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971305-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971400.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971400-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971410.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971410-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971419.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971419-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971429.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971429-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971475.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971475-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971576.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971576-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971586.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534971586-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972126.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972126-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972178.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972178-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972604.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972604-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972636.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972636-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972733.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972733-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972916.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972916-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972933.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972933-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972961.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534972961-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973048.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973048-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973091.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973091-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973169.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973169-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973226.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973226-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973279.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973279-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973314.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973314-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973386.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973386-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973425.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973425-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973464.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973464-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973478.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534973478-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975397.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975397-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975562.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975562-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975601.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975601-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975622.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975622-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975756.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975756-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975770.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975770-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975910.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975910-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975976.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534975976-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976051.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976051-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976441.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976441-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976451.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976451-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976613.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976613-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976707.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976707-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976769.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976769-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976794.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976794-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976838.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976838-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976940.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976940-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976963.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534976963-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534977233.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534977233-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978122.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978122-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978180.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978180-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978192.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978192-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978517.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978517-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978551.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978551-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978676.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534978676-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979020.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979020-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979094.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979094-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979161.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979161-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979403.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979403-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979558.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979558-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979764.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979764-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979892.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534979892-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980014.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980014-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980077.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980077-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980510.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980510-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980720.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980720-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980838.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534980838-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981197.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981197-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981217.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981217-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981265.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981265-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981393.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981393-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981850.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981850-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981853.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534981853-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534982139.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534982139-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534982941.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534982941-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534989821.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534989821-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534990069.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534990069-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534990110.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534990110-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534990243.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534990243-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534990735.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534990735-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534992274.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534992274-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534992422.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534992422-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534992642.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534992642-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534993770.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534993770-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995884.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995884-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995948.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995948-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995953.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995953-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995972.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995972-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995986.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534995986-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996074.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996074-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996093.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996093-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996213.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996213-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996319.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996319-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996545.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996545-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996648.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534996648-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534997247.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534997247-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534997980.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534997980-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534998012.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534998012-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534998185.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534998185-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534998453.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534998453-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534999936.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534999936-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534999976.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1534999976-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000044.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000044-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000114.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000114-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000148.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000148-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000195.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000195-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000220.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000220-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000327.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000327-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000338.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000338-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000530.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000530-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000844.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000844-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000897.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000897-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000936.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535000936-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535001028.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535001028-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535001105.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap.min_1535001105-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534552602.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534552602-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534552765.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534552765-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534553571.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534553571-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534553751.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534553751-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534554331.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534554331-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534554525.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534554525-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534554663.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534554663-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534554693.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534554693-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534555294.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534555294-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534555552.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534555552-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534555584.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534555584-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534555605.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534555605-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534555683.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534555683-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534555706.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534555706-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534555819.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534555819-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534555978.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534555978-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534556038.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534556038-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534556168.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534556168-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534556265.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534556265-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534556324.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534556324-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/_pgbackup\/bootstrap_1534556450.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/_pgbackup\/bootstrap_1534556450-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/bootstrap.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/bootstrap-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/css\/bootstrap.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/css\/bootstrap.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/bootstrap\/js\/bootstrap.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/bootstrap\/js\/bootstrap.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/build": {
+		"ft": 65536,
+		"oA": 1,
+		"oAP": "\/build\/build",
+		"oF": 0
+		},
+	"\/cdock.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/cdock.html",
+		"oF": 0
+		},
+	"\/cdock_backup.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/cdock_backup.html",
+		"oF": 0
+		},
+	"\/cdock_changelog.txt": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/cdock_changelog.txt",
+		"oF": 0
+		},
+	"\/classicfolders.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/classicfolders.html",
+		"oF": 0
+		},
+	"\/CNAME": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/CNAME",
+		"oF": 0
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001680.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001680-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001694.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001694-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001785.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001785-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001801.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001801-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001894.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001894-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001925.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001925-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001997.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535001997-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002013.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002013-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002032.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002032-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002065.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002065-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002191.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002191-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002216.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002216-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002275.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002275-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002280.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002280-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002312.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002312-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002321.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002321-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002331.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002331-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002338.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002338-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002363.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002363-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002396.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002396-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002463.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002463-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002501.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535002501-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535004840.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535004840-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535005257.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535005257-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535046493.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535046493-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535047058.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535047058-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535047143.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535047143-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535050555.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535050555-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535050592.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535050592-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051026.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051026-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051039.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051039-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051084.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051084-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051125.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051125-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051223.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051223-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051245.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051245-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051257.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051257-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051267.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051267-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051374.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051374-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051493.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535051493-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535052112.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535052112-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535052367.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535052367-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535095299.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535095299-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535097891.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535097891-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535097970.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535097970-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098093.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098093-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098208.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098208-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098264.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098264-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098361.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098361-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098394.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/blocks_1535098394-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001680.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001680-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001694.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001694-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001785.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001785-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001801.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001801-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001894.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001894-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001925.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001925-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001997.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535001997-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002013.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002013-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002032.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002032-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002065.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002065-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002191.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002191-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002216.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002216-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002275.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002275-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002280.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002280-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002312.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002312-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002321.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002321-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002331.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002331-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002338.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002338-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002363.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002363-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002396.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002396-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002463.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002463-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002501.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535002501-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535004840.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535004840-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535005257.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535005257-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535046493.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535046493-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535047058.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535047058-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535047143.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535047143-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535050555.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535050555-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535050592.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535050592-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051026.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051026-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051039.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051039-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051084.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051084-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051125.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051125-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051223.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051223-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051245.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051245-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051257.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051257-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051267.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051267-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051374.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051374-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051493.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535051493-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535052112.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535052112-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535052367.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535052367-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535095299.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535095299-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535097891.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535097891-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535097970.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535097970-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098093.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098093-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098208.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098208-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098264.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098264-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098361.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098361-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098394.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/plugins_1535098394-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001680.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001680-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001694.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001694-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001785.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001785-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001801.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001801-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001894.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001894-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001925.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001925-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001997.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535001997-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002013.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002013-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002032.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002032-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002065.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002065-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002191.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002191-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002216.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002216-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002275.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002275-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002280.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002280-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002312.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002312-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002321.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002321-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002331.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002331-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002338.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002338-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002363.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002363-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002396.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002396-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002463.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002463-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002501.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535002501-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535004840.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535004840-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535005257.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535005257-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535046493.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535046493-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535047058.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535047058-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535047143.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535047143-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535050555.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535050555-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535050592.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535050592-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051026.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051026-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051039.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051039-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051084.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051084-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051125.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051125-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051223.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051223-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051245.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051245-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051257.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051257-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051267.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051267-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051374.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051374-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051493.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535051493-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535052112.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535052112-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535052367.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535052367-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535095299.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535095299-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535097891.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535097891-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535097970.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535097970-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098093.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098093-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098208.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098208-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098264.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098264-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098361.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098361-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098394.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/_pgbackup\/style-library-1_1535098394-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/blocks.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/blocks-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/plugins.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/plugins-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/css\/style-library-1.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/css\/style-library-1-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/components\/pg.blocks\/images\/600x800.gif": {
+		"ft": 4194304,
+		"iS": 2982,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/600x800.gif",
+		"oF": 0,
+		"opt": 1
+		},
+	"\/components\/pg.blocks\/images\/brand\/pgblocks-logo-nostrap.png": {
+		"ft": 32768,
+		"iS": 15918,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/brand\/pgblocks-logo-nostrap.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/brand\/pgblocks-logo-white-nostrap.png": {
+		"ft": 32768,
+		"iS": 15719,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/brand\/pgblocks-logo-white-nostrap.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/brand\/pgblocks-logo-white.png": {
+		"ft": 32768,
+		"iS": 16596,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/brand\/pgblocks-logo-white.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/brand\/pgblocks-symbol-1.png": {
+		"ft": 32768,
+		"iS": 10221,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/brand\/pgblocks-symbol-1.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/brand\/pgblocks-symbol-2.png": {
+		"ft": 32768,
+		"iS": 9811,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/brand\/pgblocks-symbol-2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/camera-girl.jpg": {
+		"ft": 16384,
+		"iS": 129199,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/camera-girl.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/dark-logs-bg.jpg": {
+		"ft": 16384,
+		"iS": 504538,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/dark-logs-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/gold-iphone.png": {
+		"ft": 32768,
+		"iS": 66251,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/gold-iphone.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/header-3-bg.jpg": {
+		"ft": 16384,
+		"iS": 26102,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/header-3-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/low-poly-1.jpg": {
+		"ft": 16384,
+		"iS": 21511,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/low-poly-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/low-poly-2.jpg": {
+		"ft": 16384,
+		"iS": 19909,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/low-poly-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/map-pin.png": {
+		"ft": 32768,
+		"iS": 3184,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/map-pin.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/palm-trees.jpg": {
+		"ft": 16384,
+		"iS": 224528,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/palm-trees.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/partner-logos\/logo-angularjs.png": {
+		"ft": 32768,
+		"iS": 19265,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/partner-logos\/logo-angularjs.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/partner-logos\/logo-bootstrap.png": {
+		"ft": 32768,
+		"iS": 16301,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/partner-logos\/logo-bootstrap.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/partner-logos\/logo-bower.png": {
+		"ft": 32768,
+		"iS": 14981,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/partner-logos\/logo-bower.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/partner-logos\/logo-grunt.png": {
+		"ft": 32768,
+		"iS": 15445,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/partner-logos\/logo-grunt.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/partner-logos\/logo-jquery.png": {
+		"ft": 32768,
+		"iS": 24054,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/partner-logos\/logo-jquery.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/partner-logos\/logo-less.png": {
+		"ft": 32768,
+		"iS": 28931,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/partner-logos\/logo-less.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/partner-logos\/logo-sass.png": {
+		"ft": 32768,
+		"iS": 6720,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/partner-logos\/logo-sass.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/partner-logos\/logo-yeoman.png": {
+		"ft": 32768,
+		"iS": 18354,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/partner-logos\/logo-yeoman.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/project-1.jpg": {
+		"ft": 16384,
+		"iS": 105049,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/project-1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/project-2.jpg": {
+		"ft": 16384,
+		"iS": 90951,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/project-2.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/project-3.jpg": {
+		"ft": 16384,
+		"iS": 128914,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/project-3.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/project-4.jpg": {
+		"ft": 16384,
+		"iS": 102457,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/project-4.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/best-value.png": {
+		"ft": 32768,
+		"iS": 2767,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/best-value.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/best-value@2x.png": {
+		"ft": 32768,
+		"iS": 4183,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/best-value@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/exclusive.png": {
+		"ft": 32768,
+		"iS": 3085,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/exclusive.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/exclusive@2x.png": {
+		"ft": 32768,
+		"iS": 4245,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/exclusive@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/five-stars.png": {
+		"ft": 32768,
+		"iS": 2879,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/five-stars.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/five-stars@2x.png": {
+		"ft": 32768,
+		"iS": 4212,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/five-stars@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/new.png": {
+		"ft": 32768,
+		"iS": 2333,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/new.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/new@2x.png": {
+		"ft": 32768,
+		"iS": 3090,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/new@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/popular.png": {
+		"ft": 32768,
+		"iS": 2835,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/popular.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/popular@2x.png": {
+		"ft": 32768,
+		"iS": 3907,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/popular@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/premium.png": {
+		"ft": 32768,
+		"iS": 2728,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/premium.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/premium@2x.png": {
+		"ft": 32768,
+		"iS": 3762,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/premium@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/red-hot.png": {
+		"ft": 32768,
+		"iS": 2734,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/red-hot.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/red-hot@2x.png": {
+		"ft": 32768,
+		"iS": 3848,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/red-hot@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/super-cool.png": {
+		"ft": 32768,
+		"iS": 3021,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/super-cool.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/ribbons\/super-cool@2x.png": {
+		"ft": 32768,
+		"iS": 4477,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/ribbons\/super-cool@2x.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/seagulls.jpg": {
+		"ft": 16384,
+		"iS": 61285,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/seagulls.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/star-sky.jpg": {
+		"ft": 16384,
+		"iS": 274108,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/star-sky.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/typewriter-bg.jpg": {
+		"ft": 16384,
+		"iS": 114964,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/typewriter-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/images\/water-bg.jpg": {
+		"ft": 16384,
+		"iS": 58309,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/images\/water-bg.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/components\/pg.blocks\/js\/bskit-scripts.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/js\/bskit-scripts-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/components\/pg.blocks\/js\/plugins.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/components\/pg.blocks\/js\/plugins-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/contact.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/contact.html",
+		"oF": 0
+		},
+	"\/css\/_pgbackup\/blocks_1535095275.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/blocks_1535095275-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/blocks_1535095299.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/blocks_1535095299-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/blocks_1535097891.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/blocks_1535097891-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/blocks_1535097970.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/blocks_1535097970-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/blocks_1535098093.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/blocks_1535098093-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/blocks_1535098208.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/blocks_1535098208-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/blocks_1535098264.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/blocks_1535098264-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/blocks_1535098361.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/blocks_1535098361-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/blocks_1535098394.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/blocks_1535098394-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/custom_1535095275.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/custom_1535095275-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/custom_1535095299.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/custom_1535095299-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/custom_1535097891.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/custom_1535097891-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/custom_1535097970.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/custom_1535097970-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/custom_1535098093.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/custom_1535098093-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/custom_1535098208.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/custom_1535098208-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/custom_1535098264.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/custom_1535098264-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/custom_1535098361.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/custom_1535098361-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/custom_1535098394.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/custom_1535098394-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/plugins_1535095275.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/plugins_1535095275-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/plugins_1535095299.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/plugins_1535095299-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/plugins_1535097891.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/plugins_1535097891-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/plugins_1535097970.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/plugins_1535097970-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/plugins_1535098093.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/plugins_1535098093-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/plugins_1535098208.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/plugins_1535098208-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/plugins_1535098264.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/plugins_1535098264-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/plugins_1535098361.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/plugins_1535098361-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/plugins_1535098394.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/plugins_1535098394-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/style-library-1_1535095275.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/style-library-1_1535095275-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/style-library-1_1535095299.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/style-library-1_1535095299-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/style-library-1_1535097891.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/style-library-1_1535097891-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/style-library-1_1535097970.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/style-library-1_1535097970-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/style-library-1_1535098093.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/style-library-1_1535098093-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/style-library-1_1535098208.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/style-library-1_1535098208-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/style-library-1_1535098264.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/style-library-1_1535098264-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/style-library-1_1535098361.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/style-library-1_1535098361-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/_pgbackup\/style-library-1_1535098394.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/_pgbackup\/style-library-1_1535098394-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/blocks.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/blocks-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/custom.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/custom-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/font-awesome.min.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/font-awesome.min-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/plugins.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/plugins-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/css\/style-library-1.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/style-library-1-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/darkboot.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/darkboot.html",
+		"oF": 0
+		},
+	"\/escapeHTML.sh": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/escapeHTML.sh",
+		"oF": 0
+		},
+	"\/flashlight.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/flashlight.html",
+		"oF": 0
+		},
+	"\/Footer.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/Footer.html",
+		"oF": 0
+		},
+	"\/Footer.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/Footer-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/Header.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/Header.html",
+		"oF": 0
+		},
+	"\/Header.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/Header-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/Header_Old.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/Header_Old.html",
+		"oF": 0
+		},
+	"\/ico\/favicon.png": {
+		"ft": 32768,
+		"iS": 1406,
+		"oA": 0,
+		"oAP": "\/build\/ico\/favicon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/_0.png": {
+		"ft": 32768,
+		"iS": 684134,
+		"oA": 1,
+		"oAP": "\/build\/images\/_0.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/_1.jpg": {
+		"ft": 16384,
+		"iS": 379276,
+		"jF": 0,
+		"oA": 1,
+		"oAP": "\/build\/images\/_1.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
+	"\/images\/banner.png": {
+		"ft": 32768,
+		"iS": 97967,
+		"oA": 0,
+		"oAP": "\/build\/images\/banner.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/example.png": {
+		"ft": 32768,
+		"iS": 4150796,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/example.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/home_about.png": {
+		"ft": 32768,
+		"iS": 455232,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/home_about.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/home_customize.png": {
+		"ft": 32768,
+		"iS": 438103,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/home_customize.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/home_dock.png": {
+		"ft": 32768,
+		"iS": 378659,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/home_dock.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/home_extra.png": {
+		"ft": 32768,
+		"iS": 323361,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/home_extra.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/home_hide.png": {
+		"ft": 32768,
+		"iS": 147907,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/home_hide.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/home_prefs.png": {
+		"ft": 32768,
+		"iS": 283169,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/home_prefs.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/icon1024.png": {
+		"ft": 32768,
+		"iS": 319015,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/icon1024.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/icon64.png": {
+		"ft": 32768,
+		"iS": 6930,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/icon64.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/3d_background.png": {
+		"ft": 32768,
+		"iS": 60224,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/3d_background.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/3d_mini.png": {
+		"ft": 32768,
+		"iS": 48757,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/3d_mini.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/3d_old_school.png": {
+		"ft": 32768,
+		"iS": 64470,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/3d_old_school.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/color_background.png": {
+		"ft": 32768,
+		"iS": 61561,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/color_background.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/color_badges.png": {
+		"ft": 32768,
+		"iS": 60562,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/color_badges.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/color_border.png": {
+		"ft": 32768,
+		"iS": 56693,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/color_border.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/color_folders.png": {
+		"ft": 32768,
+		"iS": 629193,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/color_folders.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/color_indicator.png": {
+		"ft": 32768,
+		"iS": 45941,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/color_indicator.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/color_labels.png": {
+		"ft": 32768,
+		"iS": 95987,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/color_labels.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/color_mission.png": {
+		"ft": 32768,
+		"iS": 42595,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/color_mission.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/color_switcher.png": {
+		"ft": 32768,
+		"iS": 2121808,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/color_switcher.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/cdock\/screens\/generic.png": {
+		"ft": 32768,
+		"iS": 66664,
+		"oA": 0,
+		"oAP": "\/build\/images\/cdock\/screens\/generic.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/classicfolders\/example.png": {
+		"ft": 32768,
+		"iS": 136919,
+		"oA": 0,
+		"oAP": "\/build\/images\/classicfolders\/example.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/dboot\/about.png": {
+		"ft": 32768,
+		"iS": 264424,
+		"oA": 0,
+		"oAP": "\/build\/images\/dboot\/about.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/dboot\/bootcolor.png": {
+		"ft": 32768,
+		"iS": 205270,
+		"oA": 0,
+		"oAP": "\/build\/images\/dboot\/bootcolor.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/dboot\/bootimage.png": {
+		"ft": 32768,
+		"iS": 212417,
+		"oA": 0,
+		"oAP": "\/build\/images\/dboot\/bootimage.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/dboot\/example.png": {
+		"ft": 32768,
+		"iS": 6891807,
+		"oA": 0,
+		"oAP": "\/build\/images\/dboot\/example.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/dboot\/lock.png": {
+		"ft": 32768,
+		"iS": 804055,
+		"oA": 0,
+		"oAP": "\/build\/images\/dboot\/lock.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/dboot\/login.png": {
+		"ft": 32768,
+		"iS": 471520,
+		"oA": 0,
+		"oAP": "\/build\/images\/dboot\/login.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/dboot\/prefs.png": {
+		"ft": 32768,
+		"iS": 172367,
+		"oA": 0,
+		"oAP": "\/build\/images\/dboot\/prefs.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/favicon\/cdock.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/images\/favicon\/cdock.ico",
+		"oF": 0
+		},
+	"\/images\/favicon\/darkboot.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/images\/favicon\/darkboot.ico",
+		"oF": 0
+		},
+	"\/images\/favicon\/w0lfhub.ico": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/images\/favicon\/w0lfhub.ico",
+		"oF": 0
+		},
+	"\/images\/flashlight\/about.png": {
+		"ft": 32768,
+		"iS": 185138,
+		"oA": 0,
+		"oAP": "\/build\/images\/flashlight\/about.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/flashlight\/example.png": {
+		"ft": 32768,
+		"iS": 6646333,
+		"oA": 0,
+		"oAP": "\/build\/images\/flashlight\/example.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/flashlight\/featured.png": {
+		"ft": 32768,
+		"iS": 356781,
+		"oA": 0,
+		"oAP": "\/build\/images\/flashlight\/featured.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/flashlight\/installed.png": {
+		"ft": 32768,
+		"iS": 306860,
+		"oA": 0,
+		"oAP": "\/build\/images\/flashlight\/installed.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/flashlight\/new.png": {
+		"ft": 32768,
+		"iS": 217002,
+		"oA": 0,
+		"oAP": "\/build\/images\/flashlight\/new.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/flashlight\/search.png": {
+		"ft": 32768,
+		"iS": 284811,
+		"oA": 0,
+		"oAP": "\/build\/images\/flashlight\/search.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/flashlight\/spotlight.png": {
+		"ft": 32768,
+		"iS": 507948,
+		"oA": 0,
+		"oAP": "\/build\/images\/flashlight\/spotlight.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/macplus\/about.png": {
+		"ft": 32768,
+		"iS": 316841,
+		"oA": 0,
+		"oAP": "\/build\/images\/macplus\/about.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/macplus\/discover.png": {
+		"ft": 32768,
+		"iS": 391536,
+		"oA": 0,
+		"oAP": "\/build\/images\/macplus\/discover.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/macplus\/example.png": {
+		"ft": 32768,
+		"iS": 6086057,
+		"oA": 0,
+		"oAP": "\/build\/images\/macplus\/example.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/macplus\/manage.png": {
+		"ft": 32768,
+		"iS": 417243,
+		"oA": 0,
+		"oAP": "\/build\/images\/macplus\/manage.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/macplus\/plugin.png": {
+		"ft": 32768,
+		"iS": 329100,
+		"oA": 0,
+		"oAP": "\/build\/images\/macplus\/plugin.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/macplus\/prefs.png": {
+		"ft": 32768,
+		"iS": 233165,
+		"oA": 0,
+		"oAP": "\/build\/images\/macplus\/prefs.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/macplus\/sources.png": {
+		"ft": 32768,
+		"iS": 280152,
+		"oA": 0,
+		"oAP": "\/build\/images\/macplus\/sources.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/macplus\/system.png": {
+		"ft": 32768,
+		"iS": 376200,
+		"oA": 0,
+		"oAP": "\/build\/images\/macplus\/system.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/mysimbl\/about.png": {
+		"ft": 32768,
+		"iS": 316841,
+		"oA": 0,
+		"oAP": "\/build\/images\/mysimbl\/about.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/mysimbl\/discover.png": {
+		"ft": 32768,
+		"iS": 391536,
+		"oA": 0,
+		"oAP": "\/build\/images\/mysimbl\/discover.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/mysimbl\/example.png": {
+		"ft": 32768,
+		"iS": 6086057,
+		"oA": 0,
+		"oAP": "\/build\/images\/mysimbl\/example.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/mysimbl\/manage.png": {
+		"ft": 32768,
+		"iS": 417243,
+		"oA": 0,
+		"oAP": "\/build\/images\/mysimbl\/manage.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/mysimbl\/plugin.png": {
+		"ft": 32768,
+		"iS": 329100,
+		"oA": 0,
+		"oAP": "\/build\/images\/mysimbl\/plugin.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/mysimbl\/prefs.png": {
+		"ft": 32768,
+		"iS": 233165,
+		"oA": 0,
+		"oAP": "\/build\/images\/mysimbl\/prefs.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/mysimbl\/sources.png": {
+		"ft": 32768,
+		"iS": 280152,
+		"oA": 0,
+		"oAP": "\/build\/images\/mysimbl\/sources.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/mysimbl\/system.png": {
+		"ft": 32768,
+		"iS": 376200,
+		"oA": 0,
+		"oAP": "\/build\/images\/mysimbl\/system.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/share\/cat6.png": {
+		"ft": 32768,
+		"iS": 1564,
+		"oA": 0,
+		"oAP": "\/build\/images\/share\/cat6.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/share\/facebook2.png": {
+		"ft": 32768,
+		"iS": 935,
+		"oA": 0,
+		"oAP": "\/build\/images\/share\/facebook2.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/share\/google-plus.png": {
+		"ft": 32768,
+		"iS": 1549,
+		"oA": 0,
+		"oAP": "\/build\/images\/share\/google-plus.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/share\/instagram19.png": {
+		"ft": 32768,
+		"iS": 1140,
+		"oA": 0,
+		"oAP": "\/build\/images\/share\/instagram19.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/share\/linkedin.png": {
+		"ft": 32768,
+		"iS": 1142,
+		"oA": 0,
+		"oAP": "\/build\/images\/share\/linkedin.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/share\/social115.png": {
+		"ft": 32768,
+		"iS": 1696,
+		"oA": 0,
+		"oAP": "\/build\/images\/share\/social115.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/share\/twitter.png": {
+		"ft": 32768,
+		"iS": 1329,
+		"oA": 0,
+		"oAP": "\/build\/images\/share\/twitter.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/share\/youtube31.png": {
+		"ft": 32768,
+		"iS": 1181,
+		"oA": 0,
+		"oAP": "\/build\/images\/share\/youtube31.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
+		},
+	"\/index.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/index.html",
+		"oF": 0
+		},
+	"\/js\/bskit-scripts.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/js\/bskit-scripts-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/jquery-1.11.1.min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/js\/jquery-1.11.1.min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/plugins.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/build\/js\/plugins-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/jumbotron.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/jumbotron-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/macforge.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/macforge.html",
+		"oF": 0
+		},
+	"\/pages\/cdock.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/pages\/cdock.html",
+		"oF": 0
+		},
+	"\/pinegrow.json": {
+		"ft": 524288,
+		"oA": 1,
+		"oAP": "\/build\/pinegrow-min.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
+	"\/style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/build\/style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"\/vpkmacos.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/build\/vpkmacos.html",
+		"oF": 0
+		}
+	},
+"hooks": [
+	{
+		"enabled": 1,
+		"name": "Hook #1",
+		"predicateDataBase64Encoded": "YnBsaXN0MDDUAQIDBAUGYmNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QFgcIDxQcJicqMTU6Oz5CRktMT1VZXV9VJG51bGzTCQoLDA0OXxAXTlNDb21wb3VuZFByZWRpY2F0ZVR5cGVfEA9OU1N1YnByZWRpY2F0ZXNWJGNsYXNzEAKAAoAV0hALERNaTlMub2JqZWN0c6ESgAOAFNQLFRYXGBkaG18QEU5TUmlnaHRFeHByZXNzaW9uXxAQTlNMZWZ0RXhwcmVzc2lvbl8QE05TUHJlZGljYXRlT3BlcmF0b3KAE4AOgASAEdUdHh8gCyEiIyQlWU5TT3BlcmFuZF5OU1NlbGVjdG9yTmFtZV8QEE5TRXhwcmVzc2lvblR5cGVbTlNBcmd1bWVudHOABoAFEAOACIANXHZhbHVlRm9yS2V5OtIfCygpEAGAB9IrLC0uWiRjbGFzc25hbWVYJGNsYXNzZXNfEBBOU1NlbGZFeHByZXNzaW9uoy0vMFxOU0V4cHJlc3Npb25YTlNPYmplY3TSEAsyNKEzgAmADNMLHzY3ODlZTlNLZXlQYXRogAsQCoAKXWlucHV0RnVsbFBhdGjSKyw8PV8QHE5TS2V5UGF0aFNwZWNpZmllckV4cHJlc3Npb26jPC8w0issP0BeTlNNdXRhYmxlQXJyYXmjP0EwV05TQXJyYXnSKyxDRF8QE05TS2V5UGF0aEV4cHJlc3Npb26kQ0UvMF8QFE5TRnVuY3Rpb25FeHByZXNzaW9u00cfC0hJSl8QD05TQ29uc3RhbnRWYWx1ZYAPEACAEF8QFHcwbGZzY2hpbGQuZ2l0aHViLmlv0issTU5fEBlOU0NvbnN0YW50VmFsdWVFeHByZXNzaW9uo00vMNQLUFFSU0koVFpOU01vZGlmaWVyV05TRmxhZ3NeTlNPcGVyYXRvclR5cGWAEhBj0issVldfEBVOU0luUHJlZGljYXRlT3BlcmF0b3KjVlgwXxATTlNQcmVkaWNhdGVPcGVyYXRvctIrLFpbXxAVTlNDb21wYXJpc29uUHJlZGljYXRlo1pcMFtOU1ByZWRpY2F0ZdIrLEFeokEw0issYGFfEBNOU0NvbXBvdW5kUHJlZGljYXRlo2BcMF8QD05TS2V5ZWRBcmNoaXZlctFkZVRyb290gAEACAARABoAIwAtADIANwBQAFYAXQB3AIkAkACSAJQAlgCbAKYAqACqAKwAtQDJANwA8gD0APYA+AD6AQUBDwEeATEBPQE\/AUEBQwFFAUcBVAFZAVsBXQFiAW0BdgGJAY0BmgGjAagBqgGsAa4BtQG\/AcEBwwHFAdMB2AH3AfsCAAIPAhMCGwIgAjYCOwJSAlkCawJtAm8CcQKIAo0CqQKtArYCwQLJAtgC2gLcAuEC+QL9AxMDGAMwAzQDQANFA0gDTQNjA2cDeQN8A4EAAAAAAAACAQAAAAAAAABmAAAAAAAAAAAAAAAAAAADgw==",
+		"runOrder": 0,
+		"scriptSourceString": "",
+		"scriptType": 1,
+		"uuidString": "0427073E-B998-4CAD-A386-0C01C794FBF5"
+		}
+	],
+"manualImportLinks": {
+	},
+"projectAttributes": {
+	"creationDate": 552655436,
+	"displayValue": "macenhance.com",
+	"displayValueWasSetByUser": 1,
+	"iconImageName": "brackets_orange",
+	"iconImageWasSetByUser": 1,
+	"lastBuiltDate": 556787512
+	},
+"projectSettings": {
+	"abortBuildOnError": 1,
+	"alwaysUseExternalServer": 0,
+	"animateCSSInjections": 1,
+	"autoBuildNewItems": 1,
+	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
+	"babelAuxiliaryCommentAfter": "",
+	"babelAuxiliaryCommentBefore": "",
+	"babelConfigFileHandlingType": 0,
+	"babelCustomPluginsList": "",
+	"babelCustomPresetsList": "",
+	"babelInsertModuleIDs": 0,
+	"babelModuleID": "",
+	"babelNoComments": 0,
+	"babelPlugins": {
+		"async-generator-functions": {
+			"active": 0
+			},
+		"async-to-generator": {
+			"active": 0
+			},
+		"async-to-module-method": {
+			"active": 0
+			},
+		"class-properties": {
+			"active": 0
+			},
+		"decorators": {
+			"active": 0
+			},
+		"decorators-legacy": {
+			"active": 0
+			},
+		"do-expressions": {
+			"active": 0
+			},
+		"es2015-arrow-functions": {
+			"active": 0
+			},
+		"es2015-block-scoped-functions": {
+			"active": 0
+			},
+		"es2015-block-scoping": {
+			"active": 0
+			},
+		"es2015-classes": {
+			"active": 0
+			},
+		"es2015-computed-properties": {
+			"active": 0
+			},
+		"es2015-constants": {
+			"active": 0
+			},
+		"es2015-destructuring": {
+			"active": 0
+			},
+		"es2015-duplicate-keys": {
+			"active": 0
+			},
+		"es2015-for-of": {
+			"active": 0
+			},
+		"es2015-function-name": {
+			"active": 0
+			},
+		"es2015-literals": {
+			"active": 0
+			},
+		"es2015-modules-amd": {
+			"active": 0
+			},
+		"es2015-modules-commonjs": {
+			"active": 0
+			},
+		"es2015-modules-systemjs": {
+			"active": 0
+			},
+		"es2015-modules-umd": {
+			"active": 0
+			},
+		"es2015-object-super": {
+			"active": 0
+			},
+		"es2015-parameters": {
+			"active": 0
+			},
+		"es2015-shorthand-properties": {
+			"active": 0
+			},
+		"es2015-spread": {
+			"active": 0
+			},
+		"es2015-sticky-regex": {
+			"active": 0
+			},
+		"es2015-template-literals": {
+			"active": 0
+			},
+		"es2015-typeof-symbol": {
+			"active": 0
+			},
+		"es2015-unicode-regex": {
+			"active": 0
+			},
+		"es3-member-expression-literals": {
+			"active": 0
+			},
+		"es3-property-literals": {
+			"active": 0
+			},
+		"es5-property-mutators": {
+			"active": 0
+			},
+		"eval": {
+			"active": 0
+			},
+		"exponentiation-operator": {
+			"active": 0
+			},
+		"export-extensions": {
+			"active": 0
+			},
+		"external-helpers": {
+			"active": 0
+			},
+		"flow-comments": {
+			"active": 0
+			},
+		"flow-strip-types": {
+			"active": 0
+			},
+		"function-bind": {
+			"active": 0
+			},
+		"inline-environment-variables": {
+			"active": 0
+			},
+		"jscript": {
+			"active": 0
+			},
+		"member-expression-literals": {
+			"active": 0
+			},
+		"merge-sibling-variables": {
+			"active": 0
+			},
+		"minify-booleans": {
+			"active": 0
+			},
+		"node-env-inline": {
+			"active": 0
+			},
+		"object-assign": {
+			"active": 0
+			},
+		"object-rest-spread": {
+			"active": 0
+			},
+		"object-set-prototype-of-to-assign": {
+			"active": 0
+			},
+		"property-literals": {
+			"active": 0
+			},
+		"proto-to-assign": {
+			"active": 0
+			},
+		"react-constant-elements": {
+			"active": 0
+			},
+		"react-display-name": {
+			"active": 0
+			},
+		"react-inline-elements": {
+			"active": 0
+			},
+		"react-jsx": {
+			"active": 0
+			},
+		"react-jsx-compat": {
+			"active": 0
+			},
+		"react-jsx-self": {
+			"active": 0
+			},
+		"react-jsx-source": {
+			"active": 0
+			},
+		"regenerator": {
+			"active": 0
+			},
+		"remove-console": {
+			"active": 0
+			},
+		"remove-debugger": {
+			"active": 0
+			},
+		"runtime": {
+			"active": 0
+			},
+		"simplify-comparison-operators": {
+			"active": 0
+			},
+		"strict-mode": {
+			"active": 0
+			},
+		"syntax-async-generators": {
+			"active": 0
+			},
+		"syntax-class-properties": {
+			"active": 0
+			},
+		"syntax-decorators": {
+			"active": 0
+			},
+		"syntax-do-expressions": {
+			"active": 0
+			},
+		"syntax-export-extensions": {
+			"active": 0
+			},
+		"syntax-flow": {
+			"active": 0
+			},
+		"syntax-function-bind": {
+			"active": 0
+			},
+		"syntax-function-sent": {
+			"active": 0
+			},
+		"syntax-jsx": {
+			"active": 0
+			},
+		"syntax-object-rest-spread": {
+			"active": 0
+			},
+		"undeclared-variables-check": {
+			"active": 0
+			},
+		"undefined-to-void": {
+			"active": 0
+			}
+		},
+	"babelPresetType": 193,
+	"babelRetainLines": 0,
+	"bowerAbbreviatedPath": "bower_components",
+	"bowerAutoCreateInfoFile": 1,
+	"bowerInstallDevDependencies": 0,
+	"bowerSaveDependencies": 1,
+	"bowerSaveDevDependencies": 0,
+	"bowerUseExactVersion": 0,
+	"browserRefreshDelay": 0,
+	"buildFolderActive": 1,
+	"buildFolderName": "build",
+	"cleanBuild": 1,
+	"coffeeLintFlags2": {
+		"arrow_spacing": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"camel_case_classes": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"colon_assignment_spacing": {
+			"active": 0,
+			"flagValue": 1
+			},
+		"cyclomatic_complexity": {
+			"active": 0,
+			"flagValue": 10
+			},
+		"duplicate_key": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"empty_constructor_needs_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"ensure_comprehensions": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"indentation": {
+			"active": 1,
+			"flagValue": 2
+			},
+		"line_endings": {
+			"active": 0,
+			"flagValue": 0
+			},
+		"max_line_length": {
+			"active": 0,
+			"flagValue": 150
+			},
+		"missing_fat_arrows": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"newlines_after_classes": {
+			"active": 0,
+			"flagValue": 3
+			},
+		"no_backticks": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_debugger": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_empty_functions": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_empty_param_list": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_implicit_braces": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_implicit_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_interpolation_in_single_quotes": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_nested_string_interpolation": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_plusplus": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_private_function_fat_arrows": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_stand_alone_at": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_tabs": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_this": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_throwing_strings": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_trailing_semicolons": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_trailing_whitespace": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"no_unnecessary_double_quotes": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"no_unnecessary_fat_arrows": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"non_empty_constructor_needs_parens": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"prefer_english_operator": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"space_operators": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"spacing_after_comma": {
+			"active": 1,
+			"flagValue": -1
+			}
+		},
+	"esLintConfigFileHandlingType": 0,
+	"esLintECMAVersion": 7,
+	"esLintEnvironmentsMask": 1,
+	"esLintRules": {
+		"accessor-pairs": {
+			"active": 0,
+			"optionString": "{'setWithoutGet': true, 'getWithoutSet': false}"
+			},
+		"array-bracket-newline": {
+			"active": 0,
+			"optionString": "{'multiline': true, 'minItems': null}"
+			},
+		"array-bracket-spacing": {
+			"active": 0,
+			"optionString": "'never', {'singleValue': false, 'objectsInArrays': false, 'arraysInArrays': false}"
+			},
+		"array-callback-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
+			},
+		"array-element-newline": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"arrow-body-style": {
+			"active": 0,
+			"optionString": "'as-needed', {'requireReturnForObjectLiteral': false}"
+			},
+		"arrow-parens": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"arrow-spacing": {
+			"active": 0,
+			"optionString": "{'before': true, 'after': true}"
+			},
+		"block-scoped-var": {
+			"active": 0,
+			"optionString": ""
+			},
+		"block-spacing": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"brace-style": {
+			"active": 0,
+			"optionString": "'1tbs', {'allowSingleLine': true}"
+			},
+		"callback-return": {
+			"active": 0,
+			"optionString": "['callback', 'cb', 'next']"
+			},
+		"camelcase": {
+			"active": 0,
+			"optionString": "{'properties': 'always'}"
+			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
+			},
+		"class-methods-use-this": {
+			"active": 0,
+			"optionString": "{'exceptMethods': []}"
+			},
+		"comma-dangle": {
+			"active": 1,
+			"optionString": "'never'"
+			},
+		"comma-spacing": {
+			"active": 0,
+			"optionString": "{'before': false, 'after': true}"
+			},
+		"comma-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
+		"complexity": {
+			"active": 0,
+			"optionString": "20"
+			},
+		"computed-property-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"consistent-return": {
+			"active": 0,
+			"optionString": "{'treatUndefinedAsUnspecified': false}"
+			},
+		"consistent-this": {
+			"active": 0,
+			"optionString": "'that'"
+			},
+		"constructor-super": {
+			"active": 1,
+			"optionString": ""
+			},
+		"curly": {
+			"active": 0,
+			"optionString": "'all'"
+			},
+		"default-case": {
+			"active": 0,
+			"optionString": ""
+			},
+		"dot-location": {
+			"active": 0,
+			"optionString": "'object'"
+			},
+		"dot-notation": {
+			"active": 0,
+			"optionString": "{'allowKeywords': false}"
+			},
+		"eol-last": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"eqeqeq": {
+			"active": 0,
+			"optionString": "'always', {'null': 'always'}"
+			},
+		"for-direction": {
+			"active": 0,
+			"optionString": ""
+			},
+		"func-call-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"func-name-matching": {
+			"active": 0,
+			"optionString": "'always', {'includeCommonJSModuleExports': false}"
+			},
+		"func-names": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"func-style": {
+			"active": 0,
+			"optionString": "'expression'"
+			},
+		"function-paren-newline": {
+			"active": 0,
+			"optionString": "'multiline'"
+			},
+		"generator-star-spacing": {
+			"active": 0,
+			"optionString": "{'before': true, 'after': false}"
+			},
+		"getter-return": {
+			"active": 0,
+			"optionString": "{'allowImplicit': false}"
+			},
+		"global-require": {
+			"active": 0,
+			"optionString": ""
+			},
+		"guard-for-in": {
+			"active": 0,
+			"optionString": ""
+			},
+		"handle-callback-err": {
+			"active": 0,
+			"optionString": "'err'"
+			},
+		"id-blacklist": {
+			"active": 0,
+			"optionString": "'data', 'err', 'e', 'cb', 'callback'"
+			},
+		"id-length": {
+			"active": 0,
+			"optionString": "{'min': 2, 'max': 1000, 'properties': 'always', 'exceptions': ['x', 'i', 'y']}"
+			},
+		"id-match": {
+			"active": 0,
+			"optionString": "'^[a-z]+([A-Z][a-z]+)*$', {'properties': false, 'onlyDeclarations': true}"
+			},
+		"implicit-arrow-linebreak": {
+			"active": 0,
+			"optionString": "'beside'"
+			},
+		"indent": {
+			"active": 0,
+			"optionString": "4, {'SwitchCase': 0, 'VariableDeclarator': 1, 'outerIIFEBody': 1 }"
+			},
+		"init-declarations": {
+			"active": 0,
+			"optionString": "'always',  {'ignoreForLoopInit': true}"
+			},
+		"jsx-quotes": {
+			"active": 0,
+			"optionString": "'prefer-double'"
+			},
+		"key-spacing": {
+			"active": 0,
+			"optionString": "{'singleLine': {'beforeColon': false, 'afterColon': true, 'mode':'strict'}, 'multiLine': {'beforeColon': false, 'afterColon': true, 'align': 'value', 'mode':'minimum'}}"
+			},
+		"keyword-spacing": {
+			"active": 0,
+			"optionString": "{'before': true, 'after': true, 'overrides': {}}"
+			},
+		"line-comment-position": {
+			"active": 0,
+			"optionString": "{'position': 'above'}"
+			},
+		"linebreak-style": {
+			"active": 0,
+			"optionString": "'unix'"
+			},
+		"lines-around-comment": {
+			"active": 0,
+			"optionString": "{'beforeBlockComment': true}"
+			},
+		"lines-between-class-members": {
+			"active": 0,
+			"optionString": "'always', {exceptAfterSingleLine: false}"
+			},
+		"max-depth": {
+			"active": 0,
+			"optionString": "{'max': 4}"
+			},
+		"max-len": {
+			"active": 0,
+			"optionString": "{'code': 80, 'comments': 80, 'tabWidth': 4, 'ignoreUrls': true, 'ignoreStrings': true, 'ignoreTemplateLiterals': true, 'ignoreRegExpLiterals': true}"
+			},
+		"max-lines": {
+			"active": 0,
+			"optionString": "{'max': 300, 'skipBlankLines': true, 'skipComments': true}"
+			},
+		"max-nested-callbacks": {
+			"active": 0,
+			"optionString": "{'max': 10}"
+			},
+		"max-params": {
+			"active": 0,
+			"optionString": "{'max': 4}"
+			},
+		"max-statements": {
+			"active": 0,
+			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
+			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
+			},
+		"multiline-comment-style": {
+			"active": 0,
+			"optionString": "'starred-block'"
+			},
+		"multiline-ternary": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"new-cap": {
+			"active": 0,
+			"optionString": "{'newIsCap': true, 'capIsNew': true, 'newIsCapExceptions': [], 'capIsNewExceptions': ['Array', 'Boolean', 'Date', 'Error', 'Function', 'Number', 'Object', 'RegExp', 'String', 'Symbol'], 'properties': true}"
+			},
+		"new-parens": {
+			"active": 0,
+			"optionString": ""
+			},
+		"newline-per-chained-call": {
+			"active": 0,
+			"optionString": "{'ignoreChainWithDepth': 2}"
+			},
+		"no-alert": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-array-constructor": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-bitwise": {
+			"active": 0,
+			"optionString": "{'allow': ['~'], 'int32Hint': true}"
+			},
+		"no-buffer-constructor": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-caller": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-case-declarations": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-catch-shadow": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-class-assign": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-compare-neg-zero": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-cond-assign": {
+			"active": 1,
+			"optionString": "'except-parens'"
+			},
+		"no-confusing-arrow": {
+			"active": 0,
+			"optionString": "{'allowParens': false}"
+			},
+		"no-console": {
+			"active": 1,
+			"optionString": "{'allow': ['warn', 'error']}"
+			},
+		"no-const-assign": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-constant-condition": {
+			"active": 1,
+			"optionString": "{'checkLoops': true}"
+			},
+		"no-continue": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-control-regex": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-debugger": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-delete-var": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-div-regex": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-dupe-args": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-dupe-class-members": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-dupe-keys": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-duplicate-imports": {
+			"active": 0,
+			"optionString": "{'includeExports': false}"
+			},
+		"no-else-return": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-empty": {
+			"active": 1,
+			"optionString": "{'allowEmptyCatch': false}"
+			},
+		"no-empty-character-class": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-empty-function": {
+			"active": 0,
+			"optionString": "{'allow': []}"
+			},
+		"no-empty-pattern": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-eq-null": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-eval": {
+			"active": 0,
+			"optionString": "{'allowIndirect': false}"
+			},
+		"no-ex-assign": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-extend-native": {
+			"active": 0,
+			"optionString": "{'exceptions': []}"
+			},
+		"no-extra-bind": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-extra-boolean-cast": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-extra-labels": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-extra-parens": {
+			"active": 0,
+			"optionString": "'all', {'conditionalAssign': false, 'returnAssign': false, 'nestedBinaryExpressions': false, 'ignoreJSX': 'none', 'enforceForArrowConditionals': false}"
+			},
+		"no-extra-semi": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-fallthrough": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-floating-decimal": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-func-assign": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-global-assign": {
+			"active": 1,
+			"optionString": "{'exceptions': []}"
+			},
+		"no-implicit-coercion": {
+			"active": 0,
+			"optionString": "{'boolean': true, 'number': true, 'string': true, 'allow': []}"
+			},
+		"no-implicit-globals": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-implied-eval": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-inline-comments": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-inner-declarations": {
+			"active": 1,
+			"optionString": "'functions'"
+			},
+		"no-invalid-regexp": {
+			"active": 1,
+			"optionString": "{'allowConstructorFlags': ['u', 'y']}"
+			},
+		"no-invalid-this": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-irregular-whitespace": {
+			"active": 1,
+			"optionString": "{'skipStrings': true, 'skipComments': false, 'skipRegExps': true, 'skipTemplates': true}"
+			},
+		"no-iterator": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-label-var": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-labels": {
+			"active": 0,
+			"optionString": "{'allowLoop': false, 'allowSwitch': false}"
+			},
+		"no-lone-blocks": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-lonely-if": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-loop-func": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-magic-numbers": {
+			"active": 0,
+			"optionString": "{'ignore': [], 'ignoreArrayIndexes': true, 'enforceConst': false, 'detectObjects': false}"
+			},
+		"no-mixed-operators": {
+			"active": 0,
+			"optionString": "{'groups': [['+', '-', '*', '\/', '%', '**'], ['&', '|', '^', '~', '<<', '>>', '>>>'], ['==', '!=', '===', '!==', '>', '>=', '<', '<='], ['&&', '||'], ['in', 'instanceof']], 'allowSamePrecedence': true}"
+			},
+		"no-mixed-requires": {
+			"active": 0,
+			"optionString": "{'grouping': false, 'allowCall': false }"
+			},
+		"no-mixed-spaces-and-tabs": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-multi-assign": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-multi-spaces": {
+			"active": 0,
+			"optionString": "{'exceptions': {'Property': true, 'BinaryExpression': false, 'VariableDeclarator': false, 'ImportDeclaration': false}}"
+			},
+		"no-multi-str": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-multiple-empty-lines": {
+			"active": 0,
+			"optionString": "{'max': 2, 'maxBOF': 2, 'maxEOF': 2}"
+			},
+		"no-negated-condition": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-nested-ternary": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-new": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-new-func": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-new-object": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-new-require": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-new-symbol": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-new-wrappers": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-obj-calls": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-octal": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-octal-escape": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-param-reassign": {
+			"active": 0,
+			"optionString": "{'props': false}"
+			},
+		"no-path-concat": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-plusplus": {
+			"active": 0,
+			"optionString": "{'allowForLoopAfterthoughts': false}"
+			},
+		"no-process-env": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-process-exit": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-proto": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-prototype-builtins": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-redeclare": {
+			"active": 1,
+			"optionString": "{'builtinGlobals': false}"
+			},
+		"no-regex-spaces": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-restricted-globals": {
+			"active": 0,
+			"optionString": "'event', 'fdescribe'"
+			},
+		"no-restricted-imports": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-restricted-modules": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-restricted-properties": {
+			"active": 0,
+			"optionString": "[{'object': 'disallowedObjectName', 'property': 'disallowedPropertyName'}, {'object': 'disallowedObjectName', 'property': 'anotherDisallowedPropertyName', 'message': 'Please use allowedObjectName.allowedPropertyName.'}]"
+			},
+		"no-restricted-syntax": {
+			"active": 0,
+			"optionString": "'FunctionExpression', 'WithStatement'"
+			},
+		"no-return-assign": {
+			"active": 0,
+			"optionString": "'except-parens'"
+			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-script-url": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-self-assign": {
+			"active": 1,
+			"optionString": "{'props': false}"
+			},
+		"no-self-compare": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-sequences": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-shadow": {
+			"active": 0,
+			"optionString": "{'builtinGlobals': false, 'hoist': 'functions', 'allow': []}"
+			},
+		"no-shadow-restricted-names": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-sparse-arrays": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-sync": {
+			"active": 0,
+			"optionString": "{'allowAtRootLevel': false}"
+			},
+		"no-tabs": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-template-curly-in-string": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-ternary": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-this-before-super": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-throw-literal": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-trailing-spaces": {
+			"active": 0,
+			"optionString": "{'skipBlankLines': false, 'ignoreComments': false}"
+			},
+		"no-undef": {
+			"active": 1,
+			"optionString": "{'typeof': false}"
+			},
+		"no-undef-init": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-undefined": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-underscore-dangle": {
+			"active": 0,
+			"optionString": "{'allow': [], 'allowAfterThis': false, 'allowAfterSuper': false, 'enforceInMethodNames': false}"
+			},
+		"no-unexpected-multiline": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-unmodified-loop-condition": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-unneeded-ternary": {
+			"active": 0,
+			"optionString": "{'defaultAssignment': true}"
+			},
+		"no-unreachable": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-unsafe-finally": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-unsafe-negation": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-unused-expressions": {
+			"active": 0,
+			"optionString": "{'allowShortCircuit': false, 'allowTernary': false, 'allowTaggedTemplates': false}"
+			},
+		"no-unused-labels": {
+			"active": 1,
+			"optionString": ""
+			},
+		"no-unused-vars": {
+			"active": 1,
+			"optionString": "{'vars': 'all', 'args': 'after-used', 'caughtErrors': 'none', 'ignoreRestSiblings': false}"
+			},
+		"no-use-before-define": {
+			"active": 0,
+			"optionString": "{'functions': true, 'classes': true, 'variables': true}"
+			},
+		"no-useless-call": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-useless-computed-key": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-useless-concat": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-useless-constructor": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-useless-escape": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-useless-rename": {
+			"active": 0,
+			"optionString": "{'ignoreDestructuring': false, 'ignoreImport': false, 'ignoreExport': false}"
+			},
+		"no-useless-return": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-var": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-void": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-warning-comments": {
+			"active": 0,
+			"optionString": "{'terms': ['todo', 'fixme', 'xxx'], 'location': 'start'}"
+			},
+		"no-whitespace-before-property": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-with": {
+			"active": 0,
+			"optionString": ""
+			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
+			},
+		"object-curly-newline": {
+			"active": 0,
+			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
+			},
+		"object-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"object-property-newline": {
+			"active": 0,
+			"optionString": "{'allowAllPropertiesOnSameLine': true}"
+			},
+		"object-shorthand": {
+			"active": 0,
+			"optionString": "'always', {'avoidQuotes': false, 'ignoreConstructors': false}"
+			},
+		"one-var": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"one-var-declaration-per-line": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"operator-assignment": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"operator-linebreak": {
+			"active": 0,
+			"optionString": "'after', {'overrides': {'?': 'after', '+=': 'none'}}"
+			},
+		"padded-blocks": {
+			"active": 0,
+			"optionString": "{'blocks': 'always', 'switches': 'always', 'classes': 'always'}"
+			},
+		"padding-line-between-statements": {
+			"active": 0,
+			"optionString": "{blankLine: 'always', prev:'*', next:'return'}"
+			},
+		"prefer-arrow-callback": {
+			"active": 0,
+			"optionString": ""
+			},
+		"prefer-const": {
+			"active": 0,
+			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
+			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
+		"prefer-numeric-literals": {
+			"active": 0,
+			"optionString": ""
+			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
+			},
+		"prefer-rest-params": {
+			"active": 0,
+			"optionString": ""
+			},
+		"prefer-spread": {
+			"active": 0,
+			"optionString": ""
+			},
+		"prefer-template": {
+			"active": 0,
+			"optionString": ""
+			},
+		"quote-props": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"quotes": {
+			"active": 0,
+			"optionString": "'double', {'avoidEscape': true, 'allowTemplateLiterals': true}"
+			},
+		"radix": {
+			"active": 0,
+			"optionString": "'always'"
+			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
+			},
+		"require-jsdoc": {
+			"active": 0,
+			"optionString": "{'require': {'FunctionDeclaration': true, 'MethodDefinition': false, 'ClassDeclaration': false, 'ArrowFunctionExpression': false}}"
+			},
+		"require-yield": {
+			"active": 1,
+			"optionString": ""
+			},
+		"rest-spread-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"semi": {
+			"active": 0,
+			"optionString": "'always', {'omitLastInOneLineBlock': false}"
+			},
+		"semi-spacing": {
+			"active": 0,
+			"optionString": "{'before': false, 'after': true}"
+			},
+		"semi-style": {
+			"active": 0,
+			"optionString": "'last'"
+			},
+		"sort-imports": {
+			"active": 0,
+			"optionString": "{'ignoreCase': false, 'ignoreMemberSort': true, 'memberSyntaxSortOrder': ['none', 'all', 'multiple', 'single']}"
+			},
+		"sort-keys": {
+			"active": 0,
+			"optionString": "'asc', {'caseSensitive': true, 'natural': false}"
+			},
+		"sort-vars": {
+			"active": 0,
+			"optionString": "{'ignoreCase': false}"
+			},
+		"space-before-blocks": {
+			"active": 0,
+			"optionString": "{'functions': 'always', 'keywords': 'always', 'classes': 'always'}"
+			},
+		"space-before-function-paren": {
+			"active": 0,
+			"optionString": "{'anonymous': 'always', 'named': 'never'}"
+			},
+		"space-in-parens": {
+			"active": 0,
+			"optionString": "'never', {'exceptions': []}"
+			},
+		"space-infix-ops": {
+			"active": 0,
+			"optionString": "{'int32Hint': false}"
+			},
+		"space-unary-ops": {
+			"active": 0,
+			"optionString": "{'words': true, 'nonwords': false, 'overrides': {}}"
+			},
+		"spaced-comment": {
+			"active": 0,
+			"optionString": "'always', {'line': {'markers': ['\/'], 'exceptions': ['-', '+']}, 'block': {'markers': ['!'], 'exceptions': ['*'], 'balanced': false}}"
+			},
+		"strict": {
+			"active": 0,
+			"optionString": "'safe'"
+			},
+		"switch-colon-spacing": {
+			"active": 0,
+			"optionString": "{'after': true, 'before': false}"
+			},
+		"symbol-description": {
+			"active": 0,
+			"optionString": ""
+			},
+		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"unicode-bom": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"use-isnan": {
+			"active": 1,
+			"optionString": ""
+			},
+		"valid-jsdoc": {
+			"active": 0,
+			"optionString": "{'prefer': {'return': 'returns'}, 'requireReturn': true, 'requireReturnDescription': true, 'requireReturnType': true, 'requireParamDescription': true}"
+			},
+		"valid-typeof": {
+			"active": 1,
+			"optionString": "{'requireStringLiterals': true}"
+			},
+		"vars-on-top": {
+			"active": 0,
+			"optionString": ""
+			},
+		"wrap-iife": {
+			"active": 0,
+			"optionString": "'outside'"
+			},
+		"wrap-regex": {
+			"active": 0,
+			"optionString": ""
+			},
+		"yield-star-spacing": {
+			"active": 0,
+			"optionString": "{'before': false, 'after': true}"
+			},
+		"yoda": {
+			"active": 0,
+			"optionString": "'never', {'exceptRange': false, 'onlyEquality': false}"
+			}
+		},
+	"esLintSourceType": 0,
+	"externalServerAddress": "http:\/\/localhost:8888",
+	"gitIgnoreBuildFolder": 1,
+	"hideConfigFile": 0,
+	"jsCheckerReservedNamesString": "",
+	"jsHintFlags2": {
+		"asi": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"bitwise": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"boss": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"browser": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"browserify": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"camelcase": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"couch": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"curly": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"debug": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"devel": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"dojo": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"elision": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"eqeqeq": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"eqnull": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"es3": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"esnext": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"evil": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"expr": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"forin": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"freeze": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"funcscope": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"futurehostile": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"globalstrict": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"immed": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"indent": {
+			"active": 0,
+			"flagValue": 4
+			},
+		"iterator": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"jasmine": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"jquery": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"lastsemic": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"latedef": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"laxbreak": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"laxcomma": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"loopfunc": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"maxcomplexity": {
+			"active": 0,
+			"flagValue": 10
+			},
+		"maxdepth": {
+			"active": 0,
+			"flagValue": 3
+			},
+		"maxlen": {
+			"active": 0,
+			"flagValue": 150
+			},
+		"maxparams": {
+			"active": 0,
+			"flagValue": 3
+			},
+		"maxstatements": {
+			"active": 0,
+			"flagValue": 4
+			},
+		"mocha": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"mootools": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"moz": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"multistr": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"newcap": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"noarg": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"nocomma": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"node": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"noempty": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"nonbsp": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"nonew": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"nonstandard": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"notypeof": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"noyield": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"onecase": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"phantom": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"plusplus": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"proto": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"prototypejs": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"qunit": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"regexp": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"rhino": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"scripturl": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"shadow": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"shelljs": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"singleGroups": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"strict": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"sub": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"supernew": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"typed": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"undef": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"unused": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"varstmt": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"withstmt": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"worker": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"wsh": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"yui": {
+			"active": 0,
+			"flagValue": -1
+			}
+		},
+	"jsLintFlags2": {
+		"bitwise": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"browser": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"couch": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"devel": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"es6": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"eval": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"for": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"maxlen": {
+			"active": 0,
+			"flagValue": 150
+			},
+		"node": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"this": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"white": {
+			"active": 0,
+			"flagValue": -1
+			}
+		},
+	"languageDefaultsCOFFEE": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.js",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"createSourceMap": 0,
+		"minifyOutput": 1,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1,
+		"transpilerStyle": 1
+		},
+	"languageDefaultsCSS": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*-min.css",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"createSourceMap": 0,
+		"outputStyle": 3,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0
+		},
+	"languageDefaultsGIF": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.gif",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0
+		},
+	"languageDefaultsHAML": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.html",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"escapeHTMLCharacters": 0,
+		"noEscapeInAttributes": 0,
+		"outputFormat": 2,
+		"outputStyle": 0,
+		"shouldRunCacheBuster": 0,
+		"useCDATA": 0,
+		"useDoubleQuotes": 0,
+		"useUnixNewlines": 0
+		},
+	"languageDefaultsJPG": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.jpg",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
+		"quality": 100
+		},
+	"languageDefaultsJS": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*-min.js",
+		"autoOutputPathRelativePath": "\/min",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"createSourceMap": 0,
+		"minifyOutput": 1,
+		"syntaxCheckerStyle": 3,
+		"transpilerStyle": 0
+		},
+	"languageDefaultsJSON": {
+		"autoOutputAction": 1,
+		"autoOutputPathFilenamePattern": "*-min.json",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"orderOutput": 0,
+		"outputStyle": 1
+		},
+	"languageDefaultsKIT": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.html",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "kit",
+		"autoOutputPathReplace2": "html",
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
+		},
+	"languageDefaultsLESS": {
+		"allowInsecureImports": 0,
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.css",
+		"autoOutputPathRelativePath": "..\/css",
+		"autoOutputPathReplace1": "less",
+		"autoOutputPathReplace2": "css",
+		"autoOutputPathStyle": 0,
+		"createSourceMap": 1,
+		"disableJavascript": 0,
+		"ieCompatibility": 1,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
+		},
+	"languageDefaultsMARKDOWN": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.html",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"criticStyle": 0,
+		"enableFootnotes": 1,
+		"enableLabels": 1,
+		"enableSmartQuotes": 1,
+		"maskEmailAddresses": 1,
+		"outputFormat": 0,
+		"outputStyle": 0,
+		"parseMetadata": 1,
+		"processHTML": 0,
+		"randomFootnoteNumbers": 0,
+		"shouldRunCacheBuster": 0,
+		"useCompatibilityMode": 0
+		},
+	"languageDefaultsOTHER": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.*",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"shouldRunCacheBuster": 0
+		},
+	"languageDefaultsPNG": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.png",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"optimizerType": 1,
+		"quality": 100
+		},
+	"languageDefaultsPUG": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.html",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"compileDebug": 1,
+		"outputStyle": 0,
+		"shouldRunCacheBuster": 0
+		},
+	"languageDefaultsSASS": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.css",
+		"autoOutputPathRelativePath": "..\/css",
+		"autoOutputPathReplace1": "sass",
+		"autoOutputPathReplace2": "css",
+		"autoOutputPathStyle": 0,
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 1
+		},
+	"languageDefaultsSLIM": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.html",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"compileOnly": 0,
+		"logicless": 0,
+		"outputFormat": 0,
+		"outputStyle": 1,
+		"railsCompatible": 0,
+		"shouldRunCacheBuster": 0
+		},
+	"languageDefaultsSTYLUS": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.css",
+		"autoOutputPathRelativePath": "..\/css",
+		"autoOutputPathReplace1": "stylus",
+		"autoOutputPathReplace2": "css",
+		"autoOutputPathStyle": 0,
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"importCSS": 0,
+		"outputStyle": 0,
+		"resolveRelativeURLS": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0
+		},
+	"languageDefaultsSVG": {
+		"autoOutputAction": 2,
+		"autoOutputPathFilenamePattern": "*.svg",
+		"autoOutputPathRelativePath": "",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"pluginMask": 3758088159
+		},
+	"languageDefaultsTS": {
+		"autoOutputAction": 0,
+		"autoOutputPathFilenamePattern": "*.js",
+		"autoOutputPathRelativePath": "\/js",
+		"autoOutputPathReplace1": "",
+		"autoOutputPathReplace2": "",
+		"autoOutputPathStyle": 0,
+		"createDeclarationFile": 0,
+		"createSourceMap": 0,
+		"jsxMode": 0,
+		"minifyOutput": 0,
+		"moduleResolutionType": 0,
+		"moduleType": 2,
+		"noImplicitAny": 0,
+		"preserveConstEnums": 0,
+		"removeComments": 0,
+		"suppressImplicitAnyIndexErrors": 0,
+		"targetECMAVersion": 0
+		},
+	"languageDefaultsUserDefined": [
+		],
+	"overrideExternalServerCSS": 0,
+	"previewPathAddition": "",
+	"skippedFoldersString": "log, _logs, logs, _cache, cache, .idea, \/storage\/framework\/sessions, node_modules",
+	"sourceFolderName": "source",
+	"susyVersion": 3,
+	"uglifyDefinesString": "",
+	"uglifyFlags2": {
+		"ascii-only": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"bare-returns": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"booleans": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"bracketize": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"cascade": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"comments": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"comparisons": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"compress": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"conditionals": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"dead_code": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"drop_console": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"drop_debugger": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"eval": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"evaluate": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"hoist_funs": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"hoist_vars": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"if_return": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"indent-level": {
+			"active": 0,
+			"flagValue": 4
+			},
+		"indent-start": {
+			"active": 0,
+			"flagValue": 0
+			},
+		"inline-script": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"join_vars": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"keep_fargs": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"keep_fnames": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"loops": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"mangle": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"max-line-len": {
+			"active": 1,
+			"flagValue": 32000
+			},
+		"negate_iife": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"properties": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"pure_getters": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"quote-keys": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"screw-ie8": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"semicolons": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"sequences": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"sort": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"space-colon": {
+			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"toplevel": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unsafe": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"unused": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"warnings": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"width": {
+			"active": 1,
+			"flagValue": 80
+			}
+		},
+	"uglifyReservedNamesString": "$",
+	"websiteRelativeRoot": "\/build"
+	},
+"settingsFileVersion": "3"
+}

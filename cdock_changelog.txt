@@ -1,0 +1,295 @@
+<div class="tab-pane fade" id="tab3">
+    <h3 class="text-center">Changelog</h3>
+    
+    <div>
+    </div>
+
+    <div class="row">
+        <ul>
+            <hr/>
+            <a href="https://github.com/w0lfschild/app_updates/blob/master/cDock/cDock_1.1.3.zip" class="btn btn-default btn-sm"><i class="fas fa-download"></i> 1.1.3</a>              
+            <li>
+                <span class="label label-primary" style="">Improved</span> Lorem ipsum dolor sit amet
+            </li>             
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Consectetur adipiscing elit
+            </li>             
+            <li>
+                <span class="label label-success" style="">New</span> Integer molestie lorem at massa
+            </li>             
+            <li>
+                <span class="label label-danger" style="">Removed</span> Nulla volutpat aliquam velit             
+            </li>
+        </ul>
+
+        <ul>
+            <hr/>
+            <a href="https://github.com/w0lfschild/app_updates/blob/master/cDock/cDock_1.1.2.zip" class="btn btn-default btn-sm"><i class="fas fa-download"></i> 1.1.2</a>              
+            <li>
+                <span class="label label-primary" style="">Improved</span> Lorem ipsum dolor sit amet
+            </li>             
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Consectetur adipiscing elit
+            </li>             
+            <li>
+                <span class="label label-success" style="">New</span> Integer molestie lorem at massa
+            </li>             
+            <li>
+                <span class="label label-danger" style="">Removed</span> Nulla volutpat aliquam velit             
+            </li>
+        </ul>
+
+        <ul>
+            <hr/>
+            <a href="https://github.com/w0lfschild/app_updates/blob/master/cDock/cDock_1.1.1.zip" class="btn btn-default btn-sm"><i class="fas fa-download"></i> 1.1.1</a>              
+            <li>
+                <span class="label label-primary" style="">Improved</span> Lorem ipsum dolor sit amet
+            </li>             
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Consectetur adipiscing elit
+            </li>             
+            <li>
+                <span class="label label-success" style="">New</span> Integer molestie lorem at massa
+            </li>             
+            <li>
+                <span class="label label-danger" style="">Removed</span> Nulla volutpat aliquam velit             
+            </li>
+        </ul>
+
+        <ul>
+            <hr/>
+            <a href="https://github.com/w0lfschild/app_updates/blob/master/cDock/cDock_1.0.4.zip" class="btn btn-default btn-sm"><i class="fas fa-download"></i> 1.0.4</a>                           
+            <li>
+                <span class="label label-warning" style="">Fixed</span> cDock Helper crash on launch
+            </li>
+            <li>
+                <span class="label label-primary" style="">Improved</span> Automatically expanding spaces when entering Mission Control to be instant
+            </li>           
+        </ul>
+
+        <ul>
+            <hr/>
+            <a href="https://github.com/w0lfschild/app_updates/blob/master/cDock/cDock_1.0.3.zip" class="btn btn-default btn-sm"><i class="fas fa-download"></i> 1.0.3</a>  
+            <li>
+                <span class="label label-success" style="">New</span> Show/Hide iCloud Drive icon in Dock
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Show/Hide AirDrop icon in Dock
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Show/Hide Launchpad new item dot
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Launchpad adjust row and column count
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Ability to delete saved Dock backups
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Button to show license
+            </li>
+             
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Dock preference backups not showing in some cases
+            </li>             
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Indicator miss-alignment on Left / Right positioning
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Conflict with TotalSpaces
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Case where app could hang when communicating with the Dock
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Case where Dock would freeze when restarting and loading the cDock bundle
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Case where helper could crash when trying to load the cDock bundle
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> cDock Helper not using app icon
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> cDock Helper not checking for updates
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Unhandled exception when trying to use non RGBA color picker
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Issue where switching themes back and forth would decrease slider values
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Issue where Left / Right position dock would draw custom indicator images incorrectly
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Show Finder and Show trash default to on if the key does not exist in the theme
+            </li> 
+
+            <li>
+                <span class="label label-primary" style="">Improved</span> Updated PaddleFramework to latest version
+            </li>
+        </ul>
+
+         <ul>
+            <hr/>
+            <a href="https://github.com/w0lfschild/app_updates/blob/master/cDock/cDock_1.0.2.zip" class="btn btn-default btn-sm"><i class="fas fa-download"></i> 1.0.2</a>                                       
+            <li>
+                <span class="label label-success" style="">New</span> Extended trial to 2 weeks
+            </li>   
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Corrected a few typos
+            </li>          
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Update a few instances of linking to http:// > https://
+            </li>
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Revert StartAtLoginController change 
+            </li>
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Fix system component update failing
+            </li>
+        </ul>
+
+         <ul>
+            <hr/>
+            <a href="https://github.com/w0lfschild/app_updates/blob/master/cDock/cDock_1.0.1.zip" class="btn btn-default btn-sm"><i class="fas fa-download"></i> 1.0.1</a>                           
+            <li>
+                <span class="label label-success" style="">New</span> Pinning the dock to an edge of the screen
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Hide Finder tile
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Hide Trash tile
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Show item count badge on Trash tile
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Color icon badges background
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Color Mission Control background
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Control some default Dock settings without restarting the Dock
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> More options for showing icon reflections
+            </li>
+            <li>
+                <span class="label label-success" style="">New</span> Dim inactive icons
+            </li>  
+            <li>
+                <span class="label label-success" style="">New</span> Small spacer tiles
+            </li> 
+            <li>
+                <span class="label label-success" style="">New</span> Add or Remove themes without restarting cDock
+            </li> 
+            <li>
+                <span class="label label-success" style="">New</span> Automatically expand spaces when entering Mission Control
+            </li> 
+            <li>
+                <span class="label label-success" style="">New</span> New themes
+            </li> 
+            <li>
+                <span class="label label-success" style="">New</span> New Icon
+            </li> 
+            <li>
+                <span class="label label-success" style="">New</span> Crash protection (in case a macOS update causes repeated Dock crashing)
+            </li> 
+
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Dock crash when switching between some themes
+            </li> 
+            <li>
+                <span class="label label-warning" style="">Fixed</span> 3D option not working in some cases
+            </li>
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Issue with Vertical Full screen dock and magnification enabled
+            </li>
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Label background not fully applying on folder views
+            </li>
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Lots of changes to theme not applying until Dock restart
+            </li>
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Better Dock reloading
+            </li>
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Better Dock layering (Badge > Icon > Indicator > Reflection)
+            </li>
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Issues with reduced transparency enabled
+            </li>
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Helper Application is now CodeSigned
+            </li>
+
+            <li>
+                <span class="label label-primary" style="">Improved</span> Badges and label text will change to be readable based on background color
+            </li>   
+            <li>
+                <span class="label label-primary" style="">Improved</span> Ability to select pictures for background and indicator (.png format)
+            </li> 
+            <li>
+                <span class="label label-primary" style="">Improved</span> More tooltips
+            </li>
+             <li>
+                <span class="label label-primary" style="">Improved</span> Better theme management
+            </li>  
+            <li>
+                <span class="label label-primary" style="">Improved</span> Updated SIMBLManger
+            </li>  
+            <li>
+                <span class="label label-primary" style="">Improved</span> Dev-Mate for updates, bug reporting, feedback, and logging
+            </li>
+            <li>
+                <span class="label label-primary" style="">Improved</span> Paddle for sales and logging
+            </li>
+             <li>
+                <span class="label label-primary" style="">Improved</span> Changes to theme preferences structure (old themes will need to be updated)
+            </li>
+            <li>
+                <span class="label label-primary" style="">Improved</span> User Interface redesign
+            </li>
+            <li>
+                <span class="label label-primary" style="">Improved</span> Updated PFMoveApplication
+            </li> 
+
+
+            <li>
+                <span class="label label-danger" style="">Removed</span> Fishhook framework            
+            </li>
+        </ul>
+
+<!--
+        <ul>
+            <hr/>
+            <a href="https://github.com/w0lfschild/app_updates/blob/master/cDock/cDock_0.0.1.zip" class="btn btn-default btn-sm"><i class="fas fa-download"></i> 0.0.1</a> ass="fas fa-download"></i>             
+            <li>
+                <span class="label label-primary" style="">Improved</span> Lorem ipsum dolor sit amet
+            </li>             
+            <li>
+                <span class="label label-warning" style="">Fixed</span> Consectetur adipiscing elit
+            </li>             
+            <li>
+                <span class="label label-success" style="">New</span> Integer molestie lorem at massa
+            </li>             
+            <li>
+                <span class="label label-danger" style="">Removed</span> Nulla volutpat aliquam velit             
+            </li>
+        </ul>
+-->
+
+       <!-- /.col -->
+        <div class="col-md-3 col-md-pull-4 col-sm-6"> </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6"> </div>
+        <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+</div>
