@@ -24,7 +24,7 @@ document.write('\
     <body data-spy="scroll" data-target="nav">\
         <div class="copyright-bar-2 bg-orange">\
             <div class="container text-center">\
-                <p>© COPYRIGHT 2014 - 2018 Wolfgang Baird - ALL RIGHTS RESERVED.</p>\
+                <p>© COPYRIGHT 2014 - 2019 Wolfgang Baird - ALL RIGHTS RESERVED.</p>\
             </div>\
         </div>\
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>         \
