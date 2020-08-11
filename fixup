@@ -1,0 +1,25 @@
+# Absolute path to this script. /home/user/bin/foo.sh
+SCRIPT=$0
+# Absolute path this script is in. /home/user/bin
+SCRIPTPATH=`dirname $SCRIPT`
+
+echo "document.write('\\" > "$SCRIPTPATH"/header.js
+sed -e 's/$/\\/' -e '$s/ \\$//' "$SCRIPTPATH"/header.html >> "$SCRIPTPATH"/header.js
+echo "\n');" >> "$SCRIPTPATH"/header.js
+
+echo "document.write('\\" > "$SCRIPTPATH"/footer.js
+sed -e 's/$/\\/' -e '$s/ \\$//' "$SCRIPTPATH"/footer.html >> "$SCRIPTPATH"/footer.js
+echo "\n');" >> "$SCRIPTPATH"/footer.js
+
+for filename in "$SCRIPTPATH"/*.html; do
+    if [[ $filename != *"footer"* ]] && [[ $filename != *"header"* ]] ; then
+sed -i.bak 's/\<body\>/&\n    \<script type="text\/javascript" src="header.js"\>\<\/script\>\n\<div class="content"\>/' $filename
+sed -i.bak 's/\<script src="https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/jquery\/3.5.1\/jquery.min.js"\>\<\/script\>/&\n    \<script type="text\/javascript" src="footer.js"\>\<\/script\>/' $filename
+sed -i.bak '/\<script src="https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/jquery\/3.5.1\/jquery.min.js"\>\<\/script\>/i \
+    \<\/div\>' $filename
+	fi
+done
+
+# sed 's/\<body\>/&\n    \<script type="text\/javascript" src="header.js"\>\<\/script\>/' "$SCRIPTPATH"/cDock.html
+# sed 's/\<script src="https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/jquery\/3.5.1\/jquery.min.js"\>\<\/script\>/&\n    \<script type="text\/javascript" src="header.js"\>\<\/script\>/' "$SCRIPTPATH"/cDock.html
+

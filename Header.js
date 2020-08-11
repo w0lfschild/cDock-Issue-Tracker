@@ -1,98 +1,70 @@
 document.write('\
-<!DOCTYPE html> \
-<html lang="en" style="height:100%;">\
-    <head> \
-        <meta charset="utf-8"> \
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> \
-        <meta name="keywords" content="pinegrow, blocks, bootstrap" />\
-        <meta name="description" content="My new website" />\
-        <link rel="shortcut icon" href="ico/favicon.png"> \
-        <!-- Core CSS -->         \
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> \
-        <link href="css/font-awesome.min.css" rel="stylesheet">\
-        <!-- Style Library -->         \
-        <link href="css/style-library-1.css" rel="stylesheet">\
-        <link href="css/plugins.css" rel="stylesheet">\
-        <link href="css/blocks.css" rel="stylesheet">\
-        <link href="css/custom.css" rel="stylesheet">\
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">\
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->         \
-        <!--[if lt IE 9]>\
-      <script src="js/html5shiv.js"></script>\
-      <script src="js/respond.min.js"></script>\
-    <![endif]-->         \
-    </head>     \
-    <body data-spy="scroll" data-target="nav">\
-        <header id="header-1" class="soft-scroll header-1">\
-            <!-- Navbar -->\
-            <nav class="main-nav navbar-fixed-top headroom headroom--pinned">\
-                <div class="container">\
-                    <!-- Brand and toggle -->\
-                    <div class="navbar-header">\
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">\
-                            <span class="sr-only">Toggle navigation</span>\
-                            <span class="icon-bar"></span>\
-                            <span class="icon-bar"></span>\
-                            <span class="icon-bar"></span>\
-                        </button>\
-                        <a href="#" class="navbar-brand offwhite orange-hover margin-top10"><i class="fas fa-terminal"></i> macEnhance</a> \
-                    </div>\
-                    <!-- Navigation -->\
-                    <div class="collapse navbar-collapse">\
-                        <ul class="nav navbar-nav navbar-right">\
-                            <li class="nav-item">\
-                                <a href="https://www.macenhance.com" class="orange-hover"><i class="fas fa-home"></i> Home</a>\
-                            </li>\
-                            <li class="nav-item dropdown">\
-                                <a class="dropdown-toggle orange-hover" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#"><i class="fab fa-app-store-ios"></i> Applications <i class="fas fa-angle-down"></i></a>\
-                                <ul class="dropdown-menu">\
-                                    <li>\
-                                        <a href="https://cdock.macenhance.com"><i class="fas fa-paint-brush"></i> cDock</a>\
-                                    </li>\
-                                    <li>\
-                                        <a href="https://www.macenhance.com/macforge"><i class="fas fa-cubes"></i> MacForge</a>\
-                                    </li>\
-                                    <li>\
-                                        <a href="https://www.macenhance.com/flashlight"><i class="fas fa-lightbulb"></i> Flashlight</a>\
-                                    </li>\
-                                    <li>\
-                                        <a href="https://www.macenhance.com/darkboot"><i class="fas fa-moon"></i> DarkBoot</a>\
-                                    </li>\
-                                    <li>\
-                                        <a href="https://www.macenhance.com/classicfolders"><i class="far fa-folder"></i> Classic Folders</a>\
-                                    </li>\
-                                    <li>\
-                                        <a href="https://www.macenhance.com/vpkmacos"><i class="fas fa-exchange-alt"></i> VPK Converter</a>\
-                                    </li>                                     \
-                                </ul>                                 \
-                            </li>\
-                            <!--//dropdown-->                             \
-                            <li class="nav-item dropdown">\
-                                <a class="dropdown-toggle orange-hover" data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" href="#"><i class="fas fa-cube"></i> Plugins <i class="fas fa-angle-down"></i></a>\
-                                <ul class="dropdown-menu">\
-                                    <li>\
-                                        <a href="#">Coming soon...</a>\
-                                    </li>                                     \
-                                </ul>                                 \
-                            </li>\
-                            <!--//dropdown-->                             \
-                            <li class="nav-item">\
-                                <a href="mailto:support@macenhance.com?Subject=macEnhance Support" class="orange-hover"><i class="fas fa-envelope"></i> Contact</a>\
-                            </li>\
-                            <li class="nav-item">\
-                                <a href="http://goo.gl/DSyEFR" class="bg-orange white marina-hover"><i class="fab fa-paypal"></i> Donate</a>\
-                            </li>\
-                        </ul>\
-                        <!--//nav-->\
-                    </div>\
-                    <!--// End Navigation -->\
-                </div>\
-                <!--// End Container -->\
-            </nav>\
-            <!--// End Navbar -->\
-        </header>\
-        <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>         \
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>         \
-        <script type="text/javascript" src="js/plugins.js"></script>\
-        <script type="text/javascript" src="js/bskit-scripts.js"></script>\
+<!DOCTYPE html>\
+<html>\
+\
+<head>\
+    <meta charset="utf-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">\
+    <title>macEnhance</title>\
+    <meta name="twitter:card" content="summary_large_image">\
+    <meta property="og:description" content="The tools you need to enhance your macOS experience">\
+    <meta name="description" content="The tools you need to enhance your macOS experience">\
+    <meta property="og:type" content="website">\
+    <meta property="og:title" content="macEnhance">\
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">\
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,700">\
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">\
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">\
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700">\
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">\
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">\
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">\
+    <link rel="stylesheet" href="assets/css/styles.min.css">\
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">\
+</head>\
+\
+<body>\
+    <!-- Start: Header - Apple -->\
+    <nav class="navbar navbar-dark navbar-expand-md fixed-top bg-dark">\
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>\
+            <div class="collapse navbar-collapse" id="navcol-1"><a class="navbar-brand" style="font-size:24px;" href="https://www.macenhance.com"><i class="fa fa-terminal"></i>&nbsp;MacEnhance</a>\
+                <ul class="nav navbar-nav flex-grow-1 justify-content-end" style="font-family: Roboto, sans-serif;">\
+                    <li class="nav-item" role="presentation">\
+                        <!-- Start: HoverDownButton --><div class="dropdown">\
+  <button class="dropbtn"><i class="fab fa-app-store-ios"></i> Apps <i class="fas fa-angle-down"></i></button>\
+  <div class="dropdown-content">\
+    <a href="https://cdock.macenhance.com"><i class="fas fa-palette"></i> cDock</a>\
+    <a href="https://www.macenhance.com/dockmate"><i class="far fa-window-restore"></i> Dock Mate</a>\
+    <a href="https://www.macenhance.com/macforge"><i class="fas fa-cube"></i> MacForge</a>\
+    <a href="https://www.todeska.app"><i class="fas fa-desktop"></i> Todeska</a>\
+<!--     <a href="https://www.macenhance.com/bootbuddy"><i class="fas fa-adjust"></i> Boot Buddy</a> -->\
+  </div>\
+</div>\
+                        <!-- End: HoverDownButton -->\
+                    </li>\
+                    <li class="nav-item" role="presentation">\
+                        <!-- Start: HoverDownButton --><div class="dropdown">\
+  <button class="dropbtn"><i class="fas fa-hat-cowboy-side"></i> Legacy <i class="fas fa-angle-down"></i></button>\
+  <div class="dropdown-content">\
+    <a href="https://www.macenhance.com/flashlight"><i class="far fa-lightbulb"></i> &nbsp; Flashlight</a>\
+    <a href="https://www.macenhance.com/classicfolders"><i class="far fa-folder"></i> &nbsp;Classic Folders</a>\
+    <a href="https://www.macenhance.com/vpkmacos"><i class="fas fa-exchange-alt"></i> &nbsp;VPK Converter</a>\
+  </div>\
+</div>\
+                        <!-- End: HoverDownButton -->\
+                    </li>\
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="https://www.macenhance.com/contact"><i class="fa fa-send"></i>&nbsp;Contact</a></li>\
+                    <li class="nav-item" role="presentation"><a class="nav-link cust" href="https://www.macenhance.com/about"><i class="fas fa-info-circle"></i>&nbsp;About</a></li>\
+                </ul>\
+            </div>\
+        </div>\
+    </nav>\
+    <!-- End: Header - Apple -->\
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>\
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>\
+    <script src="assets/js/smart-forms.min.js"></script>\
+    <script src="assets/js/script.min.js"></script>\
+</body>\
+\
+</html>\
 ');
