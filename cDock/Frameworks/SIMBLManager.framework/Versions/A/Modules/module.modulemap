@@ -1,6 +1,0 @@
-framework module SIMBLManager {
-  umbrella header "SIMBLManager.h"
-
-  export *
-  module * { export * }
-}
